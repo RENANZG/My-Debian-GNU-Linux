@@ -1,0 +1,47 @@
+Set up fstab
+
+nano /etc/fstab
+
+Replace references to /dev/sdXX, /dev/nvmeXnYpZ, etc. with their respective UUID, which can be found by running blkid. [NOTE: PARTUUID is nice, but doesn’t work with Btrfs.] Remove the quotation marks.
+Example: UUID=ffe9419a-500c-9c49-816f-41aebf92b55e
+
+Update grub
+vi /etc/default/grub
+
+Add above the GRUB_CMDLINE_LINUX_DEFAULT line:
+GRUB_ENABLE_CRYPTODISK=yes
+Next, we need the kernel to find the device.
+blkid -o value -s UUID /dev/sda4
+A UUID will be printed.
+Edit /etc/default/grub again and add the following to the GRUB_CMDLINE_LINUX_DEFAULT=
+GRUB_CMDLINE_LINUX_DEFAULT=”rd.luks.uuid=<THE UUID OF THE HD>,rd.luks.uuid=<THE UUID OF THE SWAP>,resume=/dev/mapper/cryptswap”
+And now to avoid having to enter the password twice on boot, a key will be configured to automatically unlock the encrypted volume on boot. First, generate a random key for each encrypted partition.
+dd bs=1 count=512 if=/dev/urandom of=/boot/volume-root.key
+dd bs=1 count=512 if=/dev/urandom of=/boot/volume-swap.key
+Next, add the key to the encrypted volume.
+cryptsetup luksAddKey /dev/sda4 /boot/volume-root.key
+cryptsetup luksAddKey /dev/sda2 /boot/volume-swap.key
+chmod 000 /boot/volume-root.key
+chmod 000 /boot/volume-swap.key
+chmod -R g-rwx,o-rwx /boot
+Update crypttab. Use the UUID for /dev/sda4 if you can.
+vi /etc/crypttab
+cryptroot	/dev/sda4	/boot/volume-root.key	luks,discard,key-slot=1
+cryptswap	/dev/sda2	/boot/volume-swap.key	luks,discard,key-slot=2
+Configure initramfs so the hooks are pulled
+vi /etc/cryptsetup-initramfs/conf-hook
+Add to the end of the file:
+KEYFILE_PATTERN=”/boot/*.key”
+echo UMASK=0077 >> /etc/initramfs-tools/initramfs.conf
+update-initramfs -u
+Check to make sure it has the appropriate info
+stat -Lc “%A %n” /initrd.img
+This shows the permissions, which should be pretty limited.
+lsinitramfs /initrd.img | grep “^cryptroot/keyfiles/”
+Set the hostname. Here, we’ll use ‘debcrypt’.
+echo debcrypt > /etc/hostname
+vi /etc/hosts
+Change all references to localhost to the same name as you set in hostname.
+Install grub.
+grub-install /dev/sda
+update-grub
