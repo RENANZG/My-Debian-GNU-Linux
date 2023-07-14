@@ -1,4 +1,4 @@
-# My-Repo-Debian-12-Bookworm-
+# My-Repo-Debian-12-Bookworm
 
 
 https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key/  
