@@ -1,4 +1,4 @@
-# Key File Debian in 12 Bookworm
+# Key File in Debian 12 (Bookworm)
 
 
 https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key/  
