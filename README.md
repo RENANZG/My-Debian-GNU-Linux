@@ -1,9 +1,10 @@
 
 ## System Hardening
-[Anonymous Planet - The Hitchhiker’s Guide to Online Anonymity](https://anonymousplanet.org/) [**PDF**](https://anonymousplanet.org/export/guide.pdf)  
-[Whonix - Essential Host Security](https://www.whonix.org/wiki/Essential_Host_Security)  
-[Whonix - System Hardening Checklist](https://www.whonix.org/wiki/System_Hardening_Checklist)  
-[Virus Total - Upload](https://www.virustotal.com/gui/home/upload)  
+[**Anonymous Planet** - The Hitchhiker’s Guide to Online Anonymity](https://anonymousplanet.org/) [**(PDF)**](https://anonymousplanet.org/export/guide.pdf)  
+[**Whonix** - Essential Host Security](https://www.whonix.org/wiki/Essential_Host_Security)  
+[**Whonix** - System Hardening Checklist](https://www.whonix.org/wiki/System_Hardening_Checklist)  
+[**Virus Total** - Free virus, malware and URL online scanning](https://www.virustotal.com/gui/home/upload)  
+[**ShredOS** - Secure disk erasure/wipe](https://github.com/PartialVolume/shredos.x86_64)  
 
 ## Key File in Debian 12 (Bookworm)
 
