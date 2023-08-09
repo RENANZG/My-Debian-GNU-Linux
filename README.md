@@ -7,7 +7,7 @@
 [**ShredOS** - Secure disk erasure/wipe](https://github.com/PartialVolume/shredos.x86_64)  
 
 ## Essentials
-1.[**Ventoy**](https://www.ventoy.net/en/download.html)  
+1.[**Ventoy**](https://www.ventoy.net/en/download.html) - [About Secure Boot in UEFI mode](https://www.ventoy.net/en/doc_secure.html)
 2.[**Clonezilla**](https://clonezilla.org/downloads.php)  
 3.[**rEFInd**](http://www.rodsbooks.com/refind/index.html)  
 4.[**GParted**](https://gparted.org/livecd.php)  
@@ -17,10 +17,30 @@
 
 ## Key File in Debian 12 (Bookworm)
 
-https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key/  
+https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key  
 https://blog.fidelramos.net/software/unlock-luks-usb-drive  
 https://tqdev.com/2022-luks-with-usb-unlock  
-https://www.willhaley.com/blog/unlock-luks-volumes-with-usb-key/  
-https://www.dwarmstrong.org/fde-debian/  
-https://www.cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux/  
-https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git
+https://www.willhaley.com/blog/unlock-luks-volumes-with-usb-key  
+https://www.dwarmstrong.org/fde-debian  
+https://www.cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux  
+https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git  
+
+## Secure Boot in Debian 12 (Bookworm)  
+
+"Most modern systems will ship with SB enabled - they will not run any unsigned code by default, but it is possible to change the firmware configuration to either disable SB or to enroll extra signing keys." "If you want to build and run your own kernel (e.g. for development or debugging), then you will obviously end up making binaries that are not signed with the Debian key. If you wish to use those binaries, you will need to either sign them yourself and enroll the key used with MOK or disable SB."
+
+https://wiki.debian.org/SecureBoot  
+https://www.linuxjournal.com/content/take-control-your-pc-uefi-secure-boot  
+https://www.debian.org/security/2020-GRUB-UEFI-SecureBoot/index.en.html  
+https://access.redhat.com/documentation/de-de/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel  
+
+**MOK - Machine Owner Key**  
+https://www.rodsbooks.com/efi-bootloaders/secureboot.html#mokutil  
+https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471  
+https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250  
+
+sudo apt install sbsigntool  
+sudo mokutil --sb-state  
+sudo mokutil --list-enrolled  
+sudo mokutil --enable-validation  
+ls /var/lib/shim-signed/mok/  
