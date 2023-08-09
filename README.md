@@ -7,12 +7,13 @@
 [**ShredOS** - Secure disk erasure/wipe](https://github.com/PartialVolume/shredos.x86_64)  
 
 ## Essentials
-1.[**Ventoy**](https://www.ventoy.net/en/download.html)
-2.[**Clonezilla**](https://clonezilla.org/downloads.php)
-3.[**rEFInd**](http://www.rodsbooks.com/refind/index.html)
-4.[**GParted**](https://gparted.org/livecd.php)
-5.[**Tails**](https://tails.boum.org)
-6.[**KaliLinux**](https://www.kali.org/get-kali/#kali-installer-images)
+1.[**Ventoy**](https://www.ventoy.net/en/download.html)  
+2.[**Clonezilla**](https://clonezilla.org/downloads.php)  
+3.[**rEFInd**](http://www.rodsbooks.com/refind/index.html)  
+4.[**GParted**](https://gparted.org/livecd.php)  
+5.[**ShredOS**](https://github.com/PartialVolume/shredos.x86_64)  
+6.[**Tails**](https://tails.boum.org)  
+7.[**KaliLinux**](https://www.kali.org/get-kali/#kali-installer-images)  
 
 ## Key File in Debian 12 (Bookworm)
 
