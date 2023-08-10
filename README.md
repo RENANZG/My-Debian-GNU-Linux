@@ -7,7 +7,7 @@
 [**ShredOS** - Secure disk erasure/wipe](https://github.com/PartialVolume/shredos.x86_64)  
 
 ## Essentials
-1.[**Ventoy**](https://www.ventoy.net/en/download.html) - [About Secure Boot in UEFI mode](https://www.ventoy.net/en/doc_secure.html)  
+1.[**Ventoy**](https://www.ventoy.net/en/download.html) - [About Secure BootVentoy in UEFI mode](https://www.ventoy.net/en/doc_secure.html)  
 2.[**Clonezilla**](https://clonezilla.org/downloads.php)  
 3.[**rEFInd**](http://www.rodsbooks.com/refind/index.html)  
 4.[**GParted**](https://gparted.org/livecd.php)  
@@ -31,7 +31,7 @@ https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git
 [**YouTube Video** - Use UEFI Secure Boot NOW! (Trafotin)](https://www.youtube.com/watch?v=Mqh9o8YY2dg)  
 [**YouTube Video** - Secure Boot from A to Z (The Linux Foundation)](https://www.youtube.com/watch?v=jtLQ8SzfrDU)  
 [**YouTube Video** - Secure Boot. In Debian. In Buster. Really (DebConf Videos)](https://www.youtube.com/watch?v=_3mwK6AXo_k)  
-**Secure Boot**
+**Secure Boot**  
 https://wiki.debian.org/SecureBoot  
 https://www.linuxjournal.com/content/take-control-your-pc-uefi-secure-boot  
 https://www.debian.org/security/2020-GRUB-UEFI-SecureBoot/index.en.html  
