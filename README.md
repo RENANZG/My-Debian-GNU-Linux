@@ -44,3 +44,7 @@ sudo mokutil --sb-state
 sudo mokutil --list-enrolled  
 sudo mokutil --enable-validation  
 ls /var/lib/shim-signed/mok/  
+[**YouTube Video** - Use UEFI Secure Boot NOW! (Trafotin)](https://www.youtube.com/watch?v=Mqh9o8YY2dg)  
+[**YouTube Video** - Secure Boot from A to Z (The Linux Foundation)](https://www.youtube.com/watch?v=jtLQ8SzfrDU)  
+[**YouTube Video** - Secure Boot. In Debian. In Buster. Really (DebConf Videos)](https://www.youtube.com/watch?v=_3mwK6AXo_k)  
+
