@@ -28,7 +28,10 @@ https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git
 ## Secure Boot in Debian 12 (Bookworm)  
 
 "Most modern systems will ship with SB enabled - they will not run any unsigned code by default, but it is possible to change the firmware configuration to either disable SB or to enroll extra signing keys." "If you want to build and run your own kernel (e.g. for development or debugging), then you will obviously end up making binaries that are not signed with the Debian key. If you wish to use those binaries, you will need to either sign them yourself and enroll the key used with MOK or disable SB."
-
+[**YouTube Video** - Use UEFI Secure Boot NOW! (Trafotin)](https://www.youtube.com/watch?v=Mqh9o8YY2dg)  
+[**YouTube Video** - Secure Boot from A to Z (The Linux Foundation)](https://www.youtube.com/watch?v=jtLQ8SzfrDU)  
+[**YouTube Video** - Secure Boot. In Debian. In Buster. Really (DebConf Videos)](https://www.youtube.com/watch?v=_3mwK6AXo_k)  
+**Secure Boot**
 https://wiki.debian.org/SecureBoot  
 https://www.linuxjournal.com/content/take-control-your-pc-uefi-secure-boot  
 https://www.debian.org/security/2020-GRUB-UEFI-SecureBoot/index.en.html  
@@ -39,12 +42,17 @@ https://www.rodsbooks.com/efi-bootloaders/secureboot.html#mokutil
 https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471  
 https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250  
 
+**Method 1**  
+👷🛠️🚧🏗  
 sudo apt install sbsigntool  
 sudo mokutil --sb-state  
 sudo mokutil --list-enrolled  
 sudo mokutil --enable-validation  
 ls /var/lib/shim-signed/mok/  
-[**YouTube Video** - Use UEFI Secure Boot NOW! (Trafotin)](https://www.youtube.com/watch?v=Mqh9o8YY2dg)  
-[**YouTube Video** - Secure Boot from A to Z (The Linux Foundation)](https://www.youtube.com/watch?v=jtLQ8SzfrDU)  
-[**YouTube Video** - Secure Boot. In Debian. In Buster. Really (DebConf Videos)](https://www.youtube.com/watch?v=_3mwK6AXo_k)  
+**Method 2**  
+👷🛠️🚧🏗  
 
+**Sign VirtualBox**  
+**Sign NVDIA Drive**  
+**Sign Ventoy**  
+**Sign Kernel**  
