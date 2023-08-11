@@ -58,6 +58,11 @@ https://www.rodsbooks.com/efi-bootloaders/secureboot.html#mokutil
 https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471  
 https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250  
 
+### IN PRACTICE:  
+
+https://github.com/sitmsiteman/secure-boot-in-debian-based-distro  
+https://github.com/Batu33TR/secureboot-mok-keys  
+
 **Method 1**  
 👷🛠️🚧🏗  
 sudo apt install sbsigntool  
