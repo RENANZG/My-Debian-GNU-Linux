@@ -42,6 +42,10 @@ https://wiki.debian.org/SecureBoot
 https://www.linuxjournal.com/content/take-control-your-pc-uefi-secure-boot  
 https://www.debian.org/security/2020-GRUB-UEFI-SecureBoot/index.en.html  
 https://access.redhat.com/documentation/de-de/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel  
+https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot
+
+https://github.com/nsacyber/TrustedSHIM
+https://github.com/nsacyber/HIRS
 
 **MOK - Machine Owner Key**  
 https://www.rodsbooks.com/efi-bootloaders/secureboot.html#mokutil  
