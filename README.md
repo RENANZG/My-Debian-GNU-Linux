@@ -11,13 +11,13 @@
 [**ShredOS** - Secure disk erasure/wipe](https://github.com/PartialVolume/shredos.x86_64)  
 
 ## Essentials
-1.[**Ventoy**](https://www.ventoy.net/en/download.html) - [About Secure Boot](https://www.ventoy.net/en/doc_secure.html)  
-2.[**Clonezilla**](https://clonezilla.org/downloads.php) - [Package signed by Debian or Ubuntu]()  
-3.[**rEFInd**](http://www.rodsbooks.com/refind/index.html) - [About Secure Boot](https://www.rodsbooks.com/refind/secureboot.html)  
-4.[**GParted**](https://gparted.org/livecd.php)  
-5.[**ShredOS**](https://github.com/PartialVolume/shredos.x86_64)  
-6.[**Tails**](https://tails.net/news/new_domain/index.en.html)  
-7.[**KaliLinux**](https://www.kali.org/get-kali/#kali-installer-images)  
+1.[**Ventoy**](https://www.ventoy.net/en/download.html) - [(Secure Boot)](https://www.ventoy.net/en/doc_secure.html)  [(Checksums)]()  
+2.[**Clonezilla**](https://clonezilla.org/downloads.php) - [(Package signed by Debian or Ubuntu)]()  [(Checksums)]()  
+3.[**rEFInd**](http://www.rodsbooks.com/refind/index.html) - [(Secure Boot)](https://www.rodsbooks.com/refind/secureboot.html) [(Checksums)]() 
+4.[**GParted**](https://gparted.org/livecd.php)  [(Secure Boot)](https://gparted.org/download.php) [(Checksums)](https://gparted.org/gpg-verify.php)  
+5.[**ShredOS**](https://github.com/PartialVolume/shredos.x86_64) [(Secure Boot)]() [(Checksums)]() 
+6.[**Tails**](https://tails.net/news/new_domain/index.en.html)  [(Secure Boot)]() [(Checksums)]()  
+7.[**KaliLinux**](https://www.kali.org/get-kali/#kali-installer-images)  [(Secure Boot)]() [(Checksums)]()  
 
 ## Key File in Debian 12 (Bookworm)
 
@@ -44,24 +44,22 @@ https://www.linuxjournal.com/content/take-control-your-pc-uefi-secure-boot
 https://www.debian.org/security/2020-GRUB-UEFI-SecureBoot/index.en.html  
 https://www.elstel.org/debcheckroot/  
 http://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
-https://access.redhat.com/documentation/de-de/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel   
 https://stack.nexedi.com/P-VIFIB-Enhanced.UEFI.Secure.Boot.Debian  
 https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot  
 https://www.kicksecure.com/wiki/Verified_Boot  
 https://github.com/nsacyber/TrustedSHIM  
 https://github.com/nsacyber/HIRS  
-
-**MOK - Machine Owner Key**  
 https://www.rodsbooks.com/efi-bootloaders/secureboot.html#mokutil  
-https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471  
-https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250  
 
 ### Secure Boot in Practice  
 
 https://github.com/sitmsiteman/secure-boot-in-debian-based-distro  
+https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471  
 https://github.com/Batu33TR/secureboot-mok-keys  
 https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot  
 https://help.ggcircuit.com/knowledge/how-to-inject-custom-secure-boot-keys-example  
+https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250  
+https://access.redhat.com/documentation/de-de/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel   
 
 **Method 1**  
 👷🛠️🚧🏗  
