@@ -22,14 +22,16 @@
 ## Key File in Debian 12 (Bookworm)
 
 <details>
-  <summary><b>Key File References</b></summary>  
-https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key  
-https://blog.fidelramos.net/software/unlock-luks-usb-drive  
-https://tqdev.com/2022-luks-with-usb-unlock  
-https://www.willhaley.com/blog/unlock-luks-volumes-with-usb-key  
-https://www.dwarmstrong.org/fde-debian  
-https://www.cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux  
-https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git  
+<summary><b>Key File References</b></summary>  
+<ul>
+<li>https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key</li>
+<li>https://blog.fidelramos.net/software/unlock-luks-usb-drive</li>
+<li>https://tqdev.com/2022-luks-with-usb-unlock</li>
+<li>https://www.willhaley.com/blog/unlock-luks-volumes-with-usb-key</li>
+<li>https://www.dwarmstrong.org/fde-debian</li>
+<li>https://www.cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux</li>
+<li>https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git</li>
+</ul>
 </details>  
 
 ## Secure Boot 
@@ -42,29 +44,33 @@ https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git
 [**NSA** - Cybersecurity Technical Report PDF](https://media.defense.gov/2020/Sep/15/2002497594/-1/-1/0/CTR-UEFI-Secure-Boot-Customization-UOO168873-20.PDF)  
 
 <details>
-  <summary><b>Secure Boot References</b></summary>  
-https://wiki.debian.org/SecureBoot  
-https://www.linuxjournal.com/content/take-control-your-pc-uefi-secure-boot  
-https://www.debian.org/security/2020-GRUB-UEFI-SecureBoot/index.en.html  
-https://www.elstel.org/debcheckroot/  
-http://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html  
-https://stack.nexedi.com/P-VIFIB-Enhanced.UEFI.Secure.Boot.Debian  
-https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot  
-https://www.kicksecure.com/wiki/Verified_Boot  
-https://github.com/nsacyber/TrustedSHIM  
-https://github.com/nsacyber/HIRS  
-https://www.rodsbooks.com/efi-bootloaders/secureboot.html#mokutil  
+<summary><b>Secure Boot References</b></summary>  
+<ul>
+<li>https://wiki.debian.org/SecureBoot</li>
+<li>https://www.linuxjournal.com/content/take-control-your-pc-uefi-secure-boot</li>
+<li>https://www.debian.org/security/2020-GRUB-UEFI-SecureBoot/index.en.html</li>
+<li>https://www.elstel.org/debcheckroot</li>
+<li>https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html</li>
+<li>https://stack.nexedi.com/P-VIFIB-Enhanced.UEFI.Secure.Boot.Debian</li>
+<li>https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot</li>
+<li>https://www.kicksecure.com/wiki/Verified_Boot</li>
+<li>https://github.com/nsacyber/TrustedSHIM</li>
+<li>https://github.com/nsacyber/HIRS</li>
+<li>https://www.rodsbooks.com/efi-bootloaders/secureboot.html#mokutil</li>
+</ul>
 </details>  
 
 <details>
-  <summary><b>Secure Boot in Practice</b></summary>  
-https://github.com/sitmsiteman/secure-boot-in-debian-based-distro  
-https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471  
-https://github.com/Batu33TR/secureboot-mok-keys  
-https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot  
-https://help.ggcircuit.com/knowledge/how-to-inject-custom-secure-boot-keys-example  
-https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250  
-https://access.redhat.com/documentation/de-de/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel  
+<summary><b>Secure Boot in Practice</b></summary>  
+<ul>
+<li>https://github.com/sitmsiteman/secure-boot-in-debian-based-distro</li>
+<li>https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471</li>
+<li>https://github.com/Batu33TR/secureboot-mok-keys</li>
+<li>https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot</li>
+<li>https://help.ggcircuit.com/knowledge/how-to-inject-custom-secure-boot-keys-example</li>
+<li>https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250 
+<li>https://access.redhat.com/documentation/de-de/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel</li>
+</ul>
 </details>  
 
 **Method 1**  
