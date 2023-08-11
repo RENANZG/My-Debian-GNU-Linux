@@ -54,7 +54,7 @@ ls /var/lib/shim-signed/mok/
 **Method 2**  
 👷🛠️🚧🏗  
 
-**Sign Custom Kernel**
+**Sign Custom Kernel**  
 **Sign VirtualBox**  
 **Sign NVDIA Drive**  
 **Sign Ventoy**  
