@@ -62,6 +62,7 @@ https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_
 
 https://github.com/sitmsiteman/secure-boot-in-debian-based-distro  
 https://github.com/Batu33TR/secureboot-mok-keys  
+https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot
 
 **Method 1**  
 👷🛠️🚧🏗  
