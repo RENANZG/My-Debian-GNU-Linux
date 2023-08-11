@@ -11,9 +11,9 @@
 [**ShredOS** - Secure disk erasure/wipe](https://github.com/PartialVolume/shredos.x86_64)  
 
 ## Essentials
-1.[**Ventoy**](https://www.ventoy.net/en/download.html) - [About Secure BootVentoy in UEFI mode](https://www.ventoy.net/en/doc_secure.html)  
+1.[**Ventoy**](https://www.ventoy.net/en/download.html) - [About Secure Boot](https://www.ventoy.net/en/doc_secure.html)  
 2.[**Clonezilla**](https://clonezilla.org/downloads.php)  
-3.[**rEFInd**](http://www.rodsbooks.com/refind/index.html)  
+3.[**rEFInd**](http://www.rodsbooks.com/refind/index.html) - [About Secure Boot](https://www.rodsbooks.com/refind/secureboot.html)  
 4.[**GParted**](https://gparted.org/livecd.php)  
 5.[**ShredOS**](https://github.com/PartialVolume/shredos.x86_64)  
 6.[**Tails**](https://tails.net/news/new_domain/index.en.html)  
