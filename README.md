@@ -35,31 +35,34 @@ https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git
 [**YouTube Video** - Use UEFI Secure Boot NOW! (Trafotin)](https://www.youtube.com/watch?v=Mqh9o8YY2dg)  
 [**YouTube Video** - Best Practices for UEFI Secure Boot Customization (UEFIForum)](https://www.youtube.com/watch?v=WBemkwMHLJM)  
 [**YouTube Video** - Secure Boot from A to Z (The Linux Foundation)](https://www.youtube.com/watch?v=jtLQ8SzfrDU)  
-[**YouTube Video** - Secure Boot. In Debian. In Buster. Really (DebConf Videos)](https://www.youtube.com/watch?v=_3mwK6AXo_k)  
-[**NSA** - Cybersecurity Technical Report PDF](https://media.defense.gov/2020/Sep/15/2002497594/-1/-1/0/CTR-UEFI-Secure-Boot-Customization-UOO168873-20.PDF)
+[**YouTube Video** - Secure Boot. In Debian. In Buster. Really (DebConf Videos)](https://www.youtube.com/watch?v=_3mwK6AXo_k) 
+[**NSA** - Cybersecurity Technical Report PDF](https://media.defense.gov/2020/Sep/15/2002497594/-1/-1/0/CTR-UEFI-Secure-Boot-Customization-UOO168873-20.PDF)  
 
-**Secure Boot References**  
+<details>
+  <summary><b>Secure Boot References</b></summary>  
 https://wiki.debian.org/SecureBoot  
 https://www.linuxjournal.com/content/take-control-your-pc-uefi-secure-boot  
 https://www.debian.org/security/2020-GRUB-UEFI-SecureBoot/index.en.html  
 https://www.elstel.org/debcheckroot/  
-http://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+http://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html  
 https://stack.nexedi.com/P-VIFIB-Enhanced.UEFI.Secure.Boot.Debian  
 https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot  
 https://www.kicksecure.com/wiki/Verified_Boot  
 https://github.com/nsacyber/TrustedSHIM  
 https://github.com/nsacyber/HIRS  
 https://www.rodsbooks.com/efi-bootloaders/secureboot.html#mokutil  
+</details>  
 
-### Secure Boot in Practice  
-
+<details>
+  <summary><b>Secure Boot in Practice</b></summary>  
 https://github.com/sitmsiteman/secure-boot-in-debian-based-distro  
 https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471  
 https://github.com/Batu33TR/secureboot-mok-keys  
 https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot  
 https://help.ggcircuit.com/knowledge/how-to-inject-custom-secure-boot-keys-example  
 https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250  
-https://access.redhat.com/documentation/de-de/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel   
+https://access.redhat.com/documentation/de-de/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel  
+</details>  
 
 **Method 1**  
 👷🛠️🚧🏗  
