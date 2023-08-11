@@ -75,7 +75,7 @@
 
 👷🛠️🚧🏗  
 ### **Debian Secure Boot - Essential Tutorial**
-**Sign Debian**
+**Sign Debian 12 Bookworm (Stable)**
 
 
 👷🛠️🚧🏗  
