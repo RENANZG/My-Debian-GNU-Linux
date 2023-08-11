@@ -32,6 +32,7 @@ https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git
 [**YouTube Video** - Best Practices for UEFI Secure Boot Customization (UEFIForum)](https://www.youtube.com/watch?v=WBemkwMHLJM)  
 [**YouTube Video** - Secure Boot from A to Z (The Linux Foundation)](https://www.youtube.com/watch?v=jtLQ8SzfrDU)  
 [**YouTube Video** - Secure Boot. In Debian. In Buster. Really (DebConf Videos)](https://www.youtube.com/watch?v=_3mwK6AXo_k)  
+[**NSA** - Cybersecurity Technical Report PDF](https://media.defense.gov/2020/Sep/15/2002497594/-1/-1/0/CTR-UEFI-Secure-Boot-Customization-UOO168873-20.PDF)
 
 **Secure Boot**  
 https://wiki.debian.org/SecureBoot  
