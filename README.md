@@ -56,6 +56,6 @@ ls /var/lib/shim-signed/mok/
 
 **Sign Custom Kernel**  
 **Sign VirtualBox**  
-**Sign NVDIA Drive**  
+**Sign NVIDIA**  
 **Sign Ventoy**  
   
