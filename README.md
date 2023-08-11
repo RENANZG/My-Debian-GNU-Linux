@@ -12,7 +12,7 @@
 
 ## Essentials
 1.[**Ventoy**](https://www.ventoy.net/en/download.html) - [About Secure Boot](https://www.ventoy.net/en/doc_secure.html)  
-2.[**Clonezilla**](https://clonezilla.org/downloads.php) - Signed package from Debian or Ubuntu  
+2.[**Clonezilla**](https://clonezilla.org/downloads.php) - [Package signed by Debian or Ubuntu]()  
 3.[**rEFInd**](http://www.rodsbooks.com/refind/index.html) - [About Secure Boot](https://www.rodsbooks.com/refind/secureboot.html)  
 4.[**GParted**](https://gparted.org/livecd.php)  
 5.[**ShredOS**](https://github.com/PartialVolume/shredos.x86_64)  
