@@ -3,6 +3,7 @@
 [**Anonymous Planet** - The Hitchhiker’s Guide to Online Anonymity](https://anonymousplanet.org/) [**(PDF)**](https://anonymousplanet.org/export/guide.pdf)  
 [**Whonix** - Essential Host Security](https://www.whonix.org/wiki/Essential_Host_Security)  
 [**Whonix** - System Hardening Checklist](https://www.whonix.org/wiki/System_Hardening_Checklist)  
+[**Kicksecure** - Documentation](https://www.kicksecure.com/wiki/Documentation)  
 [**CIS Benchmark** - Debian Linux](https://www.cisecurity.org/benchmark/debian_linux)  
 [**NIST GOV** - Cybersecurity Framework](https://www.nist.gov/cyberframework)  
 [**NSA GOV** - Cybersecurity Advisories & Guidance](https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance)  
@@ -15,7 +16,7 @@
 3.[**rEFInd**](http://www.rodsbooks.com/refind/index.html)  
 4.[**GParted**](https://gparted.org/livecd.php)  
 5.[**ShredOS**](https://github.com/PartialVolume/shredos.x86_64)  
-6.[**Tails**](https://tails.boum.org)  
+6.[**Tails**](https://tails.net/news/new_domain/index.en.html)  
 7.[**KaliLinux**](https://www.kali.org/get-kali/#kali-installer-images)  
 
 ## Key File in Debian 12 (Bookworm)
@@ -41,11 +42,16 @@ https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git
 https://wiki.debian.org/SecureBoot  
 https://www.linuxjournal.com/content/take-control-your-pc-uefi-secure-boot  
 https://www.debian.org/security/2020-GRUB-UEFI-SecureBoot/index.en.html  
-https://access.redhat.com/documentation/de-de/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel  
+https://www.elstel.org/debcheckroot/  
+http://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+https://access.redhat.com/documentation/de-de/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel   
+https://stack.nexedi.com/P-VIFIB-Enhanced.UEFI.Secure.Boot.Debian  
 https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot
-
+https://www.kicksecure.com/wiki/Verified_Boot
 https://github.com/nsacyber/TrustedSHIM
 https://github.com/nsacyber/HIRS
+
+https://help.ggcircuit.com/knowledge/how-to-inject-custom-secure-boot-keys-example
 
 **MOK - Machine Owner Key**  
 https://www.rodsbooks.com/efi-bootloaders/secureboot.html#mokutil  
