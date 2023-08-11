@@ -29,7 +29,7 @@ https://www.dwarmstrong.org/fde-debian
 https://www.cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux  
 https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git  
 
-## Secure Boot in Debian 12 (Bookworm)  
+## Secure Boot 
 
 "Most modern systems will ship with SB enabled - they will not run any unsigned code by default, but it is possible to change the firmware configuration to either disable SB or to enroll extra signing keys." "If you want to build and run your own kernel (e.g. for development or debugging), then you will obviously end up making binaries that are not signed with the Debian key. If you wish to use those binaries, you will need to either sign them yourself and enroll the key used with MOK or disable SB."  
 [**YouTube Video** - Use UEFI Secure Boot NOW! (Trafotin)](https://www.youtube.com/watch?v=Mqh9o8YY2dg)  
@@ -38,7 +38,7 @@ https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git
 [**YouTube Video** - Secure Boot. In Debian. In Buster. Really (DebConf Videos)](https://www.youtube.com/watch?v=_3mwK6AXo_k)  
 [**NSA** - Cybersecurity Technical Report PDF](https://media.defense.gov/2020/Sep/15/2002497594/-1/-1/0/CTR-UEFI-Secure-Boot-Customization-UOO168873-20.PDF)
 
-**Secure Boot**  
+**Secure Boot References**  
 https://wiki.debian.org/SecureBoot  
 https://www.linuxjournal.com/content/take-control-your-pc-uefi-secure-boot  
 https://www.debian.org/security/2020-GRUB-UEFI-SecureBoot/index.en.html  
@@ -51,18 +51,17 @@ https://www.kicksecure.com/wiki/Verified_Boot
 https://github.com/nsacyber/TrustedSHIM
 https://github.com/nsacyber/HIRS
 
-https://help.ggcircuit.com/knowledge/how-to-inject-custom-secure-boot-keys-example
-
 **MOK - Machine Owner Key**  
 https://www.rodsbooks.com/efi-bootloaders/secureboot.html#mokutil  
 https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471  
 https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250  
 
-### IN PRACTICE:  
+### Secure Boot in Practice  
 
 https://github.com/sitmsiteman/secure-boot-in-debian-based-distro  
 https://github.com/Batu33TR/secureboot-mok-keys  
-https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot
+https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot  
+https://help.ggcircuit.com/knowledge/how-to-inject-custom-secure-boot-keys-example  
 
 **Method 1**  
 👷🛠️🚧🏗  
