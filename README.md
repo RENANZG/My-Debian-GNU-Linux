@@ -21,6 +21,8 @@
 
 ## Key File in Debian 12 (Bookworm)
 
+<details>
+  <summary><b>Key File References</b></summary>  
 https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key  
 https://blog.fidelramos.net/software/unlock-luks-usb-drive  
 https://tqdev.com/2022-luks-with-usb-unlock  
@@ -28,6 +30,7 @@ https://www.willhaley.com/blog/unlock-luks-volumes-with-usb-key
 https://www.dwarmstrong.org/fde-debian  
 https://www.cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux  
 https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git  
+</details>  
 
 ## Secure Boot 
 
