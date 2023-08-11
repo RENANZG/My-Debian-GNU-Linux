@@ -3,6 +3,9 @@
 [**Anonymous Planet** - The Hitchhiker’s Guide to Online Anonymity](https://anonymousplanet.org/) [**(PDF)**](https://anonymousplanet.org/export/guide.pdf)  
 [**Whonix** - Essential Host Security](https://www.whonix.org/wiki/Essential_Host_Security)  
 [**Whonix** - System Hardening Checklist](https://www.whonix.org/wiki/System_Hardening_Checklist)  
+[**CIS Benchmark** - Debian Linux](https://www.cisecurity.org/benchmark/debian_linux)  
+[**NIST GOV** - Cybersecurity Framework](https://www.nist.gov/cyberframework)  
+[**NSA GOV** - Cybersecurity Advisories & Guidance](https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance)  
 [**Virus Total** - Free virus, malware and URL online scanning](https://www.virustotal.com/gui/home/upload)  
 [**ShredOS** - Secure disk erasure/wipe](https://github.com/PartialVolume/shredos.x86_64)  
 
