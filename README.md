@@ -11,13 +11,13 @@
 [**ShredOS** - Secure disk erasure/wipe](https://github.com/PartialVolume/shredos.x86_64)  
 
 ## Essentials
-1.[**Ventoy**](https://www.ventoy.net/en/download.html) - [(Secure Boot)](https://www.ventoy.net/en/doc_secure.html)  [(Checksums)]()  
-2.[**Clonezilla**](https://clonezilla.org/downloads.php) - [(Package signed by Debian or Ubuntu)]()  [(Checksums)]()  
-3.[**rEFInd**](http://www.rodsbooks.com/refind/index.html) - [(Secure Boot)](https://www.rodsbooks.com/refind/secureboot.html) [(Checksums)]() 
-4.[**GParted**](https://gparted.org/livecd.php)  [(Secure Boot)](https://gparted.org/download.php) [(Checksums)](https://gparted.org/gpg-verify.php)  
-5.[**ShredOS**](https://github.com/PartialVolume/shredos.x86_64) [(Secure Boot)]() [(Checksums)]() 
-6.[**Tails**](https://tails.net/news/new_domain/index.en.html)  [(Secure Boot)]() [(Checksums)]()  
-7.[**KaliLinux**](https://www.kali.org/get-kali/#kali-installer-images)  [(Secure Boot)]() [(Checksums)]()  
+1.[**Ventoy**](https://www.ventoy.net/en/download.html) [(Secure Boot)](https://www.ventoy.net/en/doc_secure.html)  [(Checksums)]()  
+2.[**Clonezilla**](https://clonezilla.org/downloads.php) [(Package signed by Debian or Ubuntu)]()  [(Checksums)]()  
+3.[**rEFInd**](http://www.rodsbooks.com/refind/index.html) [(Secure Boot)](https://www.rodsbooks.com/refind/secureboot.html) [(Checksums)]()  
+4.[**GParted**](https://gparted.org/livecd.php) [(Secure Boot)](https://gparted.org/download.php) [(Checksums)](https://gparted.org/gpg-verify.php)  
+5.[**ShredOS**](https://github.com/PartialVolume/shredos.x86_64) [(Secure Boot)]() [(Checksums)]()  
+6.[**Tails**](https://tails.net/news/new_domain/index.en.html) [(Secure Boot)]() [(Checksums)]()  
+7.[**KaliLinux**](https://www.kali.org/get-kali/#kali-installer-images) [(Secure Boot)]() [(Checksums)]()  
 
 ## Key File in Debian 12 (Bookworm)
 
