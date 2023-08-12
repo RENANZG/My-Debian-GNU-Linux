@@ -1,67 +1,85 @@
 
-## System Hardening Must Have
-[**Anonymous Planet** - The Hitchhiker’s Guide to Online Anonymity](https://anonymousplanet.org/) [(PDF)](https://anonymousplanet.org/export/guide.pdf)  
-[**Whonix** - Essential Host Security](https://www.whonix.org/wiki/Essential_Host_Security)  
-[**Whonix** - System Hardening Checklist](https://www.whonix.org/wiki/System_Hardening_Checklist)  
-[**Kicksecure** - Documentation](https://www.kicksecure.com/wiki/Documentation)  
-[**CIS Benchmark** - Debian Linux](https://www.cisecurity.org/benchmark/debian_linux)  
-[**NIST GOV** - Cybersecurity Framework](https://www.nist.gov/cyberframework)  
-[**NSA GOV** - Cybersecurity Advisories & Guidance](https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance)  
-[**Virus Total** - Free virus, malware and URL online scanning](https://www.virustotal.com/gui/home/upload)  
-[**ShredOS** - Secure disk erasure/wipe](https://github.com/PartialVolume/shredos.x86_64)  
-[**Cryptomator** - Put a lock on your cloud](https://cryptomator.org/)  
+## SYSTEM BASICS
 
+### System Hardening Must Have
 <table>
   <tr>
-   <td><a href="https://anonymousplanet.org/" target="_blank"><b>Anonymous Planet</b> - The Hitchhiker’s Guide</a></td>
-   <td>Alfreds Futterkiste</td>
+   <td><a href="https://anonymousplanet.org/" target="_blank"><b>Anonymous Planet</b> - The Hitchhiker’s Guide</a><a href="https://anonymousplanet.org/export/guide.pdf" target="_blank">&nbsp(PDF)</a></td>
+   <td><a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>Virus Total</b> - Free virus, malware and URL online scanning</a></td>
+  </tr>
+   <tr>
+  <td><a href="https://www.whonix.org/wiki/Essential_Host_Security" target="_blank"><b>Whonix</b> - Essential Host Security</a></td>
+  <td><a href="https://github.com/PartialVolume/shredos.x86_64" target="_blank"><b>ShredOS</b> - Secure disk erasure/wipe</a></td>
   </tr>
   <tr>
-  <td><a href="https://www.whonix.org/wiki/Essential_Host_Security" target="_blank"><b>Whonix</b> - Essential Host Security</a></td>
-  <td>Maria Anders</td>
+  <td><a href="https://www.whonix.org/wiki/System_Hardening_Checklist" target="_blank"><b>Whonix</b> - System Hardening Checklist</a></td>
+  <td><a href="https://cryptomator.org/" target="_blank"><b>Cryptomator</b> - Put a lock on your cloud</a></td>
+  </tr>
+  <tr>
+  <td><a href="https://www.kicksecure.com/wiki/Documentation" target="_blank"><b>Kicksecure</b> - Documentation</a></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><a href="https://www.cisecurity.org/benchmark/debian_linux" target="_blank"><b>CIS Benchmark</b> - Debian Linux Guides</a></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><a href="https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance" target="_blank"><b>NSA GOV</b> - Cybersecurity Advisories & Guidance</a><a href="https://github.com/nsacyber" target="_blank">&nbsp(GitHub)</a></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><a href="https://www.nist.gov/cyberframework" target="_blank"><b>NIST GOV</b> - Cybersecurity Framework</a></td>
+  <td></td>
   </tr>
 </table>
 
-## Essential Tools
+### Essential Tools
 <table>
   <tr>
-    <td><a href="https://www.ventoy.net/en/download.html" target="_blank"><b>1. Ventoy</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+    <td><a href="https://www.ventoy.net/en/download.html" target="_blank"><b>1. Ventoy</b></a></td>
     <td><a href="https://www.ventoy.net/en/doc_secure.html" target="_blank">(Secure Boot)</a></td>
     <td><a href="https://www.ventoy.net/en/download.html" target="_blank">(Checksums)</a></td>
+     <td><a href="https://tails.net/news/new_domain/index.en.html" target="_blank"><b>6. Tails</b></a></td>
+    <td><a href="" target="_blank">(Secure Boot)</a></td>
+    <td><a href="" target="_blank">(Checksums)</a></td>
   </tr>
 <tr>
-    <td><a href="https://clonezilla.org/downloads.php" target="_blank"><b>2. Clonezilla&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></a></td>
+    <td><a href="https://clonezilla.org/downloads.php" target="_blank"><b>2. Clonezilla</b></a></td>
+    <td><a href="" target="_blank">(Secure Boot)</a></td>
+    <td><a href="" target="_blank">(Checksums)</a></td>
+    <td><a href="https://www.kali.org/get-kali/#kali-installer-images" target="_blank"><b>7. KaliLinux</b></a></td>
     <td><a href="" target="_blank">(Secure Boot)</a></td>
     <td><a href="" target="_blank">(Checksums)</a></td>
   </tr>
  <tr>
-    <td><a href="http://www.rodsbooks.com/refind/index.html" target="_blank"><b>3. rEFInd</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+    <td><a href="http://www.rodsbooks.com/refind/index.html" target="_blank"><b>3. rEFInd</b></a></td>
     <td><a href="https://www.ventoy.net/en/doc_secure.html" target="_blank">(Secure Boot)</a></td>
     <td><a href="" target="_blank">(Checksums)</a></td>
+    <td><a href="" target="_blank"></a></td>
+    <td><a href="" target="_blank"></a></td>
+    <td><a href="" target="_blank"></a></td>
   </tr>
   <tr>
-    <td><a href="https://gparted.org/livecd.php" target="_blank"><b>4. GParted</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+    <td><a href="https://gparted.org/livecd.php" target="_blank"><b>4. GParted</b></a></td>
     <td><a href="https://gparted.org/download.php" target="_blank">(Secure Boot)</a></td>
     <td><a href="https://gparted.org/gpg-verify.php" target="_blank">(Checksums)</a></td>
+    <td><a href="" target="_blank"></a></td>
+    <td><a href="" target="_blank"></a></td>
+    <td><a href="" target="_blank"></a></td>
   </tr>
   <tr>
-    <td><a href="https://github.com/PartialVolume/shredos.x86_64" target="_blank"><b>5. ShredOS</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+    <td><a href="https://github.com/PartialVolume/shredos.x86_64" target="_blank"><b>5. ShredOS</b></a></td>
     <td><a href="" target="_blank">(Secure Boot)</a></td>
     <td><a href="" target="_blank">(Checksums)</a></td>
-  </tr>
-  <tr>
-    <td><a href="https://tails.net/news/new_domain/index.en.html" target="_blank"><b>6. Tails</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
-    <td><a href="" target="_blank">(Secure Boot)</a></td>
-    <td><a href="" target="_blank">(Checksums)</a></td>
-  </tr>
-  <tr>
-    <td><a href="https://www.kali.org/get-kali/#kali-installer-images" target="_blank"><b>7. KaliLinux</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
-    <td><a href="" target="_blank">(Secure Boot)</a></td>
-    <td><a href="" target="_blank">(Checksums)</a></td>
-  </tr>
+    <td><a href="" target="_blank"></a></td>
+    <td><a href="" target="_blank"></a></td>
+    <td><a href="" target="_blank"></a></td>
+   </tr>
 </table>
 
-## Key File in Debian 12 (Bookworm)
+## SYSTEM INSTALLATION 
+
+### Encryption - Key File in Debian 12 (Bookworm)
 
 <details>
 <summary>Key File References</summary>  
