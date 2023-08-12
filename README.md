@@ -79,6 +79,19 @@
 
 ## SYSTEM INSTALLATION 
 
+### What hardware to use?
+
+**Points to check**
+1. Compatibility
+2. Security
+3. Cost benefit
+
+### Partitioning
+
+**Scenarios: advantages and disadvantages**
+https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system
+https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page
+
 ### Encryption - Key File in Debian 12 (Bookworm)
 
 <details>
@@ -353,6 +366,9 @@ Now your system should run under a signed kernel and upgrading GRUB2 works again
 
 <\details>  
 
+## SYSTEM INSTALLATION 
+
+###
 </DIV>
 </DIV>
 </DIV>  
@@ -386,8 +402,14 @@ Now your system should run under a signed kernel and upgrading GRUB2 works again
 </details>   
 
 
+## SOFTWARES  
 
 
+### Managing Passwords
+
+
+### Email
+https://emailselfdefense.fsf.org/en/workshops.html
 
 
   
