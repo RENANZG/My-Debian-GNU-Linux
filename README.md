@@ -190,21 +190,22 @@ https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page
 <DIV class="section" id="VERDE">
 <details>
 <summary><b>Sign Debian 12 (Bookworm) Kernel for Secure Boot</b></summary>  
-
+<p></p>
 <b>1.First steps <b/>   
 
 Has the system booted via Secure Boot?
-```
-$ sudo mokutil --sb-state
-SecureBoot enabled
-```
-or
 ```
 $ su -
 Password:
 # mokutil --sb-state
 SecureBoot enabled
 ```
+or
+```
+$ sudo mokutil --sb-state
+SecureBoot enabled
+```
+
 
 What keys are on my system?
 ```
