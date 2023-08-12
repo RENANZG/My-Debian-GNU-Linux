@@ -252,7 +252,12 @@ Then create the public and private key for signing the kernel:
 ```
 # openssl req -config ./mokconfig.cnf -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "MOK.priv" -out "MOK.der" -subj "/CN=My Name/"
 ```
-### # openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -days 36500 -subj "/CN=My Name/"
+------------------------------------------------------------------------
+or alternatively:
+```
+# openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -days 36500 -subj "/CN=My Name/"
+```
+------------------------------------------------------------------------
 
 Convert the key also to PEM format (mokutil needs DER, sbsign needs PEM):
 ```
@@ -363,18 +368,30 @@ Signing vmlinuz using sbsign:
 ```
 $ sudo sbsign --key MOK.priv --cert MOK.pem /boot/vmlinuz-[KERNEL-VERSION] --output /boot/vmlinuz-[KERNEL-VERSION].signed
 for example
-$ sbsign --key "/var/lib/shim-signed/mok/MOK.priv" --cert "/var/lib/shim-signed/mok/MOK.pem" "/boot/vmlinuz-6.1.0-11-amd64" --output "/boot/vmlinuz-6.1.0-11-amd64.tmp"
-or alternatively
-$ sbsign --key MOK.priv --cert MOK.pem "/boot/vmlinuz-$VERSION" --output "/boot/vmlinuz-$VERSION.tmp"
-$ sudo mv "/boot/vmlinuz-$VERSION.tmp" "/boot/vmlinuz-$VERSION"
+$ sudo sbsign --key /var/lib/shim-signed/mok/MOK.priv --cert /var/lib/shim-signed/mok/MOK.pem "/boot/vmlinuz-6.1.0-11-amd64" --output "/boot/vmlinuz-6.1.0-11-amd64.tmp"
 ```
+------------------------------------------------------------------------
+or alternatively:
+```
+$ sudo sbsign --key MOK.priv --cert MOK.pem "/boot/vmlinuz-$VERSION" --output "/boot/vmlinuz-$VERSION.tmp"
+```
+------------------------------------------------------------------------
 Copy the initram of the unsigned kernel, so we also have an initram for the signed one.This will create a new signed vmlinuz: remove the unsigned one and restore the original name of the signed one:
 ```
+$ sudo mv "/boot/vmlinuz-$VERSION.tmp" "/boot/vmlinuz-$VERSION"
+```
+
+------------------------------------------------------------------------
+or alternatively:
+```
 $ sudo cp /boot/initrd.img-[KERNEL-VERSION]{,.signed}
-or
+```
+or alternatively:
+```
 $ sudo rm /boot/initrd.img-[KERNEL-VERSION]
 $ sudo mv whatever/boot/initrd.img-[KERNEL-VERSION]{,.signed} /boot/
 ```
+------------------------------------------------------------------------
 Update your grub-config
 ```
 $ sudo update-grub
