@@ -215,8 +215,6 @@ Also the command modinfo prints the signature if available, for example:
 # modinfo /lib/modules/6.1.0-11-amd64/kernel/mm/zsmalloc.ko 
 ```
 
-
-
 <b>2.Place to auto-generated MOK<b/>
 
 MOK - Machine Owner Key
@@ -257,12 +255,11 @@ or alternatively:
 ```
 # openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -days 36500 -subj "/CN=My Name/"
 ```
-------------------------------------------------------------------------
-
 Convert the key also to PEM format (mokutil needs DER, sbsign needs PEM):
 ```
 # openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem
 ```
+------------------------------------------------------------------------
 <b>4.Enrolling your key<b/>
 
 Enroll the key to your shim installation:
@@ -379,6 +376,8 @@ $ sudo sbsign --key MOK.priv --cert MOK.pem "/boot/vmlinuz-$VERSION" --output "/
 Copy the initram of the unsigned kernel, so we also have an initram for the signed one.This will create a new signed vmlinuz: remove the unsigned one and restore the original name of the signed one:
 ```
 $ sudo mv "/boot/vmlinuz-$VERSION.tmp" "/boot/vmlinuz-$VERSION"
+for example
+$ sudo mv "/boot/vmlinuz-6.1.0-11-amd64.tmp" "/boot/vmlinuz-6.1.0-11-amd64"
 ```
 
 ------------------------------------------------------------------------
@@ -405,10 +404,6 @@ $ sudo update-grub
 Now your system should run under a signed kernel and upgrading GRUB2 works again. If you want to upgrade the custom kernel, you can sign the new version easily by following above steps again from step seven on. Thus BACKUP the MOK-keys (MOK.der, MOK.pem, MOK.priv).  
 
 <\details>  
-
-## SYSTEM INSTALLATION 
-
-###
 </DIV>
 </DIV>
 </DIV>  
@@ -416,6 +411,11 @@ Now your system should run under a signed kernel and upgrading GRUB2 works again
 ## :yellow_circle: $\textcolor{gold}{Intermediate\ Tutorial}$  
 
 👷🛠️🚧🏗  
+
+<details>
+<summary><b>Sign WIFI Module for Secure Boot</b></summary>  
+
+</details> 
 
 <details>
 <summary><b>Sign NVIDIA Module for Secure Boot</b></summary>  
