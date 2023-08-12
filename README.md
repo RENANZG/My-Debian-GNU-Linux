@@ -77,6 +77,30 @@
    </tr>
 </table>
 
+How to check the iso file (SHA256SUMS)  
+<details>
+<summary>Manual method</summary>  
+The SHA-256 checksum hashes in a file called SHA256SUMS in the same directory listing as the download page.  
+First open a terminal and go to the correct directory to check a downloaded iso file:  
+cd download_directory  
+Then run the following command from within the download directory.  
+sha256sum name.iso  
+sha256sum should then print out a single line after calculating the hash:  
+sdd31231c0421be56f39c7a31245c423fgcc3b048ds321a3e83d2c4d714fa9a76 *name.iso  
+Compare the hash (the alphanumeric string on left) that your machine calculated with the corresponding hash in the SHA256SUMS file.  
+</details>
+
+</table>
+<details>
+<summary>Semi-automatic method</summary>  
+First download the SHA256SUMS and SHA256SUMS.gpg files to the same directory as the iso. Then run the following commands in a terminal.  
+cd download_directory  
+sha256sum -c SHA256SUMS 2>&1 | grep OK  
+The sha256sum line should output a line such as:  
+name.iso: OK  
+If the OK for your file appears, that indicates the hash matches.  
+</details>  
+
 ## SYSTEM INSTALLATION 
 
 ### What hardware to use?  
