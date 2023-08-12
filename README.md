@@ -381,7 +381,7 @@ Now your system should run under a signed kernel and upgrading GRUB2 works again
 👷🛠️🚧🏗  
 
 <details>  
-<summary><b>Sign Custom Kernel</b></summary>  
+<summary><b>Sign Custom Secure Keys</b></summary>  
 
 </details>   
 
