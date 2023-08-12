@@ -1,6 +1,6 @@
 
 ## System Hardening Must Have
-[**Anonymous Planet** - The Hitchhiker’s Guide to Online Anonymity](https://anonymousplanet.org/) [**(PDF)**](https://anonymousplanet.org/export/guide.pdf)  
+[**Anonymous Planet** - The Hitchhiker’s Guide to Online Anonymity](https://anonymousplanet.org/) [(PDF)](https://anonymousplanet.org/export/guide.pdf)  
 [**Whonix** - Essential Host Security](https://www.whonix.org/wiki/Essential_Host_Security)  
 [**Whonix** - System Hardening Checklist](https://www.whonix.org/wiki/System_Hardening_Checklist)  
 [**Kicksecure** - Documentation](https://www.kicksecure.com/wiki/Documentation)  
@@ -10,6 +10,17 @@
 [**Virus Total** - Free virus, malware and URL online scanning](https://www.virustotal.com/gui/home/upload)  
 [**ShredOS** - Secure disk erasure/wipe](https://github.com/PartialVolume/shredos.x86_64)  
 [**Cryptomator** - Put a lock on your cloud](https://cryptomator.org/)  
+
+<table>
+  <tr>
+   <td><a href="https://anonymousplanet.org/" target="_blank"><b>Anonymous Planet</b> - The Hitchhiker’s Guide</a></td>
+   <td>Alfreds Futterkiste</td>
+  </tr>
+  <tr>
+  <td><a href="https://www.whonix.org/wiki/Essential_Host_Security" target="_blank"><b>Whonix</b> - Essential Host Security</a></td>
+  <td>Maria Anders</td>
+  </tr>
+</table>
 
 ## Essential Tools
 <table>
@@ -117,8 +128,9 @@
 </details> 
 
 
-👷🛠️🚧🏗  
 ## :green_circle: $\textcolor{green}{Essential\ Tutorial}$  
+
+👷🛠️🚧🏗  
 
 <DIV class="section" id="VERDE">
 <details>
@@ -327,9 +339,9 @@ Now your system should run under a signed kernel and upgrading GRUB2 works again
 </DIV>
 </DIV>  
 
+## :yellow_circle: $\textcolor{gold}{Intermediate\ Tutorial}$  
 
 👷🛠️🚧🏗  
-## :yellow_circle: $\textcolor{gold}{Intermediate\ Tutorial}$  
 
 <details>
 <summary><b>Sign NVIDIA Module for Secure Boot</b></summary>  
@@ -346,8 +358,10 @@ Now your system should run under a signed kernel and upgrading GRUB2 works again
 
 </details>   
 
-👷🛠️🚧🏗  
 ## :red_circle: $\textcolor{red}{Advanced\ Tutorial}$  
+
+👷🛠️🚧🏗  
+
 <details>  
 <summary><b>Sign Custom Kernel</b></summary>  
 
