@@ -149,8 +149,7 @@ Also the command modinfo prints the signature if available, for example:
 MOK - Machine Owner Key
 Keys can be added and removed in the MOK list by the user, entirely separate from the distro CA key. 
 
-Unlike Debian, Ubuntu has chosen to place their auto-generated MOK at "/var/lib/shim-signed/mok/", which some software--such as Oracle's virtualbox package (see 989463)--expect to be present. Note that using this same location may result in future conflicts.
-
+Unlike Debian, Ubuntu has chosen to place their auto-generated MOK at "/var/lib/shim-signed/mok/", which some software--such as Oracle's virtualbox package -expect to be present. Note that using this same location may result in future conflicts.
 
 If you see the key there (consisting of the files MOK.der, MOK.pem and MOK.priv) then you can use these, rather than creating your own, therefore first make sure the key doesn't exist yet:
 
@@ -162,7 +161,7 @@ To create a folder to MOK key:
 $ su -
 # mkdir -p /var/lib/shim-signed/mok/
 ```
-you can choose another place like "/etc/mok_key/" since there is no standard location at the moment.
+You can choose another place like "/etc/mok_key/" since there is no standard location at the moment.
 
 ```
 # mkdir -p /etc/mok_key/
