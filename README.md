@@ -75,16 +75,17 @@
 <summary>Secure Boot References</summary>  
 <ul>
 <li>https://wiki.debian.org/SecureBoot</li>
-<li>https://www.linuxjournal.com/content/take-control-your-pc-uefi-secure-boot</li>
+<li>https://www.rodsbooks.com/efi-bootloaders/secureboot.html#mokutil</li>
+
 <li>https://www.debian.org/security/2020-GRUB-UEFI-SecureBoot/index.en.html</li>
 <li>https://www.elstel.org/debcheckroot</li>
 <li>https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html</li>
 <li>https://stack.nexedi.com/P-VIFIB-Enhanced.UEFI.Secure.Boot.Debian</li>
+<li>https://kernel-team.pages.debian.net/kernel-handbook/</li>
 <li>https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot</li>
 <li>https://www.kicksecure.com/wiki/Verified_Boot</li>
 <li>https://github.com/nsacyber/TrustedSHIM</li>
 <li>https://github.com/nsacyber/HIRS</li>
-<li>https://www.rodsbooks.com/efi-bootloaders/secureboot.html#mokutil</li>
 <li><a href="https://media.defense.gov/2020/Sep/15/2002497594/-1/-1/0/CTR-UEFI-Secure-Boot-Customization-UOO168873-20.PDF" target="_blank">NSA - Cybersecurity Technical Report PDF</a></li>
 </ul>
 </details>  
@@ -97,7 +98,9 @@
 <li>https://github.com/Batu33TR/secureboot-mok-keys</li>
 <li>https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot</li>
 <li>https://help.ggcircuit.com/knowledge/how-to-inject-custom-secure-boot-keys-example</li>
-<li>https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250 
+<li>https://www.lastdragon.net/?p=2513</li>
+<li>https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250 </li>
+<li>https://www.linuxjournal.com/content/take-control-your-pc-uefi-secure-boot</li>
 <li>https://access.redhat.com/documentation/de-de/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel</li>
 </ul>
 </details>  
@@ -105,16 +108,19 @@
 <details>
 <summary>YouTube Video References</summary>  
 <ul>
-<li>Use UEFI Secure Boot NOW! (Trafotin)](https://www.youtube.com/watch?v=Mqh9o8YY2dg)  </li>
-<li>Best Practices for UEFI Secure Boot Customization (UEFIForum)](https://www.youtube.com/watch?v=WBemkwMHLJM)  </li>
-<li>Secure Boot from A to Z (The Linux Foundation)](https://www.youtube.com/watch?v=jtLQ8SzfrDU)  </li>
-<li>Secure Boot. In Debian. In Buster. Really (DebConf Videos)](https://www.youtube.com/watch?v=_3mwK6AXo_k)  </li>
-</ul>ul>
+<li>Use UEFI Secure Boot NOW! (Trafotin)](https://www.youtube.com/watch?v=Mqh9o8YY2dg)</li>
+<li>Best Practices for UEFI Secure Boot Customization (UEFIForum)](https://www.youtube.com/watch?v=WBemkwMHLJM)</li>
+<li>Secure Boot from A to Z (The Linux Foundation)](https://www.youtube.com/watch?v=jtLQ8SzfrDU)</li>
+<li>Secure Boot. In Debian. In Buster. Really (DebConf Videos)](https://www.youtube.com/watch?v=_3mwK6AXo_k)</li>
+<li>EFI secure boot con Debian 11 (La cueva del ultimo dragon Last Dragon)](https://www.youtube.com/watch?v=33-CL2fBvlE)</li>
+</ul>
 </details> 
 
 
 👷🛠️🚧🏗  
 ## :green_circle: $\textcolor{green}{Essential\ Tutorial}$  
+
+<DIV class="section" id="VERDE">
 <details>
 <summary><b>Sign Debian 12 Bookworm Kernel for Secure Boot (Stable)</b></summary>  
 
@@ -203,44 +209,117 @@ You will be asked for a one-time <b>password (remember and type it correctly)</b
 
 Restart your system. Changes to the MOK keys may only be confirmed directly from the console at boot time. You will encounter a blue screen of a tool called MOKManager. Select "Enroll MOK" and then "View key". Make sure it is your key you created in step 3. Afterwards continue the process and you must enter the password which you provided in step 4. Continue with booting your system.
 
-Verify your key is enrolled, if the MOK was loaded correctly, via:
+Verify your key is already enrolled, if the MOK was loaded correctly, with:
 ```
 $ sudo mokutil --list-enrolled
 or
 $ sudo mokutil --test-key /var/lib/shim-signed/mok/MOK.der
-/var/lib/shim-signed/mok/MOK.der is already enrolled
 ```
 Others commands
 ```
 # sbverify --list /boot/vmlinuz-6.1.0-11-amd64
 # sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-11-amd64
 ```
-<b>6.Sign your installed kernel</b>
+<b>6.Sign your installed kernel (or any other efi binary)</b>
 
-Sign your installed kernel (it should be at /boot/vmlinuz-[KERNEL-VERSION]):
+<DIV class="subsection" id="6.1" >
+<details>
+<summary><b>6.1 Signing the Debian kernel modules with DKMS - Modern method</b></summary> 
+
+Building Debian kernel modules with DKMS. The dkms frameworks allows building kernel modules "on the fly" on the local system instead of building them centrally on the Debian infrastructure, DKMS could automatically sign kernel updated modules. If you install the kernel modules through the apt repository, chances are that modules have already been signed by the DKMS signing key. In that case, the traditional method won't work. And the thing you only need to do is to enroll the DKMS signing key into your machine. On systems that use SecureBoot, you will need a Machine Owner Key (MOK) to load DKMS modules. Generate it, enroll it, sign modules with it and then you will be able to load the signed modules. 
+
+It depends on the dkms package:
 ```
-sudo sbsign --key MOK.priv --cert MOK.pem /boot/vmlinuz-[KERNEL-VERSION] --output /boot/vmlinuz-[KERNEL-VERSION].signed
+$ sudo apt install dkms
 ```
 
-Copy the initram of the unsigned kernel, so we also have an initram for the signed one.
-```
-sudo cp /boot/initrd.img-[KERNEL-VERSION]{,.signed}
-```
+In order for dkms to automatically sign kernel modules, it must be told which key to sign the module with. This is done by adding two configuration values to "/etc/dkms/framework.conf", adjusting paths as required:
 
+mok_signing_key="/var/lib/shim-signed/mok/MOK.priv"
+mok_certificate="/var/lib/shim-signed/mok/MOK.der"
+<\details>
+
+<DIV class="subsubsection" id="6.2.1">
+<details>
+<summary>DKMS Sign Helper</summary>  
+If these values are provided and dkms is able to build modules but does not attempt to sign them, then it is likely that sign_tool is missing. This is more common in older and/or custom kernels.
+In "/etc/dkms/framework.conf", add:
+```
+sign_tool="/etc/dkms/sign_helper.sh"
+```
+Create "/etc/dkms/sign_helper.sh" with:
+```
+/lib/modules/"$1"/build/scripts/sign-file sha512 /root/.mok/client.priv /root/.mok/client.der "$2"
+```
+Set Linux kernel info variables
+```
+$ VERSION="$(uname -r)"
+$ SHORT_VERSION="$(uname -r | cut -d . -f 1-2)"
+$ MODULES_DIR=/lib/modules/$VERSION
+$ KBUILD_DIR=/usr/lib/linux-kbuild-$SHORT_VERSION
+```
+<\details> 
+
+<DIV class="subsubsection" id="6.2.2">
+<details>
+<summary>Making DKMS modules signing by DKMS signing key usable with the secure boot</summary>  
+
+If you install the kernel modules through the apt repository, chances are that modules have already been signed by the DKMS signing key. In that case, the traditional method won't work. And the thing you only need to do is to enroll the DKMS signing key into your machine. Here is how we can do that:
+
+First, use the method mentioned in Verifying if a module is signed to check if the modules are signed by DKMS signing key.
+
+Next, find the location of the mok signing key and mok certificate. You can view the location in /etc/dkms/framework.conf, and the default location is /var/lib/dkms.
+
+Then, run the following command to enroll the key into the machine:
+```
+$ sudo mokutil --import /var/lib/dkms/mok.pub # prompts for one-time password and /var/lib/mok.pub can be changed, if mok certificate isn't located there.
+$ sudo mokutil --list-new # recheck your key will be prompted on next boot
+
+<rebooting machine then enters MOK manager EFI utility: enroll MOK, continue, confirm, enter password, reboot>
+
+$ sudo dmesg | grep cert # verify your key is loaded
+```
+<\details> 
+</DIV>
+</DIV>
+</DIV>
+
+<DIV class="subsection" id="6.2">  
+<details>  
+<summary><b>6.2 Signing the Debian kernel modules with sbsign - Traditional method</b></summary>  
+Sign your installed kernel using your key, this will create a new signed vmlinuz. Sign vmlinuz using sbsign,it should be at /boot/vmlinuz-[KERNEL-VERSION]:  
+  
+```
+$ sudo sbsign --key MOK.priv --cert MOK.pem /boot/vmlinuz-[KERNEL-VERSION] --output /boot/vmlinuz-[KERNEL-VERSION].signed
+or
+$ sbsign --key MOK.priv --cert MOK.pem "/boot/vmlinuz-$VERSION" --output "/boot/vmlinuz-$VERSION.tmp"
+$ sudo mv "/boot/vmlinuz-$VERSION.tmp" "/boot/vmlinuz-$VERSION"
+```
+Copy the initram of the unsigned kernel, so we also have an initram for the signed one.This will create a new signed vmlinuz: remove the unsigned one and restore the original name of the signed one:
+```
+$ sudo cp /boot/initrd.img-[KERNEL-VERSION]{,.signed}
+or
+$ sudo rm /boot/initrd.img-[KERNEL-VERSION]
+$ sudo mv whatever/boot/initrd.img-[KERNEL-VERSION]{,.signed} /boot/
+```
 Update your grub-config
 ```
-sudo update-grub
+$ sudo update-grub
 ```
 Reboot your system and select the signed kernel. If booting works, you can remove the unsigned kernel:
 ```
-sudo mv /boot/vmlinuz-[KERNEL-VERSION]{.signed,}
-sudo mv /boot/initrd.img-[KERNEL-VERSION]{.signed,}
-sudo update-grub
+$ sudo mv /boot/vmlinuz-[KERNEL-VERSION]{.signed,}
+$ sudo mv /boot/initrd.img-[KERNEL-VERSION]{.signed,}
+$ sudo update-grub
 ```
+Now your system should run under a signed kernel and upgrading GRUB2 works again. If you want to upgrade the custom kernel, you can sign the new version easily by following above steps again from step seven on. Thus BACKUP the MOK-keys (MOK.der, MOK.pem, MOK.priv).  
 
-Now your system should run under a signed kernel and upgrading GRUB2 works again. If you want to upgrade the custom kernel, you can sign the new version easily by following above steps again from step seven on. Thus BACKUP the MOK-keys (MOK.der, MOK.pem, MOK.priv).
+<\details>  
 
-</details> 
+</DIV>
+</DIV>
+</DIV>  
+
 
 👷🛠️🚧🏗  
 ## :yellow_circle: $\textcolor{gold}{Intermediate\ Tutorial}$  
