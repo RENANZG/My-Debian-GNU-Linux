@@ -11,18 +11,48 @@
 [**ShredOS** - Secure disk erasure/wipe](https://github.com/PartialVolume/shredos.x86_64)  
 
 ## Essential Tools
-1.[**Ventoy**](https://www.ventoy.net/en/download.html) [(Secure Boot)](https://www.ventoy.net/en/doc_secure.html)  [(Checksums)]()  
-2.[**Clonezilla**](https://clonezilla.org/downloads.php) [(Package signed by Debian or Ubuntu)]()  [(Checksums)]()  
-3.[**rEFInd**](http://www.rodsbooks.com/refind/index.html) [(Secure Boot)](https://www.rodsbooks.com/refind/secureboot.html) [(Checksums)]()  
-4.[**GParted**](https://gparted.org/livecd.php) [(Secure Boot)](https://gparted.org/download.php) [(Checksums)](https://gparted.org/gpg-verify.php)  
-5.[**ShredOS**](https://github.com/PartialVolume/shredos.x86_64) [(Secure Boot)]() [(Checksums)]()  
-6.[**Tails**](https://tails.net/news/new_domain/index.en.html) [(Secure Boot)]() [(Checksums)]()  
-7.[**KaliLinux**](https://www.kali.org/get-kali/#kali-installer-images) [(Secure Boot)]() [(Checksums)]()  
+<table>
+  <tr>
+    <td><a href="https://www.ventoy.net/en/download.html" target="_blank"><b>1. Ventoy</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+    <td><a href="https://www.ventoy.net/en/doc_secure.html" target="_blank">(Secure Boot)</a></td>
+    <td><a href="https://www.ventoy.net/en/download.html" target="_blank">(Checksums)</a></td>
+  </tr>
+<tr>
+    <td><a href="https://clonezilla.org/downloads.php" target="_blank"><b>2. Clonezilla&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></a></td>
+    <td><a href="" target="_blank">(Secure Boot)</a></td>
+    <td><a href="" target="_blank">(Checksums)</a></td>
+  </tr>
+ <tr>
+    <td><a href="http://www.rodsbooks.com/refind/index.html" target="_blank"><b>3. rEFInd</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+    <td><a href="https://www.ventoy.net/en/doc_secure.html" target="_blank">(Secure Boot)</a></td>
+    <td><a href="" target="_blank">(Checksums)</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://gparted.org/livecd.php" target="_blank"><b>4. GParted</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+    <td><a href="https://gparted.org/download.php" target="_blank">(Secure Boot)</a></td>
+    <td><a href="https://gparted.org/gpg-verify.php" target="_blank">(Checksums)</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/PartialVolume/shredos.x86_64" target="_blank"><b>5. ShredOS</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+    <td><a href="" target="_blank">(Secure Boot)</a></td>
+    <td><a href="" target="_blank">(Checksums)</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://tails.net/news/new_domain/index.en.html" target="_blank"><b>6. Tails</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+    <td><a href="" target="_blank">(Secure Boot)</a></td>
+    <td><a href="" target="_blank">(Checksums)</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://www.kali.org/get-kali/#kali-installer-images" target="_blank"><b>7. KaliLinux</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+    <td><a href="" target="_blank">(Secure Boot)</a></td>
+    <td><a href="" target="_blank">(Checksums)</a></td>
+  </tr>
+</table>
 
 ## Key File in Debian 12 (Bookworm)
 
 <details>
-<summary><b>Key File References</b></summary>  
+<summary>Key File References</summary>  
 <ul>
 <li>https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key</li>
 <li>https://blog.fidelramos.net/software/unlock-luks-usb-drive</li>
@@ -34,14 +64,10 @@
 </ul>
 </details>  
 
-## Secure Boot 
+## Debian Secure Boot 
 
 "Most modern systems will ship with SB enabled - they will not run any unsigned code by default, but it is possible to change the firmware configuration to either disable SB or to enroll extra signing keys." "If you want to build and run your own kernel (e.g. for development or debugging), then you will obviously end up making binaries that are not signed with the Debian key. If you wish to use those binaries, you will need to either sign them yourself and enroll the key used with MOK or disable SB."  
-[**YouTube Video** - Use UEFI Secure Boot NOW! (Trafotin)](https://www.youtube.com/watch?v=Mqh9o8YY2dg)  
-[**YouTube Video** - Best Practices for UEFI Secure Boot Customization (UEFIForum)](https://www.youtube.com/watch?v=WBemkwMHLJM)  
-[**YouTube Video** - Secure Boot from A to Z (The Linux Foundation)](https://www.youtube.com/watch?v=jtLQ8SzfrDU)  
-[**YouTube Video** - Secure Boot. In Debian. In Buster. Really (DebConf Videos)](https://www.youtube.com/watch?v=_3mwK6AXo_k)  
-[**NSA** - Cybersecurity Technical Report PDF](https://media.defense.gov/2020/Sep/15/2002497594/-1/-1/0/CTR-UEFI-Secure-Boot-Customization-UOO168873-20.PDF)  
+
 
 <details>
 <summary>Secure Boot References</summary>  
@@ -57,6 +83,7 @@
 <li>https://github.com/nsacyber/TrustedSHIM</li>
 <li>https://github.com/nsacyber/HIRS</li>
 <li>https://www.rodsbooks.com/efi-bootloaders/secureboot.html#mokutil</li>
+<li><a href="https://media.defense.gov/2020/Sep/15/2002497594/-1/-1/0/CTR-UEFI-Secure-Boot-Customization-UOO168873-20.PDF" target="_blank">NSA - Cybersecurity Technical Report PDF</a></li>
 </ul>
 </details>  
 
@@ -73,8 +100,19 @@
 </ul>
 </details>  
 
+<details>
+<summary>YouTube Video References</summary>  
+<ul>
+<li>Use UEFI Secure Boot NOW! (Trafotin)](https://www.youtube.com/watch?v=Mqh9o8YY2dg)  </li>
+<li>Best Practices for UEFI Secure Boot Customization (UEFIForum)](https://www.youtube.com/watch?v=WBemkwMHLJM)  </li>
+<li>Secure Boot from A to Z (The Linux Foundation)](https://www.youtube.com/watch?v=jtLQ8SzfrDU)  </li>
+<li>Secure Boot. In Debian. In Buster. Really (DebConf Videos)](https://www.youtube.com/watch?v=_3mwK6AXo_k)  </li>
+</ul>ul>
+</details> 
+
+
 👷🛠️🚧🏗  
-### **Debian Secure Boot - Essential Tutorial**
+## :green_circle: $\textcolor{green}{Essential\ Tutorial}$  
 <details>
 <summary><b>Sign Debian 12 Bookworm (Stable)</b></summary>  
 Create the public and private key for signing the kernel:
@@ -124,10 +162,13 @@ sudo update-grub
 ```
 
 Now your system should run under a signed kernel and upgrading GRUB2 works again. If you want to upgrade the custom kernel, you can sign the new version easily by following above steps again from step seven on. Thus BACKUP the MOK-keys (MOK.der, MOK.pem, MOK.priv).
+
+<a href="https://github.com/Batu33TR/secureboot-mok-keys/tree/main" target="_blank">Credits - Batu33TR</a>
+
 </details> 
 
 👷🛠️🚧🏗  
-### **Debian Secure Boot - Intermediate Tutorial**
+## :yellow_circle: $\textcolor{gold}{Intermediate\ Tutorial}$  
 <details>
 <summary><b>Sign VirtualBox</b></summary>  
 
@@ -141,15 +182,14 @@ Now your system should run under a signed kernel and upgrading GRUB2 works again
 <details>
 <summary><b>Sign Ventoy</b></summary>  
 
-</details> 
+</details>   
 
 👷🛠️🚧🏗  
-### **Debian Secure Boot - Advanced Tutorial**
-
-<details>
+## :red_circle: $\textcolor{red}{Advanced\ Tutorial}$  
+<details>  
 <summary><b>Sign Custom Kernel</b></summary>  
 
-</details> 
+</details>   
 
 
 
