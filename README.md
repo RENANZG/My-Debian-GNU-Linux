@@ -161,6 +161,7 @@ https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page
 <li>https://github.com/sitmsiteman/secure-boot-in-debian-based-distro</li>
 <li>https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471</li>
 <li>https://github.com/Batu33TR/secureboot-mok-keys</li>
+<li>https://help.eset.com/efs/8.1/en-US/secure-boot.html</li>
 <li>https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot</li>
 <li>https://help.ggcircuit.com/knowledge/how-to-inject-custom-secure-boot-keys-example</li>
 <li>https://www.lastdragon.net/?p=2513</li>
