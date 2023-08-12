@@ -9,6 +9,7 @@
 [**NSA GOV** - Cybersecurity Advisories & Guidance](https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance)  
 [**Virus Total** - Free virus, malware and URL online scanning](https://www.virustotal.com/gui/home/upload)  
 [**ShredOS** - Secure disk erasure/wipe](https://github.com/PartialVolume/shredos.x86_64)  
+[**Cryptomator** - Put a lock on your cloud](https://cryptomator.org/)  
 
 ## Essential Tools
 <table>
