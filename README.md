@@ -407,15 +407,15 @@ Now your system should run under a signed kernel and upgrading GRUB2 works again
 
 Verifying if a module is signed. The command modinfo prints the signature if available, for example:
 ```
-$ sudo dmesg | grep cert
-```
-```
 $ sudo modinfo /boot/vmlinuz-6.1.0-11-amd64
 ```
-<\details>  
-
-
-
+Others commands
+```
+$ sudo dmesg | grep cert
+$ sudo sbverify --list /boot/vmlinuz-6.1.0-11-amd64
+$ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-11-amd64
+```
+</details>  
 </DIV>
 </DIV>
 </DIV>  
