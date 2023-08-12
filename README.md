@@ -304,8 +304,9 @@ $ sudo apt install dkms
 
 In order for dkms to automatically sign kernel modules, it must be told which key to sign the module with. This is done by adding two configuration values to "/etc/dkms/framework.conf", adjusting paths as required:
 
-mok_signing_key="/var/lib/shim-signed/mok/MOK.priv"
-mok_certificate="/var/lib/shim-signed/mok/MOK.der"
+  mok_signing_key="/var/lib/shim-signed/mok/MOK.priv"
+  mok_certificate="/var/lib/shim-signed/mok/MOK.der"
+
 <\details>
 
 <DIV class="subsubsection" id="6.2.1">
@@ -404,7 +405,17 @@ $ sudo update-grub
 ```
 Now your system should run under a signed kernel and upgrading GRUB2 works again. If you want to upgrade the custom kernel, you can sign the new version easily by following above steps again from step seven on. Thus BACKUP the MOK-keys (MOK.der, MOK.pem, MOK.priv).  
 
+Verifying if a module is signed. The command modinfo prints the signature if available, for example:
+```
+$ sudo dmesg | grep cert
+```
+```
+$ sudo modinfo /boot/vmlinuz-6.1.0-11-amd64
+```
 <\details>  
+
+
+
 </DIV>
 </DIV>
 </DIV>  
