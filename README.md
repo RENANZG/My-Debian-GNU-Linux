@@ -54,6 +54,7 @@
 <details>
 <summary>Key File References</summary>  
 <ul>
+ <li>https://github.com/aomgiwjc/Unix-Bootstrap-Installs/wiki/Debian-BTRFS-Luks-Encryption-Installation-Method---Jan.-2023</li>
 <li>https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key</li>
 <li>https://blog.fidelramos.net/software/unlock-luks-usb-drive</li>
 <li>https://tqdev.com/2022-luks-with-usb-unlock</li>
