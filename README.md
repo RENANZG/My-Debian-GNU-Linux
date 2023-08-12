@@ -116,29 +116,103 @@
 ## :green_circle: $\textcolor{green}{Essential\ Tutorial}$  
 <details>
 <summary><b>Sign Debian 12 Bookworm (Stable)</b></summary>  
-Create the public and private key for signing the kernel:
+
+<b>1.First steps <b/>   
+
+Has the system booted via Secure Boot?
+```
+$ sudo mokutil --sb-state
+SecureBoot enabled
+```
+or
+```
+$ su -
+Password
+# mokutil --sb-state
+SecureBoot enabled
+```
+
+What keys are on my system?
+```
+sudo mokutil --list-enrolled 
+```
+
+The command modinfo prints the signature if available
+```
+# modinfo /lib/modules/5.7.6/kernel/mm/zsmalloc.ko 
+```
+
+Others commands
+```
+# sbverify --list /boot/vmlinuz-6.1.0-11-amd64
+# sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-11-amd64
+```
+
+<b>2.Place to auto-generated MOK<b/>
+
+MOK - Machine Owner Key
+Keys can be added and removed in the MOK list by the user, entirely separate from the distro CA key. 
+
+Unlike Debian, Ubuntu has chosen to place their auto-generated MOK at "/var/lib/shim-signed/mok/", which some software--such as Oracle's virtualbox package (see 989463)--expect to be present. Note that using this same location may result in future conflicts.
+
+
+If you see the key there (consisting of the files MOK.der, MOK.pem and MOK.priv) then you can use these, rather than creating your own, therefore first make sure the key doesn't exist yet:
 
 ```
-openssl req -config ./mokconfig.cnf -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "MOK.priv" -out "MOK.der"
+$ ls /var/lib/shim-signed/mok/
 ```
+To create a folder to MOK key:
+```
+$ su -
+# mkdir -p /var/lib/shim-signed/mok/
+```
+you can choose another place like "/etc/mok_key/" since there is no standard location at the moment.
+
+```
+# mkdir -p /etc/mok_key/
+```
+
+<b>3.Generating a new key<b/>
+
+Before you create the public and private key for signing the kernel, you need to access the folder you created to be the destination of the keys:
+```
+# cd /var/lib/shim-signed/mok/
+or
+# cd /etc/mok_key/
+```
+Then create the public and private key for signing the kernel:
+```
+# openssl req -config ./mokconfig.cnf -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "MOK.priv" -out "MOK.der" -subj "/CN=My Name/"
+```
+### # openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -days 36500 -subj "/CN=My Name/"
 
 Convert the key also to PEM format (mokutil needs DER, sbsign needs PEM):
 ```
-openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem
+# openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem
 ```
+<b>4.Enrolling your key<b/>
 
 Enroll the key to your shim installation:
-```
-sudo mokutil --import MOK.der
-```
 
-You will be asked for a password, you will just use it to confirm your key selection in the next step, so choose any.
-
-Restart your system. You will encounter a blue screen of a tool called MOKManager. Select "Enroll MOK" and then "View key". Make sure it is your key you created in step 2. Afterwards continue the process and you must enter the password which you provided in step 4. Continue with booting your system.
-
-Verify your key is enrolled via:
 ```
-sudo mokutil --list-enrolled
+$ sudo mokutil --import MOK.der
+```
+```
+$ sudo mokutil --import /var/lib/shim-signed/mok/MOK.der # prompts for one-time password
+
+```
+You will be asked for a one-time <b>password (remember and type it correctly)</b>, you will just use it to confirm your key selection in the next step, so choose any.
+
+<b>5.Restart</b>
+
+Restart your system. Changes to the MOK keys may only be confirmed directly from the console at boot time. You will encounter a blue screen of a tool called MOKManager. Select "Enroll MOK" and then "View key". Make sure it is your key you created in step 3. Afterwards continue the process and you must enter the password which you provided in step 4. Continue with booting your system.
+
+Verify your key is enrolled, if the MOK was loaded correctly, via:
+```
+$ sudo mokutil --list-enrolled
+or
+$ sudo mokutil --test-key /var/lib/shim-signed/mok/MOK.der
+/var/lib/shim-signed/mok/MOK.der is already enrolled
 ```
 
 Sign your installed kernel (it should be at /boot/vmlinuz-[KERNEL-VERSION]):
@@ -164,19 +238,18 @@ sudo update-grub
 
 Now your system should run under a signed kernel and upgrading GRUB2 works again. If you want to upgrade the custom kernel, you can sign the new version easily by following above steps again from step seven on. Thus BACKUP the MOK-keys (MOK.der, MOK.pem, MOK.priv).
 
-<a href="https://github.com/Batu33TR/secureboot-mok-keys/tree/main" target="_blank">Credits - Batu33TR</a>
-
 </details> 
 
 👷🛠️🚧🏗  
 ## :yellow_circle: $\textcolor{gold}{Intermediate\ Tutorial}$  
+
 <details>
-<summary><b>Sign VirtualBox</b></summary>  
+<summary><b>Sign NVIDIA</b></summary>  
 
 </details> 
 
 <details>
-<summary><b>Sign NVIDIA</b></summary>  
+<summary><b>Sign VirtualBox</b></summary>  
 
 </details> 
 
