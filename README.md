@@ -286,12 +286,19 @@ $ sudo dmesg | grep cert # verify your key is loaded
 
 <DIV class="subsection" id="6.2">  
 <details>  
-<summary><b>6.2 Signing the Debian kernel modules with sbsign - Traditional method</b></summary>  
-Sign your installed kernel using your key, this will create a new signed vmlinuz. Sign vmlinuz using sbsign,it should be at /boot/vmlinuz-[KERNEL-VERSION]:  
-  
+<summary><b>6.2 Signing the Debian kernel modules with sbsigntool - Traditional method</b></summary>  
+Sign the installed Kernel using the key created according to the location you gave it, this will create a new signed vmlinuz. Sign vmlinuz using sbsign,it should be at /boot/vmlinuz-[KERNEL-VERSION]:
+
+To check your Kernel version, you can also use the command:
+```
+$ uname -r
+```
+Signing vmlinuz using sbsign:
 ```
 $ sudo sbsign --key MOK.priv --cert MOK.pem /boot/vmlinuz-[KERNEL-VERSION] --output /boot/vmlinuz-[KERNEL-VERSION].signed
-or
+for example
+$ sbsign --key "/var/lib/shim-signed/mok/MOK.priv" --cert "/var/lib/shim-signed/mok/MOK.pem" "/boot/vmlinuz-6.1.0-11-amd64" --output "/boot/vmlinuz-6.1.0-11-amd64.tmp"
+or alternatively
 $ sbsign --key MOK.priv --cert MOK.pem "/boot/vmlinuz-$VERSION" --output "/boot/vmlinuz-$VERSION.tmp"
 $ sudo mv "/boot/vmlinuz-$VERSION.tmp" "/boot/vmlinuz-$VERSION"
 ```
