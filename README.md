@@ -189,7 +189,7 @@ https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page
 
 <DIV class="section" id="VERDE">
 <details>
-<summary><b>Sign Debian 12 Bookworm Kernel for Secure Boot (Stable)</b></summary>  
+<summary><b>Sign Debian 12 (Bookworm) Kernel for Secure Boot</b></summary>  
 
 <b>1.First steps <b/>   
 
@@ -293,7 +293,7 @@ Others commands
 
 <DIV class="subsection" id="6.1" >
 <details>
-<summary><b>6.1 Signing the Debian kernel modules with DKMS - Modern method</b></summary> 
+<summary><b>6.1 Modern method: </b> Signing the Debian kernel modules with DKMS</summary> 
 
 Building Debian kernel modules with DKMS. The dkms frameworks allows building kernel modules "on the fly" on the local system instead of building them centrally on the Debian infrastructure, DKMS could automatically sign kernel updated modules. If you install the kernel modules through the apt repository, chances are that modules have already been signed by the DKMS signing key. In that case, the traditional method won't work. And the thing you only need to do is to enroll the DKMS signing key into your machine. On systems that use SecureBoot, you will need a Machine Owner Key (MOK) to load DKMS modules. Generate it, enroll it, sign modules with it and then you will be able to load the signed modules. 
 
@@ -356,7 +356,7 @@ $ sudo dmesg | grep cert # verify your key is loaded
 
 <DIV class="subsection" id="6.2">  
 <details>  
-<summary><b>6.2 Signing the Debian kernel modules with sbsigntool - Traditional method</b></summary>  
+<summary><b>6.2 Traditional method:</b> signing the Debian kernel modules with sbsigntool</summary>  
 Sign the installed Kernel using the key created according to the location you gave it, this will create a new signed vmlinuz. Sign vmlinuz using sbsign,it should be at /boot/vmlinuz-[KERNEL-VERSION]:
 
 To check your Kernel version, you can also use the command:
