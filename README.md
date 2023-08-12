@@ -127,7 +127,7 @@ SecureBoot enabled
 or
 ```
 $ su -
-Password
+Password:
 # mokutil --sb-state
 SecureBoot enabled
 ```
@@ -137,16 +137,12 @@ What keys are on my system?
 sudo mokutil --list-enrolled 
 ```
 
-The command modinfo prints the signature if available
+Also the command modinfo prints the signature if available, for example:
 ```
-# modinfo /lib/modules/5.7.6/kernel/mm/zsmalloc.ko 
+# modinfo /lib/modules/6.1.0-11-amd64/kernel/mm/zsmalloc.ko 
 ```
 
-Others commands
-```
-# sbverify --list /boot/vmlinuz-6.1.0-11-amd64
-# sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-11-amd64
-```
+
 
 <b>2.Place to auto-generated MOK<b/>
 
@@ -203,7 +199,7 @@ $ sudo mokutil --import /var/lib/shim-signed/mok/MOK.der # prompts for one-time 
 ```
 You will be asked for a one-time <b>password (remember and type it correctly)</b>, you will just use it to confirm your key selection in the next step, so choose any.
 
-<b>5.Restart</b>
+<b>5.Restart and Verify</b>
 
 Restart your system. Changes to the MOK keys may only be confirmed directly from the console at boot time. You will encounter a blue screen of a tool called MOKManager. Select "Enroll MOK" and then "View key". Make sure it is your key you created in step 3. Afterwards continue the process and you must enter the password which you provided in step 4. Continue with booting your system.
 
@@ -214,6 +210,12 @@ or
 $ sudo mokutil --test-key /var/lib/shim-signed/mok/MOK.der
 /var/lib/shim-signed/mok/MOK.der is already enrolled
 ```
+Others commands
+```
+# sbverify --list /boot/vmlinuz-6.1.0-11-amd64
+# sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-11-amd64
+```
+<b>6.Sign your installed kernel</b>
 
 Sign your installed kernel (it should be at /boot/vmlinuz-[KERNEL-VERSION]):
 ```
