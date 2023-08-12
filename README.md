@@ -115,7 +115,7 @@
 👷🛠️🚧🏗  
 ## :green_circle: $\textcolor{green}{Essential\ Tutorial}$  
 <details>
-<summary><b>Sign Debian 12 Bookworm (Stable)</b></summary>  
+<summary><b>Sign Debian 12 Bookworm Kernel for Secure Boot (Stable)</b></summary>  
 
 <b>1.First steps <b/>   
 
@@ -246,17 +246,17 @@ Now your system should run under a signed kernel and upgrading GRUB2 works again
 ## :yellow_circle: $\textcolor{gold}{Intermediate\ Tutorial}$  
 
 <details>
-<summary><b>Sign NVIDIA</b></summary>  
+<summary><b>Sign NVIDIA Module for Secure Boot</b></summary>  
 
 </details> 
 
 <details>
-<summary><b>Sign VirtualBox</b></summary>  
+<summary><b>Sign VirtualBox Module for Secure Boot</b></summary>  
 
 </details> 
 
 <details>
-<summary><b>Sign Ventoy</b></summary>  
+<summary><b>Sign Ventoy MOK</b></summary>  
 
 </details>   
 
