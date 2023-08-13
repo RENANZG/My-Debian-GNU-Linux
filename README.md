@@ -430,12 +430,12 @@ $ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-11-amd64
 
 <details>
 <summary><b>Sign NVIDIA Module for Secure Boot</b></summary>  
-
+https://github.com/NVIDIA/open-gpu-kernel-modules  
 </details> 
 
 <details>
 <summary><b>Sign VirtualBox Module for Secure Boot</b></summary>  
-
+https://gist.github.com/reillysiemens/ac6bea1e6c7684d62f544bd79b2182a4  
 </details> 
 
 <details>
