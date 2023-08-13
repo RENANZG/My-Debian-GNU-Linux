@@ -164,6 +164,7 @@ As a practical matter, if you want to use Shim, you have two choices: You can ru
 <li>https://github.com/sitmsiteman/secure-boot-in-debian-based-distro</li>
 <li>https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471</li>
 <li>https://github.com/Batu33TR/secureboot-mok-keys</li>
+<li>https://askubuntu.com/questions/762254/why-do-i-get-required-key-not-available-when-install-3rd-party-kernel-modules</li>
 <li>https://help.eset.com/efs/8.1/en-US/secure-boot.html</li>
 <li>https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot</li>
 <li>https://help.ggcircuit.com/knowledge/how-to-inject-custom-secure-boot-keys-example</li>
@@ -419,6 +420,30 @@ $ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-11-amd64
 </DIV>
 </DIV>  
 
+<details>
+<summary><b>Reset Secure Boot Key for Kernel or Modules</b></summary>  
+
+  **Reset Key for Kernel**
+
+  **Reset Key for Modules**
+---UNDER WORK---
+Uninstall the module, if it was made with "make".
+```
+cd ~/realtekwifiborad
+sudo make uninstall
+```
+Reset de modules and unload them in Kernel
+```
+sudo depmod 
+sudo update-initramfs -u -k all
+```
+Reset MOK
+```
+sudo mokutil --disable-validation
+```
+
+</details>   
+
 ## :yellow_circle: $\textcolor{gold}{Intermediate\ Tutorial}$  
 
 👷🛠️🚧🏗  
@@ -437,6 +462,7 @@ https://github.com/NVIDIA/open-gpu-kernel-modules
 <summary><b>Sign VirtualBox Module for Secure Boot</b></summary>  
 
 https://superuser.com/questions/1438279/how-to-sign-a-kernel-module-ubuntu-18-04  
+https://askubuntu.com/questions/760671/could-not-load-vboxdrv-after-upgrade-to-ubuntu-16-04-and-i-want-to-keep-secur/768310#768310  
 https://stegard.net/2016/10/virtualbox-secure-boot-ubuntu-fail  
 https://gist.github.com/reillysiemens/ac6bea1e6c7684d62f544bd79b2182a4  
 
@@ -485,6 +511,8 @@ modprobe vboxdrv
 <summary><b>Sign Ventoy MOK</b></summary>  
 
 </details>   
+
+
 
 ## :red_circle: $\textcolor{red}{Advanced\ Tutorial}$  
 
