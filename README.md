@@ -189,9 +189,9 @@ As a practical matter, if you want to use Shim, you have two choices: You can ru
 
 ## :green_circle: $\textcolor{green}{Essential\ Tutorial}$  
 
-👷🛠️🚧🏗  
+👷🛠️🚧🏗  ---UNDER WORK---  
 
-<DIV class="section" id="VERDE">
+<DIV class="section" id="VERDE">[
 <details>
 <summary><b>Sign Debian 12 (Bookworm) Kernel for Secure Boot</b></summary>  
 <p></p>
@@ -424,9 +424,27 @@ $ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-11-amd64
 <summary><b>Reset Secure Boot Key for Kernel or Modules</b></summary>  
 
   **Reset Key for Kernel**
-
-  **Reset Key for Modules**
 ---UNDER WORK---
+
+  **Reset MOK Keys for Modules**
+---UNDER WORK---
+
+Backup. Exports to list (ideally store it on an encrypted external storage medium).
+```
+$ mokutil --export
+```
+Shows all keys.
+```
+$ ls -1 MOK*
+```
+Shows you keys enrolled.
+```
+$ mokutil --list-enrolled
+```
+Delete those not enrolled to maintain secure boot.
+```
+$ mokutil --delete MOK-0001.der
+```
 Uninstall the module, if it was made with "make".
 ```
 cd ~/realtekwifiborad
@@ -512,8 +530,6 @@ modprobe vboxdrv
 
 </details>   
 
-
-
 ## :red_circle: $\textcolor{red}{Advanced\ Tutorial}$  
 
 👷🛠️🚧🏗  
@@ -522,7 +538,10 @@ modprobe vboxdrv
 <summary><b>Sign Custom Secure Keys</b></summary>  
 
 </details>   
-
+<details>  
+<summary><b>Sign with TPM2.0</b></summary>  
+https://github.com/squarooticus/efi-measured-boot
+</details>  
 
 ## SOFTWARES  
 
