@@ -51,9 +51,9 @@
     <td><a href="" target="_blank">(Checksums)</a></td>
   </tr>
  <tr>
-    <td><a href="http://www.rodsbooks.com/refind/index.html" target="_blank"><b>3. rEFInd</b></a></td>
-    <td><a href="https://www.ventoy.net/en/doc_secure.html" target="_blank">(Secure Boot)</a></td>
-    <td><a href="" target="_blank">(Checksums)</a></td>
+    <td><a href="http://www.rodsbooks.com/refind/getting.html" target="_blank"><b>3. rEFInd</b></a></td>
+    <td><a href="http://www.rodsbooks.com/refind/secureboot.html" target="_blank">(Secure Boot)</a></td>
+    <td><a href="https://sourceforge.net/p/refind/code/ci/master/tree/" target="_blank">(Checksums)</a></td>
     <td><a href="" target="_blank"></a></td>
     <td><a href="" target="_blank"></a></td>
     <td><a href="" target="_blank"></a></td>
@@ -133,19 +133,22 @@ https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page
 
 ## Debian Secure Boot 
 
-"Most modern systems will ship with SB enabled - they will not run any unsigned code by default, but it is possible to change the firmware configuration to either disable SB or to enroll extra signing keys." "If you want to build and run your own kernel (e.g. for development or debugging), then you will obviously end up making binaries that are not signed with the Debian key. If you wish to use those binaries, you will need to either sign them yourself and enroll the key used with MOK or disable SB."  
+"Most modern systems will ship with SB enabled - they will not run any unsigned code by default, but it is possible to change the firmware configuration to either disable SB or to enroll extra signing keys." "The whole point of Secure Boot is to prevent malware from gaining control of the computer. Therefore, when booting with Secure Boot active, Fedora 18 and later, Ubuntu 16.04 and later, and probably other distributions restrict actions that some Linux users take for granted. For instance, Linux kernel modules must be signed, which complicates use of third-party kernel drivers, such as Nvidia's and AMD/ATI's proprietary video drivers. More recent kernels may, if Secure Boot is active, also check that they were launched from a boot loader that honors Secure Boot, and shut down if this was not the case. (This check can prevent the use of ELILO, SYSLINUX, or other boot loaders that don't honor Secure Boot, even if the boot loader itself is signed.) To launch a locally-compiled kernel, you must sign it with a MOK and register that MOK with the system. (In both cases, you can register a hash rather than sign the binary; but this approach results in an ever-growing database in NVRAM, which is undesirable.) The extent of such restrictions is entirely up to those who develop and sign the boot loader launched by Shim and the kernel launched by that boot loader, though. Some distributions ship kernels that are relatively unencumbered by added security restrictions.
 
+As a practical matter, if you want to use Shim, you have two choices: You can run a distribution that provides its own signed version of Shim, such as Fedora 18 or later or Ubuntu 12.10 or later; or you can run a signed version from such a distribution or from another source, add your own MOK, and sign whatever binaries you like. This first option is quite straightforward if you happen to want to use a distribution that ships with Shim, and it requires little extra elaboration." "If you want to build and run your own kernel (e.g. for development or debugging), then you will obviously end up making binaries that are not signed with the Debian key. If you wish to use those binaries, you will need to either sign them yourself and enroll the key used with MOK or disable SB."  
 
 <details>
 <summary>Secure Boot References</summary>  
 <ul>
-<li>https://wiki.debian.org/SecureBoot</li>
+</li>https://www.kernel.org/doc/html/v4.20/admin-guide/module-signing.html</li>
 <li>https://www.rodsbooks.com/efi-bootloaders/secureboot.html#mokutil</li>
-
+<li>https://wiki.debian.org/SecureBoot</li>
 <li>https://www.debian.org/security/2020-GRUB-UEFI-SecureBoot/index.en.html</li>
 <li>https://www.elstel.org/debcheckroot</li>
 <li>https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html</li>
 <li>https://stack.nexedi.com/P-VIFIB-Enhanced.UEFI.Secure.Boot.Debian</li>
+<li>https://wiki.ubuntu.com/UEFI/SecureBoot</li>
+<li>https://wiki.ubuntu.com/UEFI/SecureBoot/DKMS</li>
 <li>https://kernel-team.pages.debian.net/kernel-handbook/</li>
 <li>https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot</li>
 <li>https://www.kicksecure.com/wiki/Verified_Boot</li>
@@ -205,8 +208,6 @@ or
 $ sudo mokutil --sb-state
 SecureBoot enabled
 ```
-
-
 What keys are on my system?
 ```
 sudo mokutil --list-enrolled 
@@ -220,11 +221,8 @@ Also the command modinfo prints the signature if available, for example:
 <b>2.Place to auto-generated MOK<b/>
 
 MOK - Machine Owner Key
-Keys can be added and removed in the MOK list by the user, entirely separate from the distro CA key. 
 
-Unlike Debian, Ubuntu has chosen to place their auto-generated MOK at "/var/lib/shim-signed/mok/", which some software--such as Oracle's virtualbox package -expect to be present. Note that using this same location may result in future conflicts.
-
-If you see the key there (consisting of the files MOK.der, MOK.pem and MOK.priv) then you can use these, rather than creating your own, therefore first make sure the key doesn't exist yet:
+"The use of mokutil that's most relevant to this page is to import a MOK. In this context, importing refers to storing a MOK in the computer's NVRAM, along with a flag to tell Shim and MokUtil that the MOK is there and ready to be enlisted when you next reboot the computer. Keys can be added and removed in the MOK list by the user, entirely separate from the distro CA key. Unlike Debian, Ubuntu has chosen to place their auto-generated MOK at "/var/lib/shim-signed/mok/", which some software--such as Oracle's virtualbox package -expect to be present. Note that using this same location may result in future conflicts. Warning: The MOK.key file is extremely sensitive! An attacker who gains access to it could generate binaries that your computer would accept as authorized. You should change permissions to prevent unauthorized access, and ideally store it on an encrypted external storage medium and unplug it when you're not signing binaries.If you see the key there (consisting of the files MOK.der, MOK.pem and MOK.priv) then you can use these, rather than creating your own, therefore first make sure the key doesn't exist yet."
 
 ```
 $ ls /var/lib/shim-signed/mok/
@@ -273,7 +271,7 @@ $ sudo mokutil --import MOK.der
 $ sudo mokutil --import /var/lib/shim-signed/mok/MOK.der # prompts for one-time password
 
 ```
-You will be asked for a one-time <b>password (remember and type it correctly)</b>, you will just use it to confirm your key selection in the next step, so choose any.
+You will be asked for a one-time <b>password (remember and type it correctly)</b>, you will just use it to confirm your key selection in the next step (you won't need this password beyond this point, though) , so choose any.
 
 <b>5.Restart and Verify</b>
 
