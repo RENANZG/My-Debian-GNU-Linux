@@ -133,10 +133,12 @@ https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page
 
 ## Debian Secure Boot 
 
+<details>
+<summary><b>Introduction</b></summary>  
 "Most modern systems will ship with SB enabled - they will not run any unsigned code by default, but it is possible to change the firmware configuration to either disable SB or to enroll extra signing keys." "The whole point of Secure Boot is to prevent malware from gaining control of the computer. Therefore, when booting with Secure Boot active, Fedora 18 and later, Ubuntu 16.04 and later, and probably other distributions restrict actions that some Linux users take for granted. For instance, Linux kernel modules must be signed, which complicates use of third-party kernel drivers, such as Nvidia's and AMD/ATI's proprietary video drivers. More recent kernels may, if Secure Boot is active, also check that they were launched from a boot loader that honors Secure Boot, and shut down if this was not the case. (This check can prevent the use of ELILO, SYSLINUX, or other boot loaders that don't honor Secure Boot, even if the boot loader itself is signed.) To launch a locally-compiled kernel, you must sign it with a MOK and register that MOK with the system. (In both cases, you can register a hash rather than sign the binary; but this approach results in an ever-growing database in NVRAM, which is undesirable.) The extent of such restrictions is entirely up to those who develop and sign the boot loader launched by Shim and the kernel launched by that boot loader, though. Some distributions ship kernels that are relatively unencumbered by added security restrictions.
 
 As a practical matter, if you want to use Shim, you have two choices: You can run a distribution that provides its own signed version of Shim, such as Fedora 18 or later or Ubuntu 12.10 or later; or you can run a signed version from such a distribution or from another source, add your own MOK, and sign whatever binaries you like. This first option is quite straightforward if you happen to want to use a distribution that ships with Shim, and it requires little extra elaboration." "If you want to build and run your own kernel (e.g. for development or debugging), then you will obviously end up making binaries that are not signed with the Debian key. If you wish to use those binaries, you will need to either sign them yourself and enroll the key used with MOK or disable SB."  
-
+</details>  
 <details>
 <summary>Secure Boot References</summary>  
 <ul>
@@ -429,6 +431,16 @@ $ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-11-amd64
   **Reset MOK Keys for Modules**
 ---UNDER WORK---
 
+
+
+
+```
+```
+
+```
+$ mokuitil --sb-state
+SecureBoot disabled
+```
 Backup. Exports to list (ideally store it on an encrypted external storage medium).
 ```
 $ mokutil --export
@@ -445,7 +457,7 @@ Delete those not enrolled to maintain secure boot.
 ```
 $ mokutil --delete MOK-0001.der
 ```
-Uninstall the module, if it was made with "make".
+Uninstall the modules, if it was made with "make".
 ```
 cd ~/realtekwifiborad
 sudo make uninstall
@@ -455,10 +467,8 @@ Reset de modules and unload them in Kernel
 sudo depmod 
 sudo update-initramfs -u -k all
 ```
-Reset MOK
-```
-sudo mokutil --disable-validation
-```
+
+
 
 </details>   
 
