@@ -120,10 +120,10 @@ http://www.rodsbooks.com/linux-uefi/
 https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system  
 https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page   
 
-### Encryption - Key File in Debian 12 (Bookworm)
+**Encryption** 
 
 <details>
-<summary>Key File References</summary>  
+<summary>Key File in Debian 12 (Bookworm) References</summary>  
 <ul>
  <li>https://github.com/aomgiwjc/Unix-Bootstrap-Installs/wiki/Debian-BTRFS-Luks-Encryption-Installation-Method---Jan.-2023</li>
 <li>https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key</li>
