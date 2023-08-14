@@ -117,6 +117,8 @@ Linux on UEFI:A Quick Installation Guide
 http://www.rodsbooks.com/linux-uefi/  
 Linux Dabbler - Scripts to run after installing debian  
 https://github.com/linuxdabbler/debian-install-scripts  
+Nilsmeyer - An ansible role for bootstrapping new Debian based systems, including setting up partitions, file systems, encryption (luks), RAID and LVM  
+https://github.com/nilsmeyer/ansible-debootstrap  
 **Partitioning scenarios: advantages and disadvantages**  
 https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system  
 https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page   
