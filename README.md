@@ -54,9 +54,9 @@
      <td><a href="https://clonezilla.org/downloads.php" target="_blank"><b>3. Clonezilla</b></a></td>
     <td><a href="https://clonezilla.org/downloads.php" target="_blank">(Secure Boot)</a></td>
     <td><a href="https://clonezilla.org/downloads.php" target="_blank">(Checksums)</a></td>
-    <td><a href="https://www.openpgp.org/" target="_blank">8. OpenPGP</a></td>
-    <td><a href="https://github.com/OpenPGP/openpgp.org" target="_blank"></a></td>
-    <td><a href="https://github.com/OpenPGP/openpgp.org" target="_blank"></a></td>
+    <td><a href="https://www.openpgp.org/software/" target="_blank"><b>8. OpenPGP</b></a></td>
+    <td><a href="https://github.com/OpenPGP/openpgp.org" target="_blank">(Git Hub)</a></td>
+    <td><a href="https://keys.openpgp.org/" target="_blank">(Checksums)</a></td>
   </tr>
   <tr>
     <td><a href="https://gparted.org/livecd.php" target="_blank"><b>4. GParted</b></a></td>
