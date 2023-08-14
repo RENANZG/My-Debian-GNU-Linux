@@ -102,7 +102,7 @@ If the OK for your file appears, that indicates the hash matches.
 
 ## SYSTEM INSTALLATION 
 
-### What hardware to use?  
+### ◼️ Hardware
 
 **Points to check**  
 1.Security  
@@ -110,7 +110,7 @@ If the OK for your file appears, that indicates the hash matches.
 3.Performance  
 4.Cost benefit  
 
-### Installation  
+### ◼️ Installation  
 
 **Installation Guide**  
 Linux on UEFI:A Quick Installation Guide  
