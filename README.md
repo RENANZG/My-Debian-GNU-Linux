@@ -115,7 +115,8 @@ If the OK for your file appears, that indicates the hash matches.
 **Installation Guide**  
 Linux on UEFI:A Quick Installation Guide  
 http://www.rodsbooks.com/linux-uefi/  
-
+Linux Dabbler - Scripts to run after installing debian  
+https://github.com/linuxdabbler/debian-install-scripts  
 **Partitioning scenarios: advantages and disadvantages**  
 https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system  
 https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page   
