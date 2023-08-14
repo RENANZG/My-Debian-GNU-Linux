@@ -206,11 +206,15 @@ https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page
 ## :green_circle: $\textcolor{green}{Essential\ Tutorial}$  
 
 👷🛠️🚧🏗  ---UNDER WORK---  
-
+```diff
+- Debian Bug report logs - #989463 please align shim-signed dkms behaviour with Ubuntu  
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989463  
+```  
 <DIV class="section" id="VERDE">
 <details>
 <summary><b>Sign Debian 12 (Bookworm) Kernel for Secure Boot</b></summary>  
 <p></p>
+
 <b>1.First steps <b/>   
 
 Has the system booted via Secure Boot?
