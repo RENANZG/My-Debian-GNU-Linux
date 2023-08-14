@@ -209,6 +209,8 @@ https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page
 ```diff
 - Debian Bug report logs - #989463 please align shim-signed dkms behaviour with Ubuntu  
 - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989463  
+- Debian Bug report logs - #928300 shim-signed: secure boot via removable media path unavailable  
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=928300  
 ```  
 <DIV class="section" id="VERDE">
 <details>
@@ -507,6 +509,13 @@ sudo update-initramfs -u -k all
 👷🛠️🚧🏗  
 
 <details>
+<summary><b>rEFInd Bootloader</b></summary>  
+
+https://wiki.ubuntu.com/EFIBootLoaders  
+
+</details>   
+
+<details>
 <summary><b>Sign WIFI Module for Secure Boot</b></summary>  
 
 </details> 
@@ -565,8 +574,10 @@ modprobe vboxdrv
 ```
 </details> 
 
+
+
 <details>
-<summary><b>Sign Ventoy MOK</b></summary>  
+<summary><b>Sign Ventoy</b></summary>  
 
 </details>   
 
@@ -579,18 +590,21 @@ modprobe vboxdrv
 https://github.com/nsacyber/Hardware-and-Firmware-Security-Guidance/blob/master/secureboot/Linux.md  
 </details>   
 <details>  
-<summary><b>Sign with TPM2.0</b></summary>  
+<summary><b>Sign with TPM 2.0</b></summary>  
 https://github.com/squarooticus/efi-measured-boot  
 </details>  
 
 ## SOFTWARES  
 
+### Browser  
 
-### Managing Passwords
+**Extensions**
 
+### Passwords  
+https://keepassxc.org/  
+### Email  
+https://emailselfdefense.fsf.org/en/workshops.html  
 
-### Email
-https://emailselfdefense.fsf.org/en/workshops.html
-
+### Utility  
 
   
