@@ -608,6 +608,7 @@ https://keepassxc.org/
 ### Email  
 https://emailselfdefense.fsf.org/en/workshops.html  
 https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird  
+https://keys.openpgp.org/about/usage  
 ### Utility  
 
   
