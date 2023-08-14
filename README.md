@@ -105,15 +105,20 @@ If the OK for your file appears, that indicates the hash matches.
 ### What hardware to use?  
 
 **Points to check**  
-1. Compatibility  
-2. Security  
-3. Cost benefit  
+1.Security  
+2.Compatibility  
+3.Performance  
+4.Cost benefit  
 
-### Partitioning
+### Installation  
 
-**Scenarios: advantages and disadvantages**  
+**Installation Guide**  
+Linux on UEFI:A Quick Installation Guide  
+http://www.rodsbooks.com/linux-uefi/  
+
+**Partitioning scenarios: advantages and disadvantages**  
 https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system  
-https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page  
+https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page   
 
 ### Encryption - Key File in Debian 12 (Bookworm)
 
@@ -158,6 +163,9 @@ https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page
 <li>https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot</li>
 <li>https://github.com/nsacyber/TrustedSHIM</li>
 <li>https://github.com/nsacyber/HIRS</li>
+<li>https://manpages.debian.org/stretch/keyutils/keyctl.1.en.html</li>
+<li>https://manpages.debian.org/testing/pesign/pesign.1.en.html</li>
+<li>https://manpages.debian.org/testing/libnss3-tools/index.html</li>
 <li><a href="https://media.defense.gov/2020/Sep/15/2002497594/-1/-1/0/CTR-UEFI-Secure-Boot-Customization-UOO168873-20.PDF" target="_blank">NSA - Cybersecurity Technical Report PDF</a></li>
 </ul>
 </details>  
@@ -177,6 +185,7 @@ https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page
 <li>https://help.eset.com/efs/8.1/en-US/secure-boot.html</li>
 <li>https://help.ggcircuit.com/knowledge/how-to-inject-custom-secure-boot-keys-example</li>
 <li>https://www.lastdragon.net/?p=2513</li>
+<li>https://blogs.oracle.com/linux/post/the-machine-keyring</li>
 <li>https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250 </li>
 <li>https://www.linuxjournal.com/content/take-control-your-pc-uefi-secure-boot</li>
 <li>https://access.redhat.com/documentation/de-de/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel</li>
@@ -431,23 +440,25 @@ $ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-11-amd64
 </DIV>  
 
 <details>
-<summary><b>Reset Secure Boot Key for Kernel or Modules</b></summary>  
+<summary><b>Reset Secure Boot for Kernel or Modules</b></summary>  
 
   **Reset Key for Kernel**
 ---UNDER WORK---
+https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#setuputil
+
+"The ASUS permits to you restore the default keys, so this isn't really vital if you're starting from the factory defaults with this model; but if yours doesn't offer such a reset-to-defaults option or if you've modified the keys, saving them may be prudent. As the name implies, this option also erases all your Secure Boot keys. (It does not erase your MOKs, though.)"
 
   **Reset MOK Keys for Modules**
 ---UNDER WORK---
-
-
-
-
-```
-```
+https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#key-revocation
 
 ```
 $ mokuitil --sb-state
 SecureBoot disabled
+```
+
+```
+$ mokutil --disable-validation
 ```
 Backup. Exports to list (ideally store it on an encrypted external storage medium).
 ```
@@ -464,6 +475,13 @@ $ mokutil --list-enrolled
 Delete those not enrolled to maintain secure boot.
 ```
 $ mokutil --delete MOK-0001.der
+```
+To remove all (MOKs being a list and not just a single MOK, you can make the shim trust keys from several different vendors, allowing dual- and multi-boot)
+```
+$ mokutil --reset --mok
+```
+```
+$ mokutil --reset
 ```
 Uninstall the modules, if it was made with "make".
 ```
@@ -554,11 +572,11 @@ modprobe vboxdrv
 
 <details>  
 <summary><b>Sign Custom Secure Keys</b></summary>  
-
+https://github.com/nsacyber/Hardware-and-Firmware-Security-Guidance/blob/master/secureboot/Linux.md  
 </details>   
 <details>  
 <summary><b>Sign with TPM2.0</b></summary>  
-https://github.com/squarooticus/efi-measured-boot
+https://github.com/squarooticus/efi-measured-boot  
 </details>  
 
 ## SOFTWARES  
