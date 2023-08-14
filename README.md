@@ -43,17 +43,17 @@
     <td><a href="" target="_blank">(Checksums)</a></td>
   </tr>
 <tr>
-    <td><a href="https://clonezilla.org/downloads.php" target="_blank"><b>2. Clonezilla</b></a></td>
-    <td><a href="" target="_blank">(Secure Boot)</a></td>
-    <td><a href="" target="_blank">(Checksums)</a></td>
+   <td><a href="http://www.rodsbooks.com/refind/getting.html" target="_blank"><b>2. rEFInd</b></a></td>
+    <td><a href="http://www.rodsbooks.com/refind/secureboot.html" target="_blank">(Secure Boot)</a></td>
+    <td><a href="https://sourceforge.net/p/refind/code/ci/master/tree/" target="_blank">(Checksums)</a></td> 
     <td><a href="https://www.kali.org/get-kali/#kali-installer-images" target="_blank"><b>7. KaliLinux</b></a></td>
     <td><a href="" target="_blank">(Secure Boot)</a></td>
     <td><a href="" target="_blank">(Checksums)</a></td>
   </tr>
  <tr>
-    <td><a href="http://www.rodsbooks.com/refind/getting.html" target="_blank"><b>3. rEFInd</b></a></td>
-    <td><a href="http://www.rodsbooks.com/refind/secureboot.html" target="_blank">(Secure Boot)</a></td>
-    <td><a href="https://sourceforge.net/p/refind/code/ci/master/tree/" target="_blank">(Checksums)</a></td>
+     <td><a href="https://clonezilla.org/downloads.php" target="_blank"><b>3. Clonezilla</b></a></td>
+    <td><a href="https://clonezilla.org/downloads.php" target="_blank">(Secure Boot)</a></td>
+    <td><a href="https://clonezilla.org/downloads.php" target="_blank">(Checksums)</a></td>
     <td><a href="" target="_blank"></a></td>
     <td><a href="" target="_blank"></a></td>
     <td><a href="" target="_blank"></a></td>
