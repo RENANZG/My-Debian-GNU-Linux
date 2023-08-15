@@ -77,6 +77,7 @@
 </table>
 
 How to check the iso file (SHA256SUMS)  
+https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html  
 <details>
 <summary>Manual method</summary>  
 The SHA-256 checksum hashes in a file called SHA256SUMS in the same directory listing as the download page.  
