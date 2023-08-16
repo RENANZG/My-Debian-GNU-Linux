@@ -51,7 +51,7 @@
     <td><a href="" target="_blank">(Checksums)</a></td>
   </tr>
  <tr>
-     <td><a href="https://clonezilla.org/downloads.php" target="_blank"><b>3. Clonezilla</b></a></td>
+    <td><a href="https://clonezilla.org/downloads.php" target="_blank"><b>3. Clonezilla</b></a></td>
     <td><a href="https://clonezilla.org/downloads.php" target="_blank">(Secure Boot)</a></td>
     <td><a href="https://clonezilla.org/downloads.php" target="_blank">(Checksums)</a></td>
     <td><a href="https://www.openpgp.org/software/" target="_blank"><b>8. OpenPGP</b></a></td>
@@ -62,7 +62,7 @@
     <td><a href="https://gparted.org/livecd.php" target="_blank"><b>4. GParted</b></a></td>
     <td><a href="https://gparted.org/download.php" target="_blank">(Secure Boot)</a></td>
     <td><a href="https://gparted.org/gpg-verify.php" target="_blank">(Checksums)</a></td>
-    <td><a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/winpe-intro?view=windows-11" target="_blank"></a>8. Windows PE (WinPE)</td>
+    <td><a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/winpe-intro?view=windows-11" target="_blank"><b>8. Windows PE (WinPE)</b></a></td>
     <td><a href="" target="_blank"></a></td>
     <td><a href="" target="_blank"></a></td>
   </tr>
