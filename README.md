@@ -63,7 +63,7 @@
     <td><a href="https://gparted.org/download.php" target="_blank">(Secure Boot)</a></td>
     <td><a href="https://gparted.org/gpg-verify.php" target="_blank">(Checksums)</a></td>
     <td><a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/winpe-intro?view=windows-11" target="_blank"><b>9. WinPE</b></a></td>
-    <td><a href="https://sergeistrelec.name/" target="_blank"></a>(Secure Boot)</td>
+    <td><a href="https://sergeistrelec.name/" target="_blank">(Sergei)</a></td>
     <td><a href="https://sergeistrelec.name/version_history_en.html" target="_blank">(Checksums)</a></td>
   </tr>
   <tr>
@@ -127,7 +127,7 @@ https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page
 **Encryption** 
 
 <details>
-<summary>Key File in Debian 12 (Bookworm) References</summary>  
+<summary>Key File in Debian 12 (Bookworm) References</summary> 
 <ul>
  <li>https://github.com/aomgiwjc/Unix-Bootstrap-Installs/wiki/Debian-BTRFS-Luks-Encryption-Installation-Method---Jan.-2023</li>
 <li>https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key</li>
