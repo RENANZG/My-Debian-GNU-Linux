@@ -63,8 +63,8 @@
     <td><a href="https://gparted.org/download.php" target="_blank">(Secure Boot)</a></td>
     <td><a href="https://gparted.org/gpg-verify.php" target="_blank">(Checksums)</a></td>
     <td><a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/winpe-intro?view=windows-11" target="_blank"><b>9. WinPE</b></a></td>
-    <td><a href="" target="_blank"></a></td>
-    <td><a href="" target="_blank"></a></td>
+    <td><a href="https://sergeistrelec.name/" target="_blank"></a>(Secure Boot)</td>
+    <td><a href="https://sergeistrelec.name/version_history_en.html" target="_blank">(Checksums)</a></td>
   </tr>
   <tr>
     <td><a href="https://github.com/PartialVolume/shredos.x86_64" target="_blank"><b>5. ShredOS</b></a></td>
