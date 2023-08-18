@@ -637,17 +637,17 @@ https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy
 <b>Firefox</b>  
 <b>Chromium</b>  
 <b>Extensions</b>  
-<a href="">https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US</a>Simple Speed Dial</td>  
-<a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US"></a>Ublock Origin</td>  
-<a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US"></a>XBrowserSync</td>  
-<a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US"></a>Reaser View</td>  
-<a href="">https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip</a>jDownloader</td>  
+<a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a>  
+<a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a>  
+<a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a>  
+<a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reaser View</a>  
+<a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a>  
 </details>  
 
 <details>  
 <summary><b>Password Manager</b></summary>  
 <a href=""></a></td>  
-https://keepassxc.org/  
+https://keepassxc.org/    
 </details>  
 
 <details>  
