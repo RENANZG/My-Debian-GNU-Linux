@@ -607,7 +607,7 @@ https://github.com/squarooticus/efi-measured-boot
 
 https://portchecker.co/  
 
-**UFW+VPN**  
+**VPN**  
 https://www.paulligocki.com/vpn-only-ufw-setup/  
 
 
@@ -618,9 +618,11 @@ https://coveryourtracks.eff.org/
 https://ipleak.net/  
 
 **Torrenting**  
+https://liamthebox.github.io/Torrent-With-A-VPN/  
 https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge  
 
 **UFW+VPN+qBittorrent**  
+
   
 **Everyday TOR**  
 https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy   
