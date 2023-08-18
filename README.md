@@ -628,20 +628,21 @@ https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy
 ## SOFTWARES  
 👷🛠️UNDER WORK🚧🏗    
 
+<DIV>
 <details>  
 <summary><b></b></summary>  
 </details>  
 
 <details>  
 <summary><b>Browsers</b></summary>  
-<p style="margin : 0; padding-top:0;"><b>Firefox</b>  </p>
+<p style="line-height: 8px;"><b>Firefox</b>  </p>
 <p style="margin : 0; padding-top:0;"><b>Chromium</b>  </p>
-<p ><b>Extensions</b>  </p>
-<p style="margin : 0; padding-top:0;"><a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a>  </p>
-<p style="margin : 0; padding-top:0;"><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a>  </p>
-<p style="margin : 0; padding-top:0;"><a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a>  </p>
-<p style="margin : 0; padding-top:0;"><a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reaser View</a>  </p>
-<p style="margin : 0; padding-top:0;"><a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a>  </p>
+<p style="line-height: 8px;"><b>Extensions</b>  </p>
+<p"><a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a>  </p>
+<p><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a>  </p>
+<p><a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a>  </p>
+<p><a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reaser View</a>  </p>
+<p><a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a>  </p>
 </details>  
 
 <details>  
@@ -658,7 +659,7 @@ https://keepassxc.org/
 <p style="margin : 0; padding-top:0;">https://keys.openpgp.org/about/usage  </p>
 <p style="margin : 0; padding-top:0;">https://efail.de/</p>  
 </details>  
-  
+</DIV>
 ### Utility  
 
 
