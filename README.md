@@ -1,4 +1,4 @@
-## SYSTEM BASICS
+w## SYSTEM BASICS
 
 ### System Hardening Must Have
 <table>
@@ -601,44 +601,65 @@ https://github.com/squarooticus/efi-measured-boot
 ## FIREWALL AND VPN  
 👷🛠️UNDER WORK🚧🏗    
 
-https://portchecker.co/  
 
 **UFW**  
 
+
+https://portchecker.co/  
+
+**UFW+VPN**  
+https://www.paulligocki.com/vpn-only-ufw-setup/  
+
+
+
 **Leak Test**  
-https://www.dnsleaktest.com/  
+https://www.dnsleaktest.com/   
+https://coveryourtracks.eff.org/  
 https://ipleak.net/  
-  
-**Everyday TOR**
-https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy  
 
 **Torrenting**  
 https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge  
 
-UFW+VPN+qBittorrent  
-
+**UFW+VPN+qBittorrent**  
+  
+**Everyday TOR**  
+https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy   
 
 ## SOFTWARES  
 👷🛠️UNDER WORK🚧🏗    
 
-### Browser  
+<details>  
+<summary><b></b></summary>  
+</details>  
 
-**Firefox**
-**Chromium**
-**Extensions**
-[SPEED DIAL](https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US)  
-[U-BLOCK ORIGIN](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US)  
-[XBROWSERSYNC](https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US)  
-[READER VIEW](https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US)  
-[JDOWNLOADER](https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip)  
-  
-### Passwords  
+<details>  
+<summary><b>Browsers</b></summary>  
+<b>Firefox</b>  
+<b>Chromium</b>  
+<b>Extensions</b>  
+<a href="">https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US</a>Simple Speed Dial</td>  
+<a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US"></a>Ublock Origin</td>  
+<a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US"></a>XBrowserSync</td>  
+<a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US"></a>Reaser View</td>  
+<a href="">https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip</a>jDownloader</td>  
+</details>  
+
+<details>  
+<summary><b>Password Manager</b></summary>  
+<a href=""></a></td>  
 https://keepassxc.org/  
-### Email  
+</details>  
+
+<details>  
+<summary><b>Email</b></summary>  
+<a href=""></a></td>  
 https://emailselfdefense.fsf.org/en/workshops.html  
 https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird  
 https://keys.openpgp.org/about/usage  
 https://efail.de/  
+</details>  
+  
 ### Utility  
+
 
   
