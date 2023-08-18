@@ -209,7 +209,7 @@ https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page
 
 ## :green_circle: $\textcolor{green}{Essential\ Tutorial}$  
 
-👷🛠️🚧🏗  ---UNDER WORK---  
+👷🛠️UNDER WORK🚧🏗    
 ```diff
 - Debian Bug report logs - #989463 please align shim-signed dkms behaviour with Ubuntu  
 - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989463  
@@ -598,11 +598,39 @@ https://github.com/nsacyber/Hardware-and-Firmware-Security-Guidance/blob/master/
 https://github.com/squarooticus/efi-measured-boot  
 </details>  
 
+## FIREWALL AND VPN  
+👷🛠️UNDER WORK🚧🏗    
+
+https://portchecker.co/  
+
+**UFW**  
+
+**Leak Test**  
+https://www.dnsleaktest.com/  
+https://ipleak.net/  
+  
+**Everyday TOR**
+https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy  
+
+**Torrenting**  
+https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge  
+
+UFW+VPN+qBittorrent  
+
+
 ## SOFTWARES  
+👷🛠️UNDER WORK🚧🏗    
 
 ### Browser  
 
+**Firefox**
+**Chromium**
 **Extensions**
+[SPEED DIAL](https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US)
+[U-BLOCK ORIGIN](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US)
+[XBROWSERSYNC](https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US)
+[READER VIEW](https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US)
+[JDOWNLOADER](https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip)
 
 ### Passwords  
 https://keepassxc.org/  
