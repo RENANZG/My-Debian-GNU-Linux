@@ -1,4 +1,4 @@
-w## SYSTEM BASICS
+## SYSTEM BASICS
 
 ### System Hardening Must Have
 <table>
@@ -634,14 +634,14 @@ https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy
 
 <details>  
 <summary><b>Browsers</b></summary>  
-<b>Firefox</b>  
-<b>Chromium</b>  
-<b>Extensions</b>  
-<a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a>  
-<a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a>  
-<a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a>  
-<a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reaser View</a>  
-<a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a>  
+<p><b>Firefox</b>  </p>
+<p><b>Chromium</b>  </p>
+<p><b>Extensions</b>  </p>
+<p><a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a>  </p>
+<p><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a>  </p>
+<p><a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a>  </p>
+<p><a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reaser View</a>  </p>
+<p><a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a>  </p>
 </details>  
 
 <details>  
@@ -653,10 +653,10 @@ https://keepassxc.org/
 <details>  
 <summary><b>Email</b></summary>  
 <a href=""></a></td>  
-https://emailselfdefense.fsf.org/en/workshops.html  
-https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird  
-https://keys.openpgp.org/about/usage  
-https://efail.de/  
+<p>https://emailselfdefense.fsf.org/en/workshops.html  </p>
+<p>https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird  </p>
+<p>https://keys.openpgp.org/about/usage  </p>
+<p>https://efail.de/</p>  
 </details>  
   
 ### Utility  
