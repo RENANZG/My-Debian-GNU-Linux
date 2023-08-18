@@ -618,7 +618,9 @@ https://coveryourtracks.eff.org/
 https://ipleak.net/  
 
 **Torrenting**  
-https://liamthebox.github.io/Torrent-With-A-VPN/  
+https://github.com/LiamTheBox/Torrent-With-A-VPN  
+https://github.com/mdlam92/vpn_torrenting  
+https://github.com/tool-maker/VPN_just_for_torrents/wiki  
 https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge  
 
 **UFW+VPN+qBittorrent**  
