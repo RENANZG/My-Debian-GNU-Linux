@@ -598,6 +598,9 @@ https://github.com/nsacyber/Hardware-and-Firmware-Security-Guidance/blob/master/
 https://github.com/squarooticus/efi-measured-boot  
 </details>  
 
+## PRIVILEGES AND APPARMOR  
+
+
 ## FIREWALL AND VPN  
 👷🛠️UNDER WORK🚧🏗    
 
