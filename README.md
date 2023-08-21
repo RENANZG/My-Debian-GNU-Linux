@@ -626,6 +626,7 @@ https://github.com/LiamTheBox/Torrent-With-A-VPN
 https://github.com/mdlam92/vpn_torrenting  
 https://github.com/tool-maker/VPN_just_for_torrents/wiki  
 https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge  
+https://transmissionbt.com/  
 
 **UFW+VPN+qBittorrent**  
 
