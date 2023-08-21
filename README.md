@@ -70,9 +70,9 @@
     <td><a href="https://github.com/PartialVolume/shredos.x86_64" target="_blank"><b>5. ShredOS</b></a></td>
     <td><a href="" target="_blank">(Secure Boot)</a></td>
     <td><a href="" target="_blank">(Checksums)</a></td>
-    <td><a href="" target="_blank"></a></td>
-    <td><a href="" target="_blank"></a></td>
-    <td><a href="" target="_blank"></a></td>
+    <td><a href="https://www.hirensbootcd.org/" target="_blank"><b>10. Hiren's BootCD PE</b></a></td>
+    <td><a href="" target="_blank">(Secure Boot)</a></td>
+    <td><a href="https://www.hirensbootcd.org/download/" target="_blank">(Checksums)</a></td>
    </tr>
 </table>
 
@@ -120,6 +120,7 @@ Linux Dabbler - Scripts to run after installing debian
 https://github.com/linuxdabbler/debian-install-scripts  
 Nilsmeyer - An ansible role for bootstrapping new Debian based systems, including setting up partitions, file systems, encryption (luks), RAID and LVM  
 https://github.com/nilsmeyer/ansible-debootstrap  
+
 **Partitioning scenarios: advantages and disadvantages**  
 https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system  
 https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page   
