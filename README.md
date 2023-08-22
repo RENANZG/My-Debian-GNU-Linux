@@ -605,16 +605,12 @@ https://github.com/squarooticus/efi-measured-boot
 ## FIREWALL AND VPN  
 👷🛠️UNDER WORK🚧🏗    
 
-
 **UFW**  
-
 
 https://portchecker.co/  
 
 **VPN**  
 https://www.paulligocki.com/vpn-only-ufw-setup/  
-
-
 
 **Leak Test**  
 https://www.dnsleaktest.com/   
@@ -673,7 +669,7 @@ https://keepassxc.org/
 ### Utility  
 
 
-###  Malwares, Backdoors, Honeypots, Zero-days
+###  Malwares, Data Poisoning, Backdoors, Honeypots, Zero-days  
 
 https://www.youtube.com/@hitbsecconf/videos  
 
