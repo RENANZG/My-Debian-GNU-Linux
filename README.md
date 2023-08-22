@@ -669,7 +669,13 @@ https://keepassxc.org/
 <p style="margin : 0; padding-top:0;">https://efail.de/</p>  
 </details>  
 </DIV>
+
 ### Utility  
 
 
-  
+###  Malwares, Backdoors, Honeypots, Zero-days
+
+https://www.youtube.com/@hitbsecconf/videos  
+
+CVEs
+
