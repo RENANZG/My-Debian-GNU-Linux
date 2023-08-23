@@ -24,7 +24,7 @@
   </tr>
   <tr>
   <td><a href="https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance" target="_blank"><b>NSA GOV</b> - Cybersecurity Advisories & Guidance</a><a href="https://github.com/nsacyber" target="_blank">&nbsp(GitHub)</a></td>
-  <td></td>
+  <td><a href="https://wiki.debian.org/SecurityManagement" target="_blank"><b>Debian</b> - Security Management</a></td>
   </tr>
   <tr>
   <td><a href="https://www.nist.gov/cyberframework" target="_blank"><b>NIST GOV</b> - Cybersecurity Framework</a></td>
