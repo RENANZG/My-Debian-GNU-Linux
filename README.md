@@ -20,7 +20,7 @@
   </tr>
   <tr>
   <td><a href="https://www.cisecurity.org/benchmark/debian_linux" target="_blank"><b>CIS Benchmark</b> - Debian Linux Guides</a></td>
-  <td><a href="https://ssd.eff.org/" target="_blank"><b>EFF</b> Surveillance Self-defense</a></td>
+  <td><a href="https://ssd.eff.org/" target="_blank"><b>EFF</b> - Surveillance Self-defense</a></td>
   </tr>
   <tr>
   <td><a href="https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance" target="_blank"><b>NSA GOV</b> - Cybersecurity Advisories & Guidance</a><a href="https://github.com/nsacyber" target="_blank">&nbsp(GitHub)</a></td>
