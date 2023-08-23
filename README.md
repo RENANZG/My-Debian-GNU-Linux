@@ -39,8 +39,8 @@
     <td><a href="https://www.ventoy.net/en/doc_secure.html" target="_blank">(Secure Boot)</a></td>
     <td><a href="https://www.ventoy.net/en/download.html" target="_blank">(Checksums)</a></td>
      <td><a href="https://tails.net/news/new_domain/index.en.html" target="_blank"><b>6. Tails</b></a></td>
-    <td><a href="" target="_blank">(Secure Boot)</a></td>
-    <td><a href="" target="_blank">(Checksums)</a></td>
+    <td><a href="https://tails.net/contribute/design/UEFI/archive/" target="_blank">(Secure Boot)</a></td>
+    <td><a href="https://tails.net/install/index.en.html" target="_blank">(Checksums)</a></td>
   </tr>
 <tr>
    <td><a href="http://www.rodsbooks.com/refind/getting.html" target="_blank"><b>2. rEFInd</b></a></td>
@@ -185,6 +185,7 @@ https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page
 <li>https://github.com/sitmsiteman/secure-boot-in-debian-based-distro</li>
 <li>https://github.com/Batu33TR/secureboot-mok-keys</li>
 <li>https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot</li>
+<li>https://mjg59.dreamwidth.org/18945.html</li>
 <li>https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471</li>
 <li>https://askubuntu.com/questions/762254/why-do-i-get-required-key-not-available-when-install-3rd-party-kernel-modules</li>
 <li>https://help.eset.com/efs/8.1/en-US/secure-boot.html</li>
@@ -205,6 +206,7 @@ https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page
 <li>Secure Boot from A to Z (The Linux Foundation)](https://www.youtube.com/watch?v=jtLQ8SzfrDU)</li>
 <li>Secure Boot. In Debian. In Buster. Really (DebConf Videos)](https://www.youtube.com/watch?v=_3mwK6AXo_k)</li>
 <li>EFI secure boot con Debian 11 (La cueva del ultimo dragon Last Dragon)](https://www.youtube.com/watch?v=33-CL2fBvlE)</li>
+<li>Automating Secure Boot testing(FOSDEM)](https://www.youtube.com/watch?v=qtyRR-KbXYQ)</li>
 </ul>
 </details> 
 
