@@ -111,6 +111,8 @@ If the OK for your file appears, that indicates the hash matches.
 3.Performance  
 4.Cost benefit  
 
+https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption    
+
 ### ◼️ Installation  
 
 **Installation Guide**  
@@ -126,7 +128,9 @@ https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system
 https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page   
 
 **Encryption** 
-
+https://wiki.archlinux.org/title/Security      
+https://wiki.archlinux.org/title/Data-at-rest_encryption    
+https://en.wikipedia.org/wiki/Disk_encryption#Implementations    
 <details>
 <summary>Key File in Debian 12 (Bookworm) References</summary> 
 <ul>
