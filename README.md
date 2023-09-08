@@ -28,8 +28,8 @@
   </tr>
   <tr>
   <td><a href="https://www.nist.gov/cyberframework" target="_blank"><b>NIST GOV</b> - Cybersecurity Framework</a></td>
-  <td></td>
-  </tr>
+  <td><a href="https://www.duplicati.com/" target="_blank"><b>Duplicati</b> - Store securely encrypted backups on cloud storage services!</a></td>
+    </tr>
 </table>
 
 ### Essential Tools
@@ -610,6 +610,8 @@ https://github.com/squarooticus/efi-measured-boot
 
 ## FIREWALL AND VPN  
 👷🛠️UNDER WORK🚧🏗    
+
+https://github.com/techlore/VPN-reviews    
 
 **UFW**  
 
