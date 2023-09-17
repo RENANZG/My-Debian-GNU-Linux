@@ -674,12 +674,13 @@ https://keepassxc.org/
 </details>  
 </DIV>
 
-### Utility  
+
+###  MALWARES, BACKDOORS, ZERO-DAYS, DATA POISONING, SUPPLY CHAIN ATTACK, MAN-IN-THE-MIDDLE (MITM), HONEY POTS, AND SOCIAL ENGINEERING ATTACK    
 
 
-###  Malwares, Data Poisoning, Backdoors, Honeypots, Zero-days  
-
+### Some Links  
+https://github.com/sbilly/awesome-security    
+https://github.com/ernw/hardening    
+https://github.com/jekil/hardentheworld    
 https://www.youtube.com/@hitbsecconf/videos  
-
-CVEs
 
