@@ -1,4 +1,7 @@
-## SYSTEM BASICS
+## DEBIAN GNU/LINUX AND HARDENING
+
+![thedoortofreedom](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/f24266c3-b530-4586-adaa-55bbd808f7eb)
+
 
 ### System Hardening Must Have
 <table>
