@@ -217,6 +217,8 @@ https://en.wikipedia.org/wiki/Disk_encryption#Implementations
 </ul>
 </details> 
 
+------------------------------------------------------------------------------------------------------------------------------------------
+
 ## :green_circle: $\textcolor{green}{Essential\ Tutorial}$  
 
 👷🛠️UNDER WORK🚧🏗    
@@ -231,7 +233,7 @@ https://en.wikipedia.org/wiki/Disk_encryption#Implementations
 <summary><b>Sign Debian 12 (Bookworm) Kernel for Secure Boot</b></summary>  
 <p></p>
 
-<b>1.First steps <b/>   
+<b>1.First steps </b>   
 
 Has the system booted via Secure Boot?
 ```
@@ -247,15 +249,17 @@ SecureBoot enabled
 ```
 What keys are on my system?
 ```
-sudo mokutil --list-enrolled 
+$ sudo mokutil --list-enrolled
+or
+$ sudo mokutil --list-enrolled | grep Subject:
 ```
 
-Also the command modinfo prints the signature if available, for example:
+Also the command <ins>modinfo</ins> prints the signature if available, for example:
 ```
 # modinfo /lib/modules/6.1.0-11-amd64/kernel/mm/zsmalloc.ko 
 ```
 
-<b>2.Place to auto-generated MOK<b/>
+<b>2.Place to auto-generated MOK</b>
 
 MOK - Machine Owner Key
 
@@ -278,7 +282,7 @@ You can choose another place like "/etc/mok_key/" since there is no standard loc
 # mkdir -p /etc/mok_key/
 ```
 
-<b>3.Generating a new key<b/>
+<b>3.Generating a new key</b>
 
 Before you create the public and private key for signing the kernel, you need to access the folder you created to be the destination of the keys:
 ```
@@ -286,53 +290,61 @@ Before you create the public and private key for signing the kernel, you need to
 or
 # cd /etc/mok_key/
 ```
-Then create the public and private key for signing the kernel:
+Then create the public and private key for signing the kernel and already convet to PEM format:
 ```
-# openssl req -config ./mokconfig.cnf -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "MOK.priv" -out "MOK.der" -subj "/CN=My Name/"
+# openssl req -config ./mokconfig.cnf -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "MOK.priv" -out "MOK.der" -subj "/CN=ShimSigned/"
 ```
-------------------------------------------------------------------------
+--------------------------------------------------------------
 or alternatively:
 ```
-# openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -days 36500 -subj "/CN=My Name/"
+# openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -days 36500 -subj "/CN=ShimSigned/"
 ```
-Convert the key also to PEM format (mokutil needs DER, sbsign needs PEM):
+Convert the key also to PEM format (<ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM):
 ```
 # openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem
 ```
-------------------------------------------------------------------------
-<b>4.Enrolling your key<b/>
+
+This commands will create both the private and public part of the certificate to sign things. You need both files to sign; and just the public part (MOK.der) to enroll the key in shim.
+
+--------------------------------------------------------------
+<b>4.Enrolling your key</b>
 
 Enroll the key to your shim installation:
 
 ```
+$ cd /var/lib/shim-signed/mok/
 $ sudo mokutil --import MOK.der
 ```
+or
 ```
-$ sudo mokutil --import /var/lib/shim-signed/mok/MOK.der # prompts for one-time password
+$ sudo mokutil --import /var/lib/shim-signed/mok/MOK.der # prompts for just one-time password
 
 ```
-You will be asked for a one-time <b>password (remember and type it correctly)</b>, you will just use it to confirm your key selection in the next step (you won't need this password beyond this point, though) , so choose any.
+You will be asked for a one-time <b>password (remember it and type it correctly)</b>, you will just use it to confirm your key selection in the next step (you won't need this password beyond this point, though), so choose any.
 
-<b>5.Restart and Verify</b>
+<b>5.Restart and finsh the process</b>
 
 Restart your system. Changes to the MOK keys may only be confirmed directly from the console at boot time. You will encounter a blue screen of a tool called MOKManager. Select "Enroll MOK" and then "View key". Make sure it is your key you created in step 3. Afterwards continue the process and you must enter the password which you provided in step 4. Continue with booting your system.
 
 Verify your key is already enrolled, if the MOK was loaded correctly, with:
 ```
 $ sudo mokutil --list-enrolled
+```
+```
 or
 $ sudo mokutil --test-key /var/lib/shim-signed/mok/MOK.der
 ```
 Others commands
 ```
+$ sudo cat /proc/keys
 # sbverify --list /boot/vmlinuz-6.1.0-11-amd64
 # sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-11-amd64
 ```
-<b>6.Sign your installed kernel (or any other efi binary)</b>
+<b>6.Sign your installed kernel (or bootloader, or module)</b>
 
 <DIV class="subsection" id="6.1" >
 <details>
-<summary><b>6.1 Modern method: </b> Signing the Debian kernel modules with DKMS</summary> 
+<summary><b>6.1 Modern Method: </b> Signing the Debian kernel modules with DKMS</summary> 
 
 Building Debian kernel modules with DKMS. The dkms frameworks allows building kernel modules "on the fly" on the local system instead of building them centrally on the Debian infrastructure, DKMS could automatically sign kernel updated modules. If you install the kernel modules through the apt repository, chances are that modules have already been signed by the DKMS signing key. In that case, the traditional method won't work. And the thing you only need to do is to enroll the DKMS signing key into your machine. On systems that use SecureBoot, you will need a Machine Owner Key (MOK) to load DKMS modules. Generate it, enroll it, sign modules with it and then you will be able to load the signed modules. 
 
@@ -395,28 +407,34 @@ $ sudo dmesg | grep cert # verify your key is loaded
 
 <DIV class="subsection" id="6.2">  
 <details>  
-<summary><b>6.2 Traditional method:</b> signing the Debian kernel modules with sbsigntool</summary>  
+<summary><b>6.2 Traditional Method:</b> signing the Debian kernel with sbsigntool</summary>  
+
 Sign the installed Kernel using the key created according to the location you gave it, this will create a new signed vmlinuz. Sign vmlinuz using sbsign,it should be at /boot/vmlinuz-[KERNEL-VERSION]:
 
 To check your Kernel version, you can also use the command:
 ```
 $ uname -r
 ```
-Signing vmlinuz using sbsign:
+Signing vmlinuz (kernel) using sbsign:
 ```
 $ sudo sbsign --key MOK.priv --cert MOK.pem /boot/vmlinuz-[KERNEL-VERSION] --output /boot/vmlinuz-[KERNEL-VERSION].signed
-for example
+*for example*
 $ sudo sbsign --key /var/lib/shim-signed/mok/MOK.priv --cert /var/lib/shim-signed/mok/MOK.pem "/boot/vmlinuz-6.1.0-11-amd64" --output "/boot/vmlinuz-6.1.0-11-amd64.tmp"
 ```
+You can also signing your grubx64.efi (bootloader) using sbsign:
+
+$ sudo sbsign --key MOK.priv --cert MOK.pem my_binary.efi --output my_binary.efi.signed
+
 ------------------------------------------------------------------------
 or alternatively:
 ```
-$ sudo sbsign --key MOK.priv --cert MOK.pem "/boot/vmlinuz-$VERSION" --output "/boot/vmlinuz-$VERSION.tmp"
+$ cd /var/lib/shim-signed/mok/
+$ sudo sbsign --key MOK.priv --cert MOK.pem "/boot/vmlinuz-[KERNEL-VERSION] --output "/boot/vmlinuz-[KERNEL-VERSION].tmp"
 ```
 ------------------------------------------------------------------------
 Copy the initram of the unsigned kernel, so we also have an initram for the signed one.This will create a new signed vmlinuz: remove the unsigned one and restore the original name of the signed one:
 ```
-$ sudo mv "/boot/vmlinuz-$VERSION.tmp" "/boot/vmlinuz-$VERSION"
+$ sudo mv "/boot/vmlinuz-$VERSION.tmp" "/boot/vmlinuz-[KERNEL-VERSION]"
 for example
 $ sudo mv "/boot/vmlinuz-6.1.0-11-amd64.tmp" "/boot/vmlinuz-6.1.0-11-amd64"
 ```
@@ -460,7 +478,7 @@ $ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-11-amd64
 </DIV>  
 
 <details>
-<summary><b>Reset Secure Boot for Kernel or Modules</b></summary>  
+<summary><b>Reset Secure Boot keys for Kernel or Modules</b></summary>  
 
   **Reset Key for Kernel**
 ---UNDER WORK---
@@ -468,55 +486,53 @@ https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#setuputil
 
 "The ASUS permits to you restore the default keys, so this isn't really vital if you're starting from the factory defaults with this model; but if yours doesn't offer such a reset-to-defaults option or if you've modified the keys, saving them may be prudent. As the name implies, this option also erases all your Secure Boot keys. (It does not erase your MOKs, though.)"
 
-  **Reset MOK Keys for Modules**
+**Reset MOK Keys for Modules**
 ---UNDER WORK---
 https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#key-revocation
 
 ```
-$ mokuitil --sb-state
-SecureBoot disabled
+$ sudo mokuitil --sb-state
+  SecureBoot disabled
 ```
-
 ```
-$ mokutil --disable-validation
+$ sudo mokutil --disable-validation
 ```
 Backup. Exports to list (ideally store it on an encrypted external storage medium).
 ```
-$ mokutil --export
+$ sudo mokutil --export
 ```
 Shows all keys.
 ```
-$ ls -1 MOK*
+$ sudo ls -1 MOK*
 ```
 Shows you keys enrolled.
 ```
-$ mokutil --list-enrolled
+$ sudo mokutil --list-enrolled | grep Subject:
 ```
 Delete those not enrolled to maintain secure boot.
 ```
-$ mokutil --delete MOK-0001.der
+$ sudo mokutil --delete MOK-0001.der
 ```
-To remove all (MOKs being a list and not just a single MOK, you can make the shim trust keys from several different vendors, allowing dual- and multi-boot)
+To remove all (MOKs being a list and not just a single MOK, you can make the shim trust keys from several different vendors, allowing dual and multi-boot)
 ```
-$ mokutil --reset --mok
+$ sudo mokutil --reset --mok
 ```
 ```
-$ mokutil --reset
+$ sudo mokutil --reset
 ```
-Uninstall the modules, if it was made with "make".
+Uninstall the modules, if it was made with script "make".
 ```
-cd ~/realtekwifiborad
-sudo make uninstall
+$ cd ~/realtekwifi
+$ sudo make uninstall
 ```
 Reset de modules and unload them in Kernel
 ```
-sudo depmod 
-sudo update-initramfs -u -k all
+$ sudo depmod 
+$ sudo update-initramfs -u -k all
 ```
-
-
-
 </details>   
+
+------------------------------------------------------------------------------------------------------------------------------------------
 
 ## :yellow_circle: $\textcolor{gold}{Intermediate\ Tutorial}$  
 
@@ -524,7 +540,6 @@ sudo update-initramfs -u -k all
 
 <details>
 <summary><b>rEFInd Bootloader</b></summary>  
-
 https://wiki.ubuntu.com/EFIBootLoaders  
 
 </details>   
@@ -537,57 +552,126 @@ https://wiki.ubuntu.com/EFIBootLoaders
 <details>
 <summary><b>Sign NVIDIA Module for Secure Boot</b></summary>  
 https://github.com/NVIDIA/open-gpu-kernel-modules  
+https://askubuntu.com/questions/1023036/how-to-install-nvidia-driver-with-secure-boot-enabled    
+  
+Download the latest driver from the NVIDIA website: https://www.geforce.com/drivers.
+
+Create a new pair of private key (Nvidia.key) and public key (Nvidia.der) by running the command:
+
+`openssl req -new -x509 -newkey rsa:2048 -keyout PATH_TO_PRIVATE_KEY -outform DER -out PATH_TO_PUBLIC_KEY -nodes -days 36500 -subj "/CN=Graphics Drivers"`
+Example:
+
+`openssl req -new -x509 -newkey rsa:2048 -keyout /home/itpropmn07/Nvidia.key -outform DER -out /home/itpropmn07/Nvidia.der -nodes -days 36500 -subj "/CN=Graphics Drivers"`
+Enroll the public key (nvidia.der) to MOK (Machine Owner Key) by entering the command:
+
+`sudo mokutil --import PATH_TO_PUBLIC_KE`
+Example:
+
+`sudo mokutil --import /home/itpropmn07/Nvidia.der`
+This command requires you to create a password for enrolling. Afterwards, reboot your computer, in the next boot, when the system asks you to enroll, you enter the password you created in this step to enroll it. Read more: https://sourceware.org/systemtap/wiki/SecureBoot
+
+For installing the NVidia driver for the first time, you need to disable the Nouveau kernel driver by entering the command:
+
+`echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf; sudo update-initramfs -u`
+
+Reboot.
+
+Install the driver by entering the command:
+
+`sudo sh ./XXXXXX.run -s --module-signing-secret-key=PATH_TO_PRIVATE_KEY --module-signing-public-key=PATH_TO_PUBLIC_KEY`
+
+where:
+
+XXXXXX: name of file installer (downloaded from NVIDIA).
+
+PATH_TO_PRIVATE_KEY: full path to private key. If you place it in your home folder, use /home/USER_NAME/ instead of ~.
+
+PATH_TO_PUBLIC_KEY: full path to public key. If you place it in your home folder, use /home/USER_NAME/ instead of ~.
+
+Example:
+
+`sudo sh ./NVIDIA-Linux-x86_64-390.67.run -s --module-signing-secret-key=/home/itpropmn07/Nvidia.key --module-signing-public-key=/home/itpropmn07/Nvidia.der`
+
+Done.
+  
 </details> 
 
 <details>
 <summary><b>Sign VirtualBox Module for Secure Boot</b></summary>  
 
-https://superuser.com/questions/1438279/how-to-sign-a-kernel-module-ubuntu-18-04  
+References
 https://askubuntu.com/questions/760671/could-not-load-vboxdrv-after-upgrade-to-ubuntu-16-04-and-i-want-to-keep-secur/768310#768310  
 https://stegard.net/2016/10/virtualbox-secure-boot-ubuntu-fail  
 https://gist.github.com/reillysiemens/ac6bea1e6c7684d62f544bd79b2182a4  
 
 In order to get VirtualBox working without simply disabling UEFI Secure Boot, then you'll need to do the following:  
 
-1. Create a personal public/private RSA key pair to sign the kernel modules. As recommended in the link below, I chose to store the key/pair in the /root/module-signing/ directory.
+1. If you don't already have one, create a personal public/private RSA key pair to sign the kernel modules. Create a new pair of private key (VirtualBox.key) and public key (VirtualBox.der). You can chose to store the key/pair in the <ins>/var/lib/shim-signed/modules/</ins> directory.
+
 ```
-sudo -i
-mkdir /root/module-signing
-cd /root/module-signing
-openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -nodes -days 36500 -subj "/CN=YOUR_NAME/"
-chmod 600 MOK.priv
+$ sudo mkdir /var/lib/shim-signed/modules
+$ sudo openssl req -new -x509 -newkey rsa:2048 -keyout /var/lib/shim-signed/modules/VirtualBox.priv -outform DER -out /var/lib/shim-signed/modules/VirtualBox.der -nodes -days 36500 -subj "/CN=Modules/"
+$ sudo chmod 600 /var/lib/shim-signed/modules/VirtualBox.der
 ```
-Use mokutil, a tool to import or delete the machine owner keys (MOK), to import the public key, and then enroll it when the machine is rebooted. The password in this step is a temporary use password you'll only need to remember for a few minutes.
+
+2. Sign the module 
+
+Where is the module?
 ```
-mokutil --import /root/module-signing/MOK.der
-input password:
+$ sudo modinfo -n vboxdrv
+  /lib/modules/6.1.0-12-amd64/misc/vboxdrv.ko
+```
+For sing the module, depending on your platform, the exact location of `sign-file` might vary. In Debian 12 (Bookworm) it was in <ins>/usr/src/linux-headers-[KERNEL-VERSION]/scripts/sign-file</ins>
+
+```
+sudo /usr/src/linux-headers-[KERNEL-VERSION]/scripts/sign-file sha256 /var/lib/shim-signed/modules/VirtualBox.priv /var/lib/shim-signed/modules/VirtualBox.der /lib/modules/6.1.0-12-amd64/misc/vboxdrv.ko
+```
+Recheck your key will be prompted on next boot
+```
+$ sudo mokutil --list-new
+```
+3. Enroll the public key (VirtualBox.der) to MOK (Machine Owner Key) by entering the command:
+```
+$ sudo mokutil --import /var/lib/shim-signed/modules/VirtualBox.der
+input password:sudo modinfo vboxdrv
 input password again:
 ```
-Reboot the machine. When the bootloader starts, you should see a screen asking you to press a button to enter the MOK manager EFI utility. Note that any external external keyboards won't work in this step. Select Enroll MOK in the first menu, then continue, and then select Yes to enroll the keys, and re-enter the password established in step 2. Then select OK to continue the system boot.
+4. Reboot and check
 
-Future kernel updates would require the updated kernels to be signed again, so it makes sense to put the signing commands in a script that can be run at a later date as necessary. A sample script /root/module-signing/sign-vbox-modules is given below.
+The password in this step is a temporary use password you'll only need to remember for a few minutes. Reboot the machine. When the bootloader starts, you should see a screen asking you to press a button to enter the MOK manager EFI utility. Note that any external external keyboards won't work in this step. Select Enroll MOK in the first menu, then continue, and then select Yes to enroll the keys, and re-enter the password established in previous step. Then select OK to continue the system boot.
+
+Verify if your key "VirtualBox" is loaded
+
+```
+$ sudo dmesg | grep cert
+```
+5. Script
+
+Future kernel updates would require the updated kernels to be signed again, so it makes sense to put the signing commands in a script that can be run at a later date as necessary (DKMS package could do it automatically).
+
 ```
 #!/bin/bash
 
 for modfile in $(dirname $(modinfo -n vboxdrv))/*.ko; do
   echo "Signing $modfile"
   /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 \
-                                /root/module-signing/MOK.priv \
-                                /root/module-signing/MOK.der "$modfile"
+                                /var/lib/shim-signed/modules/VirtualBox.priv \
+                                /var/lib/shim-signed/modules/VirtualBox.der "$modfile"
 done
 ```
-Add execution permission, and run the script above as root from the /root/module-signing/ directory.
+Add execution permission, and run the script above as root from the /var/lib/shim-signed/modules/ directory.
 ```
-sudo -i
-cd /root/module-signing
-chmod 700 /root/module-signing/sign-vbox-modules ./sign-vbox-modules
+$ sudo -i
+$ cd /var/lib/shim-signed/modules
+$ chmod 700 /var/lib/shim-signed/modules/sign-vbox-modules ./sign-vbox-modules
 ```
 Load vboxdrv module and launch VirtualBox.
 ```
-modprobe vboxdrv 
+$ modprobe vboxdrv
+or
+$ /sbin/modprobe vboxdrv 
 ```
 </details> 
-
 
 
 <details>
