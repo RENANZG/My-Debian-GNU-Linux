@@ -624,8 +624,15 @@ $ sudo modinfo -n vboxdrv
 For sing the module, depending on your platform, the exact location of `sign-file` might vary. In Debian 12 (Bookworm) it was in <ins>/usr/src/linux-headers-[KERNEL-VERSION]/scripts/sign-file</ins>
 
 ```
-sudo /usr/src/linux-headers-[KERNEL-VERSION]/scripts/sign-file sha256 /var/lib/shim-signed/modules/VirtualBox.priv /var/lib/shim-signed/modules/VirtualBox.der /lib/modules/6.1.0-12-amd64/misc/vboxdrv.ko
+$ uname -r
+  6.1.0-12-amd64
+$ sudo /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file sha256 ./var/lib/shim-signed/modules/VirtualBox.priv ./var/lib/shim-signed/modules/VirtualBox.der ./lib/modules/6.1.0-12-amd64/misc/vboxdrv.ko
 ```
+Error 
+At main.c:298:
+- SSL error:FFFFFFFF80000002:system library::No such file or directory: ../crypto/bio/bss_file.c:67
+- SSL error:10000080:BIO routines::no such file: ../crypto/bio/bss_file.c:75
+
 Recheck your key will be prompted on next boot
 ```
 $ sudo mokutil --list-new
