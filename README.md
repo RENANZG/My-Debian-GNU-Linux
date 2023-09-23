@@ -653,6 +653,7 @@ The password in this step is a temporary use password you'll only need to rememb
 Verify if your key "Modules" is loaded and signed
 
 ```
+$ sudo mokutil --test-key /var/lib/shim-signed/modules/module.der
 $ sudo lsmod | grep rtw88_8723d
 $ sudo modinfo -n rtw88_8723d
 $ sudo dmesg | grep cert
@@ -701,7 +702,7 @@ Load vboxdrv module and launch VirtualBox.
 ```
 $ sudo modprobe vboxdrv
 or
-# /sbin/modprobe vboxdrv 
+$ /sbin/modprobe vboxdrv 
 ```
 <p></p>
 </details> 
@@ -823,17 +824,35 @@ How to get VirtualBox signed for Secure Boot
 ```
 $ sudo mkdir /var/lib/shim-signed/modules
 ```
-Create a new pair of private key (VirtualBox.priv) and public key (VirtualBox.der). For sing the module, depending on your platform, the exact location of `sign-file` might vary. In Debian 12 (Bookworm) it was in <ins>/usr/src/linux-headers-[KERNEL-VERSION]/scripts/sign-file</ins> .
-
+Create a new pair of private key (VirtualBox.priv) and public key (VirtualBox.der). 
 ```
-$ sudo openssl req -config ./sign-file -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "/var/lib/shim-signed/modules/VirtualBox.priv" -out "/var/lib/shim-signed/modules/VirtualBox.der" -subj "/CN=Modules/"
+$ sudo openssl req -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "/var/lib/shim-signed/modules/VirtualBox.priv" -out "/var/lib/shim-signed/modules/VirtualBox.der" -subj "/CN=Modules/"
 $ ls -l /var/lib/shim-signed/modules/
 total 8
 -rw-r--r-- 1 root root  779 VirtualBox.der
 -rw------- 1 root root 1704 VirtualBox.priv
 ```
 
-2. Sign the module 
+2. Enroll the public key (VirtualBox.der) to MOK (Machine Owner Key) by entering the command:
+```
+$ sudo mokutil --import /var/lib/shim-signed/modules/VirtualBox.der
+input password:sudo modinfo vboxdrv
+input password again:
+```
+Recheck your key will be prompted on next boot
+```
+$ sudo mokutil --list-new
+```
+3. Reboot and check
+
+The password in this step is a temporary use password you'll only need to remember for a few minutes. Reboot the machine. When the bootloader starts, you should see a screen asking you to press a button to enter the MOK manager EFI utility. Note that any external external keyboards won't work in this step. Select Enroll MOK in the first menu, then continue, and then select Yes to enroll the keys, and re-enter the password established in previous step. Then select OK to continue the system boot.
+
+Verify if your key "Modules" is loaded
+
+```
+$ sudo dmesg | grep cert
+```
+4. Signing the module 
 
 Where is the module?
 ```
@@ -841,7 +860,6 @@ $ sudo modinfo -n vboxdrv
   /lib/modules/6.1.0-12-amd64/misc/vboxdrv.ko
 ```
 For sing the module, depending on your platform, the exact location of `sign-file` might vary. In Debian 12 (Bookworm) it was in <ins>/usr/src/linux-headers-[KERNEL-VERSION]/scripts/sign-file</ins>
-
 ```
 $ uname -r
   6.1.0-12-amd64
@@ -849,6 +867,7 @@ $ /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file
 Usage: scripts/sign-file [-dp] <hash algo> <key> <x509> <module> [<dest>]
        scripts/sign-file -s <raw sig> <hash algo> <x509> <module> [<dest>]
 ```
+Sign the module 
 ```
 $ sudo /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file sha256 /var/lib/shim-signed/modules/VirtualBox.priv /var/lib/shim-signed/modules/VirtualBox.der /lib/modules/6.1.0-12-amd64/misc/vboxdrv.ko
 $ sudo modinfo vboxdrv
@@ -859,27 +878,12 @@ sig_hashalgo:   sha256
 signature:      XX:XX:XX:XX...
 (...)
 ```
-
-3. Enroll the public key (VirtualBox.der) to MOK (Machine Owner Key) by entering the command:
+If the modules are needed to boot your machine, make sure to update the initramfs, e.g. using
 ```
-$ sudo mokutil --import /var/lib/shim-signed/modules/VirtualBox.der
-input password:sudo modinfo vboxdrv
-input password again:
-```
-Recheck your key will be prompted on next boot
-```
-$ sudo mokutil --list-new
-```
-4. Reboot and check
-
-The password in this step is a temporary use password you'll only need to remember for a few minutes. Reboot the machine. When the bootloader starts, you should see a screen asking you to press a button to enter the MOK manager EFI utility. Note that any external external keyboards won't work in this step. Select Enroll MOK in the first menu, then continue, and then select Yes to enroll the keys, and re-enter the password established in previous step. Then select OK to continue the system boot.
-
-Verify if your key "Modules" is loaded
-
-```
-$ sudo dmesg | grep cert
+sudo update-initramfs -k all -u
 ```
 
+-----------------------------------------------------------------------------------------------------------------------------------
 Building and signing modules is independent of building and signing your own kernel. To sign a custom kernel or any other EFI binary you want to have loaded by shim (PEM), you’ll need to use a different command: sbsign (PEM). In this case, we’ll need the certificate in a different format, <ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM. Convert the certificate into PEM (.der to .pem), for example:
 ```
 $ sudo openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem
