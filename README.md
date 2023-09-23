@@ -257,16 +257,10 @@ https://en.wikipedia.org/wiki/Disk_encryption#Implementations
 
 Has the system booted via Secure Boot?
 ```
-$ su -
-Password:
-# mokutil --sb-state
-SecureBoot enabled
-```
-or
-```
 $ sudo mokutil --sb-state
 SecureBoot enabled
 ```
+
 What keys are on my system?
 ```
 $ sudo mokutil --list-enrolled
@@ -276,7 +270,7 @@ $ sudo mokutil --list-enrolled | grep Subject:
 
 Also the command <ins>modinfo</ins> prints the signature if available, for example:
 ```
-# modinfo /lib/modules/6.1.0-11-amd64/kernel/mm/zsmalloc.ko 
+$ sudo modinfo /lib/modules/6.1.0-11-amd64/kernel/mm/zsmalloc.ko 
 ```
 
 <b>2.Place to auto-generated MOK</b>
@@ -294,59 +288,50 @@ $ ls /var/lib/shim-signed/mok/
 ```
 To create a folder to MOK key:
 ```
-$ su -
-# mkdir -p /var/lib/shim-signed/mok/
+$ sudo mkdir -p /var/lib/shim-signed/mok/
 ```
 You can choose another place like "/etc/mok_key/" since there is no standard location at the moment.
 ```
-# mkdir -p /etc/mok_key/
+$ sudo mkdir -p /etc/mok_key/
 ```
 
 <b>3.Generating a new key</b>
 
-Before you create the public and private key for signing the kernel, you need to access the folder you created to be the destination of the keys:
+Before you create the public and private key for signing the kernel, you need to access the folder you created to be the destination of the keys.
 ```
-# cd /var/lib/shim-signed/mok/
-or
-# cd /etc/mok_key/
+$ cd /var/lib/shim-signed/mok/
 ```
-Then create the public (MOK Crtificate .der) and private key (MOK Signing Key .priv) for signing the kernel and already convet DER to PEM format:
+Then create the public (mokcertificate.der) and private key (moksigningkey.priv) with one-time password for signing the kernel
 ```
-# openssl req -config ./mokconfig.cnf -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "MOK.priv" -out "MOK.der" -subj "/CN=ShimSigned/"
-# ls -l /var/lib/shim-signed/mok/
+$ sudo openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -days 36500 -subj "/CN=ShimSigned/"
+```
+Convert the key also to PEM format (<ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM) and verify the output:
+```
+$ sudo openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem
+$ ls -l 
 total 12
 -rw-r--r-- 1 root root  787  MOK.der
 -rw-r--r-- 1 root root 1123  MOK.pem
 -rw------- 1 root root 1854  MOK.priv
 ```
---------------------------------------------------------------
-or alternatively:
-```
-# openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -days 36500 -subj "/CN=ShimSigned/"
-```
-Convert the key also to PEM format (<ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM):
-```
-# openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem
-```
 
-This commands will create both the private and public part of the certificate to sign things. You need both files to sign; and just the public part (MOK.der) to enroll the key in shim.
+This commands will create both the private and public part of the certificate to sign things. You need both files to sign; and just the public part (MOK.der) to enroll the key in Shim.
 
 --------------------------------------------------------------
-<b>4.Enrolling your key</b>
+<b>4.Enrolling your key im Shim</b>
 
-Enroll the key to your shim installation:
+Enroll the key to your installation:
 
 ```
 $ cd /var/lib/shim-signed/mok/
 $ sudo mokutil --import MOK.der
 ```
-or
-```
-$ sudo mokutil --import /var/lib/shim-signed/mok/MOK.der # prompts for just one-time password
-
-```
 You will be asked for a one-time <b>password (remember it and type it correctly)</b>, you will just use it to confirm your key selection in the next step (you won't need this password beyond this point, though), so choose any.
 
+Recheck your key will be prompted on next boot
+```
+$ sudo mokutil --list-new
+```
 <b>5.Restart and finsh the process</b>
 
 Restart your system. Changes to the MOK keys may only be confirmed directly from the console at boot time. You will encounter a blue screen of a tool called MOKManager. Select "Enroll MOK" and then "View key". Make sure it is your key you created in step 3. Afterwards continue the process and you must enter the password which you provided in step 4. Continue with booting your system.
@@ -354,17 +339,10 @@ Restart your system. Changes to the MOK keys may only be confirmed directly from
 Verify your key is already enrolled, if the MOK was loaded correctly, with:
 ```
 $ sudo mokutil --list-enrolled
-```
-```
 or
 $ sudo mokutil --test-key /var/lib/shim-signed/mok/MOK.der
 ```
-Others commands
-```
-# sbverify --list /boot/vmlinuz-6.1.0-11-amd64
-# sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-11-amd64
-$ sudo cat /proc/keys
-```
+
 <b>6.Sign your installed kernel (or bootloader, or module)</b>
 
 <DIV class="subsection" id="6.1" >
