@@ -338,24 +338,21 @@ Restart your system. Changes to the MOK keys may only be confirmed directly from
 
 Verify your key is already enrolled, if the MOK was loaded correctly, with:
 ```
-$ sudo mokutil --list-enrolled
-or
 $ sudo mokutil --test-key /var/lib/shim-signed/mok/MOK.der
 ```
 
-<b>6.Sign your installed kernel (or bootloader, or module)</b>
+<b>6.Sign your installed kernel or modules</b>
 
 <DIV class="subsection" id="6.1" >
 <details>
-<summary><b>6.1 Modern Method: </b> Signing the Debian kernel modules with DKMS</summary> 
+<summary><b>6.1 Modern Method: </b> Signing the Debian kernel and modules with DKMS</summary> 
 
 Building Debian kernel modules with DKMS. The dkms frameworks allows building kernel modules "on the fly" on the local system instead of building them centrally on the Debian infrastructure, DKMS could automatically sign kernel updated modules. If you install the kernel modules through the apt repository, chances are that modules have already been signed by the DKMS signing key. In that case, the traditional method won't work. And the thing you only need to do is to enroll the DKMS signing key into your machine. On systems that use SecureBoot, you will need a Machine Owner Key (MOK) to load DKMS modules. Generate it, enroll it, sign modules with it and then you will be able to load the signed modules. 
 
-It depends on the dkms package:
+In Debian, it depends on the dkms package:
 ```
 $ sudo apt install dkms
 ```
-
 In order for dkms to automatically sign kernel modules, it must be told which key to sign the module with. This is done by adding two configuration values to "/etc/dkms/framework.conf", adjusting paths as required:
 
   mok_signing_key="/var/lib/shim-signed/mok/MOK.priv"
@@ -365,7 +362,7 @@ In order for dkms to automatically sign kernel modules, it must be told which ke
 
 <DIV class="subsubsection" id="6.2.1">
 <details>
-<summary>DKMS Sign Helper</summary>  
+<summary><b>DKMS Sign Helper Script</b></summary>  
 <p></p>
 If these values are provided and dkms is able to build modules but does not attempt to sign them, then it is likely that sign_tool is missing. This is more common in older and/or custom kernels.
 In "/etc/dkms/framework.conf", add:
@@ -414,10 +411,9 @@ $ sudo dmesg | grep cert # verify your key is loaded
 <summary><b>6.2 Traditional Method:</b> signing the Debian kernel with sbsigntool</summary>  
 <p></p>
 
-Building and signing modules is independent of building and signing your own kernel. To sign a custom kernel or any other EFI binary you want to have loaded by shim (PEM), you’ll need to use a different command: sbsign (PEM). In this case, we’ll need the certificate in a different format, <ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM. Convert the certificate into PEM (.der to .pem), for example:
+Building and signing modules is independent of building and signing your own kernel (vmlinuz). To sign a custom kernel or any other EFI binary you want to have loaded by Shim, you’ll need to use a different command: sbsign (PEM). In this case, we’ll need the certificate in a different format, <ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM. Convert the certificate into PEM (.der to .pem), for example:
 ```
 $ sudo openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem
-
 ```
 For example, use it to sign our Kernel:
 ```
@@ -426,70 +422,49 @@ $ sudo mv "/boot/vmlinuz-$VERSION.tmp" "/boot/vmlinuz-$VERSION"
 ```
 For example, use it to sign our EFI binary:
 ```
-$ sudo sbsign --key MOK.priv --cert MOK.pem my_binary.efi --output my_binary.efi.signed
+$ sudo sbsign --key MOK.priv --cert MOK.pem grubx64.efi --output grubx64.efi.signed
+$ sudo mv "grubx64.efi.signed" "grubx64.efi"
 ```
 
-Sign the installed Kernel using the key created according to the location you gave it, this will create a new signed vmlinuz. Sign vmlinuz using sbsign,it should be at /boot/vmlinuz-[KERNEL-VERSION]:
+Sign the installed Kernel using the key created according to the location you gave it, this will create a new signed vmlinuz. Sign vmlinuz using sbsign and .pem certificate, it should be at /boot/vmlinuz-[KERNEL-VERSION]:
 
 To check your Kernel version, you can also use the command:
 ```
 $ uname -r
+6.1.0-12-amd64
 ```
 Signing vmlinuz (kernel) using sbsign:
 ```
 $ sudo sbsign --key MOK.priv --cert MOK.pem /boot/vmlinuz-[KERNEL-VERSION] --output /boot/vmlinuz-[KERNEL-VERSION].signed
-*for example*
-$ sudo sbsign --key /var/lib/shim-signed/mok/MOK.priv --cert /var/lib/shim-signed/mok/MOK.pem "/boot/vmlinuz-6.1.0-11-amd64" --output "/boot/vmlinuz-6.1.0-11-amd64.tmp"
 ```
-You can also signing your grubx64.efi (bootloader) using sbsign:
+For example
 ```
-$ sudo sbsign --key MOK.priv --cert MOK.pem my_binary.efi --output my_binary.efi.signed
+$ sudo sbsign --key /var/lib/shim-signed/mok/MOK.priv --cert /var/lib/shim-signed/mok/MOK.pem "/boot/vmlinuz-6.1.0-12-amd64" --output "/boot/vmlinuz-6.1.0-12-amd64.signed"
 ```
-------------------------------------------------------------------------
-or alternatively:
+alternatively:
 ```
 $ cd /var/lib/shim-signed/mok/
-$ sudo sbsign --key MOK.priv --cert MOK.pem "/boot/vmlinuz-[KERNEL-VERSION] --output "/boot/vmlinuz-[KERNEL-VERSION].tmp"
+$ sudo sbsign --key MOK.priv --cert MOK.pem "/boot/vmlinuz-[KERNEL-VERSION] --output "/boot/vmlinuz-[KERNEL-VERSION].signed"
 ```
-------------------------------------------------------------------------
-Copy the initram of the unsigned kernel, so we also have an initram for the signed one.This will create a new signed vmlinuz: remove the unsigned one and restore the original name of the signed one:
+Remove the unsigned one and restore the original name of the signed one, this will create a new signed vmlinuz: 
 ```
-$ sudo mv "/boot/vmlinuz-$VERSION.tmp" "/boot/vmlinuz-[KERNEL-VERSION]"
-for example
-$ sudo mv "/boot/vmlinuz-6.1.0-11-amd64.tmp" "/boot/vmlinuz-6.1.0-11-amd64"
+$ sudo mv "/boot/vmlinuz-6.1.0-12-amd64.signed" "/boot/vmlinuz-6.1.0-12-amd64"
 ```
-------------------------------------------------------------------------
-or alternatively:
-```
-$ sudo cp /boot/initrd.img-[KERNEL-VERSION]{,.signed}
-```
-or alternatively:
-```
-$ sudo rm /boot/initrd.img-[KERNEL-VERSION]
-$ sudo mv whatever/boot/initrd.img-[KERNEL-VERSION]{,.signed} /boot/
-```
-------------------------------------------------------------------------
 Update your grub-config
 ```
 $ sudo update-grub
 ```
-Reboot your system and select the signed kernel. If booting works, you can remove the unsigned kernel:
-```
-$ sudo mv /boot/vmlinuz-[KERNEL-VERSION]{.signed,}
-$ sudo mv /boot/initrd.img-[KERNEL-VERSION]{.signed,}
-$ sudo update-grub
-```
-Now your system should run under a signed kernel and upgrading GRUB2 works again. If you want to upgrade the custom kernel, you can sign the new version easily by following above steps again from step seven on. Thus BACKUP the MOK-keys (MOK.der, MOK.pem, MOK.priv).  
+Reboot your system and select the signed kernel. Now your system should run under a signed kernel and upgrading GRUB2 works again. If you want to upgrade the custom kernel, you can sign the new version easily by following above steps again from step seven on. Thus BACKUP the MOK-keys (MOK.der, MOK.pem, MOK.priv) in an encrypted device.  
 
 Verifying if a module is signed. The command modinfo prints the signature if available, for example:
 ```
-$ sudo modinfo /boot/vmlinuz-6.1.0-11-amd64
+$ sudo modinfo /boot/vmlinuz-6.1.0-12-amd64
 ```
 Others commands
 ```
 $ sudo dmesg | grep cert
-$ sudo sbverify --list /boot/vmlinuz-6.1.0-11-amd64
-$ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-11-amd64
+$ sudo sbverify --list /boot/vmlinuz-6.1.0-12-amd64
+$ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-12-amd64
 ```
 <p></p>
 </details>  
@@ -552,7 +527,7 @@ $ sudo update-initramfs -u -k all
 ```
 </details>   
 
-------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 
 ## :yellow_circle: $\textcolor{gold}{Intermediate\ Tutorial}$  
 <p></p>
