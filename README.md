@@ -144,6 +144,7 @@ https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page
 https://wiki.archlinux.org/title/Security      
 https://wiki.archlinux.org/title/Data-at-rest_encryption    
 https://en.wikipedia.org/wiki/Disk_encryption#Implementations    
+https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-2 
 
 <br></br>
 </details>  
@@ -181,59 +182,51 @@ https://en.wikipedia.org/wiki/Disk_encryption#Implementations
 <li>https://www.rodsbooks.com/efi-bootloaders</li>
 <li>https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html</li>
 <li>https://www.rodsbooks.com/efi-bootloaders/secureboot.html</li>
-<li>https://wiki.ubuntu.com/UEFI/SecureBoot</li>
+<li>https://ubuntu.com/blog/how-to-sign-things-for-secure-boot</li>
 <li>https://wiki.ubuntu.com/UEFI/SecureBoot/DKMS</li>
-<li>https://www.debian.org/security/2020-GRUB-UEFI-SecureBoot/index.en.html</li>
-<li>https://kernel-team.pages.debian.net/kernel-handbook/</li>
-<li>https://docs.kernel.org/admin-guide/module-signing.html</li>
-<li>https://www.openssl.org/docs/man1.0.2/man1/openssl-req.html</li>
-<li>https://www.elstel.org/debcheckroot</li>
-<li>https://www.kicksecure.com/wiki/Verified_Boot</li>
-<li>https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html</li>
-<li>https://stack.nexedi.com/P-VIFIB-Enhanced.UEFI.Secure.Boot.Debian</li>
-</li>https://www.kernel.org/doc/html/v4.20/admin-guide/module-signing.html</li>
-<li>https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot</li>
-<li>https://github.com/nsacyber/TrustedSHIM</li>
-<li>https://github.com/nsacyber/HIRS</li>
-<li>https://manpages.debian.org/stretch/keyutils/keyctl.1.en.html</li>
-<li>https://manpages.debian.org/testing/pesign/pesign.1.en.html</li>
-<li>https://manpages.debian.org/testing/libnss3-tools/index.html</li>
-<li><a href="https://media.defense.gov/2020/Sep/15/2002497594/-1/-1/0/CTR-UEFI-Secure-Boot-Customization-UOO168873-20.PDF" target="_blank">NSA - Cybersecurity Technical Report PDF</a></li>
-</ul>
-</details>  
-
-<details>
-<summary>Secure Boot in Practice References</summary>  
-<ul>
-<li>https://www.rodsbooks.com/efi-bootloaders/secureboot.html#using_signed</li>
-<li>https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html</li>
-<li>https://www.rodsbooks.com/efi-bootloaders/sb-modules.html</li>
-<li>https://wiki.debian.org/SecureBoot</li>
+<li>https://help.ubuntu.com/community/DKMS</li>
 <li>https://github.com/sitmsiteman/secure-boot-in-debian-based-distro</li>
 <li>https://github.com/Batu33TR/secureboot-mok-keys</li>
 <li>https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot</li>
-<li>https://mjg59.dreamwidth.org/18945.html</li>
 <li>https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471</li>
+<li>https://www.lastdragon.net/?p=2513</li>
+<li>https://www.kernel.org/doc/html/v4.15/admin-guide/module-signing.html</li>
+<li>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel</li>
+<li>https://ubs_csse.gitlab.io/secu_os/tutorials/linux_secure_boot.html</li>
+<li>https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot</li>
+<li>https://wiki.archlinux.org/title/GRUB/EFI_examples#top-page</li>
+<li>https://wiki.gentoo.org/wiki/Signed_kernel_module_support</li>
+<li>https://stack.nexedi.com/P-VIFIB-Enhanced.UEFI.Secure.Boot.Debian</li>
+<li>https://manpages.debian.org/buster/openssl/config.5ssl.en.html</li>
+<li>https://manpages.debian.org/stretch/keyutils/keyctl.1.en.html</li>
+<li>https://manpages.debian.org/testing/pesign/pesign.1.en.html</li>
+<li>https://manpages.debian.org/testing/libnss3-tools/index.html</li>
+<li>https://www.openssl.org/docs/man1.0.2/man1/openssl-req.html</li>
+<li>https://www.openssl.org/docs/man1.1.1/man1/req.html</li>
+<li>https://www.openssl.org/docs/manmaster/man5/x509v3_config.html</li>
+<li>https://www.kicksecure.com/wiki/Verified_Boot</li>
+<li>https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html</li>
+<li>https://github.com/nsacyber/TrustedSHIM</li>
+<li>https://github.com/nsacyber/HIRS</li>
 <li>https://askubuntu.com/questions/762254/why-do-i-get-required-key-not-available-when-install-3rd-party-kernel-modules</li>
 <li>https://help.eset.com/efs/8.1/en-US/secure-boot.html</li>
 <li>https://help.ggcircuit.com/knowledge/how-to-inject-custom-secure-boot-keys-example</li>
-<li>https://www.lastdragon.net/?p=2513</li>
 <li>https://blogs.oracle.com/linux/post/the-machine-keyring</li>
 <li>https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250 </li>
 <li>https://www.linuxjournal.com/content/take-control-your-pc-uefi-secure-boot</li>
-<li>https://access.redhat.com/documentation/de-de/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel</li>
+<li></li>
 </ul>
 </details>  
 
 <details>
 <summary>YouTube Video References</summary>  
 <ul>
-<li>Use UEFI Secure Boot NOW! (Trafotin)](https://www.youtube.com/watch?v=Mqh9o8YY2dg)</li>
-<li>Best Practices for UEFI Secure Boot Customization (UEFIForum)](https://www.youtube.com/watch?v=WBemkwMHLJM)</li>
-<li>Secure Boot from A to Z (The Linux Foundation)](https://www.youtube.com/watch?v=jtLQ8SzfrDU)</li>
-<li>Secure Boot. In Debian. In Buster. Really (DebConf Videos)](https://www.youtube.com/watch?v=_3mwK6AXo_k)</li>
-<li>EFI secure boot con Debian 11 (La cueva del ultimo dragon Last Dragon)](https://www.youtube.com/watch?v=33-CL2fBvlE)</li>
-<li>Automating Secure Boot testing(FOSDEM)](https://www.youtube.com/watch?v=qtyRR-KbXYQ)</li>
+<li><a href="https://www.youtube.com/watch?v=Mqh9o8YY2dg" target="_blank">Use UEFI Secure Boot NOW! (Trafotin)</a></li>
+<li><a href="https://www.youtube.com/watch?v=WBemkwMHLJM" target="_blank">Best Practices for UEFI Secure Boot Customization (UEFIForum)</a></li>
+<li><a href="https://www.youtube.com/watch?v=jtLQ8SzfrDU" target="_blank">Secure Boot from A to Z (The Linux Foundation)</a></li>
+<li><a href="https://www.youtube.com/watch?v=_3mwK6AXo_k" target="_blank">Secure Boot. In Debian. In Buster. Really (DebConf Videos)</a></li>
+<li><a href="https://www.youtube.com/watch?v=33-CL2fBvlE" target="_blank">EFI secure boot con Debian 11 (La cueva del ultimo dragon Last Dragon)</a></li>
+<li><a href="https://www.youtube.com/watch?v=qtyRR-KbXYQ" target="_blank">Automating Secure Boot testing(FOSDEM)</a></li>
 </ul>
 </details> 
 
@@ -247,6 +240,8 @@ https://en.wikipedia.org/wiki/Disk_encryption#Implementations
 - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989463  
 - Debian Bug report logs - #928300 shim-signed: secure boot via removable media path unavailable  
 - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=928300  
+- Debian Bug report logs - #939392 please provide kmodsign like Ubuntu does
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=939392
 ```  
 <DIV class="section" id="VERDE">
 <details>
@@ -297,15 +292,13 @@ $ sudo mkdir -p /etc/mok_key/
 
 <b>3.Generating a new key</b>
 
-Before you create the public and private key for signing the kernel, you need to access the folder you created to be the destination of the keys.
+Before you create the public and private key for signing the kernel, you need to access the folder you created to be the destination of the keys. Then create the public (mokcertificate.der) and private key (moksigningkey.priv) with one-time password for signing the kernel
 ```
 $ cd /var/lib/shim-signed/mok/
+$ sudo openssl req -config ./openssl.cnf -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -days 36500 -subj "/CN=ShimSigned/"
+
 ```
-Then create the public (mokcertificate.der) and private key (moksigningkey.priv) with one-time password for signing the kernel
-```
-$ sudo openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -days 36500 -subj "/CN=ShimSigned/"
-```
-Convert the key also to PEM format (<ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM) and verify the output:
+Convert the key also to PEM format, <ins>mokutil</ins> needs DER format, <ins>sbsign</ins> needs PEM format:
 ```
 $ sudo openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem
 $ ls -l 
@@ -313,9 +306,14 @@ total 12
 -rw-r--r-- 1 root root  787  MOK.der
 -rw-r--r-- 1 root root 1123  MOK.pem
 -rw------- 1 root root 1854  MOK.priv
+$ sudo chmod 600 /var/lib/shim-signed/mok/*
 ```
-
 This commands will create both the private and public part of the certificate to sign things. You need both files to sign; and just the public part (MOK.der) to enroll the key in Shim.
+
+To read the certificate file in a human readable format, use
+```
+$ sudo openssl x509 -in /var/lib/shim-signed/mok/MOK.pem -noout -text 
+```
 
 --------------------------------------------------------------
 <b>4.Enrolling your key im Shim</b>
@@ -527,11 +525,15 @@ $ sudo update-initramfs -u -k all
 ```
 </details>   
 
------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 
 ## :yellow_circle: $\textcolor{gold}{Intermediate\ Tutorial}$  
 <p></p>
-Building and signing modules is independent of building and signing your own kernel.
+```diff
+- Building and signing kernel modules is independent of building and signing your own kernel.
+- If you have already created your own keys (for example, the files MOK.der, MOK.pem and MOK.priv) then you can use these, rather than creating your own.
+```
+
 👷🛠️🚧🏗  
 
 <details>
@@ -552,8 +554,7 @@ How to get WiFi Module signed for Secure Boot
 ```
 $ sudo mkdir /var/lib/shim-signed/modules
 ```
-Create a new pair of private key (module.priv) and public key (module.der). For sing the module, depending on your platform, the exact location of `sign-file` might vary. In Debian 12 (Bookworm) it was in <ins>/usr/src/linux-headers-[KERNEL-VERSION]/scripts/sign-file</ins> .
-
+Create a new pair of private key (module.priv) and public key (module.der). For sing the module, depending on your platform, the exact location of `sign-file` might vary. In Debian 12 (Bookworm) it was in <ins>/usr/src/linux-headers-$(uname -r)/scripts/sign-file</ins> .
 ```
 $ sudo openssl req -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "/var/lib/shim-signed/modules/module.priv" -out "/var/lib/shim-signed/modules/module.der" -subj "/CN=Modules/"
 $ ls -l /var/lib/shim-signed/modules/
@@ -564,12 +565,12 @@ total 8
 
 2. Sign the module 
 
-Where was the module installed?
+Where was the module installed? In $(modinfo -n rtw88_8723d) .
 ```
 $ sudo modinfo -n rtw88_8723d
   /lib/modules/6.1.0-12-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw88_8723d.ko
 ```
-For sing the module, depending on your platform, the exact location of `sign-file` might vary. In Debian 12 (Bookworm) it was in <ins>/usr/src/linux-headers-[KERNEL-VERSION]/scripts/sign-file</ins>
+For sing the module, depending on your platform, the exact location of `sign-file` might vary. In Debian 12 (Bookworm) it was in <ins>/usr/src/linux-headers-$(uname -r)/scripts/sign-file</ins> .
 
 ```
 $ uname -r
@@ -578,6 +579,7 @@ $ /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file
 Usage: scripts/sign-file [-dp] <hash algo> <key> <x509> <module> [<dest>]
        scripts/sign-file -s <raw sig> <hash algo> <x509> <module> [<dest>]
 ```
+
 ```
 $ sudo /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file sha256 /var/lib/shim-signed/modules/module.priv /var/lib/shim-signed/modules/module.der /lib/modules/6.1.0-12-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw88_8723d.ko
 $ sudo modinfo rtw88_8723d
@@ -821,6 +823,7 @@ Usage: scripts/sign-file [-dp] <hash algo> <key> <x509> <module> [<dest>]
        scripts/sign-file -s <raw sig> <hash algo> <x509> <module> [<dest>]
 ```
 Sign the module 
+
 ```
 $ sudo /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file sha256 /var/lib/shim-signed/modules/VirtualBox.priv /var/lib/shim-signed/modules/VirtualBox.der /lib/modules/6.1.0-12-amd64/misc/vboxdrv.ko
 $ sudo modinfo vboxdrv
@@ -830,6 +833,16 @@ sig_key:        XX:XX:XX:XX...
 sig_hashalgo:   sha256
 signature:      XX:XX:XX:XX...
 (...)
+```
+If you have your own keys:
+```
+$ sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der /lib/modules/6.1.0-12-amd64/misc/vboxdrv.ko
+```
+
+Other form
+```
+$ sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der "$(modinfo -n vboxdrv)"
+
 ```
 If the modules are needed to boot your machine, make sure to update the initramfs, e.g. using
 ```
