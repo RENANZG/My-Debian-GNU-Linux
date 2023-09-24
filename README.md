@@ -747,6 +747,8 @@ https://wiki.ubuntu.com/EFIBootLoaders
 
 </details>   
 
+<p></p>
+
 <details>
 <summary><b>OpenSSL Error - No such file</b></summary>  
 <p></p>
@@ -818,15 +820,25 @@ openssl.cnf
 
  It is kind of buried in OpenSSL source code for apps.c, load_config and what happens when cnf is NULL (i.e., no -config option or OPENSSL_CONF envar). When cnf is NULL and no overrides, then OPENSSLDIR is used.
 
+You can use strace (man strace) to check the configuration file being used while generating the self-signed certificate.
+<pre>
+$ strace -e trace=open,openat -o /tmp/strace.log.0 openssl req \
+-newkey rsa:2048 -x509 -nodes -keyout localhost.key \
+-new -out localhost.crt
+...
+
+$ grep "openssl.cnf" /tmp/strace.log.0
+openat(AT_FDCWD, "/etc/pki/tls/openssl.cnf", O_RDONLY) = 3
+</pre>
 
 sudo cat /etc/ssl/openssl.cnf
 openssl_conf = openssl_init from /etc/ssl/openssl.cnf
 $(openssl version -d)
-Override system default with user level environment:
+
+To override system default with user level environment:
 An empty file will do: touch ~/.openssl.cnf
 BASH define & export: export OPENSSL_CONF=~/.openssl.cnf
 Wrap application within a script: export OPENSSL_CONF=/dev/null
- 
 
 </details>
 
