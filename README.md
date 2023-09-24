@@ -233,8 +233,7 @@ https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-
 
 <p></p>
 
-
-## ${\color{Green}\bullet}$ $\textcolor{green}{Basic\ Tutorial}$ 
+## ${\color{Green}\bullet}$    $\textcolor{green}{Basic\ Tutorial}$     
 
 👷🛠️UNDER WORK🚧🏗    
 ```diff
