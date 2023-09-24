@@ -253,9 +253,12 @@ __________________________________________________________________________
 
 👷🛠️UNDER WORK🚧🏗    
 ```diff
-- Caution:The instructions provided here assume that you're signing a module for the currently running kernel. If you're signing a module for a different kernel, you must provide the path to the sign-file utility within the correct kernel version source. Otherwise, the signature type for the module for that kernel might not align correctly with the expected signature type.
-- Note:UEFI specifications use the terms key and public key to mean the public part of the key pair, or the X.509 certificate. However, in OpenSSL, the term key is the private key that's used for signing. Thus, all Secure Boot keys must be X.509 keys and not OpenSSL keys.
+- Caution:
+- Use an administrator password in the BIOS and do not use the same for disk encryption.
+- UEFI specifications use the terms key and public key to mean the public part of the key pair, or the X.509 certificate. However, in OpenSSL, the term key is the private key that's used for signing. Thus, all Secure Boot keys must be X.509 keys and not OpenSSL keys.
+- The instructions provided here assume that you're signing a module for the currently running kernel. If you're signing a module for a different kernel, you must provide the path to the sign-file utility within the correct kernel version source. Otherwise, the signature type for the module for that kernel might not align correctly with the expected signature type.
 - Only a single custom certificate can be added to the kernel because the compressed size of the kernel's boot image can not increase. Do not add multiple certificates to the kernel boot image.
+- Bugs:
 - Debian Bug report logs - #989463 please align shim-signed dkms behaviour with Ubuntu  
 - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989463  
 - Debian Bug report logs - #928300 shim-signed: secure boot via removable media path unavailable  
@@ -887,12 +890,31 @@ export OPENSSL_CONF=/dev/null
 https://github.com/nsacyber/Hardware-and-Firmware-Security-Guidance/blob/master/secureboot/Linux.md  
 
 </details>   
+
+
+<details>  
+<summary><b>Encrypted boot partition manager with UEFI Secure Boot support</b></summary>  
+<p></p>
+https://github.com/xmikos/cryptboot
+https://github.com/kmille/cryptboot
+
+</details>
+
 <details>  
 <summary><b>Sign with TPM 2.0</b></summary>  
 <p></p>
 https://github.com/squarooticus/efi-measured-boot  
+https://github.com/osresearch/safeboot
 
 </details>  
+
+<details>  
+<summary><b>Secure Boot with Yubikey</b></summary>  
+<p></p>
+https://github.com/DimanNe/secure-boot
+https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi
+
+</details>
 
 <br></br>
 
