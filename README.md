@@ -1,9 +1,13 @@
+__________________________________________________________________________
+
 ## 1. DEBIAN GNU/LINUX AND HARDENING
 
 ![thedoortofreedom](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/f24266c3-b530-4586-adaa-55bbd808f7eb)
 
 
 ### 1.1 System Hardening Must Have
+
+<sub>
 <table>
   <tr>
    <td><a href="https://anonymousplanet.org/" target="_blank"><b>Anonymous Planet</b> - The Hitchhiker’s Guide</a><a href="https://anonymousplanet.org/export/guide.pdf" target="_blank">&nbsp(PDF)</a></td>
@@ -34,8 +38,11 @@
   <td><a href="https://www.duplicati.com/" target="_blank"><b>Duplicati</b> - Store securely encrypted backups on cloud storage services!</a></td>
     </tr>
 </table>
+</sub>
 
 ### 1.2 Essential Tools
+
+<sub>
 <table>
   <tr>
     <td><a href="https://www.ventoy.net/en/download.html" target="_blank"><b>1. Ventoy</b></a></td>
@@ -78,7 +85,9 @@
     <td><a href="https://www.hirensbootcd.org/download/" target="_blank">(Checksums)</a></td>
    </tr>
 </table>
+</sub>
 
+<sub>
 How to check the iso file (SHA256SUMS) - https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html  
 <details>
 <summary>Manual method</summary>  
@@ -102,9 +111,11 @@ How to check the iso file (SHA256SUMS) - https://www.gnu.org/software/coreutils/
 <p>name.iso: OK  </p>
 <p>If the OK for your file appears, that indicates the hash matches.  </p>
 </details>  
+<br></br>
+</sub>
+__________________________________________________________________________
 
 ## 2. SYSTEM INSTALLATION 
-
 
 <details>
 <summary><b>2.1 Hardware</b></summary>  
@@ -164,11 +175,14 @@ https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-
 </ul>
 <br></br>
 </details>  
+<br></br>
 
-## 4. DEBIAN SECURE BOOT 
+__________________________________________________________________________
+
+## 3. DEBIAN SECURE BOOT 
 
 <details>
-<summary><b>4.1 Introduction</b></summary>  
+<summary><b>3.1 Introduction</b></summary>  
 <p></p>
 
     "Most modern systems will ship with SB enabled - they will not run any unsigned code by default, but it is possible to change the firmware configuration to either disable SB or to enroll extra signing keys." "The whole point of Secure Boot is to prevent malware from gaining control of the computer. Therefore, when booting with Secure Boot active, Fedora 18 and later, Ubuntu 16.04 and later, and probably other distributions restrict actions that some Linux users take for granted. For instance, Linux kernel modules must be signed, which complicates use of third-party kernel drivers, such as Nvidia's and AMD/ATI's proprietary video drivers. More recent kernels may, if Secure Boot is active, also check that they were launched from a boot loader that honors Secure Boot, and shut down if this was not the case.    
@@ -178,11 +192,12 @@ https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-
 </details>  
 
 <details>
-<summary>4.2 Secure Boot References</summary>  
+<summary>3.2 Secure Boot References</summary>  
 <ul>
+<b>BASIC</b>
 <li>https://www.rodsbooks.com/efi-bootloaders</li>
-<li>https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html</li>
 <li>https://www.rodsbooks.com/efi-bootloaders/secureboot.html</li>
+<li>https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html</li>
 <li>https://ubuntu.com/blog/how-to-sign-things-for-secure-boot</li>
 <li>https://wiki.ubuntu.com/UEFI/SecureBoot/DKMS</li>
 <li>https://help.ubuntu.com/community/DKMS</li>
@@ -191,6 +206,8 @@ https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-
 <li>https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot</li>
 <li>https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471</li>
 <li>https://www.lastdragon.net/?p=2513</li>
+<b>ADVANCED</b>
+<li>https://uefi.org</li>
 <li>https://www.kernel.org/doc/html/v4.15/admin-guide/module-signing.html</li>
 <li>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel</li>
 <li>https://ubs_csse.gitlab.io/secu_os/tutorials/linux_secure_boot.html</li>
@@ -220,21 +237,19 @@ https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-
 </details>  
 
 <details>
-<summary>4.3 YouTube Video References</summary>  
+<summary>3.3 YouTube Video References</summary>  
 <ul>
 <li><a href="https://www.youtube.com/watch?v=Mqh9o8YY2dg" target="_blank">Use UEFI Secure Boot NOW! (Trafotin)</a></li>
 <li><a href="https://www.youtube.com/watch?v=WBemkwMHLJM" target="_blank">Best Practices for UEFI Secure Boot Customization (UEFIForum)</a></li>
 <li><a href="https://www.youtube.com/watch?v=jtLQ8SzfrDU" target="_blank">Secure Boot from A to Z (The Linux Foundation)</a></li>
 <li><a href="https://www.youtube.com/watch?v=_3mwK6AXo_k" target="_blank">Secure Boot. In Debian. In Buster. Really (DebConf Videos)</a></li>
 <li><a href="https://www.youtube.com/watch?v=33-CL2fBvlE" target="_blank">EFI secure boot con Debian 11 (La cueva del ultimo dragon Last Dragon)</a></li>
-<li><a href="https://www.youtube.com/watch?v=qtyRR-KbXYQ" target="_blank">Automating Secure Boot testing(FOSDEM)</a></li>
 </ul>
 </details> 
 
-<p>
-</p>
+-------------------------------------------------------------------------
 
-<img src="https://latex.codecogs.com/svg.image?\inline&space;\huge&space;{\color{DarkGreen}\bullet\mathbf{Basic&space;Tutorial}}" title="{\color{DarkGreen}\bullet\mathbf{Basic Tutorial}}" />
+## $\textcolor{green}{Basic\ Tutorial}$  
 
 👷🛠️UNDER WORK🚧🏗    
 ```diff
@@ -868,14 +883,17 @@ https://github.com/squarooticus/efi-measured-boot
 
 </details>  
 
-<p></p>
+<br></br>
 
-----------------------------------------------------------------------------------------------
+________________________________________________________________________________________
 
-## PRIVILEGES AND APPARMOR  
+## 4. PRIVILEGES AND APPARMOR  
 
 
-## FIREWALL AND VPN  
+<br></br>
+________________________________________________________________________________________
+
+## 5. FIREWALL AND VPN  
 👷🛠️UNDER WORK🚧🏗    
 
 https://github.com/techlore/VPN-reviews    
@@ -905,7 +923,11 @@ https://transmissionbt.com/
 **Everyday TOR**  
 https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy   
 
-## SOFTWARES  
+<br></br>
+
+_______________________________________________________________________
+
+## 6. SOFTWARES  
 👷🛠️UNDER WORK🚧🏗    
 
 <DIV>
