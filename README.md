@@ -113,6 +113,7 @@ How to check the iso file (SHA256SUMS) - https://www.gnu.org/software/coreutils/
 </details>  
 <br></br>
 </sub>
+
 __________________________________________________________________________
 
 ## 2. SYSTEM INSTALLATION 
