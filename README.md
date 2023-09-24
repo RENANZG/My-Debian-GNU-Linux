@@ -191,6 +191,7 @@ __________________________________________________________________________
 <details>
 <summary>3.2 Secure Boot References</summary>  
 <ul>
+
 <b>BASIC</b>
 <li>https://www.rodsbooks.com/efi-bootloaders</li>
 <li>https://www.rodsbooks.com/efi-bootloaders/secureboot.html</li>
@@ -203,9 +204,11 @@ __________________________________________________________________________
 <li>https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot</li>
 <li>https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471</li>
 <li>https://www.lastdragon.net/?p=2513</li>
+
 <b>ADVANCED</b>
 <li>https://uefi.org</li>
 <li>https://www.kernel.org/doc/html/v4.15/admin-guide/module-signing.html</li>
+<li>https://docs.oracle.com/en/operating-systems/oracle-linux/secure-boot/toc.htm#Table-of-Contents</li>
 <li>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel</li>
 <li>https://ubs_csse.gitlab.io/secu_os/tutorials/linux_secure_boot.html</li>
 <li>https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot</li>
@@ -250,6 +253,9 @@ __________________________________________________________________________
 
 👷🛠️UNDER WORK🚧🏗    
 ```diff
+- Caution:The instructions provided here assume that you're signing a module for the currently running kernel. If you're signing a module for a different kernel, you must provide the path to the sign-file utility within the correct kernel version source. Otherwise, the signature type for the module for that kernel might not align correctly with the expected signature type.
+- Note:UEFI specifications use the terms key and public key to mean the public part of the key pair, or the X.509 certificate. However, in OpenSSL, the term key is the private key that's used for signing. Thus, all Secure Boot keys must be X.509 keys and not OpenSSL keys.
+- Only a single custom certificate can be added to the kernel because the compressed size of the kernel's boot image can not increase. Do not add multiple certificates to the kernel boot image.
 - Debian Bug report logs - #989463 please align shim-signed dkms behaviour with Ubuntu  
 - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989463  
 - Debian Bug report logs - #928300 shim-signed: secure boot via removable media path unavailable  
@@ -269,6 +275,7 @@ Has the system booted via Secure Boot?
 $ sudo mokutil --sb-state
 SecureBoot enabled
 ```
+If controlling the Secure Boot state through the EFI setup program is difficult, you can optionally use the mokutil utility to disable Secure Boot at the level of the Shim so that, although UEFI Secure Boot is enabled, no further validation takes place after the Shim is loaded.
 
 What keys are on my system?
 ```
@@ -299,7 +306,7 @@ To create a folder to MOK key:
 ```
 $ sudo mkdir -p /var/lib/shim-signed/mok/
 ```
-You can choose another place like "/etc/mok_key/" since there is no standard location at the moment.
+You can choose another placcautione like "/etc/mok_key/" since there is no standard location at the moment.
 ```
 $ sudo mkdir -p /etc/mok_key/
 ```
@@ -327,6 +334,13 @@ To read the certificate file in a human readable format, use
 ```
 $ sudo openssl x509 -in /var/lib/shim-signed/mok/MOK.pem -noout -text 
 ```
+
+Another example of key generation:
+```
+$ sudo openssl req -x509 -new -nodes -utf8 -sha512 -days 3650 -batch -config /etc/ssl/x509.conf -outform DER -out /etc/ssl/certs/pubkey.der -keyout /etc/ssl/certs/priv.key
+$ sudo openssl x509 -inform DER -in /etc/ssl/certs/pubkey.der -out /etc/ssl/certs/pubkey.pem
+```
+
 
 --------------------------------------------------------------
 <b>4.Enrolling your key im Shim</b>
