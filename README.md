@@ -7,7 +7,6 @@ __________________________________________________________________________
 
 ### 1.1 System Hardening Must Have
 
-<sub>
 <table>
   <tr>
    <td><a href="https://anonymousplanet.org/" target="_blank"><b>Anonymous Planet</b> - The Hitchhiker’s Guide</a><a href="https://anonymousplanet.org/export/guide.pdf" target="_blank">&nbsp(PDF)</a></td>
@@ -38,11 +37,9 @@ __________________________________________________________________________
   <td><a href="https://www.duplicati.com/" target="_blank"><b>Duplicati</b> - Store securely encrypted backups on cloud storage services!</a></td>
     </tr>
 </table>
-</sub>
 
 ### 1.2 Essential Tools
 
-<sub>
 <table>
   <tr>
     <td><a href="https://www.ventoy.net/en/download.html" target="_blank"><b>1. Ventoy</b></a></td>
@@ -85,7 +82,6 @@ __________________________________________________________________________
     <td><a href="https://www.hirensbootcd.org/download/" target="_blank">(Checksums)</a></td>
    </tr>
 </table>
-</sub>
 
 <sub>
 How to check the iso file (SHA256SUMS) - https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html  
