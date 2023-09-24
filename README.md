@@ -231,9 +231,10 @@ https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-
 </ul>
 </details> 
 
-<p></p>
+<p>
+</p>
 
-## ${\color{Green}\bullet}$    $\textcolor{green}{Basic\ Tutorial}$     
+<img src="https://latex.codecogs.com/svg.image?\inline&space;\huge&space;{\color{DarkGreen}\bullet\mathbf{Basic&space;Tutorial}}" title="{\color{DarkGreen}\bullet\mathbf{Basic Tutorial}}" />
 
 👷🛠️UNDER WORK🚧🏗    
 ```diff
@@ -529,7 +530,8 @@ $ sudo update-initramfs -u -k all
 
 -------------------------------------------------------------------------------------------------
 
-## ${\color{Yellow}\bullet}$ $\textcolor{gold}{Intermediate\ Tutorial}$  
+## $\textcolor{gold}{Intermediate\ Tutorial}$  
+
 <p></p>
 
 ```diff
@@ -836,9 +838,12 @@ openssl_conf = openssl_init from /etc/ssl/openssl.cnf
 $(openssl version -d)
 
 To override system default with user level environment:
-An empty file will do: touch ~/.openssl.cnf
-BASH define & export: export OPENSSL_CONF=~/.openssl.cnf
-Wrap application within a script: export OPENSSL_CONF=/dev/null
+An empty file will do:
+touch ~/.openssl.cnf
+BASH define & export:
+export OPENSSL_CONF=~/.openssl.cnf
+Wrap application within a script:
+export OPENSSL_CONF=/dev/null
 
 </details>
 
@@ -846,7 +851,7 @@ Wrap application within a script: export OPENSSL_CONF=/dev/null
 
 ------------------------------------------------------------------------------------------------
 
-## ${\color{Red}\bullet}$ $\textcolor{red}{Advanced\ Tutorial}$ 
+## $\textcolor{red}{Advanced\ Tutorial}$ 
 
 👷🛠️🚧🏗  
 
