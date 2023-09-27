@@ -121,6 +121,7 @@ __________________________________________________________________________
 • Points to check:
 
 2.1.1 Security  
+https://github.com/chipsec/chipsec
 https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption    
 
 2.1.2 Compatibility  
@@ -761,7 +762,6 @@ Done.
 
 How to get VirtualBox signed for Secure Boot
 
-
 </details> 
 
 
@@ -969,11 +969,17 @@ _______________________________________________________________________
 </details>  
 
 <details>  
+<summary><b>Password Manager</b></summary>  
+<a href=""></a></td>  
+https://keepassxc.org/    
+</details>  
+
+<details>  
 <summary><b>Browsers</b></summary>  
 <p style="line-height: 8px;"><b>Firefox</b>  </p>
 <p style="margin : 0; padding-top:0;"><b>Chromium</b>  </p>
 <p style="line-height: 8px;"><b>Extensions</b>  </p>
-<p"><a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a>  </p>
+<p><a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a>  </p>
 <p><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a>  </p>
 <p><a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a>  </p>
 <p><a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reaser View</a>  </p>
@@ -981,28 +987,32 @@ _______________________________________________________________________
 </details>  
 
 <details>  
-<summary><b>Password Manager</b></summary>  
-<a href=""></a></td>  
-https://keepassxc.org/    
-</details>  
-
-<details>  
 <summary><b>Email</b></summary>  
-<a href=""></a></td>  
+<a href=""></a></td>  <a href=""></a></td>  
 <p style="margin : 0; padding-top:0;">https://emailselfdefense.fsf.org/en/workshops.html  </p>
 <p style="margin : 0; padding-top:0;">https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird  </p>
 <p style="margin : 0; padding-top:0;">https://keys.openpgp.org/about/usage  </p>
 <p style="margin : 0; padding-top:0;">https://efail.de/</p>  
 </details>  
-</DIV>
 
+<details>  
+<summary><b>Office</b></summary>  
+<p><a href=""></a></td></p>  
+
+</details>  
+
+
+</DIV>
 
 ###  MALWARES, BACKDOORS, ZERO-DAYS, DATA POISONING, SUPPLY CHAIN ATTACK, MAN-IN-THE-MIDDLE (MITM), HONEY POTS, AND SOCIAL ENGINEERING ATTACK    
 
 
 ### Some Links  
-https://github.com/sbilly/awesome-security    
-https://github.com/ernw/hardening    
-https://github.com/jekil/hardentheworld    
-https://www.youtube.com/@hitbsecconf/videos  
 
+https://www.youtube.com/@DebConfVideos    
+https://www.youtube.com/user/44contv    
+https://www.youtube.com/@BlackHatOfficialYT    
+https://www.youtube.com/@secwestnet    
+https://www.youtube.com/@EkopartyConference    
+https://www.youtube.com/@reconmtl    
+https://www.youtube.com/@TROOPERScon    
