@@ -121,11 +121,12 @@ __________________________________________________________________________
 • Points to check:
 
 2.1.1 Security  
-https://github.com/chipsec/chipsec
 https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption    
+https://github.com/chipsec/chipsec    
 
 2.1.2 Compatibility  
 https://linux-hardware.org    
+https://github.com/morrownr/USB-WiFi    
 
 2.1.3 Performance  
 
@@ -545,7 +546,14 @@ Backup. Exports to list (ideally store it on an encrypted external storage mediu
 ```
 $ sudo mokutil --export
 ```
-Shows all keys.
+To remove all (MOKs being a list and not just a single MOK, you can make the shim trust keys from several different vendors, allowing dual and multi-boot)
+```
+$ sudo mokutil --reset --mok
+```
+```
+$ sudo mokutil --reset
+```
+To remove one key, first show all keys.
 ```
 $ sudo ls -1 MOK*
 ```
@@ -557,17 +565,20 @@ Delete those not enrolled to maintain secure boot.
 ```
 $ sudo mokutil --delete MOK-0001.der
 ```
-To remove all (MOKs being a list and not just a single MOK, you can make the shim trust keys from several different vendors, allowing dual and multi-boot)
-```
-$ sudo mokutil --reset --mok
-```
-```
-$ sudo mokutil --reset
-```
 Uninstall the modules, if it was made with script "make".
 ```
 $ cd ~/realtekwifi
 $ sudo make uninstall
+```
+or
+```
+sudo rmmod 8192eu
+sudo rmmod rtl8xxxu
+sudo dkms remove -m rtl8192eu -v 1.0
+```
+or
+```
+sudo lshw -C network
 ```
 Reset de modules and unload them in Kernel
 ```
@@ -592,6 +603,22 @@ $ sudo update-initramfs -u -k all
   <p></p>
 
 How to get WiFi Module signed for Secure Boot
+
+Mandatory packages if Secure Boot is active: openssl, sign-file and mokutil
+
+Brief - Sign with DKMS
+1. if not installed, install dkms, openssl and mokutil
+2. build/install a driver
+3. if not imported by default, import the dkms key with mokutil
+4. reboot
+5. enroll the key
+
+Brief - Sign with Sign-file
+1. if not installed, install openssl and mokutil
+2. build/install a driver
+3. import the key
+4. reboot
+5. enroll the key
 
 1. You can create a personal public/private RSA key pair to sign the kernel modules. You can chose to store the key/pair, for example, in the <ins>/var/lib/shim-signed/modules/</ins> directory. Then create a new pair of private key (module.priv) and public key (module.der).
 
