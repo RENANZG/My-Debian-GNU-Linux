@@ -207,11 +207,13 @@ __________________________________________________________________________
 <li>https://www.lastdragon.net/?p=2513</li>
 <li>https://uefi.org</li>
 <li>https://www.kernel.org/doc/html/v4.15/admin-guide/module-signing.html</li>
+<li>https://www.kernel.org/doc./html/latest/admin-guide/module-signing.html</li>
 <li>https://docs.oracle.com/en/operating-systems/oracle-linux/secure-boot/toc.htm#Table-of-Contents</li>
 <li>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel</li>
 <li>https://ubs_csse.gitlab.io/secu_os/tutorials/linux_secure_boot.html</li>
 <li>https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot</li>
 <li>https://wiki.archlinux.org/title/GRUB/EFI_examples#top-page</li>
+<li>https://wiki.archlinux.org/title/Signed_kernel_modules</li>
 <li>https://wiki.gentoo.org/wiki/Signed_kernel_module_support</li>
 <li>https://stack.nexedi.com/P-VIFIB-Enhanced.UEFI.Secure.Boot.Debian</li>
 <li>https://manpages.debian.org/buster/openssl/config.5ssl.en.html</li>
@@ -824,28 +826,51 @@ https://wiki.ubuntu.com/EFIBootLoaders
 <p></p>
 
 <details>
-<summary><b>OpenSSL Error - No such file</b></summary>  
+<summary><b>OpenSSL Error</b></summary>  
 <p></p>
+Error 1 - No such file
 <pre>
-Error
 At main.c:298:
 - SSL error:FFFFFFFF80000002:system library::No such file or directory: ../crypto/bio/bss_file.c:67
 - SSL error:10000080:BIO routines::no such file: ../crypto/bio/bss_file.c:75
 </pre>
+Error 2 - 
+<pre>
+At main.c:170:
+- SSL error:07880109:common libcrypto routines::interrupted or cancelled: ../crypto/passphrase.c:184
+- SSL error:07880109:common libcrypto routines::interrupted or cancelled: ../crypto/passphrase.c:184
+- SSL error:1C80009F:Provider routines::unable to get passphrase: ../providers/implementations/encode_decode/decode_epki2pki.c:96
+- SSL error:07880109:common libcrypto routines::interrupted or cancelled: ../crypto/passphrase.c:184
+- SSL error:04800068:PEM routines::bad password read: ../crypto/pem/pem_pkey.c:155
+sign-file: /var/lib/shim-signed/mok/MOK.priv: Success
+</pre>
 
 <b>Cause:</b>
-Certificate or key are missing. That statement is telling us one of both files that DKMS or OpenSSL.conf are looking for are not where it is looking. Another possibility is that to sign a custom kernel or any other EFI binary you want to have loaded by shim, you’ll need to use a different command: sbsign or mokutil. Unfortunately, we’ll need the certificate in a different format in this case, <ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM. Convert the certificate into PEM (.der to .pem):
+Certificate or key are missing. That statement is telling us one of both files that DKMS or OpenSSL.conf are looking for are not where it is looking. Another possibility is that to sign a custom kernel or any other EFI binary you want to have loaded by shim, you’ll need to use a different command: sbsign or mokutil. Unfortunately, we’ll need the certificate in a different format in this case, <ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM. Convert the certificate into PEM (.der to .pem).
 
+As long as the signing key is enrolled in shim and does not contain the Object Identifier (OID) from earlier (since that limits the use of the key to kernel module signing), the binary should be loaded just fine by shim. 
+
+Solution 1
+This is where Debian places openssl.cnf for the OpenSSL they provide:
 <pre>
-$ sudo openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem
+S openssl version -d
+OPENSSLDIR: "/usr/lib/ssl"
+S ls -l /usr/lib/ssl
+lrwxrwxrwx 1 root root   mmm 30 mm:mm openssl.cnf -> /etc/ssl/openssl.cnf
+$ ls -l /etc/ssl/
+-rw-r--r-- 1 root root   mmm 30 mm:mm openssl.cnf
 </pre>
 
-Use it to sign our EFI binary:    
+And this is where Ubuntu places openssl.cnf for the OpenSSL they provide:
+
 <pre>
-sbsign --key MOK.priv --cert MOK.pem my_binary.efi --output my_binary.efi.signed
+$ sudo ls /etc/ssl/
+openssl.cnf
 </pre>
-As long as the signing key is enrolled in shim and does not contain the Object Identifier (OID) from earlier (since that limits the use of the key to kernel module signing), the binary should be loaded just fine by shim.    
-<b>Using syntax by mistake:</b>
+
+ It is kind of buried in OpenSSL source code for apps.c, load_config and what happens when openssl.cnf is NULL (i.e., no -config option or OPENSSL_CONF envar). When openssl.cnf is NULL and no overrides, then OPENSSLDIR is used.
+
+<b>Using Ubuntu syntax by mistake:</b>
 *Man Page OpenSSL:    
 <a href="https://www.openssl.org/docs/man1.0.2/man1/openssl-req.html">Man OpenSSL</a>   
 <pre>
@@ -870,25 +895,7 @@ $ sudo openssl x509 -inform der -in MOK.der -out MOK.pem
 <pre>
 $ sudo openssl req -new -x509 -newkey rsa:2048 -keyout "key.pem" -outform DER -out "cert.der" -nodes -days 36500 -subj "/CN=<your name>/"
 </pre>
-<b>Workaround:</b>
-
-This is where Debian places openssl.cnf for the OpenSSL they provide:
-<pre>
-S openssl version -d
-OPENSSLDIR: "/usr/lib/ssl"
-S ls -l /usr/lib/ssl
-lrwxrwxrwx 1 root root   mmm 30 mm:mm openssl.cnf -> /etc/ssl/openssl.cnf
-$ ls -l /etc/ssl/
--rw-r--r-- 1 root root   mmm 30 mm:mm openssl.cnf
-</pre>
-
-And this is where Ubuntu places openssl.cnf for the OpenSSL they provide:
-<pre>
-$ sudo ls /etc/ssl/
-openssl.cnf
-</pre>
-
- It is kind of buried in OpenSSL source code for apps.c, load_config and what happens when cnf is NULL (i.e., no -config option or OPENSSL_CONF envar). When cnf is NULL and no overrides, then OPENSSLDIR is used.
+<b>Workarounds:</b>
 
 You can use strace (man strace) to check the configuration file being used while generating the self-signed certificate.
 <pre>
@@ -912,8 +919,11 @@ BASH define & export:
 export OPENSSL_CONF=~/.openssl.cnf
 Wrap application within a script:
 export OPENSSL_CONF=/dev/null
-
 </details>
+
+Solution 2
+
+dpkg -S sign-file
 
 <p></p>
 
