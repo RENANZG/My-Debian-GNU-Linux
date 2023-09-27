@@ -192,21 +192,18 @@ __________________________________________________________________________
 <details>
 <summary>3.2 Secure Boot References</summary>  
 <ul>
-
-<b>BASIC</b>
 <li>https://www.rodsbooks.com/efi-bootloaders</li>
 <li>https://www.rodsbooks.com/efi-bootloaders/secureboot.html</li>
 <li>https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html</li>
 <li>https://ubuntu.com/blog/how-to-sign-things-for-secure-boot</li>
 <li>https://wiki.ubuntu.com/UEFI/SecureBoot/DKMS</li>
 <li>https://help.ubuntu.com/community/DKMS</li>
+<li>https://wiki.debian.org/SecureBoot</li>
 <li>https://github.com/sitmsiteman/secure-boot-in-debian-based-distro</li>
 <li>https://github.com/Batu33TR/secureboot-mok-keys</li>
 <li>https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot</li>
 <li>https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471</li>
 <li>https://www.lastdragon.net/?p=2513</li>
-
-<b>ADVANCED</b>
 <li>https://uefi.org</li>
 <li>https://www.kernel.org/doc/html/v4.15/admin-guide/module-signing.html</li>
 <li>https://docs.oracle.com/en/operating-systems/oracle-linux/secure-boot/toc.htm#Table-of-Contents</li>
@@ -233,7 +230,6 @@ __________________________________________________________________________
 <li>https://blogs.oracle.com/linux/post/the-machine-keyring</li>
 <li>https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250 </li>
 <li>https://www.linuxjournal.com/content/take-control-your-pc-uefi-secure-boot</li>
-<li></li>
 </ul>
 </details>  
 
@@ -244,41 +240,63 @@ __________________________________________________________________________
 <li><a href="https://www.youtube.com/watch?v=WBemkwMHLJM" target="_blank">Best Practices for UEFI Secure Boot Customization (UEFIForum)</a></li>
 <li><a href="https://www.youtube.com/watch?v=jtLQ8SzfrDU" target="_blank">Secure Boot from A to Z (The Linux Foundation)</a></li>
 <li><a href="https://www.youtube.com/watch?v=_3mwK6AXo_k" target="_blank">Secure Boot. In Debian. In Buster. Really (DebConf Videos)</a></li>
-<li><a href="https://www.youtube.com/watch?v=33-CL2fBvlE" target="_blank">EFI secure boot con Debian 11 (La cueva del ultimo dragon Last Dragon)</a></li>
 </ul>
 </details> 
 
 -------------------------------------------------------------------------
 
+```diff
+- CAUTION:
+- • Use an administrator password in the BIOS and do not use the same for disk encryption.
+- • Building and signing kernel modules is independent of building and signing your own kernel.
+- • In Debian, if you do not install the DKMS package, you will have more work to create the X.509 keys or OpenSSL keys, import the keys with sbsigntool or mokutil, sign the kernel or the kernel module file with sbsigntool or sign-file, respectively.
+- • Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from its source www.kernel.org must be signed or will not be able to load.
+- • Ubuntu uses DKMS with signed key by default, Ubuntu creates and imports mok key during system installation.
+- • In Fedora, if you use DKMS with Secure Boot enabled, you have to import the DKMS sign key with mokutil --import /var/lib/dkms/mok.pub and reboot to enroll the key. In Fedora the mok.pub and mok.key keys are created and module is signed by DKMS, but only if openssl package is installed.
+- • UEFI specifications use the terms key and public key (.der) to mean the public part of the key pair, or the X.509 certificate. However, in OpenSSL, the term key is the private key (.priv) that's used for signing. Thus, all Secure Boot keys must be X.509 keys and not OpenSSL keys.
+- • The instructions provided assume that you're signing a module for the currently running kernel. If you're signing a module for a different kernel, you must provide the path to the sign-file utility within the correct kernel version source. Otherwise, the signature type for the module for that kernel might not align correctly with the expected signature type.
+- • Only a single custom certificate can be added to the kernel because the compressed size of the kernel's boot image can not increase. Do not add multiple certificates to the kernel boot image.
+- BUGS:
+- • Debian Bug report logs - #989463 please align shim-signed dkms behaviour with Ubuntu  
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989463  
+- • Debian Bug report logs - #939392 please provide kmodsign like Ubuntu does
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=939392
+- • Debian Bug report logs - #928300 shim-signed: secure boot via removable media path unavailable  
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=928300  
+```  
+
+
 ## $\textcolor{green}{Basic\ Tutorial}$  
 
 👷🛠️UNDER WORK🚧🏗    
-```diff
-- Caution:
-- Use an administrator password in the BIOS and do not use the same for disk encryption.
-- UEFI specifications use the terms key and public key to mean the public part of the key pair, or the X.509 certificate. However, in OpenSSL, the term key is the private key that's used for signing. Thus, all Secure Boot keys must be X.509 keys and not OpenSSL keys.
-- The instructions provided here assume that you're signing a module for the currently running kernel. If you're signing a module for a different kernel, you must provide the path to the sign-file utility within the correct kernel version source. Otherwise, the signature type for the module for that kernel might not align correctly with the expected signature type.
-- Only a single custom certificate can be added to the kernel because the compressed size of the kernel's boot image can not increase. Do not add multiple certificates to the kernel boot image.
-- Bugs:
-- Debian Bug report logs - #989463 please align shim-signed dkms behaviour with Ubuntu  
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989463  
-- Debian Bug report logs - #928300 shim-signed: secure boot via removable media path unavailable  
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=928300  
-- Debian Bug report logs - #939392 please provide kmodsign like Ubuntu does
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=939392
-```  
+
 <DIV class="section" id="VERDE">
+
+
+<details>
+<summary><b>Sign Debian 12 (Bookworm) GRUB for Secure Boot</b></summary>  
+<p></p>
+
+<b>1.First steps </b>   
+
+
+
+
+
+
 <details>
 <summary><b>Sign Debian 12 (Bookworm) Kernel for Secure Boot</b></summary>  
 <p></p>
 
 <b>1.First steps </b>   
 
-Has the system booted via Secure Boot?
+All the items below have to do with SecureBoot mode.
+
 ```
 $ sudo mokutil --sb-state
 SecureBoot enabled
 ```
+
 If controlling the Secure Boot state through the EFI setup program is difficult, you can optionally use the mokutil utility to disable Secure Boot at the level of the Shim so that, although UEFI Secure Boot is enabled, no further validation takes place after the Shim is loaded.
 
 What keys are on my system?
@@ -318,6 +336,7 @@ $ sudo mkdir -p /etc/mok_key/
 <b>3.Generating a new key</b>
 
 Before you create the public and private key for signing the kernel, you need to access the folder you created to be the destination of the keys. Then create the public (mokcertificate.der) and private key (moksigningkey.priv) with one-time password for signing the kernel
+
 ```
 $ cd /var/lib/shim-signed/mok/
 $ sudo openssl req -config $(openssl version -d) -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -days 36500 -subj "/CN=ShimSigned/"
@@ -332,6 +351,7 @@ total 12
 -rw------- 1 root root 1854  MOK.priv
 $ sudo chmod 600 /var/lib/shim-signed/mok/*
 ```
+
 This commands will create both the private and public part of the certificate to sign things. You need both files to sign; and just the public part (MOK.der) to enroll the key in Shim.
 
 To read the certificate file in a human readable format, use
@@ -564,10 +584,6 @@ $ sudo update-initramfs -u -k all
 
 <p></p>
 
-```diff
-- Building and signing kernel modules is independent of building and signing your own kernel.
-- If you have already created your own keys (for example, the files MOK.der, MOK.pem and MOK.priv), then you can use these rather than creating your own.
-```
 
 👷🛠️🚧🏗  
 
@@ -790,12 +806,8 @@ At main.c:298:
 - SSL error:10000080:BIO routines::no such file: ../crypto/bio/bss_file.c:75
 </pre>
 
-See: <a href="https://zhuanlan.zhihu.com/p/582707348">SSL error:10000080:BIO routines::no such file: crypto/bio/bss_file.c:75</a>   
-See: <a href="https://stackoverflow.com/questions/70365875/error-during-creation-self-signed-ssl-with-openssl">Error during creation self-signed SSL with openSSL</a>   
-See: <a href="https://docs.kernel.org/admin-guide/module-signing.html">Kernel module signing facility</a>   
-
-<b>Possible cause:</b>
-To sign a custom kernel or any other EFI binary you want to have loaded by shim, you’ll need to use a different command: sbsign. Unfortunately, we’ll need the certificate in a different format in this case, <ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM. Convert the certificate into PEM (.der to .pem):
+<b>Cause:</b>
+Certificate or key are missing. That statement is telling us one of both files that DKMS or OpenSSL.conf are looking for are not where it is looking. Another possibility is that to sign a custom kernel or any other EFI binary you want to have loaded by shim, you’ll need to use a different command: sbsign or mokutil. Unfortunately, we’ll need the certificate in a different format in this case, <ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM. Convert the certificate into PEM (.der to .pem):
 
 <pre>
 $ sudo openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem
