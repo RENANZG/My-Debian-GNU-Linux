@@ -1,4 +1,4 @@
-__________________________________________________________________________
+<hr />
 
 ## 1. DEBIAN GNU/LINUX AND HARDENING
 
@@ -110,7 +110,7 @@ How to check the iso file (SHA256SUMS) - https://www.gnu.org/software/coreutils/
 <br></br>
 </sub>
 
-__________________________________________________________________________
+<hr />
 
 ## 2. SYSTEM INSTALLATION 
 
@@ -176,7 +176,7 @@ https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-
 </details>  
 <br></br>
 
-__________________________________________________________________________
+<hr />
 
 ## 3. DEBIAN SECURE BOOT 
 
@@ -193,6 +193,7 @@ __________________________________________________________________________
 <details>
 <summary>3.2 Secure Boot References</summary>  
 <ul>
+BASIC:
 <li>https://www.rodsbooks.com/efi-bootloaders</li>
 <li>https://www.rodsbooks.com/efi-bootloaders/secureboot.html</li>
 <li>https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html</li>
@@ -205,7 +206,10 @@ __________________________________________________________________________
 <li>https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot</li>
 <li>https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471</li>
 <li>https://www.lastdragon.net/?p=2513</li>
+
+ADVANCED:
 <li>https://uefi.org</li>
+<li>https://www.intel.com/content/www/us/en/developer/articles/tool/unified-extensible-firmware-interface.html</li>
 <li>https://www.kernel.org/doc/html/v4.15/admin-guide/module-signing.html</li>
 <li>https://www.kernel.org/doc./html/latest/admin-guide/module-signing.html</li>
 <li>https://docs.oracle.com/en/operating-systems/oracle-linux/secure-boot/toc.htm#Table-of-Contents</li>
@@ -275,27 +279,24 @@ __________________________________________________________________________
 
 <DIV class="section" id="VERDE">
 
-
 <details>
-<summary><b>Sign Debian 12 (Bookworm) GRUB for Secure Boot</b></summary>  
+<summary><b>Sign GRUB for Secure Boot</b></summary>  
 <p></p>
 
 <b>1.First steps </b>   
 
 
-
-
-
+</details>
 
 <details>
-<summary><b>Sign Debian 12 (Bookworm) Kernel for Secure Boot</b></summary>  
+<summary><b>Sign Debian Kernel for Secure Boot</b></summary>  
 <p></p>
 
 <b>1.First steps </b>   
 
 All the items below have to do with SecureBoot mode.
 
-```
+```console
 $ sudo mokutil --sb-state
 SecureBoot enabled
 ```
@@ -303,14 +304,14 @@ SecureBoot enabled
 If controlling the Secure Boot state through the EFI setup program is difficult, you can optionally use the mokutil utility to disable Secure Boot at the level of the Shim so that, although UEFI Secure Boot is enabled, no further validation takes place after the Shim is loaded.
 
 What keys are on my system?
-```
-$ sudo mokutil --list-enrolled
+```console
+user@debian:~$ sudo mokutil --list-enrolled
 or
 $ sudo mokutil --list-enrolled | grep Subject:
 ```
 
 Also the command <ins>modinfo</ins> prints the signature if available, for example:
-```
+```console
 $ sudo modinfo /lib/modules/6.1.0-11-amd64/kernel/mm/zsmalloc.ko 
 ```
 
@@ -324,15 +325,15 @@ The use of mokutil that's most relevant to this page is to import a MOK. In this
 </details>
 
 First make sure the key doesn't exist yet:
-```
+```console
 $ ls /var/lib/shim-signed/mok/
 ```
 To create a folder to MOK key:
-```
+```console
 $ sudo mkdir -p /var/lib/shim-signed/mok/
 ```
 You can choose another placcautione like "/etc/mok_key/" since there is no standard location at the moment.
-```
+```console
 $ sudo mkdir -p /etc/mok_key/
 ```
 
@@ -340,12 +341,12 @@ $ sudo mkdir -p /etc/mok_key/
 
 Before you create the public and private key for signing the kernel, you need to access the folder you created to be the destination of the keys. Then create the public (mokcertificate.der) and private key (moksigningkey.priv) with one-time password for signing the kernel
 
-```
+```console
 $ cd /var/lib/shim-signed/mok/
 $ sudo openssl req -config $(openssl version -d) -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -days 36500 -subj "/CN=ShimSigned/"
 
 ```
-```
+```console
 $ sudo openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem
 $ ls -l 
 total 12
@@ -358,12 +359,12 @@ $ sudo chmod 600 /var/lib/shim-signed/mok/*
 This commands will create both the private and public part of the certificate to sign things. You need both files to sign; and just the public part (MOK.der) to enroll the key in Shim.
 
 To read the certificate file in a human readable format, use
-```
+```console
 $ sudo openssl x509 -in /var/lib/shim-signed/mok/MOK.pem -noout -text 
 ```
 
 Another example of key generation:
-```
+```console
 $ sudo openssl req -x509 -new -nodes -utf8 -sha512 -days 3650 -batch -config /etc/ssl/x509.conf -outform DER -out /etc/ssl/certs/pubkey.der -keyout /etc/ssl/certs/priv.key
 $ sudo openssl x509 -inform DER -in /etc/ssl/certs/pubkey.der -out /etc/ssl/certs/pubkey.pem
 ```
@@ -374,14 +375,14 @@ $ sudo openssl x509 -inform DER -in /etc/ssl/certs/pubkey.der -out /etc/ssl/cert
 
 Enroll the key to your installation:
 
-```
+```console
 $ cd /var/lib/shim-signed/mok/
 $ sudo mokutil --import MOK.der
 ```
 You will be asked for a one-time <b>password (remember it and type it correctly)</b>, you will just use it to confirm your key selection in the next step (you won't need this password beyond this point, though), so choose any.
 
 Recheck your key will be prompted on next boot
-```
+```console
 $ sudo mokutil --list-new
 ```
 <b>5.Restart and finsh the process</b>
@@ -389,7 +390,7 @@ $ sudo mokutil --list-new
 Restart your system. Changes to the MOK keys may only be confirmed directly from the console at boot time. You will encounter a blue screen of a tool called MOKManager. Select "Enroll MOK" and then "View key". Make sure it is your key you created in step 3. Afterwards continue the process and you must enter the password which you provided in step 4. Continue with booting your system.
 
 Verify your key is already enrolled, if the MOK was loaded correctly, with:
-```
+```console
 $ sudo mokutil --test-key /var/lib/shim-signed/mok/MOK.der
 ```
 
@@ -402,7 +403,7 @@ $ sudo mokutil --test-key /var/lib/shim-signed/mok/MOK.der
 Building Debian kernel modules with DKMS. The dkms frameworks allows building kernel modules "on the fly" on the local system instead of building them centrally on the Debian infrastructure, DKMS could automatically sign kernel updated modules. If you install the kernel modules through the apt repository, chances are that modules have already been signed by the DKMS signing key. In that case, the traditional method won't work. And the thing you only need to do is to enroll the DKMS signing key into your machine. On systems that use SecureBoot, you will need a Machine Owner Key (MOK) to load DKMS modules. Generate it, enroll it, sign modules with it and then you will be able to load the signed modules. 
 
 In Debian, it depends on the dkms package:
-```
+```console
 $ sudo apt install dkms
 ```
 In order for dkms to automatically sign kernel modules, it must be told which key to sign the module with. This is done by adding two configuration values to "/etc/dkms/framework.conf", adjusting paths as required:
@@ -418,15 +419,15 @@ In order for dkms to automatically sign kernel modules, it must be told which ke
 <p></p>
 If these values are provided and dkms is able to build modules but does not attempt to sign them, then it is likely that sign_tool is missing. This is more common in older and/or custom kernels.
 In "/etc/dkms/framework.conf", add:
-```
+```console
 sign_tool="/etc/dkms/sign_helper.sh"
 ```
 Create "/etc/dkms/sign_helper.sh" with:
-```
+```console
 /lib/modules/"$1"/build/scripts/sign-file sha512 /root/.mok/client.priv /root/.mok/client.der "$2"
 ```
 Set Linux kernel info variables
-```
+```console
 $ VERSION="$(uname -r)"
 $ SHORT_VERSION="$(uname -r | cut -d . -f 1-2)"
 $ MODULES_DIR=/lib/modules/$VERSION
@@ -445,7 +446,7 @@ First, use the method mentioned in Verifying if a module is signed to check if t
 Next, find the location of the mok signing key and mok certificate. You can view the location in /etc/dkms/framework.conf, and the default location is /var/lib/dkms.
 
 Then, run the following command to enroll the key into the machine:
-```
+```console
 $ sudo mokutil --import /var/lib/dkms/mok.pub # prompts for one-time password and /var/lib/mok.pub can be changed, if mok certificate isn't located there.
 $ sudo mokutil --list-new # recheck your key will be prompted on next boot
 
