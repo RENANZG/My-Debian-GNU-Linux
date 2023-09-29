@@ -286,8 +286,7 @@ ADVANCED:
 - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=928300  
 ```  
 
-
-## $\textcolor{green}{Basic\ Tutorial}$  
+## $\textcolor{green}{Basic\ Tutorial}$    
 
 👷🛠️UNDER WORK🚧🏗    
 
@@ -605,8 +604,10 @@ $ sudo update-initramfs -u -k all
 </details>   
 
 <details>
-<summary>${\color{Red}\textbf{OpenSSL Error}}$</summary>  
+<summary>${\color{Red}\textbf{OpenSSL Error}}$</summary>
+
 <p></p>
+
 Error 1 - No such file
 <pre>
 At main.c:298:
