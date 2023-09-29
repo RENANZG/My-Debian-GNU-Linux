@@ -143,15 +143,15 @@ https://github.com/morrownr/USB-WiFi
 • Linux on UEFI:A Quick Installation Guide  
 http://www.rodsbooks.com/linux-uefi/  
 
-2.2.2 Debootstrap
-• Debootstrap
-https://wiki.debian.org/Debootstrap
-• Debian 11.0 Debootstrap | Debian Command Line Install Guide
-https://www.youtube.com/watch?v=oKnkOwdysNs
-• Debian 11.4 ZFS Bootstrap | Debian ZFS Command Line Installation
-https://www.youtube.com/watch?v=7F7Ch-ZkiQU
-• Nilsmeyer - An ansible role for bootstrapping new Debian based systems, including setting up partitions, file systems, encryption (luks), RAID and LVM  
-https://github.com/nilsmeyer/ansible-debootstrap  
+2.2.2 Debootstrap    
+• Debootstrap    
+https://wiki.debian.org/Debootstrap    
+• Debian 11.0 Debootstrap | Debian Command Line Install Guide    
+https://www.youtube.com/watch?v=oKnkOwdysNs    
+• Debian 11.4 ZFS Bootstrap | Debian ZFS Command Line Installation    
+https://www.youtube.com/watch?v=7F7Ch-ZkiQU    
+• Nilsmeyer - An ansible role for bootstrapping new Debian based systems, including setting up partitions, file systems, encryption (luks), RAID and LVM    
+https://github.com/nilsmeyer/ansible-debootstrap    
 • Linux Dabbler - Scripts to run after installing debian  
 https://github.com/linuxdabbler/debian-install-scripts  
 
@@ -161,7 +161,7 @@ https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system
 
 https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page   
 
-2.2.2.1 EXT4, ZFS AND BTRFS
+2.2.2.1 EXT4, ZFS AND BTRFS    
 
 
 2.2.3 Encryption:    
