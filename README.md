@@ -590,6 +590,120 @@ $ sudo update-initramfs -u -k all
 ```
 </details>   
 
+<details>
+<summary>${\color{Red}\textbf{OpenSSL Error}}$</summary>  
+<p></p>
+Error 1 - No such file
+<pre>
+At main.c:298:
+- SSL error:FFFFFFFF80000002:system library::No such file or directory: ../crypto/bio/bss_file.c:67
+- SSL error:10000080:BIO routines::no such file: ../crypto/bio/bss_file.c:75
+</pre>
+Error 2 - Interrupted or cancelled
+<pre>
+At main.c:170:
+- SSL error:07880109:common libcrypto routines::interrupted or cancelled: ../crypto/passphrase.c:184
+- SSL error:07880109:common libcrypto routines::interrupted or cancelled: ../crypto/passphrase.c:184
+- SSL error:1C80009F:Provider routines::unable to get passphrase: ../providers/implementations/encode_decode/decode_epki2pki.c:96
+- SSL error:07880109:common libcrypto routines::interrupted or cancelled: ../crypto/passphrase.c:184
+- SSL error:04800068:PEM routines::bad password read: ../crypto/pem/pem_pkey.c:155
+sign-file: /var/lib/shim-signed/mok/MOK.priv: Success
+</pre>
+
+<b>Cause:</b>
+Certificate or key are missing. That statement is telling us one of both files that DKMS or OpenSSL.conf are looking for are not where it is looking. Another possibility is that to sign a custom kernel or any other EFI binary you want to have loaded by shim, you’ll need to use a different command: sbsign or mokutil. Unfortunately, we’ll need the certificate in a different format in this case, <ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM. Convert the certificate into PEM (.der to .pem).
+
+As long as the signing key is enrolled in shim and does not contain the Object Identifier (OID) from earlier (since that limits the use of the key to kernel module signing), the binary should be loaded just fine by shim. 
+
+Solution 1
+This is where Debian places openssl.cnf for the OpenSSL they provide:
+<pre>
+$ openssl version -d
+OPENSSLDIR: "/usr/lib/ssl"
+$ ls -l /usr/lib/ssl
+lrwxrwxrwx 1 root root   mmm 30 mm:mm openssl.cnf -> /etc/ssl/openssl.cnf
+$ ls -l /etc/ssl/
+-rw-r--r-- 1 root root   mmm 30 mm:mm openssl.cnf
+</pre>
+
+It is kind of buried in OpenSSL source code for apps.c, load_config and what happens when openssl.cnf is NULL (i.e., no -config option or OPENSSL_CONF envar). When openssl.cnf is NULL and no overrides, then OPENSSLDIR is used.
+
+<b>Mistake by using wrong syntax</b>
+*Man Page OpenSSL:    
+<a href="https://www.openssl.org/docs/man1.0.2/man1/openssl-req.html">Man OpenSSL</a>   
+```console
+$ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -config openssl.cnf -outform DER -out MOK.der -keyout MOK.priv
+$ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -outform DER -out MOK.der -keyout MOK.priv
+$ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -config openssl.cnf -outform DER -out MOK.der -keyout MOK.priv
+$ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -outform DER -out MOK.der -keyout MOK.priv
+```
+*Ubuntu:    
+<a href="https://ubuntu.com/blog/how-to-sign-things-for-secure-boot">https://ubuntu.com/blog/how-to-sign-things-for-secure-boot</a>   
+
+```console
+$ sudo openssl req -config ./openssl.cnf -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "MOK.priv" -out "MOK.der"
+```
+
+*Debian:    
+<a href="https://wiki.debian.org/SecureBoot">https://wiki.debian.org/SecureBoot</a>
+
+```cosole
+$ sudo openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -days 36500 -subj "/CN=My Name/"
+$ sudo openssl x509 -inform der -in MOK.der -out MOK.pem
+```
+
+*Fedora:    
+<a href="https://docs.fedoraproject.org/en-US/quick-docs/kernel-build-custom/">https://docs.fedoraproject.org/en-US/quick-docs/kernel-build-custom/</a>
+
+```console
+$ sudo openssl req -new -x509 -newkey rsa:2048 -keyout "key.pem" -outform DER -out "cert.der" -nodes -days 36500 -subj "/CN=<your name>/"
+```
+
+<b>Solutions</b>
+
+Solution 1:
+
+Location
+
+```console
+$ openssl version -d
+```
+
+You can use strace (man strace) to check the configuration file being used while generating the self-signed certificate.
+
+```console
+$ strace -e trace=open,openat -o /tmp/strace.log.0 openssl req \
+-newkey rsa:2048 -x509 -nodes -keyout localhost.key \
+-new -out localhost.crt
+$ grep "openssl.cnf" /tmp/strace.log.0
+openat(AT_FDCWD, "/etc/pki/tls/openssl.cnf", O_RDONLY) = 3
+sudo cat /etc/ssl/openssl.cnf
+openssl_conf = openssl_init from /etc/ssl/openssl.cnf
+```
+
+To override system default with user level environment. An empty file will do:
+```
+touch ~/.openssl.cnf
+```
+BASH define & export:
+```
+export OPENSSL_CONF=~/.openssl.cnf
+```
+Wrap application within a script:
+```
+export OPENSSL_CONF=/dev/null
+```
+
+Solution 2:
+
+```console
+$ dpkg -S sign-file
+```
+
+<p></p>
+
+</details>
+
 <p></p>
 
 -------------------------------------------------------------------------------------------------
@@ -603,7 +717,7 @@ $ sudo update-initramfs -u -k all
 
 <details>
 <summary><b>Sign WIFI Module for Secure Boot</b></summary>  
-  <p></p>
+<p></p>
 
 How to get WiFi Module signed for Secure Boot
 
@@ -825,107 +939,6 @@ https://wiki.ubuntu.com/EFIBootLoaders
 </details>   
 
 <p></p>
-
-<details>
-<summary><b>OpenSSL Error</b></summary>  
-<p></p>
-Error 1 - No such file
-<pre>
-At main.c:298:
-- SSL error:FFFFFFFF80000002:system library::No such file or directory: ../crypto/bio/bss_file.c:67
-- SSL error:10000080:BIO routines::no such file: ../crypto/bio/bss_file.c:75
-</pre>
-Error 2 - 
-<pre>
-At main.c:170:
-- SSL error:07880109:common libcrypto routines::interrupted or cancelled: ../crypto/passphrase.c:184
-- SSL error:07880109:common libcrypto routines::interrupted or cancelled: ../crypto/passphrase.c:184
-- SSL error:1C80009F:Provider routines::unable to get passphrase: ../providers/implementations/encode_decode/decode_epki2pki.c:96
-- SSL error:07880109:common libcrypto routines::interrupted or cancelled: ../crypto/passphrase.c:184
-- SSL error:04800068:PEM routines::bad password read: ../crypto/pem/pem_pkey.c:155
-sign-file: /var/lib/shim-signed/mok/MOK.priv: Success
-</pre>
-
-<b>Cause:</b>
-Certificate or key are missing. That statement is telling us one of both files that DKMS or OpenSSL.conf are looking for are not where it is looking. Another possibility is that to sign a custom kernel or any other EFI binary you want to have loaded by shim, you’ll need to use a different command: sbsign or mokutil. Unfortunately, we’ll need the certificate in a different format in this case, <ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM. Convert the certificate into PEM (.der to .pem).
-
-As long as the signing key is enrolled in shim and does not contain the Object Identifier (OID) from earlier (since that limits the use of the key to kernel module signing), the binary should be loaded just fine by shim. 
-
-Solution 1
-This is where Debian places openssl.cnf for the OpenSSL they provide:
-<pre>
-S openssl version -d
-OPENSSLDIR: "/usr/lib/ssl"
-S ls -l /usr/lib/ssl
-lrwxrwxrwx 1 root root   mmm 30 mm:mm openssl.cnf -> /etc/ssl/openssl.cnf
-$ ls -l /etc/ssl/
--rw-r--r-- 1 root root   mmm 30 mm:mm openssl.cnf
-</pre>
-
-And this is where Ubuntu places openssl.cnf for the OpenSSL they provide:
-
-<pre>
-$ sudo ls /etc/ssl/
-openssl.cnf
-</pre>
-
- It is kind of buried in OpenSSL source code for apps.c, load_config and what happens when openssl.cnf is NULL (i.e., no -config option or OPENSSL_CONF envar). When openssl.cnf is NULL and no overrides, then OPENSSLDIR is used.
-
-<b>Using Ubuntu syntax by mistake:</b>
-*Man Page OpenSSL:    
-<a href="https://www.openssl.org/docs/man1.0.2/man1/openssl-req.html">Man OpenSSL</a>   
-<pre>
-$ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -config openssl.cnf -outform DER -out MOK.der -keyout MOK.priv
-$ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -outform DER -out MOK.der -keyout MOK.priv
-$ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -config openssl.cnf -outform DER -out MOK.der -keyout MOK.priv
-$ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -outform DER -out MOK.der -keyout MOK.priv
-</pre>
-*Ubuntu:    
-<a href="https://ubuntu.com/blog/how-to-sign-things-for-secure-boot">https://ubuntu.com/blog/how-to-sign-things-for-secure-boot</a>   
-<pre>
-$ sudo openssl req -config ./openssl.cnf -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "MOK.priv" -out "MOK.der"
-</pre>
-*Debian:    
-<a href="https://wiki.debian.org/SecureBoot">https://wiki.debian.org/SecureBoot</a>
-<pre>
-$ sudo openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -days 36500 -subj "/CN=My Name/"
-$ sudo openssl x509 -inform der -in MOK.der -out MOK.pem
-</pre>
-*Fedora:    
-<a href="https://docs.fedoraproject.org/en-US/quick-docs/kernel-build-custom/">https://docs.fedoraproject.org/en-US/quick-docs/kernel-build-custom/</a>
-<pre>
-$ sudo openssl req -new -x509 -newkey rsa:2048 -keyout "key.pem" -outform DER -out "cert.der" -nodes -days 36500 -subj "/CN=<your name>/"
-</pre>
-<b>Workarounds:</b>
-
-You can use strace (man strace) to check the configuration file being used while generating the self-signed certificate.
-<pre>
-$ strace -e trace=open,openat -o /tmp/strace.log.0 openssl req \
--newkey rsa:2048 -x509 -nodes -keyout localhost.key \
--new -out localhost.crt
-...
-
-$ grep "openssl.cnf" /tmp/strace.log.0
-openat(AT_FDCWD, "/etc/pki/tls/openssl.cnf", O_RDONLY) = 3
-</pre>
-
-sudo cat /etc/ssl/openssl.cnf
-openssl_conf = openssl_init from /etc/ssl/openssl.cnf
-$(openssl version -d)
-
-To override system default with user level environment:
-An empty file will do:
-touch ~/.openssl.cnf
-BASH define & export:
-export OPENSSL_CONF=~/.openssl.cnf
-Wrap application within a script:
-export OPENSSL_CONF=/dev/null
-</details>
-
-Solution 2
-
-dpkg -S sign-file
-
 <p></p>
 
 ------------------------------------------------------------------------------------------------
