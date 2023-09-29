@@ -86,7 +86,7 @@
 <sub>
 How to check the iso file (SHA256SUMS) - https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html  
 <details>
-<summary>Manual method</summary>  
+<p></p><summary>Manual method</summary></p>  
 <p>The SHA-256 checksum hashes in a file called SHA256SUMS in the same directory listing as the download page.</p>
 <p>First open a terminal and go to the correct directory to check a downloaded iso file:  </p>
 <p>cd download_directory  </p>
@@ -99,7 +99,7 @@ How to check the iso file (SHA256SUMS) - https://www.gnu.org/software/coreutils/
 
 </table>
 <details>
-<summary>Semi-automatic method</summary>  
+<p><summary>Semi-automatic method</summary></p>  
 <p>First download the SHA256SUMS and SHA256SUMS.gpg files to the same directory as the iso. Then run the following commands in a terminal.  </p>
 <p>cd download_directory  </p>
 <p>sha256sum -c SHA256SUMS 2>&1 | grep OK  </p>
@@ -139,23 +139,36 @@ https://github.com/morrownr/USB-WiFi
 <summary><b>2.2 Installation</b></summary>  
 <p></p>
 
-2.2.1 Installation Guides:  
-Linux on UEFI:A Quick Installation Guide  
+2.2.1 Basic Installation Guide:  
+• Linux on UEFI:A Quick Installation Guide  
 http://www.rodsbooks.com/linux-uefi/  
-Linux Dabbler - Scripts to run after installing debian  
-https://github.com/linuxdabbler/debian-install-scripts  
-Nilsmeyer - An ansible role for bootstrapping new Debian based systems, including setting up partitions, file systems, encryption (luks), RAID and LVM  
-https://github.com/nilsmeyer/ansible-debootstrap  
 
-2.2.2 Partitioning scenarios: advantages and disadvantages:
+2.2.2 Debootstrap
+• Debootstrap
+https://wiki.debian.org/Debootstrap
+• Debian 11.0 Debootstrap | Debian Command Line Install Guide
+https://www.youtube.com/watch?v=oKnkOwdysNs
+• Debian 11.4 ZFS Bootstrap | Debian ZFS Command Line Installation
+https://www.youtube.com/watch?v=7F7Ch-ZkiQU
+• Nilsmeyer - An ansible role for bootstrapping new Debian based systems, including setting up partitions, file systems, encryption (luks), RAID and LVM  
+https://github.com/nilsmeyer/ansible-debootstrap  
+• Linux Dabbler - Scripts to run after installing debian  
+https://github.com/linuxdabbler/debian-install-scripts  
+
+2.2.2 Partitioning scenarios: advantages and disadvantages:    
+
 https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system  
+
 https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page   
 
-2.2.3 Encryption:
+2.2.2.1 EXT4, ZFS AND BTRFS
+
+
+2.2.3 Encryption:    
 https://wiki.archlinux.org/title/Security      
 https://wiki.archlinux.org/title/Data-at-rest_encryption    
 https://en.wikipedia.org/wiki/Disk_encryption#Implementations    
-https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-2 
+https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-2   
 
 <br></br>
 </details>  
@@ -174,6 +187,7 @@ https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-
 </ul>
 <br></br>
 </details>  
+
 <br></br>
 
 <hr />
