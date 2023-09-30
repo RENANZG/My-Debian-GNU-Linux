@@ -13,6 +13,7 @@
 – Disable booting to OS environments which might give the user enhanced access by       
 • Disabling external ports (SATA, USB, etc.)        
 • Preventing the changing of the boot order     
+
 ``` diff
 - Advices
 ```
