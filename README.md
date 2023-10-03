@@ -783,8 +783,8 @@ Verify if your key "Modules" is loaded and signed
 
 ```
 $ sudo mokutil --test-key /var/lib/shim-signed/modules/module.der
-$ sudo lsmod | grep rtw88_8723d
-$ sudo modinfo -n rtw88_8723d
+$ sudo lsmod | grep rtw_8723d
+$ sudo modinfo -n rtw_8723d
 $ sudo dmesg | grep cert
 $ sudo dmesg | grep Modules
 ```
@@ -793,8 +793,8 @@ $ sudo dmesg | grep Modules
 
 Where was the module installed?
 ```
-$ sudo modinfo -n rtw88_8723d
-  /lib/modules/6.1.0-12-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw88_8723d.ko
+$ sudo modinfo -n rtw_8723d
+  /lib/modules/6.1.0-12-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
 ```
 For sing the module, depending on your platform, the exact location of `sign-file` might vary. In Debian 12 (Bookworm) it was in <ins>/usr/src/linux-headers-$(uname -r)/scripts/sign-file</ins> .
 
@@ -807,7 +807,7 @@ Usage: scripts/sign-file [-dp] <hash algo> <key> <x509> <module> [<dest>]
 ```
 Sign the module:
 ```
-$ sudo /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file sha256 /var/lib/shim-signed/modules/module.priv /var/lib/shim-signed/modules/module.der /lib/modules/6.1.0-12-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw88_8723d.ko
+$ sudo /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file sha256 /var/lib/shim-signed/modules/module.priv /var/lib/shim-signed/modules/module.der /lib/modules/6.1.0-12-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
 ```
 Verify it:
 ```
