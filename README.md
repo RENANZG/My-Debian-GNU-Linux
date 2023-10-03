@@ -18,11 +18,11 @@
   </tr>
   <tr>
   <td><a href="https://www.whonix.org/wiki/System_Hardening_Checklist" target="_blank"><b>Whonix</b> - System Hardening Checklist</a></td>
-  <td><a href="https://cryptomator.org/" target="_blank"><b>Cryptomator</b> - Put a lock on your cloud</a></td>
+  <td><a href="https://madaidans-insecurities.github.io/"><b>Madaidan's</b> - Security & Privacy Evaluations</a></td>
   </tr>
   <tr>
   <td><a href="https://www.kicksecure.com/wiki/Documentation" target="_blank"><b>Kicksecure</b> - Documentation</a></td>
-  <td><a href="https://madaidans-insecurities.github.io/"><b>Madaidan's</b> - Security & Privacy Evaluations</a></td>
+    <td><a href="https://wiki.debian.org/SecurityManagement" target="_blank"><b>Debian</b> - Security Management</a></td>
   </tr>
   <tr>
   <td><a href="https://www.cisecurity.org/benchmark/debian_linux" target="_blank"><b>CIS Benchmark</b> - Debian Linux Guides</a></td>
@@ -30,7 +30,7 @@
   </tr>
   <tr>
   <td><a href="https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance" target="_blank"><b>NSA GOV</b> - Cybersecurity Advisories & Guidance</a><a href="https://github.com/nsacyber" target="_blank">&nbsp(GitHub)</a></td>
-  <td><a href="https://wiki.debian.org/SecurityManagement" target="_blank"><b>Debian</b> - Security Management</a></td>
+  <td><a href="https://cryptomator.org/" target="_blank"><b>Cryptomator</b> - Put a lock on your cloud</a></td>
   </tr>
   <tr>
   <td><a href="https://www.nist.gov/cyberframework" target="_blank"><b>NIST GOV</b> - Cybersecurity Framework</a></td>
@@ -187,6 +187,7 @@ https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-
 </ul>
 <br></br>
 </details>  
+
 
 <br></br>
 
@@ -1044,14 +1045,45 @@ _______________________________________________________________________
 
 <DIV>
 <details>  
-<summary><b></b></summary>  
+<summary><b>Security</b></summary>  
+
+sudo apt install -y keepassxc   
+sudo apt install -y zulucrypt-gui   
+sudo apt install -y gtkhash   
+sudo apt install -y bleachbit   
+sudo apt install -y nwipe   
+sudo apt install -y p7zip-rar   
+sudo apt install -y rfkill    
+sudo apt install -y ufw   
+sudo apt install -y wireguard-tools   
+
+AUDIT SYSTEM    
+sudo apt install -f lynis   
+sudo apt install -f checksecurity   
+	
+ROOTKIT DETECT    
+sudo apt install chkrootkit   
+sudo apt install chkboot    
+sudo apt install rkhunter   
+
+METADATA CLEANER    
+sudo apt install exiftool   
+sudo apt install metacam    
+sudo apt install metadata-cleaner   
+
+CLAMAV    
+https://wiki.archlinux.org/title/ClamAV   
+https://docs.clamav.net/manual/Usage.html   
+sudo apt install -y clamav    
+sudo apt install -y clamav-daemon   
+$ clamscan file   
+$ clamscan --verbose --recursive -o --bell /home    
+$ clamscan --verbose --recursive -o --bell /home --remove   
+$ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"    
+
 </details>  
 
-<details>  
-<summary><b>Password Manager</b></summary>  
-<a href=""></a></td>  
-https://keepassxc.org/    
-</details>  
+
 
 <details>  
 <summary><b>Browsers</b></summary>  
@@ -1065,19 +1097,47 @@ https://keepassxc.org/
 <p><a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a>  </p>
 </details>  
 
-<details>  
-<summary><b>Email</b></summary>  
-<a href=""></a></td>  <a href=""></a></td>  
-<p style="margin : 0; padding-top:0;">https://emailselfdefense.fsf.org/en/workshops.html  </p>
-<p style="margin : 0; padding-top:0;">https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird  </p>
-<p style="margin : 0; padding-top:0;">https://keys.openpgp.org/about/usage  </p>
-<p style="margin : 0; padding-top:0;">https://efail.de/</p>  
-</details>  
 
 <details>  
 <summary><b>Office</b></summary>  
 <p><a href=""></a></td></p>  
+sudo apt install -y okular    
+sudo apt install -y okular-extra-backends   
+sudo apt install -y thunderbird   
+sudo apt install -y birdtray    
+sudo apt install -y krop    
+sudo apt install -y pdfarranger   
+sudo apt install -y ocrmypdf    
+sudo apt install -y gthumb    
+sudo apt install -y xpad    
+sudo apt install -y kcalc   
 
+Email
+<p style="margin : 0; padding-top:0;">https://emailselfdefense.fsf.org/en/workshops.html  </p>
+<p style="margin : 0; padding-top:0;">https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird  </p>
+<p style="margin : 0; padding-top:0;">https://keys.openpgp.org/about/usage  </p>
+<p style="margin : 0; padding-top:0;">https://efail.de/</p> 
+
+</details>  
+
+
+<details>  
+<summary><b>Utility</b></summary>  
+sudo apt install -y gnome-disk-utility    
+sudo apt install -y partitionmanager       
+sudo apt install -y gparted   
+sudo apt install -y redshift    
+sudo apt install -y grsync    
+sudo apt install -y rar unrar-free    
+sudo apt install -y krename   
+sudo apt install -y gprename    
+sudo apt install -y dupeguru    
+sudo apt install -y lshw    
+sudo apt install -y inxi    
+sudo apt install -y cpu-x   
+sudo apt install -y hardinfo    
+sudo apt install -y s-tui stress    
+sudo apt install -y kdiskmark   
 </details>  
 
 
