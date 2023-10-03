@@ -754,13 +754,14 @@ Brief - Sign with Sign-file
 
 1. You can create a personal public/private RSA key pair to sign the kernel modules. You can chose to store the key/pair, for example, in the <ins>/var/lib/shim-signed/modules/</ins> directory. Then create a new pair of private key (module.priv) and public key (module.der).
 
-```
-$ sudo mkdir /var/lib/shim-signed/modules
-$ sudo openssl req -config $(openssl version -d) -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "/var/lib/shim-signed/modules/module.priv" -out "/var/lib/shim-signed/modules/module.der" -subj "/CN=Modules/"
+```console
+$ sudo mkdir -p var/lib/shim-signed/modules
+$ sudo openssl req -config /usr/lib/ssl/openssl.cnf -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "/var/lib/shim-signed/modules/module.priv" -out "/var/lib/shim-signed/modules/module.der" -subj "/CN=Modules/"
 $ ls -l /var/lib/shim-signed/modules/
 total 8
 -rw-r--r-- 1 root root  779 module.der
 -rw------- 1 root root 1704 module.priv
+$ sudo chmod 600 /var/lib/shim-signed/modules/*
 ```
 
 2. Enroll the public key (VirtualBox.der) to MOK (Machine Owner Key) by entering the command:
