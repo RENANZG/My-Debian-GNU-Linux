@@ -1003,6 +1003,13 @@ ________________________________________________________________________________
 ## 4. PRIVILEGES AND APPARMOR  
 
 
+
+sudo apt install -y apparmor &&		
+sudo apt install -y apparmor-profiles &&		
+sudo apt install -y apparmor-utils && 		
+sudo apt install -y apparmor-profiles-extra		
+
+
 <br></br>
 ________________________________________________________________________________________
 
@@ -1013,7 +1020,6 @@ https://github.com/techlore/VPN-reviews
 
 **UFW**  
 
-https://portchecker.co/  
 
 **VPN**  
 https://www.paulligocki.com/vpn-only-ufw-setup/  
@@ -1022,6 +1028,7 @@ https://www.paulligocki.com/vpn-only-ufw-setup/
 https://www.dnsleaktest.com/   
 https://coveryourtracks.eff.org/  
 https://ipleak.net/  
+https://portchecker.co  
 
 **Torrenting**  
 https://github.com/LiamTheBox/Torrent-With-A-VPN  
@@ -1034,6 +1041,8 @@ https://transmissionbt.com/
 
   
 **Everyday TOR**  
+
+https://wiki.debian.org/TorBrowser		
 https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy   
 
 <br></br>
@@ -1143,7 +1152,6 @@ sudo apt install -y kdiskmark
 
 </DIV>
 
-###  MALWARES, BACKDOORS, ZERO-DAYS, DATA POISONING, SUPPLY CHAIN ATTACK, MAN-IN-THE-MIDDLE (MITM), HONEY POTS, AND SOCIAL ENGINEERING ATTACK    
 
 
 ### Some Links  
