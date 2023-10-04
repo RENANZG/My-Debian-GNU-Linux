@@ -1,0 +1,61 @@
+#!/bin/sh
+
+##########################################################################
+# CREDITIS: https://portable-linux-apps.github.io/
+# 1. Make it executable:
+# $ sudo chmod +x ./file.sh
+# 2. Then run
+# $ sudo bash ./file.sh
+##########################################################################
+
+APP=ventoy
+
+# CREATE THE FOLDER
+mkdir /opt/$APP
+cd /opt/$APP
+
+# ADD THE REMOVER
+echo '#!/bin/sh' >> /opt/$APP/remove
+echo "rm -R -f /usr/share/applications/AM-$APP.desktop /opt/$APP /usr/local/bin/$APP" >> /opt/$APP/remove
+chmod a+x /opt/$APP/remove
+
+# DOWNLOAD VENTOY
+mkdir tmp
+cd ./tmp
+
+download=$(wget -q https://api.github.com/repos/ventoy/Ventoy/releases/latest -O - | grep -E browser_download_url | awk -F '[""]' '{print $4}' | grep -E '/.*/.*/.*linux.tar.gz' | head -1)
+wget $download
+tar xf ./*.tar.gz
+cd ..
+mv ./tmp/ventoy-*/* ./
+rm -R -f ./tmp
+
+# SCRIPT TO LAUNCH THE PROGRAM
+echo '#!/bin/sh
+exec /opt/'$APP'/VentoyGUI.x86_64' >> /usr/local/bin/$APP
+chmod a+x /usr/local/bin/$APP
+
+# LAUNCHER
+rm /usr/share/applications/AM-$APP.desktop
+echo "[Desktop Entry]
+Name=Ventoy
+Comment=Open source tool to create bootable USB drive for ISO/WIM/IMG/VHD(x)/EFI files. 
+Exec=$APP
+Icon=/opt/$APP/icons/$APP
+Type=Application
+Categories=System;" >> /usr/share/applications/AM-$APP.desktop
+
+# ICON
+mkdir icons
+wget https://www.ventoy.net/static/img/ventoy.png -O ./icons/$APP 2> /dev/null
+
+# CHANGE THE PERMISSIONS
+currentuser=$(who | awk '{print $1}')
+chown -R $currentuser /opt/$APP
+
+# MESSAGE
+echo "
+
+	Ventoy is provided by https://www.ventoy.net
+	
+"
