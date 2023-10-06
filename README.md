@@ -107,8 +107,9 @@ How to check the iso file (SHA256SUMS) - https://www.gnu.org/software/coreutils/
 <p>name.iso: OK  </p>
 <p>If the OK for your file appears, that indicates the hash matches.  </p>
 </details>  
-<br></br>
 </sub>
+
+<br></br>
 
 <hr />
 
@@ -120,17 +121,17 @@ How to check the iso file (SHA256SUMS) - https://www.gnu.org/software/coreutils/
 
 • Points to check:
 
-2.1.1 Security  
+**2.1.1 Security**  
 https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption    
 https://github.com/chipsec/chipsec    
 
-2.1.2 Compatibility  
+**2.1.2 Compatibility**  
 https://linux-hardware.org    
 https://github.com/morrownr/USB-WiFi    
 
-2.1.3 Performance  
+**2.1.3 Performance**  
 
-2.1.4 Cost benefit  
+**2.1.4 Cost benefit**  
 
 <p></p>
 </details>  
@@ -139,11 +140,11 @@ https://github.com/morrownr/USB-WiFi
 <summary><b>2.2 Installation</b></summary>  
 <p></p>
 
-2.2.1 Basic Installation Guide:  
+**2.2.1 Basic Installation Guide**  
 • Linux on UEFI:A Quick Installation Guide  
 http://www.rodsbooks.com/linux-uefi/  
 
-2.2.2 Debootstrap    
+**2.2.2 Debootstrap**    
 • Debootstrap    
 https://wiki.debian.org/Debootstrap    
 • Debian 11.0 Debootstrap | Debian Command Line Install Guide    
@@ -155,26 +156,26 @@ https://github.com/nilsmeyer/ansible-debootstrap
 • Linux Dabbler - Scripts to run after installing debian  
 https://github.com/linuxdabbler/debian-install-scripts  
 
-2.2.2 Partitioning scenarios: advantages and disadvantages:    
-
-https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system  
-
-https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page   
-
-2.2.2.1 EXT4, ZFS AND BTRFS    
-
-
-2.2.3 Encryption:    
-https://wiki.archlinux.org/title/Security      
-https://wiki.archlinux.org/title/Data-at-rest_encryption    
-https://en.wikipedia.org/wiki/Disk_encryption#Implementations    
-https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-2   
-
 <br></br>
 </details>  
 
 <details>
-<summary><b>2.3 Key File Encryption in Debian 12 (Bookworm) References</b></summary> 
+<summary><b>2.3 Encryption</b></summary> 
+<p></p>
+	
+**2.3.1 Encryption**    
+https://wiki.archlinux.org/title/Security      
+https://wiki.archlinux.org/title/Data-at-rest_encryption    
+https://en.wikipedia.org/wiki/Disk_encryption#Implementations    
+https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-2   	
+
+**2.3.2 Partitioning scenarios: advantages and disadvantages**    
+https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system  
+https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page   
+
+&nbsp; &nbsp; &nbsp; **2.3.2.1 EXT4, ZFS AND BTRFS**    
+
+**2.3.3 Key File Encryption in Debian 12 (Bookworm) References**	 
 <ul>
 <li>https://github.com/aomgiwjc/Unix-Bootstrap-Installs/wiki/Debian-BTRFS-Luks-Encryption-Installation-Method---Jan.-2023</li>
 <li>https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key</li>
@@ -188,12 +189,11 @@ https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-
 <br></br>
 </details>  
 
-
 <br></br>
 
 <hr />
 
-## 3. DEBIAN SECURE BOOT 
+## 3. SECURE BOOT 
 
 <details>
 <summary><b>3.1 Introduction</b></summary>  
@@ -944,7 +944,9 @@ How to get VirtualBox signed for Secure Boot
 
 <details>
 <summary><b>Sign Ventoy</b></summary>  
+https://www.ventoy.net/en/doc_secure.html
 
+ 
 </details>   
 
 
