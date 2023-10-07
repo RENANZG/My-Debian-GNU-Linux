@@ -605,7 +605,7 @@ sudo lshw -C network
 ```
 Reset de modules and unload them in Kernel
 ```
-$ sudo depmod 
+$ sudo depmod -a -v
 $ sudo update-initramfs -u -k all
 ```
 </details>   
@@ -752,6 +752,11 @@ $ dpkg -S sign-file
 <summary><b>Sign WIFI Module for Secure Boot</b></summary>  
 <p></p>
 
+```diff
+- CAUTION:
+- https://makedebianfunagainandlearnhowtodoothercoolstufftoo.computer/doku.php?id=start:issecurebootworking
+```
+
 How to get WiFi Module signed for Secure Boot
 
 Mandatory packages if Secure Boot is active: openssl, sign-file and mokutil
@@ -766,7 +771,8 @@ e. Import
 f. Reboot and enroll
 
 
-1. Check if secure boot is enabled
+1. Check if secure boot is enabled. When Secure Boot is disabled, the shimx64.efi will just directly load the real grubx64.efi bypassing all the Secure Boot steps, including loading the MOK. With the MOK not loaded, the kernel will have no way to recognize the signature on your module as valid. And with Secure Boot disabled, a signed module with an invalid signature is rejected, while unsigned modules only get a warning and a taint mark on any future oops/panic messages.
+
 
 ```console
 $ sudo mokutil --sb-state
@@ -852,14 +858,19 @@ $ tail $(modinfo -n rtw88_8723d) | grep "Module signature appended"
 
 You could try load the modules
 ```console
-depmod -a
-modprobe -v my_module
-lsmod | grep my_module
+$ modprobe drive
+$ depmod -a -v
+$ modprobe -v my_module
+$ lsmod | grep my_module
+```
+After any kernel module loading failure, you should check the dmesg output: it might include a more specific error message. In this case it is likely to indicate that a module signature failed a validity check.
+```console
+$ sudo dmesg --since -5m
 ```
 
 If the modules are needed to boot your machine, make sure to update the initramfs, e.g. using
 ```console
-sudo update-initramfs -k all -u
+$ sudo update-initramfs -k all -u
 ```
 
 -------------------------------------------------------------------------------------------------
