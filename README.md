@@ -178,39 +178,56 @@ https://github.com/nilsmeyer/ansible-debootstrap
 • Linux Dabbler - Scripts to run after installing debian  
 https://github.com/linuxdabbler/debian-install-scripts  
 
+
+&nbsp; &nbsp; &nbsp; 2.2.3.1 File system: EXT4, XFS, BTRFS AND ZFS    
+&nbsp; &nbsp; &nbsp; ![Table-1](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/c66a4ac6-d9ed-41ea-aaea-60b10e94e5f9)
+
 <br></br>
 </details>  
+
+
+>"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it."
+>(Edward Snowden)
 
 <details>
 <summary><b>2.3 Encryption</b></summary> 
 <p></p>
 	
->"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it."   
->(Edward Snowden)
 
-**2.3.1 Encryption**    
+2.3.1 Encryption    
 https://wiki.archlinux.org/title/Security      
 https://wiki.archlinux.org/title/Data-at-rest_encryption    
 https://en.wikipedia.org/wiki/Disk_encryption#Implementations    
 https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-2   	
 
-**2.3.2 Partitioning scenarios: advantages and disadvantages**    
+2.3.2 Partitioning scenarios: advantages and disadvantages    
 https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system  
 https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page   
 
-&nbsp; &nbsp; &nbsp; 2.3.2.1 EXT4, XFS, BTRFS AND ZFS    
-&nbsp; &nbsp; &nbsp; ![Table-1](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/c66a4ac6-d9ed-41ea-aaea-60b10e94e5f9)
+2.3.4 EFI + ENCRYPTED BOOT with USB Key (removable medium) 
+-UNDER WORK-
+
+https://tqdev.com/2022-luks-with-usb-unlock   
 
 
-**2.3.3 Key File Encryption in Debian 12 (Bookworm) References**	 
-https://github.com/aomgiwjc/Unix-Bootstrap-Installs/wiki/Debian-BTRFS-Luks-Encryption-Installation-Method---Jan.-2023
+"Install debian 9 stretch on one encrypted btrfs partition including /boot and booting if via EFI"
+https://github.com/rob31415/cryptBoot  
+
+https://github.com/stupidpupil/https-keyscript    
+
+2.3.4 Key File Encryption with USB Key    
+-UNDER WORK-
+https://github.com/aomgiwjc/Unix-Bootstrap-Installs/wiki/
+https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git
 https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key
 https://blog.fidelramos.net/software/unlock-luks-usb-drive
-https://tqdev.com/2022-luks-with-usb-unlock
 https://www.willhaley.com/blog/unlock-luks-volumes-with-usb-key
 https://www.dwarmstrong.org/fde-debian
 https://www.cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux
-https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git
+
+
+
+
 
 <br></br>
 </details>  
