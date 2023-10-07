@@ -2,7 +2,9 @@
 
 ## 1. DEBIAN GNU/LINUX AND HARDENING
 
-<code>"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it." (Edward Snowden)</code>
+<pre>"Encryption works. Properly implemented strong crypto systems are one of the few
+things that you can rely on. Unfortunately, endpoint security is so terrifically
+weak that NSA can frequently find ways around it." (Edward Snowden)</pre>				
 
 ![thedoortofreedom](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/f24266c3-b530-4586-adaa-55bbd808f7eb)
 
