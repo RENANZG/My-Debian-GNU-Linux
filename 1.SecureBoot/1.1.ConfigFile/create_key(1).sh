@@ -1,6 +1,7 @@
 ### UNDER WORK ###
 
-cd /lib/modules/$(uname -r)/build/certs
+$ sudo su
+# cd /lib/modules/$(uname -r)/build/scripts
 
 sudo tee x509.genkey > /dev/null << 'EOF'
 [ req ]
@@ -18,4 +19,4 @@ subjectKeyIdentifier=hash
 authorityKeyIdentifier=keyid
 EOF
 
-sudo openssl req -new -nodes -utf8 -sha512 -days 36500 -batch -x509 -config x509.genkey -outform DER -out signing_key.x509 -keyout signing_key.pem
+sudo openssl req -config x509.genkey -new -nodes -utf8 -sha256 -days 36500 -batch -x509 -outform DER -out /var/lib/shim-signed/modules/Module.x509 -keyout Module.pem
