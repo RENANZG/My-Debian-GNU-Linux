@@ -19,4 +19,10 @@ subjectKeyIdentifier=hash
 authorityKeyIdentifier=keyid
 EOF
 
-sudo openssl req -config x509.genkey -new -nodes -utf8 -sha256 -days 36500 -batch -x509 -outform DER -out /var/lib/shim-signed/modules/Module.x509 -keyout /var/lib/shim-signed/modules/Module.pem
+$ sudo openssl req -config x509.genkey -new -nodes -utf8 -sha256 -days 36500 -batch -x509 -outform DER -out /var/lib/shim-signed/modules/Module.x509 -keyout /var/lib/shim-signed/modules/Module.pem
+
+$ sudo /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file sha256 /var/lib/shim-signed/modules/Module.x509 /var/lib/shim-signed/modules/module.der /lib/modules/6.1.0-12-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
+
+$ sudo mokutil --import Module.x509
+
+$ sudo sign-file 
