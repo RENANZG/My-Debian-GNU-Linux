@@ -186,8 +186,7 @@ https://github.com/linuxdabbler/debian-install-scripts
 </details>  
 
 
->"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it."
->(Edward Snowden)
+>"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it."							(Edward Snowden)
 
 <details>
 <summary><b>2.3 Encryption</b></summary> 
