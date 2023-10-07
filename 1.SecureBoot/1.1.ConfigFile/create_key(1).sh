@@ -25,4 +25,4 @@ $ sudo /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file sha256 /var/lib/s
 
 $ sudo mokutil --import Module.x509
 
-$ sudo sign-file 
+$ sudo /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file sha256 /var/lib/shim-signed/modules/Module.pem /var/lib/shim-signed/modules/Module.x509 /lib/modules/6.1.0-12-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723du.ko
