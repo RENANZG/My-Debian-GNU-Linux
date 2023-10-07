@@ -121,17 +121,17 @@ How to check the iso file (SHA256SUMS) - https://www.gnu.org/software/coreutils/
 
 • Points to check:
 
-**2.1.1 Security**  
+2.1.1 Security
 https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption    
 https://github.com/chipsec/chipsec    
 
-**2.1.2 Compatibility**  
+2.1.2 Compatibility
 https://linux-hardware.org    
 https://github.com/morrownr/USB-WiFi    
 
-**2.1.3 Performance**  
+2.1.3 Performance
 
-**2.1.4 Cost benefit**  
+2.1.4 Cost benefit
 
 <p></p>
 </details>  
@@ -140,12 +140,20 @@ https://github.com/morrownr/USB-WiFi
 <summary><b>2.2 Installation</b></summary>  
 <p></p>
 
-**2.2.1 Basic Installation Guide**  
-• Linux on UEFI:A Quick Installation Guide  
+2.2.1 Basic Installation Guide
+• Quick Installation Guide and Others
 http://www.rodsbooks.com/linux-uefi   
 https://wiki.debian.org/DontBreakDebian   
+https://distrowatch.com    
+https://distrowatch.com/table.php?distribution=debian   
 
-**2.2.2 Debootstrap**    
+2.2.2 Desktop interface
+
+XFCE vs LXQt - Lightweight Linux Desktop Environments
+https://www.youtube.com/watch?v=cs8JW3zDDoI   
+
+
+2.2.3 Debootstrap    
 • Debootstrap    
 https://wiki.debian.org/Debootstrap    
 • Debian 11.0 Debootstrap | Debian Command Line Install Guide    
@@ -164,8 +172,8 @@ https://github.com/linuxdabbler/debian-install-scripts
 <summary><b>2.3 Encryption</b></summary> 
 <p></p>
 	
->"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it."
-(Edward Snowden)
+>"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it."   
+>(Edward Snowden)
 
 **2.3.1 Encryption**    
 https://wiki.archlinux.org/title/Security      
@@ -274,17 +282,21 @@ ADVANCED:
 -------------------------------------------------------------------------
 
 ```diff
-- CAUTION:
-- • Use an administrator password in the BIOS and do not use the same for disk encryption.
-- • Building and signing kernel modules is independent of building and signing your own kernel.
-- • In Debian, if you do not install the DKMS package, you will have more work to create the X.509 keys or OpenSSL keys, import the keys with sbsigntool or mokutil, sign the kernel or the kernel module file with sbsigntool or sign-file, respectively.
-- • Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from its source www.kernel.org must be signed or will not be able to load.
-- • Ubuntu uses DKMS with signed key by default, Ubuntu creates and imports mok key during system installation.
-- • In Fedora, if you use DKMS with Secure Boot enabled, you have to import the DKMS sign key with mokutil --import /var/lib/dkms/mok.pub and reboot to enroll the key. In Fedora the mok.pub and mok.key keys are created and module is signed by DKMS, but only if openssl package is installed.
-- • UEFI specifications use the terms key and public key (.der) to mean the public part of the key pair, or the X.509 certificate. However, in OpenSSL, the term key is the private key (.priv) that's used for signing. Thus, all Secure Boot keys must be X.509 keys and not OpenSSL keys.
-- • The instructions provided assume that you're signing a module for the currently running kernel. If you're signing a module for a different kernel, you must provide the path to the sign-file utility within the correct kernel version source. Otherwise, the signature type for the module for that kernel might not align correctly with the expected signature type.
-- • Only a single custom certificate can be added to the kernel because the compressed size of the kernel's boot image can not increase. Do not add multiple certificates to the kernel boot image.
+! CAUTION:
+! • Use an administrator password in the BIOS and do not use the same for disk encryption.
+! • Building and signing kernel modules is independent of building and signing your own kernel.
+! • In Debian, if you do not install the DKMS package, you will have more work to create the X.509 keys or OpenSSL keys, import the keys with sbsigntool or mokutil, sign the kernel or the kernel module file with sbsigntool or sign-file, respectively.
+! • Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from its source www.kernel.org must be signed or will not be able to load.
+! • Ubuntu uses DKMS with signed key by default, Ubuntu creates and imports mok key during system installation.
+! • In Fedora, if you use DKMS with Secure Boot enabled, you have to import the DKMS sign key with mokutil --import /var/lib/dkms/mok.pub and reboot to enroll the key. In Fedora the mok.pub and mok.key keys are created and module is signed by DKMS, but only if openssl package is installed.
+! • UEFI specifications use the terms key and public key (.der) to mean the public part of the key pair, or the X.509 certificate. However, in OpenSSL, the term key is the private key (.priv) that's used for signing. Thus, all Secure Boot keys must be X.509 keys and not OpenSSL keys.
+! • The instructions provided assume that you're signing a module for the currently running kernel. If you're signing a module for a different kernel, you must provide the path to the sign-file utility within the correct kernel version source. Otherwise, the signature type for the module for that kernel might not align correctly with the expected signature type.
+! • Only a single custom certificate can be added to the kernel because the compressed size of the kernel's boot image can not increase. Do not add multiple certificates to the kernel boot image.
 - BUGS:
+- • Debian Bug report logs - #1012741 Key was rejected by service
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1012741
+- • Debian Bug report logs - #1012816 Key was rejected by service 
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1012816;msg=22
 - • Debian Bug report logs - #989463 please align shim-signed dkms behaviour with Ubuntu  
 - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989463  
 - • Debian Bug report logs - #939392 please provide kmodsign like Ubuntu does
@@ -316,7 +328,7 @@ ADVANCED:
 
 All the items below have to do with SecureBoot mode.
 
-```console
+```bash
 $ sudo mokutil --sb-state
 SecureBoot enabled
 ```
@@ -324,14 +336,14 @@ SecureBoot enabled
 If controlling the Secure Boot state through the EFI setup program is difficult, you can optionally use the mokutil utility to disable Secure Boot at the level of the Shim so that, although UEFI Secure Boot is enabled, no further validation takes place after the Shim is loaded.
 
 What keys are on my system?
-```console
+```bash
 user@debian:~$ sudo mokutil --list-enrolled
 or
 $ sudo mokutil --list-enrolled | grep Subject:
 ```
 
 Also the command <ins>modinfo</ins> prints the signature if available, for example:
-```console
+```bash
 $ sudo modinfo /lib/modules/6.1.0-11-amd64/kernel/mm/zsmalloc.ko 
 ```
 
@@ -345,15 +357,15 @@ The use of mokutil that's most relevant to this page is to import a MOK. In this
 </details>
 
 First make sure the key doesn't exist yet:
-```console
+```bash
 $ ls /var/lib/shim-signed/mok/
 ```
 To create a folder to MOK key:
-```console
+```bash
 $ sudo mkdir -p /var/lib/shim-signed/mok/
 ```
 You can choose another placcautione like "/etc/mok_key/" since there is no standard location at the moment.
-```console
+```bash
 $ sudo mkdir -p /etc/mok_key/
 ```
 
@@ -361,12 +373,12 @@ $ sudo mkdir -p /etc/mok_key/
 
 Before you create the public and private key for signing the kernel, you need to access the folder you created to be the destination of the keys. Then create the public (mokcertificate.der) and private key (moksigningkey.priv) with one-time password for signing the kernel
 
-```console
+```bash
 $ cd /var/lib/shim-signed/mok/
 $ sudo openssl req -config $(openssl version -d) -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -days 36500 -subj "/CN=ShimSigned/"
 
 ```
-```console
+```bash
 $ sudo openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem
 $ ls -l 
 total 12
@@ -379,12 +391,12 @@ $ sudo chmod 600 /var/lib/shim-signed/mok/*
 This commands will create both the private and public part of the certificate to sign things. You need both files to sign; and just the public part (MOK.der) to enroll the key in Shim.
 
 To read the certificate file in a human readable format, use
-```console
+```bash
 $ sudo openssl x509 -in /var/lib/shim-signed/mok/MOK.pem -noout -text 
 ```
 
 Another example of key generation:
-```console
+```bash
 $ sudo openssl req -x509 -new -nodes -utf8 -sha512 -days 3650 -batch -config /etc/ssl/x509.conf -outform DER -out /etc/ssl/certs/pubkey.der -keyout /etc/ssl/certs/priv.key
 $ sudo openssl x509 -inform DER -in /etc/ssl/certs/pubkey.der -out /etc/ssl/certs/pubkey.pem
 ```
@@ -394,23 +406,23 @@ $ sudo openssl x509 -inform DER -in /etc/ssl/certs/pubkey.der -out /etc/ssl/cert
 
 Enroll the key to your installation:
 
-```console
+```bash
 $ cd /var/lib/shim-signed/mok/
 $ sudo mokutil --import MOK.der
 ```
 You will be asked for a one-time <b>password (remember it and type it correctly)</b>, you will just use it to confirm your key selection in the next step (you won't need this password beyond this point, though), so choose any.
 
 Recheck your key will be prompted on next boot
-```console
+```bash
 $ sudo mokutil --list-new
 ```
 
 <b>5.Restart and finsh the process</b>
 
-Restart your system. Changes to the MOK keys may only be confirmed directly from the console at boot time. You will encounter a blue screen of a tool called MOKManager. Select "Enroll MOK" and then "View key". Make sure it is your key you created in step 3. Afterwards continue the process and you must enter the password which you provided in step 4. Continue with booting your system.
+Restart your system. Changes to the MOK keys may only be confirmed directly from the`bash at boot time. You will encounter a blue screen of a tool called MOKManager. Select "Enroll MOK" and then "View key". Make sure it is your key you created in step 3. Afterwards continue the process and you must enter the password which you provided in step 4. Continue with booting your system.
 
 Verify your key is already enrolled, if the MOK was loaded correctly, with:
-```console
+```bash
 $ sudo mokutil --test-key /var/lib/shim-signed/mok/MOK.der
 ```
 
@@ -423,7 +435,7 @@ $ sudo mokutil --test-key /var/lib/shim-signed/mok/MOK.der
 Building Debian kernel modules with DKMS. The dkms frameworks allows building kernel modules "on the fly" on the local system instead of building them centrally on the Debian infrastructure, DKMS could automatically sign kernel updated modules. If you install the kernel modules through the apt repository, chances are that modules have already been signed by the DKMS signing key. In that case, the traditional method won't work. And the thing you only need to do is to enroll the DKMS signing key into your machine. On systems that use SecureBoot, you will need a Machine Owner Key (MOK) to load DKMS modules. Generate it, enroll it, sign modules with it and then you will be able to load the signed modules. 
 
 In Debian, it depends on the dkms package:
-```console
+```bash
 $ sudo apt install dkms
 ```
 In order for dkms to automatically sign kernel modules, it must be told which key to sign the module with. This is done by adding two configuration values to "/etc/dkms/framework.conf", adjusting paths as required:
@@ -439,15 +451,15 @@ In order for dkms to automatically sign kernel modules, it must be told which ke
 <p></p>
 If these values are provided and dkms is able to build modules but does not attempt to sign them, then it is likely that sign_tool is missing. This is more common in older and/or custom kernels.
 In "/etc/dkms/framework.conf", add:
-```console
+```bash
 sign_tool="/etc/dkms/sign_helper.sh"
 ```
 Create "/etc/dkms/sign_helper.sh" with:
-```console
+```bash
 /lib/modules/"$1"/build/scripts/sign-file sha512 /root/.mok/client.priv /root/.mok/client.der "$2"
 ```
 Set Linux kernel info variables
-```console
+```bash
 $ VERSION="$(uname -r)"
 $ SHORT_VERSION="$(uname -r | cut -d . -f 1-2)"
 $ MODULES_DIR=/lib/modules/$VERSION
@@ -466,7 +478,7 @@ First, use the method mentioned in Verifying if a module is signed to check if t
 Next, find the location of the mok signing key and mok certificate. You can view the location in /etc/dkms/framework.conf, and the default location is /var/lib/dkms.
 
 Then, run the following command to enroll the key into the machine:
-```console
+```bash
 $ sudo mokutil --import /var/lib/dkms/mok.pub # prompts for one-time password and /var/lib/mok.pub can be changed, if mok certificate isn't located there.
 $ sudo mokutil --list-new # recheck your key will be prompted on next boot
 
@@ -664,7 +676,7 @@ It is kind of buried in OpenSSL source code for apps.c, load_config and what hap
 <b>Mistake by using wrong syntax</b>
 *Man Page OpenSSL:    
 <a href="https://www.openssl.org/docs/man1.0.2/man1/openssl-req.html">Man OpenSSL</a>   
-```console
+```bash
 $ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -config openssl.cnf -outform DER -out MOK.der -keyout MOK.priv
 $ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -outform DER -out MOK.der -keyout MOK.priv
 $ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -config openssl.cnf -outform DER -out MOK.der -keyout MOK.priv
@@ -673,7 +685,7 @@ $ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -outform D
 *Ubuntu:    
 <a href="https://ubuntu.com/blog/how-to-sign-things-for-secure-boot">https://ubuntu.com/blog/how-to-sign-things-for-secure-boot</a>   
 
-```console
+```bash
 $ sudo openssl req -config ./openssl.cnf -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "MOK.priv" -out "MOK.der"
 ```
 
@@ -688,7 +700,7 @@ $ sudo openssl x509 -inform der -in MOK.der -out MOK.pem
 *Fedora:    
 <a href="https://docs.fedoraproject.org/en-US/quick-docs/kernel-build-custom/">https://docs.fedoraproject.org/en-US/quick-docs/kernel-build-custom/</a>
 
-```console
+```bash
 $ sudo openssl req -new -x509 -newkey rsa:2048 -keyout "key.pem" -outform DER -out "cert.der" -nodes -days 36500 -subj "/CN=<your name>/"
 ```
 
@@ -698,13 +710,13 @@ Solution 1:
 
 Location
 
-```console
+```bash
 $ openssl version -d
 ```
 
 You can use strace (man strace) to check the configuration file being used while generating the self-signed certificate.
 
-```console
+```bash
 $ strace -e trace=open,openat -o /tmp/strace.log.0 openssl req \
 -newkey rsa:2048 -x509 -nodes -keyout localhost.key \
 -new -out localhost.crt
@@ -729,7 +741,7 @@ export OPENSSL_CONF=/dev/null
 
 Solution 2:
 
-```console
+```bash
 $ dpkg -S sign-file
 ```
 
@@ -774,14 +786,14 @@ f. Reboot and enroll
 1. Check if secure boot is enabled. When Secure Boot is disabled, the shimx64.efi will just directly load the real grubx64.efi bypassing all the Secure Boot steps, including loading the MOK. With the MOK not loaded, the kernel will have no way to recognize the signature on your module as valid. And with Secure Boot disabled, a signed module with an invalid signature is rejected, while unsigned modules only get a warning and a taint mark on any future oops/panic messages.
 
 
-```console
+```bash
 $ sudo mokutil --sb-state
 SecureBoot enabled
 ```
 
 You can create a personal public/private RSA key pair to sign the kernel modules. You can chose to store the key/pair, for example, in the <ins>/var/lib/shim-signed/modules/</ins> directory. Then create a new pair of private key (module.priv) and public key (module.der).
 
-```console
+```bash
 $ sudo mkdir -p var/lib/shim-signed/modules
 $ sudo openssl req -config /usr/lib/ssl/openssl.cnf -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "/var/lib/shim-signed/modules/module.priv" -out "/var/lib/shim-signed/modules/module.der" -subj "/CN=Modules/"
 $ ls -l /var/lib/shim-signed/modules/
@@ -792,13 +804,13 @@ $ sudo chmod 600 /var/lib/shim-signed/modules/*
 ```
 
 2. Enroll the public key (VirtualBox.der) to MOK (Machine Owner Key) by entering the command:
-```console
+```bash
 $ sudo mokutil --import /var/lib/shim-signed/modules/module.der
 input password:
 input password again:
 ```
 Recheck if your key will be prompted on next boot:
-```console
+```bash
 $ sudo mokutil --list-new
 ```
 
@@ -808,7 +820,7 @@ The password in this step is a temporary use password you'll only need to rememb
 
 There are serveral commands to verify if your key "Modules" is loaded and signed
 
-```console
+```bash
 $ sudo mokutil --test-key /var/lib/shim-signed/modules/module.der
 $ sudo modinfo -n rtw_8723d
 $ sudo lsmod | grep rtw_8723d
@@ -819,13 +831,13 @@ $ sudo dmesg | egrep 'integrity.*cert'
 4. Sign the module 
 
 Where was the module installed?
-```console
+```bash
 $ sudo modinfo -n rtw_8723d
   /lib/modules/6.1.0-12-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
 ```
 For sing the module, depending on your platform, the exact location of `sign-file` might vary. In Debian 12 (Bookworm) it was in <ins>/usr/src/linux-headers-$(uname -r)/scripts/sign-file</ins> .
 
-```console
+```bash
 $ uname -r
   6.1.0-12-amd64
 $ /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file 
@@ -833,16 +845,16 @@ Usage: scripts/sign-file [-dp] <hash algo> <key> <x509> <module> [<dest>]
        scripts/sign-file -s <raw sig> <hash algo> <x509> <module> [<dest>]
 ```
 Sign the module:
-```console
+```bash
 $ sudo /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file sha256 /var/lib/shim-signed/modules/module.priv /var/lib/shim-signed/modules/module.der /lib/modules/6.1.0-12-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
 ```
 Other form
-```console
+```bash
 $ sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der "$(modinfo -n vboxdrv)"
 ```
 
 Verify it:
-```console
+```bash
 $ sudo modinfo rtw88_8723d
 (...)
 signer:         Modules
@@ -852,40 +864,40 @@ signature:      XX:XX:XX:XX:XX:XX:XX:XX...
 (...)
 ```
 or
-```console
+```bash
 $ tail $(modinfo -n rtw88_8723d) | grep "Module signature appended" 
 ```
 
 You could try load the modules
-```console
+```bash
 $ modprobe drive
 $ depmod -a -v
 $ modprobe -v my_module
 $ lsmod | grep my_module
 ```
 After any kernel module loading failure, you should check the dmesg output: it might include a more specific error message. In this case it is likely to indicate that a module signature failed a validity check.
-```console
+```bash
 $ sudo dmesg --since -5m
 ```
 
 If the modules are needed to boot your machine, make sure to update the initramfs, e.g. using
-```console
+```bash
 $ sudo update-initramfs -k all -u
 ```
 
 -------------------------------------------------------------------------------------------------
 
 Building and signing modules is independent of building and signing your own kernel. To sign a custom kernel or any other EFI binary you want to have loaded by shim (PEM), you’ll need to use a different command: sbsign (PEM). In this case, we’ll need the certificate in a different format, <ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM. Convert the certificate into PEM (.der to .pem), for example:
-```console
+```bash
 $ sudo openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem
 ```
 For example, use it to sign our Kernel:
-```console
+```bash
 $ sudo sbsign --key MOK.priv --cert MOK.pem "/boot/vmlinuz-$VERSION" --output "/boot/vmlinuz-$VERSION.tmp"
 $ sudo mv "/boot/vmlinuz-$VERSION.tmp" "/boot/vmlinuz-$VERSION"
 ```
 For example, use it to sign our EFI binary:
-```console
+```bash
 $ sudo sbsign --key MOK.priv --cert MOK.pem my_binary.efi --output my_binary.efi.signed
 ```
 As long as the signing key is enrolled in shim and does not contain the Object Identifier (OID) from earlier (since that limits the use of the key to kernel module signing), the binary should be loaded just fine by shim.
@@ -894,7 +906,7 @@ As long as the signing key is enrolled in shim and does not contain the Object I
 
 Future kernel updates would require the updated kernels to be signed again, so it makes sense to put the signing commands in a script that can be run at a later date as necessary (DKMS package could do it automatically).
 
-```console
+```bash
 $ sudo touch /var/lib/shim-signed/modules/sign-modules
 $ sudo nano /var/lib/shim-signed/modules/sign-modules
 
@@ -908,13 +920,13 @@ for modfile in $(dirname $(modinfo -n <yourmodulehere>))/*.ko; do
 done
 ```
 Add execution permission, and run the script above as root from the /var/lib/shim-signed/modules/ directory.
-```console
+```bash
 $ sudo -i
 $ cd /var/lib/shim-signed/modules
 $ chmod 700 /var/lib/shim-signed/modules/sign-vbox-modules ./sign-vbox-modules
 ```
 Load vboxdrv module and launch VirtualBox.
-```console
+```bash
 $ sudo modprobe vboxdrv
 or
 $ /sbin/modprobe vboxdrv 
