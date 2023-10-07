@@ -321,6 +321,8 @@ ADVANCED:
 ! • The instructions provided assume that you're signing a module for the currently running kernel. If you're signing a module for a different kernel, you must provide the path to the sign-file utility within the correct kernel version source. Otherwise, the signature type for the module for that kernel might not align correctly with the expected signature type.
 ! • Only a single custom certificate can be added to the kernel because the compressed size of the kernel's boot image can not increase. Do not add multiple certificates to the kernel boot image.
 - BUGS:
+- • Debian Bug report logs - #1037146 Key was rejected by service
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1037146
 - • Debian Bug report logs - #1012741 Key was rejected by service
 - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1012741
 - • Debian Bug report logs - #1012816 Key was rejected by service 
@@ -791,6 +793,7 @@ $ dpkg -S sign-file
 ```diff
 - CAUTION:
 - https://makedebianfunagainandlearnhowtodoothercoolstufftoo.computer/doku.php?id=start:issecurebootworking
+- https://discourse.ubuntu.com/t/dkms-package-support-extra-drivers-does-not-work-in-ubuntu-22-10-install-media/31655
 ```
 <details>
 <summary><b>Sign WIFI Module for Secure Boot</b></summary>  
