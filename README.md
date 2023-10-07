@@ -142,7 +142,8 @@ https://github.com/morrownr/USB-WiFi
 
 **2.2.1 Basic Installation Guide**  
 • Linux on UEFI:A Quick Installation Guide  
-http://www.rodsbooks.com/linux-uefi/  
+http://www.rodsbooks.com/linux-uefi   
+https://wiki.debian.org/DontBreakDebian   
 
 **2.2.2 Debootstrap**    
 • Debootstrap    
@@ -173,7 +174,8 @@ https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-
 https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system  
 https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page   
 
-&nbsp; &nbsp; &nbsp; **2.3.2.1 EXT4, ZFS AND BTRFS**    
+&nbsp; &nbsp; &nbsp; 2.3.2.1 EXT4, XFS, BTRFS AND ZFS    
+&nbsp; &nbsp; &nbsp; 
 
 **2.3.3 Key File Encryption in Debian 12 (Bookworm) References**	 
 <ul>
@@ -383,7 +385,6 @@ $ sudo openssl req -x509 -new -nodes -utf8 -sha512 -days 3650 -batch -config /et
 $ sudo openssl x509 -inform DER -in /etc/ssl/certs/pubkey.der -out /etc/ssl/certs/pubkey.pem
 ```
 
-
 --------------------------------------------------------------
 <b>4.Enrolling your key im Shim</b>
 
@@ -399,6 +400,7 @@ Recheck your key will be prompted on next boot
 ```console
 $ sudo mokutil --list-new
 ```
+
 <b>5.Restart and finsh the process</b>
 
 Restart your system. Changes to the MOK keys may only be confirmed directly from the console at boot time. You will encounter a blue screen of a tool called MOKManager. Select "Enroll MOK" and then "View key". Make sure it is your key you created in step 3. Afterwards continue the process and you must enter the password which you provided in step 4. Continue with booting your system.
@@ -629,7 +631,18 @@ sign-file: /var/lib/shim-signed/mok/MOK.priv: Success
 <b>Cause:</b>
 Certificate or key are missing. That statement is telling us one of both files that DKMS or OpenSSL.conf are looking for are not where it is looking. Another possibility is that to sign a custom kernel or any other EFI binary you want to have loaded by shim, you’ll need to use a different command: sbsign or mokutil. Unfortunately, we’ll need the certificate in a different format in this case, <ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM. Convert the certificate into PEM (.der to .pem).
 
+Under normal conditions, when CONFIG_MODULE_SIG_KEY is unchanged from its default, the kernel build will automatically generate a new keypair using openssl if one does not exist in the file:
+
+certs/signing_key.pem
+during the building of vmlinux (the public part of the key needs to be built into vmlinux) using parameters in the:
+
+certs/x509.genkey
+file (which is also generated if it does not already exist).
+
+It is strongly recommended that you provide your own x509.genkey file.
+
 As long as the signing key is enrolled in shim and does not contain the Object Identifier (OID) from earlier (since that limits the use of the key to kernel module signing), the binary should be loaded just fine by shim. 
+
 
 Solution 1
 This is where Debian places openssl.cnf for the OpenSSL they provide:
@@ -739,21 +752,24 @@ How to get WiFi Module signed for Secure Boot
 
 Mandatory packages if Secure Boot is active: openssl, sign-file and mokutil
 
-Brief - Sign with DKMS
-1. if not installed, install dkms, openssl and mokutil
-2. build/install a driver
-3. if not imported by default, import the dkms key with mokutil
-4. reboot
-5. enroll the key
-
 Brief - Sign with Sign-file
-1. if not installed, install openssl and mokutil
-2. build/install a driver
-3. import the key
-4. reboot
-5. enroll the key
 
-1. You can create a personal public/private RSA key pair to sign the kernel modules. You can chose to store the key/pair, for example, in the <ins>/var/lib/shim-signed/modules/</ins> directory. Then create a new pair of private key (module.priv) and public key (module.der).
+a. Enable Secure Boot
+b. Install a driver
+c. Generate a key
+d. Sign the modulese
+e. Import 
+f. Reboot and enroll
+
+
+1. Check if secure boot is enabled
+
+```console
+$ sudo mokutil --sb-state
+SecureBoot enabled
+```
+
+You can create a personal public/private RSA key pair to sign the kernel modules. You can chose to store the key/pair, for example, in the <ins>/var/lib/shim-signed/modules/</ins> directory. Then create a new pair of private key (module.priv) and public key (module.der).
 
 ```console
 $ sudo mkdir -p var/lib/shim-signed/modules
@@ -766,13 +782,13 @@ $ sudo chmod 600 /var/lib/shim-signed/modules/*
 ```
 
 2. Enroll the public key (VirtualBox.der) to MOK (Machine Owner Key) by entering the command:
-```
+```console
 $ sudo mokutil --import /var/lib/shim-signed/modules/module.der
 input password:
 input password again:
 ```
 Recheck if your key will be prompted on next boot:
-```
+```console
 $ sudo mokutil --list-new
 ```
 
@@ -780,26 +796,26 @@ $ sudo mokutil --list-new
 
 The password in this step is a temporary use password you'll only need to remember for a few minutes. Reboot the machine. When the bootloader starts, you should see a screen asking you to press a button to enter the MOK manager EFI utility. Note that any external external keyboards won't work in this step. Select Enroll MOK in the first menu, then continue, and then select Yes to enroll the keys, and re-enter the password established in previous step. Then select OK to continue the system boot.
 
-Verify if your key "Modules" is loaded and signed
+There are serveral commands to verify if your key "Modules" is loaded and signed
 
-```
+```console
 $ sudo mokutil --test-key /var/lib/shim-signed/modules/module.der
-$ sudo lsmod | grep rtw_8723d
 $ sudo modinfo -n rtw_8723d
+$ sudo lsmod | grep rtw_8723d
 $ sudo dmesg | grep cert
-$ sudo dmesg | grep Modules
+$ sudo dmesg | egrep 'integrity.*cert'
 ```
 
 4. Sign the module 
 
 Where was the module installed?
-```
+```console
 $ sudo modinfo -n rtw_8723d
   /lib/modules/6.1.0-12-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
 ```
 For sing the module, depending on your platform, the exact location of `sign-file` might vary. In Debian 12 (Bookworm) it was in <ins>/usr/src/linux-headers-$(uname -r)/scripts/sign-file</ins> .
 
-```
+```console
 $ uname -r
   6.1.0-12-amd64
 $ /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file 
@@ -807,11 +823,16 @@ Usage: scripts/sign-file [-dp] <hash algo> <key> <x509> <module> [<dest>]
        scripts/sign-file -s <raw sig> <hash algo> <x509> <module> [<dest>]
 ```
 Sign the module:
-```
+```console
 $ sudo /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file sha256 /var/lib/shim-signed/modules/module.priv /var/lib/shim-signed/modules/module.der /lib/modules/6.1.0-12-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
 ```
-Verify it:
+Other form
+```console
+$ sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der "$(modinfo -n vboxdrv)"
 ```
+
+Verify it:
+```console
 $ sudo modinfo rtw88_8723d
 (...)
 signer:         Modules
@@ -820,34 +841,36 @@ sig_hashalgo:   sha256
 signature:      XX:XX:XX:XX:XX:XX:XX:XX...
 (...)
 ```
-If you have your own keys:
-```
-$ sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der /lib/modules/6.1.0-12-amd64/misc/vboxdrv.ko
+or
+```console
+$ tail $(modinfo -n rtw88_8723d) | grep "Module signature appended" 
 ```
 
-Other form
+You could try load the modules
+```console
+depmod -a
+modprobe -v my_module
+lsmod | grep my_module
 ```
-$ sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der "$(modinfo -n vboxdrv)"
 
-```
 If the modules are needed to boot your machine, make sure to update the initramfs, e.g. using
-```
+```console
 sudo update-initramfs -k all -u
 ```
 
 -------------------------------------------------------------------------------------------------
 
 Building and signing modules is independent of building and signing your own kernel. To sign a custom kernel or any other EFI binary you want to have loaded by shim (PEM), you’ll need to use a different command: sbsign (PEM). In this case, we’ll need the certificate in a different format, <ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM. Convert the certificate into PEM (.der to .pem), for example:
-```
+```console
 $ sudo openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem
 ```
 For example, use it to sign our Kernel:
-```
+```console
 $ sudo sbsign --key MOK.priv --cert MOK.pem "/boot/vmlinuz-$VERSION" --output "/boot/vmlinuz-$VERSION.tmp"
 $ sudo mv "/boot/vmlinuz-$VERSION.tmp" "/boot/vmlinuz-$VERSION"
 ```
 For example, use it to sign our EFI binary:
-```
+```console
 $ sudo sbsign --key MOK.priv --cert MOK.pem my_binary.efi --output my_binary.efi.signed
 ```
 As long as the signing key is enrolled in shim and does not contain the Object Identifier (OID) from earlier (since that limits the use of the key to kernel module signing), the binary should be loaded just fine by shim.
@@ -856,7 +879,7 @@ As long as the signing key is enrolled in shim and does not contain the Object I
 
 Future kernel updates would require the updated kernels to be signed again, so it makes sense to put the signing commands in a script that can be run at a later date as necessary (DKMS package could do it automatically).
 
-```
+```console
 $ sudo touch /var/lib/shim-signed/modules/sign-modules
 $ sudo nano /var/lib/shim-signed/modules/sign-modules
 
@@ -870,13 +893,13 @@ for modfile in $(dirname $(modinfo -n <yourmodulehere>))/*.ko; do
 done
 ```
 Add execution permission, and run the script above as root from the /var/lib/shim-signed/modules/ directory.
-```
+```console
 $ sudo -i
 $ cd /var/lib/shim-signed/modules
 $ chmod 700 /var/lib/shim-signed/modules/sign-vbox-modules ./sign-vbox-modules
 ```
 Load vboxdrv module and launch VirtualBox.
-```
+```console
 $ sudo modprobe vboxdrv
 or
 $ /sbin/modprobe vboxdrv 
@@ -887,6 +910,7 @@ $ /sbin/modprobe vboxdrv
 <details>
 <summary><b>Sign NVIDIA Module for Secure Boot</b></summary>  
 <p></p>
+https://wiki.debian.org/DontBreakDebian#Don.27t_use_GPU_manufacturer_install_scripts    
 https://github.com/NVIDIA/open-gpu-kernel-modules  
 https://askubuntu.com/questions/1023036/how-to-install-nvidia-driver-with-secure-boot-enabled    
   
@@ -898,6 +922,7 @@ Create a new pair of private key (Nvidia.key) and public key (Nvidia.der) by run
 Example:
 
 `openssl req -new -x509 -newkey rsa:2048 -keyout /home/itpropmn07/Nvidia.key -outform DER -out /home/itpropmn07/Nvidia.der -nodes -days 36500 -subj "/CN=Graphics Drivers"`
+
 Enroll the public key (nvidia.der) to MOK (Machine Owner Key) by entering the command:
 
 `sudo mokutil --import PATH_TO_PUBLIC_KE`
