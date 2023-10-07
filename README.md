@@ -772,14 +772,13 @@ $ dpkg -S sign-file
 
 👷🛠️🚧🏗  
 
-<details>
-<summary><b>Sign WIFI Module for Secure Boot</b></summary>  
-<p></p>
-
 ```diff
 - CAUTION:
 - https://makedebianfunagainandlearnhowtodoothercoolstufftoo.computer/doku.php?id=start:issecurebootworking
 ```
+<details>
+<summary><b>Sign WIFI Module for Secure Boot</b></summary>  
+<p></p>
 
 How to get WiFi Module signed for Secure Boot
 
@@ -787,13 +786,14 @@ Mandatory packages if Secure Boot is active: openssl, sign-file and mokutil
 
 Brief - Sign with Sign-file
 
-a. Enable Secure Boot
-b. Install a driver
-c. Generate a key
-d. Sign the modulese
-e. Import 
-f. Reboot and enroll
-
+<pre>
+1- Enable Secure Boot
+2- Install a driver		
+3- Generate a key		
+4- Sign the modulese		
+5- Import
+6- Reboot and enroll
+</pre>
 
 1. Check if secure boot is enabled. When Secure Boot is disabled, the shimx64.efi will just directly load the real grubx64.efi bypassing all the Secure Boot steps, including loading the MOK. With the MOK not loaded, the kernel will have no way to recognize the signature on your module as valid. And with Secure Boot disabled, a signed module with an invalid signature is rejected, while unsigned modules only get a warning and a taint mark on any future oops/panic messages.
 
