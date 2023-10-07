@@ -164,6 +164,9 @@ https://github.com/linuxdabbler/debian-install-scripts
 <summary><b>2.3 Encryption</b></summary> 
 <p></p>
 	
+>"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately, endpoint security is so terrifically weak that NSA can frequently find ways around it."
+(Edward Snowden)
+
 **2.3.1 Encryption**    
 https://wiki.archlinux.org/title/Security      
 https://wiki.archlinux.org/title/Data-at-rest_encryption    
