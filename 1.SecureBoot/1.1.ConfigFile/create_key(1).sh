@@ -19,4 +19,4 @@ subjectKeyIdentifier=hash
 authorityKeyIdentifier=keyid
 EOF
 
-sudo openssl req -config x509.genkey -new -nodes -utf8 -sha256 -days 36500 -batch -x509 -outform DER -out /var/lib/shim-signed/modules/Module.x509 -keyout Module.pem
+sudo openssl req -config x509.genkey -new -nodes -utf8 -sha256 -days 36500 -batch -x509 -outform DER -out /var/lib/shim-signed/modules/Module.x509 -keyout /var/lib/shim-signed/modules/Module.pem
