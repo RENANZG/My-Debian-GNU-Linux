@@ -282,27 +282,27 @@ ADVANCED:
 -------------------------------------------------------------------------
 
 ```diff
-! CAUTION:
-! • Use an administrator password in the BIOS and do not use the same for disk encryption.
-! • Building and signing kernel modules is independent of building and signing your own kernel.
-! • In Debian, if you do not install the DKMS package, you will have more work to create the X.509 keys or OpenSSL keys, import the keys with sbsigntool or mokutil, sign the kernel or the kernel module file with sbsigntool or sign-file, respectively.
-! • Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from its source www.kernel.org must be signed or will not be able to load.
-! • Ubuntu uses DKMS with signed key by default, Ubuntu creates and imports mok key during system installation.
-! • In Fedora, if you use DKMS with Secure Boot enabled, you have to import the DKMS sign key with mokutil --import /var/lib/dkms/mok.pub and reboot to enroll the key. In Fedora the mok.pub and mok.key keys are created and module is signed by DKMS, but only if openssl package is installed.
-! • UEFI specifications use the terms key and public key (.der) to mean the public part of the key pair, or the X.509 certificate. However, in OpenSSL, the term key is the private key (.priv) that's used for signing. Thus, all Secure Boot keys must be X.509 keys and not OpenSSL keys.
-! • The instructions provided assume that you're signing a module for the currently running kernel. If you're signing a module for a different kernel, you must provide the path to the sign-file utility within the correct kernel version source. Otherwise, the signature type for the module for that kernel might not align correctly with the expected signature type.
-! • Only a single custom certificate can be added to the kernel because the compressed size of the kernel's boot image can not increase. Do not add multiple certificates to the kernel boot image.
-- BUGS:
-- • Debian Bug report logs - #1012741 Key was rejected by service
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1012741
-- • Debian Bug report logs - #1012816 Key was rejected by service 
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1012816;msg=22
-- • Debian Bug report logs - #989463 please align shim-signed dkms behaviour with Ubuntu  
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989463  
-- • Debian Bug report logs - #939392 please provide kmodsign like Ubuntu does
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=939392
-- • Debian Bug report logs - #928300 shim-signed: secure boot via removable media path unavailable  
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=928300  
+!CAUTION:
+!• Use an administrator password in the BIOS and do not use the same for disk encryption.
+!• Building and signing kernel modules is independent of building and signing your own kernel.
+!• In Debian, if you do not install the DKMS package, you will have more work to create the X.509 keys or OpenSSL keys, import the keys with sbsigntool or mokutil, sign the kernel or the kernel module file with sbsigntool or sign-file, respectively.
+!• Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from its source www.kernel.org must be signed or will not be able to load.
+!• Ubuntu uses DKMS with signed key by default, Ubuntu creates and imports mok key during system installation.
+!• In Fedora, if you use DKMS with Secure Boot enabled, you have to import the DKMS sign key with mokutil --import /var/lib/dkms/mok.pub and reboot to enroll the key. In Fedora the mok.pub and mok.key keys are created and module is signed by DKMS, but only if openssl package is installed.
+!• UEFI specifications use the terms key and public key (.der) to mean the public part of the key pair, or the X.509 certificate. However, in OpenSSL, the term key is the private key (.priv) that's used for signing. Thus, all Secure Boot keys must be X.509 keys and not OpenSSL keys.
+!• The instructions provided assume that you're signing a module for the currently running kernel. If you're signing a module for a different kernel, you must provide the path to the sign-file utility within the correct kernel version source. Otherwise, the signature type for the module for that kernel might not align correctly with the expected signature type.
+!• Only a single custom certificate can be added to the kernel because the compressed size of the kernel's boot image can not increase. Do not add multiple certificates to the kernel boot image.
+-BUGS:
+-• Debian Bug report logs - #1012741 Key was rejected by service
+-https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1012741
+-• Debian Bug report logs - #1012816 Key was rejected by service 
+-https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1012816;msg=22
+-• Debian Bug report logs - #989463 please align shim-signed dkms behaviour with Ubuntu  
+-https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989463  
+-• Debian Bug report logs - #939392 please provide kmodsign like Ubuntu does
+-https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=939392
+-• Debian Bug report logs - #928300 shim-signed: secure boot via removable media path unavailable  
+-https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=928300  
 ```  
 
 ## $\textcolor{green}{Basic\ Tutorial}$    
