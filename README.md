@@ -178,7 +178,8 @@ https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system
 https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page   
 
 &nbsp; &nbsp; &nbsp; 2.3.2.1 EXT4, XFS, BTRFS AND ZFS    
-&nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; ![Table-1](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/c66a4ac6-d9ed-41ea-aaea-60b10e94e5f9)
+
 
 **2.3.3 Key File Encryption in Debian 12 (Bookworm) References**	 
 <ul>
