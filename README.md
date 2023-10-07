@@ -1084,10 +1084,9 @@ ________________________________________________________________________________
 
 https://github.com/techlore/VPN-reviews    
 
-
+![Table-2](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/fa40cda5-c6f5-4f87-914f-937cc70e44de)
 
 **UFW**  
-
 
 **VPN**  
 https://www.paulligocki.com/vpn-only-ufw-setup/  
