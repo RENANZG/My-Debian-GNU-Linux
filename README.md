@@ -918,7 +918,7 @@ As long as the signing key is enrolled in shim and does not contain the Object I
 
 Future kernel updates would require the updated kernels to be signed again, so it makes sense to put the signing commands in a script that can be run at a later date as necessary (DKMS package could do it automatically).
 
-```bash
+```console
 $ sudo touch /var/lib/shim-signed/modules/sign-modules
 $ sudo nano /var/lib/shim-signed/modules/sign-modules
 
@@ -932,7 +932,7 @@ for modfile in $(dirname $(modinfo -n <yourmodulehere>))/*.ko; do
 done
 ```
 Add execution permission, and run the script above as root from the /var/lib/shim-signed/modules/ directory.
-```bash
+```sh
 $ sudo -i
 $ cd /var/lib/shim-signed/modules
 $ chmod 700 /var/lib/shim-signed/modules/sign-vbox-modules ./sign-vbox-modules
