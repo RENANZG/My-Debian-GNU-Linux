@@ -801,9 +801,9 @@ $ dpkg -S sign-file
 
 How to get WiFi Module signed for Secure Boot
 
-Mandatory packages if Secure Boot is active: <code>openssl</code>, <code>sign-file</code> and <code>mokutil</code>.
+Mandatory packages: <code>openssl</code>, <code>sign-file</code> and <code>mokutil</code>.
 
-If you are going to compile the module in the kernel, usually the maintainer will indicate the packages to be installed beforehand. For example, you will need to install "make", "gcc", "kernel headers", "kernel build essentials", and "git"
+If you are going to compile the module in the kernel, usually the maintainer will indicate the packages to be installed beforehand. For example, you will need to install "make", "gcc", "kernel headers", "kernel build essentials", and "git".
 
 ```bash
 $ sudo apt get install git make gcc build-essential linux-image-$(uname -r|sed 's,[^-]*-[^-]*-,,') linux-headers-$(uname -r|sed 's,[^-]*-[^-]*-,,')
