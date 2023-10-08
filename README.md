@@ -124,14 +124,18 @@ How to check the iso file (SHA256SUMS) - https://www.gnu.org/software/coreutils/
 
 • Points to check:
 
-2.1.1 Security
+2.1.1 Security		
 https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption    
 https://github.com/chipsec/chipsec    
 
 2.1.2 Compatibility
 https://linux-hardware.org    
 https://github.com/morrownr/USB-WiFi    
-
+https://ryf.fsf.org	
+https://www.pine64.org/pinebook-pro
+https://frame.work
+https://www.powerpc-notebook.org		
+	
 2.1.3 Performance
 
 2.1.4 Cost benefit
