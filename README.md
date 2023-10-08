@@ -772,7 +772,16 @@ export OPENSSL_CONF=/dev/null
 Solution 2:
 
 ```bash
-$ dpkg -S sign-file
+$ sudo dpkg -S sign-file
+```
+
+ Solution 3: 
+ 
+ Rescue if install/build fails in previous step
+
+```bash
+$ sudo apt-get install -f
+$ sudo dpkg-reconfigure broadcom-sta-dkms
 ```
 
 <p></p>
