@@ -339,7 +339,7 @@ ADVANCED:
 - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=928300  
 ```  
 
-## $\textcolor{green}{Basic\ Tutorial}$    
+## $\textcolor{green}{Basic\ Tutorial}$
 
 👷🛠️UNDER WORK🚧🏗    
 
@@ -657,7 +657,7 @@ $ sudo update-initramfs -u -k all
 </details>   
 
 <details>
-<summary>${\color{Red}\textbf{OpenSSL Error}}$</summary>
+<summary> ${\color{Red}\textbf{OpenSSL Error}}$ </summary>
 
 <p></p>
 
@@ -667,7 +667,7 @@ At main.c:298:
 - SSL error:FFFFFFFF80000002:system library::No such file or directory: ../crypto/bio/bss_file.c:67
 - SSL error:10000080:BIO routines::no such file: ../crypto/bio/bss_file.c:75
 </pre>
-Error 2 - Interrupted or cancelled
+Error 2 - Unable to get passphrase
 <pre>
 At main.c:170:
 - SSL error:07880109:common libcrypto routines::interrupted or cancelled: ../crypto/passphrase.c:184
