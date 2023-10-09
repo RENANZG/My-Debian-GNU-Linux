@@ -887,6 +887,7 @@ There are serveral commands to verify if your key "MODULE" is loaded and enrolle
 
 ```bash
 $ sudo mokutil --test-key /var/lib/shim-signed/mok/MOK.der
+$ sudo dmesg | grep MODULE
 $ sudo dmesg | grep cert
 ```
 
@@ -927,7 +928,7 @@ $ sudo su
 
 Other not tested form
 ```bash
-sudo --preserve-env=KBUILD_SIGN_PIN sh /usr/src/linux-kbuild-$(uname -r | cut -d . -f 1-2)/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv $(modinfo -n rtw_8723d)
+sudo --preserve-env=KBUILD_SIGN_PIN sh /usr/src/linux-kbuild-$(uname -r | cut -d . -f 1-2)/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der $(modinfo -n rtw_8723d)
 ```
 
 Assuming you type the password correct, you wont get any errors. You should be able to now see that a module is signed. You can pick any module in that directory but as an example:
