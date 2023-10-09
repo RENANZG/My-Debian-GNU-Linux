@@ -841,21 +841,21 @@ $ sudo mokutil --sb-state
 SecureBoot enabled
 ```
 
-You can create a personal public/private RSA key pair to sign the kernel modules. You can chose to store the key/pair, for example, in the <ins>/var/lib/shim-signed/modules/</ins> directory. Then create a new pair of private key (module.priv) and public key (module.der).
+You can create a personal public/private RSA key pair to sign the kernel modules. You can chose to store the key/pair, for example, in the <ins>/var/lib/shim-signed/mok/</ins> directory. Then create a new pair of private key (MOK.priv) and public key (MOK.der).
 
 ```bash
-$ sudo mkdir -p var/lib/shim-signed/modules
-$ sudo openssl req -config /usr/lib/ssl/openssl.cnf -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "/var/lib/shim-signed/modules/module.priv" -out "/var/lib/shim-signed/modules/module.der" -subj "/CN=Modules/"
-$ ls -l /var/lib/shim-signed/modules/
+$ sudo mkdir -p var/lib/shim-signed/mok
+$ sudo openssl req -config /usr/lib/ssl/openssl.cnf -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "/var/lib/shim-signed/mok/MOK.priv" -out "/var/lib/shim-signed/mok/MOK.der" -subj "/CN=MODULE/"
+$ ls -l /var/lib/shim-signed/mok/
 total 8
--rw-r--r-- 1 root root  779 module.der
--rw------- 1 root root 1704 module.priv
-$ sudo chmod 600 /var/lib/shim-signed/modules/*
+-rw-r--r-- 1 root root  779 MOK.der
+-rw------- 1 root root 1704 MOK.priv
+$ sudo chmod 600 /var/lib/shim-signed/mok/*
 ```
 
-2. Enroll the public key (VirtualBox.der) to MOK (Machine Owner Key) by entering the command:
+2. Enroll the public key (MOK.der) to MOK (Machine Owner Key) by entering the command:
 ```bash
-$ sudo mokutil --import /var/lib/shim-signed/modules/module.der
+$ sudo mokutil --import /var/lib/shim-signed/mok/MOK.der
 input password:
 input password again:
 ```
@@ -868,12 +868,10 @@ $ sudo mokutil --list-new
 
 The password in this step is a temporary use password you'll only need to remember for a few minutes. Reboot the machine. When the bootloader starts, you should see a screen asking you to press a button to enter the MOK manager EFI utility. Note that any external external keyboards won't work in this step. Select Enroll MOK in the first menu, then continue, and then select Yes to enroll the keys, and re-enter the password established in previous step. Then select OK to continue the system boot.
 
-There are serveral commands to verify if your key "Modules" is loaded and signed
+There are serveral commands to verify if your key "MODULE" is loaded and enrolled
 
 ```bash
-$ sudo mokutil --test-key /var/lib/shim-signed/modules/module.der
-$ sudo modinfo -n rtw_8723d
-$ sudo lsmod | grep rtw_8723d
+$ sudo mokutil --test-key /var/lib/shim-signed/mok/MOK.der
 $ sudo dmesg | grep cert
 $ sudo dmesg | egrep 'integrity.*cert'
 ```
@@ -885,7 +883,18 @@ Where was the module installed?
 $ sudo modinfo -n rtw_8723d
   /lib/modules/6.1.0-12-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
 ```
+
+
+
+
 For sing the module, depending on your platform, the exact location of `sign-file` might vary. In Debian 12 (Bookworm) it was in <ins>/usr/src/linux-headers-$(uname -r)/scripts/sign-file</ins> .
+
+
+
+<ins>/usr/src/linux-kbuild-*/scripts/sign-file</ins>
+
+
+
 
 ```bash
 $ uname -r
@@ -896,16 +905,16 @@ Usage: scripts/sign-file [-dp] <hash algo> <key> <x509> <module> [<dest>]
 ```
 Sign the module:
 ```bash
-$ sudo /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file sha256 /var/lib/shim-signed/modules/module.priv /var/lib/shim-signed/modules/module.der /lib/modules/6.1.0-12-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
+$ sudo /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der /lib/modules/6.1.0-12-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
 ```
 Other form
 ```bash
-$ sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der "$(modinfo -n vboxdrv)"
+$ sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der $(modinfo -n rtw_8723d)
 ```
 
 Verify it:
 ```bash
-$ sudo modinfo rtw88_8723d
+$ sudo modinfo rtw_8723d
 (...)
 signer:         Modules
 sig_key:        XX:XX:XX:XX:XX:XX:XX:XX...
@@ -915,19 +924,18 @@ signature:      XX:XX:XX:XX:XX:XX:XX:XX...
 ```
 or
 ```bash
-$ tail $(modinfo -n rtw88_8723d) | grep "Module signature appended" 
+$ sudo lsmod | grep rtw_8723d
+$ tail $(modinfo -n rtw_8723d) | grep "Module signature appended" 
 ```
 
 You could try load the modules
 ```bash
-$ modprobe drive
-$ depmod -a -v
-$ modprobe -v my_module
-$ lsmod | grep my_module
+$ modprobe -v rtw_8723d
 ```
 After any kernel module loading failure, you should check the dmesg output: it might include a more specific error message. In this case it is likely to indicate that a module signature failed a validity check.
+
 ```bash
-$ sudo dmesg --since -5m
+$ sudo dmesg --since -1m
 ```
 
 If the modules are needed to boot your machine, make sure to update the initramfs, e.g. using
@@ -947,6 +955,7 @@ $ sudo sbsign --key MOK.priv --cert MOK.pem "/boot/vmlinuz-$VERSION" --output "/
 $ sudo mv "/boot/vmlinuz-$VERSION.tmp" "/boot/vmlinuz-$VERSION"
 ```
 For example, use it to sign our EFI binary:
+
 ```bash
 $ sudo sbsign --key MOK.priv --cert MOK.pem my_binary.efi --output my_binary.efi.signed
 ```
@@ -987,6 +996,7 @@ $ /sbin/modprobe vboxdrv
 <details>
 <summary><b>Sign NVIDIA Module for Secure Boot</b></summary>  
 <p></p>
+
 https://wiki.debian.org/DontBreakDebian#Don.27t_use_GPU_manufacturer_install_scripts    
 https://github.com/NVIDIA/open-gpu-kernel-modules  
 https://askubuntu.com/questions/1023036/how-to-install-nvidia-driver-with-secure-boot-enabled    
