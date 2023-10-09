@@ -261,6 +261,8 @@ BASIC:
 <li>https://ubuntu.com/blog/how-to-sign-things-for-secure-boot</li>
 <li>https://wiki.ubuntu.com/UEFI/SecureBoot/DKMS</li>
 <li>https://help.ubuntu.com/community/DKMS</li>
+<li>https://wiki.ubuntu.com/UEFI/SecureBoot/KeyManagement/KeyGeneration</li>
+<li>https://github.com/dell/dkms#dynamic-kernel-module-system-dkms</li>
 <li>https://wiki.debian.org/SecureBoot</li>
 <li>https://github.com/sitmsiteman/secure-boot-in-debian-based-distro</li>
 <li>https://github.com/Batu33TR/secureboot-mok-keys</li>
@@ -840,8 +842,9 @@ $ sudo apt get install git make gcc build-essential linux-image-$(uname -r|sed '
 Brief - Sign with Sign-file
 
 <pre>
-1- Enable Secure Boot
-2- Install a driver		
+
+1- Install a driver	and test without Secure Boot	
+2- Enable Secure Boot
 3- Generate a private and public keys		
 5- Import
 6- Reboot and Enroll
@@ -859,7 +862,7 @@ SecureBoot enabled
 You can create a personal public/private RSA key pair to sign the kernel modules. You can chose to store the key/pair, for example, in the <ins>/var/lib/shim-signed/mok/</ins> directory. Then create a new pair of private key (MOK.priv) and public key (MOK.der).
 
 ```bash
-$ sudo mkdir -p var/lib/shim-signed/mok
+$ sudo mkdir -p /var/lib/shim-signed/mok
 $ sudo openssl req -config /usr/lib/ssl/openssl.cnf -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "/var/lib/shim-signed/mok/MOK.priv" -out "/var/lib/shim-signed/mok/MOK.der" -subj "/CN=MODULE/"
 $ ls -l /var/lib/shim-signed/mok/
 total 8
@@ -883,12 +886,20 @@ $ sudo mokutil --list-new
 
 The password in this step is a temporary use password you'll only need to remember for a few minutes. Reboot the machine. When the bootloader starts, you should see a screen asking you to press a button to enter the MOK manager EFI utility. Note that any external external keyboards won't work in this step. Select Enroll MOK in the first menu, then continue, and then select Yes to enroll the keys, and re-enter the password established in previous step. Then select OK to continue the system boot.
 
+Steps:
+-> "Enroll MOK"
+-> "Continue".
+-> "Yes".
+-> Enter the password you set up just now.
+-> Select "OK" and the computer will reboot again.
+
 There are serveral commands to verify if your key "MODULE" is loaded and enrolled
 
 ```bash
 $ sudo mokutil --test-key /var/lib/shim-signed/mok/MOK.der
-$ sudo dmesg | grep MODULE
 $ sudo dmesg | grep cert
+$ sudo cat /proc/keys | grep MODULE
+$ openssl x509 -in /var/lib/shim-signed/mok/MOK.der -inform DER -text -noout
 ```
 
 4. Sign the module with sign-file
