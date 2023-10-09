@@ -888,7 +888,6 @@ There are serveral commands to verify if your key "MODULE" is loaded and enrolle
 ```bash
 $ sudo mokutil --test-key /var/lib/shim-signed/mok/MOK.der
 $ sudo dmesg | grep cert
-$ sudo dmesg | egrep 'integrity.*cert'
 ```
 
 4. Sign the module with sign-file
@@ -896,13 +895,15 @@ $ sudo dmesg | egrep 'integrity.*cert'
 Use the same password you used before when setting up MOK for the BIOS to avoid confusion. Make sure you type the password carefully here with no errors, and dont get confused by it just waiting.
 
 ```bash
-$ sudo read -s KBUILD_SIGN_PIN
+$ sudo su
+~# read -s KBUILD_SIGN_PIN
 ```
 
 Next export it and sign all modules.
 
 ```bash
-$ sudo export KBUILD_SIGN_PIN
+$ sudo su
+~# export KBUILD_SIGN_PIN
 ```
 
 NOTE: KBUILD_SIGN_PIN allows a passphrase or PIN to be passed to the sign-file utility when signing kernel modules, if the private key requires such.
@@ -919,20 +920,12 @@ $ sudo modinfo -n rtw_8723d
 To sign modules (with your KBUILD_SIGN_PIN), go to the directory containing the modules, and run
 
 ```bash
-$ sudo for i in *.ko ; do sudo --preserve-env=KBUILD_SIGN_PIN "$KBUILD_DIR"/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der "$i" ; done
-```
-
-```bash
 $ sudo su
 ~# cd /lib/modules/6.1.0-13-amd64/kernel/drivers/net/wireless/realtek/rtw88/
 ~# /usr/src/linux-kbuild-6.1/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der rtw_8723d.ko
 ```
 
-```bash
-$ sudo --preserve-env=KBUILD_SIGN_PIN sh /usr/src/linux-kbuild-6.1/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der /lib/modules/6.1.0-13-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
-```
-
-Other form
+Other not tested form
 ```bash
 sudo --preserve-env=KBUILD_SIGN_PIN sh /usr/src/linux-kbuild-$(uname -r | cut -d . -f 1-2)/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv $(modinfo -n rtw_8723d)
 ```
@@ -950,7 +943,6 @@ signature:      XX:XX:XX:XX:XX:XX:XX:XX...
 ```
 
 NOTE: Filename may be different just use tab completion to find appropriate file to check some other name.
-
 
 You could try load the modules
 ```bash
