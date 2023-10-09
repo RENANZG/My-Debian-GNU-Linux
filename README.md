@@ -878,39 +878,27 @@ $ sudo dmesg | egrep 'integrity.*cert'
 
 4. Sign the module 
 
-Where was the module installed?
+Where was the module installed? In <ins>/lib/modules/$(uname -r)/kernel/drivers/*.ko</ins>
 ```bash
 $ sudo modinfo -n rtw_8723d
-  /lib/modules/6.1.0-12-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
+  /lib/modules/6.1.0-13-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
 ```
 
+For sing the module, depending on your platform, the exact location of `sign-file` might vary. In Debian 12 (Bookworm) it was in kernel generic <ins>/usr/src/linux-kbuild-$(uname -r | cut -d . -f 1-2)/scripts/sign-file</ins> .
 
+'$ sudo sh ?'
 
-
-For sing the module, depending on your platform, the exact location of `sign-file` might vary. In Debian 12 (Bookworm) it was in <ins>/usr/src/linux-headers-$(uname -r)/scripts/sign-file</ins> .
-
-
-
-<ins>/usr/src/linux-kbuild-*/scripts/sign-file</ins>
-
-
-
-
-```bash
-$ uname -r
-  6.1.0-12-amd64
-$ /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file 
-Usage: scripts/sign-file [-dp] <hash algo> <key> <x509> <module> [<dest>]
-       scripts/sign-file -s <raw sig> <hash algo> <x509> <module> [<dest>]
-```
 Sign the module:
 ```bash
-$ sudo /usr/src/linux-headers-6.1.0-12-amd64/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der /lib/modules/6.1.0-12-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
+$ sudo --preserve-env=KBUILD_SIGN_PIN /usr/src/linux-kbuild-6.1/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /lib/modules/6.1.0-13-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
 ```
 Other form
 ```bash
-$ sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der $(modinfo -n rtw_8723d)
+sudo --preserve-env=KBUILD_SIGN_PIN /usr/src/linux-kbuild-$(uname -r | cut -d . -f 1-2)/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv $(modinfo -n rtw_8723d)
 ```
+<sub>
+ Note: KBUILD_SIGN_PIN allows a passphrase or PIN to be passed to the sign-file utility when signing kernel modules, if the private key requires such.
+</sub>
 
 Verify it:
 ```bash
@@ -924,7 +912,6 @@ signature:      XX:XX:XX:XX:XX:XX:XX:XX...
 ```
 or
 ```bash
-$ sudo lsmod | grep rtw_8723d
 $ tail $(modinfo -n rtw_8723d) | grep "Module signature appended" 
 ```
 
@@ -942,6 +929,8 @@ If the modules are needed to boot your machine, make sure to update the initramf
 ```bash
 $ sudo update-initramfs -k all -u
 ```
+
+<br>
 
 -------------------------------------------------------------------------------------------------
 
