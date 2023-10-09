@@ -700,6 +700,7 @@ Wrong syntax of sign-file
 ```bash
 $ sudo scripts/sign-file sha512 kernel-signkey.priv kernel-signkey.x509 module.ko
 ```
+
 https://www.kernel.org/doc/html/v4.15/admin-guide/module-signing.html
 
 Cause 2
