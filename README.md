@@ -678,7 +678,7 @@ At main.c:170:
 sign-file: /var/lib/shim-signed/mok/MOK.priv: Success
 </pre>
 
-<b>Cause:</b>
+<b>Possible Causes</b>
 Certificate or key are missing. That statement is telling us one of both files that DKMS or OpenSSL.conf are looking for are not where it is looking. Another possibility is that to sign a custom kernel or any other EFI binary you want to have loaded by shim, you’ll need to use a different command: sbsign or mokutil. Unfortunately, we’ll need the certificate in a different format in this case, <ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM. Convert the certificate into PEM (.der to .pem).
 
 Under normal conditions, when CONFIG_MODULE_SIG_KEY is unchanged from its default, the kernel build will automatically generate a new keypair using openssl if one does not exist in the file:
@@ -693,9 +693,18 @@ It is strongly recommended that you provide your own x509.genkey file.
 
 As long as the signing key is enrolled in shim and does not contain the Object Identifier (OID) from earlier (since that limits the use of the key to kernel module signing), the binary should be loaded just fine by shim. 
 
+Cause 1
 
-Solution 1
+Wrong syntax of sign-file
+
+```bash
+$ sudo scripts/sign-file sha512 kernel-signkey.priv kernel-signkey.x509 module.ko
+```
+
+Cause 2
+
 This is where Debian places openssl.cnf for the OpenSSL they provide:
+
 <pre>
 $ openssl version -d
 OPENSSLDIR: "/usr/lib/ssl"
@@ -707,7 +716,10 @@ $ ls -l /etc/ssl/
 
 It is kind of buried in OpenSSL source code for apps.c, load_config and what happens when openssl.cnf is NULL (i.e., no -config option or OPENSSL_CONF envar). When openssl.cnf is NULL and no overrides, then OPENSSLDIR is used.
 
-<b>Mistake by using wrong syntax</b>
+Cause 2
+
+Wrong syntax of OpenSSL
+
 *Man Page OpenSSL:    
 <a href="https://www.openssl.org/docs/man1.0.2/man1/openssl-req.html">Man OpenSSL</a>   
 ```bash
@@ -742,6 +754,12 @@ $ sudo openssl req -new -x509 -newkey rsa:2048 -keyout "key.pem" -outform DER -o
 
 Solution 1:
 
+```bash
+$ sudo dpkg -S sign-file
+```
+
+Solution 2:
+
 Location
 
 ```bash
@@ -773,15 +791,10 @@ Wrap application within a script:
 export OPENSSL_CONF=/dev/null
 ```
 
-Solution 2:
 
-```bash
-$ sudo dpkg -S sign-file
-```
-
- Solution 3: 
+Solution 3: 
  
- Rescue if install/build fails in previous step
+Rescue if install/build fails in previous step
 
 ```bash
 $ sudo apt-get install -f
@@ -886,9 +899,17 @@ $ sudo modinfo -n rtw_8723d
 
 For sing the module, depending on your platform, the exact location of `sign-file` might vary. In Debian 12 (Bookworm) it was in kernel generic <ins>/usr/src/linux-kbuild-$(uname -r | cut -d . -f 1-2)/scripts/sign-file</ins> .
 
-Sign the module:
+
+To sign modules with your key, go to the directory containing the modules, and run
+
 ```bash
-$ sudo --preserve-env=KBUILD_SIGN_PIN sh /usr/src/linux-kbuild-6.1/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /lib/modules/6.1.0-13-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
+$ sudo su
+~# cd /lib/modules/6.1.0-13-amd64/kernel/drivers/net/wireless/realtek/rtw88/
+~# /usr/src/linux-kbuild-6.1/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der rtw_8723d.ko
+```
+
+```bash
+$ sudo --preserve-env=KBUILD_SIGN_PIN sh /usr/src/linux-kbuild-6.1/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der /lib/modules/6.1.0-13-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
 ```
 Other form
 ```bash
