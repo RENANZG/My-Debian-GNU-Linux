@@ -842,10 +842,10 @@ Brief - Sign with Sign-file
 <pre>
 1- Enable Secure Boot
 2- Install a driver		
-3- Generate a key		
-4- Sign the modulese		
+3- Generate a private and public keys		
 5- Import
-6- Reboot and enroll
+6- Reboot and Enroll
+4- Sign the module with sign-file		
 </pre>
 
 1. Check if secure boot is enabled. When Secure Boot is disabled, the shimx64.efi will just directly load the real grubx64.efi bypassing all the Secure Boot steps, including loading the MOK. With the MOK not loaded, the kernel will have no way to recognize the signature on your module as valid. And with Secure Boot disabled, a signed module with an invalid signature is rejected, while unsigned modules only get a warning and a taint mark on any future oops/panic messages.
@@ -879,7 +879,7 @@ Recheck if your key will be prompted on next boot:
 $ sudo mokutil --list-new
 ```
 
-3. Reboot and check
+3. Reboot and Enroll
 
 The password in this step is a temporary use password you'll only need to remember for a few minutes. Reboot the machine. When the bootloader starts, you should see a screen asking you to press a button to enter the MOK manager EFI utility. Note that any external external keyboards won't work in this step. Select Enroll MOK in the first menu, then continue, and then select Yes to enroll the keys, and re-enter the password established in previous step. Then select OK to continue the system boot.
 
@@ -891,18 +891,36 @@ $ sudo dmesg | grep cert
 $ sudo dmesg | egrep 'integrity.*cert'
 ```
 
-4. Sign the module 
+4. Sign the module with sign-file
 
-Where was the module installed? In <ins>/lib/modules/$(uname -r)/kernel/drivers/*.ko</ins>
+Use the same password you used before when setting up MOK for the BIOS to avoid confusion. Make sure you type the password carefully here with no errors, and dont get confused by it just waiting.
+
+```bash
+$ sudo read -s KBUILD_SIGN_PIN
+```
+
+Next export it and sign all modules.
+
+```bash
+$ sudo export KBUILD_SIGN_PIN
+```
+
+NOTE: KBUILD_SIGN_PIN allows a passphrase or PIN to be passed to the sign-file utility when signing kernel modules, if the private key requires such.
+
+For sing the module, depending on your platform, the exact location of `sign-file` might vary. In Debian 12 (Bookworm) it was in kernel generic <ins>/usr/src/linux-kbuild-$(uname -r | cut -d . -f 1-2)/scripts/sign-file</ins> .
+
+And where was the module installed? In <ins>/lib/modules/$(uname -r)/kernel/drivers/*.ko</ins>
+
 ```bash
 $ sudo modinfo -n rtw_8723d
   /lib/modules/6.1.0-13-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
 ```
 
-For sing the module, depending on your platform, the exact location of `sign-file` might vary. In Debian 12 (Bookworm) it was in kernel generic <ins>/usr/src/linux-kbuild-$(uname -r | cut -d . -f 1-2)/scripts/sign-file</ins> .
+To sign modules (with your KBUILD_SIGN_PIN), go to the directory containing the modules, and run
 
-
-To sign modules with your key, go to the directory containing the modules, and run
+```bash
+$ sudo for i in *.ko ; do sudo --preserve-env=KBUILD_SIGN_PIN "$KBUILD_DIR"/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der "$i" ; done
+```
 
 ```bash
 $ sudo su
@@ -913,28 +931,26 @@ $ sudo su
 ```bash
 $ sudo --preserve-env=KBUILD_SIGN_PIN sh /usr/src/linux-kbuild-6.1/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der /lib/modules/6.1.0-13-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
 ```
+
 Other form
 ```bash
 sudo --preserve-env=KBUILD_SIGN_PIN sh /usr/src/linux-kbuild-$(uname -r | cut -d . -f 1-2)/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv $(modinfo -n rtw_8723d)
 ```
-<sub>
-Note: KBUILD_SIGN_PIN allows a passphrase or PIN to be passed to the sign-file utility when signing kernel modules, if the private key requires such.
-</sub>
 
-Verify it:
+Assuming you type the password correct, you wont get any errors. You should be able to now see that a module is signed. You can pick any module in that directory but as an example:
+
 ```bash
 $ sudo modinfo rtw_8723d
 (...)
-signer:         Modules
+signer:         MODULE
 sig_key:        XX:XX:XX:XX:XX:XX:XX:XX...
 sig_hashalgo:   sha256
 signature:      XX:XX:XX:XX:XX:XX:XX:XX...
 (...)
 ```
-or
-```bash
-$ tail $(modinfo -n rtw_8723d) | grep "Module signature appended" 
-```
+
+NOTE: Filename may be different just use tab completion to find appropriate file to check some other name.
+
 
 You could try load the modules
 ```bash
