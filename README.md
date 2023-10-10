@@ -116,6 +116,9 @@ How to check the iso file (SHA256SUMS) - https://www.gnu.org/software/coreutils/
 
 <hr />
 
+-UNDER WORK-
+
+
 ## 2. SYSTEM INSTALLATION 
 
 <details>
@@ -150,7 +153,6 @@ https://www.powerpc-notebook.org
 2.2.0 BIOS
 
 
-
 2.2.1 Basic Installation Guide
 
 • Using VirtualBox as training for newbies or to test ultra-advanced configurations
@@ -164,7 +166,6 @@ https://wiki.qemu.org/Hosts/Linux#Fedora_Linux_/_Debian_GNU_Linux_/_Ubuntu_Linux
 • Quick Installation Guide and Others
 http://www.rodsbooks.com/linux-uefi   
 https://wiki.debian.org/DontBreakDebian   
-https://distrowatch.com    
 https://distrowatch.com/table.php?distribution=debian   
 
 2.2.2 Desktop interface
@@ -196,7 +197,6 @@ https://github.com/linuxdabbler/debian-install-scripts
 <summary><b>2.3 Encryption</b></summary> 
 <p></p>
 	
-
 2.3.1 Encryption    
 https://wiki.archlinux.org/title/Security      
 https://wiki.archlinux.org/title/Data-at-rest_encryption    
@@ -207,11 +207,11 @@ https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-
 https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system  
 https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page   
 
-2.3.4 EFI + ENCRYPTED BOOT with USB Key (removable medium) 
--UNDER WORK-
+2.3.4 EFI + ENCRYPTED BOOT with USB Key (Removable Medium) 
+
+-UNDER WORK-		
 
 https://tqdev.com/2022-luks-with-usb-unlock   
-
 
 "Install debian 9 stretch on one encrypted btrfs partition including /boot and booting if via EFI"
 https://github.com/rob31415/cryptBoot  
@@ -219,7 +219,6 @@ https://github.com/rob31415/cryptBoot
 https://github.com/stupidpupil/https-keyscript    
 
 2.3.4 Key File Encryption with USB Key    
--UNDER WORK-
 https://github.com/aomgiwjc/Unix-Bootstrap-Installs/wiki/
 https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git
 https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key
@@ -228,23 +227,22 @@ https://www.willhaley.com/blog/unlock-luks-volumes-with-usb-key
 https://www.dwarmstrong.org/fde-debian
 https://www.cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux
 
+2.3.5 Nuke Password		
+https://packages.debian.org/bookworm/cryptsetup-nuke-password	
+https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password		
+sudo apt install cryptsetup-nuke-password		
 
-
-
-
-<br></br>
+<br>
 </details>  
 
-<br></br>
-
-<hr />
+<br>
+<hr>
 
 ## 3. SECURE BOOT 
 
 <details>
 <summary><b>3.1 Introduction</b></summary>  
 <p></p>
-
     "Most modern systems will ship with SB enabled - they will not run any unsigned code by default, but it is possible to change the firmware configuration to either disable SB or to enroll extra signing keys." "The whole point of Secure Boot is to prevent malware from gaining control of the computer. Therefore, when booting with Secure Boot active, Fedora 18 and later, Ubuntu 16.04 and later, and probably other distributions restrict actions that some Linux users take for granted. For instance, Linux kernel modules must be signed, which complicates use of third-party kernel drivers, such as Nvidia's and AMD/ATI's proprietary video drivers. More recent kernels may, if Secure Boot is active, also check that they were launched from a boot loader that honors Secure Boot, and shut down if this was not the case.    
     To launch a locally-compiled kernel, you must sign it with a MOK and register that MOK with the system. (In both cases, you can register a hash rather than sign the binary; but this approach results in an ever-growing database in NVRAM, which is undesirable.) The extent of such restrictions is entirely up to those who develop and sign the boot loader launched by Shim and the kernel launched by that boot loader, though. Some distributions ship kernels that are relatively unencumbered by added security restrictions.  
     As a practical matter, if you want to use Shim, you have two choices: You can run a distribution that provides its own signed version of Shim, such as Fedora 18 or later or Ubuntu 12.10 or later; or you can run a signed version from such a distribution or from another source, add your own MOK, and sign whatever binaries you like. This first option is quite straightforward if you happen to want to use a distribution that ships with Shim, and it requires little extra elaboration." "If you want to build and run your own kernel (e.g. for development or debugging), then you will obviously end up making binaries that are not signed with the Debian key. If you wish to use those binaries, you will need to either sign them yourself and enroll the key used with MOK or disable SB."    
