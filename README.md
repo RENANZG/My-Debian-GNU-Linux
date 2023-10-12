@@ -87,17 +87,19 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 </table>
 
 <sub>
-How to check the iso file (SHA256SUMS) - https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html  
+¹ How to check the iso file (SHA256SUMS) - https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html  
+² Check with hash GtkHash - https://gtkhash.org   
+
 <details>
 <p></p><summary>Manual method</summary></p>  
 <p>The SHA-256 checksum hashes in a file called SHA256SUMS in the same directory listing as the download page.</p>
-<p>First open a terminal and go to the correct directory to check a downloaded iso file:  </p>
-<p>cd download_directory  </p>
-<p>Then run the following command from within the download directory.  </p>
-<p>sha256sum name.iso  </p>
-<p>sha256sum should then print out a single line after calculating the hash:  </p>
-<p>sdd31231c0421be56f39c7a31245c423fgcc3b048ds321a3e83d2c4d714fa9a76 *name.iso  </p>
-<p>Compare the hash (the alphanumeric string on left) that your machine calculated with the corresponding hash in the SHA256SUMS file.  </p>
+<p>First open a terminal and go to the correct directory to check a downloaded iso file:</p>
+<p>cd download_directory</p>
+<p>Then run the following command from within the download directory.</p>
+<p>sha256sum name.iso</p>
+<p>sha256sum should then print out a single line after calculating the hash:</p>
+<p>sdd31231c0421be56f39c7a31245c423fgcc3b048ds321a3e83d2c4d714fa9a76 *name.iso</p>
+<p>Compare the hash (the alphanumeric string on left) that your machine calculated with the corresponding hash in the SHA256SUMS file.</p>
 </details>
 
 </table>
@@ -189,6 +191,11 @@ https://github.com/linuxdabbler/debian-install-scripts
 
 &nbsp; &nbsp; &nbsp; 2.2.3.1 File system: EXT4, XFS, BTRFS AND ZFS    
 &nbsp; &nbsp; &nbsp; ![Table-1](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/c66a4ac6-d9ed-41ea-aaea-60b10e94e5f9)
+
+
+2.2.4 LFS
+• Linux From Scratch
+https://www.linuxfromscratch.org    
 
 <br></br>
 </details>  
@@ -311,7 +318,7 @@ ADVANCED:
 </ul>
 </details> 
 
--------------------------------------------------------------------------
+---------------------------------------------
 
 ```diff
 ! CAUTION:
@@ -435,7 +442,8 @@ $ sudo openssl req -x509 -new -nodes -utf8 -sha512 -days 3650 -batch -config /et
 $ sudo openssl x509 -inform DER -in /etc/ssl/certs/pubkey.der -out /etc/ssl/certs/pubkey.pem
 ```
 
---------------------------------------------------------------
+---------------------------------------------
+
 <b>4.Enrolling your key im Shim</b>
 
 Enroll the key to your installation:
@@ -809,7 +817,7 @@ $ sudo dpkg-reconfigure broadcom-sta-dkms
 
 <p></p>
 
--------------------------------------------------------------------------------------------------
+---------------------------------------------
 
 ## $\textcolor{gold}{Intermediate\ Tutorial}$  
 
@@ -971,7 +979,7 @@ $ sudo update-initramfs -k all -u
 
 <br>
 
--------------------------------------------------------------------------------------------------
+---------------------------------------------
 
 Building and signing modules is independent of building and signing your own kernel. To sign a custom kernel or any other EFI binary you want to have loaded by shim (PEM), you’ll need to use a different command: sbsign (PEM). In this case, we’ll need the certificate in a different format, <ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM. Convert the certificate into PEM (.der to .pem), for example:
 ```bash
@@ -1100,7 +1108,7 @@ https://wiki.ubuntu.com/EFIBootLoaders
 <p></p>
 <p></p>
 
-------------------------------------------------------------------------------------------------
+---------------------------------------------
 
 ## $\textcolor{red}{Advanced\ Tutorial}$ 
 
@@ -1140,27 +1148,52 @@ https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi
 
 <br></br>
 
-________________________________________________________________________________________
+_____________________________________________
 
-## 4. PRIVILEGES AND APPARMOR  
+## 4. PRIVILEGES AND APPARMOR   
 
+sudo apt install -y apparmor &&   
+sudo apt install -y apparmor-profiles &&    
+sudo apt install -y apparmor-utils &&   
+sudo apt install -y apparmor-profiles-extra   
 
+• AUDIT SYSTEM    
+sudo apt install -f lynis   
+sudo apt install -f checksecurity   
+	
+• ROOTKIT DETECT    
+sudo apt install chkrootkit    
+sudo apt install rkhunter   
+sudo apt install chkboot  
 
-sudo apt install -y apparmor &&		
-sudo apt install -y apparmor-profiles &&		
-sudo apt install -y apparmor-utils && 		
-sudo apt install -y apparmor-profiles-extra		
+• ANTIMALWARE     
+- CLAMAV    
+https://wiki.archlinux.org/title/ClamAV   
+https://docs.clamav.net/manual/Usage.html   
+sudo apt install -y clamav    
+sudo apt install -y clamav-daemon   
+
+&nbsp; &nbsp; Commands
+&nbsp; &nbsp; &nbsp; $ clamscan file   
+&nbsp; &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home    
+&nbsp; &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home --remove   
+&nbsp; &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"    
 
 
 <br></br>
-________________________________________________________________________________________
+
+_____________________________________________
 
 ## 5. FIREWALL AND VPN  
+
 👷🛠️UNDER WORK🚧🏗    
 
 https://github.com/techlore/VPN-reviews    
 
 ![Table-2](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/fa40cda5-c6f5-4f87-914f-937cc70e44de)
+
+
+sudo apt install -y wireguard-tools 
 
 **UFW**  
 
@@ -1180,9 +1213,6 @@ https://github.com/tool-maker/VPN_just_for_torrents/wiki
 https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge  
 https://transmissionbt.com/  
 
-**UFW+VPN+qBittorrent**  
-
-  
 **Everyday TOR**  
 
 https://wiki.debian.org/TorBrowser		
@@ -1190,91 +1220,118 @@ https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy
 
 <br></br>
 
-_______________________________________________________________________
+_____________________________________________
 
 ## 6. SOFTWARES  
+
 👷🛠️UNDER WORK🚧🏗    
 
-<DIV>
-<details>  
-<summary><b>Security</b></summary>  
 
+### Password Manager  
+
+• KeePassXC
 sudo apt install -y keepassxc   
+
+
+### Encryption
+
+• ZuluCrypt and VeraCrypt
+
 sudo apt install -y zulucrypt-gui   
-sudo apt install -y gtkhash   
-sudo apt install -y bleachbit   
-sudo apt install -y nwipe   
+
+• 7Z
 sudo apt install -y p7zip-rar   
-sudo apt install -y rfkill    
-sudo apt install -y ufw   
-sudo apt install -y wireguard-tools   
 
-AUDIT SYSTEM    
-sudo apt install -f lynis   
-sudo apt install -f checksecurity   
-	
-ROOTKIT DETECT    
-sudo apt install chkrootkit   
-sudo apt install chkboot    
-sudo apt install rkhunter   
+&nbsp; &nbsp; Commands    
+&nbsp; &nbsp; &nbsp; *How to create an encrypted zip file with 7z archiver:    
+&nbsp; &nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 outarchive.zip inpdoc1.pdf inpdoc2.pdf    
+&nbsp; &nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory/    
+&nbsp; &nbsp; &nbsp; $ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory/    
+&nbsp; &nbsp; &nbsp; How to create an encrypted header 7z file (only) with 7z archiver:    
+&nbsp; &nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir/    
+&nbsp; &nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory/   
+&nbsp; &nbsp; &nbsp; How to uncompress a zip file that is encrypted with 7za command:    
+&nbsp; &nbsp; &nbsp; $ 7za e archive.zip   
 
-METADATA CLEANER    
+### Sanitation
+
+**System Sanitation**
+• Bleachbit
+sudo apt install -y bleachbit   
+
+• Metadata Cleaner    
+sudo apt install metadata-cleaner   
 sudo apt install exiftool   
 sudo apt install metacam    
-sudo apt install metadata-cleaner   
 
-CLAMAV    
-https://wiki.archlinux.org/title/ClamAV   
-https://docs.clamav.net/manual/Usage.html   
-sudo apt install -y clamav    
-sudo apt install -y clamav-daemon   
-$ clamscan file   
-$ clamscan --verbose --recursive -o --bell /home    
-$ clamscan --verbose --recursive -o --bell /home --remove   
-$ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"    
+**Disk Sanitation**
+• Nwipe
+sudo apt install -y nwipe   
 
-</details>  
+*not all SSD support sanitize
 
+### Browsers    
 
+• LibreWolf 
 
-<details>  
-<summary><b>Browsers</b></summary>  
-<p style="line-height: 8px;"><b>Firefox</b>  </p>
-<p style="margin : 0; padding-top:0;"><b>Chromium</b>  </p>
-<p style="line-height: 8px;"><b>Extensions</b>  </p>
-<p><a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a>  </p>
-<p><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a>  </p>
-<p><a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a>  </p>
-<p><a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reaser View</a>  </p>
-<p><a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a>  </p>
-</details>  
+• Firefox   
+
+• Chromium    
+
+&nbsp; &nbsp; - Extensions    
+&nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a>   
+&nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a>   
+&nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a>   
+&nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a>   
+&nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a>    
 
 
-<details>  
-<summary><b>Office</b></summary>  
-<p><a href=""></a></td></p>  
+### Office  
+
+• PDF Reader    
 sudo apt install -y okular    
 sudo apt install -y okular-extra-backends   
-sudo apt install -y thunderbird   
-sudo apt install -y birdtray    
+
+• PDF Crop    
 sudo apt install -y krop    
 sudo apt install -y pdfarranger   
+
+• PDF OCR   
 sudo apt install -y ocrmypdf    
+sudo apt install -y tesseract-ocr-eng
+sudo apt install -y tesseract-ocr-deu
+sudo apt install -y tesseract-ocr-fra
+
+&nbsp; &nbsp; Commands    
+&nbsp; &nbsp; &nbsp; ocrmypdf -v /input.pdf ~/output.pdf    
+&nbsp; &nbsp; &nbsp; ocrmypdf -v --language deu /input.pdf ~/output.pdf   
+&nbsp; &nbsp; &nbsp; ocrmypdf -v --language fra+deu ~/input.pdf ~/output.pdf    
+&nbsp; &nbsp; &nbsp; ocrmypdf -v --rotate-pages ~/input.pdf ~/output.pdf    
+&nbsp; &nbsp; &nbsp; ocrmypdf -v myfile.pdf myfile.pdf  #TO MODIFY A FILE IN THE SAME PLACE
+	
+• Image Edit    
 sudo apt install -y gthumb    
+sudo apt install -y gimp
+
+• Audio Edit
+sudo apt install -y audacity
+
+• Office Utility    
 sudo apt install -y xpad    
 sudo apt install -y kcalc   
 
-Email
-<p style="margin : 0; padding-top:0;">https://emailselfdefense.fsf.org/en/workshops.html  </p>
-<p style="margin : 0; padding-top:0;">https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird  </p>
-<p style="margin : 0; padding-top:0;">https://keys.openpgp.org/about/usage  </p>
+### Email   
+
+sudo apt install -y thunderbird   
+sudo apt install -y birdtray    
+
+<p style="margin : 0; padding-top:0;">https://emailselfdefense.fsf.org/en/workshops.html  </p>    
+<p style="margin : 0; padding-top:0;">https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird  </p>   
+<p style="margin : 0; padding-top:0;">https://keys.openpgp.org/about/usage  </p>    
 <p style="margin : 0; padding-top:0;">https://efail.de/</p> 
 
-</details>  
 
-
-<details>  
-<summary><b>Utility</b></summary>  
+### Utility  
 sudo apt install -y gnome-disk-utility    
 sudo apt install -y partitionmanager       
 sudo apt install -y gparted   
@@ -1284,18 +1341,41 @@ sudo apt install -y rar unrar-free
 sudo apt install -y krename   
 sudo apt install -y gprename    
 sudo apt install -y dupeguru    
+_____________________________________________
+
+### Troubleshoting    
+
+• System Boot   
+
+
+• Network   
+
+sudo apt install -y rfkill    
+
+• Interface   
+
+
+• Hardware Utility    
+
 sudo apt install -y lshw    
 sudo apt install -y inxi    
 sudo apt install -y cpu-x   
 sudo apt install -y hardinfo    
 sudo apt install -y s-tui stress    
+
+• Disk Utility
+
+*SMARTMONTOOLS
+sudo apt install smartmontools
+sudo smartctl -a /dev/sda
+
+*HDPARM
+sudo apt install hdparm 
+sudo hdparm -I /dev/sda
+
 sudo apt install -y kdiskmark   
-</details>  
 
-
-</DIV>
-
-
+_____________________________________________
 
 ### Some Links  
 
