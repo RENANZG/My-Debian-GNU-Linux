@@ -1171,13 +1171,12 @@ https://wiki.archlinux.org/title/ClamAV
 https://docs.clamav.net/manual/Usage.html   
 sudo apt install -y clamav    
 sudo apt install -y clamav-daemon   
-
-&nbsp; &nbsp; Commands
-&nbsp; &nbsp; &nbsp; $ clamscan file   
+		
+&nbsp; &nbsp; Commands			
+&nbsp; &nbsp; &nbsp; $ clamscan file			
 &nbsp; &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home    
 &nbsp; &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home --remove   
 &nbsp; &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"    
-
 
 <br></br>
 
@@ -1225,20 +1224,22 @@ _____________________________________________
 
 👷🛠️UNDER WORK🚧🏗    
 
-
 ### Password Manager  
 
-• KeePassXC
+• KeePassXC		
 sudo apt install -y keepassxc   
-
 
 ### Encryption
 
-• ZuluCrypt and VeraCrypt
+• ZuluCrypt		
 
 sudo apt install -y zulucrypt-gui   
 
-• 7Z
+• VeraCrypt		
+
+https://www.veracrypt.fr/en/Downloads.html		
+
+• 7Z		
 sudo apt install -y p7zip-rar   
 
 &nbsp; &nbsp; Commands    
@@ -1252,10 +1253,10 @@ sudo apt install -y p7zip-rar
 &nbsp; &nbsp; &nbsp; How to uncompress a zip file that is encrypted with 7za command:    
 &nbsp; &nbsp; &nbsp; $ 7za e archive.zip   
 
-### Sanitation
+### Sanitation		
 
-**System Sanitation**
-• Bleachbit
+**System Sanitation**		
+• Bleachbit		
 sudo apt install -y bleachbit   
 
 • Metadata Cleaner    
@@ -1263,15 +1264,15 @@ sudo apt install metadata-cleaner
 sudo apt install exiftool   
 sudo apt install metacam    
 
-**Disk Sanitation**
-• Nwipe
+**Disk Sanitation**		
+• Nwipe		
 sudo apt install -y nwipe   
 
-*not all SSD support sanitize
+*not all SSD support sanitize		
 
 ### Browsers    
 
-• LibreWolf 
+• LibreWolf 	
 
 • Firefox   
 
