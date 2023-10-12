@@ -87,9 +87,8 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 </table>
 
 <sub>
-¹ How to check the iso file (SHA256SUMS) - https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html  
-² Check with hash GtkHash - https://gtkhash.org   
-
+<p>¹ How to check the iso file (SHA256SUMS) - https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html		</p>
+<p>² Check with hash GtkHash - https://gtkhash.org   </p>
 <details>
 <p></p><summary>Manual method</summary></p>  
 <p>The SHA-256 checksum hashes in a file called SHA256SUMS in the same directory listing as the download page.</p>
