@@ -1171,12 +1171,14 @@ https://wiki.archlinux.org/title/ClamAV
 https://docs.clamav.net/manual/Usage.html   
 sudo apt install -y clamav    
 sudo apt install -y clamav-daemon   
-		
+
+<pre>
 &nbsp; &nbsp; Commands			
 &nbsp; &nbsp; &nbsp; $ clamscan file			
 &nbsp; &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home    
 &nbsp; &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home --remove   
 &nbsp; &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"    
+</pre>
 
 <br></br>
 
@@ -1231,17 +1233,19 @@ sudo apt install -y keepassxc
 
 ### Encryption
 
-• ZuluCrypt		
+**• ZuluCrypt**		
 
 sudo apt install -y zulucrypt-gui   
 
-• VeraCrypt		
+**• VeraCrypt**		
 
 https://www.veracrypt.fr/en/Downloads.html		
 
-• 7Z		
+**• 7Z**		
+
 sudo apt install -y p7zip-rar   
 
+<pre>
 &nbsp; &nbsp; Commands    
 &nbsp; &nbsp; &nbsp; *How to create an encrypted zip file with 7z archiver:    
 &nbsp; &nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 outarchive.zip inpdoc1.pdf inpdoc2.pdf    
@@ -1252,31 +1256,33 @@ sudo apt install -y p7zip-rar
 &nbsp; &nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory/   
 &nbsp; &nbsp; &nbsp; How to uncompress a zip file that is encrypted with 7za command:    
 &nbsp; &nbsp; &nbsp; $ 7za e archive.zip   
+</pre>
 
 ### Sanitation		
 
 **System Sanitation**		
-• Bleachbit		
-sudo apt install -y bleachbit   
 
-• Metadata Cleaner    
+• Bleachbit		
+sudo apt install -y bleachbit		
+
+• Metadata Cleaner		
 sudo apt install metadata-cleaner   
 sudo apt install exiftool   
 sudo apt install metacam    
 
 **Disk Sanitation**		
 • Nwipe		
-sudo apt install -y nwipe   
+sudo apt install -y nwipe		
 
 *not all SSD support sanitize		
 
 ### Browsers    
 
-• LibreWolf 	
+**• LibreWolf** 	
 
-• Firefox   
+**• Firefox**   
 
-• Chromium    
+**• Chromium**    
 
 &nbsp; &nbsp; - Extensions    
 &nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a>   
@@ -1288,35 +1294,42 @@ sudo apt install -y nwipe
 
 ### Office  
 
-• PDF Reader    
+**• Libre Office**		
+
+
+**• PDF Reader**		
 sudo apt install -y okular    
 sudo apt install -y okular-extra-backends   
 
-• PDF Crop    
-sudo apt install -y krop    
+**• PDF Edit**		
 sudo apt install -y pdfarranger   
 
-• PDF OCR   
+**• PDF Crop**		
+sudo apt install -y krop    
+
+**• PDF OCR**		
 sudo apt install -y ocrmypdf    
 sudo apt install -y tesseract-ocr-eng
 sudo apt install -y tesseract-ocr-deu
 sudo apt install -y tesseract-ocr-fra
 
+<pre>
 &nbsp; &nbsp; Commands    
 &nbsp; &nbsp; &nbsp; ocrmypdf -v /input.pdf ~/output.pdf    
 &nbsp; &nbsp; &nbsp; ocrmypdf -v --language deu /input.pdf ~/output.pdf   
 &nbsp; &nbsp; &nbsp; ocrmypdf -v --language fra+deu ~/input.pdf ~/output.pdf    
 &nbsp; &nbsp; &nbsp; ocrmypdf -v --rotate-pages ~/input.pdf ~/output.pdf    
 &nbsp; &nbsp; &nbsp; ocrmypdf -v myfile.pdf myfile.pdf  #TO MODIFY A FILE IN THE SAME PLACE
-	
-• Image Edit    
+</pre>
+
+**• Image Edit**    
 sudo apt install -y gthumb    
 sudo apt install -y gimp
 
-• Audio Edit
+**• Audio Edit**
 sudo apt install -y audacity
 
-• Office Utility    
+**• Office Utility**    
 sudo apt install -y xpad    
 sudo apt install -y kcalc   
 
@@ -1343,14 +1356,17 @@ sudo apt install -y gprename
 sudo apt install -y dupeguru    
 _____________________________________________
 
-### Troubleshoting    
+## 7. TROUBLESHOTING    
 
 • System Boot   
 
-
+- rescue mode		
+- chroot		
+  
 • Network   
 
 sudo apt install -y rfkill    
+sudo apt install -y resolvconf		
 
 • Interface   
 
