@@ -129,9 +129,18 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 • Points to check:
 
 2.1.1 Security		
+
+• Hardware Security Based		
 https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption    
+
+• Hardware Vulnerabilities		
 https://github.com/chipsec/chipsec    
 
+• Hardware Spoof		
+https://www.whonix.org/wiki/Protocol-Leak-Protection_and_Fingerprinting-Protection#Less_important_identifiers		
+https://www.whonix.org/wiki/MAC_Address		
+https://hwidspoofer.com		
+https://xaze.gitbook.io/how-to-spoof-with-hwid-serial-changer		
 
 2.1.2 Compatibility
 https://linux-hardware.org    
@@ -218,19 +227,23 @@ https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page
 
 • Dm-crypt		
 https://wiki.archlinux.org/title/Dm-crypt		
+
 • Fstab		
 https://manpages.debian.org/bookworm/mount/fstab.5.en.html		
+
 • Crypttab		
 https://manpages.debian.org/bookworm/cryptsetup/crypttab.5.en.html		
+
 • Tips		
-Copy and past blkid		
-'echo "$(blkid -o export /dev/sdbX | grep ^UUID=) REMEMBEREFI" | tee --append /etc/fstab'		
+Copy and past blkid	
+
+`echo "$(blkid -o export /dev/sdbX | grep ^UUID=) REMEMBEREFI" | tee --append /etc/fstab`		
 or		
-'blkid -o value -s UUID >> /etc/fstab'		
+`blkid -o value -s UUID >> /etc/fstab`		
 
 2.3.4 Example 1 - FSTAB - Non-encrypted Boot Removable Medium (USB Key) Multi-device		
 
-```console
+```sh
 # <file system>                             <mount point>   <type>  <options>          <dump>  <pass>
 UUID=e4c627c2-69f2-11ee-8c99-0242ac120002        /           ext4    errors=remount-ro    0       1
 # /boot was on /dev/sdc2 during installation
