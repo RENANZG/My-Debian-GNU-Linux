@@ -132,6 +132,7 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption    
 https://github.com/chipsec/chipsec    
 
+
 2.1.2 Compatibility
 https://linux-hardware.org    
 https://github.com/morrownr/USB-WiFi    
@@ -213,27 +214,56 @@ https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-
 https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system  
 https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page   
 
-2.3.4 EFI + ENCRYPTED BOOT with USB Key (Removable Medium) 
+2.3.3 FSTAB, CRYPTTAB AND DM-CRYPT - Linux kernel's device mapper crypto target		
+
+• Dm-crypt		
+https://wiki.archlinux.org/title/Dm-crypt		
+• Fstab		
+https://manpages.debian.org/bookworm/mount/fstab.5.en.html		
+• Crypttab		
+https://manpages.debian.org/bookworm/cryptsetup/crypttab.5.en.html		
+• Tips		
+Copy and past blkid		
+'echo "$(blkid -o export /dev/sdbX | grep ^UUID=) REMEMBEREFI" | tee --append /etc/fstab'		
+or		
+'blkid -o value -s UUID >> /etc/fstab'		
+
+2.3.4 Example 1 - FSTAB - Non-encrypted Boot Removable Medium (USB Key) Multi-device		
+
+```console
+# <file system>                             <mount point>   <type>  <options>          <dump>  <pass>
+UUID=e4c627c2-69f2-11ee-8c99-0242ac120002        /           ext4    errors=remount-ro    0       1
+# /boot was on /dev/sdc2 during installation
+PARTUUID=f2c4ec78-69f2-11ee-8c99-0242ac120002   /boot        ext2    noauto, x-systemd.device-timeout=1m, defaults     0       2
+# /boot/efi was on /dev/sdc1 during installation
+PARTUUID=a15355f4-15ce-4ea6-a57b-161e9eea19fc   /boot/efi    vfat    noauto, x-systemd.device-timeout=1m, umask=0077   0       1
+UUID=2701e126-69f3-11ee-8c99-0242ac120002       /home        ext4    defaults             0       2
+UUID=447e4a14-69f3-11ee-8c99-0242ac120002        none        swap    sw                   0       0 
+```
+
+2.3.5 Example 2 - FSTAB - Encrypted Boot Removable Medium (USB Key) Multi-device		 
 
 -UNDER WORK-		
 
 https://tqdev.com/2022-luks-with-usb-unlock   
 
-"Install debian 9 stretch on one encrypted btrfs partition including /boot and booting if via EFI"
+"Install debian 9 stretch on one encrypted btrfs partition including /boot and booting if via EFI"		
 https://github.com/rob31415/cryptBoot  
 
 https://github.com/stupidpupil/https-keyscript    
 
-2.3.4 Key File Encryption with USB Key    
-https://github.com/aomgiwjc/Unix-Bootstrap-Installs/wiki/
-https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git
-https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key
-https://blog.fidelramos.net/software/unlock-luks-usb-drive
-https://www.willhaley.com/blog/unlock-luks-volumes-with-usb-key
-https://www.dwarmstrong.org/fde-debian
-https://www.cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux
+2.3.6 Example 3 - FSTAB - Encrypted Boot Removable Medium (USB Key) Multi-device and Keyfile 		
 
-2.3.5 Nuke Password		
+Key File Encryption with USB Key    
+https://github.com/aomgiwjc/Unix-Bootstrap-Installs/wiki		
+https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git		
+https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key		
+https://blog.fidelramos.net/software/unlock-luks-usb-drive		
+https://www.willhaley.com/blog/unlock-luks-volumes-with-usb-key		
+https://www.dwarmstrong.org/fde-debian		
+https://www.cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux		
+
+2.3.7 Nuke Password		
 https://packages.debian.org/bookworm/cryptsetup-nuke-password	
 https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password		
 sudo apt install cryptsetup-nuke-password		
