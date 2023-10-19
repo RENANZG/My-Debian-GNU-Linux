@@ -1255,6 +1255,9 @@ https://coveryourtracks.eff.org/
 https://ipleak.net/  
 https://portchecker.co  
 
+**Intrusion Detection system (IDS)**    
+https://www.debian.org/doc/manuals/securing-debian-manual/intrusion-detect.en.html    
+
 **Torrenting**  
 https://github.com/LiamTheBox/Torrent-With-A-VPN  
 https://github.com/mdlam92/vpn_torrenting  
@@ -1338,6 +1341,7 @@ sudo apt install -y nwipe
 &nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a>   
 &nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a>   
 &nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a>   
+&nbsp; &nbsp; &nbsp; - <a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass-Paywalls</a>   
 &nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a>    
 
 
