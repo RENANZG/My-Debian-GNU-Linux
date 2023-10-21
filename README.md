@@ -1149,7 +1149,7 @@ https://www.ventoy.net/en/doc_secure.html
 <details>
 <summary><b>rEFInd Bootloader</b></summary>  
 <p></p>
-https://wiki.ubuntu.com/EFIBootLoaders  
+https://wiki.ubuntu.com/EFIBootLoaders    
 
 </details>   
 
@@ -1173,8 +1173,8 @@ https://github.com/nsacyber/Hardware-and-Firmware-Security-Guidance/blob/master/
 <details>  
 <summary><b>Encrypted boot partition manager with UEFI Secure Boot support</b></summary>  
 <p></p>
-https://github.com/xmikos/cryptboot
-https://github.com/kmille/cryptboot
+https://github.com/xmikos/cryptboot   
+https://github.com/kmille/cryptboot   
 
 </details>
 
@@ -1182,19 +1182,19 @@ https://github.com/kmille/cryptboot
 <summary><b>Sign with TPM 2.0</b></summary>  
 <p></p>
 https://github.com/squarooticus/efi-measured-boot  
-https://github.com/osresearch/safeboot
+https://github.com/osresearch/safeboot    
 
 </details>  
 
 <details>  
 <summary><b>Secure Boot with Yubikey</b></summary>  
 <p></p>
-https://github.com/DimanNe/secure-boot
-https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi
+https://github.com/DimanNe/secure-boot    
+https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi   
 
-</details>
+</details>    
 
-<br></br>
+<br></br>   
 
 _____________________________________________
 
@@ -1299,14 +1299,14 @@ sudo apt install -y p7zip-rar
 
 <pre>
 &nbsp; Commands    
-&nbsp; &nbsp; How to create an encrypted zip file with 7z archiver:    
+&nbsp; &nbsp; • How to create an encrypted zip file with 7z archiver:    
 &nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 outarchive.zip inpdoc1.pdf inpdoc2.pdf    
 &nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory/    
 &nbsp; &nbsp; $ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory/    
-&nbsp; &nbsp; How to create an encrypted header 7z file (only) with 7z archiver:    
+&nbsp; &nbsp; • How to create an encrypted header 7z file (only) with 7z archiver:    
 &nbsp; &nbsp; 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir/    
 &nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory/   
-&nbsp; &nbsp; How to uncompress a zip file that is encrypted with 7za command:    
+&nbsp; &nbsp; • How to uncompress a zip file that is encrypted with 7za command:    
 &nbsp; &nbsp; $ 7za e archive.zip   
 </pre>
 
@@ -1343,7 +1343,6 @@ sudo apt install -y nwipe
 &nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a>   
 &nbsp; &nbsp; &nbsp; - <a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass-Paywalls</a>   
 &nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a>    
-
 
 ### Office    
 
