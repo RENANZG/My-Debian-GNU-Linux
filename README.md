@@ -1149,7 +1149,7 @@ https://www.ventoy.net/en/doc_secure.html
 <details>
 <summary><b>rEFInd Bootloader</b></summary>  
 <p></p>
-https://wiki.ubuntu.com/EFIBootLoaders  
+https://wiki.ubuntu.com/EFIBootLoaders    
 
 </details>   
 
@@ -1173,8 +1173,8 @@ https://github.com/nsacyber/Hardware-and-Firmware-Security-Guidance/blob/master/
 <details>  
 <summary><b>Encrypted boot partition manager with UEFI Secure Boot support</b></summary>  
 <p></p>
-https://github.com/xmikos/cryptboot
-https://github.com/kmille/cryptboot
+https://github.com/xmikos/cryptboot   
+https://github.com/kmille/cryptboot   
 
 </details>
 
@@ -1182,19 +1182,19 @@ https://github.com/kmille/cryptboot
 <summary><b>Sign with TPM 2.0</b></summary>  
 <p></p>
 https://github.com/squarooticus/efi-measured-boot  
-https://github.com/osresearch/safeboot
+https://github.com/osresearch/safeboot    
 
 </details>  
 
 <details>  
 <summary><b>Secure Boot with Yubikey</b></summary>  
 <p></p>
-https://github.com/DimanNe/secure-boot
-https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi
+https://github.com/DimanNe/secure-boot    
+https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi   
 
-</details>
+</details>    
 
-<br></br>
+<br></br>   
 
 _____________________________________________
 
@@ -1222,11 +1222,11 @@ sudo apt install -y clamav
 sudo apt install -y clamav-daemon   
 
 <pre>
-&nbsp; &nbsp; Commands			
-&nbsp; &nbsp; &nbsp; $ clamscan file			
-&nbsp; &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home    
-&nbsp; &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home --remove   
-&nbsp; &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"    
+&nbsp; Commands			
+&nbsp; &nbsp; $ clamscan file			
+&nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home    
+&nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home --remove   
+&nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"    
 </pre>
 
 <br></br>
@@ -1254,6 +1254,9 @@ https://www.dnsleaktest.com/
 https://coveryourtracks.eff.org/  
 https://ipleak.net/  
 https://portchecker.co  
+
+**Intrusion Detection system (IDS)**    
+https://www.debian.org/doc/manuals/securing-debian-manual/intrusion-detect.en.html    
 
 **Torrenting**  
 https://github.com/LiamTheBox/Torrent-With-A-VPN  
@@ -1295,16 +1298,16 @@ https://www.veracrypt.fr/en/Downloads.html
 sudo apt install -y p7zip-rar   
 
 <pre>
-&nbsp; &nbsp; Commands    
-&nbsp; &nbsp; &nbsp; *How to create an encrypted zip file with 7z archiver:    
-&nbsp; &nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 outarchive.zip inpdoc1.pdf inpdoc2.pdf    
-&nbsp; &nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory/    
-&nbsp; &nbsp; &nbsp; $ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory/    
-&nbsp; &nbsp; &nbsp; How to create an encrypted header 7z file (only) with 7z archiver:    
-&nbsp; &nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir/    
-&nbsp; &nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory/   
-&nbsp; &nbsp; &nbsp; How to uncompress a zip file that is encrypted with 7za command:    
-&nbsp; &nbsp; &nbsp; $ 7za e archive.zip   
+&nbsp; Commands    
+&nbsp; &nbsp; • How to create an encrypted zip file with 7z archiver:    
+&nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 outarchive.zip inpdoc1.pdf inpdoc2.pdf    
+&nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory/    
+&nbsp; &nbsp; $ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory/    
+&nbsp; &nbsp; • How to create an encrypted header 7z file (only) with 7z archiver:    
+&nbsp; &nbsp; 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir/    
+&nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory/   
+&nbsp; &nbsp; • How to uncompress a zip file that is encrypted with 7za command:    
+&nbsp; &nbsp; $ 7za e archive.zip   
 </pre>
 
 ### Sanitation		
@@ -1338,45 +1341,45 @@ sudo apt install -y nwipe
 &nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a>   
 &nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a>   
 &nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a>   
+&nbsp; &nbsp; &nbsp; - <a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass-Paywalls</a>   
 &nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a>    
 
+### Office    
 
-### Office  
-
-**• Libre Office**		
+**• Libre Office**    
 
 
-**• PDF Reader**		
+**• PDF Reader**    
 sudo apt install -y okular    
 sudo apt install -y okular-extra-backends   
 
-**• PDF Edit**		
+**• PDF Edit**    
 sudo apt install -y pdfarranger   
 
-**• PDF Crop**		
+**• PDF Crop**    
 sudo apt install -y krop    
 
-**• PDF OCR**		
+**• PDF OCR**   
 sudo apt install -y ocrmypdf    
-sudo apt install -y tesseract-ocr-eng
-sudo apt install -y tesseract-ocr-deu
-sudo apt install -y tesseract-ocr-fra
+sudo apt install -y tesseract-ocr-eng   
+sudo apt install -y tesseract-ocr-deu   
+sudo apt install -y tesseract-ocr-fra   
 
 <pre>
-&nbsp; &nbsp; Commands    
-&nbsp; &nbsp; &nbsp; ocrmypdf -v /input.pdf ~/output.pdf    
-&nbsp; &nbsp; &nbsp; ocrmypdf -v --language deu /input.pdf ~/output.pdf   
-&nbsp; &nbsp; &nbsp; ocrmypdf -v --language fra+deu ~/input.pdf ~/output.pdf    
-&nbsp; &nbsp; &nbsp; ocrmypdf -v --rotate-pages ~/input.pdf ~/output.pdf    
-&nbsp; &nbsp; &nbsp; ocrmypdf -v myfile.pdf myfile.pdf  #TO MODIFY A FILE IN THE SAME PLACE
+&nbsp;  Commands    
+&nbsp; &nbsp; $ ocrmypdf -v /input.pdf ~/output.pdf    
+&nbsp; &nbsp; $ ocrmypdf -v --language deu /input.pdf ~/output.pdf   
+&nbsp; &nbsp; $ ocrmypdf -v --language fra+deu ~/input.pdf ~/output.pdf    
+&nbsp; &nbsp; $ ocrmypdf -v --rotate-pages ~/input.pdf ~/output.pdf    
+&nbsp; &nbsp; $ ocrmypdf -v myfile.pdf myfile.pdf  #TO MODIFY A FILE IN THE SAME PLACE
 </pre>
 
 **• Image Edit**    
 sudo apt install -y gthumb    
-sudo apt install -y gimp
+sudo apt install -y gimp    
 
-**• Audio Edit**
-sudo apt install -y audacity
+**• Audio Edit**    
+sudo apt install -y audacity    
 
 **• Office Utility**    
 sudo apt install -y xpad    
@@ -1387,9 +1390,9 @@ sudo apt install -y kcalc
 sudo apt install -y thunderbird   
 sudo apt install -y birdtray    
 
-<p style="margin : 0; padding-top:0;">https://emailselfdefense.fsf.org/en/workshops.html  </p>    
-<p style="margin : 0; padding-top:0;">https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird  </p>   
-<p style="margin : 0; padding-top:0;">https://keys.openpgp.org/about/usage  </p>    
+<p style="margin : 0; padding-top:0;">https://emailselfdefense.fsf.org/en/workshops.html</p>    
+<p style="margin : 0; padding-top:0;">https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird</p>   
+<p style="margin : 0; padding-top:0;">https://keys.openpgp.org/about/usage</p>    
 <p style="margin : 0; padding-top:0;">https://efail.de/</p> 
 
 
@@ -1403,7 +1406,9 @@ sudo apt install -y rar unrar-free
 sudo apt install -y krename   
 sudo apt install -y gprename    
 sudo apt install -y dupeguru    
+
 _____________________________________________
+
 
 ## 7. TROUBLESHOTING    
 
@@ -1428,17 +1433,17 @@ sudo apt install -y cpu-x
 sudo apt install -y hardinfo    
 sudo apt install -y s-tui stress    
 
-• Disk Utility
+• Disk Utility    
 
-*SMARTMONTOOLS
-sudo apt install smartmontools
-sudo smartctl -a /dev/sda
+*SMARTMONTOOLS    
+sudo apt install smartmontools    
+sudo smartctl -a /dev/sda   
 
-*HDPARM
-sudo apt install hdparm 
-sudo hdparm -I /dev/sda
+*HDPARM   
+sudo apt install hdparm     
+sudo hdparm -I /dev/sda   
 
-sudo apt install -y kdiskmark   
+sudo apt install -y kdiskmark     
 
 _____________________________________________
 
