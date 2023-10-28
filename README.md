@@ -63,10 +63,8 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 <td>
 <a href="https://hardenedlinux.github.io" target="_blank"><b>Hardened GNU/Linux</b> - </a></td>
 <td>
-<a href="https://www.duplicati.com/" target="_blank"><b>Duplicati</b> - Store securely encrypted backups on cloud storage services!</a></td>
+<a href="" target="_blank"><b></b></a></td>
 </tr>
-
-
 
 </table>
 
@@ -327,14 +325,11 @@ sudo apt install cryptsetup-nuke-password</br>
 ## 3. SECURE BOOT 
 
 <details>
-<summary><b>3.1 Introduction</b></summary>  
-<p>
-    "Most modern systems will ship with SB enabled - they will not run any unsigned code by default, but it is possible to change the firmware configuration to either disable SB or to enroll extra signing keys." "The whole point of Secure Boot is to prevent malware from gaining control of the computer. Therefore, when booting with Secure Boot active, Fedora 18 and later, Ubuntu 16.04 and later, and probably other distributions restrict actions that some Linux users take for granted.</br>
-    For instance, Linux kernel modules must be signed, which complicates use of third-party kernel drivers, such as Nvidia's and AMD/ATI's proprietary video drivers. More recent kernels may, if Secure Boot is active, also check that they were launched from a boot loader that honors Secure Boot, and shut down if this was not the case.</br>
-    To launch a locally-compiled kernel, you must sign it with a MOK and register that MOK with the system. (In both cases, you can register a hash rather than sign the binary; but this approach results in an ever-growing database in NVRAM, which is undesirable.) The extent of such restrictions is entirely up to those who develop and sign the boot loader launched by Shim and the kernel launched by that boot loader, though. Some distributions ship kernels that are relatively unencumbered by added security restrictions.  
-    As a practical matter, if you want to use Shim, you have two choices: You can run a distribution that provides its own signed version of Shim, such as Fedora 18 or later or Ubuntu 12.10 or later; or you can run a signed version from such a distribution or from another source, add your own MOK, and sign whatever binaries you like.</br>
-    This first option is quite straightforward if you happen to want to use a distribution that ships with Shim, and it requires little extra elaboration." "If you want to build and run your own kernel (e.g. for development or debugging), then you will obviously end up making binaries that are not signed with the Debian key. If you wish to use those binaries, you will need to either sign them yourself and enroll the key used with MOK or disable SB."    
-</p>
+<summary><b>3.1 Introduction</b></summary>
+</br>
+  <p>"Most modern systems will ship with SB enabled - they will not run any unsigned code by default, but it is possible to change the firmware configuration to either disable SB or to enroll extra signing keys. The whole point of Secure Boot is to prevent malware from gaining control of the computer. Therefore, when booting with Secure Boot active, Fedora 18 and later, Ubuntu 16.04 and later, and probably other distributions restrict actions that some Linux users take for granted. For instance, Linux kernel modules must be signed, which complicates use of third-party kernel drivers, such as Nvidia's and AMD/ATI's proprietary video drivers. More recent kernels may, if Secure Boot is active, also check that they were launched from a boot loader that honors Secure Boot, and shut down if this was not the case."</p>
+  <p>"To launch a locally-compiled kernel, you must sign it with a MOK and register that MOK with the system. (In both cases, you can register a hash rather than sign the binary; but this approach results in an ever-growing database in NVRAM, which is undesirable.) The extent of such restrictions is entirely up to those who develop and sign the boot loader launched by Shim and the kernel launched by that boot loader, though. Some distributions ship kernels that are relatively unencumbered by added security restrictions."</p>
+  <p>"As a practical matter, if you want to use Shim, you have two choices: You can run a distribution that provides its own signed version of Shim, such as Fedora 18 or later or Ubuntu 12.10 or later; or you can run a signed version from such a distribution or from another source, add your own MOK, and sign whatever binaries you like. This first option is quite straightforward if you happen to want to use a distribution that ships with Shim, and it requires little extra elaboration.If you want to build and run your own kernel (e.g. for development or debugging), then you will obviously end up making binaries that are not signed with the Debian key. If you wish to use those binaries, you will need to either sign them yourself and enroll the key used with MOK or disable SB."</p>
 </details>  
 
 <details>
@@ -411,6 +406,13 @@ ADVANCED:
 ! • UEFI specifications use the terms key and public key (.der) to mean the public part of the key pair, or the X.509 certificate. However, in OpenSSL, the term key is the private key (.priv) that's used for signing. Thus, all Secure Boot keys must be X.509 keys and not OpenSSL keys.
 ! • The instructions provided assume that you're signing a module for the currently running kernel. If you're signing a module for a different kernel, you must provide the path to the sign-file utility within the correct kernel version source. Otherwise, the signature type for the module for that kernel might not align correctly with the expected signature type.
 ! • Only a single custom certificate can be added to the kernel because the compressed size of the kernel's boot image can not increase. Do not add multiple certificates to the kernel boot image.
+```
+```diff
+- WARNING:
+- https://makedebianfunagainandlearnhowtodoothercoolstufftoo.computer/doku.php?id=start:issecurebootworking
+- https://discourse.ubuntu.com/t/dkms-package-support-extra-drivers-does-not-work-in-ubuntu-22-10-install-media/31655
+```
+```diff
 - BUGS:
 - • Debian Bug report logs - #1037146 Key was rejected by service
 - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1037146
@@ -426,24 +428,28 @@ ADVANCED:
 - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=928300  
 ```  
 
-## $\textcolor{green}{Basic\ Tutorial}$
-
 👷🛠️UNDER WORK🚧🏗    
 
 <DIV class="section" id="VERDE">
 
 <details>
-<summary><b>Sign GRUB for Secure Boot</b></summary>  
-<p></p>
+<summary><b>3.4 Sign GRUB for Secure Boot</b></summary>  
+</br>
 
-<b>1.First steps </b>   
-
+<p><b>Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from its source www.kernel.org must be signed or will not be able to load.</b></p>   
 
 </details>
 
 <details>
-<summary><b>Sign Debian Kernel for Secure Boot</b></summary>  
-<p></p>
+<summary><b>3.5 Sign Debian Kernel for Secure Boot</b></summary>
+</br>
+
+<p><b>
+Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from its source www.kernel.org must be signed or will not be able to load.
+</b></p>
+<p><b>
+Only a single custom certificate can be added to the kernel because the compressed size of the kernel's boot image can not increase. Do not add multiple certificates to the kernel boot image.
+</b></p>
 
 <b>1.First steps </b>   
 
@@ -680,7 +686,7 @@ $ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-12-amd64
 </DIV>  
 
 <details>
-<summary><b>Reset Secure Boot keys for Kernel or Modules</b></summary>  
+<summary><b>3.6 Reset Secure Boot keys for Kernel or Modules</b></summary>  
 <p></p>
 Reset Key for Kernel
 ---UNDER WORK---
@@ -745,9 +751,8 @@ $ sudo update-initramfs -u -k all
 </details>   
 
 <details>
-<summary> ${\color{Red}\textbf{OpenSSL Error}}$ </summary>
-
-<p></p>
+<summary><em><b>OpenSSL Errors</b></em></summary>
+</br>
 
 Error 1 - No such file
 <pre>
@@ -895,22 +900,7 @@ $ sudo dpkg-reconfigure broadcom-sta-dkms
 
 </details>
 
-<p></p>
 
----------------------------------------------
-
-## $\textcolor{gold}{Intermediate\ Tutorial}$  
-
-<p></p>
-
-
-👷🛠️🚧🏗  
-
-```diff
-- CAUTION:
-- https://makedebianfunagainandlearnhowtodoothercoolstufftoo.computer/doku.php?id=start:issecurebootworking
-- https://discourse.ubuntu.com/t/dkms-package-support-extra-drivers-does-not-work-in-ubuntu-22-10-install-media/31655
-```
 <details>
 <summary><b>Sign WIFI Module for Secure Boot</b></summary>  
 <p></p>
@@ -1181,14 +1171,6 @@ https://wiki.ubuntu.com/EFIBootLoaders</br>
 
 </details>   
 
-</br>
-
----------------------------------------------
-
-## $\textcolor{red}{Advanced\ Tutorial}$
-
-👷🛠️🚧🏗  
-
 <details>  
 <summary><b>Sign Custom Secure Keys</b></summary>  
 </br>
@@ -1221,12 +1203,15 @@ https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi</br>
 </details>
 
 </br>
+<hr>
 
-_____________________________________________
+<!-- ################################################################################# -->
 
-## 4. SYSTEM SECURITY
+<h2>4. SYSTEM SECURITY</h2>
 
-• PRIVILEGES AND APPARMOR</br>
+👷🛠️UNDER WORK🚧🏗</br>
+
+<h3>4.1 PRIVILEGES AND APPARMOR</h3>
 
 https://github.com/Kicksecure/security-misc</br>
 
@@ -1240,19 +1225,24 @@ sudo apt install -y apparmor-profiles &&</br>
 sudo apt install -y apparmor-utils &&</br>
 sudo apt install -y apparmor-profiles-extra</br>
 
-• AUDIT SYSTEM</br>
+<h3>4.2 AUDIT SYSTEM</h3>
+
 sudo apt install lynis</br>
 sudo apt install checksecurity</br>
 
-• ROOTKIT DETECT</br>
+<h3>4.3 ROOTKIT DETECT</h3>
+
 sudo apt install chkrootkit</br>
 sudo apt install rkhunter</br>
 sudo apt install chkboo</br>
 
-• ANTIMALWARE</br>
-CLAMAV</br>
+<h3>4.4 ANTIMALWARE</h3>
+
+<h4>CLAMAV</h4>
+
 https://wiki.archlinux.org/title/ClamAV</br>
 https://docs.clamav.net/manual/Usage.html</br>
+
 sudo apt install -y clamav</br>
 sudo apt install -y clamav-daemon</br>
 
@@ -1266,31 +1256,39 @@ sudo apt install -y clamav-daemon</br>
 </pre>
 
 </br>
+<hr>
 
-_____________________________________________
+<!-- ################################################################################# -->
 
-## 5. NETWORK
+<h2>5. NETWORK</h2>
 
 👷🛠️UNDER WORK🚧🏗</br>
 
-<b>• Picking a Router</b></br>
-"There are a number of open-source options for routers that will take even a small consumer router and turn it into a powerful device with enterprise-level capabilities. My personal favorite is DD-WRT, but other popular options include pfSense, OpenWRT, and Tomato. While you can buy pre-flashed devices in some cases (FlashRouters for DD-WRT and Protectli for pfSense), I always encourage you to do it yourself if you’re comfortable to ensure maximum security (and also to be familiar with the update process). Having said all of this, if you are unsure if an open source router is right for you (the wealth of options can be overwhelming to some), I still encourage you to get a router that wasn’t provided by your ISP. Make sure it offers VLANs and VPN capabilities, as we will be using these heavily to protect your home." https://thenewoil.org/en/guides/quick-start/wifi-guide/</br>
+<h3>5.1 Picking a Router</h3>
 
-<b>• Firewall</b></br>
+"There are a number of open-source options for routers that will take even a small consumer router and turn it into a powerful device with enterprise-level capabilities. My personal favorite is DD-WRT, but other popular options include pfSense, OpenWRT, and Tomato. While you can buy pre-flashed devices in some cases (FlashRouters for DD-WRT and Protectli for pfSense), I always encourage you to do it yourself if you’re comfortable to ensure maximum security (and also to be familiar with the update process). Having said all of this, if you are unsure if an open source router is right for you (the wealth of options can be overwhelming to some), I still encourage you to get a router that wasn’t provided by your ISP. Make sure it offers VLANs and VPN capabilities, as we will be using these heavily to protect your home."</br>
+https://thenewoil.org/en/guides/quick-start/wifi-guide/</br>
 
-- UFW</br>
+<!-- ################################# -->
+
+<h3>5.2 Firewall</h3>
+
+• UFW</br>
 https://wiki.archlinux.org/title/Uncomplicated_Firewall</br>
 
-- Advanced</br>
+• Advanced</br>
 R-fx Networks Projects</br>
 https://www.rfxn.com</br>
 Vuurmuur Firewall</br>
 https://www.vuurmuur.org</br>
 
-- Others</br>
+• Others</br>
 https://portchecker.co</br>
 
-<b>• VPN</b></br>
+<!-- ################################# -->
+
+<h3>5.3 VPN</h3>
+
 https://www.reddit.com/r/vpnrecommendations</br>
 https://www.reddit.com/r/VPN</br>
 https://github.com/techlore/VPN-reviews</br>
@@ -1301,91 +1299,111 @@ https://www.paulligocki.com/vpn-only-ufw-setup/</br>
 sudo apt install -y wireguard-tools</br>
 
 <b>• Leak Test</b></br>
+
 https://www.dnsleaktest.com</br>
 https://coveryourtracks.eff.org</br>
 https://ipleak.net</br>
 
 <b>• Torrenting</b></br>
-https://portforward.com
-https://wiki.wireshark.org/BitTorrent
+
+https://portforward.com</br>
+https://wiki.wireshark.org/BitTorrent</br>
 https://github.com/LiamTheBox/Torrent-With-A-VPN</br>
 https://github.com/mdlam92/vpn_torrenting</br>
 https://github.com/tool-maker/VPN_just_for_torrents/wiki</br>
 https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge</br>
 https://transmissionbt.com</br>
-https://www.comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-linux-with-ufw
+https://www.comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-linux-with-ufw</br>
 
-<b>Everyday TOR</b></br>
+<b>• Everyday TOR</b></br>
 https://wiki.debian.org/TorBrowser</br>
 https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy</br>
 
+<!-- ################################# -->
 
-<b>Network Spoofing</b></br>
+<h3> 5.4 Network Spoofing</h3>
+
 https://github.com/alobbs/macchanger</br>
 https://github.com/refraction-networking/utls</br>
 https://github.com/0xsirus/tirdad</br>
 
+<h4>• Opt-Out WLAN-SSID</h4>
 
-</br>
+To opt-out of <b>global maps</b> (https://wigle.net), rename your network WiFi SSID to
+<pre> &lt;SSID&gt;_optout_nomap </pre>
 
-_____________________________________________
+<h4>• To opt-out of Mozilla Location Services</h4>
 
-## 6. SOFTWARES
+Go to https://location.services.mozilla.com/optout
 
-👷🛠️UNDER WORK🚧🏗</br>
-
-### Password Manager </br>
-
-• KeePassXC</br>
-sudo apt install -y keepassxc</br>
-
-### Encryption </br>
-
-<b>• ZuluCrypt</b></br>
-sudo apt install -y zulucrypt-gui</br>
-
-<b>• VeraCrypt</b></br>
-https://www.veracrypt.fr/en/Downloads.html</br>
-
-
-### Compression </br>
-sudo apt install -y p7zip-rar</br>
+<h4>• Random MAC Address</h4>
 
 <pre>
 &nbsp; Commands
-&nbsp; &nbsp; • How to create an encrypted zip file with 7z archiver:
-&nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 outarchive.zip inpdoc1.pdf inpdoc2.pdf
-&nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory/
-&nbsp; &nbsp; $ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory/
-&nbsp; &nbsp; • How to create an encrypted header 7z file (only) with 7z archiver:
-&nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir/
-&nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory/
-&nbsp; &nbsp; • How to uncompress a zip file that is encrypted with 7za command:
-&nbsp; &nbsp; $ 7za e archive.zip
+&nbsp; &nbsp; $ ip link
+&nbsp; &nbsp; $ sudo ifconfig wlan0 down
+&nbsp; &nbsp; $ sudo macchanger -r wlan0
+&nbsp; &nbsp; • Shows specified MAC Address of NIC
+&nbsp; &nbsp; $ sudo macchanger -s wlan0
+&nbsp; &nbsp; $ sudo ifconfig wlan0 up
 </pre>
 
-• 7Z</br>
+<br>
+<hr>
 
-sudo apt install -y p7zip-full</br>
+<!-- ################################################################################# -->
+
+<h2>6. SOFTWARES</h2>
+
+👷🛠️UNDER WORK🚧🏗</br>
+
+<h3>6.1 Password Manager</h3>
+
+<h4>• KeePassXC</h4>
+
+<code>$ sudo apt install -y keepassxc</code></br>
+
+https://keepassxc.org/docs/
+
+<!-- ################################# -->
+
+<h3>6.2 Encryption</h3>
+
+<h4>• ZuluCrypt</h4>
+
+<code>$ sudo apt install -y zulucrypt-gui</code></br>
+
+<h4>• VeraCrypt</h4>
+
+https://www.veracrypt.fr/en/Downloads.html</br>
+
+
+<!-- ################################# -->
+
+<h3>6.3 Archive Compression</h3>
+
+<h4>• 7Z</h4>
+
+<code>$ sudo apt install -y p7zip-full</code></br>
 
 <pre>
 &nbsp; Commands
 &nbsp; &nbsp;	• How to create an zip file with 7z archiver:
-&nbsp; &nbsp;	$ 7z a outarchive.zip inpdoc1.pdf 
+&nbsp; &nbsp;	<code>$ 7z a outarchive.zip inpdoc1.pdf</code>
 &nbsp; &nbsp;	• How to create an encrypted zip file with 7z archiver:
-&nbsp; &nbsp;	$ 7z a -p -tzip -scrc=AES256 outarchive.zip inpdoc1.pdf inpdoc2.pdf
-&nbsp; &nbsp;	$ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory/
-&nbsp; &nbsp;	$ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory/
+&nbsp; &nbsp;	<code>$ 7z a -p -tzip -scrc=AES256 outarchive.zip inpdoc1.pdf inpdoc2.pdf</code>
+&nbsp; &nbsp;	<code>$ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory/</code>
+&nbsp; &nbsp;	<code>$ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory/</code>
 &nbsp; &nbsp;	• How to create an encrypted header 7z file (only) with 7z archiver:
-&nbsp; &nbsp;	$ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir/
-&nbsp; &nbsp;	$ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory/
+&nbsp; &nbsp;	<code>$ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir/</code>
+&nbsp; &nbsp;	<code>$ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory/</code>
 &nbsp; &nbsp;	• How to uncompress a zip file that is encrypted with 7za command:
-&nbsp; &nbsp;	$ 7za e archive.zip
+&nbsp; &nbsp;	<code>$ 7za e archive.zip</code>
 </pre>
 
-• RAR</br>
+<h4>• RAR</h4>
 
-sudo apt install -y unrar-free</br>
+<code>$ sudo apt install -y unrar-free</code></br>
 
 <pre>
 &nbsp; Commands
@@ -1395,9 +1413,9 @@ sudo apt install -y unrar-free</br>
 &nbsp; &nbsp;	$ unrar-free -x ~/Downloads/filename.rar ~/Downloads/
 </pre>
 
- • ZIP</br>
+<h4>• ZIP</h4>
 
-sudo apt install -y zip</br>
+<code>$ sudo apt install -y zip</code></br>
 
 <pre>
 &nbsp;Commands
@@ -1407,66 +1425,74 @@ sudo apt install -y zip</br>
 &nbsp; &nbsp;	$ zip -x ~/Downloads/filename.zip ~/Downloads/
 </pre>
 
+<!-- ################################# -->
 
-### Sanitation </br>
-<b>System Sanitation</b></br>
+<h3>6.3 Sanitation</h3>
 
-• Bleachbit</br>
-sudo apt install -y bleachbit</br>
+<h4>• System Sanitation</h4>
 
-• Metadata Cleaner</br>
-sudo apt install metadata-cleaner</br>
-sudo apt install exiftool</br>
-sudo apt install metacam </br>
+<b>Bleachbit</b></br>
 
-<b>Disk Sanitation</b></br>
+<code>$ sudo apt install -y bleachbit</code></br>
 
-• Nwipe</br>
-sudo apt install -y nwipe</br>
+<b>Metadata Cleaner</b></br>
+
+<code>sudo apt install metadata-cleaner</code></br>
+<code>sudo apt install exiftool</code></br>
+<code>sudo apt install metacam</code></br>
+
+<h4>• Disk Sanitation</h4>
+
+<b>Nwipe</b></br>
+
+<code>$ sudo apt install -y nwipe</code></br>
 
 *not all SSD support sanitize</br>
 
-### Browsers </br>
+<!-- ################################# -->
 
-<b>• LibreWolf</b></br>
+<h3>6.4 Browsers</h3>
 
-<b>• Firefox</b></br>
+<h4>• LibreWolf</h4>
 
-<b>• Chromium</b></br>
+<h4>• Firefox</h4>
 
-&nbsp; - Extensions</br>
+<h4>• Chromium</h4>
+
+<h5>&nbsp; 6.4.1 Extensions<h5>
 &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a></br>
 &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a></br>
 &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a></br>
 &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a></br>
 &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a></br>
 &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics (UTM)</a></br>
-
 &nbsp; &nbsp; - <a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a></br>
 
+<!-- ################################# -->
 
+<h3>6.5 Office</h3>
 
-### Office </br>
+<h4>• Libre Office</h4>
 
-<b>• Libre Office</b></br>
+<h4>• PDF Reader</h4>
 
+<code>$ sudo apt install -y okular</code></br>
+<code>$ sudo apt install -y okular-extra-backends</code></br>
 
-<b>• PDF Reader</b></br>
-sudo apt install -y okular</br>
-sudo apt install -y okular-extra-backends</br>
+<h4>• PDF Edit</h4>
 
-<b>• PDF Edit</b></br>
-sudo apt install -y pdfarranger</br>
+<code>$ sudo apt install -y pdfarranger</code></br>
 
-<b>• PDF Crop</b></br>
-sudo apt install -y krop</br>
+<h4>• PDF Crop</h4>
 
-<b>• PDF OCR</b></br>
-sudo apt install -y ocrmypdf</br>
-sudo apt install -y tesseract-ocr-eng</br>
-sudo apt install -y tesseract-ocr-deu</br>
-sudo apt install -y tesseract-ocr-fra</br>
+<code>$ sudo apt install -y krop</code></br>
 
+<h4>• PDF OCR</h4>
+
+<code>$ sudo apt install -y ocrmypdf</code></br>
+<code>$ sudo apt install -y tesseract-ocr-eng</code></br>
+<code>$ sudo apt install -y tesseract-ocr-deu</code></br>
+<code>$ sudo apt install -y tesseract-ocr-fra</code></br>
 
 <pre>
 &nbsp; Commands    
@@ -1477,79 +1503,105 @@ sudo apt install -y tesseract-ocr-fra</br>
 &nbsp; &nbsp; ocrmypdf -v myfile.pdf myfile.pdf  #TO MODIFY A FILE IN THE SAME PLACE
 </pre>
 
+<h4>• Image Edit</h4>
 
-<b>• Image Edit</b></br>
-sudo apt install -y gthumb</br>
-sudo apt install -y gimp</br>
+<code>$ sudo apt install -y gthumb</code></br>
+<code>$ sudo apt install -y gimp</code></br>
 
-<b>• Audio Edit</b></br>
-sudo apt install -y audacity</br>
+<h4>• Audio Edit</h4>
 
-<b>• Office Utility</b></br>
-sudo apt install -y xpad</br>
-sudo apt install -y kcalc</br>
+<code>$ sudo apt install -y audacity</code></br>
 
-### Email</br>
-sudo apt install -y thunderbird</br>
-sudo apt install -y birdtray</br>
+<h4>• Office Utility</h4>
 
-<p>https://emailselfdefense.fsf.org/en/workshops.html</p>
-<p>https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird</p>
-<p>https://keys.openpgp.org/about/usage</p>
-<p>https://efail.de/</p>
+<code>$ sudo apt install -y xpad</code></br>
+<code>$ sudo apt install -y kcalc</code></br>
 
-### Utility  
-sudo apt install -y gnome-disk-utility</br>
-sudo apt install -y partitionmanager</br>
-sudo apt install -y gparted</br>
-sudo apt install -y redshift</br>
-sudo apt install -y grsync</br>
-sudo apt install -y rar unrar-free</br>
-sudo apt install -y krename</br>
-sudo apt install -y gprename</br>
-sudo apt install -y dupeguru</br>
+<!-- ################################# -->
 
-_____________________________________________
+<h3>6.6 Email</h3>
 
-## 7. TROUBLESHOTING
+<code>$ sudo apt install -y thunderbird</code></br>
+<code>$ sudo apt install -y birdtray</code></br>
 
-• System Boot</br>
+https://emailselfdefense.fsf.org/en/workshops.html</br>
+https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird</br>
+https://keys.openpgp.org/about/usage</br>
+https://efail.de</br>
+
+<!-- ################################# -->
+
+<h3>6.7 Utility</h3>
+
+<code>$ sudo apt install -y gnome-disk-utility</code></br>
+<code>$ sudo apt install -y partitionmanager</code></br>
+<code>$ sudo apt install -y gparted</code></br>
+<code>$ sudo apt install -y redshift</code></br>
+<code>$ sudo apt install -y grsync</code></br>
+<code>$ sudo apt install -y rar unrar-free</code></br>
+<code>$ sudo apt install -y krename</code></br>
+<code>$ sudo apt install -y gprename</code></br>
+<code>$ sudo apt install -y dupeguru</code></br>
+
+</br>
+<hr>
+
+<!-- ################################################################################# -->
+
+<h2>7. TROUBLESHOTING</h2>
+
+👷🛠️UNDER WORK🚧🏗</br>
+
+<!-- ################################# -->
+
+<h4>• System Boot</h4>
 
 - rescue mode</br>
 - chroot</br>
-  
-• Network</br>
 
-sudo apt install -y rfkill</br>
-sudo apt install -y resolvconf</br>
+<!-- ################################# -->
 
-• Interface</br>
+<h4>• Network</h4>
 
+<code>$ sudo apt install -y rfkill</code></br>
+<code>$ sudo apt install -y resolvconf</code></br>
 
-• Hardware Utility</br>
+<!-- ################################# -->
 
-sudo apt install -y lshw</br>
-sudo apt install -y inxi</br>
-sudo apt install -y cpu-</br>
-sudo apt install -y hardinfo</br>
-sudo apt install -y s-tui stress</br>
+<h4>• Interface</h4>
 
-• Disk Utility</br>
+<!-- ################################# -->
+
+<h4>• Hardware Utility</h4>
+
+<code>$ sudo apt install -y lshw</code></br>
+<code>$ sudo apt install -y inxi</code></br>
+<code>$ sudo apt install -y cpu-x</code></br>
+<code>$ sudo apt install -y hardinfo</code></br>
+<code>$ sudo apt install -y s-tui stress</code></br>
+
+<!-- ################################# -->
+
+<h4>• Disk Utility</h4>
 
 *SMARTMONTOOLS</br>
-sudo apt install smartmontools</br>
-sudo smartctl -a /dev/sda</br>
+
+<code>$ sudo apt install smartmontools</code></br>
+<code>$ sudo smartctl -a /dev/sda</code></br>
 
 *HDPARM</br>
-sudo apt install hdparm</br>
-sudo hdparm -I /dev/sda</br>
 
-sudo apt install -y kdiskmark</br>
+<code>$ sudo apt install hdparm</code></br>
+<code>$ sudo hdparm -I /dev/sda</code></br>
 
-_____________________________________________
+*KDISKMARK</br>
+<code>$ sudo apt install -y kdiskmark</code></br>
 
-### Some Links  
+<hr>
 
+<!-- ################################# -->
+
+<h3>Some Links</h3>
 https://www.youtube.com/@DebConfVideos</br>
 https://www.youtube.com/user/44contv</br>
 https://www.youtube.com/@BlackHatOfficialYT</br>
