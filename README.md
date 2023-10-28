@@ -1,5 +1,5 @@
 
-## 1. DEBIAN GNU/LINUX AND HARDENING
+<h1>1. DEBIAN GNU/LINUX AND HARDENING</h1>
 
 <pre>"Encryption works. Properly implemented strong crypto systems are one of the few
 things that you can rely on. Unfortunately, endpoint security is so terrifically
@@ -10,35 +10,66 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 ### 1.1 System Hardening Must Have
 
 <table>
-  <tr>
-   <td><a href="https://anonymousplanet.org/" target="_blank"><b>Anonymous Planet</b> - The Hitchhiker’s Guide</a><a href="https://anonymousplanet.org/export/guide.pdf" target="_blank">&nbsp(PDF)</a></td>
-   <td><a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>Virus Total</b> - Free virus, malware and URL online scanning</a></td>
-  </tr>
-   <tr>
-  <td><a href="https://www.whonix.org/wiki/Essential_Host_Security" target="_blank"><b>Whonix</b> - Essential Host Security</a></td>
-  <td><a href="https://github.com/PartialVolume/shredos.x86_64" target="_blank"><b>ShredOS</b> - Secure disk erasure/wipe</a></td>
-  </tr>
-  <tr>
-  <td><a href="https://www.whonix.org/wiki/System_Hardening_Checklist" target="_blank"><b>Whonix</b> - System Hardening Checklist</a></td>
-  <td><a href="https://madaidans-insecurities.github.io/"><b>Madaidan's</b> - Security & Privacy Evaluations</a></td>
-  </tr>
-  <tr>
-  <td><a href="https://www.kicksecure.com/wiki/Documentation" target="_blank"><b>Kicksecure</b> - Documentation</a></td>
-    <td><a href="https://wiki.debian.org/SecurityManagement" target="_blank"><b>Debian</b> - Security Management</a></td>
-  </tr>
-  <tr>
-  <td><a href="https://www.cisecurity.org/benchmark/debian_linux" target="_blank"><b>CIS Benchmark</b> - Debian Linux Guides</a></td>
-  <td><a href="https://ssd.eff.org/" target="_blank"><b>EFF</b> - Surveillance Self-defense</a></td>
-  </tr>
-  <tr>
-  <td><a href="https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance" target="_blank"><b>NSA GOV</b> - Cybersecurity Advisories & Guidance</a><a href="https://github.com/nsacyber" target="_blank">&nbsp(GitHub)</a></td>
-  <td><a href="https://cryptomator.org/" target="_blank"><b>Cryptomator</b> - Put a lock on your cloud</a></td>
-  </tr>
-  <tr>
-  <td><a href="https://www.nist.gov/cyberframework" target="_blank"><b>NIST GOV</b> - Cybersecurity Framework</a></td>
-  <td><a href="https://www.duplicati.com/" target="_blank"><b>Duplicati</b> - Store securely encrypted backups on cloud storage services!</a></td>
-    </tr>
+<tr>
+<td>
+<a href="https://anonymousplanet.org/" target="_blank"><b>Anonymous Planet</b> - The Hitchhiker’s Guide</a><a href="https://anonymousplanet.org/export/guide.pdf" target="_blank">&nbsp(PDF)</a></td>
+<td>
+<a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>Virus Total</b> - Free virus, malware and URL online scanning</a></td>
+</tr>
+
+<tr>
+<td>
+<a href="https://www.whonix.org/wiki/Essential_Host_Security" target="_blank"><b>Whonix</b> - Essential Host Security</a></td>
+<td>
+<a href="https://github.com/PartialVolume/shredos.x86_64" target="_blank"><b>ShredOS</b> - Secure disk erasure/wipe</a></td>
+</tr>
+
+<tr>
+<td>
+<a href="https://www.whonix.org/wiki/System_Hardening_Checklist" target="_blank"><b>Whonix</b> - System Hardening Checklist</a></td>
+<td>
+<a href="https://madaidans-insecurities.github.io/"><b>Madaidan's</b> - Security & Privacy Evaluations</a></td>
+</tr>
+
+<tr>
+<td>
+<a href="https://www.kicksecure.com/wiki/Documentation" target="_blank"><b>Kicksecure</b> - Documentation</a></td>
+<td>
+ <a href="https://wiki.debian.org/SecurityManagement" target="_blank"><b>Debian</b> - Security Management</a></td>
+</tr>
+
+<tr>
+<td>
+<a href="https://www.cisecurity.org/benchmark/debian_linux" target="_blank"><b>CIS Benchmark</b> - Debian Linux Guides</a></td>
+<td>
+<a href="https://ssd.eff.org/" target="_blank"><b>EFF</b> - Surveillance Self-defense</a></td>
+</tr>
+
+<tr>
+<td>
+<a href="https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance" target="_blank"><b>NSA GOV</b> - Cybersecurity Advisories & Guidance</a><a href="https://github.com/nsacyber" target="_blank">&nbsp(GitHub)</a></td>
+<td>
+<a href="https://cryptomator.org/" target="_blank"><b>Cryptomator</b> - Put a lock on your cloud</a></td>
+</tr>
+
+<tr>
+<td>
+<a href="https://www.nist.gov/cyberframework" target="_blank"><b>NIST GOV</b> - Cybersecurity Framework</a></td>
+<td>
+<a href="https://www.duplicati.com/" target="_blank"><b>Duplicati</b> - Store securely encrypted backups on cloud storage services!</a></td>
+</tr>
+
+<tr>
+<td>
+<a href="https://hardenedlinux.github.io" target="_blank"><b>Hardened GNU/Linux</b> - </a></td>
+<td>
+<a href="https://www.duplicati.com/" target="_blank"><b>Duplicati</b> - Store securely encrypted backups on cloud storage services!</a></td>
+</tr>
+
+
+
 </table>
+
 
 ### 1.2 Essential Tools
 
@@ -47,7 +78,7 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
     <td><a href="https://www.ventoy.net/en/download.html" target="_blank"><b>1. Ventoy</b></a></td>
     <td><a href="https://www.ventoy.net/en/doc_secure.html" target="_blank">(Secure Boot)</a></td>
     <td><a href="https://www.ventoy.net/en/download.html" target="_blank">(Checksums)</a></td>
-     <td><a href="https://tails.net/news/new_domain/index.en.html" target="_blank"><b>6. Tails</b></a></td>
+    <td><a href="https://tails.net/news/new_domain/index.en.html" target="_blank"><b>6. Tails</b></a></td>
     <td><a href="https://tails.net/contribute/design/UEFI/archive/" target="_blank">(Secure Boot)</a></td>
     <td><a href="https://tails.net/install/index.en.html" target="_blank">(Checksums)</a></td>
   </tr>
@@ -86,8 +117,10 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 </table>
 
 <sub>
-<p>¹ How to check the iso file (SHA256SUMS) - https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html		</p>
-<p>² Check with hash GtkHash - https://gtkhash.org   </p>
+<p>¹ How to check the iso file (SHA256SUMS)</br>
+https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html</p>
+<p>² Check with hash GtkHash</br>
+https://gtkhash.org</p>
 <details>
 <p></p><summary>Manual method</summary></p>  
 <p>The SHA-256 checksum hashes in a file called SHA256SUMS in the same directory listing as the download page.</p>
@@ -112,135 +145,140 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 </details>  
 </sub>
 
-<br></br>
-
-<hr />
+<br>
+<hr>
 
 -UNDER WORK-
 
-
-## 2. SYSTEM INSTALLATION 
+## 2. SYSTEM INSTALLATION
 
 <details>
-<summary><b>2.1 Hardware</b></summary>  
-<p></p>
+<summary><b>2.1 Hardware</b></summary>
+</br>
 
-• Points to check:
+• Points to check:</br>
 
-2.1.1 Security		
+2.1.1 Security</br>
 
-• Hardware Security Based		
-https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption    
+• BIOS</br>
+Password Protect BIOS And OS With Laminated Password Card</br>
+https://www.passwordcard.org/en</br>
 
-• Hardware Vulnerabilities		
-https://github.com/chipsec/chipsec    
+• Hardware Vulnerabilities</br>
+https://docs.kernel.org/admin-guide/hw-vuln/index.html</br>
+https://github.com/chipsec/chipsec</br>
 
-• Hardware Spoof		
-https://www.whonix.org/wiki/Protocol-Leak-Protection_and_Fingerprinting-Protection#Less_important_identifiers		
-https://www.whonix.org/wiki/MAC_Address		
-https://hwidspoofer.com		
-https://xaze.gitbook.io/how-to-spoof-with-hwid-serial-changer		
+• Hardware Security Based</br>
+https://en.wikipedia.org/wiki/Open-source_firmware</br>
+https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption</br>
+https://en.wikipedia.org/wiki/Write_protection</br>
+https://en.m.wikipedia.org/wiki/Random-access_memory</br>
+https://libreboot.org</br>
+https://usbguard.github.io</br>
 
-2.1.2 Compatibility
-https://linux-hardware.org    
+• Hardware Spoof</br>
+https://www.whonix.org/wiki/Protocol-Leak-Protection_and_Fingerprinting-Protection#Less_important_identifiers</br>
+https://www.whonix.org/wiki/MAC_Address</br>
+https://github.com/alobbs/macchanger</br>
+https://hwidspoofer.com</br>
+https://xaze.gitbook.io/how-to-spoof-with-hwid-serial-changer</br>
+https://github.com/segofensiva/OSfooler-ng</br>
+https://github.com/Kicksecure/ram-wipe</br>
+
+2.1.2 Compatibility</br>
+https://linux-hardware.org</br>
 https://github.com/morrownr/USB-WiFi    
-https://ryf.fsf.org	
-https://www.pine64.org/pinebook-pro
-https://frame.work
-https://www.powerpc-notebook.org		
+https://ryf.fsf.org</br>
+https://www.pine64.org/pinebook-pro</br>
+https://frame.work</br>
+https://www.powerpc-notebook.org</br>
 	
-2.1.3 Performance
+2.1.3 Performance</br>
 
-2.1.4 Cost benefit
+2.1.4 Cost benefit</br>
 
-<p></p>
+</br>
 </details>  
 
 <details>
 <summary><b>2.2 Installation</b></summary>  
-<p></p>
+</br>
 
-2.2.0 BIOS
+2.2.1 Basic Installation Guide</br>
 
+• Using VirtualBox as training for newbies or to test ultra-advanced configurations</br>
+"How to Install Debian Linux in VirtualBox on Windows 10 | Beginners Guide | (Buster)"</br>
+https://www.youtube.com/watch?v=cx8GzudB6uE</br>
 
-2.2.1 Basic Installation Guide
+• Using QEMU</br>
+https://www.qemu.org</br>
+https://wiki.qemu.org/Hosts/Linux#Fedora_Linux_/_Debian_GNU_Linux_/_Ubuntu_Linux_/_Linux_Mint_distributions</br>
 
-• Using VirtualBox as training for newbies or to test ultra-advanced configurations
-"How to Install Debian Linux in VirtualBox on Windows 10 | Beginners Guide | (Buster)"
-https://www.youtube.com/watch?v=cx8GzudB6uE   
+• Quick Installation Guide and Others</br>
+http://www.rodsbooks.com/linux-uefi</br>
+https://wiki.debian.org/DontBreakDebian</br>
+https://distrowatch.com/table.php?distribution=debian</br>
 
-• Using QEMU    
-https://www.qemu.org    
-https://wiki.qemu.org/Hosts/Linux#Fedora_Linux_/_Debian_GNU_Linux_/_Ubuntu_Linux_/_Linux_Mint_distributions   
+2.2.2 Desktop interface</br>
 
-• Quick Installation Guide and Others
-http://www.rodsbooks.com/linux-uefi   
-https://wiki.debian.org/DontBreakDebian   
-https://distrowatch.com/table.php?distribution=debian   
-
-2.2.2 Desktop interface
-
-XFCE vs LXQt - Lightweight Linux Desktop Environments   
-https://www.youtube.com/watch?v=cs8JW3zDDoI   
+XFCE vs LXQt - Lightweight Linux Desktop Environments</br>
+https://www.youtube.com/watch?v=cs8JW3zDDoI</br>
 
 
-2.2.3 Debootstrap    
-• Debootstrap    
-https://wiki.debian.org/Debootstrap    
-• Debian 11.0 Debootstrap | Debian Command Line Install Guide    
-https://www.youtube.com/watch?v=oKnkOwdysNs    
-• Debian 11.4 ZFS Bootstrap | Debian ZFS Command Line Installation    
-https://www.youtube.com/watch?v=7F7Ch-ZkiQU    
-• Nilsmeyer - An ansible role for bootstrapping new Debian based systems, including setting up partitions, file systems, encryption (luks), RAID and LVM    
-https://github.com/nilsmeyer/ansible-debootstrap    
-• Linux Dabbler - Scripts to run after installing debian  
-https://github.com/linuxdabbler/debian-install-scripts  
+2.2.3 Debootstrap</br>
+• Debootstrap</br>
+https://wiki.debian.org/Debootstrap</br>
+• Debian 11.0 Debootstrap | Debian Command Line Install Guide</br>
+https://www.youtube.com/watch?v=oKnkOwdysNs</br>
+• Debian 11.4 ZFS Bootstrap | Debian ZFS Command Line Installation</br>
+https://www.youtube.com/watch?v=7F7Ch-ZkiQU</br>
+• Nilsmeyer - An ansible role for bootstrapping new Debian based systems, including setting up partitions, file systems, encryption (luks), RAID and LVM</br>
+https://github.com/nilsmeyer/ansible-debootstrap</br>
+• Linux Dabbler - Scripts to run after installing debian</br>
+https://github.com/linuxdabbler/debian-install-scripts</br>
 
 
-&nbsp; &nbsp; &nbsp; 2.2.3.1 File system: EXT4, XFS, BTRFS AND ZFS    
-&nbsp; &nbsp; &nbsp; ![Table-1](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/c66a4ac6-d9ed-41ea-aaea-60b10e94e5f9)
+&nbsp; 2.2.3.1 File system: EXT4, XFS, BTRFS AND ZFS    
+&nbsp; &nbsp; ![Table-1](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/c66a4ac6-d9ed-41ea-aaea-60b10e94e5f9)</br>
 
 
-2.2.4 LFS
-• Linux From Scratch
-https://www.linuxfromscratch.org    
+2.2.4 LFS</br>
+• Linux From Scratch</br>
+https://www.linuxfromscratch.org</br>
 
-<br></br>
+</br>
 </details>  
 
 <details>
 <summary><b>2.3 Encryption</b></summary> 
 <p></p>
 	
-2.3.1 Encryption    
-https://wiki.archlinux.org/title/Security      
-https://wiki.archlinux.org/title/Data-at-rest_encryption    
-https://en.wikipedia.org/wiki/Disk_encryption#Implementations    
-https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-2   	
+2.3.1 Encryption</br>
+https://wiki.archlinux.org/title/Security</br>
+https://wiki.archlinux.org/title/Data-at-rest_encryption</br>
+https://en.wikipedia.org/wiki/Disk_encryption#Implementations</br>
+https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-2</br>
 
-2.3.2 Partitioning scenarios: advantages and disadvantages    
-https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system  
-https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page   
+2.3.2 Partitioning scenarios: advantages and disadvantages</br>
+https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system</br>
+https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page</br>
 
-2.3.3 FSTAB, CRYPTTAB AND DM-CRYPT - Linux kernel's device mapper crypto target		
+2.3.3 FSTAB, CRYPTTAB AND DM-CRYPT - Linux kernel's device mapper crypto target</br>
 
-• Dm-crypt		
-https://wiki.archlinux.org/title/Dm-crypt		
-
-• Fstab		
-https://manpages.debian.org/bookworm/mount/fstab.5.en.html		
-
-• Crypttab		
-https://manpages.debian.org/bookworm/cryptsetup/crypttab.5.en.html		
-
-• Tips		
-Copy and past blkid	
+• Dm-crypt</br>
+https://wiki.archlinux.org/title/Dm-crypt</br>
+• Fstab</br>
+https://manpages.debian.org/bookworm/mount/fstab.5.en.html</br>
+• Crypttab</br>
+https://manpages.debian.org/bookworm/cryptsetup/crypttab.5.en.html</br>
+• Tips</br>
+Copy and past blkid</br>
 
 `echo "$(blkid -o export /dev/sdbX | grep ^UUID=) REMEMBEREFI" | tee --append /etc/fstab`		
 or		
 `blkid -o value -s UUID >> /etc/fstab`		
 
-2.3.4 Example 1 - FSTAB - Non-encrypted Boot Removable Medium (USB Key) Multi-device		
+2.3.4 Example 1 - FSTAB - Non-encrypted Boot Removable Medium (USB Key) Multi-device</br>
 
 ```sh
 # <file system>                             <mount point>   <type>  <options>          <dump>  <pass>
@@ -253,34 +291,34 @@ UUID=2701e126-69f3-11ee-8c99-0242ac120002       /home        ext4    defaults   
 UUID=447e4a14-69f3-11ee-8c99-0242ac120002        none        swap    sw                   0       0 
 ```
 
-2.3.5 Example 2 - FSTAB - Encrypted Boot Removable Medium (USB Key) Multi-device		 
+2.3.5 Example 2 - FSTAB - Encrypted Boot Removable Medium (USB Key) Multi-device</br>
 
--UNDER WORK-		
+-UNDER WORK-</br>
 
-https://tqdev.com/2022-luks-with-usb-unlock   
+https://tqdev.com/2022-luks-with-usb-unlock</br>
 
-"Install debian 9 stretch on one encrypted btrfs partition including /boot and booting if via EFI"		
-https://github.com/rob31415/cryptBoot  
+"Install debian 9 stretch on one encrypted btrfs partition including /boot and booting if via EFI"</br>
+https://github.com/rob31415/cryptBoot</br>
 
-https://github.com/stupidpupil/https-keyscript    
+https://github.com/stupidpupil/https-keyscript</br>
 
-2.3.6 Example 3 - FSTAB - Encrypted Boot Removable Medium (USB Key) Multi-device and Keyfile 		
+2.3.6 Example 3 - FSTAB - Encrypted Boot Removable Medium (USB Key) Multi-device and Keyfile</br>
 
-Key File Encryption with USB Key    
-https://github.com/aomgiwjc/Unix-Bootstrap-Installs/wiki		
-https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git		
-https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key		
-https://blog.fidelramos.net/software/unlock-luks-usb-drive		
-https://www.willhaley.com/blog/unlock-luks-volumes-with-usb-key		
-https://www.dwarmstrong.org/fde-debian		
-https://www.cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux		
+Key File Encryption with USB Key</br>
+https://github.com/aomgiwjc/Unix-Bootstrap-Installs/wiki</br>
+https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git</br>
+https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key</br>
+https://blog.fidelramos.net/software/unlock-luks-usb-drive</br>
+https://www.willhaley.com/blog/unlock-luks-volumes-with-usb-key</br>
+https://www.dwarmstrong.org/fde-debian</br>
+https://www.cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux</br>
 
-2.3.7 Nuke Password		
-https://packages.debian.org/bookworm/cryptsetup-nuke-password	
-https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password		
-sudo apt install cryptsetup-nuke-password		
+2.3.7 Nuke Password</br>
+https://packages.debian.org/bookworm/cryptsetup-nuke-password</br>
+https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password</br>
+sudo apt install cryptsetup-nuke-password</br>
 
-<br>
+</br>
 </details>  
 
 <br>
@@ -290,11 +328,13 @@ sudo apt install cryptsetup-nuke-password
 
 <details>
 <summary><b>3.1 Introduction</b></summary>  
-<p></p>
-    "Most modern systems will ship with SB enabled - they will not run any unsigned code by default, but it is possible to change the firmware configuration to either disable SB or to enroll extra signing keys." "The whole point of Secure Boot is to prevent malware from gaining control of the computer. Therefore, when booting with Secure Boot active, Fedora 18 and later, Ubuntu 16.04 and later, and probably other distributions restrict actions that some Linux users take for granted. For instance, Linux kernel modules must be signed, which complicates use of third-party kernel drivers, such as Nvidia's and AMD/ATI's proprietary video drivers. More recent kernels may, if Secure Boot is active, also check that they were launched from a boot loader that honors Secure Boot, and shut down if this was not the case.    
+<p>
+    "Most modern systems will ship with SB enabled - they will not run any unsigned code by default, but it is possible to change the firmware configuration to either disable SB or to enroll extra signing keys." "The whole point of Secure Boot is to prevent malware from gaining control of the computer. Therefore, when booting with Secure Boot active, Fedora 18 and later, Ubuntu 16.04 and later, and probably other distributions restrict actions that some Linux users take for granted.</br>
+    For instance, Linux kernel modules must be signed, which complicates use of third-party kernel drivers, such as Nvidia's and AMD/ATI's proprietary video drivers. More recent kernels may, if Secure Boot is active, also check that they were launched from a boot loader that honors Secure Boot, and shut down if this was not the case.</br>
     To launch a locally-compiled kernel, you must sign it with a MOK and register that MOK with the system. (In both cases, you can register a hash rather than sign the binary; but this approach results in an ever-growing database in NVRAM, which is undesirable.) The extent of such restrictions is entirely up to those who develop and sign the boot loader launched by Shim and the kernel launched by that boot loader, though. Some distributions ship kernels that are relatively unencumbered by added security restrictions.  
-    As a practical matter, if you want to use Shim, you have two choices: You can run a distribution that provides its own signed version of Shim, such as Fedora 18 or later or Ubuntu 12.10 or later; or you can run a signed version from such a distribution or from another source, add your own MOK, and sign whatever binaries you like. This first option is quite straightforward if you happen to want to use a distribution that ships with Shim, and it requires little extra elaboration." "If you want to build and run your own kernel (e.g. for development or debugging), then you will obviously end up making binaries that are not signed with the Debian key. If you wish to use those binaries, you will need to either sign them yourself and enroll the key used with MOK or disable SB."    
-<p></p>
+    As a practical matter, if you want to use Shim, you have two choices: You can run a distribution that provides its own signed version of Shim, such as Fedora 18 or later or Ubuntu 12.10 or later; or you can run a signed version from such a distribution or from another source, add your own MOK, and sign whatever binaries you like.</br>
+    This first option is quite straightforward if you happen to want to use a distribution that ships with Shim, and it requires little extra elaboration." "If you want to build and run your own kernel (e.g. for development or debugging), then you will obviously end up making binaries that are not signed with the Debian key. If you wish to use those binaries, you will need to either sign them yourself and enroll the key used with MOK or disable SB."    
+</p>
 </details>  
 
 <details>
@@ -315,7 +355,6 @@ BASIC:
 <li>https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot</li>
 <li>https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471</li>
 <li>https://www.lastdragon.net/?p=2513</li>
-
 ADVANCED:
 <li>https://uefi.org</li>
 <li>https://www.intel.com/content/www/us/en/developer/articles/tool/unified-extensible-firmware-interface.html</li>
@@ -649,7 +688,7 @@ https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#setuputil
 
 "The ASUS permits to you restore the default keys, so this isn't really vital if you're starting from the factory defaults with this model; but if yours doesn't offer such a reset-to-defaults option or if you've modified the keys, saving them may be prudent. As the name implies, this option also erases all your Secure Boot keys. (It does not erase your MOKs, though.)"
 
-**Reset MOK Keys for Modules**
+<b>Reset MOK Keys for Modules</b>
 ---UNDER WORK---
 https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#key-revocation
 
@@ -1121,326 +1160,400 @@ Done.
   
 </details> 
 
-
 <details>
 <summary><b>Sign VirtualBox Module for Secure Boot</b></summary>  
-<p></p>
-
-How to get VirtualBox signed for Secure Boot
+</br>
+How to get VirtualBox signed for Secure Boot</br>
 
 </details> 
 
-
 <details>
 <summary><b>Sign Ventoy</b></summary>  
-https://www.ventoy.net/en/doc_secure.html
-
+</br>
+https://www.ventoy.net/en/doc_secure.html</br>
  
 </details>   
 
-
 <details>
 <summary><b>rEFInd Bootloader</b></summary>  
-<p></p>
-https://wiki.ubuntu.com/EFIBootLoaders  
+</br>
+https://wiki.ubuntu.com/EFIBootLoaders</br>
 
 </details>   
 
-<p></p>
-<p></p>
+</br>
 
 ---------------------------------------------
 
-## $\textcolor{red}{Advanced\ Tutorial}$ 
+## $\textcolor{red}{Advanced\ Tutorial}$
 
 👷🛠️🚧🏗  
 
 <details>  
 <summary><b>Sign Custom Secure Keys</b></summary>  
-<p></p>
-https://github.com/nsacyber/Hardware-and-Firmware-Security-Guidance/blob/master/secureboot/Linux.md  
+</br>
+https://github.com/nsacyber/Hardware-and-Firmware-Security-Guidance/blob/master/secureboot/Linux.md</br>
 
 </details>   
 
-
 <details>  
-<summary><b>Encrypted boot partition manager with UEFI Secure Boot support</b></summary>  
-<p></p>
-https://github.com/xmikos/cryptboot
-https://github.com/kmille/cryptboot
+<summary><b>Encrypted boot partition manager with UEFI Secure Boot support</b></summary>
+</br>
+https://github.com/xmikos/cryptboot</br>
+https://github.com/kmille/cryptboot</br>
 
 </details>
 
 <details>  
 <summary><b>Sign with TPM 2.0</b></summary>  
-<p></p>
-https://github.com/squarooticus/efi-measured-boot  
-https://github.com/osresearch/safeboot
+</br>
+https://github.com/squarooticus/efi-measured-boot</br>
+https://github.com/osresearch/safeboot</br>
 
 </details>  
 
 <details>  
 <summary><b>Secure Boot with Yubikey</b></summary>  
-<p></p>
-https://github.com/DimanNe/secure-boot
-https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi
+</br>
+https://github.com/DimanNe/secure-boot</br>
+https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi</br>
 
 </details>
 
-<br></br>
+</br>
 
 _____________________________________________
 
-## 4. PRIVILEGES AND APPARMOR   
+## 4. SYSTEM SECURITY
 
-sudo apt install -y apparmor &&   
-sudo apt install -y apparmor-profiles &&    
-sudo apt install -y apparmor-utils &&   
-sudo apt install -y apparmor-profiles-extra   
+• PRIVILEGES AND APPARMOR</br>
 
-• AUDIT SYSTEM    
-sudo apt install -f lynis   
-sudo apt install -f checksecurity   
-	
-• ROOTKIT DETECT    
-sudo apt install chkrootkit    
-sudo apt install rkhunter   
-sudo apt install chkboot  
+https://github.com/Kicksecure/security-misc</br>
 
-• ANTIMALWARE     
-- CLAMAV    
-https://wiki.archlinux.org/title/ClamAV   
-https://docs.clamav.net/manual/Usage.html   
-sudo apt install -y clamav    
-sudo apt install -y clamav-daemon   
+https://apparmor.net</br>
+https://wiki.debian.org/AppArmor</br>
+https://wiki.debian.org/AppArmor/HowToUse</br>
+https://github.com/Kicksecure/apparmor-profile-torbrowser</br>
+
+sudo apt install -y apparmor &&</br>
+sudo apt install -y apparmor-profiles &&</br>
+sudo apt install -y apparmor-utils &&</br>
+sudo apt install -y apparmor-profiles-extra</br>
+
+• AUDIT SYSTEM</br>
+sudo apt install lynis</br>
+sudo apt install checksecurity</br>
+
+• ROOTKIT DETECT</br>
+sudo apt install chkrootkit</br>
+sudo apt install rkhunter</br>
+sudo apt install chkboo</br>
+
+• ANTIMALWARE</br>
+CLAMAV</br>
+https://wiki.archlinux.org/title/ClamAV</br>
+https://docs.clamav.net/manual/Usage.html</br>
+sudo apt install -y clamav</br>
+sudo apt install -y clamav-daemon</br>
+
 
 <pre>
-&nbsp; &nbsp; Commands			
-&nbsp; &nbsp; &nbsp; $ clamscan file			
-&nbsp; &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home    
-&nbsp; &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home --remove   
-&nbsp; &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"    
+&nbsp; Commands			
+&nbsp; &nbsp; $ clamscan file			
+&nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home    
+&nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home --remove   
+&nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"    
 </pre>
 
-<br></br>
+</br>
 
 _____________________________________________
 
-## 5. FIREWALL AND VPN  
+## 5. NETWORK
 
-👷🛠️UNDER WORK🚧🏗    
+👷🛠️UNDER WORK🚧🏗</br>
 
-https://github.com/techlore/VPN-reviews    
+<b>• Picking a Router</b></br>
+"There are a number of open-source options for routers that will take even a small consumer router and turn it into a powerful device with enterprise-level capabilities. My personal favorite is DD-WRT, but other popular options include pfSense, OpenWRT, and Tomato. While you can buy pre-flashed devices in some cases (FlashRouters for DD-WRT and Protectli for pfSense), I always encourage you to do it yourself if you’re comfortable to ensure maximum security (and also to be familiar with the update process). Having said all of this, if you are unsure if an open source router is right for you (the wealth of options can be overwhelming to some), I still encourage you to get a router that wasn’t provided by your ISP. Make sure it offers VLANs and VPN capabilities, as we will be using these heavily to protect your home." https://thenewoil.org/en/guides/quick-start/wifi-guide/</br>
 
-![Table-2](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/fa40cda5-c6f5-4f87-914f-937cc70e44de)
+<b>• Firewall</b></br>
+
+- UFW</br>
+https://wiki.archlinux.org/title/Uncomplicated_Firewall</br>
+
+- Advanced</br>
+R-fx Networks Projects</br>
+https://www.rfxn.com</br>
+Vuurmuur Firewall</br>
+https://www.vuurmuur.org</br>
+
+- Others</br>
+https://portchecker.co</br>
+
+<b>• VPN</b></br>
+https://www.reddit.com/r/vpnrecommendations</br>
+https://www.reddit.com/r/VPN</br>
+https://github.com/techlore/VPN-reviews</br>
+https://www.paulligocki.com/vpn-only-ufw-setup/</br>
+
+![Table-2](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/fa40cda5-c6f5-4f87-914f-937cc70e44de)</br>
+
+sudo apt install -y wireguard-tools</br>
+
+<b>• Leak Test</b></br>
+https://www.dnsleaktest.com</br>
+https://coveryourtracks.eff.org</br>
+https://ipleak.net</br>
+
+<b>• Torrenting</b></br>
+https://portforward.com
+https://wiki.wireshark.org/BitTorrent
+https://github.com/LiamTheBox/Torrent-With-A-VPN</br>
+https://github.com/mdlam92/vpn_torrenting</br>
+https://github.com/tool-maker/VPN_just_for_torrents/wiki</br>
+https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge</br>
+https://transmissionbt.com</br>
+https://www.comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-linux-with-ufw
+
+<b>Everyday TOR</b></br>
+https://wiki.debian.org/TorBrowser</br>
+https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy</br>
 
 
-sudo apt install -y wireguard-tools 
+<b>Network Spoofing</b></br>
+https://github.com/alobbs/macchanger</br>
+https://github.com/refraction-networking/utls</br>
+https://github.com/0xsirus/tirdad</br>
 
-**UFW**  
 
-**VPN**  
-https://www.paulligocki.com/vpn-only-ufw-setup/  
-
-**Leak Test**  
-https://www.dnsleaktest.com/   
-https://coveryourtracks.eff.org/  
-https://ipleak.net/  
-https://portchecker.co  
-
-**Torrenting**  
-https://github.com/LiamTheBox/Torrent-With-A-VPN  
-https://github.com/mdlam92/vpn_torrenting  
-https://github.com/tool-maker/VPN_just_for_torrents/wiki  
-https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge  
-https://transmissionbt.com/  
-
-**Everyday TOR**  
-
-https://wiki.debian.org/TorBrowser		
-https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy   
-
-<br></br>
+</br>
 
 _____________________________________________
 
-## 6. SOFTWARES  
+## 6. SOFTWARES
 
-👷🛠️UNDER WORK🚧🏗    
+👷🛠️UNDER WORK🚧🏗</br>
 
-### Password Manager  
+### Password Manager </br>
 
-• KeePassXC		
-sudo apt install -y keepassxc   
+• KeePassXC</br>
+sudo apt install -y keepassxc</br>
 
-### Encryption
+### Encryption </br>
 
-**• ZuluCrypt**		
+<b>• ZuluCrypt</b></br>
+sudo apt install -y zulucrypt-gui</br>
 
-sudo apt install -y zulucrypt-gui   
+<b>• VeraCrypt</b></br>
+https://www.veracrypt.fr/en/Downloads.html</br>
 
-**• VeraCrypt**		
 
-https://www.veracrypt.fr/en/Downloads.html		
-
-**• 7Z**		
-
-sudo apt install -y p7zip-rar   
+### Compression </br>
+sudo apt install -y p7zip-rar</br>
 
 <pre>
-&nbsp; &nbsp; Commands    
-&nbsp; &nbsp; &nbsp; *How to create an encrypted zip file with 7z archiver:    
-&nbsp; &nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 outarchive.zip inpdoc1.pdf inpdoc2.pdf    
-&nbsp; &nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory/    
-&nbsp; &nbsp; &nbsp; $ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory/    
-&nbsp; &nbsp; &nbsp; How to create an encrypted header 7z file (only) with 7z archiver:    
-&nbsp; &nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir/    
-&nbsp; &nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory/   
-&nbsp; &nbsp; &nbsp; How to uncompress a zip file that is encrypted with 7za command:    
-&nbsp; &nbsp; &nbsp; $ 7za e archive.zip   
+&nbsp; Commands
+&nbsp; &nbsp; • How to create an encrypted zip file with 7z archiver:
+&nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 outarchive.zip inpdoc1.pdf inpdoc2.pdf
+&nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory/
+&nbsp; &nbsp; $ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory/
+&nbsp; &nbsp; • How to create an encrypted header 7z file (only) with 7z archiver:
+&nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir/
+&nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory/
+&nbsp; &nbsp; • How to uncompress a zip file that is encrypted with 7za command:
+&nbsp; &nbsp; $ 7za e archive.zip
 </pre>
 
-### Sanitation		
+• 7Z</br>
 
-**System Sanitation**		
-
-• Bleachbit		
-sudo apt install -y bleachbit		
-
-• Metadata Cleaner		
-sudo apt install metadata-cleaner   
-sudo apt install exiftool   
-sudo apt install metacam    
-
-**Disk Sanitation**		
-• Nwipe		
-sudo apt install -y nwipe		
-
-*not all SSD support sanitize		
-
-### Browsers    
-
-**• LibreWolf** 	
-
-**• Firefox**   
-
-**• Chromium**    
-
-&nbsp; &nbsp; - Extensions    
-&nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a>   
-&nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a>   
-&nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a>   
-&nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a>   
-&nbsp; &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a>    
-
-
-### Office  
-
-**• Libre Office**		
-
-
-**• PDF Reader**		
-sudo apt install -y okular    
-sudo apt install -y okular-extra-backends   
-
-**• PDF Edit**		
-sudo apt install -y pdfarranger   
-
-**• PDF Crop**		
-sudo apt install -y krop    
-
-**• PDF OCR**		
-sudo apt install -y ocrmypdf    
-sudo apt install -y tesseract-ocr-eng
-sudo apt install -y tesseract-ocr-deu
-sudo apt install -y tesseract-ocr-fra
+sudo apt install -y p7zip-full</br>
 
 <pre>
-&nbsp; &nbsp; Commands    
-&nbsp; &nbsp; &nbsp; ocrmypdf -v /input.pdf ~/output.pdf    
-&nbsp; &nbsp; &nbsp; ocrmypdf -v --language deu /input.pdf ~/output.pdf   
-&nbsp; &nbsp; &nbsp; ocrmypdf -v --language fra+deu ~/input.pdf ~/output.pdf    
-&nbsp; &nbsp; &nbsp; ocrmypdf -v --rotate-pages ~/input.pdf ~/output.pdf    
-&nbsp; &nbsp; &nbsp; ocrmypdf -v myfile.pdf myfile.pdf  #TO MODIFY A FILE IN THE SAME PLACE
+&nbsp; Commands
+&nbsp; &nbsp;	• How to create an zip file with 7z archiver:
+&nbsp; &nbsp;	$ 7z a outarchive.zip inpdoc1.pdf 
+&nbsp; &nbsp;	• How to create an encrypted zip file with 7z archiver:
+&nbsp; &nbsp;	$ 7z a -p -tzip -scrc=AES256 outarchive.zip inpdoc1.pdf inpdoc2.pdf
+&nbsp; &nbsp;	$ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory/
+&nbsp; &nbsp;	$ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory/
+&nbsp; &nbsp;	• How to create an encrypted header 7z file (only) with 7z archiver:
+&nbsp; &nbsp;	$ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir/
+&nbsp; &nbsp;	$ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory/
+&nbsp; &nbsp;	• How to uncompress a zip file that is encrypted with 7za command:
+&nbsp; &nbsp;	$ 7za e archive.zip
 </pre>
 
-**• Image Edit**    
-sudo apt install -y gthumb    
-sudo apt install -y gimp
+• RAR</br>
 
-**• Audio Edit**
-sudo apt install -y audacity
+sudo apt install -y unrar-free</br>
 
-**• Office Utility**    
-sudo apt install -y xpad    
-sudo apt install -y kcalc   
+<pre>
+&nbsp; Commands
+&nbsp; &nbsp;	• How to uncompress a rar file with unrar-free command:
+&nbsp; &nbsp;	$ unrar e ~/Downloads/filename.rar ~/Downloads/
+&nbsp; &nbsp;	• How to uncompress a rar file encrypted with unrar-free command:
+&nbsp; &nbsp;	$ unrar-free -x ~/Downloads/filename.rar ~/Downloads/
+</pre>
 
-### Email   
+ • ZIP</br>
 
-sudo apt install -y thunderbird   
-sudo apt install -y birdtray    
+sudo apt install -y zip</br>
 
-<p style="margin : 0; padding-top:0;">https://emailselfdefense.fsf.org/en/workshops.html  </p>    
-<p style="margin : 0; padding-top:0;">https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird  </p>   
-<p style="margin : 0; padding-top:0;">https://keys.openpgp.org/about/usage  </p>    
-<p style="margin : 0; padding-top:0;">https://efail.de/</p> 
+<pre>
+&nbsp;Commands
+&nbsp; &nbsp; • How to create an encrypted zip file with zip archiver:
+&nbsp; &nbsp;	$ zip -e filename.zip ~/Downloads/
+&nbsp; &nbsp;	• How to uncompress a rar file encrypted with unrar-free command:
+&nbsp; &nbsp;	$ zip -x ~/Downloads/filename.zip ~/Downloads/
+</pre>
 
+
+### Sanitation </br>
+<b>System Sanitation</b></br>
+
+• Bleachbit</br>
+sudo apt install -y bleachbit</br>
+
+• Metadata Cleaner</br>
+sudo apt install metadata-cleaner</br>
+sudo apt install exiftool</br>
+sudo apt install metacam </br>
+
+<b>Disk Sanitation</b></br>
+
+• Nwipe</br>
+sudo apt install -y nwipe</br>
+
+*not all SSD support sanitize</br>
+
+### Browsers </br>
+
+<b>• LibreWolf</b></br>
+
+<b>• Firefox</b></br>
+
+<b>• Chromium</b></br>
+
+&nbsp; - Extensions</br>
+&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a></br>
+&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a></br>
+&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a></br>
+&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a></br>
+&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a></br>
+&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics (UTM)</a></br>
+
+&nbsp; &nbsp; - <a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a></br>
+
+
+
+### Office </br>
+
+<b>• Libre Office</b></br>
+
+
+<b>• PDF Reader</b></br>
+sudo apt install -y okular</br>
+sudo apt install -y okular-extra-backends</br>
+
+<b>• PDF Edit</b></br>
+sudo apt install -y pdfarranger</br>
+
+<b>• PDF Crop</b></br>
+sudo apt install -y krop</br>
+
+<b>• PDF OCR</b></br>
+sudo apt install -y ocrmypdf</br>
+sudo apt install -y tesseract-ocr-eng</br>
+sudo apt install -y tesseract-ocr-deu</br>
+sudo apt install -y tesseract-ocr-fra</br>
+
+
+<pre>
+&nbsp; Commands    
+&nbsp; &nbsp; ocrmypdf -v /input.pdf ~/output.pdf    
+&nbsp; &nbsp; ocrmypdf -v --language deu /input.pdf ~/output.pdf   
+&nbsp; &nbsp; ocrmypdf -v --language fra+deu ~/input.pdf ~/output.pdf    
+&nbsp; &nbsp; ocrmypdf -v --rotate-pages ~/input.pdf ~/output.pdf    
+&nbsp; &nbsp; ocrmypdf -v myfile.pdf myfile.pdf  #TO MODIFY A FILE IN THE SAME PLACE
+</pre>
+
+
+<b>• Image Edit</b></br>
+sudo apt install -y gthumb</br>
+sudo apt install -y gimp</br>
+
+<b>• Audio Edit</b></br>
+sudo apt install -y audacity</br>
+
+<b>• Office Utility</b></br>
+sudo apt install -y xpad</br>
+sudo apt install -y kcalc</br>
+
+### Email</br>
+sudo apt install -y thunderbird</br>
+sudo apt install -y birdtray</br>
+
+<p>https://emailselfdefense.fsf.org/en/workshops.html</p>
+<p>https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird</p>
+<p>https://keys.openpgp.org/about/usage</p>
+<p>https://efail.de/</p>
 
 ### Utility  
-sudo apt install -y gnome-disk-utility    
-sudo apt install -y partitionmanager       
-sudo apt install -y gparted   
-sudo apt install -y redshift    
-sudo apt install -y grsync    
-sudo apt install -y rar unrar-free    
-sudo apt install -y krename   
-sudo apt install -y gprename    
-sudo apt install -y dupeguru    
+sudo apt install -y gnome-disk-utility</br>
+sudo apt install -y partitionmanager</br>
+sudo apt install -y gparted</br>
+sudo apt install -y redshift</br>
+sudo apt install -y grsync</br>
+sudo apt install -y rar unrar-free</br>
+sudo apt install -y krename</br>
+sudo apt install -y gprename</br>
+sudo apt install -y dupeguru</br>
+
 _____________________________________________
 
-## 7. TROUBLESHOTING    
+## 7. TROUBLESHOTING
 
-• System Boot   
+• System Boot</br>
 
-- rescue mode		
-- chroot		
+- rescue mode</br>
+- chroot</br>
   
-• Network   
+• Network</br>
 
-sudo apt install -y rfkill    
-sudo apt install -y resolvconf		
+sudo apt install -y rfkill</br>
+sudo apt install -y resolvconf</br>
 
-• Interface   
+• Interface</br>
 
 
-• Hardware Utility    
+• Hardware Utility</br>
 
-sudo apt install -y lshw    
-sudo apt install -y inxi    
-sudo apt install -y cpu-x   
-sudo apt install -y hardinfo    
-sudo apt install -y s-tui stress    
+sudo apt install -y lshw</br>
+sudo apt install -y inxi</br>
+sudo apt install -y cpu-</br>
+sudo apt install -y hardinfo</br>
+sudo apt install -y s-tui stress</br>
 
-• Disk Utility
+• Disk Utility</br>
 
-*SMARTMONTOOLS
-sudo apt install smartmontools
-sudo smartctl -a /dev/sda
+*SMARTMONTOOLS</br>
+sudo apt install smartmontools</br>
+sudo smartctl -a /dev/sda</br>
 
-*HDPARM
-sudo apt install hdparm 
-sudo hdparm -I /dev/sda
+*HDPARM</br>
+sudo apt install hdparm</br>
+sudo hdparm -I /dev/sda</br>
 
-sudo apt install -y kdiskmark   
+sudo apt install -y kdiskmark</br>
 
 _____________________________________________
 
 ### Some Links  
 
-https://www.youtube.com/@DebConfVideos    
-https://www.youtube.com/user/44contv    
-https://www.youtube.com/@BlackHatOfficialYT    
-https://www.youtube.com/@secwestnet    
-https://www.youtube.com/@EkopartyConference    
-https://www.youtube.com/@reconmtl    
-https://www.youtube.com/@TROOPERScon    
+https://www.youtube.com/@DebConfVideos</br>
+https://www.youtube.com/user/44contv</br>
+https://www.youtube.com/@BlackHatOfficialYT</br>
+https://www.youtube.com/@secwestnet</br>
+https://www.youtube.com/@EkopartyConference</br>
+https://www.youtube.com/@reconmtl</br>
+https://www.youtube.com/@TROOPERScon</br>

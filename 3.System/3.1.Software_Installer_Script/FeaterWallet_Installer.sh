@@ -1,15 +1,16 @@
 #!/bin/sh
 
 ########################################################################
-# CREDITS: https://portable-linux-apps.github.io/
+# VISIT: https://featherwallet.org
+# SCRIPT CREDITS: https://portable-linux-apps.github.io/
 # 1. Make it executable:
 # $ sudo chmod +x ./file.sh
 # 2. Then run
 # $ sudo bash ./file.sh
-########################################################################    
+########################################################################
 
-APP=teledrive
-REPO="KhushrajRathod/TeleDrive"
+APP=featerwallet
+SITE="https://featherwallet.org"
 
 # CREATE THE FOLDER
 mkdir /opt/$APP
@@ -24,7 +25,7 @@ chmod a+x /opt/$APP/remove
 mkdir tmp
 cd ./tmp
 
-version=$(wget -q https://api.github.com/repos/$REPO/releases -O - | grep -w -v i386 | grep -w -v i686 | grep -w -v aarch64 | grep -w -v arm64 | grep -w -v armv7l | grep browser_download_url | grep -i appimage | cut -d '"' -f 4 | head -1)
+version=$(echo "https://featherwallet.org$(wget -q https://featherwallet.org/download/ -O - | grep -i appimage | head -1 | grep -o -P '(?<=href=").*(?=">)')")
 wget $version
 echo "$version" >> /opt/$APP/version
 cd ..
@@ -38,10 +39,9 @@ ln -s /opt/$APP/$APP /usr/local/bin/$APP
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> /opt/$APP/AM-updater << 'EOF'
 #!/usr/bin/env bash
-APP=teledrive
-REPO="KhushrajRathod/TeleDrive"
+APP=featerwallet
 version0=$(cat /opt/$APP/version)
-version=$(wget -q https://api.github.com/repos/$REPO/releases -O - | grep -w -v i386 | grep -w -v i686 | grep -w -v aarch64 | grep -w -v arm64 | grep -w -v armv7l | grep browser_download_url | grep -i appimage | cut -d '"' -f 4 | head -1)
+version=$(echo "https://featherwallet.org$(wget -q https://featherwallet.org/download/ -O - | grep -i appimage | head -1 | grep -o -P '(?<=href=").*(?=">)')")
 if [ $version = $version0 ]; then
   echo "Update not needed!"
 else
@@ -123,5 +123,5 @@ chown -R $currentuser /opt/$APP
 
 # MESSAGE
 echo "
- $APP is provided by https://github.com/$(echo $REPO | sed 's:/[^/]*$::')
+ $APP is provided by $SITE
 "

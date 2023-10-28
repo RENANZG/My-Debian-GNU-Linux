@@ -1,16 +1,16 @@
 #!/bin/sh
 
 ########################################################################
-# CREDITS: https://portable-linux-apps.github.io/
+# VISIT: 
+# SCRIPT CREDITS: https://portable-linux-apps.github.io/
 # 1. Make it executable:
 # $ sudo chmod +x ./file.sh
 # 2. Then run
 # $ sudo bash ./file.sh
-########################################################################
+########################################################################    
 
-
-APP=vscodium
-REPO="VSCodium/vscodium"
+APP=discord
+REPO="srevinsaju/discord-appimage"
 
 # CREATE THE FOLDER
 mkdir /opt/$APP
@@ -39,8 +39,8 @@ ln -s /opt/$APP/$APP /usr/local/bin/$APP
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> /opt/$APP/AM-updater << 'EOF'
 #!/usr/bin/env bash
-APP=vscodium
-REPO="VSCodium/vscodium"
+APP=discord
+REPO="srevinsaju/discord-appimage"
 version0=$(cat /opt/$APP/version)
 version=$(wget -q https://api.github.com/repos/$REPO/releases -O - | grep -w -v i386 | grep -w -v i686 | grep -w -v aarch64 | grep -w -v arm64 | grep -w -v armv7l | grep browser_download_url | grep -i appimage | cut -d '"' -f 4 | head -1)
 if [ $version = $version0 ]; then

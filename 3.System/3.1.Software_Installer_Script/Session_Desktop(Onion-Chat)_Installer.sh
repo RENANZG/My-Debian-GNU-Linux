@@ -1,15 +1,16 @@
 #!/bin/sh
 
 ########################################################################
-# CREDITS: https://portable-linux-apps.github.io/
+# VISIT: https://github.com/oxen-io/session-desktop
+# SCRIPT CREDITS: https://portable-linux-apps.github.io/
 # 1. Make it executable:
 # $ sudo chmod +x ./file.sh
 # 2. Then run
 # $ sudo bash ./file.sh
-########################################################################
+########################################################################    
 
-APP=cryptocam-companion
-SITE="https://gitlab.com/cryptocam"
+APP=session-desktop
+REPO="oxen-io/session-desktop"
 
 # CREATE THE FOLDER
 mkdir /opt/$APP
@@ -24,7 +25,7 @@ chmod a+x /opt/$APP/remove
 mkdir tmp
 cd ./tmp
 
-version=$(wget -q https://aur.archlinux.org/packages/cryptocam-companion-appimage -O - | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" | grep -i appimage | grep -w -v archlinux | head -1 | rev | cut -c 14- | rev)
+version=$(wget -q https://api.github.com/repos/$REPO/releases -O - | grep -w -v i386 | grep -w -v i686 | grep -w -v aarch64 | grep -w -v arm64 | grep -w -v armv7l | grep browser_download_url | grep -i appimage | cut -d '"' -f 4 | head -1)
 wget $version
 echo "$version" >> /opt/$APP/version
 cd ..
@@ -38,9 +39,10 @@ ln -s /opt/$APP/$APP /usr/local/bin/$APP
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> /opt/$APP/AM-updater << 'EOF'
 #!/usr/bin/env bash
-APP=cryptocam-companion
+APP=session-desktop
+REPO="oxen-io/session-desktop"
 version0=$(cat /opt/$APP/version)
-version=$(wget -q https://aur.archlinux.org/packages/cryptocam-companion-appimage -O - | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" | grep -i appimage | grep -w -v archlinux | head -1 | rev | cut -c 14- | rev)
+version=$(wget -q https://api.github.com/repos/$REPO/releases -O - | grep -w -v i386 | grep -w -v i686 | grep -w -v aarch64 | grep -w -v arm64 | grep -w -v armv7l | grep browser_download_url | grep -i appimage | cut -d '"' -f 4 | head -1)
 if [ $version = $version0 ]; then
   echo "Update not needed!"
 else
@@ -122,5 +124,5 @@ chown -R $currentuser /opt/$APP
 
 # MESSAGE
 echo "
- $APP is provided by $SITE
+ $APP is provided by https://github.com/$(echo $REPO | sed 's:/[^/]*$::')
 "
