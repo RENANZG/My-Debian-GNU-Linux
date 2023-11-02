@@ -14,7 +14,7 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 <td>
 <a href="https://anonymousplanet.org/" target="_blank"><b>Anonymous Planet</b> - The Hitchhiker’s Guide</a><a href="https://anonymousplanet.org/export/guide.pdf" target="_blank">&nbsp(PDF)</a></td>
 <td>
-<a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>Virus Total</b> - Free virus, malware and URL online scanning</a></td>
+<a href="https://madaidans-insecurities.github.io/"><b>Madaidan's</b> - Security & Privacy Evaluations</a></td>
 </tr>
 
 <tr>
@@ -28,7 +28,7 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 <td>
 <a href="https://www.whonix.org/wiki/System_Hardening_Checklist" target="_blank"><b>Whonix</b> - System Hardening Checklist</a></td>
 <td>
-<a href="https://madaidans-insecurities.github.io/"><b>Madaidan's</b> - Security & Privacy Evaluations</a></td>
+<a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>Virus Total</b> - Free virus, malware and URL online scanning</a></td>
 </tr>
 
 <tr>
@@ -63,7 +63,7 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 <td>
 <a href="https://hardenedlinux.github.io" target="_blank"><b>Hardened GNU/Linux</b> - </a></td>
 <td>
-<a href="" target="_blank"><b></b></a></td>
+<a href="" target="_blank"><b>Bleachbit</b></a></td>
 </tr>
 
 </table>
@@ -115,10 +115,9 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 </table>
 
 <sub>
-<p>¹ How to check the iso file (SHA256SUMS)</br>
-https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html</p>
-<p>² Check with hash GtkHash</br>
-https://gtkhash.org</p>
+<p>¹ How to check the iso file (SHA256SUMS): https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html</p>
+<p>² Check with hash GtkHash: https://gtkhash.org</p>
+</sub>
 <details>
 <p></p><summary>Manual method</summary></p>  
 <p>The SHA-256 checksum hashes in a file called SHA256SUMS in the same directory listing as the download page.</p>
@@ -130,16 +129,17 @@ https://gtkhash.org</p>
 <p>sdd31231c0421be56f39c7a31245c423fgcc3b048ds321a3e83d2c4d714fa9a76 *name.iso</p>
 <p>Compare the hash (the alphanumeric string on left) that your machine calculated with the corresponding hash in the SHA256SUMS file.</p>
 </details>
-
+</sub>
+<sub>
 </table>
 <details>
 <p><summary>Semi-automatic method</summary></p>  
-<p>First download the SHA256SUMS and SHA256SUMS.gpg files to the same directory as the iso. Then run the following commands in a terminal.  </p>
-<p>cd download_directory  </p>
-<p>sha256sum -c SHA256SUMS 2>&1 | grep OK  </p>
-<p>The sha256sum line should output a line such as:  </p>
-<p>name.iso: OK  </p>
-<p>If the OK for your file appears, that indicates the hash matches.  </p>
+<p>First download the SHA256SUMS and SHA256SUMS.gpg files to the same directory as the iso. Then run the following commands in a terminal.</p>
+<p>cd download_directory</p>
+<p>sha256sum -c SHA256SUMS 2>&1 | grep OK</p>
+<p>The sha256sum line should output a line such as:</p>
+<p>name.iso: OK</p>
+<p>If the OK for your file appears, that indicates the hash matches.</p>
 </details>  
 </sub>
 
@@ -1205,7 +1205,8 @@ https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi</br>
 </br>
 <hr>
 
-<!-- ################################################################################# -->
+<!-- ###################################################### -->
+
 
 <h2>4. SYSTEM SECURITY</h2>
 
@@ -1220,21 +1221,21 @@ https://wiki.debian.org/AppArmor</br>
 https://wiki.debian.org/AppArmor/HowToUse</br>
 https://github.com/Kicksecure/apparmor-profile-torbrowser</br>
 
-sudo apt install -y apparmor &&</br>
-sudo apt install -y apparmor-profiles &&</br>
-sudo apt install -y apparmor-utils &&</br>
-sudo apt install -y apparmor-profiles-extra</br>
+<code>$ sudo apt install -y apparmor &&</code></br>
+<code>$ sudo apt install -y apparmor-profiles &&</code></br>
+<code>$ sudo apt install -y apparmor-utils &&</code></br>
+<code>$ sudo apt install -y apparmor-profiles-extra</code></br>
 
 <h3>4.2 AUDIT SYSTEM</h3>
 
-sudo apt install lynis</br>
-sudo apt install checksecurity</br>
+<code>$ sudo apt install lynis</code></br>
+<code>$ sudo apt install checksecurity</code></br>
 
 <h3>4.3 ROOTKIT DETECT</h3>
 
-sudo apt install chkrootkit</br>
-sudo apt install rkhunter</br>
-sudo apt install chkboo</br>
+<code>$ sudo apt install chkrootkit</code></br>
+<code>$ sudo apt install rkhunter</code></br>
+<code>$ sudo apt install chkboot</code></br>
 
 <h3>4.4 ANTIMALWARE</h3>
 
@@ -1243,9 +1244,8 @@ sudo apt install chkboo</br>
 https://wiki.archlinux.org/title/ClamAV</br>
 https://docs.clamav.net/manual/Usage.html</br>
 
-sudo apt install -y clamav</br>
-sudo apt install -y clamav-daemon</br>
-
+<code>$ sudo apt install -y clamav</code></br>
+<code>$ sudo apt install -y clamav-daemon</code></br>
 
 <pre>
 &nbsp; Commands			
@@ -1258,7 +1258,8 @@ sudo apt install -y clamav-daemon</br>
 </br>
 <hr>
 
-<!-- ################################################################################# -->
+<!-- ###################################################### -->
+
 
 <h2>5. NETWORK</h2>
 
@@ -1351,7 +1352,8 @@ Go to https://location.services.mozilla.com/optout
 <br>
 <hr>
 
-<!-- ################################################################################# -->
+<!-- ###################################################### -->
+
 
 <h2>6. SOFTWARES</h2>
 
@@ -1361,7 +1363,7 @@ Go to https://location.services.mozilla.com/optout
 
 <h4>• KeePassXC</h4>
 
-<code>$ sudo apt install -y keepassxc</code></br>
+<code>$ sudo apt install keepassxc</code></br>
 
 https://keepassxc.org/docs/
 
@@ -1371,58 +1373,113 @@ https://keepassxc.org/docs/
 
 <h4>• ZuluCrypt</h4>
 
-<code>$ sudo apt install -y zulucrypt-gui</code></br>
+<code>$ sudo apt install zulucrypt-gui</code></br>
 
 <h4>• VeraCrypt</h4>
 
 https://www.veracrypt.fr/en/Downloads.html</br>
+https://www.reddit.com/r/VeraCrypt</br>
+https://github.com/veracrypt/VeraCrypt</br>
 
 
 <!-- ################################# -->
 
-<h3>6.3 Archive Compression</h3>
+<h3>6.3 Compression, Decompression and Encryption of Files</h3>
 
-<h4>• 7Z</h4>
+<h4>• GZIP (.gz , .tar and .tar.gz)</h4>
 
-<code>$ sudo apt install -y p7zip-full</code></br>
+<code>$ sudo apt install gzip</code></br>
 
 <pre>
-&nbsp; Commands
-&nbsp; &nbsp;	• How to create an zip file with 7z archiver:
-&nbsp; &nbsp;	<code>$ 7z a outarchive.zip inpdoc1.pdf</code>
-&nbsp; &nbsp;	• How to create an encrypted zip file with 7z archiver:
-&nbsp; &nbsp;	<code>$ 7z a -p -tzip -scrc=AES256 outarchive.zip inpdoc1.pdf inpdoc2.pdf</code>
-&nbsp; &nbsp;	<code>$ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory/</code>
-&nbsp; &nbsp;	<code>$ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory/</code>
-&nbsp; &nbsp;	• How to create an encrypted header 7z file (only) with 7z archiver:
-&nbsp; &nbsp;	<code>$ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir/</code>
-&nbsp; &nbsp;	<code>$ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory/</code>
-&nbsp; &nbsp;	• How to uncompress a zip file that is encrypted with 7za command:
-&nbsp; &nbsp;	<code>$ 7za e archive.zip</code>
+&nbsp; Commands for .gz archives
+&nbsp; &nbsp; • How to create an .gz file with gzip:
+&nbsp; &nbsp; $ gzip outarchive.gz indoc1.pdf
+&nbsp; &nbsp; • How to decompress a .gz file with gunzip command:
+&nbsp; &nbsp; $ gunzip archive.gz
 </pre>
 
-<h4>• RAR</h4>
-
-<code>$ sudo apt install -y unrar-free</code></br>
-
 <pre>
-&nbsp; Commands
-&nbsp; &nbsp;	• How to uncompress a rar file with unrar-free command:
-&nbsp; &nbsp;	$ unrar e ~/Downloads/filename.rar ~/Downloads/
-&nbsp; &nbsp;	• How to uncompress a rar file encrypted with unrar-free command:
-&nbsp; &nbsp;	$ unrar-free -x ~/Downloads/filename.rar ~/Downloads/
+&nbsp; Commands for .tar archives
+&nbsp; &nbsp; • How to create an .tar file with gzip archiver:
+&nbsp; &nbsp; $ tar –cvf outarchive.tar ~/Documents
+&nbsp; &nbsp; • How to decompress a .tar file with with gzip:
+&nbsp; &nbsp; $ tar -xvf archive.tar
 </pre>
 
-<h4>• ZIP</h4>
+<pre>
+&nbsp; Commands for .tar.gz archives
+&nbsp; &nbsp; • How to create an .tar.gz file with tar command:
+&nbsp; &nbsp; $ tar –cvzf outarchive.tar.gz ~/Documents
+&nbsp; &nbsp; • To list the contents of a .tar.gz file:
+&nbsp; &nbsp; $ tar –tzf archive.tar.gz
+&nbsp; &nbsp; • How to decompress a .tar.gz file with tar command:
+&nbsp; &nbsp; $ tar –xvzf archive.tar.gz
+&nbsp; &nbsp; $ tar –xvzf archive.tar.gz –C /home/user/Downloads
+</pre>
 
-<code>$ sudo apt install -y zip</code></br>
+<h4>• 7Z (.7z and .zip)</h4>
+
+<code>$ sudo apt install p7zip-full</code></br>
 
 <pre>
-&nbsp;Commands
-&nbsp; &nbsp; • How to create an encrypted zip file with zip archiver:
-&nbsp; &nbsp;	$ zip -e filename.zip ~/Downloads/
-&nbsp; &nbsp;	• How to uncompress a rar file encrypted with unrar-free command:
-&nbsp; &nbsp;	$ zip -x ~/Downloads/filename.zip ~/Downloads/
+&nbsp; Commands for .7z archives
+&nbsp; &nbsp; • How to create an .7z file with 7z archiver:
+&nbsp; &nbsp; $ 7z a outarchive.7z indoc1.pdf
+&nbsp; &nbsp; • How to decompress a .7z file 7za command:
+&nbsp; &nbsp; $ 7za archive.7z
+</pre>
+
+<pre>
+&nbsp; Commands for .zip archives
+&nbsp; &nbsp; • How to create an zip file with 7z archiver:
+&nbsp; &nbsp; $ 7z a outarchive.zip indoc1.pdf
+&nbsp; &nbsp; • How to decompress a zip file 7za command:
+&nbsp; &nbsp; $ 7za archive.zip
+</pre>
+
+<pre>
+&nbsp; Commands for encrypted .7z archives 
+&nbsp; &nbsp; • How to create an encrypted .zip file with 7z archiver: 
+&nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 outarchive.zip indoc1.pdf inpdoc2.pdf 
+&nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory 
+&nbsp; &nbsp; $ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory 
+&nbsp; &nbsp; • How to create an encrypted header .7z file (only) with 7z archiver: 
+&nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir 
+&nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory 
+&nbsp; &nbsp; • How to decompress a .zip file that is encrypted with 7za command: 
+&nbsp; &nbsp; $ 7za e archive.zip 
+</pre>
+
+<h4>• RAR (.rar)</h4>
+
+<code>$ sudo apt install unrar-free</code></br>
+
+<pre>
+&nbsp; Commands for .rar archives (*proprietary: extract only)
+&nbsp; &nbsp; • How to decompress a rar file with unrar-free command:
+&nbsp; &nbsp; $ unrar e ~/Downloads/filename.rar ~/Downloads/
+&nbsp; &nbsp; • How to decompress a rar file encrypted with unrar-free command:
+&nbsp; &nbsp; $ unrar-free -x ~/Downloads/filename.rar ~/Downloads/
+</pre>
+
+<h4>• ZIP (.zip)</h4>
+
+<code>$ sudo apt install zip</code></br>
+
+<pre>
+&nbsp; Commands for .zip archives
+&nbsp; &nbsp; • How to create an zip file with zip archiver:
+&nbsp; &nbsp; $ zip filename.zip ~/Downloads/
+&nbsp; &nbsp; • How to decompress a .zip file:
+&nbsp; &nbsp; $ zip -x ~/Downloads/filename.zip ~/Downloads/
+</pre>
+
+<pre>
+&nbsp; Commands for encrypted .zip archives
+&nbsp; &nbsp; • How to create an encrypted .zip file with zip archiver:
+&nbsp; &nbsp; $ zip -e filename.zip ~/Downloads/
+&nbsp; &nbsp; • How to decompress a encrypted .rar file:
+&nbsp; &nbsp; $ zip -x ~/Downloads/filename.zip ~/Downloads/
 </pre>
 
 <!-- ################################# -->
@@ -1433,13 +1490,13 @@ https://www.veracrypt.fr/en/Downloads.html</br>
 
 <b>Bleachbit</b></br>
 
-<code>$ sudo apt install -y bleachbit</code></br>
+<code>$ sudo apt install bleachbit</code></br>
 
 <b>Metadata Cleaner</b></br>
 
-<code>sudo apt install metadata-cleaner</code></br>
-<code>sudo apt install exiftool</code></br>
-<code>sudo apt install metacam</code></br>
+<code>$ sudo apt install metadata-cleaner</code></br>
+<code>$ sudo apt install exiftool</code></br>
+<code>$ sudo apt install metacam</code></br>
 
 <h4>• Disk Sanitation</h4>
 
@@ -1495,27 +1552,39 @@ https://www.veracrypt.fr/en/Downloads.html</br>
 <code>$ sudo apt install -y tesseract-ocr-fra</code></br>
 
 <pre>
-&nbsp; Commands    
-&nbsp; &nbsp; ocrmypdf -v /input.pdf ~/output.pdf    
-&nbsp; &nbsp; ocrmypdf -v --language deu /input.pdf ~/output.pdf   
-&nbsp; &nbsp; ocrmypdf -v --language fra+deu ~/input.pdf ~/output.pdf    
-&nbsp; &nbsp; ocrmypdf -v --rotate-pages ~/input.pdf ~/output.pdf    
-&nbsp; &nbsp; ocrmypdf -v myfile.pdf myfile.pdf  #TO MODIFY A FILE IN THE SAME PLACE
+&nbsp; Commands
+&nbsp; &nbsp; • How to OCR a PDF
+&nbsp; &nbsp; $ ocrmypdf -v /input.pdf ~/output.pdf    
+&nbsp; &nbsp; $ ocrmypdf -v --language deu /input.pdf ~/output.pdf   
+&nbsp; &nbsp; $ ocrmypdf -v --language fra+deu ~/input.pdf ~/output.pdf    
+&nbsp; &nbsp; $ ocrmypdf -v --rotate-pages ~/input.pdf ~/output.pdf    
+&nbsp; &nbsp; $ ocrmypdf -v myfile.pdf myfile.pdf  #TO MODIFY A FILE IN THE SAME PLACE
 </pre>
 
 <h4>• Image Edit</h4>
 
-<code>$ sudo apt install -y gthumb</code></br>
-<code>$ sudo apt install -y gimp</code></br>
+<code>$ sudo apt install gthumb</code></br>
+<code>$ sudo apt install gimp</code></br>
+<code>$ sudo apt install webp</code></br>
+
+<pre>
+&nbsp; Commands
+&nbsp; &nbsp; • How to convert .webp to .png
+&nbsp; &nbsp; $ dwebp -v in_file.webp -o ~/out_file_png_default.png
+&nbsp; &nbsp; $ dwebp -v -resize width x height in_file.webp -o ~/out_file_png_default.png
+&nbsp; 
+&nbsp; *If either (but not both) of the width or height parameters is 0,
+&nbsp;  the value will be calculated preserving the aspect-ratio.
+</pre>
 
 <h4>• Audio Edit</h4>
 
-<code>$ sudo apt install -y audacity</code></br>
+<code>$ sudo apt install audacity</code></br>
 
 <h4>• Office Utility</h4>
 
-<code>$ sudo apt install -y xpad</code></br>
-<code>$ sudo apt install -y kcalc</code></br>
+<code>$ sudo apt install xpad</code></br>
+<code>$ sudo apt install kcalc</code></br>
 
 <!-- ################################# -->
 
@@ -1546,11 +1615,24 @@ https://efail.de</br>
 </br>
 <hr>
 
-<!-- ################################################################################# -->
+<!-- ###################################################### -->
 
 <h2>7. TROUBLESHOTING</h2>
 
 👷🛠️UNDER WORK🚧🏗</br>
+
+
+<h4>• Forums - Linux Community</h4>
+https://forums.debian.net</br>
+https://www.linuxquestions.org</br>
+https://superuser.com</br>
+https://www.reddit.com/r/linuxquestions</br>
+https://www.reddit.com/r/sysadmin</br>
+https://askubuntu.com</br>
+
+
+https://hardforum.com</br>
+
 
 <!-- ################################# -->
 
