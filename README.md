@@ -61,9 +61,9 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 
 <tr>
 <td>
-<a href="https://hardenedlinux.github.io" target="_blank"><b>Hardened GNU/Linux</b> - </a></td>
+<a href="https://hardenedlinux.github.io" target="_blank"><b>Hardened GNU/Linux</b>  </a></td>
 <td>
-<a href="" target="_blank"><b>Bleachbit</b></a></td>
+<a href="https://www.bleachbit.org/" target="_blank"><b>Bleachbit</b>Clean Your System and Free Disk Space</a></td>
 </tr>
 
 </table>
