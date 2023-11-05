@@ -63,7 +63,7 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 <td>
 <a href="https://hardenedlinux.github.io" target="_blank"><b>Hardened GNU/Linux</b>  </a></td>
 <td>
-<a href="https://www.bleachbit.org/" target="_blank"><b>Bleachbit</b>Clean Your System and Free Disk Space</a></td>
+<a href="https://www.bleachbit.org/" target="_blank"><b>Bleachbit</b> - Clean Your System and Free Disk Space</a></td>
 </tr>
 
 </table>
@@ -161,6 +161,8 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 • BIOS</br>
 Password Protect BIOS And OS With Laminated Password Card</br>
 https://www.passwordcard.org/en</br>
+Decrypt password stored in cmos used to access BIOS SETUP</br>
+https://github.com/bacher09/pwgen-for-bios</br>
 
 • Hardware Vulnerabilities</br>
 https://docs.kernel.org/admin-guide/hw-vuln/index.html</br>
@@ -204,18 +206,29 @@ https://www.powerpc-notebook.org</br>
 
 2.2.1 Basic Installation Guide</br>
 
-• Using VirtualBox as training for newbies or to test ultra-advanced configurations</br>
+• Using VirtualBox as training or to test ultra-advanced configurations</br>
+
+  -> VirtualBox on Windows 10 Windows 10</br>
 "How to Install Debian Linux in VirtualBox on Windows 10 | Beginners Guide | (Buster)"</br>
 https://www.youtube.com/watch?v=cx8GzudB6uE</br>
 
-• Using QEMU</br>
+  -> Using QEMU</br>
 https://www.qemu.org</br>
+https://libvirt.org/index.html</br>
 https://wiki.qemu.org/Hosts/Linux#Fedora_Linux_/_Debian_GNU_Linux_/_Ubuntu_Linux_/_Linux_Mint_distributions</br>
+
+
+<code> $ virt-install --connect qemu:///system --memory memory=1024 --sysinfo emulate --vcpus 1 --cpu host --clock offset=utc --boot hd --network network=default,model=virtio --graphics spice --autoconsole graphical --video qxl --cdrom /var/lib/libvirt/images/debian-12.0.0-amd64-DVD-1.iso --name debian12-$(date +%Y%m%d-%H%M%S)-$$-$(printf '%04x' $RANDOM) --disk pool=default,size=5,bus=virtio,format=raw --osinfo name=debian12</code> 
+
+  -> Network configuration for KVM with nftables</br>
+https://michael.kjorling.se/blog/2022/linux-kvm-host-nftables-guest-networking
+https://forums.gentoo.org/viewtopic-t-1148450-highlight-nftables+qemu.html?sid=b7116aa6a5c66d12890a1bd2418ced34</br>
 
 • Quick Installation Guide and Others</br>
 http://www.rodsbooks.com/linux-uefi</br>
 https://wiki.debian.org/DontBreakDebian</br>
 https://distrowatch.com/table.php?distribution=debian</br>
+https://www.debian.org/releases/bookworm/amd64/apb.en.html</br>
 
 2.2.2 Desktop interface</br>
 
@@ -1384,7 +1397,7 @@ https://github.com/veracrypt/VeraCrypt</br>
 
 <!-- ################################# -->
 
-<h3>6.3 Compression, Decompression and Encryption of Files</h3>
+<h3>6.3 Command-line: Compression, Decompression and Encryption of Files</h3>
 
 <h4>• GZIP (.gz , .tar and .tar.gz)</h4>
 
@@ -1438,15 +1451,15 @@ https://github.com/veracrypt/VeraCrypt</br>
 </pre>
 
 <pre>
-&nbsp; Commands for encrypted .7z archives 
-&nbsp; &nbsp; • How to create an encrypted .zip file with 7z archiver: 
-&nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 outarchive.zip indoc1.pdf inpdoc2.pdf 
-&nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory 
-&nbsp; &nbsp; $ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory 
-&nbsp; &nbsp; • How to create an encrypted header .7z file (only) with 7z archiver: 
-&nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir 
-&nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory 
-&nbsp; &nbsp; • How to decompress a .zip file that is encrypted with 7za command: 
+&nbsp; Commands for encrypted .7z and .zip archives
+&nbsp; &nbsp; • How to create an encrypted .zip file with 7z archiver:
+&nbsp; &nbsp; $ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory
+&nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 outarchive.zip indoc1.pdf inpdoc2.pdf
+&nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory
+&nbsp; &nbsp; • How to create an encrypted header .7z file (only) with 7z archiver:
+&nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir
+&nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory
+&nbsp; &nbsp; • How to decompress a .7z and .zip file that is encrypted with 7za command:
 &nbsp; &nbsp; $ 7za e archive.zip 
 </pre>
 
@@ -1455,7 +1468,7 @@ https://github.com/veracrypt/VeraCrypt</br>
 <code>$ sudo apt install unrar-free</code></br>
 
 <pre>
-&nbsp; Commands for .rar archives (*proprietary: extract only)
+&nbsp; Commands for .rar archives #proprietary: extract only)
 &nbsp; &nbsp; • How to decompress a rar file with unrar-free command:
 &nbsp; &nbsp; $ unrar e ~/Downloads/filename.rar ~/Downloads/
 &nbsp; &nbsp; • How to decompress a rar file encrypted with unrar-free command:
@@ -1492,6 +1505,7 @@ https://github.com/veracrypt/VeraCrypt</br>
 
 <code>$ sudo apt install bleachbit</code></br>
 
+
 <b>Metadata Cleaner</b></br>
 
 <code>$ sudo apt install metadata-cleaner</code></br>
@@ -1522,7 +1536,7 @@ https://github.com/veracrypt/VeraCrypt</br>
 &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a></br>
 &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a></br>
 &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a></br>
-&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics (UTM)</a></br>
+&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a></br>
 &nbsp; &nbsp; - <a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a></br>
 
 <!-- ################################# -->
@@ -1531,34 +1545,36 @@ https://github.com/veracrypt/VeraCrypt</br>
 
 <h4>• Libre Office</h4>
 
-<h4>• PDF Reader</h4>
+<h4>• PDFs</h4>
+
+<h5>• PDF Reader</h5>
 
 <code>$ sudo apt install -y okular</code></br>
 <code>$ sudo apt install -y okular-extra-backends</code></br>
 
-<h4>• PDF Edit</h4>
+<h5>• PDF Edit</h5>
 
 <code>$ sudo apt install -y pdfarranger</code></br>
 
-<h4>• PDF Crop</h4>
+<h5>• PDF Crop</h5>
 
 <code>$ sudo apt install -y krop</code></br>
 
-<h4>• PDF OCR</h4>
+<h5>• PDF OCR</h5>
 
-<code>$ sudo apt install -y ocrmypdf</code></br>
+<code>$ sudo apt install -y ocrmypdf</code> &nbsp; &nbsp; #It's a command-line interface.
 <code>$ sudo apt install -y tesseract-ocr-eng</code></br>
 <code>$ sudo apt install -y tesseract-ocr-deu</code></br>
 <code>$ sudo apt install -y tesseract-ocr-fra</code></br>
 
 <pre>
-&nbsp; Commands
+&nbsp; Commands for PDF OCR
 &nbsp; &nbsp; • How to OCR a PDF
 &nbsp; &nbsp; $ ocrmypdf -v /input.pdf ~/output.pdf    
 &nbsp; &nbsp; $ ocrmypdf -v --language deu /input.pdf ~/output.pdf   
 &nbsp; &nbsp; $ ocrmypdf -v --language fra+deu ~/input.pdf ~/output.pdf    
 &nbsp; &nbsp; $ ocrmypdf -v --rotate-pages ~/input.pdf ~/output.pdf    
-&nbsp; &nbsp; $ ocrmypdf -v myfile.pdf myfile.pdf  #TO MODIFY A FILE IN THE SAME PLACE
+&nbsp; &nbsp; $ ocrmypdf -v myfile.pdf myfile.pdf   #To modify a file in the same place.
 </pre>
 
 <h4>• Image Edit</h4>
@@ -1568,13 +1584,13 @@ https://github.com/veracrypt/VeraCrypt</br>
 <code>$ sudo apt install webp</code></br>
 
 <pre>
-&nbsp; Commands
+&nbsp; Commands for webp files
 &nbsp; &nbsp; • How to convert .webp to .png
-&nbsp; &nbsp; $ dwebp -v in_file.webp -o ~/out_file_png_default.png
+&nbsp; &nbsp; $ dwebp -v in_file.webp -o ~/out_file_png_default.png &nbsp; &nbsp; #It's a command-line interface.
 &nbsp; &nbsp; $ dwebp -v -resize width x height in_file.webp -o ~/out_file_png_default.png
 &nbsp; 
-&nbsp; *If either (but not both) of the width or height parameters is 0,
-&nbsp;  the value will be calculated preserving the aspect-ratio.
+&nbsp; &nbsp; *If either (but not both) of the width or height parameters is 0,
+&nbsp; &nbsp;  the value will be calculated preserving the aspect-ratio.
 </pre>
 
 <h4>• Audio Edit</h4>
@@ -1593,24 +1609,65 @@ https://github.com/veracrypt/VeraCrypt</br>
 <code>$ sudo apt install -y thunderbird</code></br>
 <code>$ sudo apt install -y birdtray</code></br>
 
-https://emailselfdefense.fsf.org/en/workshops.html</br>
+
+<h4>6.6.1 Encrypted Emails</h4>
+
+https://riseup.net/en/security/message-security/openpgp/best-practices</br>
+https://riseup.net/en/security/message-security/openpgp/enigmail</br>
 https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird</br>
+https://emailselfdefense.fsf.org/en/workshops.html</br>
+https://wiki.archlinux.org/title/Paperkey</br>
 https://keys.openpgp.org/about/usage</br>
 https://efail.de</br>
 
+<p><strong>Note 1:</strong>You cannot recover the secret key from the public key and the passphrase. You cannot recover your secret gpg key without a backup.</p>
+<p><strong>Note 2:</strong>Create an expiration date for security reasons.</p>
+<p><strong>Note 3:</strong>Create an .</p>
+
+<pre>
+&nbsp; Commands for gnupg (GnuPG - GNU Privacy Guard) 
+&nbsp; &nbsp; • How to export and import GPG key:
+&nbsp; &nbsp; $ gpg --export ${ID} > public.key
+&nbsp; &nbsp; $ gpg --export-secret-key ${ID} > private.key
+&nbsp; &nbsp; $ gpg --import --batch public.key
+&nbsp; &nbsp; $ gpg --import --batch backup_dir/.gnupg/pubring.gpg
+&nbsp; &nbsp; $ gpg --import --batch backup_dir/.gnupg/secring.gpg
+&nbsp; &nbsp; $ gpg --edit-key ${KEY} trust quit
+&nbsp; &nbsp; $ gpg --list-keys
+&nbsp; &nbsp; $ gpg --list-secret-keys
+</pre>
+
+<pre>
+&nbsp; Commands for gnupg (GnuPG - GNU Privacy Guard) 
+&nbsp; &nbsp; • How to extend the expiration date of an already expired GPG key:
+&nbsp; &nbsp; $ gpg --list-keys
+&nbsp; &nbsp; $ gpg --edit-key (key id)
+&nbsp; &nbsp; • GPG console will open in the primary key, select a sub-key:
+&nbsp; &nbsp; gpg>  
+&nbsp; &nbsp; gpg> list
+&nbsp; &nbsp; gpg> key 1
+&nbsp; &nbsp; • Set the expiration for the selected key
+&nbsp; &nbsp; gpg> expire
+&nbsp; &nbsp; gpg> save
+&nbsp; &nbsp; • After update, you can send it out
+&nbsp; &nbsp; gpg --keyserver site.com --send-keys (key id)
+</pre>
+
+
+gpg --list-secret-keys --verbose --with-subkey-fingerprints
+
 <!-- ################################# -->
 
-<h3>6.7 Utility</h3>
+<h3>6.7 Utilities</h3>
 
-<code>$ sudo apt install -y gnome-disk-utility</code></br>
-<code>$ sudo apt install -y partitionmanager</code></br>
-<code>$ sudo apt install -y gparted</code></br>
-<code>$ sudo apt install -y redshift</code></br>
-<code>$ sudo apt install -y grsync</code></br>
-<code>$ sudo apt install -y rar unrar-free</code></br>
-<code>$ sudo apt install -y krename</code></br>
-<code>$ sudo apt install -y gprename</code></br>
-<code>$ sudo apt install -y dupeguru</code></br>
+<code>$ sudo apt install gnome-disk-utility</code></br>
+<code>$ sudo apt install partitionmanager</code></br>
+<code>$ sudo apt install gparted</code></br>
+<code>$ sudo apt install redshift</code></br>
+<code>$ sudo apt install grsync</code></br>
+<code>$ sudo apt install krename</code></br>
+<code>$ sudo apt install gprename</code></br>
+<code>$ sudo apt install dupeguru</code></br>
 
 </br>
 <hr>
@@ -1626,12 +1683,14 @@ https://efail.de</br>
 https://forums.debian.net</br>
 https://www.linuxquestions.org</br>
 https://superuser.com</br>
+https://stackoverflow.com</br>
+https://unix.stackexchange.com</br>
+https://security.stackexchange.com</br>
+https://hardforum.com</br>
+https://askubuntu.com</br>
+https://www.reddit.com/r/debian</br>
 https://www.reddit.com/r/linuxquestions</br>
 https://www.reddit.com/r/sysadmin</br>
-https://askubuntu.com</br>
-
-
-https://hardforum.com</br>
 
 
 <!-- ################################# -->
@@ -1645,8 +1704,8 @@ https://hardforum.com</br>
 
 <h4>• Network</h4>
 
-<code>$ sudo apt install -y rfkill</code></br>
-<code>$ sudo apt install -y resolvconf</code></br>
+<code>$ sudo apt install rfkill</code></br>
+<code>$ sudo apt install resolvconf</code></br>
 
 <!-- ################################# -->
 
@@ -1656,25 +1715,39 @@ https://hardforum.com</br>
 
 <h4>• Hardware Utility</h4>
 
-<code>$ sudo apt install -y lshw</code></br>
-<code>$ sudo apt install -y inxi</code></br>
-<code>$ sudo apt install -y cpu-x</code></br>
-<code>$ sudo apt install -y hardinfo</code></br>
-<code>$ sudo apt install -y s-tui stress</code></br>
+<code>$ sudo apt install lshw</code></br>
+<code>$ sudo apt install inxi</code></br>
+<code>$ sudo apt install cpu-x</code></br>
+<code>$ sudo apt install hardinfo</code></br>
+<code>$ sudo apt install s-tui stress</code></br>
 
 <!-- ################################# -->
 
 <h4>• Disk Utility</h4>
 
+*TESTDISK</br>
+https://www.cgsecurity.org/wiki/TestDisk</br>
+
 *SMARTMONTOOLS</br>
 
 <code>$ sudo apt install smartmontools</code></br>
-<code>$ sudo smartctl -a /dev/sda</code></br>
+
+<pre>
+&nbsp; Commands for gnupg (GnuPG - GNU Privacy Guard) 
+&nbsp; &nbsp; • How to :
+&nbsp; &nbsp; $ sudo smartctl -a /dev/sda
+</pre>
+
 
 *HDPARM</br>
 
 <code>$ sudo apt install hdparm</code></br>
-<code>$ sudo hdparm -I /dev/sda</code></br>
+
+<pre>
+&nbsp; Commands for gnupg (GnuPG - GNU Privacy Guard) 
+&nbsp; &nbsp; • How to :
+&nbsp; &nbsp; $ sudo hdparm -I /dev/sda
+</pre>
 
 *KDISKMARK</br>
 <code>$ sudo apt install -y kdiskmark</code></br>
@@ -1684,6 +1757,8 @@ https://hardforum.com</br>
 <!-- ################################# -->
 
 <h3>Some Links</h3>
+
+YouTube</br>
 https://www.youtube.com/@DebConfVideos</br>
 https://www.youtube.com/user/44contv</br>
 https://www.youtube.com/@BlackHatOfficialYT</br>
