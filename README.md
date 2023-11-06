@@ -1233,6 +1233,7 @@ https://apparmor.net</br>
 https://wiki.debian.org/AppArmor</br>
 https://wiki.debian.org/AppArmor/HowToUse</br>
 https://github.com/Kicksecure/apparmor-profile-torbrowser</br>
+https://wiki.ubuntu.com/DebuggingApparmor</br>
 
 <code>$ sudo apt install -y apparmor &&</code></br>
 <code>$ sudo apt install -y apparmor-profiles &&</code></br>
@@ -1530,7 +1531,7 @@ https://github.com/veracrypt/VeraCrypt</br>
 
 <h4>• Chromium</h4>
 
-<h5>&nbsp; 6.4.1 Extensions<h5>
+<h5>&nbsp; 6.4.1 Extensions</h5>
 &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a></br>
 &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a></br>
 &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a></br>
@@ -1706,6 +1707,22 @@ https://www.reddit.com/r/sysadmin</br>
 
 <code>$ sudo apt install rfkill</code></br>
 <code>$ sudo apt install resolvconf</code></br>
+
+
+https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX</br>
+
+
+<!-- ################################# -->
+
+<h4>• Sound</h4>
+
+https://wiki.ubuntu.com/DebuggingSoundProblems</br>
+
+<!-- ################################# -->
+
+<h4>• Printing</h4>
+
+https://wiki.ubuntu.com/DebuggingPrintingProblems</br>
 
 <!-- ################################# -->
 
