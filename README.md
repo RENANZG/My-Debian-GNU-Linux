@@ -1090,7 +1090,7 @@ $ sudo nano /var/lib/shim-signed/modules/sign-modules
 
 #!/bin/bash
 
-for modfile in $(dirname $(modinfo -n <yourmodulehere>))/*.ko; do
+for modfile in $(dirname $(modinfo -n </yourmodulehere>))/*.ko; do
   echo "Signing $modfile"
   /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 \
                                 /var/lib/shim-signed/modules/module.priv \
@@ -1379,11 +1379,163 @@ Go to https://location.services.mozilla.com/optout
 
 <code>$ sudo apt install keepassxc</code></br>
 
-https://keepassxc.org/docs/
+https://keepassxc.org/docs/</br>
 
 <!-- ################################# -->
 
-<h3>6.2 Encryption</h3>
+<h3>6.2 Browsers</h3>
+
+<h4>• LibreWolf</h4>
+
+<h4>• Firefox</h4>
+
+<h4>• Chromium</h4>
+
+<h5>&nbsp; 6.4.1 Extensions</h5>
+&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a></br>
+&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a></br>
+&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a></br>
+&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a></br>
+&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a></br>
+&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a></br>
+&nbsp; &nbsp; - <a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a></br>
+
+<!-- ################################# -->
+
+<h3>6.3 Cloud Services</h3>
+
+<h4>• Google Drive</h4>
+
+https://github.com/glotlabs/gdrive</br>
+
+<h4>• MEGA</h4>
+
+https://mega.io/desktop</br>
+
+<h4>• Dropbox</h4>
+
+https://www.dropbox.com/install-linux</br>
+
+<!-- ################################# -->
+
+<h3>6.4 Office</h3>
+
+<h4>• Libre Office</h4>
+
+<h4>• PDFs</h4>
+
+<h5>• PDF Reader</h5>
+
+<code>$ sudo apt install -y okular</code></br>
+<code>$ sudo apt install -y okular-extra-backends</code></br>
+
+<h5>• PDF Edit</h5>
+
+<code>$ sudo apt install -y pdfarranger</code></br>
+
+<h5>• PDF Crop</h5>
+
+<code>$ sudo apt install -y krop</code></br>
+
+<h5>• PDF OCR</h5>
+
+<code>$ sudo apt install -y ocrmypdf</code> &nbsp; &nbsp; #It's a command-line interface.
+<code>$ sudo apt install -y tesseract-ocr-eng</code></br>
+<code>$ sudo apt install -y tesseract-ocr-deu</code></br>
+<code>$ sudo apt install -y tesseract-ocr-fra</code></br>
+
+<pre>
+&nbsp; Commands for PDF OCR
+&nbsp; &nbsp; • How to OCR a PDF
+&nbsp; &nbsp; $ ocrmypdf -v /input.pdf ~/output.pdf    
+&nbsp; &nbsp; $ ocrmypdf -v --language deu /input.pdf ~/output.pdf   
+&nbsp; &nbsp; $ ocrmypdf -v --language fra+deu ~/input.pdf ~/output.pdf    
+&nbsp; &nbsp; $ ocrmypdf -v --rotate-pages ~/input.pdf ~/output.pdf    
+&nbsp; &nbsp; $ ocrmypdf -v myfile.pdf myfile.pdf   #To modify a file in the same place.
+</pre>
+
+<h4>• Image Edit</h4>
+
+<code>$ sudo apt install gthumb</code></br>
+<code>$ sudo apt install gimp</code></br>
+<code>$ sudo apt install webp</code></br>
+
+<pre>
+&nbsp; Commands for webp files
+&nbsp; &nbsp; • How to convert .webp to .png
+&nbsp; &nbsp; $ dwebp -v in_file.webp -o ~/out_file_png_default.png &nbsp; &nbsp; #It's a command-line interface.
+&nbsp; &nbsp; $ dwebp -v -resize width x height in_file.webp -o ~/out_file_png_default.png
+&nbsp; 
+&nbsp; &nbsp; *If either (but not both) of the width or height parameters is 0,
+&nbsp; &nbsp;  the value will be calculated preserving the aspect-ratio.
+</pre>
+
+<h4>• Audio Edit</h4>
+
+<code>$ sudo apt install audacity</code></br>
+
+<h4>• Office Utility</h4>
+
+<code>$ sudo apt install xpad</code></br>
+<code>$ sudo apt install kcalc</code></br>
+
+<!-- ################################# -->
+
+<h3>6.5 Email</h3>
+
+<code>$ sudo apt install -y thunderbird</code></br>
+<code>$ sudo apt install -y birdtray</code></br>
+
+
+<h4>6.5.1 Encrypted Emails</h4>
+
+https://riseup.net/en/security/message-security/openpgp/best-practices</br>
+https://riseup.net/en/security/message-security/openpgp/enigmail</br>
+https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird</br>
+https://emailselfdefense.fsf.org/en/workshops.html</br>
+https://wiki.archlinux.org/title/Paperkey</br>
+https://keys.openpgp.org/about/usage</br>
+https://efail.de</br>
+
+<p><strong>Note 1:</strong>You cannot recover the secret key from the public key and the passphrase. You cannot recover your secret gpg key without a backup.</p>
+<p><strong>Note 2:</strong>Create an expiration date for security reasons.</p>
+<p><strong>Note 3:</strong>Create an .</p>
+
+<pre>
+&nbsp; Commands for gnupg (GnuPG - GNU Privacy Guard) 
+&nbsp; &nbsp; • How to export and import GPG key:
+&nbsp; &nbsp; $ gpg --export ${ID} > public.key
+&nbsp; &nbsp; $ gpg --export-secret-key ${ID} > private.key
+&nbsp; &nbsp; $ gpg --import --batch public.key
+&nbsp; &nbsp; $ gpg --import --batch backup_dir/.gnupg/pubring.gpg
+&nbsp; &nbsp; $ gpg --import --batch backup_dir/.gnupg/secring.gpg
+&nbsp; &nbsp; $ gpg --edit-key ${KEY} trust quit
+&nbsp; &nbsp; $ gpg --list-keys
+&nbsp; &nbsp; $ gpg --list-secret-keys
+</pre>
+
+<pre>
+&nbsp; Commands for gnupg (GnuPG - GNU Privacy Guard) 
+&nbsp; &nbsp; • How to extend the expiration date of an already expired GPG key:
+&nbsp; &nbsp; $ gpg --list-keys
+&nbsp; &nbsp; $ gpg --edit-key (key id)
+&nbsp; &nbsp; • GPG console will open in the primary key, select a sub-key:
+&nbsp; &nbsp; gpg>  
+&nbsp; &nbsp; gpg> list
+&nbsp; &nbsp; gpg> key 1
+&nbsp; &nbsp; • Set the expiration for the selected key
+&nbsp; &nbsp; gpg> expire
+&nbsp; &nbsp; gpg> save
+&nbsp; &nbsp; • After update, you can send it out
+&nbsp; &nbsp; gpg --keyserver site.com --send-keys (key id)
+</pre>
+
+
+gpg --list-secret-keys --verbose --with-subkey-fingerprints
+
+<!-- ################################# -->
+
+<h3>6.6 Encryption</h3>
 
 <h4>• ZuluCrypt</h4>
 
@@ -1398,7 +1550,7 @@ https://github.com/veracrypt/VeraCrypt</br>
 
 <!-- ################################# -->
 
-<h3>6.3 Command-line: Compression, Decompression and Encryption of Files</h3>
+<h3>6.7 Command-line: Compression, Decompression and Encryption of Files</h3>
 
 <h4>• GZIP (.gz , .tar and .tar.gz)</h4>
 
@@ -1498,16 +1650,15 @@ https://github.com/veracrypt/VeraCrypt</br>
 
 <!-- ################################# -->
 
-<h3>6.3 Sanitation</h3>
+<h3>6.8 Sanitation</h3>
 
 <h4>• System Sanitation</h4>
 
-<b>Bleachbit</b></br>
+<h5>Bleachbit</h5>
 
 <code>$ sudo apt install bleachbit</code></br>
 
-
-<b>Metadata Cleaner</b></br>
+<h5>Metadata Cleaner</h5>
 
 <code>$ sudo apt install metadata-cleaner</code></br>
 <code>$ sudo apt install exiftool</code></br>
@@ -1515,151 +1666,20 @@ https://github.com/veracrypt/VeraCrypt</br>
 
 <h4>• Disk Sanitation</h4>
 
-<b>Nwipe</b></br>
+<h5>Nwipe</h5>
 
 <code>$ sudo apt install -y nwipe</code></br>
 
-*not all SSD support sanitize</br>
+<h5>Hdparm</h5>
+
+<code>$ sudo apt install -y hdparm</code></br>
+
+
+<em>*Not all SSD support sanitize</em></br>
 
 <!-- ################################# -->
 
-<h3>6.4 Browsers</h3>
-
-<h4>• LibreWolf</h4>
-
-<h4>• Firefox</h4>
-
-<h4>• Chromium</h4>
-
-<h5>&nbsp; 6.4.1 Extensions</h5>
-&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a></br>
-&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a></br>
-&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a></br>
-&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a></br>
-&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a></br>
-&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a></br>
-&nbsp; &nbsp; - <a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a></br>
-
-<!-- ################################# -->
-
-<h3>6.5 Office</h3>
-
-<h4>• Libre Office</h4>
-
-<h4>• PDFs</h4>
-
-<h5>• PDF Reader</h5>
-
-<code>$ sudo apt install -y okular</code></br>
-<code>$ sudo apt install -y okular-extra-backends</code></br>
-
-<h5>• PDF Edit</h5>
-
-<code>$ sudo apt install -y pdfarranger</code></br>
-
-<h5>• PDF Crop</h5>
-
-<code>$ sudo apt install -y krop</code></br>
-
-<h5>• PDF OCR</h5>
-
-<code>$ sudo apt install -y ocrmypdf</code> &nbsp; &nbsp; #It's a command-line interface.
-<code>$ sudo apt install -y tesseract-ocr-eng</code></br>
-<code>$ sudo apt install -y tesseract-ocr-deu</code></br>
-<code>$ sudo apt install -y tesseract-ocr-fra</code></br>
-
-<pre>
-&nbsp; Commands for PDF OCR
-&nbsp; &nbsp; • How to OCR a PDF
-&nbsp; &nbsp; $ ocrmypdf -v /input.pdf ~/output.pdf    
-&nbsp; &nbsp; $ ocrmypdf -v --language deu /input.pdf ~/output.pdf   
-&nbsp; &nbsp; $ ocrmypdf -v --language fra+deu ~/input.pdf ~/output.pdf    
-&nbsp; &nbsp; $ ocrmypdf -v --rotate-pages ~/input.pdf ~/output.pdf    
-&nbsp; &nbsp; $ ocrmypdf -v myfile.pdf myfile.pdf   #To modify a file in the same place.
-</pre>
-
-<h4>• Image Edit</h4>
-
-<code>$ sudo apt install gthumb</code></br>
-<code>$ sudo apt install gimp</code></br>
-<code>$ sudo apt install webp</code></br>
-
-<pre>
-&nbsp; Commands for webp files
-&nbsp; &nbsp; • How to convert .webp to .png
-&nbsp; &nbsp; $ dwebp -v in_file.webp -o ~/out_file_png_default.png &nbsp; &nbsp; #It's a command-line interface.
-&nbsp; &nbsp; $ dwebp -v -resize width x height in_file.webp -o ~/out_file_png_default.png
-&nbsp; 
-&nbsp; &nbsp; *If either (but not both) of the width or height parameters is 0,
-&nbsp; &nbsp;  the value will be calculated preserving the aspect-ratio.
-</pre>
-
-<h4>• Audio Edit</h4>
-
-<code>$ sudo apt install audacity</code></br>
-
-<h4>• Office Utility</h4>
-
-<code>$ sudo apt install xpad</code></br>
-<code>$ sudo apt install kcalc</code></br>
-
-<!-- ################################# -->
-
-<h3>6.6 Email</h3>
-
-<code>$ sudo apt install -y thunderbird</code></br>
-<code>$ sudo apt install -y birdtray</code></br>
-
-
-<h4>6.6.1 Encrypted Emails</h4>
-
-https://riseup.net/en/security/message-security/openpgp/best-practices</br>
-https://riseup.net/en/security/message-security/openpgp/enigmail</br>
-https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird</br>
-https://emailselfdefense.fsf.org/en/workshops.html</br>
-https://wiki.archlinux.org/title/Paperkey</br>
-https://keys.openpgp.org/about/usage</br>
-https://efail.de</br>
-
-<p><strong>Note 1:</strong>You cannot recover the secret key from the public key and the passphrase. You cannot recover your secret gpg key without a backup.</p>
-<p><strong>Note 2:</strong>Create an expiration date for security reasons.</p>
-<p><strong>Note 3:</strong>Create an .</p>
-
-<pre>
-&nbsp; Commands for gnupg (GnuPG - GNU Privacy Guard) 
-&nbsp; &nbsp; • How to export and import GPG key:
-&nbsp; &nbsp; $ gpg --export ${ID} > public.key
-&nbsp; &nbsp; $ gpg --export-secret-key ${ID} > private.key
-&nbsp; &nbsp; $ gpg --import --batch public.key
-&nbsp; &nbsp; $ gpg --import --batch backup_dir/.gnupg/pubring.gpg
-&nbsp; &nbsp; $ gpg --import --batch backup_dir/.gnupg/secring.gpg
-&nbsp; &nbsp; $ gpg --edit-key ${KEY} trust quit
-&nbsp; &nbsp; $ gpg --list-keys
-&nbsp; &nbsp; $ gpg --list-secret-keys
-</pre>
-
-<pre>
-&nbsp; Commands for gnupg (GnuPG - GNU Privacy Guard) 
-&nbsp; &nbsp; • How to extend the expiration date of an already expired GPG key:
-&nbsp; &nbsp; $ gpg --list-keys
-&nbsp; &nbsp; $ gpg --edit-key (key id)
-&nbsp; &nbsp; • GPG console will open in the primary key, select a sub-key:
-&nbsp; &nbsp; gpg>  
-&nbsp; &nbsp; gpg> list
-&nbsp; &nbsp; gpg> key 1
-&nbsp; &nbsp; • Set the expiration for the selected key
-&nbsp; &nbsp; gpg> expire
-&nbsp; &nbsp; gpg> save
-&nbsp; &nbsp; • After update, you can send it out
-&nbsp; &nbsp; gpg --keyserver site.com --send-keys (key id)
-</pre>
-
-
-gpg --list-secret-keys --verbose --with-subkey-fingerprints
-
-<!-- ################################# -->
-
-<h3>6.7 Utilities</h3>
+<h3>6.9 Utilities</h3>
 
 <code>$ sudo apt install gnome-disk-utility</code></br>
 <code>$ sudo apt install partitionmanager</code></br>
@@ -1678,7 +1698,6 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
 <h2>7. TROUBLESHOTING</h2>
 
 👷🛠️UNDER WORK🚧🏗</br>
-
 
 <h4>• Forums - Linux Community</h4>
 https://forums.debian.net</br>
@@ -1750,7 +1769,7 @@ https://www.cgsecurity.org/wiki/TestDisk</br>
 <code>$ sudo apt install smartmontools</code></br>
 
 <pre>
-&nbsp; Commands for gnupg (GnuPG - GNU Privacy Guard) 
+&nbsp; Commands for smartmontools
 &nbsp; &nbsp; • How to :
 &nbsp; &nbsp; $ sudo smartctl -a /dev/sda
 </pre>
@@ -1761,7 +1780,7 @@ https://www.cgsecurity.org/wiki/TestDisk</br>
 <code>$ sudo apt install hdparm</code></br>
 
 <pre>
-&nbsp; Commands for gnupg (GnuPG - GNU Privacy Guard) 
+&nbsp; Commands for hdparm
 &nbsp; &nbsp; • How to :
 &nbsp; &nbsp; $ sudo hdparm -I /dev/sda
 </pre>
