@@ -1592,7 +1592,7 @@ https://github.com/veracrypt/VeraCrypt</br>
 &nbsp; &nbsp; • How to create an .7z file with 7z archiver:
 &nbsp; &nbsp; $ 7z a outarchive.7z indoc1.pdf
 &nbsp; &nbsp; • How to decompress a .7z file 7za command:
-&nbsp; &nbsp; $ 7za archive.7z
+&nbsp; &nbsp; $ 7z x archive.7z
 </pre>
 
 <pre>
@@ -1600,7 +1600,7 @@ https://github.com/veracrypt/VeraCrypt</br>
 &nbsp; &nbsp; • How to create an zip file with 7z archiver:
 &nbsp; &nbsp; $ 7z a outarchive.zip indoc1.pdf
 &nbsp; &nbsp; • How to decompress a zip file 7za command:
-&nbsp; &nbsp; $ 7za archive.zip
+&nbsp; &nbsp; $ 7z x archive.zip
 </pre>
 
 <pre>
@@ -1612,8 +1612,8 @@ https://github.com/veracrypt/VeraCrypt</br>
 &nbsp; &nbsp; • How to create an encrypted header .7z file (only) with 7z archiver:
 &nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir
 &nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory
-&nbsp; &nbsp; • How to decompress a .7z and .zip file that is encrypted with 7za command:
-&nbsp; &nbsp; $ 7za e archive.zip 
+&nbsp; &nbsp; • How to decompress a .7z and .zip file that is encrypted with 7z command:
+&nbsp; &nbsp; $ 7z x archive.zip 
 </pre>
 
 <h4>• RAR (.rar)</h4>
@@ -1621,7 +1621,7 @@ https://github.com/veracrypt/VeraCrypt</br>
 <code>$ sudo apt install unrar-free</code></br>
 
 <pre>
-&nbsp; Commands for .rar archives #proprietary: extract only)
+&nbsp; Commands for .rar archives (*proprietary: extract only)
 &nbsp; &nbsp; • How to decompress a rar file with unrar-free command:
 &nbsp; &nbsp; $ unrar e ~/Downloads/filename.rar ~/Downloads/
 &nbsp; &nbsp; • How to decompress a rar file encrypted with unrar-free command:
@@ -1630,22 +1630,32 @@ https://github.com/veracrypt/VeraCrypt</br>
 
 <h4>• ZIP (.zip)</h4>
 
-<code>$ sudo apt install zip</code></br>
+<code>$ sudo apt install zip unzip</code></br>
 
 <pre>
 &nbsp; Commands for .zip archives
-&nbsp; &nbsp; • How to create an zip file with zip archiver:
-&nbsp; &nbsp; $ zip filename.zip ~/Downloads/
+&nbsp; &nbsp; • Add file.txt to z.zip (create z if needed)
+&nbsp; &nbsp; $ zip z file.txt
+&nbsp; &nbsp; • Zip all files in current dir:
+&nbsp; &nbsp; $ zip z *
+&nbsp; &nbsp; • Zip files in current dir and subdirs also:
+&nbsp; &nbsp; $ zip -r z .
 &nbsp; &nbsp; • How to decompress a .zip file:
-&nbsp; &nbsp; $ zip -x ~/Downloads/filename.zip ~/Downloads/
+&nbsp; &nbsp; $ unzip ~/Downloads/filename.zip
+&nbsp; &nbsp; • How to unzip multiple .zip files:
+&nbsp; &nbsp; $ unzip '*.zip'
+&nbsp; &nbsp; • How to decompress a .zip file to directory:
+&nbsp; &nbsp; $ unzip filename.zip -d /path/to/directory
 </pre>
 
 <pre>
 &nbsp; Commands for encrypted .zip archives
 &nbsp; &nbsp; • How to create an encrypted .zip file with zip archiver:
 &nbsp; &nbsp; $ zip -e filename.zip ~/Downloads/
-&nbsp; &nbsp; • How to decompress a encrypted .rar file:
-&nbsp; &nbsp; $ zip -x ~/Downloads/filename.zip ~/Downloads/
+&nbsp; &nbsp; • How to decompress a encrypted .zip file:
+&nbsp; &nbsp; $ unzip ~/Downloads/filename.zip
+&nbsp; &nbsp; • How to decompress a encrypted .zip file to directory:
+&nbsp; &nbsp; $ unzip ~/Downloads/filename.zip -d ~/Downloads/
 </pre>
 
 <!-- ################################# -->
@@ -1673,7 +1683,6 @@ https://github.com/veracrypt/VeraCrypt</br>
 <h5>Hdparm</h5>
 
 <code>$ sudo apt install -y hdparm</code></br>
-
 
 <em>*Not all SSD support sanitize</em></br>
 
@@ -1744,6 +1753,10 @@ https://wiki.ubuntu.com/DebuggingSoundProblems</br>
 https://wiki.ubuntu.com/DebuggingPrintingProblems</br>
 
 <!-- ################################# -->
+
+<h4>• USB</h4>
+
+https://wiki.ubuntu.com/Kernel/Debugging/USB</br>
 
 <h4>• Interface</h4>
 
