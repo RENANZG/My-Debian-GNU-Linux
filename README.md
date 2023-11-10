@@ -1465,10 +1465,11 @@ https://www.dropbox.com/install-linux</br>
 
 <p>Config - https://github.com/mpv-player/mpv/blob/master/etc/mpv.conf</p>
 
-<code>$ cp -r /usr/share/doc/mpv/ ~/.config/</code>
+<p> Window Geometry - https://mpv.io/manual/master/#options-geometry</p>
 
-https://mpv.io/manual/master/#options-geometry</br>
-https://mpv.io/manual/master/#options-autofit</br>
+<p> Video Autofit - https://mpv.io/manual/master/#options-autofit</p>
+
+<code>$ cp -r /usr/share/doc/mpv/ ~/.config/</code>
 
 <p>To automatically save the current playback position on quit, start mpv with --save-position-on-quit, or add save-position-on-quit to the configuration file.</p>
 
@@ -1486,7 +1487,6 @@ geometry=50%x96%
 
 <b>VLC</b></br>
 <code>$ sudo apt install vlc</code></br>
-
 
 <b>GNOME Media Player</b></br>
 <code>$ sudo apt install totem</code></br>
@@ -1535,7 +1535,9 @@ https://keys.openpgp.org/about/usage</br>
 https://efail.de</br>
 
 <p><strong>Note 1:</strong>You cannot recover the secret key from the public key and the passphrase. You cannot recover your secret gpg key without a backup.</p>
+
 <p><strong>Note 2:</strong>Create an expiration date for security reasons.</p>
+
 <p><strong>Note 3:</strong>Create an .</p>
 
 <pre>
