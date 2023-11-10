@@ -1439,7 +1439,7 @@ https://www.dropbox.com/install-linux</br>
 
 <h5>• PDF OCR</h5>
 
-<code>$ sudo apt install -y ocrmypdf</code> &nbsp; &nbsp; #It's a command-line interface.
+<code>$ sudo apt install -y ocrmypdf</code> &nbsp; &nbsp; #It's a command-line interface.</br>
 <code>$ sudo apt install -y tesseract-ocr-eng</code></br>
 <code>$ sudo apt install -y tesseract-ocr-deu</code></br>
 <code>$ sudo apt install -y tesseract-ocr-fra</code></br>
@@ -1461,15 +1461,14 @@ https://www.dropbox.com/install-linux</br>
 <b>MPV</b></br>
 <code>$ sudo apt install mpv</code></br>
 
-- Shortcuts - https://github.com/mpv-player/mpv/blob/master/DOCS/man/mpv.rst#keyboard-control</br>
+<p>Shortcuts - https://github.com/mpv-player/mpv/blob/master/DOCS/man/mpv.rst#keyboard-control</p>
 
-- Config - https://github.com/mpv-player/mpv/blob/master/etc/mpv.conf</br>
+<p>Config - https://github.com/mpv-player/mpv/blob/master/etc/mpv.conf</p>
 
 <code>$ cp -r /usr/share/doc/mpv/ ~/.config/</code>
 
-
-https://mpv.io/manual/master/#options-geometry
-https://mpv.io/manual/master/#options-autofit
+https://mpv.io/manual/master/#options-geometry</br>
+https://mpv.io/manual/master/#options-autofit</br>
 
 <p>To automatically save the current playback position on quit, start mpv with --save-position-on-quit, or add save-position-on-quit to the configuration file.</p>
 
@@ -1489,7 +1488,7 @@ geometry=50%x96%
 <code>$ sudo apt install vlc</code></br>
 
 
-</b>GNOME Media Player</b></br>
+<b>GNOME Media Player</b></br>
 <code>$ sudo apt install totem</code></br>
 
 <h4>• Image Edit</h4>
