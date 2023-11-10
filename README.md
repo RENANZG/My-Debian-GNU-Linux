@@ -855,7 +855,7 @@ $ sudo openssl x509 -inform der -in MOK.der -out MOK.pem
 <a href="https://docs.fedoraproject.org/en-US/quick-docs/kernel-build-custom/">https://docs.fedoraproject.org/en-US/quick-docs/kernel-build-custom/</a>
 
 ```bash
-$ sudo openssl req -new -x509 -newkey rsa:2048 -keyout "key.pem" -outform DER -out "cert.der" -nodes -days 36500 -subj "/CN=<your name>/"
+$ sudo openssl req -new -x509 -newkey rsa:2048 -keyout "key.pem" -outform DER -out "cert.der" -nodes -days 36500 -subj "/CN= yourname/"
 ```
 
 <b>Solutions</b>
@@ -1454,6 +1454,44 @@ https://www.dropbox.com/install-linux</br>
 &nbsp; &nbsp; $ ocrmypdf -v myfile.pdf myfile.pdf   #To modify a file in the same place.
 </pre>
 
+
+<h4>• Video Player</h4>
+
+
+<b>MPV</b></br>
+<code>$ sudo apt install mpv</code></br>
+
+- Shortcuts - https://github.com/mpv-player/mpv/blob/master/DOCS/man/mpv.rst#keyboard-control</br>
+
+- Config - https://github.com/mpv-player/mpv/blob/master/etc/mpv.conf</br>
+
+<code>$ cp -r /usr/share/doc/mpv/ ~/.config/</code>
+
+
+https://mpv.io/manual/master/#options-geometry
+https://mpv.io/manual/master/#options-autofit
+
+<p>To automatically save the current playback position on quit, start mpv with --save-position-on-quit, or add save-position-on-quit to the configuration file.</p>
+
+<code>$ sudo nano ~/.config/mpv/mpv.conf</code>
+
+<pre>
+save-position-on-quit
+no-border
+geometry=50%x96%
+</pre>
+
+<code>$ sudo gzip -d  ~/.config/mpv/README.md.gz ~/.config/mpv/</code>
+
+<p>Set volume-max=value in your configuration file to a reasonable amount, such as volume-max=150, which then allows you to increase your volume up to 150%, which is more than twice as loud. Increasing your volume too high will result in clipping artefacts. Additionally (or alternatively), you can utilize dynamic range compression with af=acompressor.</p>
+
+<b>VLC</b></br>
+<code>$ sudo apt install vlc</code></br>
+
+
+</b>GNOME Media Player</b></br>
+<code>$ sudo apt install totem</code></br>
+
 <h4>• Image Edit</h4>
 
 <code>$ sudo apt install gthumb</code></br>
@@ -1546,6 +1584,39 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
 https://www.veracrypt.fr/en/Downloads.html</br>
 https://www.reddit.com/r/VeraCrypt</br>
 https://github.com/veracrypt/VeraCrypt</br>
+
+<p>Command to automount favorite volume at startup session:</p>
+
+<code>/usr/bin/veracrypt %f /dev/sda2</code>
+
+<p>Password less:</p>
+
+<code>$ sudo groupadd veracrypt</code></br>
+<code>$ sudo usermod -aG veracrypt $USER</code></br>
+<code>$ sudoedit /etc/sudoers</code></br>
+
+&nbsp; &nbsp; Add: </br>
+&nbsp; &nbsp; <pre>
+%veracrypt ALL=(root) NOPASSWD:/usr/bin/veracrypt
+
+#Allow members of group sudo to execute any command
+%sudo   ALL=(ALL:ALL) ALL
+%veracrypt ALL=(root) NOPASSWD:/usr/bin/veracrypt
+
+
+#Allow members of group sudo to execute any command
+%sudo   ALL=(ALL:ALL) ALL
+%veracrypt ALL=(root) NOPASSWD:/usr/bin/veracrypt
+</pre>
+
+&nbsp; &nbsp; Reboot 
+
+
+<p>NTFS - Read only error</p>
+
+<code>$ sudo ntfsfix /dev/mapper/veracrypt1</code></br>
+
+<p>Close and open again</p>
 
 
 <!-- ################################# -->
