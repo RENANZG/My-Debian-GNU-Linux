@@ -1281,8 +1281,49 @@ https://docs.clamav.net/manual/Usage.html</br>
 
 <h3>5.1 Picking a Router</h3>
 
-"There are a number of open-source options for routers that will take even a small consumer router and turn it into a powerful device with enterprise-level capabilities. My personal favorite is DD-WRT, but other popular options include pfSense, OpenWRT, and Tomato. While you can buy pre-flashed devices in some cases (FlashRouters for DD-WRT and Protectli for pfSense), I always encourage you to do it yourself if you’re comfortable to ensure maximum security (and also to be familiar with the update process). Having said all of this, if you are unsure if an open source router is right for you (the wealth of options can be overwhelming to some), I still encourage you to get a router that wasn’t provided by your ISP. Make sure it offers VLANs and VPN capabilities, as we will be using these heavily to protect your home."</br>
-https://thenewoil.org/en/guides/quick-start/wifi-guide/</br>
+<p>"There are a number of open-source options for routers that will take even a small consumer router and turn it into a powerful device with enterprise-level capabilities. My personal favorite is DD-WRT, but other popular options include pfSense, OpenWRT, and Tomato. While you can buy pre-flashed devices in some cases (FlashRouters for DD-WRT and Protectli for pfSense), I always encourage you to do it yourself if you’re comfortable to ensure maximum security (and also to be familiar with the update process). Having said all of this, if you are unsure if an open source router is right for you (the wealth of options can be overwhelming to some), I still encourage you to get a router that wasn’t provided by your ISP. Make sure it offers VLANs and VPN capabilities, as we will be using these heavily to protect your home."</p>
+<p>https://thenewoil.org/en/guides/quick-start/wifi-guide </p>
+
+Examples of VPN routers and firmwares
+
+<table style="width: 100%" cellspacing="0" cellpadding="0">
+<thead>
+  <tr>
+    <th>Firmware</th>
+    <th>Router</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td valign="top" style="width: 50%">
+    AsusWRT Merlin</br>
+   DD-WRT</br>
+   DrayTek Vigor</br>
+   OpenWRT</br>
+   OPNsense 19.1</br>
+   Padavan</br>
+   pfSense 2.4.4</br>
+   pfSense 2.4.5</br>
+   pfSense 2.5</br>
+   Sabai</br>
+   Tomato</br>
+    </td>
+    <td valign="top" style="width: 50%">
+   EdgeRouter and Ubiquiti<br>
+   GL.iNet</br>
+   Netduma</br>
+   Netgear</br>
+   MikroTik</br>
+   Peplink/Pepwave</br>
+    </td>
+  </tr>
+</tbody>
+</table>
+
+
+
+
+
 
 <!-- ################################# -->
 
@@ -1502,7 +1543,6 @@ geometry=50%x96%
 &nbsp; &nbsp; • How to convert .webp to .png
 &nbsp; &nbsp; $ dwebp -v in_file.webp -o ~/out_file_png_default.png &nbsp; &nbsp; #It's a command-line interface.
 &nbsp; &nbsp; $ dwebp -v -resize width x height in_file.webp -o ~/out_file_png_default.png
-&nbsp; 
 &nbsp; &nbsp; *If either (but not both) of the width or height parameters is 0,
 &nbsp; &nbsp;  the value will be calculated preserving the aspect-ratio.
 </pre>
@@ -1534,11 +1574,11 @@ https://wiki.archlinux.org/title/Paperkey</br>
 https://keys.openpgp.org/about/usage</br>
 https://efail.de</br>
 
-<p><strong>Note 1:</strong>You cannot recover the secret key from the public key and the passphrase. You cannot recover your secret gpg key without a backup.</p>
+<p><strong>Note 1: </strong>You cannot recover the secret key from the public key and the passphrase. You cannot recover your secret gpg key without a backup.</p>
 
-<p><strong>Note 2:</strong>Create an expiration date for security reasons.</p>
+<p><strong>Note 2: </strong>Create an expiration date for security reasons.</p>
 
-<p><strong>Note 3:</strong>Create an .</p>
+<p><strong>Note 3: </strong>Create an .</p>
 
 <pre>
 &nbsp; Commands for gnupg (GnuPG - GNU Privacy Guard) 
