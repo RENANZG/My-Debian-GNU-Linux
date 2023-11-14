@@ -1320,45 +1320,126 @@ Examples of VPN routers and firmwares
 </tbody>
 </table>
 
-
-
-
-
-
 <!-- ################################# -->
 
 <h3>5.2 Firewall</h3>
 
-• UFW</br>
+<h4>• UFW</h4>
 https://wiki.archlinux.org/title/Uncomplicated_Firewall</br>
+https://www.paulligocki.com/vpn-only-ufw-setup</br>
 
-• Advanced</br>
+<code>$ sudo apt install ufw</code>
+
+<pre>
+&nbsp; Commands to setup UFW
+&nbsp; &nbsp; $ sudo ufw status
+&nbsp; &nbsp; $ sudo ufw enable
+&nbsp; &nbsp; $ sudo nano /etc/default/ufw
+&nbsp; &nbsp; &nbsp; IPV6=no
+&nbsp; &nbsp; $ sudo nano /etc/sysctl.conf
+&nbsp; &nbsp; &nbsp; net.ipv6.conf.all.disable_ipv6 = 1  
+&nbsp; &nbsp; &nbsp; net.ipv6.conf.default.disable_ipv6 = 1
+&nbsp; &nbsp; &nbsp; net.ipv6.conf.lo.disable_ipv 6= 1
+&nbsp; &nbsp; &nbsp; net.ipv6.conf.tun0.disable_ipv6 = 1
+&nbsp; &nbsp; $ sudo ufw default deny incoming 
+&nbsp; &nbsp; $ sudo ufw default allow outgoing
+&nbsp; &nbsp; $ sudo ufw status numbered
+&nbsp; &nbsp; $ sudo iptables -L --line-numbers
+&nbsp; &nbsp; $ sudo ufw delete 123
+</pre>
+
+<h5>∙ Basic qBittorrent + VPN + UFW config</h5>
+
+<pre>
+&nbsp; Commands to setup torrents
+&nbsp; &nbsp; • Connect out to anywhere on tun0 (VPN interface)
+&nbsp; &nbsp; $ sudo ufw allow out on tun0
+&nbsp; &nbsp; • Set torrent rules
+&nbsp; &nbsp; $ sudo ufw allow 'qBittorrent'
+&nbsp; &nbsp; $ sudo ufw allow 60000/tcp
+&nbsp; &nbsp; $ sudo ufw status numbered 
+&nbsp; &nbsp; $ sudo iptables -L --line-numbers
+&nbsp; &nbsp; $ sudo ufw reload
+</pre>
+
+<h5>∙ Advanced</h5>
 R-fx Networks Projects</br>
 https://www.rfxn.com</br>
 Vuurmuur Firewall</br>
 https://www.vuurmuur.org</br>
 
-• Others</br>
+<p>Note: an AppArmor rule could prevent port use by an individual program.</p>
+
+<pre>
+&nbsp; Commands, some advanced commands
+&nbsp; &nbsp; $ ss -tln
+&nbsp; &nbsp; $ sudo ufw allow out on eth0 to any port 53,1197 proto udp
+&nbsp; &nbsp; $ sudo ufw allow out on wlan0 to any port 53,1197 proto udp
+&nbsp; &nbsp; $ sudo ufw allow from 1.2.3.4 to any port 22 proto tcp comment 'Open TCP SSH PORT for VPN IP only'
+&nbsp; &nbsp; $ sudo ufw allow in on nordtun from 10.8.0.0/16 to any port 61627 proto tcp comment 'Open TCP Torrent PORT for VPN IP only'
+&nbsp; &nbsp; $ sudo apt purge iptables-persistent
+</pre>
+
+<h5>∙ Others</h5>
 https://portchecker.co</br>
 
 <!-- ################################# -->
 
 <h3>5.3 VPN</h3>
 
+<h4>• Buying VPN Services</h4>
+
 https://www.reddit.com/r/vpnrecommendations</br>
 https://www.reddit.com/r/VPN</br>
 https://github.com/techlore/VPN-reviews</br>
-https://www.paulligocki.com/vpn-only-ufw-setup/</br>
+
+
+<h4>• VPN Protocols</h4>
 
 ![Table-2](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/fa40cda5-c6f5-4f87-914f-937cc70e44de)</br>
 
-sudo apt install -y wireguard-tools</br>
 
-<b>• Leak Test</b></br>
+<h5>∙ OpenVPN</h5>
+https://openvpn.net</br>
+https://community.openvpn.net</br>
+https://github.com/angristan/openvpn-install</br>
 
-https://www.dnsleaktest.com</br>
-https://coveryourtracks.eff.org</br>
-https://ipleak.net</br>
+<p>Installing CLI</p>
+<code>$ sudo apt install openvpn</code></br>
+<code>$ sudo apt install openvpn-systemd-resolved</code></br>
+
+<p>Installing GUI</p>
+<code>$ sudo apt install network-manager-openvpn-gnome</code></br>
+<code>$ sudo apt install openvpn-systemd-resolved</code></br>
+
+<pre>
+&nbsp; Commands CLI
+&nbsp; &nbsp; $ sudo nmcli connection import type openvpn file /path/to/your.ovpn
+</pre>
+
+<pre>
+&nbsp; Commands GUI
+&nbsp; &nbsp; $ sudo nmcli connection import type openvpn file /path/to/your.ovpn
+</pre>
+
+<h5>∙ WireGuard</h5>
+
+<code>$ sudo apt install wireguard</code></br>
+<code>$ sudo apt install wireguard-tools</code></br>
+
+<h5>∙ strongSwan</h5>
+<code>$ sudo apt install strongswan</code></br>
+
+<h4>• Leak Test</h4>
+
+
+<a href="https://mullvad.net/en/check">∙ Mullvad DNS Leak Test</a></br>
+<a href="https://www.dnsleaktest.com/">∙ DNSLeakTest.com</a> (run the "Extended test")</br>
+<a href="https://ipleak.net/">∙ IPLeak.net</a></br>
+<a href="https://surfshark.com/dns-leak-test">∙ Surfshark DNS Leak Test</a></br>
+<a href="https://browserleaks.com/ip">∙ BrowserLeaks IP Test</a></br>
+<a href="https://ipx.ac/run">∙ IPX.AC DNS Leak Test</a></br>
+
 
 <b>• Torrenting</b></br>
 
@@ -1383,15 +1464,6 @@ https://github.com/alobbs/macchanger</br>
 https://github.com/refraction-networking/utls</br>
 https://github.com/0xsirus/tirdad</br>
 
-<h4>• Opt-Out WLAN-SSID</h4>
-
-To opt-out of <b>global maps</b> (https://wigle.net), rename your network WiFi SSID to
-<pre> &lt;SSID&gt;_optout_nomap </pre>
-
-<h4>• To opt-out of Mozilla Location Services</h4>
-
-Go to https://location.services.mozilla.com/optout
-
 <h4>• Random MAC Address</h4>
 
 <pre>
@@ -1403,6 +1475,16 @@ Go to https://location.services.mozilla.com/optout
 &nbsp; &nbsp; $ sudo macchanger -s wlan0
 &nbsp; &nbsp; $ sudo ifconfig wlan0 up
 </pre>
+
+<h4>• Opt-Out WLAN-SSID</h4>
+
+<h5>∙ To opt-out of <b>global maps</b> (https://wigle.net), rename your network WiFi SSID to</h5>
+
+<pre> &lt;SSID&gt;_optout_nomap </pre>
+
+<h5>∙ To opt-out of Mozilla Location Services</h5>
+
+<p>Go to https://location.services.mozilla.com/optout</p>
 
 <br>
 <hr>
@@ -1465,20 +1547,20 @@ https://www.dropbox.com/install-linux</br>
 
 <h4>• PDFs</h4>
 
-<h5>• PDF Reader</h5>
+<h5>∙ PDF Reader</h5>
 
 <code>$ sudo apt install -y okular</code></br>
 <code>$ sudo apt install -y okular-extra-backends</code></br>
 
-<h5>• PDF Edit</h5>
+<h5>∙ PDF Edit</h5>
 
 <code>$ sudo apt install -y pdfarranger</code></br>
 
-<h5>• PDF Crop</h5>
+<h5>∙ PDF Crop</h5>
 
 <code>$ sudo apt install -y krop</code></br>
 
-<h5>• PDF OCR</h5>
+<h5>∙ PDF OCR</h5>
 
 <code>$ sudo apt install -y ocrmypdf</code> &nbsp; &nbsp; #It's a command-line interface.</br>
 <code>$ sudo apt install -y tesseract-ocr-eng</code></br>
