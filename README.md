@@ -412,13 +412,28 @@ ADVANCED:
 ! CAUTION:
 ! • Use an administrator password in the BIOS and do not use the same for disk encryption.
 ! • Building and signing kernel modules is independent of building and signing your own kernel.
-! • In Debian, if you do not install the DKMS package, you will have more work to create the X.509 keys or OpenSSL keys, import the keys with sbsigntool or mokutil, sign the kernel or the kernel module file with sbsigntool or sign-file, respectively.
-! • Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from its source www.kernel.org must be signed or will not be able to load.
-! • Ubuntu uses DKMS with signed key by default, Ubuntu creates and imports mok key during system installation.
-! • In Fedora, if you use DKMS with Secure Boot enabled, you have to import the DKMS sign key with mokutil --import /var/lib/dkms/mok.pub and reboot to enroll the key. In Fedora the mok.pub and mok.key keys are created and module is signed by DKMS, but only if openssl package is installed.
-! • UEFI specifications use the terms key and public key (.der) to mean the public part of the key pair, or the X.509 certificate. However, in OpenSSL, the term key is the private key (.priv) that's used for signing. Thus, all Secure Boot keys must be X.509 keys and not OpenSSL keys.
-! • The instructions provided assume that you're signing a module for the currently running kernel. If you're signing a module for a different kernel, you must provide the path to the sign-file utility within the correct kernel version source. Otherwise, the signature type for the module for that kernel might not align correctly with the expected signature type.
-! • Only a single custom certificate can be added to the kernel because the compressed size of the kernel's boot image can not increase. Do not add multiple certificates to the kernel boot image.
+! • In Debian, if you do not install the DKMS package, you will have more work to create the X.509
+! keys or OpenSSL keys, import the keys with sbsigntool or mokutil, sign the kernel or the kernel
+! module file with sbsigntool or sign-file, respectively.
+! • Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be 
+! necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from
+! its source www.kernel.org must be signed or will not be able to load.
+! • Ubuntu uses DKMS with signed key by default, Ubuntu creates and imports mok key during system
+! installation.
+! • In Fedora, if you use DKMS with Secure Boot enabled, you have to import the DKMS sign key
+! with mokutil --import /var/lib/dkms/mok.pub and reboot to enroll the key. In Fedora the mok.pub
+! and mok.key keys are created and module is signed by DKMS, but only if openssl package
+! is installed.
+! • UEFI specifications use the terms key and public key (.der) to mean the public part of the
+! key pair, or the X.509 certificate. However, in OpenSSL, the term key is the private key (.priv) 
+! that's used for signing. Thus, all Secure Boot keys must be X.509 keys and not OpenSSL keys.
+! • The instructions provided assume that you're signing a module for the currently running 
+! kernel. If you're signing a module for a different kernel, you must provide the path to the
+! sign-file utility within the correct kernel version source. Otherwise, the signature type
+! for the module for that kernel might not align correctly with the expected signature type.
+! • Only a single custom certificate can be added to the kernel because the compressed size 
+! of the kernel's boot image can not increase. Do not add multiple certificates to the kernel
+! boot image.
 ```
 ```diff
 - WARNING:
@@ -1352,7 +1367,7 @@ https://www.paulligocki.com/vpn-only-ufw-setup</br>
 <h5>∙Generic UFW configuration</h5>
 
 <pre>
-&nbsp; Commands, basic to setup UFW
+&nbsp; Commands, basic to install UFW
 &nbsp; &nbsp; $ sudo ufw status
 &nbsp; &nbsp; $ sudo ufw enable
 &nbsp; &nbsp; $ sudo nano /etc/default/ufw
@@ -1375,12 +1390,14 @@ https://www.paulligocki.com/vpn-only-ufw-setup</br>
 &nbsp; Commands, basic to setup torrenting 
 &nbsp; &nbsp; • Connect out to anywhere on tun0 (VPN tunnel interface)
 &nbsp; &nbsp; $ sudo ufw allow out on tun0
-&nbsp; &nbsp; • Set torrent rules
+&nbsp; &nbsp; • Set torrent software rule
 &nbsp; &nbsp; $ sudo ufw allow 'MyTorrentSoftware'
+&nbsp; &nbsp; • Or set torrent port rule
 &nbsp; &nbsp; $ sudo ufw allow 60000/tcp
 &nbsp; &nbsp; $ sudo ufw allow 60000/udp
 &nbsp; &nbsp; $ sudo ufw status numbered 
 &nbsp; &nbsp; $ sudo ufw reload
+&nbsp; &nbsp; $ sudo reboot
 </pre>
 
 <h5>∙UFW + OpenVPN</h5>
@@ -1390,7 +1407,10 @@ https://www.paulligocki.com/vpn-only-ufw-setup</br>
 &nbsp; &nbsp; • First, allow everything in OpenVPN tunnel
 &nbsp; &nbsp; $ sudo ufw allow in on tun0
 &nbsp; &nbsp; $ sudo ufw allow out on tun0
-&nbsp; &nbsp; • Allow OpenVPN to connect to the regular network interface (e.g. eth0, wlan0...) through the ports present in the .opvn file (e.g. DNS resolution on port 53 and VPN server on 1198...)
+&nbsp; &nbsp; • Allow OpenVPN to connect to the regular network
+&nbsp; &nbsp; interface (e.g. eth0, wlan0...) through the ports
+&nbsp; &nbsp; present in the .opvn file (e.g.DNS resolution on
+&nbsp; &nbsp; port 53 and VPN server on 1198...)
 &nbsp; &nbsp; $ sudo ufw allow out on eth0 from any to any port 53,1198
 &nbsp; &nbsp; • Consider this
 &nbsp; &nbsp; $ sudo ufw allow out on eth0 to any port 53,1197 proto udp
@@ -1463,7 +1483,7 @@ https://openvpn.net/community-resources/how-to/</br>
 https://github.com/OpenVPN/openvpn/tree/master/sample/sample-config-files</br>
 https://github.com/angristan/openvpn-install</br>
 
-<p>Installing OpenVPN CLI</p>
+<h4>Installing OpenVPN CLI</h4>
 
 <pre>
 &nbsp; Commands CLI
@@ -1477,15 +1497,17 @@ https://github.com/angristan/openvpn-install</br>
 &nbsp; &nbsp; • You could check:
 &nbsp; &nbsp; $ sudo ls
 &nbsp; &nbsp; 
-&nbsp; &nbsp; • OpenVPN on Linux uses .conf for config files instead of .ovpn, so rename them accordingly. You
-&nbsp; &nbsp; could simply substitute it in the appropriate file name, copy that file to the name vpn.conf:
+&nbsp; &nbsp; • OpenVPN on Linux uses .conf for config files instead of .ovpn,
+&nbsp; &nbsp; so rename them accordingly.You could simply substitute it in the
+&nbsp; &nbsp; appropriate file name, copy that file to the name vpn.conf:
 &nbsp; &nbsp; $ sudo cp us-miami.ovpn /etc/openvpn/client/client.conf
 &nbsp; &nbsp; • Alternatively
 &nbsp; &nbsp; $ sudo rename 's/ovpn/conf/' openvpn/*.ovpn
 </pre>
 
 <pre>
-&nbsp; &nbsp; • You could use the client.conf below to random access multiple opvn files and auto login with auth configuration:
+&nbsp; &nbsp; • You could use the client.conf below to random access
+&nbsp; &nbsp; multiple opvn files and auto login with auth configuration:
 &nbsp; &nbsp; $ sudo cd /etc/openvpn/client/
 &nbsp; &nbsp; $ sudo cat << EOF > client.conf
 
