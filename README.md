@@ -1322,16 +1322,37 @@ Examples of VPN routers and firmwares
 
 <!-- ################################# -->
 
+
+
+<h4>RESOLV.CONF Vs. RESOLVCONF</h4>
+
+<h5>resolv.conf</h5>
+
+https://wiki.debian.org/resolv.conf</br>
+
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_networking/manually-configuring-the-etc-resolv-conf-file_configuring-and-managing-networking</br>
+
+<h5>resolvconf</h5>
+
+https://packages.debian.org/source/bookworm/resolvconf</br>
+
+
 <h3>5.2 Firewall</h3>
+
+👷🛠️UNDER WORK🚧🏗</br>
 
 <h4>• UFW</h4>
 https://wiki.archlinux.org/title/Uncomplicated_Firewall</br>
+http://manpages.ubuntu.com/manpages/precise/man8/ufw.8.html</br>
+https://help.ubuntu.com/community/UFW</br>
 https://www.paulligocki.com/vpn-only-ufw-setup</br>
 
 <code>$ sudo apt install ufw</code>
 
+<h5>∙Generic UFW configuration</h5>
+
 <pre>
-&nbsp; Commands to setup UFW
+&nbsp; Commands, basic to setup UFW
 &nbsp; &nbsp; $ sudo ufw status
 &nbsp; &nbsp; $ sudo ufw enable
 &nbsp; &nbsp; $ sudo nano /etc/default/ufw
@@ -1346,42 +1367,58 @@ https://www.paulligocki.com/vpn-only-ufw-setup</br>
 &nbsp; &nbsp; $ sudo ufw status numbered
 &nbsp; &nbsp; $ sudo iptables -L --line-numbers
 &nbsp; &nbsp; $ sudo ufw delete 123
+&nbsp; &nbsp; $ sudo ufw reload
+&nbsp; &nbsp; $ sudo reboot
 </pre>
 
-<h5>∙ Basic qBittorrent + VPN + UFW config</h5>
-
 <pre>
-&nbsp; Commands to setup torrents
-&nbsp; &nbsp; • Connect out to anywhere on tun0 (VPN interface)
+&nbsp; Commands, basic to setup torrenting 
+&nbsp; &nbsp; • Connect out to anywhere on tun0 (VPN tunnel interface)
 &nbsp; &nbsp; $ sudo ufw allow out on tun0
 &nbsp; &nbsp; • Set torrent rules
-&nbsp; &nbsp; $ sudo ufw allow 'qBittorrent'
+&nbsp; &nbsp; $ sudo ufw allow 'MyTorrentSoftware'
 &nbsp; &nbsp; $ sudo ufw allow 60000/tcp
+&nbsp; &nbsp; $ sudo ufw allow 60000/udp
 &nbsp; &nbsp; $ sudo ufw status numbered 
-&nbsp; &nbsp; $ sudo iptables -L --line-numbers
+&nbsp; &nbsp; $ sudo ufw reload
+</pre>
+
+<h5>∙UFW + OpenVPN</h5>
+
+<pre>
+&nbsp; Commands to setup UFW + OpenVPN
+&nbsp; &nbsp; • First, allow everything in OpenVPN tunnel
+&nbsp; &nbsp; $ sudo ufw allow in on tun0
+&nbsp; &nbsp; $ sudo ufw allow out on tun0
+&nbsp; &nbsp; • Allow OpenVPN to connect to the regular network interface (e.g. eth0, wlan0...) through the ports present in the .opvn file (e.g. DNS resolution on port 53 and VPN server on 1198...)
+&nbsp; &nbsp; $ sudo ufw allow out on eth0 from any to any port 53,1198
+&nbsp; &nbsp; • Consider this
+&nbsp; &nbsp; $ sudo ufw allow out on eth0 to any port 53,1197 proto udp
+&nbsp; &nbsp; • Block the rest and enable the firewall
+&nbsp; &nbsp; $ sudo ufw deny in on eth0
+&nbsp; &nbsp; $ sudo ufw deny out on eth0
+&nbsp; &nbsp; $ sudo ufw enable
 &nbsp; &nbsp; $ sudo ufw reload
 </pre>
 
 <h5>∙ Advanced</h5>
-R-fx Networks Projects</br>
-https://www.rfxn.com</br>
-Vuurmuur Firewall</br>
-https://www.vuurmuur.org</br>
+R-fx Networks Projects - https://www.rfxn.com</br>
+Vuurmuur Firewall - https://www.vuurmuur.org</br>
+Port Checker - https://portchecker.co</br>
 
 <p>Note: an AppArmor rule could prevent port use by an individual program.</p>
 
 <pre>
 &nbsp; Commands, some advanced commands
+&nbsp; &nbsp; $ sudo iptables -L --line-numbers
 &nbsp; &nbsp; $ ss -tln
-&nbsp; &nbsp; $ sudo ufw allow out on eth0 to any port 53,1197 proto udp
-&nbsp; &nbsp; $ sudo ufw allow out on wlan0 to any port 53,1197 proto udp
+&nbsp; &nbsp; • Open TCP SSH PORT for VPN IP only
 &nbsp; &nbsp; $ sudo ufw allow from 1.2.3.4 to any port 22 proto tcp comment 'Open TCP SSH PORT for VPN IP only'
-&nbsp; &nbsp; $ sudo ufw allow in on nordtun from 10.8.0.0/16 to any port 61627 proto tcp comment 'Open TCP Torrent PORT for VPN IP only'
+&nbsp; &nbsp; • Open TCP Torrent PORT for VPN IP only
+&nbsp; &nbsp; $ sudo ufw allow in on tun0 from 10.8.0.0/16 to any port 60000 proto tcp comment 'Open TCP Torrent PORT for VPN IP only'
+&nbsp; &nbsp; • Troubles
 &nbsp; &nbsp; $ sudo apt purge iptables-persistent
 </pre>
-
-<h5>∙ Others</h5>
-https://portchecker.co</br>
 
 <!-- ################################# -->
 
@@ -1389,36 +1426,162 @@ https://portchecker.co</br>
 
 <h4>• Buying VPN Services</h4>
 
-https://www.reddit.com/r/vpnrecommendations</br>
-https://www.reddit.com/r/VPN</br>
-https://github.com/techlore/VPN-reviews</br>
+∙ r/vpnrecommendations - https://www.reddit.com/r/vpnrecommendations</br>
+∙ r/VPN - https://www.reddit.com/r/VPN</br>
+∙ r/VPNTorrents - https://www.reddit.com/r/VPNTorrents</br>
+∙ Choosing the best VPN (for you) - https://www.reddit.com/r/VPN/comments/4iho8e/that_one_privacy_guys_guide_to_choosing_the_best/?st=iu9u47u7&sh=459a76f2</br>
+∙ Choosing the VPN that's right for you - https://ssd.eff.org/en/module/choosing-vpn-thats-right-you</br>
+∙ VPN Alert - https://vpnalert.com</br>
+∙ VPN-reviews - https://github.com/techlore/VPN-reviews</br>
+∙ Mullvad - https://mullvad.net</br>
+∙ Mullvad - http://o54hon2e2vj6c7m3aqqu6uyece65by3vgoxxhlqlsvkmacw6a7m7kiad.onion</br>
+∙ Private Internet Access (PIA) - https://www.privateinternetaccess.com</br>
+∙ ProtonVPN - https://protonvpn.com</br>
+∙ AirVPN - https://airvpn.org</br>
+∙ IVPN - https://www.ivpn.net</br> 
+∙ VPN.XXX - https://www.vpn.xxx</br>
+∙ Windscribe - https://windscribe.com</br>
+∙ ExpressVPN - https://www.expressvpn.com/vpnmentor1</br>
+∙ NordVPN - https://nordvpn.com</br>
 
+<h4>• VPN Guides and Tutorials</h4>
+∙ That One Privacy Site - https://thatoneprivacysite.net/vpn-section</br>
+∙ privacytools.io - https://www.privacytools.io</br>
+∙ VPN over SSH - https://wiki.archlinux.org/index.php/VPN_over_SSH</br>
 
 <h4>• VPN Protocols</h4>
 
 ![Table-2](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/fa40cda5-c6f5-4f87-914f-937cc70e44de)</br>
 
 
+👷🛠️UNDER WORK🚧🏗</br>
+
 <h5>∙ OpenVPN</h5>
 https://openvpn.net</br>
 https://community.openvpn.net</br>
+https://openvpn.net/community-resources/how-to/</br>
+https://github.com/OpenVPN/openvpn/tree/master/sample/sample-config-files</br>
 https://github.com/angristan/openvpn-install</br>
 
-<p>Installing CLI</p>
-<code>$ sudo apt install openvpn</code></br>
-<code>$ sudo apt install openvpn-systemd-resolved</code></br>
-
-<p>Installing GUI</p>
-<code>$ sudo apt install network-manager-openvpn-gnome</code></br>
-<code>$ sudo apt install openvpn-systemd-resolved</code></br>
+<p>Installing OpenVPN CLI</p>
 
 <pre>
 &nbsp; Commands CLI
-&nbsp; &nbsp; $ sudo nmcli connection import type openvpn file /path/to/your.ovpn
+&nbsp; &nbsp; $ sudo apt install resolvconf -y
+&nbsp; &nbsp; $ sudo systemctl enable --now resolvconf.service
+&nbsp; &nbsp; $ sudo apt install openvpn
+&nbsp; &nbsp; $ sudo wget https://www.openvpnprovider.com/openvpn/openvpn.zip
+&nbsp; &nbsp; $ sudo unzip openvpn.zip
+&nbsp; &nbsp; $ sudo rm openvpn.zip
+&nbsp; &nbsp; $ cd /etc/openvpn
+&nbsp; &nbsp; • You could check:
+&nbsp; &nbsp; $ sudo ls
+&nbsp; &nbsp; 
+&nbsp; &nbsp; • OpenVPN on Linux uses .conf for config files instead of .ovpn, so rename them accordingly. You
+&nbsp; &nbsp; could simply substitute it in the appropriate file name, copy that file to the name vpn.conf:
+&nbsp; &nbsp; $ sudo cp us-miami.ovpn /etc/openvpn/client/client.conf
+&nbsp; &nbsp; • Alternatively
+&nbsp; &nbsp; $ sudo rename 's/ovpn/conf/' openvpn/*.ovpn
 </pre>
 
 <pre>
+&nbsp; &nbsp; • You could use the client.conf below to random access multiple opvn files and auto login with auth configuration:
+&nbsp; &nbsp; $ sudo cd /etc/openvpn/client/
+&nbsp; &nbsp; $ sudo cat << EOF > client.conf
+
+client
+dev tun
+proto tcp # TCP or UDP server?
+remote my-server-1 1194
+remote my-server-2 1194
+remote my-server-3 1194
+remote my-server-4 1194
+remote my-server-5 1194
+remote my-server-6 1194
+remote my-server-7 1194
+remote my-server-8 1194
+remote my-server-9 1194
+remote my-server-10 1194
+remote-random # It choose a random host
+resolv-retry infinite
+nobind
+tun-mtu 1500
+tun-mtu-extra 32
+mssfix 1450
+persist-key
+persist-tun
+ping 15
+ping-restart 0
+ping-timer-rem
+reneg-sec 0
+comp-lzo no # Enable if enabled in the server
+verify-x509-name CN=my.vpn.com
+
+remote-cert-tls server # Protect against MITM see http://openvpn.net/howto.html#mitm
+
+auth-user-pass /etc/openvpn/client/auth # Auto login config
+verb 3
+pull
+fast-io
+cipher AES-256-CBC
+auth SHA512
+
+# Note SSL/TLS parms.See the server config
+# file for more description. # It's best
+# to use # a separate .crt/.key file pair
+# for each client. A single ca file can
+# be used for all clients.
+
+&lt;ca&gt;
+-----BEGIN CERTIFICATE-----
+-----END CERTIFICATE-----
+&lt;/ca&gt;
+key-direction 1
+&lt;tls-auth&gt;
+# 2048 bit OpenVPN static key
+-----BEGIN OpenVPN Static key V1-----
+-----END OpenVPN Static key V1-----
+&lt;/tls-auth&gt;
+EOF
+
+</pre>
+
+<pre>
+&nbsp; &nbsp; • Create a autologin file
+&nbsp; &nbsp; $ sudo echo 'myuser' > /etc/openvpn/client/auth
+&nbsp; &nbsp; $ sudo echo 'mypassword' > /etc/openvpn/client/auth
+&nbsp; &nbsp; $ sudo chmod 600 /etc/openvpn/client/auth
+&nbsp; &nbsp; 
+&nbsp; &nbsp; • Load daemon
+&nbsp; &nbsp; $ sudo openvpn --config /etc/openvpn/client.conf --daemon
+</pre>
+
+<p>OpenVPN KillSwitch</p>
+
+<pre>
+&nbsp; Commands
+&nbsp; &nbsp; $ sudo cd /etc/openvpn/client
+&nbsp; &nbsp; $ sudo echo "script-security 2" >> /etc/openvpn/client/openvpn.conf
+&nbsp; &nbsp; $ sudo echo "up /etc/openvpn/update-resolv-conf" >> /etc/openvpn/client/openvpn.conf
+&nbsp; &nbsp; $ sudo echo "down /etc/openvpn/update-resolv-conf" >> /etc/openvpn/client/openvpn.conf
+</pre>
+
+<p>Enable OpenVPN at boot</p>
+
+<pre>
+&nbsp; Commands
+&nbsp; &nbsp; • Enable the service by calling 
+&nbsp; &nbsp; $ sudo systemctl enable openvpn-client@openvpn
+&nbsp; &nbsp; $ sudo cat /etc/default/openvpn
+&nbsp; &nbsp; $ sudo reboot
+</pre>
+
+<p>Installing OpenVPN GUI</p>
+
+<pre>
 &nbsp; Commands GUI
+&nbsp; &nbsp; $ sudo apt install network-manager-openvpn-gnome
+&nbsp; &nbsp; $ sudo apt install openvpn-systemd-resolved
 &nbsp; &nbsp; $ sudo nmcli connection import type openvpn file /path/to/your.ovpn
 </pre>
 
@@ -1432,14 +1595,12 @@ https://github.com/angristan/openvpn-install</br>
 
 <h4>• Leak Test</h4>
 
-
 <a href="https://mullvad.net/en/check">∙ Mullvad DNS Leak Test</a></br>
 <a href="https://www.dnsleaktest.com/">∙ DNSLeakTest.com</a> (run the "Extended test")</br>
 <a href="https://ipleak.net/">∙ IPLeak.net</a></br>
 <a href="https://surfshark.com/dns-leak-test">∙ Surfshark DNS Leak Test</a></br>
 <a href="https://browserleaks.com/ip">∙ BrowserLeaks IP Test</a></br>
 <a href="https://ipx.ac/run">∙ IPX.AC DNS Leak Test</a></br>
-
 
 <b>• Torrenting</b></br>
 
@@ -1451,6 +1612,32 @@ https://github.com/tool-maker/VPN_just_for_torrents/wiki</br>
 https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge</br>
 https://transmissionbt.com</br>
 https://www.comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-linux-with-ufw</br>
+
+👷🛠️UNDER WORK🚧🏗</br>
+
+<pre>
+&nbsp; Commands for Transmission
+&nbsp; &nbsp; $ sudo apt-get install transmission-cli
+&nbsp; &nbsp; $ sudo apt-get install transmission-common
+&nbsp; &nbsp; $ sudo apt-get install transmission-daemon
+&nbsp; &nbsp; $ sudo service transmission-daemon stop
+&nbsp; &nbsp; • To access Transmission remotely
+&nbsp; &nbsp; $ sudo nano /etc/transmission-daemon/settings.json
+&nbsp; &nbsp; > “rpc-whitelist”: “127.0.0.1,192.168.*.*”,
+&nbsp; &nbsp; > “rpc-whitelist-enabled”: true,
+&nbsp; &nbsp; • To change the download directory
+&nbsp; &nbsp; > "download-dir": /home/user/Downloads
+&nbsp; &nbsp; $ sudo service transmission-daemon start
+&nbsp; &nbsp; • To find local IP address
+&nbsp; &nbsp; $ hostname -I
+&nbsp; &nbsp; • To find local MAC address
+&nbsp; &nbsp; $ sudo cat /sys/class/net/eth0/address 
+&nbsp; &nbsp; • In your browser
+&nbsp; &nbsp; > http://192.168.0.15:9091
+&nbsp; &nbsp; > Login: transmission
+&nbsp; &nbsp; > Password: transmission
+</pre>
+
 
 <b>• Everyday TOR</b></br>
 https://wiki.debian.org/TorBrowser</br>
@@ -1493,8 +1680,6 @@ https://github.com/0xsirus/tirdad</br>
 
 
 <h2>6. SOFTWARES</h2>
-
-👷🛠️UNDER WORK🚧🏗</br>
 
 <h3>6.1 Password Manager</h3>
 
@@ -1578,7 +1763,7 @@ https://www.dropbox.com/install-linux</br>
 </pre>
 
 
-<h4>• Video Player</h4>
+<h4>• Media Players</h4>
 
 
 <b>MPV</b></br>
@@ -1660,6 +1845,8 @@ https://efail.de</br>
 
 <p><strong>Note 2: </strong>Create an expiration date for security reasons.</p>
 
+👷🛠️UNDER WORK🚧🏗</br>
+
 <p><strong>Note 3: </strong>Create an .</p>
 
 <pre>
@@ -1691,7 +1878,6 @@ https://efail.de</br>
 &nbsp; &nbsp; gpg --keyserver site.com --send-keys (key id)
 </pre>
 
-
 gpg --list-secret-keys --verbose --with-subkey-fingerprints
 
 <!-- ################################# -->
@@ -1708,11 +1894,11 @@ https://www.veracrypt.fr/en/Downloads.html</br>
 https://www.reddit.com/r/VeraCrypt</br>
 https://github.com/veracrypt/VeraCrypt</br>
 
-<p>Command to automount favorite volume at startup session:</p>
+<p>∙ Command to automount favorite volume at startup session:</p>
 
 <code>/usr/bin/veracrypt %f /dev/sda2</code>
 
-<p>Password less:</p>
+<p>∙ Password less:</p>
 
 <code>$ sudo groupadd veracrypt</code></br>
 <code>$ sudo usermod -aG veracrypt $USER</code></br>
@@ -1735,13 +1921,13 @@ https://github.com/veracrypt/VeraCrypt</br>
 &nbsp; &nbsp; Reboot 
 
 
-<p>NTFS - Read only error</p>
+<p>∙ NTFS - Read only error</p>
 
 <code>$ sudo ntfsfix /dev/mapper/veracrypt1</code></br>
 
 <p>Close and open again</p>
 
-
+∙ 
 <!-- ################################# -->
 
 <h3>6.7 Command-line: Compression, Decompression and Encryption of Files</h3>
@@ -1840,6 +2026,7 @@ https://github.com/veracrypt/VeraCrypt</br>
 &nbsp; &nbsp; $ unzip '*.zip'
 &nbsp; &nbsp; • How to decompress a .zip file to directory:
 &nbsp; &nbsp; $ unzip filename.zip -d /path/to/directory
+&nbsp; &nbsp; $ unzip -d file file.zip
 </pre>
 
 <pre>
@@ -1858,11 +2045,11 @@ https://github.com/veracrypt/VeraCrypt</br>
 
 <h4>• System Sanitation</h4>
 
-<h5>Bleachbit</h5>
+<h5>∙ Bleachbit</h5>
 
 <code>$ sudo apt install bleachbit</code></br>
 
-<h5>Metadata Cleaner</h5>
+<h5>∙ Metadata Cleaner</h5>
 
 <code>$ sudo apt install metadata-cleaner</code></br>
 <code>$ sudo apt install exiftool</code></br>
@@ -1870,11 +2057,11 @@ https://github.com/veracrypt/VeraCrypt</br>
 
 <h4>• Disk Sanitation</h4>
 
-<h5>Nwipe</h5>
+<h5>∙ Nwipe</h5>
 
 <code>$ sudo apt install -y nwipe</code></br>
 
-<h5>Hdparm</h5>
+<h5>∙ Hdparm</h5>
 
 <code>$ sudo apt install -y hdparm</code></br>
 
@@ -2009,3 +2196,5 @@ https://www.youtube.com/@secwestnet</br>
 https://www.youtube.com/@EkopartyConference</br>
 https://www.youtube.com/@reconmtl</br>
 https://www.youtube.com/@TROOPERScon</br>
+
+<p> Made with ♥</p>
