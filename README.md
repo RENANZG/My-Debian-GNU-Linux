@@ -1339,18 +1339,29 @@ Examples of VPN routers and firmwares
 
 
 
-<h4>RESOLV.CONF Vs. RESOLVCONF</h4>
+<h3>5.2 DNS (Un)resolv</h3>
 
 <h5>resolv.conf</h5>
 
 https://wiki.debian.org/resolv.conf</br>
-
 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_networking/manually-configuring-the-etc-resolv-conf-file_configuring-and-managing-networking</br>
 
 <h5>resolvconf</h5>
 
-https://packages.debian.org/source/bookworm/resolvconf</br>
+https://salsa.debian.org/debian/resolvconf</br>
 
+<h5>openresolv</h5>
+
+https://roy.marples.name/projects/openresolv</br>
+
+<h5>systemd-resolved</h5>
+
+https://wiki.archlinux.org/title/Systemd-resolved</br>
+https://www.freedesktop.org/software/systemd/man/latest/systemd-resolved.service.html</br>
+
+<h5>Avahi</h5>
+
+https://wiki.debian.org/Avahi</br>
 
 <h3>5.2 Firewall</h3>
 
@@ -1440,6 +1451,8 @@ Port Checker - https://portchecker.co</br>
 &nbsp; &nbsp; $ sudo apt purge iptables-persistent
 </pre>
 
+
+
 <!-- ################################# -->
 
 <h3>5.3 VPN</h3>
@@ -1476,7 +1489,7 @@ Port Checker - https://portchecker.co</br>
 
 👷🛠️UNDER WORK🚧🏗</br>
 
-<h5>∙ OpenVPN</h5>
+<h4>∙ OpenVPN</h4>
 https://openvpn.net</br>
 https://community.openvpn.net</br>
 https://openvpn.net/community-resources/how-to/</br>
@@ -1505,12 +1518,12 @@ https://github.com/angristan/openvpn-install</br>
 &nbsp; &nbsp; $ sudo rename 's/ovpn/conf/' openvpn/*.ovpn
 </pre>
 
+
 <pre>
 &nbsp; &nbsp; • You could use the client.conf below to random access
 &nbsp; &nbsp; multiple opvn files and auto login with auth configuration:
 &nbsp; &nbsp; $ sudo cd /etc/openvpn/client/
 &nbsp; &nbsp; $ sudo cat << EOF > client.conf
-
 client
 dev tun
 proto tcp # TCP or UDP server?
@@ -1565,8 +1578,8 @@ key-direction 1
 -----END OpenVPN Static key V1-----
 &lt;/tls-auth&gt;
 EOF
-
 </pre>
+
 
 <pre>
 &nbsp; &nbsp; • Create a autologin file
@@ -1578,7 +1591,7 @@ EOF
 &nbsp; &nbsp; $ sudo openvpn --config /etc/openvpn/client.conf --daemon
 </pre>
 
-<p>OpenVPN KillSwitch</p>
+<h6>OpenVPN KillSwitch</h6>
 
 <pre>
 &nbsp; Commands
@@ -1588,7 +1601,13 @@ EOF
 &nbsp; &nbsp; $ sudo echo "down /etc/openvpn/update-resolv-conf" >> /etc/openvpn/client/openvpn.conf
 </pre>
 
-<p>Enable OpenVPN at boot</p>
+
+<del>
+$ sudo apt install openresolv </br>
+$ sudo openvpn --config config.ovpn --up /etc/openvpn/update-resolv-conf --down /etc/openvpn/update-resolv-conf --script-security 2
+</del>
+
+<h6>Enable OpenVPN at boot</h6>
 
 <pre>
 &nbsp; Commands
@@ -1598,7 +1617,7 @@ EOF
 &nbsp; &nbsp; $ sudo reboot
 </pre>
 
-<p>Installing OpenVPN GUI</p>
+<h4>Installing OpenVPN GUI</h4>
 
 <pre>
 &nbsp; Commands GUI
@@ -1607,12 +1626,12 @@ EOF
 &nbsp; &nbsp; $ sudo nmcli connection import type openvpn file /path/to/your.ovpn
 </pre>
 
-<h5>∙ WireGuard</h5>
+<h4>∙ WireGuard</h4>
 
 <code>$ sudo apt install wireguard</code></br>
 <code>$ sudo apt install wireguard-tools</code></br>
 
-<h5>∙ strongSwan</h5>
+<h4>∙ strongSwan</h4>
 <code>$ sudo apt install strongswan</code></br>
 
 <h4>• Leak Test</h4>
