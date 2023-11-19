@@ -5,7 +5,7 @@
 things that you can rely on. Unfortunately, endpoint security is so terrifically
 weak that NSA can frequently find ways around it." (Edward Snowden)</pre>				
 
-![thedoortofreedom](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/f24266c3-b530-4586-adaa-55bbd808f7eb)
+![banner](.data/la_clef_des_champs_1936_-_rene_magritte_830px.png)
 
 ### 1.1 System Hardening Must Have
 
@@ -1848,8 +1848,8 @@ geometry=50%x96%
 
 <pre>
 &nbsp; Commands for webp files
-&nbsp; &nbsp; • How to convert .webp to .png
-&nbsp; &nbsp; $ dwebp -v in_file.webp -o ~/out_file_png_default.png &nbsp; &nbsp; #It's a command-line interface.
+&nbsp; &nbsp; • How to convert .webp to .png #It's a command-line interface
+&nbsp; &nbsp; $ dwebp -v in_file.webp -o ~/out_file_png_default.png 
 &nbsp; &nbsp; $ dwebp -v -resize width x height in_file.webp -o ~/out_file_png_default.png
 &nbsp; &nbsp; *If either (but not both) of the width or height parameters is 0,
 &nbsp; &nbsp;  the value will be calculated preserving the aspect-ratio.
@@ -2098,6 +2098,8 @@ https://github.com/veracrypt/VeraCrypt</br>
 
 <h4>• Disk Sanitation</h4>
 
+<em>*Not all SSD support sanitize. To properly way to erase a SSD is using the SSDs manufacturer's software. Other methods might not work, due to wear leveling and over-provisioning.</em></br>
+
 <h5>∙ Nwipe</h5>
 
 <code>$ sudo apt install -y nwipe</code></br>
@@ -2106,7 +2108,7 @@ https://github.com/veracrypt/VeraCrypt</br>
 
 <code>$ sudo apt install -y hdparm</code></br>
 
-<em>*Not all SSD support sanitize</em></br>
+
 
 <!-- ################################# -->
 

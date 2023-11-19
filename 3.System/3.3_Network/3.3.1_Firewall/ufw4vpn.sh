@@ -1,4 +1,5 @@
 #!/bin/bash
+
 ###########################################
 #          Created by Thomas Butz         #
 #   E-Mail: btom1990(at)googlemail.com    #

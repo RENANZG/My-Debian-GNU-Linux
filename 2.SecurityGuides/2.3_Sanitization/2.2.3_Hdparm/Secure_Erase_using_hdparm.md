@@ -1,14 +1,10 @@
 # Secure Erase using hdparm
 
-## Warning! This method can destroy data!
-## Spoiler alert: that's kind of the point.
-
 ### Requirements:
 
 1. A drive supporting secure erase (typically an ssd only)
 2. Said drive must be unlocked or you must know the password
 3. Said drive must also not be frozen
-
 
 #### My drive doesn't support Secure Erase! 
 
