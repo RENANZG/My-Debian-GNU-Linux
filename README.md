@@ -7,7 +7,7 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 
 ![banner](.data/la_clef_des_champs_1936_-_rene_magritte_830px.png)
 
-### 1.1 System Hardening Must Have
+<h3>1.1 System Hardening Must Have</h3>
 
 <table>
 <tr>
@@ -69,7 +69,7 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 </table>
 
 
-### 1.2 Essential Tools
+<h3>1.2 Essential Tools</h3>
 
 <table>
   <tr>
@@ -118,8 +118,9 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 <p>¹ How to check the iso file (SHA256SUMS): https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html</p>
 <p>² Check with hash GtkHash: https://gtkhash.org</p>
 </sub>
+
 <details>
-<p></p><summary>Manual method</summary></p>  
+<summary>Manual method</summary>
 <p>The SHA-256 checksum hashes in a file called SHA256SUMS in the same directory listing as the download page.</p>
 <p>First open a terminal and go to the correct directory to check a downloaded iso file:</p>
 <p>cd download_directory</p>
@@ -129,11 +130,9 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 <p>sdd31231c0421be56f39c7a31245c423fgcc3b048ds321a3e83d2c4d714fa9a76 *name.iso</p>
 <p>Compare the hash (the alphanumeric string on left) that your machine calculated with the corresponding hash in the SHA256SUMS file.</p>
 </details>
-</sub>
-<sub>
-</table>
+
 <details>
-<p><summary>Semi-automatic method</summary></p>  
+<summary>Semi-automatic method</summary>
 <p>First download the SHA256SUMS and SHA256SUMS.gpg files to the same directory as the iso. Then run the following commands in a terminal.</p>
 <p>cd download_directory</p>
 <p>sha256sum -c SHA256SUMS 2>&1 | grep OK</p>
@@ -141,14 +140,14 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 <p>name.iso: OK</p>
 <p>If the OK for your file appears, that indicates the hash matches.</p>
 </details>  
-</sub>
+
 
 <br>
 <hr>
 
--UNDER WORK-
+<h2>2. SYSTEM INSTALLATION</h2>
 
-## 2. SYSTEM INSTALLATION
+👷🛠️UNDER WORK🚧🏗</br>
 
 <details>
 <summary><b>2.1 Hardware</b></summary>
@@ -283,11 +282,14 @@ https://manpages.debian.org/bookworm/mount/fstab.5.en.html</br>
 • Crypttab</br>
 https://manpages.debian.org/bookworm/cryptsetup/crypttab.5.en.html</br>
 • Tips</br>
-Copy and past blkid</br>
 
-`echo "$(blkid -o export /dev/sdbX | grep ^UUID=) REMEMBEREFI" | tee --append /etc/fstab`		
-or		
-`blkid -o value -s UUID >> /etc/fstab`		
+∙ Copy and paste blkid to fstab</br>
+
+<code># echo "$(blkid -o export /dev/sdbX | grep ^UUID=) REMEMBEREFI" | tee --append /etc/fstab</code>
+
+Or		
+
+<code># blkid -o value -s UUID >> /etc/fstab</code>
 
 2.3.4 Example 1 - FSTAB - Non-encrypted Boot Removable Medium (USB Key) Multi-device</br>
 
@@ -335,7 +337,7 @@ sudo apt install cryptsetup-nuke-password</br>
 <br>
 <hr>
 
-## 3. SECURE BOOT 
+<h2>3. SECURE BOOT</h2>
 
 <details>
 <summary><b>3.1 Introduction</b></summary>
@@ -406,7 +408,7 @@ ADVANCED:
 </ul>
 </details> 
 
----------------------------------------------
+<hr>
 
 ```diff
 ! CAUTION:
@@ -456,7 +458,7 @@ ADVANCED:
 - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=928300  
 ```  
 
-👷🛠️UNDER WORK🚧🏗    
+👷🛠️UNDER WORK🚧🏗</br>
 
 <DIV class="section" id="VERDE">
 
@@ -556,7 +558,7 @@ $ sudo openssl req -x509 -new -nodes -utf8 -sha512 -days 3650 -batch -config /et
 $ sudo openssl x509 -inform DER -in /etc/ssl/certs/pubkey.der -out /etc/ssl/certs/pubkey.pem
 ```
 
----------------------------------------------
+<hr>
 
 <b>4.Enrolling your key im Shim</b>
 
@@ -1077,7 +1079,7 @@ $ sudo update-initramfs -k all -u
 
 <br>
 
----------------------------------------------
+<hr>
 
 Building and signing modules is independent of building and signing your own kernel. To sign a custom kernel or any other EFI binary you want to have loaded by shim (PEM), you’ll need to use a different command: sbsign (PEM). In this case, we’ll need the certificate in a different format, <ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM. Convert the certificate into PEM (.der to .pem), for example:
 ```bash
@@ -1240,10 +1242,9 @@ https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi</br>
 
 👷🛠️UNDER WORK🚧🏗</br>
 
-<h3>4.1 PRIVILEGES AND APPARMOR</h3>
+<h3>4.1 APPARMOR</h3>
 
 https://github.com/Kicksecure/security-misc</br>
-
 https://apparmor.net</br>
 https://wiki.debian.org/AppArmor</br>
 https://wiki.debian.org/AppArmor/HowToUse</br>
@@ -1255,7 +1256,31 @@ https://wiki.ubuntu.com/DebuggingApparmor</br>
 <code>$ sudo apt install -y apparmor-utils &&</code></br>
 <code>$ sudo apt install -y apparmor-profiles-extra</code></br>
 
-<h3>4.2 AUDIT SYSTEM</h3>
+<p>*Note: an AppArmor rule could prevent port use by an individual program.</p>
+
+<h3>4.2 PRIVILEGES</h3>
+
+<h5>Table</h5>
+
+
+
+<h5>Examples</h5>
+
+<h5>CHOW</h5>
+
+<pre>
+$ sudo chown user:user -R /home
+$ sudo chown user:user -R /media
+</pre>
+
+<h5>CHMOD</h5>
+
+<pre>
+$ sudo chmod 766 -R /home
+$ sudo chmod 766 -R /media
+</pre>
+
+<h3>4.3 AUDIT SYSTEM</h3>
 
 <code>$ sudo apt install lynis</code></br>
 <code>$ sudo apt install checksecurity</code></br>
@@ -1299,18 +1324,26 @@ https://docs.clamav.net/manual/Usage.html</br>
 <p>"There are a number of open-source options for routers that will take even a small consumer router and turn it into a powerful device with enterprise-level capabilities. My personal favorite is DD-WRT, but other popular options include pfSense, OpenWRT, and Tomato. While you can buy pre-flashed devices in some cases (FlashRouters for DD-WRT and Protectli for pfSense), I always encourage you to do it yourself if you’re comfortable to ensure maximum security (and also to be familiar with the update process). Having said all of this, if you are unsure if an open source router is right for you (the wealth of options can be overwhelming to some), I still encourage you to get a router that wasn’t provided by your ISP. Make sure it offers VLANs and VPN capabilities, as we will be using these heavily to protect your home."</p>
 <p>https://thenewoil.org/en/guides/quick-start/wifi-guide </p>
 
-Examples of VPN routers and firmwares
+<h4>• Examples of VPN routers and firmwares</h4>
 
 <table style="width: 100%" cellspacing="0" cellpadding="0">
 <thead>
   <tr>
-    <th>Firmware</th>
     <th>Router</th>
+    <th>Firmware</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td valign="top" style="width: 50%">
+  <td valign="top" style="width: 50%">
+   EdgeRouter and Ubiquiti<br>
+   GL.iNet</br>
+   Netduma</br>
+   Netgear</br>
+   MikroTik</br>
+   Peplink/Pepwave</br>
+  </td>
+  <td valign="top" style="width: 50%">
     AsusWRT Merlin</br>
    DD-WRT</br>
    DrayTek Vigor</br>
@@ -1322,44 +1355,37 @@ Examples of VPN routers and firmwares
    pfSense 2.5</br>
    Sabai</br>
    Tomato</br>
-    </td>
-    <td valign="top" style="width: 50%">
-   EdgeRouter and Ubiquiti<br>
-   GL.iNet</br>
-   Netduma</br>
-   Netgear</br>
-   MikroTik</br>
-   Peplink/Pepwave</br>
-    </td>
+  </td>
   </tr>
 </tbody>
 </table>
 
 <!-- ################################# -->
 
+<h4>5.2 DNS Resolution</h4>
 
 
-<h3>5.2 DNS (Un)resolv</h3>
 
-<h5>resolv.conf</h5>
+<h5>• The resolv.conf configuration file</h5>
 
+https://wiki.debian.org/NetworkConfiguration</br>
 https://wiki.debian.org/resolv.conf</br>
 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_networking/manually-configuring-the-etc-resolv-conf-file_configuring-and-managing-networking</br>
 
-<h5>resolvconf</h5>
+<h5>• The resolvconf program</h5>
 
 https://salsa.debian.org/debian/resolvconf</br>
 
-<h5>openresolv</h5>
+<h5>• The openresolv program</h5>
 
 https://roy.marples.name/projects/openresolv</br>
 
-<h5>systemd-resolved</h5>
+<h5>• The systemd-resolved service</h5>
 
 https://wiki.archlinux.org/title/Systemd-resolved</br>
 https://www.freedesktop.org/software/systemd/man/latest/systemd-resolved.service.html</br>
 
-<h5>Avahi</h5>
+<h5>• Avahi</h5>
 
 https://wiki.debian.org/Avahi</br>
 
@@ -1373,9 +1399,10 @@ http://manpages.ubuntu.com/manpages/precise/man8/ufw.8.html</br>
 https://help.ubuntu.com/community/UFW</br>
 https://www.paulligocki.com/vpn-only-ufw-setup</br>
 
+
 <code>$ sudo apt install ufw</code>
 
-<h5>∙Generic UFW configuration</h5>
+<h5>∙ Generic UFW configuration</h5>
 
 <pre>
 &nbsp; Commands, basic to install UFW
@@ -1411,7 +1438,7 @@ https://www.paulligocki.com/vpn-only-ufw-setup</br>
 &nbsp; &nbsp; $ sudo reboot
 </pre>
 
-<h5>∙UFW + OpenVPN</h5>
+<h5>∙ UFW + OpenVPN</h5>
 
 <pre>
 &nbsp; Commands to setup UFW + OpenVPN
@@ -1450,8 +1477,6 @@ Port Checker - https://portchecker.co</br>
 &nbsp; &nbsp; • Troubles
 &nbsp; &nbsp; $ sudo apt purge iptables-persistent
 </pre>
-
-
 
 <!-- ################################# -->
 
@@ -1509,7 +1534,11 @@ https://github.com/angristan/openvpn-install</br>
 &nbsp; &nbsp; $ cd /etc/openvpn
 &nbsp; &nbsp; • You could check:
 &nbsp; &nbsp; $ sudo ls
-&nbsp; &nbsp; 
+</pre>
+
+<h6>OpenVPN KillSwitch</h6>
+
+<pre>
 &nbsp; &nbsp; • OpenVPN on Linux uses .conf for config files instead of .ovpn,
 &nbsp; &nbsp; so rename them accordingly.You could simply substitute it in the
 &nbsp; &nbsp; appropriate file name, copy that file to the name vpn.conf:
@@ -1518,6 +1547,7 @@ https://github.com/angristan/openvpn-install</br>
 &nbsp; &nbsp; $ sudo rename 's/ovpn/conf/' openvpn/*.ovpn
 </pre>
 
+<h6>OpenVPN Random Server and Autologin</h6>
 
 <pre>
 &nbsp; &nbsp; • You could use the client.conf below to random access
@@ -1526,7 +1556,7 @@ https://github.com/angristan/openvpn-install</br>
 &nbsp; &nbsp; $ sudo cat << EOF > client.conf
 client
 dev tun
-proto tcp # TCP or UDP server?
+proto tcp #It's TCP or UDP server?
 remote my-server-1 1194
 remote my-server-2 1194
 remote my-server-3 1194
@@ -1537,7 +1567,7 @@ remote my-server-7 1194
 remote my-server-8 1194
 remote my-server-9 1194
 remote my-server-10 1194
-remote-random # It choose a random host
+remote-random #It choose a random config server
 resolv-retry infinite
 nobind
 tun-mtu 1500
@@ -1549,12 +1579,12 @@ ping 15
 ping-restart 0
 ping-timer-rem
 reneg-sec 0
-comp-lzo no # Enable if enabled in the server
+comp-lzo no #Enable it if enabled in the server
 verify-x509-name CN=my.vpn.com
 
-remote-cert-tls server # Protect against MITM see http://openvpn.net/howto.html#mitm
+remote-cert-tls server #Protect against MITM see http://openvpn.net/howto.html#mitm
 
-auth-user-pass /etc/openvpn/client/auth # Auto login config
+auth-user-pass /etc/openvpn/client/auth #Your autologin config
 verb 3
 pull
 fast-io
@@ -1577,9 +1607,11 @@ key-direction 1
 -----BEGIN OpenVPN Static key V1-----
 -----END OpenVPN Static key V1-----
 &lt;/tls-auth&gt;
+
 EOF
 </pre>
 
+<h6>OpenVPN Autologin</h6>
 
 <pre>
 &nbsp; &nbsp; • Create a autologin file
@@ -1602,10 +1634,12 @@ EOF
 </pre>
 
 
-<del>
-$ sudo apt install openresolv </br>
-$ sudo openvpn --config config.ovpn --up /etc/openvpn/update-resolv-conf --down /etc/openvpn/update-resolv-conf --script-security 2
-</del>
+<em>Is this correct?</em>
+<pre>
+&nbsp; Commands
+&nbsp; &nbsp; $ sudo apt install openresolv
+&nbsp; &nbsp; $ sudo openvpn --config config.ovpn --up /etc/openvpn/update-resolv-conf --down /etc/openvpn/update-resolv-conf --script-security 2
+</pre>
 
 <h6>Enable OpenVPN at boot</h6>
 
@@ -1749,9 +1783,15 @@ https://keepassxc.org/docs/</br>
 &nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a></br>
 &nbsp; &nbsp; - <a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a></br>
 
+
+Note, to open maximized browser window use "--start-maximized" as a parameter.</br>
+
 <!-- ################################# -->
 
 <h3>6.3 Cloud Services</h3>
+
+https://forum.rclone.org</br>
+https://www.reddit.com/r/cloudstorage</br>
 
 <h4>• Google Drive</h4>
 
@@ -1759,11 +1799,50 @@ https://github.com/glotlabs/gdrive</br>
 
 <h4>• MEGA</h4>
 
+https://mega.io</br> 
 https://mega.io/desktop</br>
+https://github.com/rclone/rclone</br> 
+
+
+<h4>• Yandex</h4>
+
+https://360.yandex.com</br>
+https://rclone.org/yandex (*Backend supported)</br> 
+
+*Russian</br>
+
+<h4>• IDrive</h4>
+
+https://www.idrive.com</br>
+https://www.idrive.com/online-backup-linux</br>
+https://www.idrive.com/linux-backup-scripts</br>
+https://rclone.org/s3/#idrive-e2</br>
+
+
+<h4>• pCloud</h4>
+
+https://www.pcloud.com</br> 
+https://www.pcloud.com/how-to-install-pcloud-drive-linux.html</br> 
+https://github.com/pcloudcom/console-client</br> 
+
+<h4>• SugarSync</h4>
+
+https://www.sugarsync.com</br>
+https://rclone.org/sugarsync (*Not backend supported) </br> 
+
+<h4>• Box</h4>
+
+https://www.box.com</br>
+https://github.com/box/boxcli</br>
+https://github.com/rclone/rclone</br>
 
 <h4>• Dropbox</h4>
 
+https://www.dropbox.com
 https://www.dropbox.com/install-linux</br>
+https://github.com/dropbox/dbxcli</br>
+https://github.com/rclone/rclone</br>
+
 
 <!-- ################################# -->
 
@@ -1927,6 +2006,9 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
 
 <h4>• ZuluCrypt</h4>
 
+https://mhogomchungu.github.io/zuluCrypt</br>
+https://github.com/mhogomchungu/zuluCrypt</br>
+
 <code>$ sudo apt install zulucrypt-gui</code></br>
 
 <h4>• VeraCrypt</h4>
@@ -1961,12 +2043,28 @@ https://github.com/veracrypt/VeraCrypt</br>
 
 &nbsp; &nbsp; Reboot 
 
-
 <p>∙ NTFS - Read only error</p>
 
 <code>$ sudo ntfsfix /dev/mapper/veracrypt1</code></br>
 
 <p>Close and open again</p>
+
+
+<h4>• Cryptomator</h4>
+
+https://cryptomator.org</br>
+https://github.com/cryptomator/cryptomator</br>
+https://github.com/cryptomator/cli</br>
+https://www.reddit.com/r/Cryptomator</br>
+
+
+<h4>• Duplicati</h4>
+
+https://www.duplicati.com</br>
+https://github.com/duplicati/duplicati</br>
+https://forum.duplicati.com</br>
+https://www.reddit.com/r/duplicati</br>
+
 
 ∙ 
 <!-- ################################# -->
