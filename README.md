@@ -1,9 +1,9 @@
 
 <h1>1. DEBIAN GNU/LINUX AND HARDENING</h1>
 
-<pre>"Encryption works. Properly implemented strong crypto systems are one of the few
+<blockquote>"Encryption works. Properly implemented strong crypto systems are one of the few
 things that you can rely on. Unfortunately, endpoint security is so terrifically
-weak that NSA can frequently find ways around it." (Edward Snowden)</pre>				
+weak that NSA can frequently find ways around it." (Edward Snowden)</blockquote>
 
 ![banner](.data/la_clef_des_champs_1936_-_rene_magritte_830px.png)
 
@@ -12,58 +12,74 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 <table>
 <tr>
 <td>
-<a href="https://anonymousplanet.org/" target="_blank"><b>Anonymous Planet</b> - The Hitchhiker’s Guide</a><a href="https://anonymousplanet.org/export/guide.pdf" target="_blank">&nbsp(PDF)</a></td>
+<a href="https://anonymousplanet.org/" target="_blank"><b>Anonymous Planet</b> - The Hitchhiker’s Guide</a><a href="https://anonymousplanet.org/export/guide.pdf" target="_blank">&nbsp(PDF)</a>
+</td>
 <td>
-<a href="https://madaidans-insecurities.github.io/"><b>Madaidan's</b> - Security & Privacy Evaluations</a></td>
+<a href="https://madaidans-insecurities.github.io/"><b>Madaidan's</b> - Security & Privacy Evaluations</a>
+</td>
 </tr>
 
 <tr>
 <td>
-<a href="https://www.whonix.org/wiki/Essential_Host_Security" target="_blank"><b>Whonix</b> - Essential Host Security</a></td>
+<a href="https://www.whonix.org/wiki/Essential_Host_Security" target="_blank"><b>Whonix</b> - Essential Host Security</a>
+</td>
 <td>
-<a href="https://github.com/PartialVolume/shredos.x86_64" target="_blank"><b>ShredOS</b> - Secure disk erasure/wipe</a></td>
+<a href="https://hardenedlinux.github.io" target="_blank"><b>Hardened GNU/Linux</b>  </a>
+</td>
 </tr>
 
 <tr>
 <td>
-<a href="https://www.whonix.org/wiki/System_Hardening_Checklist" target="_blank"><b>Whonix</b> - System Hardening Checklist</a></td>
+<a href="https://www.whonix.org/wiki/System_Hardening_Checklist" target="_blank"><b>Whonix</b> - System Hardening Checklist</a>
+</td>
 <td>
-<a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>Virus Total</b> - Free virus, malware and URL online scanning</a></td>
+<a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>Virus Total</b> - Free virus, malware and URL online scanning</a>
+</td>
 </tr>
 
 <tr>
 <td>
-<a href="https://www.kicksecure.com/wiki/Documentation" target="_blank"><b>Kicksecure</b> - Documentation</a></td>
+<a href="https://www.kicksecure.com/wiki/Documentation" target="_blank"><b>Kicksecure</b> - Documentation</a>
+</td>
 <td>
- <a href="https://wiki.debian.org/SecurityManagement" target="_blank"><b>Debian</b> - Security Management</a></td>
+<a href="https://github.com/PartialVolume/shredos.x86_64" target="_blank"><b>ShredOS</b> - Secure disk erasure/wipe</a>
+</td>
 </tr>
 
 <tr>
 <td>
-<a href="https://www.cisecurity.org/benchmark/debian_linux" target="_blank"><b>CIS Benchmark</b> - Debian Linux Guides</a></td>
+<a href="https://www.cisecurity.org/benchmark/debian_linux" target="_blank"><b>CIS Benchmark</b> - Debian Linux Guides</a>
+</td>
 <td>
-<a href="https://ssd.eff.org/" target="_blank"><b>EFF</b> - Surveillance Self-defense</a></td>
+<a href="https://ssd.eff.org/" target="_blank"><b>EFF</b> - Surveillance Self-defense</a>
+</td>
 </tr>
 
 <tr>
 <td>
-<a href="https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance" target="_blank"><b>NSA GOV</b> - Cybersecurity Advisories & Guidance</a><a href="https://github.com/nsacyber" target="_blank">&nbsp(GitHub)</a></td>
+<a href="https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance" target="_blank"><b>NSA GOV</b> - Cybersecurity Advisories & Guidance</a><a href="https://github.com/nsacyber" target="_blank">&nbsp(GitHub)</a>
+</td>
 <td>
-<a href="https://cryptomator.org/" target="_blank"><b>Cryptomator</b> - Put a lock on your cloud</a></td>
+<a href="https://cryptomator.org/" target="_blank"><b>Cryptomator</b> - Put a lock on your cloud</a>
+</td>
 </tr>
 
 <tr>
 <td>
-<a href="https://www.nist.gov/cyberframework" target="_blank"><b>NIST GOV</b> - Cybersecurity Framework</a></td>
+<a href="https://www.nist.gov/cyberframework" target="_blank"><b>NIST GOV</b> - Cybersecurity Framework</a>
+</td>
 <td>
-<a href="https://www.duplicati.com/" target="_blank"><b>Duplicati</b> - Store securely encrypted backups on cloud storage services!</a></td>
+<a href="https://www.duplicati.com/" target="_blank"><b>Duplicati</b> - Store securely encrypted backups on cloud storage services!</a>
+</td>
 </tr>
 
 <tr>
 <td>
-<a href="https://hardenedlinux.github.io" target="_blank"><b>Hardened GNU/Linux</b>  </a></td>
+<a href="https://wiki.debian.org/SecurityManagement" target="_blank"><b>Debian</b> - Security Management</a>
+</td>
 <td>
-<a href="https://www.bleachbit.org/" target="_blank"><b>Bleachbit</b> - Clean Your System and Free Disk Space</a></td>
+<a href="https://www.bleachbit.org/" target="_blank"><b>Bleachbit</b> - Clean Your System and Free Disk Space</a>
+</td>
 </tr>
 
 </table>
@@ -115,8 +131,8 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 </table>
 
 <sub>
-<p>¹ How to check the iso file (SHA256SUMS): https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html</p>
-<p>² Check with hash GtkHash: https://gtkhash.org</p>
+<p>¹How to check the iso file (SHA256SUMS): https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html</p>
+<p>²Check with hash GtkHash: https://gtkhash.org</p>
 </sub>
 
 <details>
@@ -141,7 +157,6 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 <p>If the OK for your file appears, that indicates the hash matches.</p>
 </details>  
 
-
 <br>
 <hr>
 
@@ -155,19 +170,25 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</pre>
 
 • Points to check:</br>
 
-2.1.1 Security</br>
+</h4>2.1.1 Security</h4>
 
-• BIOS</br>
-Password Protect BIOS And OS With Laminated Password Card</br>
+<h5>• BIOS</h5>
+
+∙ Password Protect BIOS And OS With Laminated Password Card</br>
 https://www.passwordcard.org/en</br>
-Decrypt password stored in cmos used to access BIOS SETUP</br>
+
+∙ Decrypt password stored in CMOS used to access BIOS SETUP</br>
 https://github.com/bacher09/pwgen-for-bios</br>
 
-• Hardware Vulnerabilities</br>
+∙ Sanitize options</br> 
+Not all SSD support sanitize. And if you use SSDs, enable TRIM in your BIOS. More details in the rest of this work and in the attached files.
+</br>
+
+<h5>Hardware Vulnerabilities</h5>
 https://docs.kernel.org/admin-guide/hw-vuln/index.html</br>
 https://github.com/chipsec/chipsec</br>
 
-• Hardware Security Based</br>
+<h5>• Hardware Security Based</h5>
 https://en.wikipedia.org/wiki/Open-source_firmware</br>
 https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption</br>
 https://en.wikipedia.org/wiki/Write_protection</br>
@@ -175,7 +196,7 @@ https://en.m.wikipedia.org/wiki/Random-access_memory</br>
 https://libreboot.org</br>
 https://usbguard.github.io</br>
 
-• Hardware Spoof</br>
+<h5>• Hardware Spoof</h5>
 https://www.whonix.org/wiki/Protocol-Leak-Protection_and_Fingerprinting-Protection#Less_important_identifiers</br>
 https://www.whonix.org/wiki/MAC_Address</br>
 https://github.com/alobbs/macchanger</br>
@@ -184,7 +205,7 @@ https://xaze.gitbook.io/how-to-spoof-with-hwid-serial-changer</br>
 https://github.com/segofensiva/OSfooler-ng</br>
 https://github.com/Kicksecure/ram-wipe</br>
 
-2.1.2 Compatibility</br>
+<h4>2.1.2 Compatibility</h4>
 https://linux-hardware.org</br>
 https://github.com/morrownr/USB-WiFi    
 https://ryf.fsf.org</br>
@@ -192,9 +213,13 @@ https://www.pine64.org/pinebook-pro</br>
 https://frame.work</br>
 https://www.powerpc-notebook.org</br>
 	
-2.1.3 Performance</br>
+<h4>2.1.3 Performance</h4>
 
-2.1.4 Cost benefit</br>
+
+
+<h4>2.1.4 Cost benefit</h4>
+
+
 
 </br>
 </details>  
@@ -204,6 +229,12 @@ https://www.powerpc-notebook.org</br>
 </br>
 
 2.2.1 Basic Installation Guide</br>
+
+
+• Basic tips about Linux System</br>
+
+Command Line - https://github.com/jlevy/the-art-of-command-line#everyday-use</br>
+Terminal - https://github.com/onceupon/Bash-Oneliner#terminal-tricks</br>
 
 • Using VirtualBox as training or to test ultra-advanced configurations</br>
 
@@ -287,7 +318,7 @@ https://manpages.debian.org/bookworm/cryptsetup/crypttab.5.en.html</br>
 
 <code># echo "$(blkid -o export /dev/sdbX | grep ^UUID=) REMEMBEREFI" | tee --append /etc/fstab</code>
 
-Or		
+or		
 
 <code># blkid -o value -s UUID >> /etc/fstab</code>
 
@@ -776,7 +807,7 @@ sudo lshw -C network
 Reset de modules and unload them in Kernel
 ```
 $ sudo depmod -a -v
-$ sudo update-initramfs -u -k all
+$ sudo update-initramfs -k all -u -v
 ```
 </details>   
 
@@ -942,7 +973,7 @@ Mandatory packages: <code>openssl</code>, <code>sign-file</code> and <code>mokut
 If you are going to compile the module in the kernel, usually the maintainer will indicate the packages to be installed beforehand. For example, you will need to install "make", "gcc", "kernel headers", "kernel build essentials", and "git".
 
 ```bash
-$ sudo apt get install git make gcc build-essential linux-image-$(uname -r|sed 's,[^-]*-[^-]*-,,') linux-headers-$(uname -r|sed 's,[^-]*-[^-]*-,,')
+$ sudo apt install git make gcc build-essential linux-image-$(uname -r|sed 's,[^-]*-[^-]*-,,') linux-headers-$(uname -r|sed 's,[^-]*-[^-]*-,,')
 ```
 
 Brief - Sign with Sign-file
@@ -1260,20 +1291,20 @@ https://wiki.ubuntu.com/DebuggingApparmor</br>
 
 <h3>4.2 PRIVILEGES</h3>
 
-<h5>Table</h5>
+  <h5>Table</h5>
 
 
 
-<h5>Examples</h5>
+  <h5>Examples</h5>
 
-<h5>CHOW</h5>
+  <h5>CHOW</h5>
 
 <pre>
 $ sudo chown user:user -R /home
 $ sudo chown user:user -R /media
 </pre>
 
-<h5>CHMOD</h5>
+  <h5>CHMOD</h5>
 
 <pre>
 $ sudo chmod 766 -R /home
@@ -1295,18 +1326,22 @@ $ sudo chmod 766 -R /media
 
 <h4>CLAMAV</h4>
 
+https://clamav.net</br>
+https://docs.clamav.net</br>
+https://github.com/Cisco-Talos/clamav</br>
 https://wiki.archlinux.org/title/ClamAV</br>
-https://docs.clamav.net/manual/Usage.html</br>
 
 <code>$ sudo apt install -y clamav</code></br>
 <code>$ sudo apt install -y clamav-daemon</code></br>
 
 <pre>
-&nbsp; Commands			
-&nbsp; &nbsp; $ clamscan file			
-&nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home    
-&nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home --remove   
-&nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"    
+&nbsp; Commands
+&nbsp; &nbsp; $ clamscan --verbose /file.ext
+&nbsp; &nbsp; $ clamscan --verbose --scan-arquive --alert-exceeds-max --alert-encrypted /file.zip
+&nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home
+&nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home --remove
+&nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"
+
 </pre>
 
 </br>
@@ -1365,7 +1400,6 @@ https://docs.clamav.net/manual/Usage.html</br>
 <h4>5.2 DNS Resolution</h4>
 
 
-
 <h5>• The resolv.conf configuration file</h5>
 
 https://wiki.debian.org/NetworkConfiguration</br>
@@ -1413,7 +1447,7 @@ https://www.paulligocki.com/vpn-only-ufw-setup</br>
 &nbsp; &nbsp; $ sudo nano /etc/sysctl.conf
 &nbsp; &nbsp; &nbsp; net.ipv6.conf.all.disable_ipv6 = 1  
 &nbsp; &nbsp; &nbsp; net.ipv6.conf.default.disable_ipv6 = 1
-&nbsp; &nbsp; &nbsp; net.ipv6.conf.lo.disable_ipv 6= 1
+&nbsp; &nbsp; &nbsp; net.ipv6.conf.lo.disable_ipv6 = 1
 &nbsp; &nbsp; &nbsp; net.ipv6.conf.tun0.disable_ipv6 = 1
 &nbsp; &nbsp; $ sudo ufw default deny incoming 
 &nbsp; &nbsp; $ sudo ufw default allow outgoing
@@ -1662,11 +1696,19 @@ EOF
 
 <h4>∙ WireGuard</h4>
 
+https://github.com/WireGuard</br>
+
 <code>$ sudo apt install wireguard</code></br>
 <code>$ sudo apt install wireguard-tools</code></br>
 
+
+
 <h4>∙ strongSwan</h4>
+
+https://github.com/strongswan/strongswan</br>
+
 <code>$ sudo apt install strongswan</code></br>
+
 
 <h4>• Leak Test</h4>
 
@@ -1712,7 +1754,6 @@ https://www.comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-li
 &nbsp; &nbsp; > Login: transmission
 &nbsp; &nbsp; > Password: transmission
 </pre>
-
 
 <b>• Everyday TOR</b></br>
 https://wiki.debian.org/TorBrowser</br>
@@ -1775,13 +1816,13 @@ https://keepassxc.org/docs/</br>
 <h4>• Chromium</h4>
 
 <h5>&nbsp; 6.4.1 Extensions</h5>
-&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a></br>
-&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a></br>
-&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a></br>
-&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a></br>
-&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a></br>
-&nbsp; &nbsp; - <a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a></br>
-&nbsp; &nbsp; - <a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a></br>
+&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a></br>
+&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a></br>
+&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a></br>
+&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a></br>
+&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a></br>
+&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a></br>
+&nbsp; &nbsp; ∙ <a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a></br>
 
 
 Note, to open maximized browser window use "--start-maximized" as a parameter.</br>
@@ -1790,8 +1831,13 @@ Note, to open maximized browser window use "--start-maximized" as a parameter.</
 
 <h3>6.3 Cloud Services</h3>
 
+
+<h4>• Info</h4>
 https://forum.rclone.org</br>
 https://www.reddit.com/r/cloudstorage</br>
+https://www.reddit.com/r/DataHoarder</br>
+https://www.reddit.com/r/Piracy</br>
+https://www.reddit.com/r/Scams</br>
 
 <h4>• Google Drive</h4>
 
@@ -1818,6 +1864,11 @@ https://www.idrive.com/online-backup-linux</br>
 https://www.idrive.com/linux-backup-scripts</br>
 https://rclone.org/s3/#idrive-e2</br>
 
+<h4>• TeraBox</h4>
+
+https://www.1024tera.com</br>
+https://www.1024tera.com/terabox-cloud-storage-for-pc-free-download</br>
+https://www.reddit.com/r/TeraBox/</br>
 
 <h4>• pCloud</h4>
 
@@ -1848,7 +1899,18 @@ https://github.com/rclone/rclone</br>
 
 <h3>6.4 Office</h3>
 
-<h4>• Libre Office</h4>
+<h4>• Office Resources</h4>
+
+<h5>∙ Libre Office</h5>
+
+<h5>&nbsp;Extensions</h5>
+
+&nbsp; &nbsp;<a href="https://languagetool.org/insights/post/product-libreoffice/">Language Tool</a></br>
+&nbsp; &nbsp;<a href="https://www.zotero.org/">Zotero</a></br>
+
+<h5>∙ Zotero</h5>
+
+&nbsp; &nbsp;<a href="https://www.zotero.org/">Zotero</a></br>
 
 <h4>• PDFs</h4>
 
@@ -1882,6 +1944,16 @@ https://github.com/rclone/rclone</br>
 &nbsp; &nbsp; $ ocrmypdf -v myfile.pdf myfile.pdf   #To modify a file in the same place.
 </pre>
 
+<h5>∙ PDF Convert</h5>
+
+
+<code>$ sudo apt install -y ghostscript</code> &nbsp; &nbsp; #It's a command-line interface.</br>
+
+<pre>
+&nbsp; Commands for ghostscript
+&nbsp; &nbsp; • How to convert .ps to .pdf
+&nbsp; &nbsp; $ ps2pdf filename.ps
+</pre>
 
 <h4>• Media Players</h4>
 
@@ -2004,14 +2076,17 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
 
 <h3>6.6 Encryption</h3>
 
-<h4>• ZuluCrypt</h4>
+
+<h4>• Disk Encryption</h4>
+
+<h5>∙ ZuluCrypt (GUI)</h5>
 
 https://mhogomchungu.github.io/zuluCrypt</br>
 https://github.com/mhogomchungu/zuluCrypt</br>
 
 <code>$ sudo apt install zulucrypt-gui</code></br>
 
-<h4>• VeraCrypt</h4>
+<h5>∙ VeraCrypt (GUI)</h5>
 
 https://www.veracrypt.fr/en/Downloads.html</br>
 https://www.reddit.com/r/VeraCrypt</br>
@@ -2049,24 +2124,36 @@ https://github.com/veracrypt/VeraCrypt</br>
 
 <p>Close and open again</p>
 
+<h4>• Archive Encryption</h4>
 
-<h4>• Cryptomator</h4>
+
+<h5>∙ GnuPG - GNU Privacy Guard</h5>
+
+<pre>
+&nbsp; Commands for gnupg
+&nbsp; &nbsp; • How to encrypt file
+&nbsp; &nbsp; $ gpg -c backup.tar.gz
+&nbsp; &nbsp; • How to decrypt file
+&nbsp; &nbsp; $ gpg backup.tar.gz.gpg
+
+</pre>
+
+<h4>• Cloud Encryption</h4>
+
+<h5>∙ Cryptomator (GUI)</h5>
 
 https://cryptomator.org</br>
 https://github.com/cryptomator/cryptomator</br>
 https://github.com/cryptomator/cli</br>
 https://www.reddit.com/r/Cryptomator</br>
 
-
-<h4>• Duplicati</h4>
+<h5>∙ Duplicati (GUI)</h5>
 
 https://www.duplicati.com</br>
 https://github.com/duplicati/duplicati</br>
 https://forum.duplicati.com</br>
 https://www.reddit.com/r/duplicati</br>
 
-
-∙ 
 <!-- ################################# -->
 
 <h3>6.7 Command-line: Compression, Decompression and Encryption of Files</h3>
@@ -2198,6 +2285,9 @@ https://www.reddit.com/r/duplicati</br>
 
 <em>*Not all SSD support sanitize. To properly way to erase a SSD is using the SSDs manufacturer's software. Other methods might not work, due to wear leveling and over-provisioning.</em></br>
 
+<em>**If you use SSDs, enable TRIM in your BIOS. Confirm you are using SSD in the BIOS options.</em></br>
+
+
 <h5>∙ Nwipe</h5>
 
 <code>$ sudo apt install -y nwipe</code></br>
@@ -2224,9 +2314,86 @@ https://www.reddit.com/r/duplicati</br>
 </br>
 <hr>
 
+<!-- ################################# -->
+
+<h3>6.10 Backup</h3>
+
+<h5>∙ Full Backup</h5>
+
+<pre>
+$ cp ~/.local/share/TelegramDesktop/tdata/settingss ~/backup
+</pre>
+
+<h5>∙ Incremental Backup</h5>
+
+<pre>
+$ cp -vur ~/.local/share/TelegramDesktop/tdata ~/backup
+</pre>
+
 <!-- ###################################################### -->
 
-<h2>7. TROUBLESHOTING</h2>
+<h2>7. DEV SETUP</h2>
+
+
+👷🛠️UNDER WORK🚧🏗</br>
+
+https://www.slant.co
+https://www.reddit.com/r/vscodium
+https://www.reddit.com/r/neovim
+https://www.reddit.com/r/
+
+<h4>• Sytem Tweaks</h4>
+
+ <h5>∙ Terminal</h5>
+
+ <h5>∙ Window Shortcuts</h5>
+
+ <h5>∙ Passwords</h5>
+
+ <h6>Mananger</h6>
+
+ <h6>SSH</h6>
+
+ <h5>∙ Interface</h5>
+
+<h4>• Git & GitHub</h4>
+
+<h4>• NeoVim</h4>
+
+https://neovim.io</br>
+https://github.com/nvim-lua/kickstart.nvim</br>
+
+ <h5>∙ Plugins</h5>
+
+
+<h4>• VSCodium</h4>
+
+https://github.com/VSCodium/vscodium</br>
+
+ <h5>∙ Extensions</h5>
+
+<h4>• Sublime-text ®</h4>
+
+<h6></h6>
+
+<h4>• Python</h4>
+
+<h4>• Go</h4>
+
+<h4>• PHP</h4>
+
+<h4>• Ruby</h4>
+
+<h4>• Deploy</h4>
+
+<h4>• Database</h4>
+
+<h4>• Projects Folder</h4>
+
+
+<!-- ###################################################### -->
+
+<h2>8. TROUBLESHOTING</h2>
 
 👷🛠️UNDER WORK🚧🏗</br>
 
@@ -2248,18 +2415,25 @@ https://www.reddit.com/r/sysadmin</br>
 
 <h4>• System Boot</h4>
 
-- rescue mode</br>
-- chroot</br>
+<h5>∙ Live System in Rescue Mode</h5>
+
+<h5>∙ Chroot</h5>
 
 <!-- ################################# -->
 
 <h4>• Network</h4>
 
-<code>$ sudo apt install rfkill</code></br>
-<code>$ sudo apt install resolvconf</code></br>
+<h5>∙ Hardware</h5>
 
+<code>$ sudo apt install rfkill</code></br>
+
+<h5>∙ WiFi</h5>
 
 https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX</br>
+
+<h5>∙ DNS</h5>
+
+<code>$ sudo apt install resolvconf</code></br>
 
 
 <!-- ################################# -->
@@ -2267,6 +2441,12 @@ https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX</br>
 <h4>• Sound</h4>
 
 https://wiki.ubuntu.com/DebuggingSoundProblems</br>
+
+
+<h4>• Bluetooth</h4>
+
+https://wiki.archlinux.org/title/Bluetooth</br>
+
 
 <!-- ################################# -->
 
