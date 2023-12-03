@@ -782,7 +782,7 @@ Then, run the following command to enroll the key into the machine:
 $ sudo mokutil --import /var/lib/dkms/mok.pub # prompts for one-time password and /var/lib/mok.pub can be changed, if mok certificate isn't located there.
 $ sudo mokutil --list-new # recheck your key will be prompted on next boot
 
-<rebooting machine then enters MOK manager EFI utility: enroll MOK, continue, confirm, enter password, reboot>
+!rebooting machine then enters MOK manager EFI utility: enroll MOK, continue, confirm, enter password, reboot!
 
 $ sudo dmesg | grep cert # verify your key is loaded
 ```
@@ -1589,7 +1589,12 @@ https://wiki.debian.org/Avahi</br>
 
 👷🛠️UNDER WORK🚧🏗</br>
 
-<h4>• UFW</h4>
+<h4>• GUFW (GUI)</h4>
+https://help.ubuntu.com/community/Gufw</br>
+
+<code>$ sudo apt install gufw</code>
+
+<h4>• UFW (CLI)</h4>
 https://wiki.archlinux.org/title/Uncomplicated_Firewall</br>
 http://manpages.ubuntu.com/manpages/precise/man8/ufw.8.html</br>
 https://help.ubuntu.com/community/UFW</br>
