@@ -1479,7 +1479,13 @@ $ sudo chmod 766 -R /media
 
 <h3>4.4 ANTIMALWARE</h3>
 
-<h4>CLAMAV</h4>
+<h4>CLAMTK (GUI)</h4>
+
+https://github.com/dave-theunsub/clamtk</br>
+
+<code>$ sudo apt install clamtk</code>
+
+<h4>CLAMAV (CLI)</h4>
 
 https://clamav.net</br>
 https://docs.clamav.net</br>
