@@ -1,15 +1,25 @@
+<!DOCTYPE html>
+<html lang='en' class=''>
+
+<head>
+
+  <meta charset='UTF-8'>
+
+<body>
 
 <h1>1. DEBIAN GNU/LINUX AND HARDENING</h1>
 
-<blockquote>"Encryption works. Properly implemented strong crypto systems are one of the few
-things that you can rely on. Unfortunately, endpoint security is so terrifically
-weak that NSA can frequently find ways around it." (Edward Snowden)</blockquote>
+<blockquote><h3>"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately endpoint security is so terrifically weak that NSA can frequently find ways around it." (Edward Snowden)</h3></blockquote>
 
-![banner](.data/la_clef_des_champs_1936_-_rene_magritte_830px.png)
+<div id="header" align="center">
+  <img src=".data/la_clef_des_champs_1936_-_rene_magritte_830px.png" width="830"/>
+</div>
+
+<hr>
 
 <h3>1.1 System Hardening Must Have</h3>
 
-<table>
+<table style="width:100%" cellspacing="0" cellpadding="0">
 <tr>
 <td>
 <a href="https://anonymousplanet.org/" target="_blank"><b>Anonymous Planet</b> - The Hitchhiker’s Guide</a><a href="https://anonymousplanet.org/export/guide.pdf" target="_blank">&nbsp(PDF)</a>
@@ -33,7 +43,7 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</blockquote>
 <a href="https://www.whonix.org/wiki/System_Hardening_Checklist" target="_blank"><b>Whonix</b> - System Hardening Checklist</a>
 </td>
 <td>
-<a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>Virus Total</b> - Free virus, malware and URL online scanning</a>
+<a href="https://www.bleachbit.org/" target="_blank"><b>Bleachbit</b> - Clean Your System and Free Disk Space</a>
 </td>
 </tr>
 
@@ -78,7 +88,7 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</blockquote>
 <a href="https://wiki.debian.org/SecurityManagement" target="_blank"><b>Debian</b> - Security Management</a>
 </td>
 <td>
-<a href="https://www.bleachbit.org/" target="_blank"><b>Bleachbit</b> - Clean Your System and Free Disk Space</a>
+<a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>Virus Total</b> - Free virus, malware and URL online scanning</a>
 </td>
 </tr>
 
@@ -87,8 +97,8 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</blockquote>
 
 <h3>1.2 Essential Tools</h3>
 
-<table>
-  <tr>
+<table style="width:100%" cellspacing="0" cellpadding="0">
+  <tr valign="top" style="width:50%">
     <td><a href="https://www.ventoy.net/en/download.html" target="_blank"><b>1. Ventoy</b></a></td>
     <td><a href="https://www.ventoy.net/en/doc_secure.html" target="_blank">(Secure Boot)</a></td>
     <td><a href="https://www.ventoy.net/en/download.html" target="_blank">(Checksums)</a></td>
@@ -96,7 +106,7 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</blockquote>
     <td><a href="https://tails.net/contribute/design/UEFI/archive/" target="_blank">(Secure Boot)</a></td>
     <td><a href="https://tails.net/install/index.en.html" target="_blank">(Checksums)</a></td>
   </tr>
-<tr>
+<tr valign="top" style="width:50%">
    <td><a href="http://www.rodsbooks.com/refind/getting.html" target="_blank"><b>2. rEFInd</b></a></td>
     <td><a href="http://www.rodsbooks.com/refind/secureboot.html" target="_blank">(Secure Boot)</a></td>
     <td><a href="https://sourceforge.net/p/refind/code/ci/master/tree/" target="_blank">(Checksums)</a></td> 
@@ -109,8 +119,8 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</blockquote>
     <td><a href="https://clonezilla.org/downloads.php" target="_blank">(Secure Boot)</a></td>
     <td><a href="https://clonezilla.org/downloads.php" target="_blank">(Checksums)</a></td>
     <td><a href="https://www.openpgp.org/software/" target="_blank"><b>8. OpenPGP</b></a></td>
-    <td><a href="https://github.com/OpenPGP/openpgp.org" target="_blank">(Git Hub)</a></td>
-    <td><a href="https://keys.openpgp.org/" target="_blank">(Checksums)</a></td>
+    <td><a href="https://github.com/OpenPGP/openpgp.org" target="_blank">(GitHub)</a></td>
+    <td><a href="https://keys.openpgp.org/" target="_blank">(Check)</a></td>
   </tr>
   <tr>
     <td><a href="https://gparted.org/livecd.php" target="_blank"><b>4. GParted</b></a></td>
@@ -130,30 +140,30 @@ weak that NSA can frequently find ways around it." (Edward Snowden)</blockquote>
    </tr>
 </table>
 
-<sub>
-<p>¹How to check the iso file (SHA256SUMS): https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html</p>
-<p>²Check with hash GtkHash: https://gtkhash.org</p>
-</sub>
+<sub>&nbsp; &nbsp; &nbsp; ¹ Check hash with <a href="https://gtkhash.org">GtkHash (GUI)</a></sub></br>
+<sub>&nbsp; &nbsp; &nbsp; ² How to summarize iso file with <a href="https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html">GNU Coreutils (CLI)</a></sub>
 
 <details>
-<summary>Manual method</summary>
+<summary><sub>³ Manual method with sha256sum</sub></summary>
 <p>The SHA-256 checksum hashes in a file called SHA256SUMS in the same directory listing as the download page.</p>
-<p>First open a terminal and go to the correct directory to check a downloaded iso file:</p>
-<p>cd download_directory</p>
+<p>First install it</p>
+<p><code>$ sudo apt install sha256sum</code></p>
+<p>Open a terminal and go to the correct directory to check a downloaded iso file:</p>
+<p><code>$ cd download_directory</code></p>
 <p>Then run the following command from within the download directory.</p>
-<p>sha256sum name.iso</p>
+<p><code>$ sha256sum name.iso</code></p>
 <p>sha256sum should then print out a single line after calculating the hash:</p>
-<p>sdd31231c0421be56f39c7a31245c423fgcc3b048ds321a3e83d2c4d714fa9a76 *name.iso</p>
+<p><code>$ sdd31231c0421be56f39c7a31245c423fgcc3b048ds321a3e83d2c4d714fa9a76 *name.iso</code></p>
 <p>Compare the hash (the alphanumeric string on left) that your machine calculated with the corresponding hash in the SHA256SUMS file.</p>
 </details>
 
 <details>
-<summary>Semi-automatic method</summary>
+<summary><sub>⁴ Semi-automatic method with sha256sum</sub></summary>
 <p>First download the SHA256SUMS and SHA256SUMS.gpg files to the same directory as the iso. Then run the following commands in a terminal.</p>
-<p>cd download_directory</p>
-<p>sha256sum -c SHA256SUMS 2>&1 | grep OK</p>
+<p><code>$ cd download_directory</code></p>
+<p><code>$ sha256sum -c SHA256SUMS 2>&1 | grep OK</code></p>
 <p>The sha256sum line should output a line such as:</p>
-<p>name.iso: OK</p>
+<p><code>name.iso: OK</code></p>
 <p>If the OK for your file appears, that indicates the hash matches.</p>
 </details>  
 
@@ -236,6 +246,102 @@ https://www.powerpc-notebook.org</br>
 Command Line - https://github.com/jlevy/the-art-of-command-line#everyday-use</br>
 Terminal - https://github.com/onceupon/Bash-Oneliner#terminal-tricks</br>
 
+<h4 id="bash-keyboard-shortcuts">Bash Keyboard Shortcuts</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Shortcut</th>
+<th style="text-align:left">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><kbd>Esc</kbd> + t</td>
+<td style="text-align:left">Swap the two <em>words</em> before the cursor</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Ctrl</kbd> + r</td>
+<td style="text-align:left">Search command history</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Ctrl</kbd> + g</td>
+<td style="text-align:left">Cancel command history search without running command</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Ctrl</kbd> + l</td>
+<td style="text-align:left">Clear terminal screen</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Ctrl</kbd> + x</td>
+<td style="text-align:left">List possible filename completions</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Ctrl</kbd> + c</td>
+<td style="text-align:left">Cancels the running command</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Ctrl</kbd> + z</td>
+<td style="text-align:left">Suspends the running command</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Ctrl</kbd> + u</td>
+<td style="text-align:left">Deletes entire line <em>before</em> the cursor</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Ctrl</kbd> + k</td>
+<td style="text-align:left">Deletes entire line <em>after</em> the cursor</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Ctrl</kbd> + t</td>
+<td style="text-align:left">Swap the two characters before the cursor</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Ctrl</kbd> + d</td>
+<td style="text-align:left">Close the terminal</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Ctrl</kbd> + f</td>
+<td style="text-align:left">Go <em>forward</em> one character</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Ctrl</kbd> + b</td>
+<td style="text-align:left">Go <em>back</em> one character</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Ctrl</kbd> + a</td>
+<td style="text-align:left">Go to the <em>beginning</em> of the line</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Ctrl</kbd> + e</td>
+<td style="text-align:left">Go to the <em>end</em> of the line</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Ctrl</kbd> + w</td>
+<td style="text-align:left">Delete the <em>word</em> before the cursor</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Ctrl</kbd> + y</td>
+<td style="text-align:left">Retrieves the last <em>word</em> deleted or cut</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Ctrl</kbd> + xx</td>
+<td style="text-align:left">Toggle between current cursor position and start or end of line</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Alt</kbd> + u</td>
+<td style="text-align:left">Capitalize all letters in word after cursor</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Alt</kbd> + l</td>
+<td style="text-align:left">Lower case all letters in word after cursor</td>
+</tr>
+<tr>
+<td style="text-align:left"><kbd>Alt</kbd> + .</td>
+<td style="text-align:left">Use the last word of the last command</td>
+</tr>
+</tbody>
+</table>
+
 • Using VirtualBox as training or to test ultra-advanced configurations</br>
 
   -> VirtualBox on Windows 10 Windows 10</br>
@@ -267,6 +373,9 @@ https://www.youtube.com/watch?v=cs8JW3zDDoI</br>
 
 
 2.2.3 Debootstrap</br>
+
+/3.System/3.1_System_Install/3.1.1_Debootstrap.md</br>
+
 • Debootstrap</br>
 https://wiki.debian.org/Debootstrap</br>
 • Debian 11.0 Debootstrap | Debian Command Line Install Guide</br>
@@ -280,8 +389,10 @@ https://github.com/linuxdabbler/debian-install-scripts</br>
 
 
 &nbsp; 2.2.3.1 File system: EXT4, XFS, BTRFS AND ZFS    
-&nbsp; &nbsp; ![Table-1](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/c66a4ac6-d9ed-41ea-aaea-60b10e94e5f9)</br>
 
+<div id="table1" align="left">
+  <img src=".data/file_system.png"/>
+</div>
 
 2.2.4 LFS</br>
 • Linux From Scratch</br>
@@ -1291,9 +1402,53 @@ https://wiki.ubuntu.com/DebuggingApparmor</br>
 
 <h3>4.2 PRIVILEGES</h3>
 
+
+<h4 id="add-em-existing-em-user-to-em-existing-em-group">Add <em>existing</em> user to <em>existing</em> group</h4>
+
+<pre>
+<code class="lang-bash">sudo usermod -<span class="hljs-selector-tag">a</span> -G groupnames username</code>
+</pre>
+<p><code>-a</code> - <em>append</em> groups to group user belongs to (instead of overwrite). 
+<code>groupnames</code> - a comma-separated (no spaces!) list of group names to add user to.
+User <em>must</em> log out and back in for group membership updates to be applied.</p>
+
+<h4 id="-safe-alternative-to-bypassing-password-prompt-for-sudo-">&quot;Safe&quot; alternative to bypassing password prompt for <code>sudo</code></h4>
+
+<p>To avoid getting prompted for password when running commands with <a href="https://manpages.ubuntu.com/manpages/precise/en/man8/sudo.8.html"><code>sudo</code></a>, one common option is to append <code>NOPASSWD:ALL</code> to your user name in the <code>/etc/sudoers</code> file. Obviously, this is a security risk. Instead, you can run the <code>sudo</code> command with the <code>-s</code> (&quot;session&quot;) flag to allow the <code>sudo</code> session to be persistent until your close the terminal (end the session). To explicitly end the session run <code>sudo -k</code> (&quot;kill&quot;).
+<a href="https://vitux.com/how-to-specify-time-limit-for-a-sudo-session/">Reference</a></p>
+
+<h2 id="change-default-editor-for-visudo-">Change default editor for <code>visudo</code></h2>
+
+<p>By default, Linux systems use the <code>$VISUAL</code> or <code>$EDITOR</code> environment variables (usually defined in your <code>~/.bashrc</code> file or <code>/etc/profile</code>) as the default editor the <a href="https://linux.die.net/man/8/visudo"><code>visudo</code></a> command. If you&#39;d prefer to use a different editor, such as <a href="https://nano-editor.org/">nano</a>, you can use either of these methods.</p>
+
+<ol>
+<li>
+To <strong>temporarily</strong> use a different editor, run:
+<pre>
+<code class="lang-console"><span class="hljs-variable">$ </span>sudo EDITOR=<span class="hljs-regexp">/path/to</span>
+<span class="hljs-regexp">/editor visudo</span>
+</code>
+</pre>
+
+For example, to use <code>nano</code>, you would run:
+<pre>
+<code class="lang-console"><span class="hljs-variable">$ </span>sudo EDITOR=nano visudo
+</code>
+</pre>
+</li>
+
+<li>
+To <strong>permanently</strong> change the default editor, edit the <code>/etc/sudoers</code> file (you can use the <em>temporary</em> method above!) and add the following line to the file near the top, but <em>after</em> <code>Defaults env_reset</code>:
+<pre>
+<code class="lang-console">Defaults <span class="hljs-keyword">editor</span>=/path/to/<span class="hljs-keyword">editor</span></code>
+</pre>
+</li>
+
+</ol>
+
+<p><a href="https://unix.stackexchange.com/questions/4408/how-to-set-visudo-to-use-a-different-editor-than-the-default-on-fedora">Reference: https://unix.stackexchange.com/questions/4408/how-to-set-visudo-to-use-a-different-editor-than-the-default-on-fedora</a></p>
+
   <h5>Table</h5>
-
-
 
   <h5>Examples</h5>
 
@@ -1336,12 +1491,13 @@ https://wiki.archlinux.org/title/ClamAV</br>
 
 <pre>
 &nbsp; Commands
+&nbsp; &nbsp; $ man clamscan
 &nbsp; &nbsp; $ clamscan --verbose /file.ext
-&nbsp; &nbsp; $ clamscan --verbose --scan-arquive --alert-exceeds-max --alert-encrypted /file.zip
-&nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home
+&nbsp; &nbsp; $ clamscan --verbose --scan --alert-exceeds-max --alert-encrypted /file.zip
+&nbsp; &nbsp; $ clamscan --verbose --recursive --suppress-ok-results --bell /home
+&nbsp; &nbsp; $ clamscan -v -r -o --heuristic-alert --bell /home
 &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home --remove
 &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"
-
 </pre>
 
 </br>
@@ -1543,8 +1699,9 @@ Port Checker - https://portchecker.co</br>
 
 <h4>• VPN Protocols</h4>
 
-![Table-2](https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/fa40cda5-c6f5-4f87-914f-937cc70e44de)</br>
-
+<div id="table2" align="left">
+  <img src=".data/vpn_protocols.png"/>
+</div>
 
 👷🛠️UNDER WORK🚧🏗</br>
 
@@ -1808,6 +1965,8 @@ https://keepassxc.org/docs/</br>
 <!-- ################################# -->
 
 <h3>6.2 Browsers</h3>
+
+https://avoidthehack.com/util/browser-comparison</br>
 
 <h4>• LibreWolf</h4>
 
@@ -2398,6 +2557,7 @@ https://github.com/VSCodium/vscodium</br>
 👷🛠️UNDER WORK🚧🏗</br>
 
 <h4>• Forums - Linux Community</h4>
+
 https://forums.debian.net</br>
 https://www.linuxquestions.org</br>
 https://superuser.com</br>
@@ -2431,6 +2591,19 @@ https://www.reddit.com/r/sysadmin</br>
 
 https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX</br>
 
+<pre>
+&nbsp; Commands 
+&nbsp; &nbsp; • Connecting WiFi manualy with NM
+&nbsp; &nbsp; $ 
+&nbsp; &nbsp; • 
+&nbsp; &nbsp; $ 
+&nbsp; &nbsp; • 
+&nbsp; &nbsp; $ 
+&nbsp; &nbsp; • 
+&nbsp; &nbsp; $ 
+</pre>
+
+
 <h5>∙ DNS</h5>
 
 <code>$ sudo apt install resolvconf</code></br>
@@ -2438,15 +2611,43 @@ https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX</br>
 
 <!-- ################################# -->
 
-<h4>• Sound</h4>
-
-https://wiki.ubuntu.com/DebuggingSoundProblems</br>
-
 
 <h4>• Bluetooth</h4>
 
 https://wiki.archlinux.org/title/Bluetooth</br>
 
+
+<p>First things first:</p>
+<code>$ sudo apt install firmware-realtek</code>
+or
+<code>$ sudo apt install firmware-iwlwifi</code>
+
+<p>Audio compatibility</p>
+<code>$ sudo apt install pulseaudio-module-bluetooth</code>
+or
+<code>$ sudo apt install bluez-alsa-utils</code>
+
+<p>Debug</p>
+<code>$ sudo service bluetooth status</code>
+
+<p>Connecting Bluetooth manualy with Bluez</p>
+
+<pre>
+&nbsp; Commands 
+&nbsp; &nbsp; • Connecting Bluetooth manualy with Bluez
+&nbsp; &nbsp; $ bluetoothctl
+&nbsp; &nbsp; [bluetooth]# scan on
+&nbsp; &nbsp; [bluetooth]# pair xx:xx:xx
+&nbsp; &nbsp; [bluetooth]# connect xx:xx:xx 
+&nbsp; &nbsp; [bluetooth]# trust xx:xx:xx 
+&nbsp; &nbsp; [bluetooth]# block yy:yy:yy
+</pre>
+
+<!-- ################################# -->
+
+<h4>• Sound</h4>
+
+https://wiki.ubuntu.com/DebuggingSoundProblems</br>
 
 <!-- ################################# -->
 
@@ -2454,11 +2655,26 @@ https://wiki.archlinux.org/title/Bluetooth</br>
 
 https://wiki.ubuntu.com/DebuggingPrintingProblems</br>
 
+
+<h5>∙ HP</h5>
+
+<code>$ sudo apt install hplip</code></br>
+
+<h5>∙ EPSON</h5>
+
+<code>$ sudo apt install </code></br>
+
 <!-- ################################# -->
 
 <h4>• USB</h4>
 
 https://wiki.ubuntu.com/Kernel/Debugging/USB</br>
+https://www.kernel.org/doc/html/v4.16/driver-api/usb/power-management.html</br>
+
+<code>$ lsusb</code>
+<code>$ lsusb -v</code>
+<code>$ grep . /sys/bus/usb/devices/*/power/wakeup</code>
+<code>$ sudo nano /sys/bus/usb/devices/1-6/power/autosuspend</code>
 
 <h4>• Interface</h4>
 
@@ -2489,7 +2705,6 @@ https://www.cgsecurity.org/wiki/TestDisk</br>
 &nbsp; &nbsp; $ sudo smartctl -a /dev/sda
 </pre>
 
-
 *HDPARM</br>
 
 <code>$ sudo apt install hdparm</code></br>
@@ -2501,6 +2716,7 @@ https://www.cgsecurity.org/wiki/TestDisk</br>
 </pre>
 
 *KDISKMARK</br>
+
 <code>$ sudo apt install -y kdiskmark</code></br>
 
 <hr>
@@ -2518,4 +2734,7 @@ https://www.youtube.com/@EkopartyConference</br>
 https://www.youtube.com/@reconmtl</br>
 https://www.youtube.com/@TROOPERScon</br>
 
-<p> Made with ♥</p>
+<p><em> Made with ♥</em></p>
+
+</body>
+</html>

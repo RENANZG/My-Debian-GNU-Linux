@@ -6,7 +6,7 @@
 # 1. Make it executable:
 # $ sudo chmod +x ./file.sh
 # 2. Then run
-# $ sudo bash ./file.sh
+# $ sudo bash ./file.sh 
 ########################################################################
 
 APP=nvim
