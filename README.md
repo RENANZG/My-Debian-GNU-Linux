@@ -172,7 +172,7 @@
 
 <h2>2. SYSTEM INSTALLATION</h2>
 
-👷🛠️UNDER WORK🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗</br>
 
 <details>
 <summary><b>2.1 Hardware</b></summary>
@@ -685,7 +685,7 @@ UUID=447e4a14-69f3-11ee-8c99-0242ac120002        none        swap    sw         
 
 2.3.5 Example 2 - FSTAB - Encrypted Boot Removable Medium (USB Key) Multi-device</br>
 
--UNDER WORK-</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗</br>
 
 https://tqdev.com/2022-luks-with-usb-unlock</br>
 
@@ -718,16 +718,68 @@ sudo apt install cryptsetup-nuke-password</br>
 
 <h2>3. SECURE BOOT</h2>
 
+👷🛠️UNDER CONSTRUCTION🚧🏗</br>
+
 <details>
-<summary><b>3.1 Introduction</b></summary>
+<summary><b>3.01 Introduction</b></summary>
 </br>
   <p>"Most modern systems will ship with SB enabled - they will not run any unsigned code by default, but it is possible to change the firmware configuration to either disable SB or to enroll extra signing keys. The whole point of Secure Boot is to prevent malware from gaining control of the computer. Therefore, when booting with Secure Boot active, Fedora 18 and later, Ubuntu 16.04 and later, and probably other distributions restrict actions that some Linux users take for granted. For instance, Linux kernel modules must be signed, which complicates use of third-party kernel drivers, such as Nvidia's and AMD/ATI's proprietary video drivers. More recent kernels may, if Secure Boot is active, also check that they were launched from a boot loader that honors Secure Boot, and shut down if this was not the case."</p>
   <p>"To launch a locally-compiled kernel, you must sign it with a MOK and register that MOK with the system. (In both cases, you can register a hash rather than sign the binary; but this approach results in an ever-growing database in NVRAM, which is undesirable.) The extent of such restrictions is entirely up to those who develop and sign the boot loader launched by Shim and the kernel launched by that boot loader, though. Some distributions ship kernels that are relatively unencumbered by added security restrictions."</p>
   <p>"As a practical matter, if you want to use Shim, you have two choices: You can run a distribution that provides its own signed version of Shim, such as Fedora 18 or later or Ubuntu 12.10 or later; or you can run a signed version from such a distribution or from another source, add your own MOK, and sign whatever binaries you like. This first option is quite straightforward if you happen to want to use a distribution that ships with Shim, and it requires little extra elaboration.If you want to build and run your own kernel (e.g. for development or debugging), then you will obviously end up making binaries that are not signed with the Debian key. If you wish to use those binaries, you will need to either sign them yourself and enroll the key used with MOK or disable SB."</p>
+
+
+```diff
+! CAUTION:
+! • Use an administrator password in the BIOS and do not use the same for disk encryption.
+! • Building and signing kernel modules is independent of building and signing your own kernel.
+! • In Debian, if you do not install the DKMS package, you will have more work to create the X.509
+! keys or OpenSSL keys, import the keys with sbsigntool or mokutil, sign the kernel or the kernel
+! module file with sbsigntool or sign-file, respectively.
+! • Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be 
+! necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from
+! its source www.kernel.org must be signed or will not be able to load.
+! • Ubuntu uses DKMS with signed key by default, Ubuntu creates and imports mok key during system
+! installation.
+! • In Fedora, if you use DKMS with Secure Boot enabled, you have to import the DKMS sign key
+! with mokutil --import /var/lib/dkms/mok.pub and reboot to enroll the key. In Fedora the mok.pub
+! and mok.key keys are created and module is signed by DKMS, but only if openssl package
+! is installed.
+! • UEFI specifications use the terms key and public key (.der) to mean the public part of the
+! key pair, or the X.509 certificate. However, in OpenSSL, the term key is the private key (.priv) 
+! that's used for signing. Thus, all Secure Boot keys must be X.509 keys and not OpenSSL keys.
+! • The instructions provided assume that you're signing a module for the currently running 
+! kernel. If you're signing a module for a different kernel, you must provide the path to the
+! sign-file utility within the correct kernel version source. Otherwise, the signature type
+! for the module for that kernel might not align correctly with the expected signature type.
+! • Only a single custom certificate can be added to the kernel because the compressed size 
+! of the kernel's boot image can not increase. Do not add multiple certificates to the kernel
+! boot image.
+```
+```diff
+- WARNING:
+- https://makedebianfunagainandlearnhowtodoothercoolstufftoo.computer/doku.php?id=start:issecurebootworking
+- https://discourse.ubuntu.com/t/dkms-package-support-extra-drivers-does-not-work-in-ubuntu-22-10-install-media/31655
+```
+```diff
+- BUGS:
+- • Debian Bug report logs - #1037146 Key was rejected by service
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1037146
+- • Debian Bug report logs - #1012741 Key was rejected by service
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1012741
+- • Debian Bug report logs - #1012816 Key was rejected by service 
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1012816;msg=22
+- • Debian Bug report logs - #989463 please align shim-signed dkms behaviour with Ubuntu  
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989463  
+- • Debian Bug report logs - #939392 please provide kmodsign like Ubuntu does
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=939392
+- • Debian Bug report logs - #928300 shim-signed: secure boot via removable media path unavailable  
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=928300  
+```  
+
 </details>  
 
 <details>
-<summary>3.2 Secure Boot References</summary>  
+<summary>3.02 Secure Boot References</summary>  
 <ul>
 BASIC:
 <li>https://www.rodsbooks.com/efi-bootloaders</li>
@@ -778,7 +830,7 @@ ADVANCED:
 </details>  
 
 <details>
-<summary>3.3 YouTube Video References</summary>  
+<summary>3.03 YouTube Video References</summary>  
 <ul>
 <li><a href="https://www.youtube.com/watch?v=Mqh9o8YY2dg" target="_blank">Use UEFI Secure Boot NOW! (Trafotin)</a></li>
 <li><a href="https://www.youtube.com/watch?v=WBemkwMHLJM" target="_blank">Best Practices for UEFI Secure Boot Customization (UEFIForum)</a></li>
@@ -787,62 +839,10 @@ ADVANCED:
 </ul>
 </details> 
 
-<hr>
-
-```diff
-! CAUTION:
-! • Use an administrator password in the BIOS and do not use the same for disk encryption.
-! • Building and signing kernel modules is independent of building and signing your own kernel.
-! • In Debian, if you do not install the DKMS package, you will have more work to create the X.509
-! keys or OpenSSL keys, import the keys with sbsigntool or mokutil, sign the kernel or the kernel
-! module file with sbsigntool or sign-file, respectively.
-! • Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be 
-! necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from
-! its source www.kernel.org must be signed or will not be able to load.
-! • Ubuntu uses DKMS with signed key by default, Ubuntu creates and imports mok key during system
-! installation.
-! • In Fedora, if you use DKMS with Secure Boot enabled, you have to import the DKMS sign key
-! with mokutil --import /var/lib/dkms/mok.pub and reboot to enroll the key. In Fedora the mok.pub
-! and mok.key keys are created and module is signed by DKMS, but only if openssl package
-! is installed.
-! • UEFI specifications use the terms key and public key (.der) to mean the public part of the
-! key pair, or the X.509 certificate. However, in OpenSSL, the term key is the private key (.priv) 
-! that's used for signing. Thus, all Secure Boot keys must be X.509 keys and not OpenSSL keys.
-! • The instructions provided assume that you're signing a module for the currently running 
-! kernel. If you're signing a module for a different kernel, you must provide the path to the
-! sign-file utility within the correct kernel version source. Otherwise, the signature type
-! for the module for that kernel might not align correctly with the expected signature type.
-! • Only a single custom certificate can be added to the kernel because the compressed size 
-! of the kernel's boot image can not increase. Do not add multiple certificates to the kernel
-! boot image.
-```
-```diff
-- WARNING:
-- https://makedebianfunagainandlearnhowtodoothercoolstufftoo.computer/doku.php?id=start:issecurebootworking
-- https://discourse.ubuntu.com/t/dkms-package-support-extra-drivers-does-not-work-in-ubuntu-22-10-install-media/31655
-```
-```diff
-- BUGS:
-- • Debian Bug report logs - #1037146 Key was rejected by service
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1037146
-- • Debian Bug report logs - #1012741 Key was rejected by service
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1012741
-- • Debian Bug report logs - #1012816 Key was rejected by service 
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1012816;msg=22
-- • Debian Bug report logs - #989463 please align shim-signed dkms behaviour with Ubuntu  
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989463  
-- • Debian Bug report logs - #939392 please provide kmodsign like Ubuntu does
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=939392
-- • Debian Bug report logs - #928300 shim-signed: secure boot via removable media path unavailable  
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=928300  
-```  
-
-👷🛠️UNDER WORK🚧🏗</br>
-
 <DIV class="section" id="VERDE">
 
 <details>
-<summary><b>3.4 Sign GRUB for Secure Boot</b></summary>  
+<summary><b>3.04 Sign GRUB for Secure Boot</b></summary>  
 </br>
 
 <p><b>Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from its source www.kernel.org must be signed or will not be able to load.</b></p>   
@@ -850,7 +850,7 @@ ADVANCED:
 </details>
 
 <details>
-<summary><b>3.5 Sign Debian Kernel for Secure Boot</b></summary>
+<summary><b>3.05 Sign Debian Kernel for Secure Boot</b></summary>
 </br>
 
 <p><b>
@@ -1095,17 +1095,19 @@ $ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-12-amd64
 </DIV>  
 
 <details>
-<summary><b>3.6 Reset Secure Boot keys for Kernel or Modules</b></summary>  
+<summary><b>3.06 Reset Secure Boot keys for Kernel or Modules</b></summary>  
 <p></p>
 Reset Key for Kernel
----UNDER WORK---
-https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#setuputil
+👷🛠️UNDER CONSTRUCTION🚧🏗</br>
 
-"The ASUS permits to you restore the default keys, so this isn't really vital if you're starting from the factory defaults with this model; but if yours doesn't offer such a reset-to-defaults option or if you've modified the keys, saving them may be prudent. As the name implies, this option also erases all your Secure Boot keys. (It does not erase your MOKs, though.)"
+https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#setuputil</br>
+
+"The ASUS permits to you restore the default keys, so this isn't really vital if you're starting from the factory defaults with this model; but if yours doesn't offer such a reset-to-defaults option or if you've modified the keys, saving them may be prudent. As the name implies, this option also erases all your Secure Boot keys. (It does not erase your MOKs, though.)"</br>
 
 <b>Reset MOK Keys for Modules</b>
----UNDER WORK---
-https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#key-revocation
+👷🛠️UNDER CONSTRUCTION🚧🏗</br>
+
+https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#key-revocation</br>
 
 ```
 $ sudo mokuitil --sb-state
@@ -1160,7 +1162,7 @@ $ sudo update-initramfs -k all -u -v
 </details>   
 
 <details>
-<summary><em><b>OpenSSL Errors</b></em></summary>
+<summary><em><b>3.07 OpenSSL Errors</b></em></summary>
 </br>
 
 Error 1 - No such file
@@ -1311,7 +1313,7 @@ $ sudo dpkg-reconfigure broadcom-sta-dkms
 
 
 <details>
-<summary><b>Sign WIFI Module for Secure Boot</b></summary>  
+<summary><b>3.08 Sign WIFI Module for Secure Boot</b></summary>  
 <p></p>
 
 How to get WiFi Module signed for Secure Boot
@@ -1509,7 +1511,7 @@ $ /sbin/modprobe vboxdrv
 </details> 
 
 <details>
-<summary><b>Sign NVIDIA Module for Secure Boot</b></summary>  
+<summary><b>3.09 Sign NVIDIA Module for Secure Boot</b></summary>  
 <p></p>
 
 https://wiki.debian.org/DontBreakDebian#Don.27t_use_GPU_manufacturer_install_scripts    
@@ -1560,35 +1562,35 @@ Done.
 </details> 
 
 <details>
-<summary><b>Sign VirtualBox Module for Secure Boot</b></summary>  
+<summary><b>3.10 Sign VirtualBox Module for Secure Boot</b></summary>  
 </br>
 How to get VirtualBox signed for Secure Boot</br>
 
 </details> 
 
 <details>
-<summary><b>Sign Ventoy</b></summary>  
+<summary><b>3.11 Sign Ventoy</b></summary>  
 </br>
 https://www.ventoy.net/en/doc_secure.html</br>
  
 </details>   
 
 <details>
-<summary><b>rEFInd Bootloader</b></summary>  
+<summary><b>3.12 rEFInd Bootloader</b></summary>  
 </br>
 https://wiki.ubuntu.com/EFIBootLoaders</br>
 
 </details>   
 
 <details>  
-<summary><b>Sign Custom Secure Keys</b></summary>  
+<summary><b>3.13 Sign Custom Secure Keys</b></summary>  
 </br>
 https://github.com/nsacyber/Hardware-and-Firmware-Security-Guidance/blob/master/secureboot/Linux.md</br>
 
 </details>   
 
 <details>  
-<summary><b>Encrypted boot partition manager with UEFI Secure Boot support</b></summary>
+<summary><b>3.14 Encrypted boot partition manager with UEFI Secure Boot support</b></summary>
 </br>
 https://github.com/xmikos/cryptboot</br>
 https://github.com/kmille/cryptboot</br>
@@ -1596,7 +1598,7 @@ https://github.com/kmille/cryptboot</br>
 </details>
 
 <details>  
-<summary><b>Sign with TPM 2.0</b></summary>  
+<summary><b>3.15 Sign with TPM 2.0</b></summary>  
 </br>
 https://github.com/squarooticus/efi-measured-boot</br>
 https://github.com/osresearch/safeboot</br>
@@ -1604,7 +1606,7 @@ https://github.com/osresearch/safeboot</br>
 </details>  
 
 <details>  
-<summary><b>Secure Boot with Yubikey</b></summary>  
+<summary><b>3.16 Secure Boot with Yubikey</b></summary>  
 </br>
 https://github.com/DimanNe/secure-boot</br>
 https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi</br>
@@ -1619,7 +1621,7 @@ https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi</br>
 
 <h2>4. SYSTEM SECURITY</h2>
 
-👷🛠️UNDER WORK🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗</br>
 
 <h3>4.1 APPARMOR</h3>
 
@@ -1751,7 +1753,7 @@ https://wiki.archlinux.org/title/ClamAV</br>
 
 <h2>5. NETWORK</h2>
 
-👷🛠️UNDER WORK🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗</br>
 
 <h3>5.1 Picking a Router</h3>
 
@@ -1824,7 +1826,7 @@ https://wiki.debian.org/Avahi</br>
 
 <h3>5.2 Firewall</h3>
 
-👷🛠️UNDER WORK🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗</br>
 
 <h4>• GUFW (GUI)</h4>
 https://help.ubuntu.com/community/Gufw</br>
@@ -1951,7 +1953,7 @@ Port Checker - https://portchecker.co</br>
   <img src=".data/vpn_protocols.png"/>
 </div>
 
-👷🛠️UNDER WORK🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗</br>
 
 <h4>∙ OpenVPN</h4>
 https://openvpn.net</br>
@@ -2135,7 +2137,7 @@ https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge</br>
 https://transmissionbt.com</br>
 https://www.comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-linux-with-ufw</br>
 
-👷🛠️UNDER WORK🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗</br>
 
 <pre>
 &nbsp; Commands for Transmission
@@ -2444,7 +2446,7 @@ https://efail.de</br>
 
 <p><strong>Note 2: </strong>Create an expiration date for security reasons.</p>
 
-👷🛠️UNDER WORK🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗</br>
 
 <p><strong>Note 3: </strong>Create an .</p>
 
@@ -2742,7 +2744,7 @@ $ cp -vur ~/.local/share/TelegramDesktop/tdata ~/backup
 <h2>7. DEV SETUP</h2>
 
 
-👷🛠️UNDER WORK🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗</br>
 
 https://www.slant.co
 https://www.reddit.com/r/vscodium
@@ -2802,7 +2804,7 @@ https://github.com/VSCodium/vscodium</br>
 
 <h2>8. TROUBLESHOTING</h2>
 
-👷🛠️UNDER WORK🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗</br>
 
 <h4>• Forums - Linux Community</h4>
 
