@@ -564,7 +564,9 @@ Terminal - https://github.com/onceupon/Bash-Oneliner#terminal-tricks</br>
 </table>
 
 
-<h4>• Using VirtualBox as training or to test ultra-advanced configurations</h4>
+<h4>Hypervisor</h4>
+
+<h5>• Using VirtualBox as training or to test ultra-advanced configurations</h5>
 
 https://www.debian.org/doc/manuals/debian-handbook/sect.virtualization.en.html</br>
 
@@ -573,7 +575,9 @@ https://www.debian.org/doc/manuals/debian-handbook/sect.virtualization.en.html</
 https://www.youtube.com/watch?v=cx8GzudB6uE</br>
 
 
-<a img="3.System/3.1_System_Install/3.1.2_KVM_and_QEMU/KVM-and-QEMU.png">KVM-and-QEMU</a>
+<p><pre>The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a type 1 hypervisor, it is able to run on bare metal, while QEMU is a type 2 hypervisor, it runs on top of the operating system. QEMU will utilize KVM in order to utilize the machine’s physical resources for the virtual machines.</pre></p>
+
+ <img src="3.System/3.1_System_Install/3.1.2_KVM_and_QEMU/KVM-and-QEMU.png">
 
 <h5>Using KVM - "Kernel-based Virtual Machine"</h5>
 https://wiki.debian.org/KVM</br>
@@ -584,6 +588,7 @@ https://www.qemu.org</br>
 https://libvirt.org/index.html</br>
 https://wiki.qemu.org/Hosts/Linux#Fedora_Linux_/_Debian_GNU_Linux_/_Ubuntu_Linux_/_Linux_Mint_distributions</br>
 
+<br>
 
 <code> $ virt-install --connect qemu:///system --memory memory=1024 --sysinfo emulate --vcpus 1 --cpu host --clock offset=utc --boot hd --network network=default,model=virtio --graphics spice --autoconsole graphical --video qxl --cdrom /var/lib/libvirt/images/debian-12.0.0-amd64-DVD-1.iso --name debian12-$(date +%Y%m%d-%H%M%S)-$$-$(printf '%04x' $RANDOM) --disk pool=default,size=5,bus=virtio,format=raw --osinfo name=debian12</code> 
 
