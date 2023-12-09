@@ -246,109 +246,340 @@ https://www.powerpc-notebook.org</br>
 Command Line - https://github.com/jlevy/the-art-of-command-line#everyday-use</br>
 Terminal - https://github.com/onceupon/Bash-Oneliner#terminal-tricks</br>
 
-<h4 id="bash-keyboard-shortcuts">Bash Keyboard Shortcuts</h4>
+<h4>Overview of Terminal's Shortcuts</h4>
+
 <table>
 <thead>
-<tr>
-<th style="text-align:left">Shortcut</th>
-<th style="text-align:left">Action</th>
-</tr>
+  <tr>
+    <th>Shortcut</th>
+    <th>Action</th>
+    <th>Shortcut</th>
+    <th>Action</th>
+  </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left"><kbd>Esc</kbd> + t</td>
-<td style="text-align:left">Swap the two <em>words</em> before the cursor</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Ctrl</kbd> + r</td>
-<td style="text-align:left">Search command history</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Ctrl</kbd> + g</td>
-<td style="text-align:left">Cancel command history search without running command</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Ctrl</kbd> + l</td>
-<td style="text-align:left">Clear terminal screen</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Ctrl</kbd> + x</td>
-<td style="text-align:left">List possible filename completions</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Ctrl</kbd> + c</td>
-<td style="text-align:left">Cancels the running command</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Ctrl</kbd> + z</td>
-<td style="text-align:left">Suspends the running command</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Ctrl</kbd> + u</td>
-<td style="text-align:left">Deletes entire line <em>before</em> the cursor</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Ctrl</kbd> + k</td>
-<td style="text-align:left">Deletes entire line <em>after</em> the cursor</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Ctrl</kbd> + t</td>
-<td style="text-align:left">Swap the two characters before the cursor</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Ctrl</kbd> + d</td>
-<td style="text-align:left">Close the terminal</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Ctrl</kbd> + f</td>
-<td style="text-align:left">Go <em>forward</em> one character</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Ctrl</kbd> + b</td>
-<td style="text-align:left">Go <em>back</em> one character</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Ctrl</kbd> + a</td>
-<td style="text-align:left">Go to the <em>beginning</em> of the line</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Ctrl</kbd> + e</td>
-<td style="text-align:left">Go to the <em>end</em> of the line</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Ctrl</kbd> + w</td>
-<td style="text-align:left">Delete the <em>word</em> before the cursor</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Ctrl</kbd> + y</td>
-<td style="text-align:left">Retrieves the last <em>word</em> deleted or cut</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Ctrl</kbd> + xx</td>
-<td style="text-align:left">Toggle between current cursor position and start or end of line</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Alt</kbd> + u</td>
-<td style="text-align:left">Capitalize all letters in word after cursor</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Alt</kbd> + l</td>
-<td style="text-align:left">Lower case all letters in word after cursor</td>
-</tr>
-<tr>
-<td style="text-align:left"><kbd>Alt</kbd> + .</td>
-<td style="text-align:left">Use the last word of the last command</td>
-</tr>
+  <tr>
+    <td>Esc + t</td>
+    <td>Swap the two words before the cursor</td>
+    <td>Ctrl + f</td>
+    <td>Go forward one character</td>
+  </tr>
+  <tr>
+    <td>Ctrl + r</td>
+    <td>Search command history</td>
+    <td>Ctrl + b</td>
+    <td>Go back one character</td>
+  </tr>
+  <tr>
+    <td>Ctrl + g</td>
+    <td>Cancel command history search without running command</td>
+    <td>Ctrl + a</td>
+    <td>Go to the beginning of the line</td>
+  </tr>
+  <tr>
+    <td>Ctrl + l</td>
+    <td>Clear terminal screen</td>
+    <td>Ctrl + e</td>
+    <td>Go to the end of the line</td>
+  </tr>
+  <tr>
+    <td>Ctrl + x</td>
+    <td>List possible filename completions</td>
+    <td>Ctrl + w</td>
+    <td>Delete the word before the cursor</td>
+  </tr>
+  <tr>
+    <td>Ctrl + c</td>
+    <td>Cancels the running command</td>
+    <td>Ctrl + y</td>
+    <td>Retrieves the last word deleted or cut</td>
+  </tr>
+  <tr>
+    <td>Ctrl + z</td>
+    <td>Suspends the running command</td>
+    <td>Ctrl + xx</td>
+    <td>Toggle between current cursor position and start or end of line</td>
+  </tr>
+  <tr>
+    <td>Ctrl + u</td>
+    <td>Deletes entire line before the cursor</td>
+    <td>Alt + u</td>
+    <td>Capitalize all letters in word after cursor</td>
+  </tr>
+  <tr>
+    <td>Ctrl + k</td>
+    <td>Deletes entire line after the cursor</td>
+    <td>Alt + l</td>
+    <td>Lower case all letters in word after cursor</td>
+  </tr>
+  <tr>
+    <td>Ctrl + t</td>
+    <td>Swap the two characters before the cursor</td>
+    <td>Alt + .</td>
+    <td>Use the last word of the last command</td>
+  </tr>
+  <tr>
+    <td>Ctrl + d</td>
+    <td>Close the terminal</td>
+    <td></td>
+    <td></td>
+  </tr>
 </tbody>
 </table>
 
-• Using VirtualBox as training or to test ultra-advanced configurations</br>
+<br>
 
-  -> VirtualBox on Windows 10 Windows 10</br>
+<h4>Overview of Nano's Shortcuts</h4>
+
+<table>
+<thead>
+  <tr>
+    <th>Shortcut</th>
+    <th>Action</th>
+    <th>Shortcut</th>
+    <th>Action</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td colspan="2"> File handling </td>
+    <td colspan="2">Moving around</td>
+  </tr>
+  <tr>
+    <td> Ctrl+S </td>
+    <td> Save current file </td>
+    <td>Ctrl+B </td>
+    <td> One character backward </td>
+  </tr>
+  <tr>
+    <td>Ctrl+O </td>
+    <td> Offer to write file ("Save as") </td>
+    <td>Ctrl+F </td>
+    <td> One character forward </td>
+  </tr>
+  <tr>
+    <td>Ctrl+R </td>
+    <td> Insert a file into current one </td>
+    <td>Ctrl+← </td>
+    <td> One word backward </td>
+  </tr>
+  <tr>
+    <td>Ctrl+X </td>
+    <td> Close buffer, exit from nano </td>
+    <td>Ctrl+→ </td>
+    <td> One word forward </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Ctrl+A </td>
+    <td> To start of line </td>
+  </tr>
+  <tr>
+    <td colspan="2">Editing</td>
+    <td>Ctrl+E </td>
+    <td> To end of line </td>
+  </tr>
+  <tr>
+    <td>Ctrl+K </td>
+    <td> Cut current line into cutbuffer </td>
+    <td>Ctrl+P </td>
+    <td> One line up </td>
+  </tr>
+  <tr>
+    <td>Alt+6 </td>
+    <td> Copy current line into cutbuffer </td>
+    <td>Ctrl+N </td>
+    <td> One line down </td>
+  </tr>
+  <tr>
+    <td>Ctrl+U </td>
+    <td> Paste contents of cutbuffer </td>
+    <td>Ctrl+↑ </td>
+    <td> To previous block </td>
+  </tr>
+  <tr>
+    <td>Alt+T </td>
+    <td> Cut until end of buffer </td>
+    <td>Ctrl+↓ </td>
+    <td> To next block </td>
+  </tr>
+  <tr>
+    <td>Ctrl+]	 </td>
+    <td> Complete current word </td>
+    <td>Ctrl+Y </td>
+    <td> One page up </td>
+  </tr>
+  <tr>
+    <td>Alt+3 </td>
+    <td> Comment/uncomment line/region </td>
+    <td>Ctrl+V </td>
+    <td> One page down </td>
+  </tr>
+  <tr>
+    <td>Alt+U </td>
+    <td> Undo last action </td>
+    <td>Alt+\	To </td>
+    <td> top of buffer </td>
+  </tr>
+  <tr>
+    <td>Alt+E </td>
+    <td> Redo last undone action </td>
+    <td>Alt+/	To </td>
+    <td> end of buffer </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td colspan="2">Search and replace</td>
+    <td colspan="2">Special movement</td>
+  </tr>
+  <tr>
+    <td>Ctrl+Q </td>
+    <td> Start backward search </td>
+    <td>Alt+G </td>
+    <td> Go to specified line </td>
+  </tr>
+  <tr>
+    <td>Ctrl+W </td>
+    <td> Start forward search </td>
+    <td>Alt+]	Go </td>
+    <td> to complementary bracket </td>
+  </tr>
+  <tr>
+    <td>Alt+Q </td>
+    <td> Find next occurrence backward </td>
+    <td>Alt+↑ </td>
+    <td> Scroll viewport up </td>
+  </tr>
+  <tr>
+    <td>Alt+W </td>
+    <td> Find next occurrence forward </td>
+    <td>Alt+↓ </td>
+    <td> Scroll viewport down </td>
+  </tr>
+  <tr>
+    <td>Alt+R </td>
+    <td> Start a replacing session </td>
+    <td>Alt+&lt;	Switch </td>
+    <td> to preceding buffer </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Alt+&gt;	Switch </td>
+    <td> to succeeding buffer </td>
+  </tr>
+  <tr>
+    <td colspan="2">Deletion</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Ctrl+H </td>
+    <td> Delete character before cursor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td colspan="2">Information</td>
+  </tr>
+  <tr>
+    <td>Ctrl+D </td>
+    <td> Delete character under cursor </td>
+    <td>Ctrl+C </td>
+    <td> Report cursor position </td>
+  </tr>
+  <tr>
+    <td>Alt+Bsp </td>
+    <td> Delete word to the left </td>
+    <td>Alt+D </td>
+    <td> Report line/word/character count </td>
+  </tr>
+  <tr>
+    <td>Ctrl+Del </td>
+    <td> Delete word to the right </td>
+    <td>Ctrl+G </td>
+    <td> Display help text </td>
+  </tr>
+  <tr>
+    <td>Alt+Del </td>
+    <td> Delete current line </td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td colspan="2">Various</td>
+  </tr>
+  <tr>
+    <td colspan="2">Operations</td>
+    <td>Alt+A </td>
+    <td> Turn the mark on/off </td>
+  </tr>
+  <tr>
+    <td>Ctrl+T </td>
+    <td> Execute some command </td>
+    <td>Tab  </td>
+    <td>Indent</td>
+  </tr>
+  <tr>
+    <td>Ctrl+J </td>
+    <td> Justify paragraph or region </td>
+    <td>Shift+Tab </td>
+    <td>  Unindent marked region  </td>
+  </tr>
+  <tr>
+    <td>Alt+J </td>
+    <td> Justify entire buffer </td>
+    <td>Alt+V </td>
+    <td> Enter next keystroke verbatim </td>
+  </tr>
+  <tr>
+    <td>Alt+B </td>
+    <td> Run a syntax check </td>
+    <td>Alt+N </td>
+    <td> Turn line numbers on/off </td>
+  </tr>
+  <tr>
+    <td>Alt+F </td>
+    <td> Run a formatter/fixer/arranger </td>
+    <td>Alt+P </td>
+    <td> Turn visible whitespace on/off </td>
+  </tr>
+  <tr>
+    <td>Alt+:	Start </td>
+    <td> /stop recording of macro </td>
+    <td>Alt+X </td>
+    <td> Hide or unhide the help lines </td>
+  </tr>
+  <tr>
+    <td>Alt+;	Replay </td>
+    <td> macro</td>
+    <td>Ctrl+L </td>
+    <td> Refresh the screen </td>
+  </tr>
+</tbody>
+</table>
+
+
+<h4>• Using VirtualBox as training or to test ultra-advanced configurations</h4>
+
+https://www.debian.org/doc/manuals/debian-handbook/sect.virtualization.en.html</br>
+
+<h5>VirtualBox on Windows 10 Windows 10</h5>
 "How to Install Debian Linux in VirtualBox on Windows 10 | Beginners Guide | (Buster)"</br>
 https://www.youtube.com/watch?v=cx8GzudB6uE</br>
 
-  -> Using QEMU</br>
+
+<a img="3.System/3.1_System_Install/3.1.2_KVM_and_QEMU/KVM-and-QEMU.png">KVM-and-QEMU</a>
+
+<h5>Using KVM - "Kernel-based Virtual Machine"</h5>
+https://wiki.debian.org/KVM</br>
+
+
+<h5>Using QEMU - "Quick EMUlator"</h5>
 https://www.qemu.org</br>
 https://libvirt.org/index.html</br>
 https://wiki.qemu.org/Hosts/Linux#Fedora_Linux_/_Debian_GNU_Linux_/_Ubuntu_Linux_/_Linux_Mint_distributions</br>
@@ -356,11 +587,12 @@ https://wiki.qemu.org/Hosts/Linux#Fedora_Linux_/_Debian_GNU_Linux_/_Ubuntu_Linux
 
 <code> $ virt-install --connect qemu:///system --memory memory=1024 --sysinfo emulate --vcpus 1 --cpu host --clock offset=utc --boot hd --network network=default,model=virtio --graphics spice --autoconsole graphical --video qxl --cdrom /var/lib/libvirt/images/debian-12.0.0-amd64-DVD-1.iso --name debian12-$(date +%Y%m%d-%H%M%S)-$$-$(printf '%04x' $RANDOM) --disk pool=default,size=5,bus=virtio,format=raw --osinfo name=debian12</code> 
 
-  -> Network configuration for KVM with nftables</br>
-https://michael.kjorling.se/blog/2022/linux-kvm-host-nftables-guest-networking
+<h5>Network configuration for KVM with nftables</h5>
+https://michael.kjorling.se/blog/2022/linux-kvm-host-nftables-guest-networking</br>
 https://forums.gentoo.org/viewtopic-t-1148450-highlight-nftables+qemu.html?sid=b7116aa6a5c66d12890a1bd2418ced34</br>
 
-• Quick Installation Guide and Others</br>
+<h4>Quick Installation Guide and Others</h4>
+
 http://www.rodsbooks.com/linux-uefi</br>
 https://wiki.debian.org/DontBreakDebian</br>
 https://distrowatch.com/table.php?distribution=debian</br>
