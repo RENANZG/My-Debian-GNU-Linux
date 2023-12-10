@@ -1,5 +1,14 @@
 #!/bin/sh
 
+########################################################################
+# VISIT: https://qwertycube.com/apk-editor-studio
+# SCRIPT CREDITS: https://portable-linux-apps.github.io
+# 1. Make it executable:
+# $ sudo chmod +x ./file.sh
+# 2. Then run
+# $ sudo bash ./file.sh 
+########################################################################
+
 APP=apk-editor-studio
 REPO="kefir500/apk-editor-studio"
 

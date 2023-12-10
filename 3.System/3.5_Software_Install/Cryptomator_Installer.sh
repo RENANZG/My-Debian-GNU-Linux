@@ -1,7 +1,16 @@
 #!/bin/sh
 
-APP=scrcpy
-REPO="srevinsaju/scrcpy-appimage"
+########################################################################
+# VISIT: https://github.com/cryptomator
+# SCRIPT CREDITS: https://portable-linux-apps.github.io/
+# 1. Make it executable:
+# $ sudo chmod +x ./file.sh
+# 2. Then run
+# $ sudo bash ./file.sh
+########################################################################
+
+APP=cryptomator
+REPO="cryptomator/cryptomator"
 
 # CREATE THE FOLDER
 mkdir /opt/$APP
@@ -16,7 +25,7 @@ chmod a+x /opt/$APP/remove
 mkdir tmp
 cd ./tmp
 
-version=$(wget -q https://api.github.com/repos/$REPO/releases -O - | grep -w -v i386 | grep -w -v i686 | grep -w -v arm64 | grep -w -v armv7l | grep browser_download_url | grep -i appimage | cut -d '"' -f 4 | head -1)
+version=$(wget -q https://api.github.com/repos/$REPO/releases -O - | grep -w -v i386 | grep -w -v i686 | grep -w -v aarch64 | grep -w -v arm64 | grep -w -v armv7l | grep browser_download_url | grep -i appimage | cut -d '"' -f 4 | head -1)
 wget $version
 echo "$version" >> /opt/$APP/version
 cd ..
@@ -30,10 +39,10 @@ ln -s /opt/$APP/$APP /usr/local/bin/$APP
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> /opt/$APP/AM-updater << 'EOF'
 #!/usr/bin/env bash
-APP=scrcpy
-REPO="srevinsaju/scrcpy-appimage"
+APP=cryptomator
+REPO="cryptomator/cryptomator"
 version0=$(cat /opt/$APP/version)
-version=$(wget -q https://api.github.com/repos/$REPO/releases -O - | grep -w -v i386 | grep -w -v i686 | grep -w -v arm64 | grep -w -v armv7l | grep browser_download_url | grep -i appimage | cut -d '"' -f 4 | head -1)
+version=$(wget -q https://api.github.com/repos/$REPO/releases -O - | grep -w -v i386 | grep -w -v i686 | grep -w -v aarch64 | grep -w -v arm64 | grep -w -v armv7l | grep browser_download_url | grep -i appimage | cut -d '"' -f 4 | head -1)
 if [ $version = $version0 ]; then
   echo "Update not needed!"
 else
@@ -58,9 +67,9 @@ chmod a+x /opt/$APP/AM-updater
 # LAUNCHER & ICON
 app=$(echo $APP | cut -c -3)
 cd /opt/$APP
-./$APP --appimage-extract *.desktop
-./$APP --appimage-extract share/applications/*.desktop
-./$APP --appimage-extract usr/share/applications/*.desktop
+./$APP --appimage-extract *.desktop 1>/dev/null
+./$APP --appimage-extract share/applications/*.desktop 1>/dev/null
+./$APP --appimage-extract usr/share/applications/*.desktop 1>/dev/null
 mv squashfs-root/*.desktop ./$APP.desktop
 mv squashfs-root/share/applications/*.desktop ./$APP.desktop
 mv squashfs-root/usr/share/applications/*.desktop ./$APP.desktop
@@ -69,7 +78,7 @@ if [ ! -e ./$APP.desktop ]; then
 	mv squashfs-root/usr/share/applications/*.desktop ./$APP.desktop
 fi
 if [ ! -e ./$APP.desktop ]; then 
-	rm ./$APP.desktop; ./$APP --appimage-extract share/applications/*$app*.desktop 
+	rm ./$APP.desktop; ./$APP --appimage-extract share/applications/*$app*.desktop 1>/dev/null
 	mv squashfs-root/share/applications/*.desktop ./$APP.desktop
 fi
 CHANGEEXEC=$(cat ./$APP.desktop | grep Exec= | tr ' ' '\n' | tr '=' '\n' | tr '/' '\n' | grep $app | head -1)
@@ -83,10 +92,10 @@ sed -i "s#$CHANGEICON#Icon=/opt/$APP/icons/$APP#g" ./$APP.desktop
 mkdir icons
 mv $(./$APP --appimage-extract *.png) ./icons/$APP 2>/dev/null
 mv $(./$APP --appimage-extract *.svg) ./icons/$APP 2>/dev/null
-./$APP --appimage-extract share/icons/*/*/*
-./$APP --appimage-extract usr/share/icons/*/*/*
-./$APP --appimage-extract share/icons/*/*/*/*
-./$APP --appimage-extract usr/share/icons/*/*/*/*
+./$APP --appimage-extract share/icons/*/*/* 1>/dev/null
+./$APP --appimage-extract usr/share/icons/*/*/* 1>/dev/null
+./$APP --appimage-extract share/icons/*/*/*/* 1>/dev/null
+./$APP --appimage-extract usr/share/icons/*/*/*/* 1>/dev/null
 mv ./squashfs-root/share/icons/hicolor/22x22/apps/*$app* ./icons/$APP 2>/dev/null
 mv ./squashfs-root/share/icons/hicolor/24x24/apps/*$app* ./icons/$APP 2>/dev/null
 mv ./squashfs-root/share/icons/hicolor/32x32/apps/*$app* ./icons/$APP 2>/dev/null

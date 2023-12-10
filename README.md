@@ -563,8 +563,7 @@ Terminal - https://github.com/onceupon/Bash-Oneliner#terminal-tricks</br>
 </tbody>
 </table>
 
-
-<h4>Hypervisor</h4>
+<h4>Virtual Machines</h4>
 
 <h5>• Using VirtualBox as training or to test ultra-advanced configurations</h5>
 
@@ -574,14 +573,20 @@ https://www.debian.org/doc/manuals/debian-handbook/sect.virtualization.en.html</
 "How to Install Debian Linux in VirtualBox on Windows 10 | Beginners Guide | (Buster)"</br>
 https://www.youtube.com/watch?v=cx8GzudB6uE</br>
 
+<h5>Hypervisor</h5>
 
-<p><pre>The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a type 1 hypervisor, it is able to run on bare metal, while QEMU is a type 2 hypervisor, it runs on top of the operating system. QEMU will utilize KVM in order to utilize the machine’s physical resources for the virtual machines.</pre></p>
+<pre>
+KVM, Kernel-based Virtual Machine, is a hypervisor built into the Linux kernel. It is similar to Xen in purpose but much simpler to get running. Unlike native QEMU, which uses emulation, KVM is a special operating mode of QEMU that uses CPU extensions (HVM) for virtualization via a kernel module.
+</pre>
+<pre>
+The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a type 1 hypervisor, it is able to run on bare metal, while QEMU is a type 2 hypervisor, it runs on top of the operating system. QEMU will utilize KVM in order to utilize the machine’s physical resources for the virtual machines. In brief, QEMU uses emulation; KVM uses processor extensions (HVM) for virtualization.
+</pre>
 
  <img src="3.System/3.1_System_Install/3.1.2_KVM_and_QEMU/KVM-and-QEMU.png">
 
 <h5>Using KVM - "Kernel-based Virtual Machine"</h5>
 https://wiki.debian.org/KVM</br>
-
+https://wiki.archlinux.org/title/KVM</br>
 
 <h5>Using QEMU - "Quick EMUlator"</h5>
 https://www.qemu.org</br>
@@ -589,6 +594,8 @@ https://libvirt.org/index.html</br>
 https://wiki.qemu.org/Hosts/Linux#Fedora_Linux_/_Debian_GNU_Linux_/_Ubuntu_Linux_/_Linux_Mint_distributions</br>
 
 <br>
+
+<h5>Commands</h5>
 
 <code> $ virt-install --connect qemu:///system --memory memory=1024 --sysinfo emulate --vcpus 1 --cpu host --clock offset=utc --boot hd --network network=default,model=virtio --graphics spice --autoconsole graphical --video qxl --cdrom /var/lib/libvirt/images/debian-12.0.0-amd64-DVD-1.iso --name debian12-$(date +%Y%m%d-%H%M%S)-$$-$(printf '%04x' $RANDOM) --disk pool=default,size=5,bus=virtio,format=raw --osinfo name=debian12</code> 
 
@@ -779,7 +786,7 @@ sudo apt install cryptsetup-nuke-password</br>
 </details>  
 
 <details>
-<summary>3.02 Secure Boot References</summary>  
+<summary><b>3.02 Secure Boot References</b></summary>
 <ul>
 BASIC:
 <li>https://www.rodsbooks.com/efi-bootloaders</li>
@@ -830,7 +837,7 @@ ADVANCED:
 </details>  
 
 <details>
-<summary>3.03 YouTube Video References</summary>  
+<summary><b>3.03 YouTube Video References</b></summary>  
 <ul>
 <li><a href="https://www.youtube.com/watch?v=Mqh9o8YY2dg" target="_blank">Use UEFI Secure Boot NOW! (Trafotin)</a></li>
 <li><a href="https://www.youtube.com/watch?v=WBemkwMHLJM" target="_blank">Best Practices for UEFI Secure Boot Customization (UEFIForum)</a></li>
@@ -1512,7 +1519,7 @@ $ /sbin/modprobe vboxdrv
 
 <details>
 <summary><b>3.09 Sign NVIDIA Module for Secure Boot</b></summary>  
-<p></p>
+</br>
 
 https://wiki.debian.org/DontBreakDebian#Don.27t_use_GPU_manufacturer_install_scripts    
 https://github.com/NVIDIA/open-gpu-kernel-modules  
@@ -1580,7 +1587,7 @@ https://www.ventoy.net/en/doc_secure.html</br>
 </br>
 https://wiki.ubuntu.com/EFIBootLoaders</br>
 
-</details>   
+</details>
 
 <details>  
 <summary><b>3.13 Sign Custom Secure Keys</b></summary>  
@@ -1618,12 +1625,13 @@ https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi</br>
 
 <!-- ###################################################### -->
 
-
 <h2>4. SYSTEM SECURITY</h2>
 
 👷🛠️UNDER CONSTRUCTION🚧🏗</br>
 
-<h3>4.1 APPARMOR</h3>
+<details>
+<summary><b>4.01 Apparmor</b></summary>
+<br>
 
 https://github.com/Kicksecure/security-misc</br>
 https://apparmor.net</br>
@@ -1639,84 +1647,106 @@ https://wiki.ubuntu.com/DebuggingApparmor</br>
 
 <p>*Note: an AppArmor rule could prevent port use by an individual program.</p>
 
-<h3>4.2 PRIVILEGES</h3>
+</details>
 
+<!-- ################################# -->
 
-<h4 id="add-em-existing-em-user-to-em-existing-em-group">Add <em>existing</em> user to <em>existing</em> group</h4>
+<details>
+<summary><b>4.02 Privileges</b></summary>
+<br>
+
+<h4>Add <em>existing</em> user to <em>existing</em> group</h4>
 
 <pre>
-<code class="lang-bash">sudo usermod -<span class="hljs-selector-tag">a</span> -G groupnames username</code>
+<code>sudo usermod -<span>a</span> -G groupnames username</code>
 </pre>
-<p><code>-a</code> - <em>append</em> groups to group user belongs to (instead of overwrite). 
-<code>groupnames</code> - a comma-separated (no spaces!) list of group names to add user to.
-User <em>must</em> log out and back in for group membership updates to be applied.</p>
 
-<h4 id="-safe-alternative-to-bypassing-password-prompt-for-sudo-">&quot;Safe&quot; alternative to bypassing password prompt for <code>sudo</code></h4>
+<p>
+<code>-a</code> - <em>append</em> groups to group user belongs to (instead of overwrite). 
+<code>groupnames</code> - a comma-separated (no spaces!) list of group names to add user to.
+User <em>must</em> log out and back in for group membership updates to be applied.
+</p>
+
+<h4>&quot;Safe&quot; alternative to bypassing password prompt for <code>sudo</code></h4>
 
 <p>To avoid getting prompted for password when running commands with <a href="https://manpages.ubuntu.com/manpages/precise/en/man8/sudo.8.html"><code>sudo</code></a>, one common option is to append <code>NOPASSWD:ALL</code> to your user name in the <code>/etc/sudoers</code> file. Obviously, this is a security risk. Instead, you can run the <code>sudo</code> command with the <code>-s</code> (&quot;session&quot;) flag to allow the <code>sudo</code> session to be persistent until your close the terminal (end the session). To explicitly end the session run <code>sudo -k</code> (&quot;kill&quot;).
 <a href="https://vitux.com/how-to-specify-time-limit-for-a-sudo-session/">Reference</a></p>
 
-<h2 id="change-default-editor-for-visudo-">Change default editor for <code>visudo</code></h2>
+<h2>Change default editor for <code>visudo</code></h2>
 
 <p>By default, Linux systems use the <code>$VISUAL</code> or <code>$EDITOR</code> environment variables (usually defined in your <code>~/.bashrc</code> file or <code>/etc/profile</code>) as the default editor the <a href="https://linux.die.net/man/8/visudo"><code>visudo</code></a> command. If you&#39;d prefer to use a different editor, such as <a href="https://nano-editor.org/">nano</a>, you can use either of these methods.</p>
 
 <ol>
-<li>
-To <strong>temporarily</strong> use a different editor, run:
+<li>To <strong>temporarily</strong> use a different editor, run:
+
 <pre>
-<code class="lang-console"><span class="hljs-variable">$ </span>sudo EDITOR=<span class="hljs-regexp">/path/to</span>
-<span class="hljs-regexp">/editor visudo</span>
-</code>
+<code><span>$ </span>sudo EDITOR=<span>/path/to</span><span>/editor visudo</span></code>
 </pre>
 
 For example, to use <code>nano</code>, you would run:
+
 <pre>
-<code class="lang-console"><span class="hljs-variable">$ </span>sudo EDITOR=nano visudo
-</code>
+<code><span>$ </span>sudo EDITOR=nano visudo</code>
 </pre>
+
 </li>
 
-<li>
-To <strong>permanently</strong> change the default editor, edit the <code>/etc/sudoers</code> file (you can use the <em>temporary</em> method above!) and add the following line to the file near the top, but <em>after</em> <code>Defaults env_reset</code>:
-<pre>
-<code class="lang-console">Defaults <span class="hljs-keyword">editor</span>=/path/to/<span class="hljs-keyword">editor</span></code>
-</pre>
-</li>
+<li> To <strong>permanently</strong> change the default editor, edit the <code>/etc/sudoers</code> file (you can use the <em>temporary</em> method above!) and add the following line to the file near the top, but <em>after</em> <code>Defaults env_reset</code>:
 
+<pre>
+<code>Defaults <span>editor</span>=/path/to/<span>editor</span></code>
+</pre>
+
+</li>
 </ol>
 
 <p><a href="https://unix.stackexchange.com/questions/4408/how-to-set-visudo-to-use-a-different-editor-than-the-default-on-fedora">Reference: https://unix.stackexchange.com/questions/4408/how-to-set-visudo-to-use-a-different-editor-than-the-default-on-fedora</a></p>
 
-  <h5>Table</h5>
+<h5>Table</h5>
 
-  <h5>Examples</h5>
+<h5>Examples</h5>
 
-  <h5>CHOW</h5>
+<h5>CHOW</h5>
 
 <pre>
 $ sudo chown user:user -R /home
 $ sudo chown user:user -R /media
 </pre>
 
-  <h5>CHMOD</h5>
+<h5>CHMOD</h5>
 
 <pre>
 $ sudo chmod 766 -R /home
 $ sudo chmod 766 -R /media
 </pre>
 
-<h3>4.3 AUDIT SYSTEM</h3>
+</details>
+
+<!-- ################################# -->
+
+<details>
+<summary><b>4.03 Audit System</b></summary>
+<br>
+
+<h5>System Auditors</h5>
 
 <code>$ sudo apt install lynis</code></br>
 <code>$ sudo apt install checksecurity</code></br>
 
-<h3>4.3 ROOTKIT DETECT</h3>
+<h5>Rootkit Detect</h5>
 
 <code>$ sudo apt install chkrootkit</code></br>
 <code>$ sudo apt install rkhunter</code></br>
 <code>$ sudo apt install chkboot</code></br>
 
-<h3>4.4 ANTIMALWARE</h3>
+</details>
+
+<!-- ################################# -->
+
+<details>
+<summary><b>4.04 Antimalware</b></summary>
+<br>
+
 
 <h4>CLAMTK (GUI)</h4>
 
@@ -1745,6 +1775,8 @@ https://wiki.archlinux.org/title/ClamAV</br>
 &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"
 </pre>
 
+</details>
+
 </br>
 <hr>
 
@@ -1755,7 +1787,9 @@ https://wiki.archlinux.org/title/ClamAV</br>
 
 👷🛠️UNDER CONSTRUCTION🚧🏗</br>
 
-<h3>5.1 Picking a Router</h3>
+<details>
+<summary><b>5.01 Picking a Router</b></summary>
+<br>
 
 <p>"There are a number of open-source options for routers that will take even a small consumer router and turn it into a powerful device with enterprise-level capabilities. My personal favorite is DD-WRT, but other popular options include pfSense, OpenWRT, and Tomato. While you can buy pre-flashed devices in some cases (FlashRouters for DD-WRT and Protectli for pfSense), I always encourage you to do it yourself if you’re comfortable to ensure maximum security (and also to be familiar with the update process). Having said all of this, if you are unsure if an open source router is right for you (the wealth of options can be overwhelming to some), I still encourage you to get a router that wasn’t provided by your ISP. Make sure it offers VLANs and VPN capabilities, as we will be using these heavily to protect your home."</p>
 <p>https://thenewoil.org/en/guides/quick-start/wifi-guide </p>
@@ -1796,10 +1830,13 @@ https://wiki.archlinux.org/title/ClamAV</br>
 </tbody>
 </table>
 
+</details>
+
 <!-- ################################# -->
 
-<h4>5.2 DNS Resolution</h4>
-
+<details>
+<summary><b>5.02 DNS Resolution</b></summary>
+<br>
 
 <h5>• The resolv.conf configuration file</h5>
 
@@ -1824,7 +1861,13 @@ https://www.freedesktop.org/software/systemd/man/latest/systemd-resolved.service
 
 https://wiki.debian.org/Avahi</br>
 
-<h3>5.2 Firewall</h3>
+</details>
+
+<!-- ################################# -->
+
+<details>
+<summary><b>5.03 Firewall</b></summary>
+<br>
 
 👷🛠️UNDER CONSTRUCTION🚧🏗</br>
 
@@ -1918,9 +1961,13 @@ Port Checker - https://portchecker.co</br>
 &nbsp; &nbsp; $ sudo apt purge iptables-persistent
 </pre>
 
+</details>
+
 <!-- ################################# -->
 
-<h3>5.3 VPN</h3>
+<details>
+<summary><b>5.04 VPN</b></summary>
+<br>
 
 <h4>• Buying VPN Services</h4>
 
@@ -2108,8 +2155,6 @@ https://github.com/WireGuard</br>
 <code>$ sudo apt install wireguard</code></br>
 <code>$ sudo apt install wireguard-tools</code></br>
 
-
-
 <h4>∙ strongSwan</h4>
 
 https://github.com/strongswan/strongswan</br>
@@ -2166,9 +2211,13 @@ https://www.comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-li
 https://wiki.debian.org/TorBrowser</br>
 https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy</br>
 
+</details>
+
 <!-- ################################# -->
 
-<h3> 5.4 Network Spoofing</h3>
+<details>
+<summary><b>5.05 Network Spoofing</b></summary>
+<br>
 
 https://github.com/alobbs/macchanger</br>
 https://github.com/refraction-networking/utls</br>
@@ -2195,6 +2244,8 @@ https://github.com/0xsirus/tirdad</br>
 <h5>∙ To opt-out of Mozilla Location Services</h5>
 
 <p>Go to https://location.services.mozilla.com/optout</p>
+
+</details>
 
 <br>
 <hr>

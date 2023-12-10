@@ -1,4 +1,4 @@
-# How-To-Install-Python-3-and-Set-Up-a-Programming-Environment-on-Debian
+# How to Install Python 3 and Set Up a Programming Environment on Debian
 
 Step 1 — Setting Up Python 3
 

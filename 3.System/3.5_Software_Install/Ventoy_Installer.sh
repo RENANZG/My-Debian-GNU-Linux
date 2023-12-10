@@ -1,7 +1,8 @@
 #!/bin/sh
 
 ##########################################################################
-# CREDITS: https://portable-linux-apps.github.io/
+# VISIT: 
+# CREDITS: https://portable-linux-apps.github.io
 # 1. Make it executable:
 # $ sudo chmod +x ./file.sh
 # 2. Then run
