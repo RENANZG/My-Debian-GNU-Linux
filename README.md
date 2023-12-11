@@ -230,7 +230,6 @@ https://www.powerpc-notebook.org</br>
 <h4>2.1.4 Cost benefit</h4>
 
 
-
 </br>
 </details>  
 
@@ -610,7 +609,7 @@ https://wiki.debian.org/DontBreakDebian</br>
 https://distrowatch.com/table.php?distribution=debian</br>
 https://www.debian.org/releases/bookworm/amd64/apb.en.html</br>
 
-2.2.2 Desktop interface</br>
+2.2.2 Desktop interface</
 
 XFCE vs LXQt - Lightweight Linux Desktop Environments</br>
 https://www.youtube.com/watch?v=cs8JW3zDDoI</br>
@@ -650,12 +649,14 @@ https://www.linuxfromscratch.org</br>
 <p></p>
 	
 2.3.1 Encryption</br>
+
 https://wiki.archlinux.org/title/Security</br>
 https://wiki.archlinux.org/title/Data-at-rest_encryption</br>
 https://en.wikipedia.org/wiki/Disk_encryption#Implementations</br>
 https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-2</br>
 
 2.3.2 Partitioning scenarios: advantages and disadvantages</br>
+
 https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system</br>
 https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page</br>
 
@@ -664,9 +665,13 @@ https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page</br>
 • Dm-crypt</br>
 https://wiki.archlinux.org/title/Dm-crypt</br>
 • Fstab</br>
+https://wiki.debian.org/fstab</br>
 https://manpages.debian.org/bookworm/mount/fstab.5.en.html</br>
+
 • Crypttab</br>
+
 https://manpages.debian.org/bookworm/cryptsetup/crypttab.5.en.html</br>
+
 • Tips</br>
 
 ∙ Copy and paste blkid to fstab</br>
