@@ -19,79 +19,45 @@
 
 <h3>1.1 System Hardening Must Have</h3>
 
-<table style="width:100%" cellspacing="0" cellpadding="0">
-<tr>
-<td>
-<a href="https://anonymousplanet.org/" target="_blank"><b>Anonymous Planet</b> - The Hitchhiker’s Guide</a><a href="https://anonymousplanet.org/export/guide.pdf" target="_blank">&nbsp(PDF)</a>
-</td>
-<td>
-<a href="https://madaidans-insecurities.github.io/"><b>Madaidan's</b> - Security & Privacy Evaluations</a>
-</td>
-</tr>
-
-<tr>
-<td>
-<a href="https://www.whonix.org/wiki/Essential_Host_Security" target="_blank"><b>Whonix</b> - Essential Host Security</a>
-</td>
-<td>
-<a href="https://hardenedlinux.github.io" target="_blank"><b>Hardened GNU/Linux</b>  </a>
-</td>
-</tr>
-
-<tr>
-<td>
-<a href="https://www.whonix.org/wiki/System_Hardening_Checklist" target="_blank"><b>Whonix</b> - System Hardening Checklist</a>
-</td>
-<td>
-<a href="https://www.bleachbit.org/" target="_blank"><b>Bleachbit</b> - Clean Your System and Free Disk Space</a>
-</td>
-</tr>
-
-<tr>
-<td>
-<a href="https://www.kicksecure.com/wiki/Documentation" target="_blank"><b>Kicksecure</b> - Documentation</a>
-</td>
-<td>
-<a href="https://github.com/PartialVolume/shredos.x86_64" target="_blank"><b>ShredOS</b> - Secure disk erasure/wipe</a>
-</td>
-</tr>
-
-<tr>
-<td>
-<a href="https://www.cisecurity.org/benchmark/debian_linux" target="_blank"><b>CIS Benchmark</b> - Debian Linux Guides</a>
-</td>
-<td>
-<a href="https://ssd.eff.org/" target="_blank"><b>EFF</b> - Surveillance Self-defense</a>
-</td>
-</tr>
-
-<tr>
-<td>
-<a href="https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance" target="_blank"><b>NSA GOV</b> - Cybersecurity Advisories & Guidance</a><a href="https://github.com/nsacyber" target="_blank">&nbsp(GitHub)</a>
-</td>
-<td>
-<a href="https://cryptomator.org/" target="_blank"><b>Cryptomator</b> - Put a lock on your cloud</a>
-</td>
-</tr>
-
-<tr>
-<td>
-<a href="https://www.nist.gov/cyberframework" target="_blank"><b>NIST GOV</b> - Cybersecurity Framework</a>
-</td>
-<td>
-<a href="https://www.duplicati.com/" target="_blank"><b>Duplicati</b> - Store securely encrypted backups on cloud storage services!</a>
-</td>
-</tr>
-
-<tr>
-<td>
-<a href="https://wiki.debian.org/SecurityManagement" target="_blank"><b>Debian</b> - Security Management</a>
-</td>
-<td>
-<a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>Virus Total</b> - Free virus, malware and URL online scanning</a>
-</td>
-</tr>
-
+<table>
+<tbody>
+  <tr>
+    <td> <a href="https://anonymousplanet.org/">Anonymous Planet - The Hitchhiker’s Guide</a><a href="https://anonymousplanet.org/export/guide.pdf"> (PDF)</a> </th>
+    <td> <a href="https://madaidans-insecurities.github.io/">Madaidan's - Security &amp; Privacy Evaluations</a> </th>
+  </tr>
+  <tr>
+    <td> <a href="https://www.whonix.org/wiki/Essential_Host_Security">Whonix - Essential Host Security</a> </td>
+    <td> <a href="https://hardenedlinux.github.io/">Hardened GNU/Linux  </a> </td>
+  </tr>
+  <tr>
+    <td> <a href="https://www.whonix.org/wiki/System_Hardening_Checklist">Whonix - System Hardening Checklist</a> </td>
+    <td> <a href="https://www.bleachbit.org/">Bleachbit - Clean Your System and Free Disk Space</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="https://www.kicksecure.com/wiki/Documentation">Kicksecure - Documentation</a> </td>
+    <td> <a href="https://github.com/PartialVolume/shredos.x86_64">ShredOS - Secure disk erasure/wipe</a> </td>
+  </tr>
+  <tr>
+    <td><a href="https://wiki.debian.org/SecurityManagement">Debian - Security Management</a></td>
+    <td> <a href="https://ssd.eff.org/">EFF - Surveillance Self-defense</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="https://owasp.org/" target="_blank" rel="noopener noreferrer">OWASP - No more insecure software</a> </td>
+    <td> <a href="https://cryptomator.org/" target="_blank" rel="noopener noreferrer">Cryptomator - Put a lock on your cloud</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="https://www.cisecurity.org/benchmark/debian_linux">CIS Benchmark - Debian Linux Guides</a> </td>
+    <td> <a href="https://www.duplicati.com/" target="_blank" rel="noopener noreferrer">Duplicati - Store securely encrypted backups on cloud storage services!</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance">NSA GOV - Cybersecurity Advisories &amp; Guidance</a><a href="https://github.com/nsacyber"> (GitHub)</a> </td>
+    <td> <a href="https://www.virustotal.com/gui/home/upload" target="_blank" rel="noopener noreferrer">Virus Total - Free virus, malware and URL online scanning</a> </td>
+  </tr>
+  <tr>
+    <td> <a href="https://www.nist.gov/cyberframework">NIST GOV - Cybersecurity Framework</a> </td>
+    <td> <a href="https://www.hybrid-analysis.com/" target="_blank" rel="noopener noreferrer">Hybrid Analysis - This is a free malware analysis service</a></td>
+  </tr>
+</tbody>
 </table>
 
 
@@ -205,6 +171,9 @@ https://en.wikipedia.org/wiki/Write_protection</br>
 https://en.m.wikipedia.org/wiki/Random-access_memory</br>
 https://libreboot.org</br>
 https://usbguard.github.io</br>
+https://digistor.com</br>
+https://www.seagate.com/enterprise-storage/enterprise-security</br>
+https://github.com/openssl/openssl/blob/master/README-FIPS.md</br>
 
 <h5>• Hardware Spoof</h5>
 https://www.whonix.org/wiki/Protocol-Leak-Protection_and_Fingerprinting-Protection#Less_important_identifiers</br>
@@ -581,41 +550,30 @@ KVM, Kernel-based Virtual Machine, is a hypervisor built into the Linux kernel. 
 The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a type 1 hypervisor, it is able to run on bare metal, while QEMU is a type 2 hypervisor, it runs on top of the operating system. QEMU will utilize KVM in order to utilize the machine’s physical resources for the virtual machines. In brief, QEMU uses emulation; KVM uses processor extensions (HVM) for virtualization.
 </pre>
 
- <img src="3.System/3.1_System_Install/3.1.2_KVM_and_QEMU/KVM-and-QEMU.png">
+ <img src="3.System/3.05_QEMU-KVM/QEMU-KVM_Chart.png">
 
-<h5>Using KVM - "Kernel-based Virtual Machine"</h5>
+<h5>Using QEMU/KVM - "Kernel-based Virtual Machine"</h5>
 https://wiki.debian.org/KVM</br>
 https://wiki.archlinux.org/title/KVM</br>
 
-<h5>Using QEMU - "Quick EMUlator"</h5>
-https://www.qemu.org</br>
-https://libvirt.org/index.html</br>
-https://wiki.qemu.org/Hosts/Linux#Fedora_Linux_/_Debian_GNU_Linux_/_Ubuntu_Linux_/_Linux_Mint_distributions</br>
+∙ Visit our repo tree:</br>
+3.System/3.05_QEMU-KVM/QEMU-KVM_Installing.md</br>
 
-<br>
 
-<h5>Commands</h5>
-
-<code> $ virt-install --connect qemu:///system --memory memory=1024 --sysinfo emulate --vcpus 1 --cpu host --clock offset=utc --boot hd --network network=default,model=virtio --graphics spice --autoconsole graphical --video qxl --cdrom /var/lib/libvirt/images/debian-12.0.0-amd64-DVD-1.iso --name debian12-$(date +%Y%m%d-%H%M%S)-$$-$(printf '%04x' $RANDOM) --disk pool=default,size=5,bus=virtio,format=raw --osinfo name=debian12</code> 
-
-<h5>Network configuration for KVM with nftables</h5>
-https://michael.kjorling.se/blog/2022/linux-kvm-host-nftables-guest-networking</br>
-https://forums.gentoo.org/viewtopic-t-1148450-highlight-nftables+qemu.html?sid=b7116aa6a5c66d12890a1bd2418ced34</br>
-
-<h4>Quick Installation Guide and Others</h4>
+<h3>Quick Installation Guide and Others</h3>
 
 http://www.rodsbooks.com/linux-uefi</br>
 https://wiki.debian.org/DontBreakDebian</br>
 https://distrowatch.com/table.php?distribution=debian</br>
 https://www.debian.org/releases/bookworm/amd64/apb.en.html</br>
 
-2.2.2 Desktop interface</
+<h4>2.2.2 Desktop interface</h4>
 
 XFCE vs LXQt - Lightweight Linux Desktop Environments</br>
 https://www.youtube.com/watch?v=cs8JW3zDDoI</br>
 
 
-2.2.3 Debootstrap</br>
+<h4>2.2.3 Debootstrap</h4>
 
 /3.System/3.1_System_Install/3.1.1_Debootstrap.md</br>
 
@@ -631,15 +589,45 @@ https://github.com/nilsmeyer/ansible-debootstrap</br>
 https://github.com/linuxdabbler/debian-install-scripts</br>
 
 
-&nbsp; 2.2.3.1 File system: EXT4, XFS, BTRFS AND ZFS    
+<h5>&nbsp; 2.2.3.1 File system: EXT4, XFS, BTRFS AND ZFS</h5>    
 
 <div id="table1" align="left">
   <img src=".data/file_system.png"/>
 </div>
 
-2.2.4 LFS</br>
+<h4>2.2.4 Things to do After Installing Debian</h4>
+
+<p>1: Update and Upgrade</p>
+
+<pre>$ sudo apt update -y && sudo apt upgrade -y</pre>
+
+<p>2: Adding sudo user and common user</p>
+
+<pre>$ </pre>
+
+<p>3. Enable and use UFW </p>
+
+<pre>$ </pre>
+
+<p>4. Installing Java </p>
+
+• JRE (Java Runtime Environment)</br>
+
+• OpenJDK 17 JDK (Java Development Kit)</br>
+
+<pre>
+$ java --version
+$ apt-cache search openjdk | grep openjdk-17
+</pre>
+
+
+<h4>2.2.5 Linux From Scratch (LFS)</h4>
+
 • Linux From Scratch</br>
 https://www.linuxfromscratch.org</br>
+
+• Reproducible builds</br>
+https://reproducible-builds.org/
 
 </br>
 </details>  
@@ -2564,7 +2552,7 @@ https://github.com/veracrypt/VeraCrypt</br>
 <p>∙ Password less:</p>
 
 <code>$ sudo groupadd veracrypt</code></br>
-<code>$ sudo usermod -aG veracrypt $USER</code></br>
+<code>$ sudo usermod -aG veracrypt "$(whoami)"</code></br>
 <code>$ sudoedit /etc/sudoers</code></br>
 
 &nbsp; &nbsp; Add: </br>
@@ -2839,6 +2827,8 @@ https://github.com/VSCodium/vscodium</br>
 
 <h4>• Sublime-text ®</h4>
 
+https://www.sublimetext.com/docs/linux_repositories.html</br>
+
 <h6></h6>
 
 <h4>• Python</h4>
@@ -3040,7 +3030,17 @@ https://www.youtube.com/@EkopartyConference</br>
 https://www.youtube.com/@reconmtl</br>
 https://www.youtube.com/@TROOPERScon</br>
 
-<p><em> Made with ♥</em></p>
+https://ostechnix.com</br>
+https://techviewleo.com</br>
+
+
+<!-- ################################################# -->
+
+<div id="footer">
+<br>
+<br>
+<p align=center>Made with ♥</p>
+</div>
 
 </body>
 </html>
