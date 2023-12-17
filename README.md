@@ -2764,7 +2764,7 @@ https://www.reddit.com/r/duplicati<br>
 <!-- #################### -->
 
 <details>
-<summary><b>6.07 Command-line: Compression, Decompression and Encryption of Files</b></summary>
+<summary><b>6.07 Compression</b></summary>
 <br>
 
 <h4>Command-line: Compression, Decompression and Encryption of Files</h4>
@@ -3358,12 +3358,16 @@ https://www.cgsecurity.org/wiki/TestDisk<br>
 <br>
 </details>
 
+<br>
 <hr>
 
-<!-- #################### -->
+<!--################################### -->
+
+
+<h2>9. OTHERS</h2>
 
 <details>
-<summary><b>9.0 Some Links</b></summary>
+<summary><b>9.01 Some Links</b></summary>
 <br>
 
 <h3>Some Links</h3>
