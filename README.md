@@ -153,11 +153,17 @@
 ∙ Password Protect BIOS And OS With Laminated Password Card</br>
 https://www.passwordcard.org/en</br>
 
-∙ Decrypt password stored in CMOS used to access BIOS SETUP</br>
-https://github.com/bacher09/pwgen-for-bios</br>
+∙ Boot
+https://libreboot.org</br>
+https://osresearch.net</br>
+
 
 ∙ Sanitize options</br> 
 Not all SSD support sanitize. And if you use SSDs, enable TRIM in your BIOS. More details in the rest of this work and in the attached files.
+
+∙ Crack password stored in CMOS used to access BIOS SETUP</br>
+https://github.com/bacher09/pwgen-for-bios</br>
+
 </br>
 
 <h5>Hardware Vulnerabilities</h5>
@@ -169,7 +175,6 @@ https://en.wikipedia.org/wiki/Open-source_firmware</br>
 https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption</br>
 https://en.wikipedia.org/wiki/Write_protection</br>
 https://en.m.wikipedia.org/wiki/Random-access_memory</br>
-https://libreboot.org</br>
 https://usbguard.github.io</br>
 https://digistor.com</br>
 https://www.seagate.com/enterprise-storage/enterprise-security</br>
@@ -1616,7 +1621,7 @@ https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi</br>
 </br>
 <hr>
 
-<!-- ###################################################### -->
+<!--################################### -->
 
 <h2>4. SYSTEM SECURITY</h2>
 
@@ -1642,7 +1647,7 @@ https://wiki.ubuntu.com/DebuggingApparmor</br>
 
 </details>
 
-<!-- ################################# -->
+<!-- #################### -->
 
 <details>
 <summary><b>4.02 Privileges</b></summary>
@@ -1715,7 +1720,7 @@ $ sudo chmod 766 -R /media
 
 </details>
 
-<!-- ################################# -->
+<!-- #################### -->
 
 <details>
 <summary><b>4.03 Audit System</b></summary>
@@ -1734,7 +1739,7 @@ $ sudo chmod 766 -R /media
 
 </details>
 
-<!-- ################################# -->
+<!-- #################### -->
 
 <details>
 <summary><b>4.04 Antimalware</b></summary>
@@ -1773,7 +1778,7 @@ https://wiki.archlinux.org/title/ClamAV</br>
 </br>
 <hr>
 
-<!-- ###################################################### -->
+<!--################################### -->
 
 
 <h2>5. NETWORK</h2>
@@ -1825,7 +1830,7 @@ https://wiki.archlinux.org/title/ClamAV</br>
 
 </details>
 
-<!-- ################################# -->
+<!-- #################### -->
 
 <details>
 <summary><b>5.02 DNS Resolution</b></summary>
@@ -1856,7 +1861,7 @@ https://wiki.debian.org/Avahi</br>
 
 </details>
 
-<!-- ################################# -->
+<!-- #################### -->
 
 <details>
 <summary><b>5.03 Firewall</b></summary>
@@ -1956,7 +1961,7 @@ Port Checker - https://portchecker.co</br>
 
 </details>
 
-<!-- ################################# -->
+<!-- #################### -->
 
 <details>
 <summary><b>5.04 VPN</b></summary>
@@ -2206,7 +2211,7 @@ https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy</br>
 
 </details>
 
-<!-- ################################# -->
+<!-- #################### -->
 
 <details>
 <summary><b>5.05 Network Spoofing</b></summary>
@@ -2243,12 +2248,12 @@ https://github.com/0xsirus/tirdad</br>
 <br>
 <hr>
 
-<!-- ###################################################### -->
+<!--################################### -->
 
 
 <h2>6. SOFTWARES</h2>
 
-<h3>6.1 Password Manager</h3>
+<h3>6.01 Password Manager</h3>
 
 <h4>• KeePassXC</h4>
 
@@ -2256,9 +2261,9 @@ https://github.com/0xsirus/tirdad</br>
 
 https://keepassxc.org/docs/</br>
 
-<!-- ################################# -->
+<!-- #################### -->
 
-<h3>6.2 Browsers</h3>
+<h3>6.02 Browsers</h3>
 
 https://avoidthehack.com/util/browser-comparison</br>
 
@@ -2268,22 +2273,20 @@ https://avoidthehack.com/util/browser-comparison</br>
 
 <h4>• Chromium</h4>
 
-<h5>&nbsp; 6.4.1 Extensions</h5>
+<h5>&nbsp; 6.04.01 Extensions</h5>
 &nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a></br>
 &nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a></br>
 &nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a></br>
 &nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a></br>
 &nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a></br>
-&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a></br>
 &nbsp; &nbsp; ∙ <a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a></br>
+&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a></br>
 
+<p><sub>Note, to open maximized browser window use "--start-maximized" as a parameter.</sub></p>
 
-Note, to open maximized browser window use "--start-maximized" as a parameter.</br>
+<!-- #################### -->
 
-<!-- ################################# -->
-
-<h3>6.3 Cloud Services</h3>
-
+<h3>6.03 Cloud Services</h3>
 
 <h4>• Info</h4>
 https://forum.rclone.org</br>
@@ -2301,7 +2304,6 @@ https://github.com/glotlabs/gdrive</br>
 https://mega.io</br> 
 https://mega.io/desktop</br>
 https://github.com/rclone/rclone</br> 
-
 
 <h4>• Yandex</h4>
 
@@ -2348,9 +2350,9 @@ https://github.com/dropbox/dbxcli</br>
 https://github.com/rclone/rclone</br>
 
 
-<!-- ################################# -->
+<!-- #################### -->
 
-<h3>6.4 Office</h3>
+<h3>6.04 Office</h3>
 
 <h4>• Office Resources</h4>
 
@@ -2468,15 +2470,15 @@ geometry=50%x96%
 <code>$ sudo apt install xpad</code></br>
 <code>$ sudo apt install kcalc</code></br>
 
-<!-- ################################# -->
+<!-- #################### -->
 
-<h3>6.5 Email</h3>
+<h3>6.05 Email</h3>
 
 <code>$ sudo apt install -y thunderbird</code></br>
 <code>$ sudo apt install -y birdtray</code></br>
 
 
-<h4>6.5.1 Encrypted Emails</h4>
+<h4>6.05.01 Encrypted Emails</h4>
 
 https://riseup.net/en/security/message-security/openpgp/best-practices</br>
 https://riseup.net/en/security/message-security/openpgp/enigmail</br>
@@ -2525,9 +2527,9 @@ https://efail.de</br>
 
 gpg --list-secret-keys --verbose --with-subkey-fingerprints
 
-<!-- ################################# -->
+<!-- #################### -->
 
-<h3>6.6 Encryption</h3>
+<h3>6.06 Encryption</h3>
 
 
 <h4>• Disk Encryption</h4>
@@ -2607,9 +2609,9 @@ https://github.com/duplicati/duplicati</br>
 https://forum.duplicati.com</br>
 https://www.reddit.com/r/duplicati</br>
 
-<!-- ################################# -->
+<!-- #################### -->
 
-<h3>6.7 Command-line: Compression, Decompression and Encryption of Files</h3>
+<h3>6.07 Command-line: Compression, Decompression and Encryption of Files</h3>
 
 <h4>• GZIP (.gz , .tar and .tar.gz)</h4>
 
@@ -2718,9 +2720,9 @@ https://www.reddit.com/r/duplicati</br>
 &nbsp; &nbsp; $ unzip ~/Downloads/filename.zip -d ~/Downloads/
 </pre>
 
-<!-- ################################# -->
+<!-- #################### -->
 
-<h3>6.8 Sanitation</h3>
+<h3>6.08 Sanitation</h3>
 
 <h4>• System Sanitation</h4>
 
@@ -2751,9 +2753,9 @@ https://www.reddit.com/r/duplicati</br>
 
 
 
-<!-- ################################# -->
+<!-- #################### -->
 
-<h3>6.9 Utilities</h3>
+<h3>6.09 Utilities</h3>
 
 <code>$ sudo apt install gnome-disk-utility</code></br>
 <code>$ sudo apt install partitionmanager</code></br>
@@ -2767,7 +2769,7 @@ https://www.reddit.com/r/duplicati</br>
 </br>
 <hr>
 
-<!-- ################################# -->
+<!-- #################### -->
 
 <h3>6.10 Backup</h3>
 
@@ -2783,7 +2785,7 @@ $ cp ~/.local/share/TelegramDesktop/tdata/settingss ~/backup
 $ cp -vur ~/.local/share/TelegramDesktop/tdata ~/backup
 </pre>
 
-<!-- ###################################################### -->
+<!--################################### -->
 
 <h2>7. DEV SETUP</h2>
 
@@ -2791,11 +2793,8 @@ $ cp -vur ~/.local/share/TelegramDesktop/tdata ~/backup
 👷🛠️UNDER CONSTRUCTION🚧🏗</br>
 
 https://www.slant.co
-https://www.reddit.com/r/vscodium
-https://www.reddit.com/r/neovim
-https://www.reddit.com/r/
 
-<h4>• Sytem Tweaks</h4>
+<h3>7.01 Sytem Tweaks</h3>
 
  <h5>∙ Terminal</h5>
 
@@ -2803,50 +2802,84 @@ https://www.reddit.com/r/
 
  <h5>∙ Passwords</h5>
 
- <h6>Mananger</h6>
-
- <h6>SSH</h6>
+   <h6>Mananger</h6>
+    
+   <h6>SSH</h6>
 
  <h5>∙ Interface</h5>
 
-<h4>• Git & GitHub</h4>
+<!-- #################### -->
+
+<h3>7.02 IDEs</h3>
+
+<!-- ##### -->
 
 <h4>• NeoVim</h4>
 
 https://neovim.io</br>
+https://neovim.io/doc/user/starting.html</br>
+https://neovim.io/doc/user/usr_01.html#vimtutor</br>
+https://github.com/neovim/nvim-lspconfig#sugg</br>ested-configuration</br>
+https://www.youtube.com/watch?v=RZ4p-saaQkc</br>
+https://github.com/rockerBOO/awesome-neovim</br>
+https://www.reddit.com/r/neovim</br>
+
+<h5>∙ Setups</h5>
 https://github.com/nvim-lua/kickstart.nvim</br>
+https://spacevim.org/</br>
+https://github.com/LazyVim/LazyVim</br>
+https://github.com/LunarVim/LunarVim</br>
+https://github.com/NvChad/NvChad</br>
 
- <h5>∙ Plugins</h5>
+<h5>∙ Plugins</h5>
+https://www.siddharta.me/configuring-neovim-as-a-python-ide-2023.html</br>
+https://thevaluable.dev/vim-php-ide/</br>
 
+<!-- ##### -->
 
 <h4>• VSCodium</h4>
 
 https://github.com/VSCodium/vscodium</br>
+https://www.reddit.com/r/vscodium</br>
 
  <h5>∙ Extensions</h5>
+
+<!-- ##### -->
 
 <h4>• Sublime-text ®</h4>
 
 https://www.sublimetext.com/docs/linux_repositories.html</br>
+https://www.reddit.com/r/sublimetext</br>
 
-<h6></h6>
+<!-- #################### -->
 
-<h4>• Python</h4>
+<h3>7.03 Git & GitHub</h3>
 
-<h4>• Go</h4>
+<h4>• </h4>
 
-<h4>• PHP</h4>
+<!-- #################### -->
 
-<h4>• Ruby</h4>
+<h3>7.04 Languages</h3>
 
-<h4>• Deploy</h4>
+ <h4>• Python</h4>
+ 
+ <h4>• Go</h4>
+ 
+ <h4>• PHP</h4>
+ 
+ <h4>• Ruby</h4>
 
-<h4>• Database</h4>
+<h3>7.05 Others</h3>
 
-<h4>• Projects Folder</h4>
+ <h4>• Deploy</h4>
+ 
+ <h4>• Database</h4>
+ 
+ <h4>• Projects Folder</h4>
+ 
+ <h4>• Team</h4>
 
-
-<!-- ###################################################### -->
+<!--################################### -->
 
 <h2>8. TROUBLESHOTING</h2>
 
@@ -2866,8 +2899,7 @@ https://www.reddit.com/r/debian</br>
 https://www.reddit.com/r/linuxquestions</br>
 https://www.reddit.com/r/sysadmin</br>
 
-
-<!-- ################################# -->
+<!-- #################### -->
 
 <h4>• System Boot</h4>
 
@@ -2875,7 +2907,7 @@ https://www.reddit.com/r/sysadmin</br>
 
 <h5>∙ Chroot</h5>
 
-<!-- ################################# -->
+<!-- #################### -->
 
 <h4>• Network</h4>
 
@@ -2905,7 +2937,7 @@ https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX</br>
 <code>$ sudo apt install resolvconf</code></br>
 
 
-<!-- ################################# -->
+<!-- #################### -->
 
 
 <h4>• Bluetooth</h4>
@@ -2939,13 +2971,13 @@ or
 &nbsp; &nbsp; [bluetooth]# block yy:yy:yy
 </pre>
 
-<!-- ################################# -->
+<!-- #################### -->
 
 <h4>• Sound</h4>
 
 https://wiki.ubuntu.com/DebuggingSoundProblems</br>
 
-<!-- ################################# -->
+<!-- #################### -->
 
 <h4>• Printing</h4>
 
@@ -2960,7 +2992,7 @@ https://wiki.ubuntu.com/DebuggingPrintingProblems</br>
 
 <code>$ sudo apt install </code></br>
 
-<!-- ################################# -->
+<!-- #################### -->
 
 <h4>• USB</h4>
 
@@ -2974,7 +3006,7 @@ https://www.kernel.org/doc/html/v4.16/driver-api/usb/power-management.html</br>
 
 <h4>• Interface</h4>
 
-<!-- ################################# -->
+<!-- #################### -->
 
 <h4>• Hardware Utility</h4>
 
@@ -2984,7 +3016,7 @@ https://www.kernel.org/doc/html/v4.16/driver-api/usb/power-management.html</br>
 <code>$ sudo apt install hardinfo</code></br>
 <code>$ sudo apt install s-tui stress</code></br>
 
-<!-- ################################# -->
+<!-- #################### -->
 
 <h4>• Disk Utility</h4>
 
@@ -3017,7 +3049,7 @@ https://www.cgsecurity.org/wiki/TestDisk</br>
 
 <hr>
 
-<!-- ################################# -->
+<!-- #################### -->
 
 <h3>Some Links</h3>
 
@@ -3030,11 +3062,18 @@ https://www.youtube.com/@EkopartyConference</br>
 https://www.youtube.com/@reconmtl</br>
 https://www.youtube.com/@TROOPERScon</br>
 
+Linux
 https://ostechnix.com</br>
 https://techviewleo.com</br>
+https://programmerall.com</br>
+https://linuxcnf.com</br>
+https://fabianlee.org</br>
 
+Privacy
+https://www.notrace.how</br>
+https://www.anarsec.guide</br>
 
-<!-- ################################################# -->
+<!-- ################################## -->
 
 <div id="footer">
 <br>
