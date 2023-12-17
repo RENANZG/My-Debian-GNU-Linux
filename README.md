@@ -16,6 +16,7 @@
 </div>
 
 <hr>
+<!--################################### -->
 
 <h3>1.1 System Hardening Must Have</h3>
 
@@ -60,6 +61,8 @@
 </tbody>
 </table>
 
+<hr>
+<!--################################### -->
 
 <h3>1.2 Essential Tools</h3>
 
@@ -141,8 +144,8 @@
 <br>
 </details>
 
-<br>
 <hr>
+<!-- ################################## -->
 
 <h2>2. SYSTEM INSTALLATION</h2>
 
@@ -726,8 +729,8 @@ sudo apt install cryptsetup-nuke-password<br>
 <br>
 </details>
 
-<br>
 <hr>
+<!-- ################################## -->
 
 <h2>3. SECURE BOOT</h2>
 
@@ -1682,9 +1685,7 @@ https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi<br>
 <br>
 </details>
 
-<br>
 <hr>
-
 <!--################################### -->
 
 <h2>4. SYSTEM SECURITY</h2>
@@ -1735,7 +1736,7 @@ User <em>must</em> log out and back in for group membership updates to be applie
 <p>To avoid getting prompted for password when running commands with <a href="https://manpages.ubuntu.com/manpages/precise/en/man8/sudo.8.html"><code>sudo</code></a>, one common option is to append <code>NOPASSWD:ALL</code> to your user name in the <code>/etc/sudoers</code> file. Obviously, this is a security risk. Instead, you can run the <code>sudo</code> command with the <code>-s</code> (&quot;session&quot;) flag to allow the <code>sudo</code> session to be persistent until your close the terminal (end the session). To explicitly end the session run <code>sudo -k</code> (&quot;kill&quot;).
 <a href="https://vitux.com/how-to-specify-time-limit-for-a-sudo-session/">Reference</a></p>
 
-<h2>Change default editor for <code>visudo</code></h2>
+<h4>Change default editor for <code>visudo</code></h4>
 
 <p>By default, Linux systems use the <code>$VISUAL</code> or <code>$EDITOR</code> environment variables (usually defined in your <code>~/.bashrc</code> file or <code>/etc/profile</code>) as the default editor the <a href="https://linux.die.net/man/8/visudo"><code>visudo</code></a> command. If you&#39;d prefer to use a different editor, such as <a href="https://nano-editor.org/">nano</a>, you can use either of these methods.</p>
 
@@ -1855,11 +1856,8 @@ https://wiki.archlinux.org/title/ClamAV<br>
 <br>
 </details>
 
-<br>
 <hr>
-
 <!--################################### -->
-
 
 <h2>5. NETWORK</h2>
 
@@ -2357,9 +2355,7 @@ https://github.com/0xsirus/tirdad<br>
 <br>
 </details>
 
-<br>
 <hr>
-
 <!--################################### -->
 
 <h2>6. SOFTWARES</h2>
@@ -2960,6 +2956,7 @@ $ cp -vur ~/.local/share/TelegramDesktop/tdata ~/backup
 <br>
 </details>
 
+<hr>
 <!--################################### -->
 
 <h2>7. DEV SETUP</h2>
@@ -3090,6 +3087,7 @@ https://www.reddit.com/r/sublimetext<br>
 <br>
 </details>
 
+<hr>
 <!--################################### -->
 
 <h2>8. TROUBLESHOTING</h2>
@@ -3358,11 +3356,8 @@ https://www.cgsecurity.org/wiki/TestDisk<br>
 <br>
 </details>
 
-<br>
 <hr>
-
 <!--################################### -->
-
 
 <h2>9. OTHERS</h2>
 
