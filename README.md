@@ -3,7 +3,7 @@
 
 <head>
 
-  <meta charset='UTF-8'>
+<meta charset='UTF-8'>
 
 <body>
 
@@ -12,7 +12,7 @@
 <blockquote><h3>"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately endpoint security is so terrifically weak that NSA can frequently find ways around it." (Edward Snowden)</h3></blockquote>
 
 <div id="header" align="center">
-  <img src=".data/la_clef_des_champs_1936_-_rene_magritte_830px.png" width="830"/>
+<img src=".data/la_clef_des_champs_1936_-_rene_magritte_830px.png" width="830"/>
 </div>
 
 <hr>
@@ -21,42 +21,42 @@
 
 <table>
 <tbody>
-  <tr>
-    <td> <a href="https://anonymousplanet.org/">Anonymous Planet - The Hitchhiker’s Guide</a><a href="https://anonymousplanet.org/export/guide.pdf"> (PDF)</a> </th>
-    <td> <a href="https://madaidans-insecurities.github.io/">Madaidan's - Security &amp; Privacy Evaluations</a> </th>
-  </tr>
-  <tr>
-    <td> <a href="https://www.whonix.org/wiki/Essential_Host_Security">Whonix - Essential Host Security</a> </td>
-    <td> <a href="https://hardenedlinux.github.io/">Hardened GNU/Linux  </a> </td>
-  </tr>
-  <tr>
-    <td> <a href="https://www.whonix.org/wiki/System_Hardening_Checklist">Whonix - System Hardening Checklist</a> </td>
-    <td> <a href="https://www.bleachbit.org/">Bleachbit - Clean Your System and Free Disk Space</a> </td>
-  </tr>
-  <tr>
-    <td> <a href="https://www.kicksecure.com/wiki/Documentation">Kicksecure - Documentation</a> </td>
-    <td> <a href="https://github.com/PartialVolume/shredos.x86_64">ShredOS - Secure disk erasure/wipe</a> </td>
-  </tr>
-  <tr>
-    <td><a href="https://wiki.debian.org/SecurityManagement">Debian - Security Management</a></td>
-    <td> <a href="https://ssd.eff.org/">EFF - Surveillance Self-defense</a> </td>
-  </tr>
-  <tr>
-    <td> <a href="https://owasp.org/" target="_blank" rel="noopener noreferrer">OWASP - No more insecure software</a> </td>
-    <td> <a href="https://cryptomator.org/" target="_blank" rel="noopener noreferrer">Cryptomator - Put a lock on your cloud</a> </td>
-  </tr>
-  <tr>
-    <td> <a href="https://www.cisecurity.org/benchmark/debian_linux">CIS Benchmark - Debian Linux Guides</a> </td>
-    <td> <a href="https://www.duplicati.com/" target="_blank" rel="noopener noreferrer">Duplicati - Store securely encrypted backups on cloud storage services!</a> </td>
-  </tr>
-  <tr>
-    <td> <a href="https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance">NSA GOV - Cybersecurity Advisories &amp; Guidance</a><a href="https://github.com/nsacyber"> (GitHub)</a> </td>
-    <td> <a href="https://www.virustotal.com/gui/home/upload" target="_blank" rel="noopener noreferrer">Virus Total - Free virus, malware and URL online scanning</a> </td>
-  </tr>
-  <tr>
-    <td> <a href="https://www.nist.gov/cyberframework">NIST GOV - Cybersecurity Framework</a> </td>
-    <td> <a href="https://www.hybrid-analysis.com/" target="_blank" rel="noopener noreferrer">Hybrid Analysis - This is a free malware analysis service</a></td>
-  </tr>
+<tr>
+<td> <a href="https://anonymousplanet.org/">Anonymous Planet - The Hitchhiker’s Guide</a><a href="https://anonymousplanet.org/export/guide.pdf"> (PDF)</a> </th>
+<td> <a href="https://madaidans-insecurities.github.io/">Madaidan's - Security &amp; Privacy Evaluations</a> </th>
+</tr>
+<tr>
+<td> <a href="https://www.whonix.org/wiki/Essential_Host_Security">Whonix - Essential Host Security</a> </td>
+<td> <a href="https://hardenedlinux.github.io/">Hardened GNU/Linux</a> </td>
+</tr>
+<tr>
+<td> <a href="https://www.whonix.org/wiki/System_Hardening_Checklist">Whonix - System Hardening Checklist</a> </td>
+<td> <a href="https://www.bleachbit.org/">Bleachbit - Clean Your System and Free Disk Space</a> </td>
+</tr>
+<tr>
+<td> <a href="https://www.kicksecure.com/wiki/Documentation">Kicksecure - Documentation</a> </td>
+<td> <a href="https://github.com/PartialVolume/shredos.x86_64">ShredOS - Secure disk erasure/wipe</a> </td>
+</tr>
+<tr>
+<td><a href="https://wiki.debian.org/SecurityManagement">Debian - Security Management</a></td>
+<td> <a href="https://ssd.eff.org/">EFF - Surveillance Self-defense</a> </td>
+</tr>
+<tr>
+<td> <a href="https://owasp.org/" target="_blank" rel="noopener noreferrer">OWASP - No more insecure software</a> </td>
+<td> <a href="https://cryptomator.org/" target="_blank" rel="noopener noreferrer">Cryptomator - Put a lock on your cloud</a> </td>
+</tr>
+<tr>
+<td> <a href="https://www.cisecurity.org/benchmark/debian_linux">CIS Benchmark - Debian Linux Guides</a> </td>
+<td> <a href="https://www.duplicati.com/" target="_blank" rel="noopener noreferrer">Duplicati - Store securely encrypted backups on cloud storage services!</a> </td>
+</tr>
+<tr>
+<td> <a href="https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance">NSA GOV - Cybersecurity Advisories &amp; Guidance</a><a href="https://github.com/nsacyber"> (GitHub)</a> </td>
+<td> <a href="https://www.virustotal.com/gui/home/upload" target="_blank" rel="noopener noreferrer">Virus Total - Free virus, malware and URL online scanning</a> </td>
+</tr>
+<tr>
+<td> <a href="https://www.nist.gov/cyberframework">NIST GOV - Cybersecurity Framework</a> </td>
+<td> <a href="https://www.hybrid-analysis.com/" target="_blank" rel="noopener noreferrer">Hybrid Analysis - This is a free malware analysis service</a></td>
+</tr>
 </tbody>
 </table>
 
@@ -64,53 +64,55 @@
 <h3>1.2 Essential Tools</h3>
 
 <table style="width:100%" cellspacing="0" cellpadding="0">
-  <tr valign="top" style="width:50%">
-    <td><a href="https://www.ventoy.net/en/download.html" target="_blank"><b>1. Ventoy</b></a></td>
-    <td><a href="https://www.ventoy.net/en/doc_secure.html" target="_blank">(Secure Boot)</a></td>
-    <td><a href="https://www.ventoy.net/en/download.html" target="_blank">(Checksums)</a></td>
-    <td><a href="https://tails.net/news/new_domain/index.en.html" target="_blank"><b>6. Tails</b></a></td>
-    <td><a href="https://tails.net/contribute/design/UEFI/archive/" target="_blank">(Secure Boot)</a></td>
-    <td><a href="https://tails.net/install/index.en.html" target="_blank">(Checksums)</a></td>
-  </tr>
 <tr valign="top" style="width:50%">
-   <td><a href="http://www.rodsbooks.com/refind/getting.html" target="_blank"><b>2. rEFInd</b></a></td>
-    <td><a href="http://www.rodsbooks.com/refind/secureboot.html" target="_blank">(Secure Boot)</a></td>
-    <td><a href="https://sourceforge.net/p/refind/code/ci/master/tree/" target="_blank">(Checksums)</a></td> 
-    <td><a href="https://www.kali.org/get-kali/#kali-installer-images" target="_blank"><b>7. KaliLinux</b></a></td>
-    <td><a href="" target="_blank">(Secure Boot)</a></td>
-    <td><a href="" target="_blank">(Checksums)</a></td>
-  </tr>
+<td><a href="https://www.ventoy.net/en/download.html" target="_blank"><b>1. Ventoy</b></a></td>
+<td><a href="https://www.ventoy.net/en/doc_secure.html" target="_blank">(Secure Boot)</a></td>
+<td><a href="https://www.ventoy.net/en/download.html" target="_blank">(Checksums)</a></td>
+<td><a href="https://tails.net/news/new_domain/index.en.html" target="_blank"><b>6. Tails</b></a></td>
+<td><a href="https://tails.net/contribute/design/UEFI/archive/" target="_blank">(Secure Boot)</a></td>
+<td><a href="https://tails.net/install/index.en.html" target="_blank">(Checksums)</a></td>
+</tr>
+<tr valign="top" style="width:50%">
+ <td><a href="http://www.rodsbooks.com/refind/getting.html" target="_blank"><b>2. rEFInd</b></a></td>
+<td><a href="http://www.rodsbooks.com/refind/secureboot.html" target="_blank">(Secure Boot)</a></td>
+<td><a href="https://sourceforge.net/p/refind/code/ci/master/tree/" target="_blank">(Checksums)</a></td> 
+<td><a href="https://www.kali.org/get-kali/#kali-installer-images" target="_blank"><b>7. KaliLinux</b></a></td>
+<td><a href="" target="_blank">(Secure Boot)</a></td>
+<td><a href="" target="_blank">(Checksums)</a></td>
+</tr>
  <tr>
-    <td><a href="https://clonezilla.org/downloads.php" target="_blank"><b>3. Clonezilla</b></a></td>
-    <td><a href="https://clonezilla.org/downloads.php" target="_blank">(Secure Boot)</a></td>
-    <td><a href="https://clonezilla.org/downloads.php" target="_blank">(Checksums)</a></td>
-    <td><a href="https://www.openpgp.org/software/" target="_blank"><b>8. OpenPGP</b></a></td>
-    <td><a href="https://github.com/OpenPGP/openpgp.org" target="_blank">(GitHub)</a></td>
-    <td><a href="https://keys.openpgp.org/" target="_blank">(Check)</a></td>
-  </tr>
-  <tr>
-    <td><a href="https://gparted.org/livecd.php" target="_blank"><b>4. GParted</b></a></td>
-    <td><a href="https://gparted.org/download.php" target="_blank">(Secure Boot)</a></td>
-    <td><a href="https://gparted.org/gpg-verify.php" target="_blank">(Checksums)</a></td>
-    <td><a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/winpe-intro?view=windows-11" target="_blank"><b>9. WinPE</b></a></td>
-    <td><a href="https://sergeistrelec.name/" target="_blank">(Sergei)</a></td>
-    <td><a href="https://sergeistrelec.name/version_history_en.html" target="_blank">(Checksums)</a></td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/PartialVolume/shredos.x86_64" target="_blank"><b>5. ShredOS</b></a></td>
-    <td><a href="" target="_blank">(Secure Boot)</a></td>
-    <td><a href="" target="_blank">(Checksums)</a></td>
-    <td><a href="https://www.hirensbootcd.org/" target="_blank"><b>10. Hiren's BootCD PE</b></a></td>
-    <td><a href="" target="_blank">(Secure Boot)</a></td>
-    <td><a href="https://www.hirensbootcd.org/download/" target="_blank">(Checksums)</a></td>
-   </tr>
+<td><a href="https://clonezilla.org/downloads.php" target="_blank"><b>3. Clonezilla</b></a></td>
+<td><a href="https://clonezilla.org/downloads.php" target="_blank">(Secure Boot)</a></td>
+<td><a href="https://clonezilla.org/downloads.php" target="_blank">(Checksums)</a></td>
+<td><a href="https://www.openpgp.org/software/" target="_blank"><b>8. OpenPGP</b></a></td>
+<td><a href="https://github.com/OpenPGP/openpgp.org" target="_blank">(GitHub)</a></td>
+<td><a href="https://keys.openpgp.org/" target="_blank">(Check)</a></td>
+</tr>
+<tr>
+<td><a href="https://gparted.org/livecd.php" target="_blank"><b>4. GParted</b></a></td>
+<td><a href="https://gparted.org/download.php" target="_blank">(Secure Boot)</a></td>
+<td><a href="https://gparted.org/gpg-verify.php" target="_blank">(Checksums)</a></td>
+<td><a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/winpe-intro?view=windows-11" target="_blank"><b>9. WinPE</b></a></td>
+<td><a href="https://sergeistrelec.name/" target="_blank">(Sergei)</a></td>
+<td><a href="https://sergeistrelec.name/version_history_en.html" target="_blank">(Checksums)</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/PartialVolume/shredos.x86_64" target="_blank"><b>5. ShredOS</b></a></td>
+<td><a href="" target="_blank">(Secure Boot)</a></td>
+<td><a href="" target="_blank">(Checksums)</a></td>
+<td><a href="https://www.hirensbootcd.org/" target="_blank"><b>10. Hiren's BootCD PE</b></a></td>
+<td><a href="" target="_blank">(Secure Boot)</a></td>
+<td><a href="https://www.hirensbootcd.org/download/" target="_blank">(Checksums)</a></td>
+ </tr>
 </table>
 
-<sub>&nbsp; &nbsp; &nbsp; ¹ Check hash with <a href="https://gtkhash.org">GtkHash (GUI)</a></sub></br>
+<sub>&nbsp; &nbsp; &nbsp; ¹ Check hash with <a href="https://gtkhash.org">GtkHash (GUI)</a></sub><br>
 <sub>&nbsp; &nbsp; &nbsp; ² How to summarize iso file with <a href="https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html">GNU Coreutils (CLI)</a></sub>
 
 <details>
 <summary><sub>³ Manual method with sha256sum</sub></summary>
+<br>
+
 <p>The SHA-256 checksum hashes in a file called SHA256SUMS in the same directory listing as the download page.</p>
 <p>First install it</p>
 <p><code>$ sudo apt install sha256sum</code></p>
@@ -121,81 +123,87 @@
 <p>sha256sum should then print out a single line after calculating the hash:</p>
 <p><code>$ sdd31231c0421be56f39c7a31245c423fgcc3b048ds321a3e83d2c4d714fa9a76 *name.iso</code></p>
 <p>Compare the hash (the alphanumeric string on left) that your machine calculated with the corresponding hash in the SHA256SUMS file.</p>
+
+<br>
 </details>
 
 <details>
 <summary><sub>⁴ Semi-automatic method with sha256sum</sub></summary>
+<br>
+
 <p>First download the SHA256SUMS and SHA256SUMS.gpg files to the same directory as the iso. Then run the following commands in a terminal.</p>
 <p><code>$ cd download_directory</code></p>
 <p><code>$ sha256sum -c SHA256SUMS 2>&1 | grep OK</code></p>
 <p>The sha256sum line should output a line such as:</p>
 <p><code>name.iso: OK</code></p>
 <p>If the OK for your file appears, that indicates the hash matches.</p>
-</details>  
+
+<br>
+</details>
 
 <br>
 <hr>
 
 <h2>2. SYSTEM INSTALLATION</h2>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <details>
 <summary><b>2.1 Hardware</b></summary>
-</br>
+<br>
 
-• Points to check:</br>
+• Points to check:<br>
 
 </h4>2.1.1 Security</h4>
 
 <h5>• BIOS</h5>
 
-∙ Password Protect BIOS And OS With Laminated Password Card</br>
-https://www.passwordcard.org/en</br>
+∙ Password Protect BIOS And OS With Laminated Password Card<br>
+https://www.passwordcard.org/en<br>
 
 ∙ Boot
-https://libreboot.org</br>
-https://osresearch.net</br>
+https://libreboot.org<br>
+https://osresearch.net<br>
 
 
-∙ Sanitize options</br> 
+∙ Sanitize options<br> 
 Not all SSD support sanitize. And if you use SSDs, enable TRIM in your BIOS. More details in the rest of this work and in the attached files.
 
-∙ Crack password stored in CMOS used to access BIOS SETUP</br>
-https://github.com/bacher09/pwgen-for-bios</br>
+∙ Crack password stored in CMOS used to access BIOS SETUP<br>
+https://github.com/bacher09/pwgen-for-bios<br>
 
-</br>
+<br>
 
 <h5>Hardware Vulnerabilities</h5>
-https://docs.kernel.org/admin-guide/hw-vuln/index.html</br>
-https://github.com/chipsec/chipsec</br>
+https://docs.kernel.org/admin-guide/hw-vuln/index.html<br>
+https://github.com/chipsec/chipsec<br>
 
 <h5>• Hardware Security Based</h5>
-https://en.wikipedia.org/wiki/Open-source_firmware</br>
-https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption</br>
-https://en.wikipedia.org/wiki/Write_protection</br>
-https://en.m.wikipedia.org/wiki/Random-access_memory</br>
-https://usbguard.github.io</br>
-https://digistor.com</br>
-https://www.seagate.com/enterprise-storage/enterprise-security</br>
-https://github.com/openssl/openssl/blob/master/README-FIPS.md</br>
+https://en.wikipedia.org/wiki/Open-source_firmware<br>
+https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption<br>
+https://en.wikipedia.org/wiki/Write_protection<br>
+https://en.m.wikipedia.org/wiki/Random-access_memory<br>
+https://usbguard.github.io<br>
+https://digistor.com<br>
+https://www.seagate.com/enterprise-storage/enterprise-security<br>
+https://github.com/openssl/openssl/blob/master/README-FIPS.md<br>
 
 <h5>• Hardware Spoof</h5>
-https://www.whonix.org/wiki/Protocol-Leak-Protection_and_Fingerprinting-Protection#Less_important_identifiers</br>
-https://www.whonix.org/wiki/MAC_Address</br>
-https://github.com/alobbs/macchanger</br>
-https://hwidspoofer.com</br>
-https://xaze.gitbook.io/how-to-spoof-with-hwid-serial-changer</br>
-https://github.com/segofensiva/OSfooler-ng</br>
-https://github.com/Kicksecure/ram-wipe</br>
+https://www.whonix.org/wiki/Protocol-Leak-Protection_and_Fingerprinting-Protection#Less_important_identifiers<br>
+https://www.whonix.org/wiki/MAC_Address<br>
+https://github.com/alobbs/macchanger<br>
+https://hwidspoofer.com<br>
+https://xaze.gitbook.io/how-to-spoof-with-hwid-serial-changer<br>
+https://github.com/segofensiva/OSfooler-ng<br>
+https://github.com/Kicksecure/ram-wipe<br>
 
 <h4>2.1.2 Compatibility</h4>
-https://linux-hardware.org</br>
-https://github.com/morrownr/USB-WiFi    
-https://ryf.fsf.org</br>
-https://www.pine64.org/pinebook-pro</br>
-https://frame.work</br>
-https://www.powerpc-notebook.org</br>
+https://linux-hardware.org<br>
+https://github.com/morrownr/USB-WiFi
+https://ryf.fsf.org<br>
+https://www.pine64.org/pinebook-pro<br>
+https://frame.work<br>
+https://www.powerpc-notebook.org<br>
 	
 <h4>2.1.3 Performance</h4>
 
@@ -204,99 +212,99 @@ https://www.powerpc-notebook.org</br>
 <h4>2.1.4 Cost benefit</h4>
 
 
-</br>
-</details>  
+<br>
+</details>
 
 <details>
-<summary><b>2.2 Installation</b></summary>  
-</br>
+<summary><b>2.2 Installation</b></summary>
+<br>
 
-2.2.1 Basic Installation Guide</br>
+2.2.1 Basic Installation Guide<br>
 
 
-• Basic tips about Linux System</br>
+• Basic tips about Linux System<br>
 
-Command Line - https://github.com/jlevy/the-art-of-command-line#everyday-use</br>
-Terminal - https://github.com/onceupon/Bash-Oneliner#terminal-tricks</br>
+Command Line - https://github.com/jlevy/the-art-of-command-line#everyday-use<br>
+Terminal - https://github.com/onceupon/Bash-Oneliner#terminal-tricks<br>
 
 <h4>Overview of Terminal's Shortcuts</h4>
 
 <table>
 <thead>
-  <tr>
-    <th>Shortcut</th>
-    <th>Action</th>
-    <th>Shortcut</th>
-    <th>Action</th>
-  </tr>
+<tr>
+<th>Shortcut</th>
+<th>Action</th>
+<th>Shortcut</th>
+<th>Action</th>
+</tr>
 </thead>
 <tbody>
-  <tr>
-    <td>Esc + t</td>
-    <td>Swap the two words before the cursor</td>
-    <td>Ctrl + f</td>
-    <td>Go forward one character</td>
-  </tr>
-  <tr>
-    <td>Ctrl + r</td>
-    <td>Search command history</td>
-    <td>Ctrl + b</td>
-    <td>Go back one character</td>
-  </tr>
-  <tr>
-    <td>Ctrl + g</td>
-    <td>Cancel command history search without running command</td>
-    <td>Ctrl + a</td>
-    <td>Go to the beginning of the line</td>
-  </tr>
-  <tr>
-    <td>Ctrl + l</td>
-    <td>Clear terminal screen</td>
-    <td>Ctrl + e</td>
-    <td>Go to the end of the line</td>
-  </tr>
-  <tr>
-    <td>Ctrl + x</td>
-    <td>List possible filename completions</td>
-    <td>Ctrl + w</td>
-    <td>Delete the word before the cursor</td>
-  </tr>
-  <tr>
-    <td>Ctrl + c</td>
-    <td>Cancels the running command</td>
-    <td>Ctrl + y</td>
-    <td>Retrieves the last word deleted or cut</td>
-  </tr>
-  <tr>
-    <td>Ctrl + z</td>
-    <td>Suspends the running command</td>
-    <td>Ctrl + xx</td>
-    <td>Toggle between current cursor position and start or end of line</td>
-  </tr>
-  <tr>
-    <td>Ctrl + u</td>
-    <td>Deletes entire line before the cursor</td>
-    <td>Alt + u</td>
-    <td>Capitalize all letters in word after cursor</td>
-  </tr>
-  <tr>
-    <td>Ctrl + k</td>
-    <td>Deletes entire line after the cursor</td>
-    <td>Alt + l</td>
-    <td>Lower case all letters in word after cursor</td>
-  </tr>
-  <tr>
-    <td>Ctrl + t</td>
-    <td>Swap the two characters before the cursor</td>
-    <td>Alt + .</td>
-    <td>Use the last word of the last command</td>
-  </tr>
-  <tr>
-    <td>Ctrl + d</td>
-    <td>Close the terminal</td>
-    <td></td>
-    <td></td>
-  </tr>
+<tr>
+<td>Esc + t</td>
+<td>Swap the two words before the cursor</td>
+<td>Ctrl + f</td>
+<td>Go forward one character</td>
+</tr>
+<tr>
+<td>Ctrl + r</td>
+<td>Search command history</td>
+<td>Ctrl + b</td>
+<td>Go back one character</td>
+</tr>
+<tr>
+<td>Ctrl + g</td>
+<td>Cancel command history search without running command</td>
+<td>Ctrl + a</td>
+<td>Go to the beginning of the line</td>
+</tr>
+<tr>
+<td>Ctrl + l</td>
+<td>Clear terminal screen</td>
+<td>Ctrl + e</td>
+<td>Go to the end of the line</td>
+</tr>
+<tr>
+<td>Ctrl + x</td>
+<td>List possible filename completions</td>
+<td>Ctrl + w</td>
+<td>Delete the word before the cursor</td>
+</tr>
+<tr>
+<td>Ctrl + c</td>
+<td>Cancels the running command</td>
+<td>Ctrl + y</td>
+<td>Retrieves the last word deleted or cut</td>
+</tr>
+<tr>
+<td>Ctrl + z</td>
+<td>Suspends the running command</td>
+<td>Ctrl + xx</td>
+<td>Toggle between current cursor position and start or end of line</td>
+</tr>
+<tr>
+<td>Ctrl + u</td>
+<td>Deletes entire line before the cursor</td>
+<td>Alt + u</td>
+<td>Capitalize all letters in word after cursor</td>
+</tr>
+<tr>
+<td>Ctrl + k</td>
+<td>Deletes entire line after the cursor</td>
+<td>Alt + l</td>
+<td>Lower case all letters in word after cursor</td>
+</tr>
+<tr>
+<td>Ctrl + t</td>
+<td>Swap the two characters before the cursor</td>
+<td>Alt + .</td>
+<td>Use the last word of the last command</td>
+</tr>
+<tr>
+<td>Ctrl + d</td>
+<td>Close the terminal</td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -306,233 +314,233 @@ Terminal - https://github.com/onceupon/Bash-Oneliner#terminal-tricks</br>
 
 <table>
 <thead>
-  <tr>
-    <th>Shortcut</th>
-    <th>Action</th>
-    <th>Shortcut</th>
-    <th>Action</th>
-  </tr>
+<tr>
+<th>Shortcut</th>
+<th>Action</th>
+<th>Shortcut</th>
+<th>Action</th>
+</tr>
 </thead>
 <tbody>
-  <tr>
-    <td colspan="2"> File handling </td>
-    <td colspan="2">Moving around</td>
-  </tr>
-  <tr>
-    <td> Ctrl+S </td>
-    <td> Save current file </td>
-    <td>Ctrl+B </td>
-    <td> One character backward </td>
-  </tr>
-  <tr>
-    <td>Ctrl+O </td>
-    <td> Offer to write file ("Save as") </td>
-    <td>Ctrl+F </td>
-    <td> One character forward </td>
-  </tr>
-  <tr>
-    <td>Ctrl+R </td>
-    <td> Insert a file into current one </td>
-    <td>Ctrl+← </td>
-    <td> One word backward </td>
-  </tr>
-  <tr>
-    <td>Ctrl+X </td>
-    <td> Close buffer, exit from nano </td>
-    <td>Ctrl+→ </td>
-    <td> One word forward </td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td>Ctrl+A </td>
-    <td> To start of line </td>
-  </tr>
-  <tr>
-    <td colspan="2">Editing</td>
-    <td>Ctrl+E </td>
-    <td> To end of line </td>
-  </tr>
-  <tr>
-    <td>Ctrl+K </td>
-    <td> Cut current line into cutbuffer </td>
-    <td>Ctrl+P </td>
-    <td> One line up </td>
-  </tr>
-  <tr>
-    <td>Alt+6 </td>
-    <td> Copy current line into cutbuffer </td>
-    <td>Ctrl+N </td>
-    <td> One line down </td>
-  </tr>
-  <tr>
-    <td>Ctrl+U </td>
-    <td> Paste contents of cutbuffer </td>
-    <td>Ctrl+↑ </td>
-    <td> To previous block </td>
-  </tr>
-  <tr>
-    <td>Alt+T </td>
-    <td> Cut until end of buffer </td>
-    <td>Ctrl+↓ </td>
-    <td> To next block </td>
-  </tr>
-  <tr>
-    <td>Ctrl+]	 </td>
-    <td> Complete current word </td>
-    <td>Ctrl+Y </td>
-    <td> One page up </td>
-  </tr>
-  <tr>
-    <td>Alt+3 </td>
-    <td> Comment/uncomment line/region </td>
-    <td>Ctrl+V </td>
-    <td> One page down </td>
-  </tr>
-  <tr>
-    <td>Alt+U </td>
-    <td> Undo last action </td>
-    <td>Alt+\	To </td>
-    <td> top of buffer </td>
-  </tr>
-  <tr>
-    <td>Alt+E </td>
-    <td> Redo last undone action </td>
-    <td>Alt+/	To </td>
-    <td> end of buffer </td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td colspan="2">Search and replace</td>
-    <td colspan="2">Special movement</td>
-  </tr>
-  <tr>
-    <td>Ctrl+Q </td>
-    <td> Start backward search </td>
-    <td>Alt+G </td>
-    <td> Go to specified line </td>
-  </tr>
-  <tr>
-    <td>Ctrl+W </td>
-    <td> Start forward search </td>
-    <td>Alt+]	Go </td>
-    <td> to complementary bracket </td>
-  </tr>
-  <tr>
-    <td>Alt+Q </td>
-    <td> Find next occurrence backward </td>
-    <td>Alt+↑ </td>
-    <td> Scroll viewport up </td>
-  </tr>
-  <tr>
-    <td>Alt+W </td>
-    <td> Find next occurrence forward </td>
-    <td>Alt+↓ </td>
-    <td> Scroll viewport down </td>
-  </tr>
-  <tr>
-    <td>Alt+R </td>
-    <td> Start a replacing session </td>
-    <td>Alt+&lt;	Switch </td>
-    <td> to preceding buffer </td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td>Alt+&gt;	Switch </td>
-    <td> to succeeding buffer </td>
-  </tr>
-  <tr>
-    <td colspan="2">Deletion</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Ctrl+H </td>
-    <td> Delete character before cursor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    <td colspan="2">Information</td>
-  </tr>
-  <tr>
-    <td>Ctrl+D </td>
-    <td> Delete character under cursor </td>
-    <td>Ctrl+C </td>
-    <td> Report cursor position </td>
-  </tr>
-  <tr>
-    <td>Alt+Bsp </td>
-    <td> Delete word to the left </td>
-    <td>Alt+D </td>
-    <td> Report line/word/character count </td>
-  </tr>
-  <tr>
-    <td>Ctrl+Del </td>
-    <td> Delete word to the right </td>
-    <td>Ctrl+G </td>
-    <td> Display help text </td>
-  </tr>
-  <tr>
-    <td>Alt+Del </td>
-    <td> Delete current line </td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td colspan="2">Various</td>
-  </tr>
-  <tr>
-    <td colspan="2">Operations</td>
-    <td>Alt+A </td>
-    <td> Turn the mark on/off </td>
-  </tr>
-  <tr>
-    <td>Ctrl+T </td>
-    <td> Execute some command </td>
-    <td>Tab  </td>
-    <td>Indent</td>
-  </tr>
-  <tr>
-    <td>Ctrl+J </td>
-    <td> Justify paragraph or region </td>
-    <td>Shift+Tab </td>
-    <td>  Unindent marked region  </td>
-  </tr>
-  <tr>
-    <td>Alt+J </td>
-    <td> Justify entire buffer </td>
-    <td>Alt+V </td>
-    <td> Enter next keystroke verbatim </td>
-  </tr>
-  <tr>
-    <td>Alt+B </td>
-    <td> Run a syntax check </td>
-    <td>Alt+N </td>
-    <td> Turn line numbers on/off </td>
-  </tr>
-  <tr>
-    <td>Alt+F </td>
-    <td> Run a formatter/fixer/arranger </td>
-    <td>Alt+P </td>
-    <td> Turn visible whitespace on/off </td>
-  </tr>
-  <tr>
-    <td>Alt+:	Start </td>
-    <td> /stop recording of macro </td>
-    <td>Alt+X </td>
-    <td> Hide or unhide the help lines </td>
-  </tr>
-  <tr>
-    <td>Alt+;	Replay </td>
-    <td> macro</td>
-    <td>Ctrl+L </td>
-    <td> Refresh the screen </td>
-  </tr>
+<tr>
+<td colspan="2"> File handling </td>
+<td colspan="2">Moving around</td>
+</tr>
+<tr>
+<td> Ctrl+S </td>
+<td> Save current file </td>
+<td>Ctrl+B </td>
+<td> One character backward </td>
+</tr>
+<tr>
+<td>Ctrl+O </td>
+<td> Offer to write file ("Save as") </td>
+<td>Ctrl+F </td>
+<td> One character forward </td>
+</tr>
+<tr>
+<td>Ctrl+R </td>
+<td> Insert a file into current one </td>
+<td>Ctrl+← </td>
+<td> One word backward </td>
+</tr>
+<tr>
+<td>Ctrl+X </td>
+<td> Close buffer, exit from nano </td>
+<td>Ctrl+→ </td>
+<td> One word forward </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Ctrl+A </td>
+<td> To start of line </td>
+</tr>
+<tr>
+<td colspan="2">Editing</td>
+<td>Ctrl+E </td>
+<td> To end of line </td>
+</tr>
+<tr>
+<td>Ctrl+K </td>
+<td> Cut current line into cutbuffer </td>
+<td>Ctrl+P </td>
+<td> One line up </td>
+</tr>
+<tr>
+<td>Alt+6 </td>
+<td> Copy current line into cutbuffer </td>
+<td>Ctrl+N </td>
+<td> One line down </td>
+</tr>
+<tr>
+<td>Ctrl+U </td>
+<td> Paste contents of cutbuffer </td>
+<td>Ctrl+↑ </td>
+<td> To previous block </td>
+</tr>
+<tr>
+<td>Alt+T </td>
+<td> Cut until end of buffer </td>
+<td>Ctrl+↓ </td>
+<td> To next block </td>
+</tr>
+<tr>
+<td>Ctrl+]	 </td>
+<td> Complete current word </td>
+<td>Ctrl+Y </td>
+<td> One page up </td>
+</tr>
+<tr>
+<td>Alt+3 </td>
+<td> Comment/uncomment line/region </td>
+<td>Ctrl+V </td>
+<td> One page down </td>
+</tr>
+<tr>
+<td>Alt+U </td>
+<td> Undo last action </td>
+<td>Alt+\	To </td>
+<td> top of buffer </td>
+</tr>
+<tr>
+<td>Alt+E </td>
+<td> Redo last undone action </td>
+<td>Alt+/	To </td>
+<td> end of buffer </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2">Search and replace</td>
+<td colspan="2">Special movement</td>
+</tr>
+<tr>
+<td>Ctrl+Q </td>
+<td> Start backward search </td>
+<td>Alt+G </td>
+<td> Go to specified line </td>
+</tr>
+<tr>
+<td>Ctrl+W </td>
+<td> Start forward search </td>
+<td>Alt+]	Go </td>
+<td> to complementary bracket </td>
+</tr>
+<tr>
+<td>Alt+Q </td>
+<td> Find next occurrence backward </td>
+<td>Alt+↑ </td>
+<td> Scroll viewport up </td>
+</tr>
+<tr>
+<td>Alt+W </td>
+<td> Find next occurrence forward </td>
+<td>Alt+↓ </td>
+<td> Scroll viewport down </td>
+</tr>
+<tr>
+<td>Alt+R </td>
+<td> Start a replacing session </td>
+<td>Alt+&lt;	Switch </td>
+<td> to preceding buffer </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Alt+&gt;	Switch </td>
+<td> to succeeding buffer </td>
+</tr>
+<tr>
+<td colspan="2">Deletion</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Ctrl+H </td>
+<td> Delete character before cursor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td colspan="2">Information</td>
+</tr>
+<tr>
+<td>Ctrl+D </td>
+<td> Delete character under cursor </td>
+<td>Ctrl+C </td>
+<td> Report cursor position </td>
+</tr>
+<tr>
+<td>Alt+Bsp </td>
+<td> Delete word to the left </td>
+<td>Alt+D </td>
+<td> Report line/word/character count </td>
+</tr>
+<tr>
+<td>Ctrl+Del </td>
+<td> Delete word to the right </td>
+<td>Ctrl+G </td>
+<td> Display help text </td>
+</tr>
+<tr>
+<td>Alt+Del </td>
+<td> Delete current line </td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td colspan="2">Various</td>
+</tr>
+<tr>
+<td colspan="2">Operations</td>
+<td>Alt+A </td>
+<td> Turn the mark on/off </td>
+</tr>
+<tr>
+<td>Ctrl+T </td>
+<td> Execute some command </td>
+<td>Tab</td>
+<td>Indent</td>
+</tr>
+<tr>
+<td>Ctrl+J </td>
+<td> Justify paragraph or region </td>
+<td>Shift+Tab </td>
+<td>Unindent marked region</td>
+</tr>
+<tr>
+<td>Alt+J </td>
+<td> Justify entire buffer </td>
+<td>Alt+V </td>
+<td> Enter next keystroke verbatim </td>
+</tr>
+<tr>
+<td>Alt+B </td>
+<td> Run a syntax check </td>
+<td>Alt+N </td>
+<td> Turn line numbers on/off </td>
+</tr>
+<tr>
+<td>Alt+F </td>
+<td> Run a formatter/fixer/arranger </td>
+<td>Alt+P </td>
+<td> Turn visible whitespace on/off </td>
+</tr>
+<tr>
+<td>Alt+:	Start </td>
+<td> /stop recording of macro </td>
+<td>Alt+X </td>
+<td> Hide or unhide the help lines </td>
+</tr>
+<tr>
+<td>Alt+;	Replay </td>
+<td> macro</td>
+<td>Ctrl+L </td>
+<td> Refresh the screen </td>
+</tr>
 </tbody>
 </table>
 
@@ -540,11 +548,11 @@ Terminal - https://github.com/onceupon/Bash-Oneliner#terminal-tricks</br>
 
 <h5>• Using VirtualBox as training or to test ultra-advanced configurations</h5>
 
-https://www.debian.org/doc/manuals/debian-handbook/sect.virtualization.en.html</br>
+https://www.debian.org/doc/manuals/debian-handbook/sect.virtualization.en.html<br>
 
 <h5>VirtualBox on Windows 10 Windows 10</h5>
-"How to Install Debian Linux in VirtualBox on Windows 10 | Beginners Guide | (Buster)"</br>
-https://www.youtube.com/watch?v=cx8GzudB6uE</br>
+"How to Install Debian Linux in VirtualBox on Windows 10 | Beginners Guide | (Buster)"<br>
+https://www.youtube.com/watch?v=cx8GzudB6uE<br>
 
 <h5>Hypervisor</h5>
 
@@ -558,46 +566,46 @@ The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a typ
  <img src="3.System/3.05_QEMU-KVM/QEMU-KVM_Chart.png">
 
 <h5>Using QEMU/KVM - "Kernel-based Virtual Machine"</h5>
-https://wiki.debian.org/KVM</br>
-https://wiki.archlinux.org/title/KVM</br>
+https://wiki.debian.org/KVM<br>
+https://wiki.archlinux.org/title/KVM<br>
 
-∙ Visit our repo tree:</br>
-3.System/3.05_QEMU-KVM/QEMU-KVM_Installing.md</br>
+∙ Visit our repo tree:<br>
+3.System/3.05_QEMU-KVM/QEMU-KVM_Installing.md<br>
 
 
 <h3>Quick Installation Guide and Others</h3>
 
-http://www.rodsbooks.com/linux-uefi</br>
-https://wiki.debian.org/DontBreakDebian</br>
-https://distrowatch.com/table.php?distribution=debian</br>
-https://www.debian.org/releases/bookworm/amd64/apb.en.html</br>
+http://www.rodsbooks.com/linux-uefi<br>
+https://wiki.debian.org/DontBreakDebian<br>
+https://distrowatch.com/table.php?distribution=debian<br>
+https://www.debian.org/releases/bookworm/amd64/apb.en.html<br>
 
 <h4>2.2.2 Desktop interface</h4>
 
-XFCE vs LXQt - Lightweight Linux Desktop Environments</br>
-https://www.youtube.com/watch?v=cs8JW3zDDoI</br>
+XFCE vs LXQt - Lightweight Linux Desktop Environments<br>
+https://www.youtube.com/watch?v=cs8JW3zDDoI<br>
 
 
 <h4>2.2.3 Debootstrap</h4>
 
-/3.System/3.1_System_Install/3.1.1_Debootstrap.md</br>
+/3.System/3.1_System_Install/3.1.1_Debootstrap.md<br>
 
-• Debootstrap</br>
-https://wiki.debian.org/Debootstrap</br>
-• Debian 11.0 Debootstrap | Debian Command Line Install Guide</br>
-https://www.youtube.com/watch?v=oKnkOwdysNs</br>
-• Debian 11.4 ZFS Bootstrap | Debian ZFS Command Line Installation</br>
-https://www.youtube.com/watch?v=7F7Ch-ZkiQU</br>
-• Nilsmeyer - An ansible role for bootstrapping new Debian based systems, including setting up partitions, file systems, encryption (luks), RAID and LVM</br>
-https://github.com/nilsmeyer/ansible-debootstrap</br>
-• Linux Dabbler - Scripts to run after installing debian</br>
-https://github.com/linuxdabbler/debian-install-scripts</br>
+• Debootstrap<br>
+https://wiki.debian.org/Debootstrap<br>
+• Debian 11.0 Debootstrap | Debian Command Line Install Guide<br>
+https://www.youtube.com/watch?v=oKnkOwdysNs<br>
+• Debian 11.4 ZFS Bootstrap | Debian ZFS Command Line Installation<br>
+https://www.youtube.com/watch?v=7F7Ch-ZkiQU<br>
+• Nilsmeyer - An ansible role for bootstrapping new Debian based systems, including setting up partitions, file systems, encryption (luks), RAID and LVM<br>
+https://github.com/nilsmeyer/ansible-debootstrap<br>
+• Linux Dabbler - Scripts to run after installing debian<br>
+https://github.com/linuxdabbler/debian-install-scripts<br>
 
 
-<h5>&nbsp; 2.2.3.1 File system: EXT4, XFS, BTRFS AND ZFS</h5>    
+<h5>&nbsp; 2.2.3.1 File system: EXT4, XFS, BTRFS AND ZFS</h5>
 
 <div id="table1" align="left">
-  <img src=".data/file_system.png"/>
+<img src=".data/file_system.png"/>
 </div>
 
 <h4>2.2.4 Things to do After Installing Debian</h4>
@@ -616,9 +624,9 @@ https://github.com/linuxdabbler/debian-install-scripts</br>
 
 <p>4. Installing Java </p>
 
-• JRE (Java Runtime Environment)</br>
+• JRE (Java Runtime Environment)<br>
 
-• OpenJDK 17 JDK (Java Development Kit)</br>
+• OpenJDK 17 JDK (Java Development Kit)<br>
 
 <pre>
 $ java --version
@@ -628,46 +636,46 @@ $ apt-cache search openjdk | grep openjdk-17
 
 <h4>2.2.5 Linux From Scratch (LFS)</h4>
 
-• Linux From Scratch</br>
-https://www.linuxfromscratch.org</br>
+• Linux From Scratch<br>
+https://www.linuxfromscratch.org<br>
 
-• Reproducible builds</br>
+• Reproducible builds<br>
 https://reproducible-builds.org/
 
-</br>
-</details>  
+<br>
+</details>
 
 <details>
 <summary><b>2.3 Encryption</b></summary> 
-<p></p>
+<br>
 	
-2.3.1 Encryption</br>
+2.3.1 Encryption<br>
 
-https://wiki.archlinux.org/title/Security</br>
-https://wiki.archlinux.org/title/Data-at-rest_encryption</br>
-https://en.wikipedia.org/wiki/Disk_encryption#Implementations</br>
-https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-2</br>
+https://wiki.archlinux.org/title/Security<br>
+https://wiki.archlinux.org/title/Data-at-rest_encryption<br>
+https://en.wikipedia.org/wiki/Disk_encryption#Implementations<br>
+https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-2<br>
 
-2.3.2 Partitioning scenarios: advantages and disadvantages</br>
+2.3.2 Partitioning scenarios: advantages and disadvantages<br>
 
-https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system</br>
-https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page</br>
+https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system<br>
+https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page<br>
 
-2.3.3 FSTAB, CRYPTTAB AND DM-CRYPT - Linux kernel's device mapper crypto target</br>
+2.3.3 FSTAB, CRYPTTAB AND DM-CRYPT - Linux kernel's device mapper crypto target<br>
 
-• Dm-crypt</br>
-https://wiki.archlinux.org/title/Dm-crypt</br>
-• Fstab</br>
-https://wiki.debian.org/fstab</br>
-https://manpages.debian.org/bookworm/mount/fstab.5.en.html</br>
+• Dm-crypt<br>
+https://wiki.archlinux.org/title/Dm-crypt<br>
+• Fstab<br>
+https://wiki.debian.org/fstab<br>
+https://manpages.debian.org/bookworm/mount/fstab.5.en.html<br>
 
-• Crypttab</br>
+• Crypttab<br>
 
-https://manpages.debian.org/bookworm/cryptsetup/crypttab.5.en.html</br>
+https://manpages.debian.org/bookworm/cryptsetup/crypttab.5.en.html<br>
 
-• Tips</br>
+• Tips<br>
 
-∙ Copy and paste blkid to fstab</br>
+∙ Copy and paste blkid to fstab<br>
 
 <code># echo "$(blkid -o export /dev/sdbX | grep ^UUID=) REMEMBEREFI" | tee --append /etc/fstab</code>
 
@@ -675,62 +683,65 @@ or
 
 <code># blkid -o value -s UUID >> /etc/fstab</code>
 
-2.3.4 Example 1 - FSTAB - Non-encrypted Boot Removable Medium (USB Key) Multi-device</br>
+2.3.4 Example 1 - FSTAB - Non-encrypted Boot Removable Medium (USB Key) Multi-device<br>
 
 ```sh
-# <file system>                             <mount point>   <type>  <options>          <dump>  <pass>
-UUID=e4c627c2-69f2-11ee-8c99-0242ac120002        /           ext4    errors=remount-ro    0       1
+# <file system> <mount point> <type><options><dump><pass>
+UUID=e4c627c2-69f2-11ee-8c99-0242ac120002/ ext4errors=remount-ro0 1
 # /boot was on /dev/sdc2 during installation
-PARTUUID=f2c4ec78-69f2-11ee-8c99-0242ac120002   /boot        ext2    noauto, x-systemd.device-timeout=1m, defaults     0       2
+PARTUUID=f2c4ec78-69f2-11ee-8c99-0242ac120002 /bootext2noauto, x-systemd.device-timeout=1m, defaults 0 2
 # /boot/efi was on /dev/sdc1 during installation
-PARTUUID=a15355f4-15ce-4ea6-a57b-161e9eea19fc   /boot/efi    vfat    noauto, x-systemd.device-timeout=1m, umask=0077   0       1
-UUID=2701e126-69f3-11ee-8c99-0242ac120002       /home        ext4    defaults             0       2
-UUID=447e4a14-69f3-11ee-8c99-0242ac120002        none        swap    sw                   0       0 
+PARTUUID=a15355f4-15ce-4ea6-a57b-161e9eea19fc /boot/efivfatnoauto, x-systemd.device-timeout=1m, umask=0077 0 1
+UUID=2701e126-69f3-11ee-8c99-0242ac120002 /homeext4defaults 0 2
+UUID=447e4a14-69f3-11ee-8c99-0242ac120002noneswapsw 0 0 
 ```
 
-2.3.5 Example 2 - FSTAB - Encrypted Boot Removable Medium (USB Key) Multi-device</br>
+2.3.5 Example 2 - FSTAB - Encrypted Boot Removable Medium (USB Key) Multi-device<br>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
-https://tqdev.com/2022-luks-with-usb-unlock</br>
+https://tqdev.com/2022-luks-with-usb-unlock<br>
 
-"Install debian 9 stretch on one encrypted btrfs partition including /boot and booting if via EFI"</br>
-https://github.com/rob31415/cryptBoot</br>
+"Install debian 9 stretch on one encrypted btrfs partition including /boot and booting if via EFI"<br>
+https://github.com/rob31415/cryptBoot<br>
 
-https://github.com/stupidpupil/https-keyscript</br>
+https://github.com/stupidpupil/https-keyscript<br>
 
-2.3.6 Example 3 - FSTAB - Encrypted Boot Removable Medium (USB Key) Multi-device and Keyfile</br>
+2.3.6 Example 3 - FSTAB - Encrypted Boot Removable Medium (USB Key) Multi-device and Keyfile<br>
 
-Key File Encryption with USB Key</br>
-https://github.com/aomgiwjc/Unix-Bootstrap-Installs/wiki</br>
-https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git</br>
-https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key</br>
-https://blog.fidelramos.net/software/unlock-luks-usb-drive</br>
-https://www.willhaley.com/blog/unlock-luks-volumes-with-usb-key</br>
-https://www.dwarmstrong.org/fde-debian</br>
-https://www.cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux</br>
+Key File Encryption with USB Key<br>
+https://github.com/aomgiwjc/Unix-Bootstrap-Installs/wiki<br>
+https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git<br>
+https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key<br>
+https://blog.fidelramos.net/software/unlock-luks-usb-drive<br>
+https://www.willhaley.com/blog/unlock-luks-volumes-with-usb-key<br>
+https://www.dwarmstrong.org/fde-debian<br>
+https://www.cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux<br>
 
-2.3.7 Nuke Password</br>
-https://packages.debian.org/bookworm/cryptsetup-nuke-password</br>
-https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password</br>
-sudo apt install cryptsetup-nuke-password</br>
+2.3.7 Nuke Password<br>
+https://packages.debian.org/bookworm/cryptsetup-nuke-password<br>
+https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password<br>
+sudo apt install cryptsetup-nuke-password<br>
 
-</br>
-</details>  
+<br>
+</details>
 
 <br>
 <hr>
 
 <h2>3. SECURE BOOT</h2>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <details>
 <summary><b>3.01 Introduction</b></summary>
-</br>
-  <p>"Most modern systems will ship with SB enabled - they will not run any unsigned code by default, but it is possible to change the firmware configuration to either disable SB or to enroll extra signing keys. The whole point of Secure Boot is to prevent malware from gaining control of the computer. Therefore, when booting with Secure Boot active, Fedora 18 and later, Ubuntu 16.04 and later, and probably other distributions restrict actions that some Linux users take for granted. For instance, Linux kernel modules must be signed, which complicates use of third-party kernel drivers, such as Nvidia's and AMD/ATI's proprietary video drivers. More recent kernels may, if Secure Boot is active, also check that they were launched from a boot loader that honors Secure Boot, and shut down if this was not the case."</p>
-  <p>"To launch a locally-compiled kernel, you must sign it with a MOK and register that MOK with the system. (In both cases, you can register a hash rather than sign the binary; but this approach results in an ever-growing database in NVRAM, which is undesirable.) The extent of such restrictions is entirely up to those who develop and sign the boot loader launched by Shim and the kernel launched by that boot loader, though. Some distributions ship kernels that are relatively unencumbered by added security restrictions."</p>
-  <p>"As a practical matter, if you want to use Shim, you have two choices: You can run a distribution that provides its own signed version of Shim, such as Fedora 18 or later or Ubuntu 12.10 or later; or you can run a signed version from such a distribution or from another source, add your own MOK, and sign whatever binaries you like. This first option is quite straightforward if you happen to want to use a distribution that ships with Shim, and it requires little extra elaboration.If you want to build and run your own kernel (e.g. for development or debugging), then you will obviously end up making binaries that are not signed with the Debian key. If you wish to use those binaries, you will need to either sign them yourself and enroll the key used with MOK or disable SB."</p>
+<br>
+
+<p>"Most modern systems will ship with SB enabled - they will not run any unsigned code by default, but it is possible to change the firmware configuration to either disable SB or to enroll extra signing keys. The whole point of Secure Boot is to prevent malware from gaining control of the computer. Therefore, when booting with Secure Boot active, Fedora 18 and later, Ubuntu 16.04 and later, and probably other distributions restrict actions that some Linux users take for granted. For instance, Linux kernel modules must be signed, which complicates use of third-party kernel drivers, such as Nvidia's and AMD/ATI's proprietary video drivers. More recent kernels may, if Secure Boot is active, also check that they were launched from a boot loader that honors Secure Boot, and shut down if this was not the case."</p>
+
+<p>"To launch a locally-compiled kernel, you must sign it with a MOK and register that MOK with the system. (In both cases, you can register a hash rather than sign the binary; but this approach results in an ever-growing database in NVRAM, which is undesirable.) The extent of such restrictions is entirely up to those who develop and sign the boot loader launched by Shim and the kernel launched by that boot loader, though. Some distributions ship kernels that are relatively unencumbered by added security restrictions."</p>
+
+<p>"As a practical matter, if you want to use Shim, you have two choices: You can run a distribution that provides its own signed version of Shim, such as Fedora 18 or later or Ubuntu 12.10 or later; or you can run a signed version from such a distribution or from another source, add your own MOK, and sign whatever binaries you like. This first option is quite straightforward if you happen to want to use a distribution that ships with Shim, and it requires little extra elaboration.If you want to build and run your own kernel (e.g. for development or debugging), then you will obviously end up making binaries that are not signed with the Debian key. If you wish to use those binaries, you will need to either sign them yourself and enroll the key used with MOK or disable SB."</p>
 
 
 ```diff
@@ -773,18 +784,20 @@ sudo apt install cryptsetup-nuke-password</br>
 - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1012741
 - • Debian Bug report logs - #1012816 Key was rejected by service 
 - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1012816;msg=22
-- • Debian Bug report logs - #989463 please align shim-signed dkms behaviour with Ubuntu  
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989463  
+- • Debian Bug report logs - #989463 please align shim-signed dkms behaviour with Ubuntu
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989463
 - • Debian Bug report logs - #939392 please provide kmodsign like Ubuntu does
 - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=939392
-- • Debian Bug report logs - #928300 shim-signed: secure boot via removable media path unavailable  
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=928300  
-```  
-
-</details>  
+- • Debian Bug report logs - #928300 shim-signed: secure boot via removable media path unavailable
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=928300
+```
+<br>
+</details>
 
 <details>
 <summary><b>3.02 Secure Boot References</b></summary>
+<br>
+
 <ul>
 BASIC:
 <li>https://www.rodsbooks.com/efi-bootloaders</li>
@@ -832,31 +845,38 @@ ADVANCED:
 <li>https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250 </li>
 <li>https://www.linuxjournal.com/content/take-control-your-pc-uefi-secure-boot</li>
 </ul>
-</details>  
+
+<br>
+</details>
 
 <details>
-<summary><b>3.03 YouTube Video References</b></summary>  
+<summary><b>3.03 YouTube Video References</b></summary>
+<br>
+
 <ul>
 <li><a href="https://www.youtube.com/watch?v=Mqh9o8YY2dg" target="_blank">Use UEFI Secure Boot NOW! (Trafotin)</a></li>
 <li><a href="https://www.youtube.com/watch?v=WBemkwMHLJM" target="_blank">Best Practices for UEFI Secure Boot Customization (UEFIForum)</a></li>
 <li><a href="https://www.youtube.com/watch?v=jtLQ8SzfrDU" target="_blank">Secure Boot from A to Z (The Linux Foundation)</a></li>
 <li><a href="https://www.youtube.com/watch?v=_3mwK6AXo_k" target="_blank">Secure Boot. In Debian. In Buster. Really (DebConf Videos)</a></li>
 </ul>
+
+<br>
 </details> 
 
 <DIV class="section" id="VERDE">
 
 <details>
-<summary><b>3.04 Sign GRUB for Secure Boot</b></summary>  
-</br>
+<summary><b>3.04 Sign GRUB for Secure Boot</b></summary>
+<br>
 
-<p><b>Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from its source www.kernel.org must be signed or will not be able to load.</b></p>   
+<p><b>Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from its source www.kernel.org must be signed or will not be able to load.</b></p> 
 
+<br>
 </details>
 
 <details>
 <summary><b>3.05 Sign Debian Kernel for Secure Boot</b></summary>
-</br>
+<br>
 
 <p><b>
 Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from its source www.kernel.org must be signed or will not be able to load.
@@ -865,78 +885,90 @@ Debian 11 comes with signed kernels to work with your GRUB so it will most likel
 Only a single custom certificate can be added to the kernel because the compressed size of the kernel's boot image can not increase. Do not add multiple certificates to the kernel boot image.
 </b></p>
 
-<b>1.First steps </b>   
+<p><b>1.First steps</b></p>
 
-All the items below have to do with SecureBoot mode.
+<p>All the items below have to do with SecureBoot mode.</p>
 
 ```bash
 $ sudo mokutil --sb-state
 SecureBoot enabled
 ```
 
-If controlling the Secure Boot state through the EFI setup program is difficult, you can optionally use the mokutil utility to disable Secure Boot at the level of the Shim so that, although UEFI Secure Boot is enabled, no further validation takes place after the Shim is loaded.
+<p>If controlling the Secure Boot state through the EFI setup program is difficult, you can optionally use the mokutil utility to disable Secure Boot at the level of the Shim so that, although UEFI Secure Boot is enabled, no further validation takes place after the Shim is loaded.</p>
 
-What keys are on my system?
+<p>What keys are on my system?</p>
+
 ```bash
 user@debian:~$ sudo mokutil --list-enrolled
 or
 $ sudo mokutil --list-enrolled | grep Subject:
 ```
 
-Also the command <ins>modinfo</ins> prints the signature if available, for example:
+<p>Also the command <ins>modinfo</ins> prints the signature if available, for example:</p>
+
 ```bash
 $ sudo modinfo /lib/modules/6.1.0-11-amd64/kernel/mm/zsmalloc.ko 
 ```
 
-<b>2.Place to auto-generated MOK</b>
+<p><b>2.Place to auto-generated MOK</b></p>
 
-MOK - Machine Owner Key
+<p>MOK - Machine Owner Key</p>
 
 <details>
-<summary><b>Introduction</b></summary>  
-The use of mokutil that's most relevant to this page is to import a MOK. In this context, importing refers to storing a MOK in the computer's NVRAM, along with a flag to tell Shim and MokUtil that the MOK is there and ready to be enlisted when you next reboot the computer. Keys can be added and removed in the MOK list by the user, entirely separate from the distro CA key. Unlike Debian, Ubuntu has chosen to place their auto-generated MOK at "/var/lib/shim-signed/mok/", which some software--such as Oracle's virtualbox package -expect to be present. Note that using this same location may result in future conflicts. Warning: The MOK.key file is extremely sensitive! An attacker who gains access to it could generate binaries that your computer would accept as authorized. You should change permissions to prevent unauthorized access, and ideally store it on an encrypted external storage medium and unplug it when you're not signing binaries.If you see the key there (consisting of the files MOK.der, MOK.pem and MOK.priv) then you can use these, rather than creating your own.
+<summary><b>Introduction</b></summary>
+<br>
+
+<p>The use of mokutil that's most relevant to this page is to import a MOK. In this context, importing refers to storing a MOK in the computer's NVRAM, along with a flag to tell Shim and MokUtil that the MOK is there and ready to be enlisted when you next reboot the computer. Keys can be added and removed in the MOK list by the user, entirely separate from the distro CA key. Unlike Debian, Ubuntu has chosen to place their auto-generated MOK at "/var/lib/shim-signed/mok/", which some software--such as Oracle's virtualbox package -expect to be present. Note that using this same location may result in future conflicts. Warning: The MOK.key file is extremely sensitive! An attacker who gains access to it could generate binaries that your computer would accept as authorized. You should change permissions to prevent unauthorized access, and ideally store it on an encrypted external storage medium and unplug it when you're not signing binaries.If you see the key there (consisting of the files MOK.der, MOK.pem and MOK.priv) then you can use these, rather than creating your own.</p>
+
+<br>
 </details>
 
-First make sure the key doesn't exist yet:
+<p>First make sure the key doesn't exist yet:</p>
+
 ```bash
 $ ls /var/lib/shim-signed/mok/
 ```
-To create a folder to MOK key:
+
+<p>To create a folder to MOK key:</p>
+
 ```bash
 $ sudo mkdir -p /var/lib/shim-signed/mok/
 ```
-You can choose another placcautione like "/etc/mok_key/" since there is no standard location at the moment.
+
+<p>You can choose another placcautione like "/etc/mok_key/" since there is no standard location at the moment.</p>
+
 ```bash
 $ sudo mkdir -p /etc/mok_key/
 ```
 
 <b>3.Generating a new key</b>
 
-Before you create the public and private key for signing the kernel, you need to access the folder you created to be the destination of the keys. Then create the public (mokcertificate.der) and private key (moksigningkey.priv) with one-time password for signing the kernel
+<p>Before you create the public and private key for signing the kernel, you need to access the folder you created to be the destination of the keys. Then create the public (mokcertificate.der) and private key (moksigningkey.priv) with one-time password for signing the kernel</p>
 
 ```bash
 $ cd /var/lib/shim-signed/mok/
 $ sudo openssl req -config $(openssl version -d) -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -days 36500 -subj "/CN=ShimSigned/"
-
 ```
+
 ```bash
 $ sudo openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem
 $ ls -l 
 total 12
--rw-r--r-- 1 root root  787  MOK.der
--rw-r--r-- 1 root root 1123  MOK.pem
--rw------- 1 root root 1854  MOK.priv
+-rw-r--r-- 1 root root787MOK.der
+-rw-r--r-- 1 root root 1123MOK.pem
+-rw------- 1 root root 1854MOK.priv
 $ sudo chmod 600 /var/lib/shim-signed/mok/*
 ```
 
-This commands will create both the private and public part of the certificate to sign things. You need both files to sign; and just the public part (MOK.der) to enroll the key in Shim.
+<p>This commands will create both the private and public part of the certificate to sign things. You need both files to sign; and just the public part (MOK.der) to enroll the key in Shim.</p>
 
-To read the certificate file in a human readable format, use
+<p>To read the certificate file in a human readable format, use</p>
+
 ```bash
 $ sudo openssl x509 -in /var/lib/shim-signed/mok/MOK.pem -noout -text 
 ```
 
-Another example of key generation:
+<p>Another example of key generation:</p>
 ```bash
 $ sudo openssl req -x509 -new -nodes -utf8 -sha512 -days 3650 -batch -config /etc/ssl/x509.conf -outform DER -out /etc/ssl/certs/pubkey.der -keyout /etc/ssl/certs/priv.key
 $ sudo openssl x509 -inform DER -in /etc/ssl/certs/pubkey.der -out /etc/ssl/certs/pubkey.pem
@@ -946,73 +978,89 @@ $ sudo openssl x509 -inform DER -in /etc/ssl/certs/pubkey.der -out /etc/ssl/cert
 
 <b>4.Enrolling your key im Shim</b>
 
-Enroll the key to your installation:
+<p>Enroll the key to your installation:</p>
 
 ```bash
 $ cd /var/lib/shim-signed/mok/
 $ sudo mokutil --import MOK.der
 ```
-You will be asked for a one-time <b>password (remember it and type it correctly)</b>, you will just use it to confirm your key selection in the next step (you won't need this password beyond this point, though), so choose any.
 
-Recheck your key will be prompted on next boot
+<p>You will be asked for a one-time <b>password (remember it and type it correctly)</b>, you will just use it to confirm your key selection in the next step (you won't need this password beyond this point, though), so choose any.</p>
+
+<p>Recheck your key will be prompted on next boot</p>
+
 ```bash
 $ sudo mokutil --list-new
 ```
 
-<b>5.Restart and finsh the process</b>
+<b>5.Restart and finsh the process</b></p>
 
-Restart your system. Changes to the MOK keys may only be confirmed directly from the`bash at boot time. You will encounter a blue screen of a tool called MOKManager. Select "Enroll MOK" and then "View key". Make sure it is your key you created in step 3. Afterwards continue the process and you must enter the password which you provided in step 4. Continue with booting your system.
+<p>Restart your system. Changes to the MOK keys may only be confirmed directly from the`bash at boot time. You will encounter a blue screen of a tool called MOKManager. Select "Enroll MOK" and then "View key". Make sure it is your key you created in step 3. Afterwards continue the process and you must enter the password which you provided in step 4. Continue with booting your system.</p>
 
-Verify your key is already enrolled, if the MOK was loaded correctly, with:
+<p>Verify your key is already enrolled, if the MOK was loaded correctly, with:</p>
+
 ```bash
 $ sudo mokutil --test-key /var/lib/shim-signed/mok/MOK.der
 ```
 
-<b>6.Sign your installed kernel or modules</b>
+<b>6.Sign your installed kernel or modules</b></p>
 
 <DIV class="subsection" id="6.1" >
 <details>
-<summary><b>6.1 Modern Method: </b> Signing the Debian kernel and modules with DKMS</summary> 
+<summary><b>6.1 Modern Method: </b> Signing the Debian kernel and modules with DKMS</summary>
+<br>
 
-Building Debian kernel modules with DKMS. The dkms frameworks allows building kernel modules "on the fly" on the local system instead of building them centrally on the Debian infrastructure, DKMS could automatically sign kernel updated modules. If you install the kernel modules through the apt repository, chances are that modules have already been signed by the DKMS signing key. In that case, the traditional method won't work. And the thing you only need to do is to enroll the DKMS signing key into your machine. On systems that use SecureBoot, you will need a Machine Owner Key (MOK) to load DKMS modules. Generate it, enroll it, sign modules with it and then you will be able to load the signed modules. 
+<p>Building Debian kernel modules with DKMS. The dkms frameworks allows building kernel modules "on the fly" on the local system instead of building them centrally on the Debian infrastructure, DKMS could automatically sign kernel updated modules. If you install the kernel modules through the apt repository, chances are that modules have already been signed by the DKMS signing key. In that case, the traditional method won't work. And the thing you only need to do is to enroll the DKMS signing key into your machine. On systems that use SecureBoot, you will need a Machine Owner Key (MOK) to load DKMS modules. Generate it, enroll it, sign modules with it and then you will be able to load the signed modules.</p>
 
-In Debian, it depends on the dkms package:
+<p>In Debian, it depends on the dkms package:</p>
+
 ```bash
 $ sudo apt install dkms
 ```
-In order for dkms to automatically sign kernel modules, it must be told which key to sign the module with. This is done by adding two configuration values to "/etc/dkms/framework.conf", adjusting paths as required:
 
-  mok_signing_key="/var/lib/shim-signed/mok/MOK.priv"
-  mok_certificate="/var/lib/shim-signed/mok/MOK.der"
+<p>In order for dkms to automatically sign kernel modules, it must be told which key to sign the module with. This is done by adding two configuration values to "/etc/dkms/framework.conf", adjusting paths as required:</p>
 
-<\details>
+<p>mok_signing_key="/var/lib/shim-signed/mok/MOK.priv"</p>
+<p>mok_certificate="/var/lib/shim-signed/mok/MOK.der"</p>
+
+<br>
+</details>
 
 <DIV class="subsubsection" id="6.2.1">
 <details>
-<summary><b>DKMS Sign Helper Script</b></summary>  
-<p></p>
-If these values are provided and dkms is able to build modules but does not attempt to sign them, then it is likely that sign_tool is missing. This is more common in older and/or custom kernels.
-In "/etc/dkms/framework.conf", add:
+<summary><b>DKMS Sign Helper Script</b></summary>
+<br>
+
+<p>If these values are provided and dkms is able to build modules but does not attempt to sign them, then it is likely that sign_tool is missing. This is more common in older and/or custom kernels.
+In "/etc/dkms/framework.conf", add:</p>
+
 ```bash
 sign_tool="/etc/dkms/sign_helper.sh"
 ```
+
 Create "/etc/dkms/sign_helper.sh" with:
+
 ```bash
 /lib/modules/"$1"/build/scripts/sign-file sha512 /root/.mok/client.priv /root/.mok/client.der "$2"
 ```
+
 Set Linux kernel info variables
+
 ```bash
 $ VERSION="$(uname -r)"
 $ SHORT_VERSION="$(uname -r | cut -d . -f 1-2)"
 $ MODULES_DIR=/lib/modules/$VERSION
 $ KBUILD_DIR=/usr/lib/linux-kbuild-$SHORT_VERSION
 ```
-<\details> 
+
+<br>
+</details> 
 
 <DIV class="subsubsection" id="6.2.2">
 <details>
-<summary>Making DKMS modules signing by DKMS signing key usable with the secure boot</summary>  
-<p></p>
+<summary>Making DKMS modules signing by DKMS signing key usable with the secure boot</summary>
+<br>
+
 If you install the kernel modules through the apt repository, chances are that modules have already been signed by the DKMS signing key. In that case, the traditional method won't work. And the thing you only need to do is to enroll the DKMS signing key into your machine. Here is how we can do that:
 
 First, use the method mentioned in Verifying if a module is signed to check if the modules are signed by DKMS signing key.
@@ -1020,6 +1068,7 @@ First, use the method mentioned in Verifying if a module is signed to check if t
 Next, find the location of the mok signing key and mok certificate. You can view the location in /etc/dkms/framework.conf, and the default location is /var/lib/dkms.
 
 Then, run the following command to enroll the key into the machine:
+
 ```bash
 $ sudo mokutil --import /var/lib/dkms/mok.pub # prompts for one-time password and /var/lib/mok.pub can be changed, if mok certificate isn't located there.
 $ sudo mokutil --list-new # recheck your key will be prompted on next boot
@@ -1028,15 +1077,18 @@ $ sudo mokutil --list-new # recheck your key will be prompted on next boot
 
 $ sudo dmesg | grep cert # verify your key is loaded
 ```
-<\details> 
+
+<br>
+</details> 
+
 </DIV>
 </DIV>
 </DIV>
 
-<DIV class="subsection" id="6.2">  
-<details>  
-<summary><b>6.2 Traditional Method:</b> signing the Debian kernel with sbsigntool</summary>  
-<p></p>
+<DIV class="subsection" id="6.2">
+<details>
+<summary><b>6.2 Traditional Method:</b> signing the Debian kernel with sbsigntool</summary>
+<br>
 
 Building and signing modules is independent of building and signing your own kernel (vmlinuz). To sign a custom kernel or any other EFI binary you want to have loaded by Shim, you’ll need to use a different command: sbsign (PEM). In this case, we’ll need the certificate in a different format, <ins>mokutil</ins> needs DER, <ins>sbsign</ins> needs PEM. Convert the certificate into PEM (.der to .pem), for example:
 ```
@@ -1081,7 +1133,7 @@ Update your grub-config
 ```
 $ sudo update-grub
 ```
-Reboot your system and select the signed kernel. Now your system should run under a signed kernel and upgrading GRUB2 works again. If you want to upgrade the custom kernel, you can sign the new version easily by following above steps again from step seven on. Thus BACKUP the MOK-keys (MOK.der, MOK.pem, MOK.priv) in an encrypted device.  
+Reboot your system and select the signed kernel. Now your system should run under a signed kernel and upgrading GRUB2 works again. If you want to upgrade the custom kernel, you can sign the new version easily by following above steps again from step seven on. Thus BACKUP the MOK-keys (MOK.der, MOK.pem, MOK.priv) in an encrypted device.
 
 Verifying if a module is signed. The command modinfo prints the signature if available, for example:
 ```
@@ -1093,30 +1145,32 @@ $ sudo dmesg | grep cert
 $ sudo sbverify --list /boot/vmlinuz-6.1.0-12-amd64
 $ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-12-amd64
 ```
-<p></p>
-</details>  
+
+<br>
+</details>
+
 </DIV>
 </DIV>
-</DIV>  
+</DIV>
 
 <details>
-<summary><b>3.06 Reset Secure Boot keys for Kernel or Modules</b></summary>  
-<p></p>
+<summary><b>3.06 Reset Secure Boot keys for Kernel or Modules</b></summary>
+<br>
 Reset Key for Kernel
-👷🛠️UNDER CONSTRUCTION🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
-https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#setuputil</br>
+https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#setuputil<br>
 
-"The ASUS permits to you restore the default keys, so this isn't really vital if you're starting from the factory defaults with this model; but if yours doesn't offer such a reset-to-defaults option or if you've modified the keys, saving them may be prudent. As the name implies, this option also erases all your Secure Boot keys. (It does not erase your MOKs, though.)"</br>
+"The ASUS permits to you restore the default keys, so this isn't really vital if you're starting from the factory defaults with this model; but if yours doesn't offer such a reset-to-defaults option or if you've modified the keys, saving them may be prudent. As the name implies, this option also erases all your Secure Boot keys. (It does not erase your MOKs, though.)"<br>
 
 <b>Reset MOK Keys for Modules</b>
-👷🛠️UNDER CONSTRUCTION🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
-https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#key-revocation</br>
+https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#key-revocation<br>
 
 ```
 $ sudo mokuitil --sb-state
-  SecureBoot disabled
+SecureBoot disabled
 ```
 ```
 $ sudo mokutil --disable-validation
@@ -1164,11 +1218,13 @@ Reset de modules and unload them in Kernel
 $ sudo depmod -a -v
 $ sudo update-initramfs -k all -u -v
 ```
-</details>   
+
+<br>
+</details> 
 
 <details>
 <summary><em><b>3.07 OpenSSL Errors</b></em></summary>
-</br>
+<br>
 
 Error 1 - No such file
 <pre>
@@ -1220,9 +1276,9 @@ This is where Debian places openssl.cnf for the OpenSSL they provide:
 $ openssl version -d
 OPENSSLDIR: "/usr/lib/ssl"
 $ ls -l /usr/lib/ssl
-lrwxrwxrwx 1 root root   mmm 30 mm:mm openssl.cnf -> /etc/ssl/openssl.cnf
+lrwxrwxrwx 1 root root mmm 30 mm:mm openssl.cnf -> /etc/ssl/openssl.cnf
 $ ls -l /etc/ssl/
--rw-r--r-- 1 root root   mmm 30 mm:mm openssl.cnf
+-rw-r--r-- 1 root root mmm 30 mm:mm openssl.cnf
 </pre>
 
 It is kind of buried in OpenSSL source code for apps.c, load_config and what happens when openssl.cnf is NULL (i.e., no -config option or OPENSSL_CONF envar). When openssl.cnf is NULL and no overrides, then OPENSSLDIR is used.
@@ -1231,22 +1287,22 @@ Cause 2
 
 Wrong syntax of OpenSSL
 
-*Man Page OpenSSL:    
-<a href="https://www.openssl.org/docs/man1.0.2/man1/openssl-req.html">Man OpenSSL</a>   
+*Man Page OpenSSL:
+<a href="https://www.openssl.org/docs/man1.0.2/man1/openssl-req.html">Man OpenSSL</a> 
 ```bash
 $ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -config openssl.cnf -outform DER -out MOK.der -keyout MOK.priv
 $ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -outform DER -out MOK.der -keyout MOK.priv
 $ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -config openssl.cnf -outform DER -out MOK.der -keyout MOK.priv
 $ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -outform DER -out MOK.der -keyout MOK.priv
 ```
-*Ubuntu:    
-<a href="https://ubuntu.com/blog/how-to-sign-things-for-secure-boot">https://ubuntu.com/blog/how-to-sign-things-for-secure-boot</a>   
+*Ubuntu:
+<a href="https://ubuntu.com/blog/how-to-sign-things-for-secure-boot">https://ubuntu.com/blog/how-to-sign-things-for-secure-boot</a> 
 
 ```bash
 $ sudo openssl req -config ./openssl.cnf -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "MOK.priv" -out "MOK.der"
 ```
 
-*Debian:    
+*Debian:
 <a href="https://wiki.debian.org/SecureBoot">https://wiki.debian.org/SecureBoot</a>
 
 ```cosole
@@ -1254,7 +1310,7 @@ $ sudo openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -ou
 $ sudo openssl x509 -inform der -in MOK.der -out MOK.pem
 ```
 
-*Fedora:    
+*Fedora:
 <a href="https://docs.fedoraproject.org/en-US/quick-docs/kernel-build-custom/">https://docs.fedoraproject.org/en-US/quick-docs/kernel-build-custom/</a>
 
 ```bash
@@ -1312,14 +1368,12 @@ $ sudo apt-get install -f
 $ sudo dpkg-reconfigure broadcom-sta-dkms
 ```
 
-<p></p>
-
+<br>
 </details>
 
-
 <details>
-<summary><b>3.08 Sign WIFI Module for Secure Boot</b></summary>  
-<p></p>
+<summary><b>3.08 Sign WIFI Module for Secure Boot</b></summary>
+<br>
 
 How to get WiFi Module signed for Secure Boot
 
@@ -1358,7 +1412,7 @@ $ sudo mkdir -p /var/lib/shim-signed/mok
 $ sudo openssl req -config /usr/lib/ssl/openssl.cnf -new -x509 -newkey rsa:2048 -nodes -days 36500 -outform DER -keyout "/var/lib/shim-signed/mok/MOK.priv" -out "/var/lib/shim-signed/mok/MOK.der" -subj "/CN=MODULE/"
 $ ls -l /var/lib/shim-signed/mok/
 total 8
--rw-r--r-- 1 root root  779 MOK.der
+-rw-r--r-- 1 root root779 MOK.der
 -rw------- 1 root root 1704 MOK.priv
 $ sudo chmod 600 /var/lib/shim-signed/mok/*
 ```
@@ -1418,7 +1472,7 @@ And where was the module installed? In <ins>/lib/modules/$(uname -r)/kernel/driv
 
 ```bash
 $ sudo modinfo -n rtw_8723d
-  /lib/modules/6.1.0-13-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
+/lib/modules/6.1.0-13-amd64/kernel/drivers/net/wireless/realtek/rtw88/rtw_8723d.ko
 ```
 
 To sign modules (with your KBUILD_SIGN_PIN), go to the directory containing the modules, and run
@@ -1439,10 +1493,10 @@ Assuming you type the password correct, you wont get any errors. You should be a
 ```bash
 $ sudo modinfo rtw_8723d
 (...)
-signer:         MODULE
-sig_key:        XX:XX:XX:XX:XX:XX:XX:XX...
-sig_hashalgo:   sha256
-signature:      XX:XX:XX:XX:XX:XX:XX:XX...
+signer: MODULE
+sig_key:XX:XX:XX:XX:XX:XX:XX:XX...
+sig_hashalgo: sha256
+signature:XX:XX:XX:XX:XX:XX:XX:XX...
 (...)
 ```
 
@@ -1483,7 +1537,7 @@ $ sudo sbsign --key MOK.priv --cert MOK.pem my_binary.efi --output my_binary.efi
 ```
 As long as the signing key is enrolled in shim and does not contain the Object Identifier (OID) from earlier (since that limits the use of the key to kernel module signing), the binary should be loaded just fine by shim.
 
-5.  VirtualBox Sign Helper Script
+5.VirtualBox Sign Helper Script
 
 Future kernel updates would require the updated kernels to be signed again, so it makes sense to put the signing commands in a script that can be run at a later date as necessary (DKMS package could do it automatically).
 
@@ -1494,10 +1548,10 @@ $ sudo nano /var/lib/shim-signed/modules/sign-modules
 #!/bin/bash
 
 for modfile in $(dirname $(modinfo -n </yourmodulehere>))/*.ko; do
-  echo "Signing $modfile"
-  /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 \
-                                /var/lib/shim-signed/modules/module.priv \
-                                /var/lib/shim-signed/modules/module.der "$modfile"
+echo "Signing $modfile"
+/usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 \
+/var/lib/shim-signed/modules/module.priv \
+/var/lib/shim-signed/modules/module.der "$modfile"
 done
 ```
 Add execution permission, and run the script above as root from the /var/lib/shim-signed/modules/ directory.
@@ -1512,17 +1566,18 @@ $ sudo modprobe vboxdrv
 or
 $ /sbin/modprobe vboxdrv 
 ```
-<p></p>
+
+<br>
 </details> 
 
 <details>
-<summary><b>3.09 Sign NVIDIA Module for Secure Boot</b></summary>  
-</br>
+<summary><b>3.09 Sign NVIDIA Module for Secure Boot</b></summary>
+<br>
 
-https://wiki.debian.org/DontBreakDebian#Don.27t_use_GPU_manufacturer_install_scripts    
-https://github.com/NVIDIA/open-gpu-kernel-modules  
-https://askubuntu.com/questions/1023036/how-to-install-nvidia-driver-with-secure-boot-enabled    
-  
+https://wiki.debian.org/DontBreakDebian#Don.27t_use_GPU_manufacturer_install_scripts
+https://github.com/NVIDIA/open-gpu-kernel-modules
+https://askubuntu.com/questions/1023036/how-to-install-nvidia-driver-with-secure-boot-enabled
+
 Download the latest driver from the NVIDIA website: https://www.geforce.com/drivers.
 
 Create a new pair of private key (Nvidia.key) and public key (Nvidia.der) by running the command:
@@ -1563,88 +1618,98 @@ Example:
 `sudo sh ./NVIDIA-Linux-x86_64-390.67.run -s --module-signing-secret-key=/home/itpropmn07/Nvidia.key --module-signing-public-key=/home/itpropmn07/Nvidia.der`
 
 Done.
-  
+
+<br>
 </details> 
 
 <details>
-<summary><b>3.10 Sign VirtualBox Module for Secure Boot</b></summary>  
-</br>
-How to get VirtualBox signed for Secure Boot</br>
+<summary><b>3.10 Sign VirtualBox Module for Secure Boot</b></summary>
+<br>
 
+How to get VirtualBox signed for Secure Boot<br>
+
+<br>
 </details> 
 
 <details>
-<summary><b>3.11 Sign Ventoy</b></summary>  
-</br>
-https://www.ventoy.net/en/doc_secure.html</br>
- 
-</details>   
+<summary><b>3.11 Sign Ventoy</b></summary>
+<br>
+https://www.ventoy.net/en/doc_secure.html<br>
+
+<br>
+</details> 
 
 <details>
-<summary><b>3.12 rEFInd Bootloader</b></summary>  
-</br>
-https://wiki.ubuntu.com/EFIBootLoaders</br>
+<summary><b>3.12 rEFInd Bootloader</b></summary>
+<br>
+https://wiki.ubuntu.com/EFIBootLoaders<br>
 
+<br>
 </details>
 
-<details>  
-<summary><b>3.13 Sign Custom Secure Keys</b></summary>  
-</br>
-https://github.com/nsacyber/Hardware-and-Firmware-Security-Guidance/blob/master/secureboot/Linux.md</br>
+<details>
+<summary><b>3.13 Sign Custom Secure Keys</b></summary>
+<br>
+https://github.com/nsacyber/Hardware-and-Firmware-Security-Guidance/blob/master/secureboot/Linux.md<br>
 
-</details>   
+<br>
+</details> 
 
-<details>  
+<details>
 <summary><b>3.14 Encrypted boot partition manager with UEFI Secure Boot support</b></summary>
-</br>
-https://github.com/xmikos/cryptboot</br>
-https://github.com/kmille/cryptboot</br>
+<br>
+https://github.com/xmikos/cryptboot<br>
+https://github.com/kmille/cryptboot<br>
 
+<br>
 </details>
 
-<details>  
-<summary><b>3.15 Sign with TPM 2.0</b></summary>  
-</br>
-https://github.com/squarooticus/efi-measured-boot</br>
-https://github.com/osresearch/safeboot</br>
+<details>
+<summary><b>3.15 Sign with TPM 2.0</b></summary>
+<br>
+https://github.com/squarooticus/efi-measured-boot<br>
+https://github.com/osresearch/safeboot<br>
 
-</details>  
-
-<details>  
-<summary><b>3.16 Secure Boot with Yubikey</b></summary>  
-</br>
-https://github.com/DimanNe/secure-boot</br>
-https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi</br>
-
+<br>
 </details>
 
-</br>
+<details>
+<summary><b>3.16 Secure Boot with Yubikey</b></summary>
+<br>
+https://github.com/DimanNe/secure-boot<br>
+https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi<br>
+
+<br>
+</details>
+
+<br>
 <hr>
 
 <!--################################### -->
 
 <h2>4. SYSTEM SECURITY</h2>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <details>
 <summary><b>4.01 Apparmor</b></summary>
 <br>
 
-https://github.com/Kicksecure/security-misc</br>
-https://apparmor.net</br>
-https://wiki.debian.org/AppArmor</br>
-https://wiki.debian.org/AppArmor/HowToUse</br>
-https://github.com/Kicksecure/apparmor-profile-torbrowser</br>
-https://wiki.ubuntu.com/DebuggingApparmor</br>
+https://github.com/Kicksecure/security-misc<br>
+https://apparmor.net<br>
+https://wiki.debian.org/AppArmor<br>
+https://wiki.debian.org/AppArmor/HowToUse<br>
+https://github.com/Kicksecure/apparmor-profile-torbrowser<br>
+https://wiki.ubuntu.com/DebuggingApparmor<br>
 
-<code>$ sudo apt install -y apparmor &&</code></br>
-<code>$ sudo apt install -y apparmor-profiles &&</code></br>
-<code>$ sudo apt install -y apparmor-utils &&</code></br>
-<code>$ sudo apt install -y apparmor-profiles-extra</code></br>
+<code>$ sudo apt install -y apparmor &&</code><br>
+<code>$ sudo apt install -y apparmor-profiles &&</code><br>
+<code>$ sudo apt install -y apparmor-utils &&</code><br>
+<code>$ sudo apt install -y apparmor-profiles-extra</code><br>
 
 <p>*Note: an AppArmor rule could prevent port use by an individual program.</p>
 
+<br>
 </details>
 
 <!-- #################### -->
@@ -1718,6 +1783,7 @@ $ sudo chmod 766 -R /home
 $ sudo chmod 766 -R /media
 </pre>
 
+<br>
 </details>
 
 <!-- #################### -->
@@ -1728,15 +1794,16 @@ $ sudo chmod 766 -R /media
 
 <h5>System Auditors</h5>
 
-<code>$ sudo apt install lynis</code></br>
-<code>$ sudo apt install checksecurity</code></br>
+<code>$ sudo apt install lynis</code><br>
+<code>$ sudo apt install checksecurity</code><br>
 
 <h5>Rootkit Detect</h5>
 
-<code>$ sudo apt install chkrootkit</code></br>
-<code>$ sudo apt install rkhunter</code></br>
-<code>$ sudo apt install chkboot</code></br>
+<code>$ sudo apt install chkrootkit</code><br>
+<code>$ sudo apt install rkhunter</code><br>
+<code>$ sudo apt install chkboot</code><br>
 
+<br>
 </details>
 
 <!-- #################### -->
@@ -1748,19 +1815,19 @@ $ sudo chmod 766 -R /media
 
 <h4>CLAMTK (GUI)</h4>
 
-https://github.com/dave-theunsub/clamtk</br>
+https://github.com/dave-theunsub/clamtk<br>
 
 <code>$ sudo apt install clamtk</code>
 
 <h4>CLAMAV (CLI)</h4>
 
-https://clamav.net</br>
-https://docs.clamav.net</br>
-https://github.com/Cisco-Talos/clamav</br>
-https://wiki.archlinux.org/title/ClamAV</br>
+https://clamav.net<br>
+https://docs.clamav.net<br>
+https://github.com/Cisco-Talos/clamav<br>
+https://wiki.archlinux.org/title/ClamAV<br>
 
-<code>$ sudo apt install -y clamav</code></br>
-<code>$ sudo apt install -y clamav-daemon</code></br>
+<code>$ sudo apt install -y clamav</code><br>
+<code>$ sudo apt install -y clamav-daemon</code><br>
 
 <pre>
 &nbsp; Commands
@@ -1773,9 +1840,22 @@ https://wiki.archlinux.org/title/ClamAV</br>
 &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"
 </pre>
 
+<br>
 </details>
 
-</br>
+
+<details>
+<summary><b>4.05 Updating</b></summary>
+<br>
+
+<p>Apply security updates as quickly as possible. According to 2020 reached conducted by Unit 42 at Palo Alto, approximately 80% of exploits are published faster than common vulnerabilities and exposures (CVEs).</p>
+
+<p>Set up automatic updates on Debian</p>
+
+<br>
+</details>
+
+<br>
 <hr>
 
 <!--################################### -->
@@ -1783,7 +1863,7 @@ https://wiki.archlinux.org/title/ClamAV</br>
 
 <h2>5. NETWORK</h2>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <details>
 <summary><b>5.01 Picking a Router</b></summary>
@@ -1792,73 +1872,100 @@ https://wiki.archlinux.org/title/ClamAV</br>
 <p>"There are a number of open-source options for routers that will take even a small consumer router and turn it into a powerful device with enterprise-level capabilities. My personal favorite is DD-WRT, but other popular options include pfSense, OpenWRT, and Tomato. While you can buy pre-flashed devices in some cases (FlashRouters for DD-WRT and Protectli for pfSense), I always encourage you to do it yourself if you’re comfortable to ensure maximum security (and also to be familiar with the update process). Having said all of this, if you are unsure if an open source router is right for you (the wealth of options can be overwhelming to some), I still encourage you to get a router that wasn’t provided by your ISP. Make sure it offers VLANs and VPN capabilities, as we will be using these heavily to protect your home."</p>
 <p>https://thenewoil.org/en/guides/quick-start/wifi-guide </p>
 
+
 <h4>• Examples of VPN routers and firmwares</h4>
 
 <table style="width: 100%" cellspacing="0" cellpadding="0">
 <thead>
-  <tr>
-    <th>Router</th>
-    <th>Firmware</th>
-  </tr>
+<tr>
+<th>Router</th>
+<th>Firmware</th>
+</tr>
 </thead>
 <tbody>
-  <tr>
-  <td valign="top" style="width: 50%">
-   EdgeRouter and Ubiquiti<br>
-   GL.iNet</br>
-   Netduma</br>
-   Netgear</br>
-   MikroTik</br>
-   Peplink/Pepwave</br>
-  </td>
-  <td valign="top" style="width: 50%">
-    AsusWRT Merlin</br>
-   DD-WRT</br>
-   DrayTek Vigor</br>
-   OpenWRT</br>
-   OPNsense 19.1</br>
-   Padavan</br>
-   pfSense 2.4.4</br>
-   pfSense 2.4.5</br>
-   pfSense 2.5</br>
-   Sabai</br>
-   Tomato</br>
-  </td>
-  </tr>
+<tr>
+<td valign="top" style="width: 50%">
+ EdgeRouter and Ubiquiti<br>
+ GL.iNet<br>
+ Netduma<br>
+ Netgear<br>
+ MikroTik<br>
+ Peplink/Pepwave<br>
+</td>
+<td valign="top" style="width: 50%">
+ OpenWRT<br>
+ AsusWRT Merlin<br>
+ DD-WRT<br>
+ DrayTek Vigor<br>
+ OPNsense 19.1<br>
+ Padavan<br>
+ pfSense 2.4.4<br>
+ pfSense 2.4.5<br>
+ pfSense 2.5<br>
+ Sabai<br>
+ Tomato<br>
+</td>
+</tr>
 </tbody>
 </table>
 
+<ul>
+<li>Change the default router password</li>
+<li>Turn off UPnP</li>
+<li>Use the router’s firewall capabilities</li>
+<li>Use sufficient Wi-Fi encryption</li>
+<li>Set a strong Wi-Fi password</li>
+<li>Change the Wi-Fi (SSID) name from the default</li>
+<li>Consider using open-source router firmware</li>
+<li>Keep router firmware updated</li>
+<li>Keep other software up to date</li>
+</ul>
+https://avoidthehack.com/router-wireless-guide<br>
+
+<br>
 </details>
 
 <!-- #################### -->
 
 <details>
-<summary><b>5.02 DNS Resolution</b></summary>
+<summary><b>5.02 DNS</b></summary>
 <br>
+
+<h4>DNS Resolution</h4>
 
 <h5>• The resolv.conf configuration file</h5>
 
-https://wiki.debian.org/NetworkConfiguration</br>
-https://wiki.debian.org/resolv.conf</br>
-https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_networking/manually-configuring-the-etc-resolv-conf-file_configuring-and-managing-networking</br>
+https://wiki.debian.org/NetworkConfiguration<br>
+https://wiki.debian.org/resolv.conf<br>
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_networking/manually-configuring-the-etc-resolv-conf-file_configuring-and-managing-networking<br>
 
 <h5>• The resolvconf program</h5>
 
-https://salsa.debian.org/debian/resolvconf</br>
+https://salsa.debian.org/debian/resolvconf<br>
 
 <h5>• The openresolv program</h5>
 
-https://roy.marples.name/projects/openresolv</br>
+https://roy.marples.name/projects/openresolv<br>
 
 <h5>• The systemd-resolved service</h5>
 
-https://wiki.archlinux.org/title/Systemd-resolved</br>
-https://www.freedesktop.org/software/systemd/man/latest/systemd-resolved.service.html</br>
+https://wiki.archlinux.org/title/Systemd-resolved<br>
+https://www.freedesktop.org/software/systemd/man/latest/systemd-resolved.service.html<br>
 
 <h5>• Avahi</h5>
 
-https://wiki.debian.org/Avahi</br>
+https://wiki.debian.org/Avahi<br>
 
+<!-- #################### -->
+
+<h4>Pi-hole®</h4>
+
+<p>The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content without installing any client-side software.</p>
+
+https://pi-hole.net<br>
+https://docs.pi-hole.net<br>
+
+<br>
 </details>
 
 <!-- #################### -->
@@ -1867,18 +1974,18 @@ https://wiki.debian.org/Avahi</br>
 <summary><b>5.03 Firewall</b></summary>
 <br>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <h4>• GUFW (GUI)</h4>
-https://help.ubuntu.com/community/Gufw</br>
+https://help.ubuntu.com/community/Gufw<br>
 
 <code>$ sudo apt install gufw</code>
 
 <h4>• UFW (CLI)</h4>
-https://wiki.archlinux.org/title/Uncomplicated_Firewall</br>
-http://manpages.ubuntu.com/manpages/precise/man8/ufw.8.html</br>
-https://help.ubuntu.com/community/UFW</br>
-https://www.paulligocki.com/vpn-only-ufw-setup</br>
+https://wiki.archlinux.org/title/Uncomplicated_Firewall<br>
+http://manpages.ubuntu.com/manpages/precise/man8/ufw.8.html<br>
+https://help.ubuntu.com/community/UFW<br>
+https://www.paulligocki.com/vpn-only-ufw-setup<br>
 
 
 <code>$ sudo apt install ufw</code>
@@ -1892,7 +1999,7 @@ https://www.paulligocki.com/vpn-only-ufw-setup</br>
 &nbsp; &nbsp; $ sudo nano /etc/default/ufw
 &nbsp; &nbsp; &nbsp; IPV6=no
 &nbsp; &nbsp; $ sudo nano /etc/sysctl.conf
-&nbsp; &nbsp; &nbsp; net.ipv6.conf.all.disable_ipv6 = 1  
+&nbsp; &nbsp; &nbsp; net.ipv6.conf.all.disable_ipv6 = 1
 &nbsp; &nbsp; &nbsp; net.ipv6.conf.default.disable_ipv6 = 1
 &nbsp; &nbsp; &nbsp; net.ipv6.conf.lo.disable_ipv6 = 1
 &nbsp; &nbsp; &nbsp; net.ipv6.conf.tun0.disable_ipv6 = 1
@@ -1941,9 +2048,9 @@ https://www.paulligocki.com/vpn-only-ufw-setup</br>
 </pre>
 
 <h5>∙ Advanced</h5>
-R-fx Networks Projects - https://www.rfxn.com</br>
-Vuurmuur Firewall - https://www.vuurmuur.org</br>
-Port Checker - https://portchecker.co</br>
+R-fx Networks Projects - https://www.rfxn.com<br>
+Vuurmuur Firewall - https://www.vuurmuur.org<br>
+Port Checker - https://portchecker.co<br>
 
 <p>Note: an AppArmor rule could prevent port use by an individual program.</p>
 
@@ -1959,6 +2066,7 @@ Port Checker - https://portchecker.co</br>
 &nbsp; &nbsp; $ sudo apt purge iptables-persistent
 </pre>
 
+<br>
 </details>
 
 <!-- #################### -->
@@ -1969,43 +2077,45 @@ Port Checker - https://portchecker.co</br>
 
 <h4>• Buying VPN Services</h4>
 
-∙ r/vpnrecommendations - https://www.reddit.com/r/vpnrecommendations</br>
-∙ r/VPN - https://www.reddit.com/r/VPN</br>
-∙ r/VPNTorrents - https://www.reddit.com/r/VPNTorrents</br>
-∙ Choosing the best VPN (for you) - https://www.reddit.com/r/VPN/comments/4iho8e/that_one_privacy_guys_guide_to_choosing_the_best/?st=iu9u47u7&sh=459a76f2</br>
-∙ Choosing the VPN that's right for you - https://ssd.eff.org/en/module/choosing-vpn-thats-right-you</br>
-∙ VPN Alert - https://vpnalert.com</br>
-∙ VPN-reviews - https://github.com/techlore/VPN-reviews</br>
-∙ Mullvad - https://mullvad.net</br>
-∙ Mullvad - http://o54hon2e2vj6c7m3aqqu6uyece65by3vgoxxhlqlsvkmacw6a7m7kiad.onion</br>
-∙ Private Internet Access (PIA) - https://www.privateinternetaccess.com</br>
-∙ ProtonVPN - https://protonvpn.com</br>
-∙ AirVPN - https://airvpn.org</br>
-∙ IVPN - https://www.ivpn.net</br> 
-∙ VPN.XXX - https://www.vpn.xxx</br>
-∙ Windscribe - https://windscribe.com</br>
-∙ ExpressVPN - https://www.expressvpn.com/vpnmentor1</br>
-∙ NordVPN - https://nordvpn.com</br>
+∙ Choosing the VPN that's right for you - https://ssd.eff.org/en/module/choosing-vpn-thats-right-you<br>
+∙ Choosing the best VPN (for you) - https://www.reddit.com/r/VPN/comments/4iho8e/that_one_privacy_guys_guide_to_choosing_the_best/?st=iu9u47u7&sh=459a76f2<br>
+∙ r/vpnrecommendations - https://www.reddit.com/r/vpnrecommendations<br>
+∙ r/VPN - https://www.reddit.com/r/VPN<br>
+∙ r/VPNTorrents - https://www.reddit.com/r/VPNTorrents<br>
+∙ VPN Alert - https://vpnalert.com<br>
+∙ VPN-reviews - https://github.com/techlore/VPN-reviews<br>
+∙ Mullvad - https://mullvad.net<br>
+∙ Mullvad - http://o54hon2e2vj6c7m3aqqu6uyece65by3vgoxxhlqlsvkmacw6a7m7kiad.onion<br>
+∙ Private Internet Access (PIA) - https://www.privateinternetaccess.com<br>
+∙ ProtonVPN - https://protonvpn.com<br>
+∙ IVPN - https://www.ivpn.net<br> 
+∙ AirVPN - https://airvpn.org<br>
+∙ VPN.XXX - https://www.vpn.xxx<br>
+∙ Windscribe - https://windscribe.com<br>
+∙ ExpressVPN - https://www.expressvpn.com/vpnmentor1<br>
+∙ NordVPN - https://nordvpn.com<br>
 
 <h4>• VPN Guides and Tutorials</h4>
-∙ That One Privacy Site - https://thatoneprivacysite.net/vpn-section</br>
-∙ privacytools.io - https://www.privacytools.io</br>
-∙ VPN over SSH - https://wiki.archlinux.org/index.php/VPN_over_SSH</br>
+∙ That One Privacy Site - https://thatoneprivacysite.net/vpn-section<br>
+∙ privacytools.io - https://www.privacytools.io<br>
+∙ VPN over SSH - https://wiki.archlinux.org/index.php/VPN_over_SSH<br>
+
+<h4>Creating your own VPN with VPS</h4>
 
 <h4>• VPN Protocols</h4>
 
 <div id="table2" align="left">
-  <img src=".data/vpn_protocols.png"/>
+<img src=".data/vpn_protocols.png"/>
 </div>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <h4>∙ OpenVPN</h4>
-https://openvpn.net</br>
-https://community.openvpn.net</br>
-https://openvpn.net/community-resources/how-to/</br>
-https://github.com/OpenVPN/openvpn/tree/master/sample/sample-config-files</br>
-https://github.com/angristan/openvpn-install</br>
+https://openvpn.net<br>
+https://community.openvpn.net<br>
+https://openvpn.net/community-resources/how-to/<br>
+https://github.com/OpenVPN/openvpn/tree/master/sample/sample-config-files<br>
+https://github.com/angristan/openvpn-install<br>
 
 <h4>Installing OpenVPN CLI</h4>
 
@@ -2148,39 +2258,39 @@ EOF
 
 <h4>∙ WireGuard</h4>
 
-https://github.com/WireGuard</br>
+https://github.com/WireGuard<br>
 
-<code>$ sudo apt install wireguard</code></br>
-<code>$ sudo apt install wireguard-tools</code></br>
+<code>$ sudo apt install wireguard</code><br>
+<code>$ sudo apt install wireguard-tools</code><br>
 
 <h4>∙ strongSwan</h4>
 
-https://github.com/strongswan/strongswan</br>
+https://github.com/strongswan/strongswan<br>
 
-<code>$ sudo apt install strongswan</code></br>
+<code>$ sudo apt install strongswan</code><br>
 
 
 <h4>• Leak Test</h4>
 
-<a href="https://mullvad.net/en/check">∙ Mullvad DNS Leak Test</a></br>
-<a href="https://www.dnsleaktest.com/">∙ DNSLeakTest.com</a> (run the "Extended test")</br>
-<a href="https://ipleak.net/">∙ IPLeak.net</a></br>
-<a href="https://surfshark.com/dns-leak-test">∙ Surfshark DNS Leak Test</a></br>
-<a href="https://browserleaks.com/ip">∙ BrowserLeaks IP Test</a></br>
-<a href="https://ipx.ac/run">∙ IPX.AC DNS Leak Test</a></br>
+<a href="https://mullvad.net/en/check">∙ Mullvad DNS Leak Test</a><br>
+<a href="https://www.dnsleaktest.com/">∙ DNSLeakTest.com</a> (run the "Extended test")<br>
+<a href="https://ipleak.net/">∙ IPLeak.net</a><br>
+<a href="https://surfshark.com/dns-leak-test">∙ Surfshark DNS Leak Test</a><br>
+<a href="https://browserleaks.com/ip">∙ BrowserLeaks IP Test</a><br>
+<a href="https://ipx.ac/run">∙ IPX.AC DNS Leak Test</a><br>
 
-<b>• Torrenting</b></br>
+<b>• Torrenting</b><br>
 
-https://portforward.com</br>
-https://wiki.wireshark.org/BitTorrent</br>
-https://github.com/LiamTheBox/Torrent-With-A-VPN</br>
-https://github.com/mdlam92/vpn_torrenting</br>
-https://github.com/tool-maker/VPN_just_for_torrents/wiki</br>
-https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge</br>
-https://transmissionbt.com</br>
-https://www.comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-linux-with-ufw</br>
+https://portforward.com<br>
+https://wiki.wireshark.org/BitTorrent<br>
+https://github.com/LiamTheBox/Torrent-With-A-VPN<br>
+https://github.com/mdlam92/vpn_torrenting<br>
+https://github.com/tool-maker/VPN_just_for_torrents/wiki<br>
+https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge<br>
+https://transmissionbt.com<br>
+https://www.comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-linux-with-ufw<br>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <pre>
 &nbsp; Commands for Transmission
@@ -2205,10 +2315,11 @@ https://www.comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-li
 &nbsp; &nbsp; > Password: transmission
 </pre>
 
-<b>• Everyday TOR</b></br>
-https://wiki.debian.org/TorBrowser</br>
-https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy</br>
+<b>• Everyday TOR</b><br>
+https://wiki.debian.org/TorBrowser<br>
+https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy<br>
 
+<br>
 </details>
 
 <!-- #################### -->
@@ -2217,9 +2328,9 @@ https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy</br>
 <summary><b>5.05 Network Spoofing</b></summary>
 <br>
 
-https://github.com/alobbs/macchanger</br>
-https://github.com/refraction-networking/utls</br>
-https://github.com/0xsirus/tirdad</br>
+https://github.com/alobbs/macchanger<br>
+https://github.com/refraction-networking/utls<br>
+https://github.com/0xsirus/tirdad<br>
 
 <h4>• Random MAC Address</h4>
 
@@ -2243,6 +2354,7 @@ https://github.com/0xsirus/tirdad</br>
 
 <p>Go to https://location.services.mozilla.com/optout</p>
 
+<br>
 </details>
 
 <br>
@@ -2250,22 +2362,33 @@ https://github.com/0xsirus/tirdad</br>
 
 <!--################################### -->
 
-
 <h2>6. SOFTWARES</h2>
 
-<h3>6.01 Password Manager</h3>
+<details>
+<summary><b>6.01 Password Manager</b></summary>
+<br>
+
+<h3>Password Manager</h3>
 
 <h4>• KeePassXC</h4>
 
-<code>$ sudo apt install keepassxc</code></br>
+https://keepassxc.org/docs/<br>
 
-https://keepassxc.org/docs/</br>
+<code>$ sudo apt install keepassxc</code><br>
+
+
+<br>
+</details>
 
 <!-- #################### -->
 
-<h3>6.02 Browsers</h3>
+<details>
+<summary><b>6.02 Browsers</b></summary>
+<br>
 
-https://avoidthehack.com/util/browser-comparison</br>
+<h4>Browsers</h4>
+
+https://avoidthehack.com/util/browser-comparison<br>
 
 <h4>• LibreWolf</h4>
 
@@ -2274,85 +2397,98 @@ https://avoidthehack.com/util/browser-comparison</br>
 <h4>• Chromium</h4>
 
 <h5>&nbsp; 6.04.01 Extensions</h5>
-&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a></br>
-&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a></br>
-&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a></br>
-&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a></br>
-&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a></br>
-&nbsp; &nbsp; ∙ <a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a></br>
-&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a></br>
+&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a><br>
+&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a><br>
+&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a><br>
+&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a><br>
+&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a><br>
+&nbsp; &nbsp; ∙ <a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a><br>
+&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a><br>
 
 <p><sub>Note, to open maximized browser window use "--start-maximized" as a parameter.</sub></p>
 
+<br>
+</details>
+
 <!-- #################### -->
 
-<h3>6.03 Cloud Services</h3>
+<details>
+<summary><b>6.03 Cloud Services</b></summary>
+<br>
+
+<h4>Cloud Services</h4>
 
 <h4>• Info</h4>
-https://forum.rclone.org</br>
-https://www.reddit.com/r/cloudstorage</br>
-https://www.reddit.com/r/DataHoarder</br>
-https://www.reddit.com/r/Piracy</br>
-https://www.reddit.com/r/Scams</br>
+https://forum.rclone.org<br>
+https://www.reddit.com/r/cloudstorage<br>
+https://www.reddit.com/r/DataHoarder<br>
+https://www.reddit.com/r/Piracy<br>
+https://www.reddit.com/r/Scams<br>
 
 <h4>• Google Drive</h4>
 
-https://github.com/glotlabs/gdrive</br>
+https://github.com/glotlabs/gdrive<br>
 
 <h4>• MEGA</h4>
 
-https://mega.io</br> 
-https://mega.io/desktop</br>
-https://github.com/rclone/rclone</br> 
+https://mega.io<br> 
+https://mega.io/desktop<br>
+https://github.com/rclone/rclone<br> 
 
 <h4>• Yandex</h4>
 
-https://360.yandex.com</br>
-https://rclone.org/yandex (*Backend supported)</br> 
+https://360.yandex.com<br>
+https://rclone.org/yandex (*Backend supported)<br> 
 
-*Russian</br>
+*Russian<br>
 
 <h4>• IDrive</h4>
 
-https://www.idrive.com</br>
-https://www.idrive.com/online-backup-linux</br>
-https://www.idrive.com/linux-backup-scripts</br>
-https://rclone.org/s3/#idrive-e2</br>
+https://www.idrive.com<br>
+https://www.idrive.com/online-backup-linux<br>
+https://www.idrive.com/linux-backup-scripts<br>
+https://rclone.org/s3/#idrive-e2<br>
 
 <h4>• TeraBox</h4>
 
-https://www.1024tera.com</br>
-https://www.1024tera.com/terabox-cloud-storage-for-pc-free-download</br>
-https://www.reddit.com/r/TeraBox/</br>
+https://www.1024tera.com<br>
+https://www.1024tera.com/terabox-cloud-storage-for-pc-free-download<br>
+https://www.reddit.com/r/TeraBox/<br>
 
 <h4>• pCloud</h4>
 
-https://www.pcloud.com</br> 
-https://www.pcloud.com/how-to-install-pcloud-drive-linux.html</br> 
-https://github.com/pcloudcom/console-client</br> 
+https://www.pcloud.com<br> 
+https://www.pcloud.com/how-to-install-pcloud-drive-linux.html<br> 
+https://github.com/pcloudcom/console-client<br> 
 
 <h4>• SugarSync</h4>
 
-https://www.sugarsync.com</br>
-https://rclone.org/sugarsync (*Not backend supported) </br> 
+https://www.sugarsync.com<br>
+https://rclone.org/sugarsync (*Not backend supported) <br> 
 
 <h4>• Box</h4>
 
-https://www.box.com</br>
-https://github.com/box/boxcli</br>
-https://github.com/rclone/rclone</br>
+https://www.box.com<br>
+https://github.com/box/boxcli<br>
+https://github.com/rclone/rclone<br>
 
 <h4>• Dropbox</h4>
 
 https://www.dropbox.com
-https://www.dropbox.com/install-linux</br>
-https://github.com/dropbox/dbxcli</br>
-https://github.com/rclone/rclone</br>
+https://www.dropbox.com/install-linux<br>
+https://github.com/dropbox/dbxcli<br>
+https://github.com/rclone/rclone<br>
 
+<br>
+</details>
 
 <!-- #################### -->
 
-<h3>6.04 Office</h3>
+<details>
+<summary><b>6.04 Office</b></summary>
+<br>
+
+<h4>Office</h4>
 
 <h4>• Office Resources</h4>
 
@@ -2360,49 +2496,49 @@ https://github.com/rclone/rclone</br>
 
 <h5>&nbsp;Extensions</h5>
 
-&nbsp; &nbsp;<a href="https://languagetool.org/insights/post/product-libreoffice/">Language Tool</a></br>
-&nbsp; &nbsp;<a href="https://www.zotero.org/">Zotero</a></br>
+&nbsp; &nbsp;<a href="https://languagetool.org/insights/post/product-libreoffice/">Language Tool</a><br>
+&nbsp; &nbsp;<a href="https://www.zotero.org/">Zotero</a><br>
 
 <h5>∙ Zotero</h5>
 
-&nbsp; &nbsp;<a href="https://www.zotero.org/">Zotero</a></br>
+&nbsp; &nbsp;<a href="https://www.zotero.org/">Zotero</a><br>
 
 <h4>• PDFs</h4>
 
 <h5>∙ PDF Reader</h5>
 
-<code>$ sudo apt install -y okular</code></br>
-<code>$ sudo apt install -y okular-extra-backends</code></br>
+<code>$ sudo apt install -y okular</code><br>
+<code>$ sudo apt install -y okular-extra-backends</code><br>
 
 <h5>∙ PDF Edit</h5>
 
-<code>$ sudo apt install -y pdfarranger</code></br>
+<code>$ sudo apt install -y pdfarranger</code><br>
 
 <h5>∙ PDF Crop</h5>
 
-<code>$ sudo apt install -y krop</code></br>
+<code>$ sudo apt install -y krop</code><br>
 
 <h5>∙ PDF OCR</h5>
 
-<code>$ sudo apt install -y ocrmypdf</code> &nbsp; &nbsp; #It's a command-line interface.</br>
-<code>$ sudo apt install -y tesseract-ocr-eng</code></br>
-<code>$ sudo apt install -y tesseract-ocr-deu</code></br>
-<code>$ sudo apt install -y tesseract-ocr-fra</code></br>
+<code>$ sudo apt install -y ocrmypdf</code> &nbsp; &nbsp; #It's a command-line interface.<br>
+<code>$ sudo apt install -y tesseract-ocr-eng</code><br>
+<code>$ sudo apt install -y tesseract-ocr-deu</code><br>
+<code>$ sudo apt install -y tesseract-ocr-fra</code><br>
 
 <pre>
 &nbsp; Commands for PDF OCR
 &nbsp; &nbsp; • How to OCR a PDF
-&nbsp; &nbsp; $ ocrmypdf -v /input.pdf ~/output.pdf    
-&nbsp; &nbsp; $ ocrmypdf -v --language deu /input.pdf ~/output.pdf   
-&nbsp; &nbsp; $ ocrmypdf -v --language fra+deu ~/input.pdf ~/output.pdf    
-&nbsp; &nbsp; $ ocrmypdf -v --rotate-pages ~/input.pdf ~/output.pdf    
-&nbsp; &nbsp; $ ocrmypdf -v myfile.pdf myfile.pdf   #To modify a file in the same place.
+&nbsp; &nbsp; $ ocrmypdf -v /input.pdf ~/output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --language deu /input.pdf ~/output.pdf 
+&nbsp; &nbsp; $ ocrmypdf -v --language fra+deu ~/input.pdf ~/output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --rotate-pages ~/input.pdf ~/output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v myfile.pdf myfile.pdf #To modify a file in the same place.
 </pre>
 
 <h5>∙ PDF Convert</h5>
 
 
-<code>$ sudo apt install -y ghostscript</code> &nbsp; &nbsp; #It's a command-line interface.</br>
+<code>$ sudo apt install -y ghostscript</code> &nbsp; &nbsp; #It's a command-line interface.<br>
 
 <pre>
 &nbsp; Commands for ghostscript
@@ -2413,8 +2549,8 @@ https://github.com/rclone/rclone</br>
 <h4>• Media Players</h4>
 
 
-<b>MPV</b></br>
-<code>$ sudo apt install mpv</code></br>
+<b>MPV</b><br>
+<code>$ sudo apt install mpv</code><br>
 
 <p>Shortcuts - https://github.com/mpv-player/mpv/blob/master/DOCS/man/mpv.rst#keyboard-control</p>
 
@@ -2436,21 +2572,21 @@ no-border
 geometry=50%x96%
 </pre>
 
-<code>$ sudo gzip -d  ~/.config/mpv/README.md.gz ~/.config/mpv/</code>
+<code>$ sudo gzip -d~/.config/mpv/README.md.gz ~/.config/mpv/</code>
 
 <p>Set volume-max=value in your configuration file to a reasonable amount, such as volume-max=150, which then allows you to increase your volume up to 150%, which is more than twice as loud. Increasing your volume too high will result in clipping artefacts. Additionally (or alternatively), you can utilize dynamic range compression with af=acompressor.</p>
 
-<b>VLC</b></br>
-<code>$ sudo apt install vlc</code></br>
+<b>VLC</b><br>
+<code>$ sudo apt install vlc</code><br>
 
-<b>GNOME Media Player</b></br>
-<code>$ sudo apt install totem</code></br>
+<b>GNOME Media Player</b><br>
+<code>$ sudo apt install totem</code><br>
 
 <h4>• Image Edit</h4>
 
-<code>$ sudo apt install gthumb</code></br>
-<code>$ sudo apt install gimp</code></br>
-<code>$ sudo apt install webp</code></br>
+<code>$ sudo apt install gthumb</code><br>
+<code>$ sudo apt install gimp</code><br>
+<code>$ sudo apt install webp</code><br>
 
 <pre>
 &nbsp; Commands for webp files
@@ -2458,41 +2594,48 @@ geometry=50%x96%
 &nbsp; &nbsp; $ dwebp -v in_file.webp -o ~/out_file_png_default.png 
 &nbsp; &nbsp; $ dwebp -v -resize width x height in_file.webp -o ~/out_file_png_default.png
 &nbsp; &nbsp; *If either (but not both) of the width or height parameters is 0,
-&nbsp; &nbsp;  the value will be calculated preserving the aspect-ratio.
+&nbsp; &nbsp;the value will be calculated preserving the aspect-ratio.
 </pre>
 
 <h4>• Audio Edit</h4>
 
-<code>$ sudo apt install audacity</code></br>
+<code>$ sudo apt install audacity</code><br>
 
 <h4>• Office Utility</h4>
 
-<code>$ sudo apt install xpad</code></br>
-<code>$ sudo apt install kcalc</code></br>
+<code>$ sudo apt install xpad</code><br>
+<code>$ sudo apt install kcalc</code><br>
+
+<br>
+</details>
 
 <!-- #################### -->
 
-<h3>6.05 Email</h3>
+<details>
+<summary><b>6.05 Email</b></summary>
+<br>
 
-<code>$ sudo apt install -y thunderbird</code></br>
-<code>$ sudo apt install -y birdtray</code></br>
+<h4>Email</h4>
+
+<code>$ sudo apt install -y thunderbird</code><br>
+<code>$ sudo apt install -y birdtray</code><br>
 
 
 <h4>6.05.01 Encrypted Emails</h4>
 
-https://riseup.net/en/security/message-security/openpgp/best-practices</br>
-https://riseup.net/en/security/message-security/openpgp/enigmail</br>
-https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird</br>
-https://emailselfdefense.fsf.org/en/workshops.html</br>
-https://wiki.archlinux.org/title/Paperkey</br>
-https://keys.openpgp.org/about/usage</br>
-https://efail.de</br>
+https://riseup.net/en/security/message-security/openpgp/best-practices<br>
+https://riseup.net/en/security/message-security/openpgp/enigmail<br>
+https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird<br>
+https://emailselfdefense.fsf.org/en/workshops.html<br>
+https://wiki.archlinux.org/title/Paperkey<br>
+https://keys.openpgp.org/about/usage<br>
+https://efail.de<br>
 
 <p><strong>Note 1: </strong>You cannot recover the secret key from the public key and the passphrase. You cannot recover your secret gpg key without a backup.</p>
 
 <p><strong>Note 2: </strong>Create an expiration date for security reasons.</p>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <p><strong>Note 3: </strong>Create an .</p>
 
@@ -2515,7 +2658,7 @@ https://efail.de</br>
 &nbsp; &nbsp; $ gpg --list-keys
 &nbsp; &nbsp; $ gpg --edit-key (key id)
 &nbsp; &nbsp; • GPG console will open in the primary key, select a sub-key:
-&nbsp; &nbsp; gpg>  
+&nbsp; &nbsp; gpg>
 &nbsp; &nbsp; gpg> list
 &nbsp; &nbsp; gpg> key 1
 &nbsp; &nbsp; • Set the expiration for the selected key
@@ -2527,25 +2670,31 @@ https://efail.de</br>
 
 gpg --list-secret-keys --verbose --with-subkey-fingerprints
 
+<br>
+</details>
+
 <!-- #################### -->
 
-<h3>6.06 Encryption</h3>
+<details>
+<summary><b>6.06 Encryption</b></summary>
+<br>
 
+<h4>Encryption</h4>
 
 <h4>• Disk Encryption</h4>
 
 <h5>∙ ZuluCrypt (GUI)</h5>
 
-https://mhogomchungu.github.io/zuluCrypt</br>
-https://github.com/mhogomchungu/zuluCrypt</br>
+https://mhogomchungu.github.io/zuluCrypt<br>
+https://github.com/mhogomchungu/zuluCrypt<br>
 
-<code>$ sudo apt install zulucrypt-gui</code></br>
+<code>$ sudo apt install zulucrypt-gui</code><br>
 
 <h5>∙ VeraCrypt (GUI)</h5>
 
-https://www.veracrypt.fr/en/Downloads.html</br>
-https://www.reddit.com/r/VeraCrypt</br>
-https://github.com/veracrypt/VeraCrypt</br>
+https://www.veracrypt.fr/en/Downloads.html<br>
+https://www.reddit.com/r/VeraCrypt<br>
+https://github.com/veracrypt/VeraCrypt<br>
 
 <p>∙ Command to automount favorite volume at startup session:</p>
 
@@ -2553,21 +2702,21 @@ https://github.com/veracrypt/VeraCrypt</br>
 
 <p>∙ Password less:</p>
 
-<code>$ sudo groupadd veracrypt</code></br>
-<code>$ sudo usermod -aG veracrypt "$(whoami)"</code></br>
-<code>$ sudoedit /etc/sudoers</code></br>
+<code>$ sudo groupadd veracrypt</code><br>
+<code>$ sudo usermod -aG veracrypt "$(whoami)"</code><br>
+<code>$ sudoedit /etc/sudoers</code><br>
 
-&nbsp; &nbsp; Add: </br>
+&nbsp; &nbsp; Add: <br>
 &nbsp; &nbsp; <pre>
 %veracrypt ALL=(root) NOPASSWD:/usr/bin/veracrypt
 
 #Allow members of group sudo to execute any command
-%sudo   ALL=(ALL:ALL) ALL
+%sudo ALL=(ALL:ALL) ALL
 %veracrypt ALL=(root) NOPASSWD:/usr/bin/veracrypt
 
 
 #Allow members of group sudo to execute any command
-%sudo   ALL=(ALL:ALL) ALL
+%sudo ALL=(ALL:ALL) ALL
 %veracrypt ALL=(root) NOPASSWD:/usr/bin/veracrypt
 </pre>
 
@@ -2575,7 +2724,7 @@ https://github.com/veracrypt/VeraCrypt</br>
 
 <p>∙ NTFS - Read only error</p>
 
-<code>$ sudo ntfsfix /dev/mapper/veracrypt1</code></br>
+<code>$ sudo ntfsfix /dev/mapper/veracrypt1</code><br>
 
 <p>Close and open again</p>
 
@@ -2597,25 +2746,32 @@ https://github.com/veracrypt/VeraCrypt</br>
 
 <h5>∙ Cryptomator (GUI)</h5>
 
-https://cryptomator.org</br>
-https://github.com/cryptomator/cryptomator</br>
-https://github.com/cryptomator/cli</br>
-https://www.reddit.com/r/Cryptomator</br>
+https://cryptomator.org<br>
+https://github.com/cryptomator/cryptomator<br>
+https://github.com/cryptomator/cli<br>
+https://www.reddit.com/r/Cryptomator<br>
 
 <h5>∙ Duplicati (GUI)</h5>
 
-https://www.duplicati.com</br>
-https://github.com/duplicati/duplicati</br>
-https://forum.duplicati.com</br>
-https://www.reddit.com/r/duplicati</br>
+https://www.duplicati.com<br>
+https://github.com/duplicati/duplicati<br>
+https://forum.duplicati.com<br>
+https://www.reddit.com/r/duplicati<br>
+
+<br>
+</details>
 
 <!-- #################### -->
 
-<h3>6.07 Command-line: Compression, Decompression and Encryption of Files</h3>
+<details>
+<summary><b>6.07 Command-line: Compression, Decompression and Encryption of Files</b></summary>
+<br>
+
+<h4>Command-line: Compression, Decompression and Encryption of Files</h4>
 
 <h4>• GZIP (.gz , .tar and .tar.gz)</h4>
 
-<code>$ sudo apt install gzip</code></br>
+<code>$ sudo apt install gzip</code><br>
 
 <pre>
 &nbsp; Commands for .gz archives
@@ -2646,7 +2802,7 @@ https://www.reddit.com/r/duplicati</br>
 
 <h4>• 7Z (.7z and .zip)</h4>
 
-<code>$ sudo apt install p7zip-full</code></br>
+<code>$ sudo apt install p7zip-full</code><br>
 
 <pre>
 &nbsp; Commands for .7z archives
@@ -2679,7 +2835,7 @@ https://www.reddit.com/r/duplicati</br>
 
 <h4>• RAR (.rar)</h4>
 
-<code>$ sudo apt install unrar-free</code></br>
+<code>$ sudo apt install unrar-free</code><br>
 
 <pre>
 &nbsp; Commands for .rar archives (*proprietary: extract only)
@@ -2691,7 +2847,7 @@ https://www.reddit.com/r/duplicati</br>
 
 <h4>• ZIP (.zip)</h4>
 
-<code>$ sudo apt install zip unzip</code></br>
+<code>$ sudo apt install zip unzip</code><br>
 
 <pre>
 &nbsp; Commands for .zip archives
@@ -2720,58 +2876,74 @@ https://www.reddit.com/r/duplicati</br>
 &nbsp; &nbsp; $ unzip ~/Downloads/filename.zip -d ~/Downloads/
 </pre>
 
+<br>
+</details>
+
 <!-- #################### -->
 
-<h3>6.08 Sanitation</h3>
+<details>
+<summary><b>6.08 Sanitation</b></summary>
+<br>
+
+<h4>Sanitation</h4>
 
 <h4>• System Sanitation</h4>
 
 <h5>∙ Bleachbit</h5>
 
-<code>$ sudo apt install bleachbit</code></br>
+<code>$ sudo apt install bleachbit</code><br>
 
 <h5>∙ Metadata Cleaner</h5>
 
-<code>$ sudo apt install metadata-cleaner</code></br>
-<code>$ sudo apt install exiftool</code></br>
-<code>$ sudo apt install metacam</code></br>
+<code>$ sudo apt install metadata-cleaner</code><br>
+<code>$ sudo apt install exiftool</code><br>
+<code>$ sudo apt install metacam</code><br>
 
 <h4>• Disk Sanitation</h4>
 
-<em>*Not all SSD support sanitize. To properly way to erase a SSD is using the SSDs manufacturer's software. Other methods might not work, due to wear leveling and over-provisioning.</em></br>
+<em>*Not all SSD support sanitize. To properly way to erase a SSD is using the SSDs manufacturer's software. Other methods might not work, due to wear leveling and over-provisioning.</em><br>
 
-<em>**If you use SSDs, enable TRIM in your BIOS. Confirm you are using SSD in the BIOS options.</em></br>
+<em>**If you use SSDs, enable TRIM in your BIOS. Confirm you are using SSD in the BIOS options.</em><br>
 
 
 <h5>∙ Nwipe</h5>
 
-<code>$ sudo apt install -y nwipe</code></br>
+<code>$ sudo apt install -y nwipe</code><br>
 
 <h5>∙ Hdparm</h5>
 
-<code>$ sudo apt install -y hdparm</code></br>
+<code>$ sudo apt install -y hdparm</code><br>
 
-
-
-<!-- #################### -->
-
-<h3>6.09 Utilities</h3>
-
-<code>$ sudo apt install gnome-disk-utility</code></br>
-<code>$ sudo apt install partitionmanager</code></br>
-<code>$ sudo apt install gparted</code></br>
-<code>$ sudo apt install redshift</code></br>
-<code>$ sudo apt install grsync</code></br>
-<code>$ sudo apt install krename</code></br>
-<code>$ sudo apt install gprename</code></br>
-<code>$ sudo apt install dupeguru</code></br>
-
-</br>
-<hr>
+<br>
+</details>
 
 <!-- #################### -->
 
-<h3>6.10 Backup</h3>
+<details>
+<summary><b>6.09 Utilities</b></summary>
+<br>
+
+<h4>Utilities</h4>
+
+<code>$ sudo apt install gnome-disk-utility</code><br>
+<code>$ sudo apt install partitionmanager</code><br>
+<code>$ sudo apt install gparted</code><br>
+<code>$ sudo apt install redshift</code><br>
+<code>$ sudo apt install grsync</code><br>
+<code>$ sudo apt install krename</code><br>
+<code>$ sudo apt install gprename</code><br>
+<code>$ sudo apt install dupeguru</code><br>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>6.10 Backup</b></summary>
+<br>
+
+<h4>Backup</h4>
 
 <h5>∙ Full Backup</h5>
 
@@ -2785,16 +2957,20 @@ $ cp ~/.local/share/TelegramDesktop/tdata/settingss ~/backup
 $ cp -vur ~/.local/share/TelegramDesktop/tdata ~/backup
 </pre>
 
+<br>
+</details>
+
 <!--################################### -->
 
 <h2>7. DEV SETUP</h2>
 
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗</br>
+<details>
+<summary><b>7.01 Sytem Tweaks</b></summary>
+<br>
 
-https://www.slant.co
-
-<h3>7.01 Sytem Tweaks</h3>
+<h3>Sytem Tweaks</h3>
 
  <h5>∙ Terminal</h5>
 
@@ -2802,45 +2978,52 @@ https://www.slant.co
 
  <h5>∙ Passwords</h5>
 
-   <h6>Mananger</h6>
-    
-   <h6>SSH</h6>
+ <h6>Mananger</h6>
+
+ <h6>SSH</h6>
 
  <h5>∙ Interface</h5>
 
+<br>
+</details>
+
 <!-- #################### -->
 
-<h3>7.02 IDEs</h3>
+<details>
+<summary><b>7.02 IDEs</b></summary>
+<br>
+
+<h3>IDEs</h3>
 
 <!-- ##### -->
 
 <h4>• NeoVim</h4>
 
-https://neovim.io</br>
-https://neovim.io/doc/user/starting.html</br>
-https://neovim.io/doc/user/usr_01.html#vimtutor</br>
-https://github.com/neovim/nvim-lspconfig#sugg</br>ested-configuration</br>
-https://www.youtube.com/watch?v=RZ4p-saaQkc</br>
-https://github.com/rockerBOO/awesome-neovim</br>
-https://www.reddit.com/r/neovim</br>
+https://neovim.io<br>
+https://neovim.io/doc/user/starting.html<br>
+https://neovim.io/doc/user/usr_01.html#vimtutor<br>
+https://github.com/neovim/nvim-lspconfig#sugg<br>ested-configuration<br>
+https://www.youtube.com/watch?v=RZ4p-saaQkc<br>
+https://github.com/rockerBOO/awesome-neovim<br>
+https://www.reddit.com/r/neovim<br>
 
 <h5>∙ Setups</h5>
-https://github.com/nvim-lua/kickstart.nvim</br>
-https://spacevim.org/</br>
-https://github.com/LazyVim/LazyVim</br>
-https://github.com/LunarVim/LunarVim</br>
-https://github.com/NvChad/NvChad</br>
+https://github.com/nvim-lua/kickstart.nvim<br>
+https://spacevim.org/<br>
+https://github.com/LazyVim/LazyVim<br>
+https://github.com/LunarVim/LunarVim<br>
+https://github.com/NvChad/NvChad<br>
 
 <h5>∙ Plugins</h5>
-https://www.siddharta.me/configuring-neovim-as-a-python-ide-2023.html</br>
-https://thevaluable.dev/vim-php-ide/</br>
+https://www.siddharta.me/configuring-neovim-as-a-python-ide-2023.html<br>
+https://thevaluable.dev/vim-php-ide/<br>
 
 <!-- ##### -->
 
 <h4>• VSCodium</h4>
 
-https://github.com/VSCodium/vscodium</br>
-https://www.reddit.com/r/vscodium</br>
+https://github.com/VSCodium/vscodium<br>
+https://www.reddit.com/r/vscodium<br>
 
  <h5>∙ Extensions</h5>
 
@@ -2848,18 +3031,33 @@ https://www.reddit.com/r/vscodium</br>
 
 <h4>• Sublime-text ®</h4>
 
-https://www.sublimetext.com/docs/linux_repositories.html</br>
-https://www.reddit.com/r/sublimetext</br>
+https://www.sublimetext.com/docs/linux_repositories.html<br>
+https://www.reddit.com/r/sublimetext<br>
+
+<br>
+</details>
 
 <!-- #################### -->
 
-<h3>7.03 Git & GitHub</h3>
+<details>
+<summary><b>7.03 Git & GitHub</b></summary>
+<br>
+
+<h3>Git & GitHub</h3>
 
 <h4>• </h4>
 
+
+<br>
+</details>
+
 <!-- #################### -->
 
-<h3>7.04 Languages</h3>
+<details>
+<summary><b>7.04 Languages</b></summary>
+<br>
+
+<h3>Languages</h3>
 
  <h4>• Python</h4>
  
@@ -2869,7 +3067,17 @@ https://www.reddit.com/r/sublimetext</br>
  
  <h4>• Ruby</h4>
 
-<h3>7.05 Others</h3>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>7.05 Others</b></summary>
+<br>
+
+<h3>Others</h3>
 
  <h4>• Deploy</h4>
  
@@ -2879,45 +3087,104 @@ https://www.reddit.com/r/sublimetext</br>
  
  <h4>• Team</h4>
 
+<br>
+</details>
+
 <!--################################### -->
 
 <h2>8. TROUBLESHOTING</h2>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗</br>
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
-<h4>• Forums - Linux Community</h4>
+<details>
+<summary><b>8.01 Linux Community</b></summary>
+<br>
 
-https://forums.debian.net</br>
-https://www.linuxquestions.org</br>
-https://superuser.com</br>
-https://stackoverflow.com</br>
-https://unix.stackexchange.com</br>
-https://security.stackexchange.com</br>
-https://hardforum.com</br>
-https://askubuntu.com</br>
-https://www.reddit.com/r/debian</br>
-https://www.reddit.com/r/linuxquestions</br>
-https://www.reddit.com/r/sysadmin</br>
+<h4>Linux Community</h4>
+
+https://forums.debian.net<br>
+https://www.linuxquestions.org<br>
+https://superuser.com<br>
+https://stackoverflow.com<br>
+https://unix.stackexchange.com<br>
+https://security.stackexchange.com<br>
+https://hardforum.com<br>
+https://askubuntu.com<br>
+https://www.reddit.com/r/debian<br>
+https://www.reddit.com/r/linuxquestions<br>
+https://www.reddit.com/r/sysadmin<br>
+
+<br>
+</details>
 
 <!-- #################### -->
 
-<h4>• System Boot</h4>
+<details>
+<summary><b>8.02 System Boot</b></summary>
+<br>
+
+<h4>System Boot</h4>
 
 <h5>∙ Live System in Rescue Mode</h5>
 
 <h5>∙ Chroot</h5>
 
+<br>
+</details>
+
 <!-- #################### -->
+
+<details>
+<summary><b>8.03 Desktop Environments</b></summary>
+<br>
+
+<h4>Desktop Environments</h4>
+
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>8.04 Display Manager and Monitors</b></summary>
+<br>
+
+<h4>Display Manager and Monitors</h4>
+
+https://wiki.archlinux.org/title/Display_manager<br>
+https://www.baeldung.com/linux/display-managers-install-uninstall<br>
+https://github.com/sddm/sddm/releases<br>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>8.05 Display Manager and Monitors</b></summary>
+<br>
+
+<h4>Display Manager and Monitors</h4>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>8.06 Network</b></summary>
+<br>
 
 <h4>• Network</h4>
 
 <h5>∙ Hardware</h5>
 
-<code>$ sudo apt install rfkill</code></br>
+<code>$ sudo apt install rfkill</code><br>
 
 <h5>∙ WiFi</h5>
 
-https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX</br>
+https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX<br>
 
 <pre>
 &nbsp; Commands 
@@ -2931,31 +3198,37 @@ https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX</br>
 &nbsp; &nbsp; $ 
 </pre>
 
-
 <h5>∙ DNS</h5>
 
-<code>$ sudo apt install resolvconf</code></br>
+<code>$ sudo apt install resolvconf</code><br>
 
+<br>
+</details>
 
 <!-- #################### -->
 
+<details>
+<summary><b>8.07 Bluetooth</b></summary>
+<br>
 
-<h4>• Bluetooth</h4>
+<h4>Bluetooth</h4>
 
-https://wiki.archlinux.org/title/Bluetooth</br>
-
+https://wiki.archlinux.org/title/Bluetooth<br>
 
 <p>First things first:</p>
+
 <code>$ sudo apt install firmware-realtek</code>
 or
 <code>$ sudo apt install firmware-iwlwifi</code>
 
 <p>Audio compatibility</p>
+
 <code>$ sudo apt install pulseaudio-module-bluetooth</code>
 or
 <code>$ sudo apt install bluez-alsa-utils</code>
 
 <p>Debug</p>
+
 <code>$ sudo service bluetooth status</code>
 
 <p>Connecting Bluetooth manualy with Bluez</p>
@@ -2971,61 +3244,96 @@ or
 &nbsp; &nbsp; [bluetooth]# block yy:yy:yy
 </pre>
 
-<!-- #################### -->
-
-<h4>• Sound</h4>
-
-https://wiki.ubuntu.com/DebuggingSoundProblems</br>
+<br>
+</details>
 
 <!-- #################### -->
 
-<h4>• Printing</h4>
+<details>
+<summary><b>8.08 Sound</b></summary>
+<br>
 
-https://wiki.ubuntu.com/DebuggingPrintingProblems</br>
+<h4>Sound</h4>
 
+https://wiki.ubuntu.com/DebuggingSoundProblems<br>
+
+<br>
+</details>
+
+
+<!-- #################### -->
+
+<details>
+<summary><b>8.09 Printers</b></summary>
+<br>
+
+<h4>Printers</h4>
+
+https://wiki.ubuntu.com/DebuggingPrintingProblems<br>
 
 <h5>∙ HP</h5>
 
-<code>$ sudo apt install hplip</code></br>
+<code>$ sudo apt install hplip</code><br>
 
 <h5>∙ EPSON</h5>
 
-<code>$ sudo apt install </code></br>
+<code>$ sudo apt install </code><br>
+
+<br>
+</details>
 
 <!-- #################### -->
 
-<h4>• USB</h4>
+<details>
+<summary><b>8.10 USB</b></summary>
+<br>
 
-https://wiki.ubuntu.com/Kernel/Debugging/USB</br>
-https://www.kernel.org/doc/html/v4.16/driver-api/usb/power-management.html</br>
+<h4>USB</h4>
+
+https://wiki.ubuntu.com/Kernel/Debugging/USB<br>
+https://www.kernel.org/doc/html/v4.16/driver-api/usb/power-management.html<br>
 
 <code>$ lsusb</code>
 <code>$ lsusb -v</code>
 <code>$ grep . /sys/bus/usb/devices/*/power/wakeup</code>
 <code>$ sudo nano /sys/bus/usb/devices/1-6/power/autosuspend</code>
 
-<h4>• Interface</h4>
+<br>
+</details>
+
 
 <!-- #################### -->
 
-<h4>• Hardware Utility</h4>
+<details>
+<summary><b>8.11 Hardware Utility</b></summary>
+<br>
 
-<code>$ sudo apt install lshw</code></br>
-<code>$ sudo apt install inxi</code></br>
-<code>$ sudo apt install cpu-x</code></br>
-<code>$ sudo apt install hardinfo</code></br>
-<code>$ sudo apt install s-tui stress</code></br>
+<h4>Hardware Utility</h4>
+
+<code>$ sudo apt install lshw</code><br>
+<code>$ sudo apt install inxi</code><br>
+<code>$ sudo apt install cpu-x</code><br>
+<code>$ sudo apt install hardinfo</code><br>
+<code>$ sudo apt install s-tui stress</code><br>
+
+<br>
+</details>
+
 
 <!-- #################### -->
 
-<h4>• Disk Utility</h4>
+<details>
+<summary><b>8.12 Disk Utility</b></summary>
+<br>
 
-*TESTDISK</br>
-https://www.cgsecurity.org/wiki/TestDisk</br>
+<h4>Disk Utility</h4>
 
-*SMARTMONTOOLS</br>
+*TESTDISK<br>
+https://www.cgsecurity.org/wiki/TestDisk<br>
 
-<code>$ sudo apt install smartmontools</code></br>
+*SMARTMONTOOLS<br>
+
+<code>$ sudo apt install smartmontools</code><br>
 
 <pre>
 &nbsp; Commands for smartmontools
@@ -3033,9 +3341,9 @@ https://www.cgsecurity.org/wiki/TestDisk</br>
 &nbsp; &nbsp; $ sudo smartctl -a /dev/sda
 </pre>
 
-*HDPARM</br>
+*HDPARM<br>
 
-<code>$ sudo apt install hdparm</code></br>
+<code>$ sudo apt install hdparm</code><br>
 
 <pre>
 &nbsp; Commands for hdparm
@@ -3043,35 +3351,47 @@ https://www.cgsecurity.org/wiki/TestDisk</br>
 &nbsp; &nbsp; $ sudo hdparm -I /dev/sda
 </pre>
 
-*KDISKMARK</br>
+*KDISKMARK<br>
 
-<code>$ sudo apt install -y kdiskmark</code></br>
+<code>$ sudo apt install -y kdiskmark</code><br>
+
+<br>
+</details>
 
 <hr>
 
 <!-- #################### -->
 
+<details>
+<summary><b>9.0 Some Links</b></summary>
+<br>
+
 <h3>Some Links</h3>
 
-YouTube</br>
-https://www.youtube.com/@DebConfVideos</br>
-https://www.youtube.com/user/44contv</br>
-https://www.youtube.com/@BlackHatOfficialYT</br>
-https://www.youtube.com/@secwestnet</br>
-https://www.youtube.com/@EkopartyConference</br>
-https://www.youtube.com/@reconmtl</br>
-https://www.youtube.com/@TROOPERScon</br>
+YouTube<br>
+https://www.youtube.com/@DebConfVideos<br>
+https://www.youtube.com/@BlackHatOfficialYT<br>
+https://www.youtube.com/@44contv<br>
+https://www.youtube.com/@secwestnet<br>
+https://www.youtube.com/@EkopartyConference<br>
+https://www.youtube.com/@reconmtl<br>
+https://www.youtube.com/@TROOPERScon<br>
 
-Linux
-https://ostechnix.com</br>
-https://techviewleo.com</br>
-https://programmerall.com</br>
-https://linuxcnf.com</br>
-https://fabianlee.org</br>
+Linux Blogs<br>
+https://ostechnix.com<br>
+https://techviewleo.com<br>
+https://programmerall.com<br>
+https://linuxcnf.com<br>
+https://fabianlee.org<br>
+https://linuxiac.com<br>
+https://www.slant.co<br>
 
-Privacy
-https://www.notrace.how</br>
-https://www.anarsec.guide</br>
+Privacy<br>
+https://www.notrace.how<br>
+https://www.anarsec.guide<br>
+
+<br>
+</details>
 
 <!-- ################################## -->
 
