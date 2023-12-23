@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en' class=''>
+<html lang='en'>
 
 <head>
 
@@ -7,18 +7,20 @@
 
 <body>
 
+<div id="header">
+
 <h1>1. DEBIAN GNU/LINUX AND HARDENING</h1>
 
 <blockquote><h3>"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately endpoint security is so terrifically weak that NSA can frequently find ways around it." (Edward Snowden)</h3></blockquote>
 
-<div id="header" align="center">
-<img src=".data/la_clef_des_champs_1936_-_rene_magritte_830px.png" width="830"/>
+<img src=".data/la_clef_des_champs_1936_-_rene_magritte_830px.png" title="La Clef Des Champs (1936) - René Magritte" width="100%"/>
+
 </div>
 
 <hr>
 <!--################################### -->
 
-<h3>1.1 System Hardening Must Have</h3>
+<h3>1.01 System Hardening Must Have</h3>
 
 <table>
 <tbody>
@@ -64,7 +66,7 @@
 <hr>
 <!--################################### -->
 
-<h3>1.2 Essential Tools</h3>
+<h3>1.02 Essential Tools</h3>
 
 <table style="width:100%" cellspacing="0" cellpadding="0">
 <tr valign="top" style="width:50%">
@@ -152,12 +154,12 @@
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <details>
-<summary><b>2.1 Hardware</b></summary>
+<summary><b>2.01 Hardware</b></summary>
 <br>
 
-• Points to check:<br>
+<h4>Points to check</h4>
 
-</h4>2.1.1 Security</h4>
+<h4>2.01.01 Security</h4>
 
 <h5>• BIOS</h5>
 
@@ -170,12 +172,11 @@ https://osresearch.net<br>
 
 
 ∙ Sanitize options<br> 
-Not all SSD support sanitize. And if you use SSDs, enable TRIM in your BIOS. More details in the rest of this work and in the attached files.
+
+<p>Not all SSD support sanitize. And if you use SSDs, enable TRIM in your BIOS. More details in the rest of this work and in the attached files.</p>
 
 ∙ Crack password stored in CMOS used to access BIOS SETUP<br>
 https://github.com/bacher09/pwgen-for-bios<br>
-
-<br>
 
 <h5>Hardware Vulnerabilities</h5>
 https://docs.kernel.org/admin-guide/hw-vuln/index.html<br>
@@ -191,6 +192,12 @@ https://digistor.com<br>
 https://www.seagate.com/enterprise-storage/enterprise-security<br>
 https://github.com/openssl/openssl/blob/master/README-FIPS.md<br>
 
+<h5>• Volatile Memory</h5>
+https://usbkill.com<br>
+https://www.kicksecure.com/wiki/Hardened_Mallo<br>
+https://github.com/Kicksecure/ram-wipe<br>
+https://forums.whonix.org/t/hardened-malloc-hardened-memory-allocator/7474/4<br>
+
 <h5>• Hardware Spoof</h5>
 https://www.whonix.org/wiki/Protocol-Leak-Protection_and_Fingerprinting-Protection#Less_important_identifiers<br>
 https://www.whonix.org/wiki/MAC_Address<br>
@@ -198,9 +205,8 @@ https://github.com/alobbs/macchanger<br>
 https://hwidspoofer.com<br>
 https://xaze.gitbook.io/how-to-spoof-with-hwid-serial-changer<br>
 https://github.com/segofensiva/OSfooler-ng<br>
-https://github.com/Kicksecure/ram-wipe<br>
 
-<h4>2.1.2 Compatibility</h4>
+<h4>2.01.02 Compatibility</h4>
 https://linux-hardware.org<br>
 https://github.com/morrownr/USB-WiFi
 https://ryf.fsf.org<br>
@@ -208,27 +214,32 @@ https://www.pine64.org/pinebook-pro<br>
 https://frame.work<br>
 https://www.powerpc-notebook.org<br>
 	
-<h4>2.1.3 Performance</h4>
+<h4>2.01.03 Performance</h4>
 
 
 
-<h4>2.1.4 Cost benefit</h4>
+<h4>2.01.04 Cost benefit</h4>
 
 
 <br>
 </details>
 
 <details>
-<summary><b>2.2 Installation</b></summary>
+<summary><b>2.02 Installation</b></summary>
 <br>
 
-2.2.1 Basic Installation Guide<br>
+<h4>Verify our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/3.SYSTEM/3.01_Installation</h4>
 
+2.02.01 Basic Installation Guide<br>
 
 • Basic tips about Linux System<br>
 
 Command Line - https://github.com/jlevy/the-art-of-command-line#everyday-use<br>
 Terminal - https://github.com/onceupon/Bash-Oneliner#terminal-tricks<br>
+
+• Bash autocompletion with TAB
+
+<code>$ sudo apt install bash-completion</code>
 
 <h4>Overview of Terminal's Shortcuts</h4>
 
@@ -572,9 +583,7 @@ The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a typ
 https://wiki.debian.org/KVM<br>
 https://wiki.archlinux.org/title/KVM<br>
 
-∙ Visit our repo tree:<br>
-3.System/3.05_QEMU-KVM/QEMU-KVM_Installing.md<br>
-
+<h4>Verify our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/3.SYSTEM/3.05_Virtualization</h4>
 
 <h3>Quick Installation Guide and Others</h3>
 
@@ -636,7 +645,6 @@ $ java --version
 $ apt-cache search openjdk | grep openjdk-17
 </pre>
 
-
 <h4>2.2.5 Linux From Scratch (LFS)</h4>
 
 • Linux From Scratch<br>
@@ -649,7 +657,7 @@ https://reproducible-builds.org/
 </details>
 
 <details>
-<summary><b>2.3 Encryption</b></summary> 
+<summary><b>2.03 Encryption</b></summary> 
 <br>
 	
 2.3.1 Encryption<br>
@@ -725,6 +733,17 @@ https://www.cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-ke
 https://packages.debian.org/bookworm/cryptsetup-nuke-password<br>
 https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password<br>
 sudo apt install cryptsetup-nuke-password<br>
+
+<br>
+</details>
+
+<details>
+<summary><b>2.04 Clonezilla</b></summary> 
+<br>
+
+<p>Changing disk name</p>
+
+<code>$ cnvt-ocs-dev -d /home/partimag 'image' 'sda3' 'sda2' </code>
 
 <br>
 </details>
@@ -1864,8 +1883,12 @@ https://wiki.archlinux.org/title/ClamAV<br>
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <details>
-<summary><b>5.01 Picking a Router</b></summary>
+<summary><b>5.01 Router</b></summary>
 <br>
+
+<h4># Router Freedom</h4>
+https://docs.fsfe.org/en/teams/router-freedom-tech-wiki<br>
+https://fsfe.org/contribute/spreadtheword#device-neutrality<br>
 
 <p>"There are a number of open-source options for routers that will take even a small consumer router and turn it into a powerful device with enterprise-level capabilities. My personal favorite is DD-WRT, but other popular options include pfSense, OpenWRT, and Tomato. While you can buy pre-flashed devices in some cases (FlashRouters for DD-WRT and Protectli for pfSense), I always encourage you to do it yourself if you’re comfortable to ensure maximum security (and also to be familiar with the update process). Having said all of this, if you are unsure if an open source router is right for you (the wealth of options can be overwhelming to some), I still encourage you to get a router that wasn’t provided by your ISP. Make sure it offers VLANs and VPN capabilities, as we will be using these heavily to protect your home."</p>
 <p>https://thenewoil.org/en/guides/quick-start/wifi-guide </p>
@@ -2323,7 +2346,7 @@ https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy<br>
 <!-- #################### -->
 
 <details>
-<summary><b>5.05 Network Spoofing</b></summary>
+<summary><b>5.05 Spoofing</b></summary>
 <br>
 
 https://github.com/alobbs/macchanger<br>
@@ -2516,23 +2539,35 @@ https://github.com/rclone/rclone<br>
 
 <h5>∙ PDF OCR</h5>
 
-<code>$ sudo apt install -y ocrmypdf</code> &nbsp; &nbsp; #It's a command-line interface.<br>
+<p>Install Ocrmypdf. It's a command-line interface.</p>
+
+<code>$ sudo apt install -y ocrmypdf</code><br>
+
+<p>Install Tesseract OCR plugins</p>
+
 <code>$ sudo apt install -y tesseract-ocr-eng</code><br>
 <code>$ sudo apt install -y tesseract-ocr-deu</code><br>
 <code>$ sudo apt install -y tesseract-ocr-fra</code><br>
+<code>$ sudo apt install -y tesseract-ocr-spa</code><br>
+<code>$ sudo apt install -y tesseract-ocr-por</code><br>
+<code>$ sudo apt install -y tesseract-ocr-rus</code><br>
+<code>$ sudo apt install -y tesseract-ocr-ara</code><br>
+<code>$ sudo apt install -y tesseract-ocr-chi-sim</code><br>
+<code>$ sudo apt install -y tesseract-ocr-chi-tra</code><br>
 
 <pre>
 &nbsp; Commands for PDF OCR
 &nbsp; &nbsp; • How to OCR a PDF
 &nbsp; &nbsp; $ ocrmypdf -v /input.pdf ~/output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --skip-text /input.pdf ~/output.pdf
 &nbsp; &nbsp; $ ocrmypdf -v --language deu /input.pdf ~/output.pdf 
-&nbsp; &nbsp; $ ocrmypdf -v --language fra+deu ~/input.pdf ~/output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --language deu+fra ~/input.pdf ~/output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --language spa+por ~/input.pdf ~/output.pdf
 &nbsp; &nbsp; $ ocrmypdf -v --rotate-pages ~/input.pdf ~/output.pdf
 &nbsp; &nbsp; $ ocrmypdf -v myfile.pdf myfile.pdf #To modify a file in the same place.
 </pre>
 
 <h5>∙ PDF Convert</h5>
-
 
 <code>$ sudo apt install -y ghostscript</code> &nbsp; &nbsp; #It's a command-line interface.<br>
 
@@ -2544,8 +2579,8 @@ https://github.com/rclone/rclone<br>
 
 <h4>• Media Players</h4>
 
+<h5>MPV</h5>
 
-<b>MPV</b><br>
 <code>$ sudo apt install mpv</code><br>
 
 <p>Shortcuts - https://github.com/mpv-player/mpv/blob/master/DOCS/man/mpv.rst#keyboard-control</p>
@@ -2555,6 +2590,8 @@ https://github.com/rclone/rclone<br>
 <p> Window Geometry - https://mpv.io/manual/master/#options-geometry</p>
 
 <p> Video Autofit - https://mpv.io/manual/master/#options-autofit</p>
+
+<p>Coping basic MPV config</p>
 
 <code>$ cp -r /usr/share/doc/mpv/ ~/.config/</code>
 
@@ -2572,10 +2609,12 @@ geometry=50%x96%
 
 <p>Set volume-max=value in your configuration file to a reasonable amount, such as volume-max=150, which then allows you to increase your volume up to 150%, which is more than twice as loud. Increasing your volume too high will result in clipping artefacts. Additionally (or alternatively), you can utilize dynamic range compression with af=acompressor.</p>
 
-<b>VLC</b><br>
+<h5>VLC</h5>
+
 <code>$ sudo apt install vlc</code><br>
 
-<b>GNOME Media Player</b><br>
+<h5>GNOME Media Player</h5>
+
 <code>$ sudo apt install totem</code><br>
 
 <h4>• Image Edit</h4>
@@ -2762,6 +2801,8 @@ https://www.reddit.com/r/duplicati<br>
 <details>
 <summary><b>6.07 Compression</b></summary>
 <br>
+
+https://wiki.debian.org/Compression<br>
 
 <h4>Command-line: Compression, Decompression and Encryption of Files</h4>
 
@@ -2999,17 +3040,17 @@ $ cp -vur ~/.local/share/TelegramDesktop/tdata ~/backup
 https://neovim.io<br>
 https://neovim.io/doc/user/starting.html<br>
 https://neovim.io/doc/user/usr_01.html#vimtutor<br>
-https://github.com/neovim/nvim-lspconfig#sugg<br>ested-configuration<br>
+https://github.com/neovim/nvim-lspconfig#suggested-configuration<br>
 https://www.youtube.com/watch?v=RZ4p-saaQkc<br>
 https://github.com/rockerBOO/awesome-neovim<br>
 https://www.reddit.com/r/neovim<br>
 
 <h5>∙ Setups</h5>
 https://github.com/nvim-lua/kickstart.nvim<br>
-https://spacevim.org/<br>
 https://github.com/LazyVim/LazyVim<br>
 https://github.com/LunarVim/LunarVim<br>
 https://github.com/NvChad/NvChad<br>
+https://spacevim.org/<br>
 
 <h5>∙ Plugins</h5>
 https://www.siddharta.me/configuring-neovim-as-a-python-ide-2023.html<br>
@@ -3095,7 +3136,7 @@ https://www.reddit.com/r/sublimetext<br>
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <details>
-<summary><b>8.01 Linux Community</b></summary>
+<summary><b>8.00 Linux Community</b></summary>
 <br>
 
 <h4>Linux Community</h4>
@@ -3111,6 +3152,22 @@ https://askubuntu.com<br>
 https://www.reddit.com/r/debian<br>
 https://www.reddit.com/r/linuxquestions<br>
 https://www.reddit.com/r/sysadmin<br>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>8.01 Logs </b></summary>
+<br>
+
+<h4>Logs</h4>
+
+<code>$ sudo dmesg --since -5m</code>
+<code>$ sudo journalctl -k -b -1</code>
+<code>$ sudo journalctl -p 3 -xb</code>
+<code>$ sudo journalctl -S "2023-01-01 10:10:10"</code>
 
 <br>
 </details>
@@ -3176,11 +3233,22 @@ https://github.com/sddm/sddm/releases<br>
 
 <h4>• Network</h4>
 
-<h5>∙ Hardware</h5>
+<h5>∙ Blocked Hardware</h5>
 
-<code>$ sudo apt install rfkill</code><br>
+<code>$ sudo apt install rfkill</code>
 
-<h5>∙ WiFi</h5>
+<h5>∙ Deactivating and Activating WiFi Firmware</h5>
+
+<p>Deactivate</p>
+
+<code>$ sudo modprobe -r -v rtw_8723d</code><br>
+<code>$ sudo modprobe -r -v rtw_core</code><br>
+
+<p>Activate</p>
+
+<code>$ sudo modprobe -v rtw_8723d</code><br>
+
+<h5>∙ WiFi Connection</h5>
 
 https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX<br>
 
@@ -3196,7 +3264,7 @@ https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX<br>
 &nbsp; &nbsp; $ 
 </pre>
 
-<h5>∙ DNS</h5>
+<h5>∙ DNS Issues</h5>
 
 <code>$ sudo apt install resolvconf</code><br>
 
@@ -3213,13 +3281,13 @@ https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX<br>
 
 https://wiki.archlinux.org/title/Bluetooth<br>
 
-<p>First things first:</p>
+<h5>First things first:</h5>
 
 <code>$ sudo apt install firmware-realtek</code>
 or
 <code>$ sudo apt install firmware-iwlwifi</code>
 
-<p>Audio compatibility</p>
+<h5>Audio compatibility</h5>
 
 <code>$ sudo apt install pulseaudio-module-bluetooth</code>
 or
@@ -3229,7 +3297,7 @@ or
 
 <code>$ sudo service bluetooth status</code>
 
-<p>Connecting Bluetooth manualy with Bluez</p>
+<h5>Connecting Bluetooth manualy with Bluez</h5>
 
 <pre>
 &nbsp; Commands 
@@ -3241,6 +3309,10 @@ or
 &nbsp; &nbsp; [bluetooth]# trust xx:xx:xx 
 &nbsp; &nbsp; [bluetooth]# block yy:yy:yy
 </pre>
+
+<h5>Mouse</h5>
+
+https://github.com/sriemer/fix-linux-mouse
 
 <br>
 </details>
@@ -3295,6 +3367,20 @@ https://www.kernel.org/doc/html/v4.16/driver-api/usb/power-management.html<br>
 <code>$ lsusb -v</code>
 <code>$ grep . /sys/bus/usb/devices/*/power/wakeup</code>
 <code>$ sudo nano /sys/bus/usb/devices/1-6/power/autosuspend</code>
+<code>$ sudo rmmod xhci_hcd</code>
+<code>$ sudo modprobe xhci_hcd</code>
+<code>$ sudo lspci -v | grep xhci</code>
+<code>$ sudo grep -i xhci /boot/config-$(uname -r)</code>
+
+<h5>BIOS</h5>
+
+<p>Into bios, have usb 3.0 turned on, an any other options turned on, but turn off legacy usb option.But think that after legacy USB disabling, in some cases, you could lost ability to enter your BIOS, if you have USB keyboard, because your keyboard will not work at the moment when you need to press DEL or F2 or whatever.</p>
+
+
+<h5>Mouse</h5>
+
+https://github.com/sriemer/fix-linux-mouse
+
 
 <br>
 </details>
@@ -3392,12 +3478,14 @@ https://www.anarsec.guide<br>
 <br>
 </details>
 
-<!-- ################################## -->
+<a href="#top"><p align="right">Back to Top</p> </a>
+
+<!--################################### -->
 
 <div id="footer">
 <br>
 <br>
-<p align=center>Made with ♥</p>
+<p align="center">Made with ♥</p>
 </div>
 
 </body>
