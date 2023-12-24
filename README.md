@@ -98,7 +98,7 @@
 <td><a href="https://gparted.org/download.php" target="_blank">(Secure Boot)</a></td>
 <td><a href="https://gparted.org/gpg-verify.php" target="_blank">(Checksums)</a></td>
 <td><a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/winpe-intro?view=windows-11" target="_blank"><b>9. WinPE</b></a></td>
-<td><a href="https://sergeistrelec.name/" target="_blank">(Sergei)</a></td>
+<td><a href="https://sergeistrelec.name/" target="_blank">(Sergei Strelec)</a></td>
 <td><a href="https://sergeistrelec.name/version_history_en.html" target="_blank">(Checksums)</a></td>
 </tr>
 <tr>
@@ -208,14 +208,21 @@ https://github.com/segofensiva/OSfooler-ng<br>
 
 <h4>2.01.02 Compatibility</h4>
 https://linux-hardware.org<br>
-https://github.com/morrownr/USB-WiFi
 https://ryf.fsf.org<br>
-https://www.pine64.org/pinebook-pro<br>
+https://pine64.org/pinebook-pro<br>
 https://frame.work<br>
-https://www.powerpc-notebook.org<br>
+https://powerpc-notebook.org<br>
+https://github.com/morrownr/USB-WiFi<br>
 	
 <h4>2.01.03 Performance</h4>
 
+• SSD Over-provisioning<br>
+
+<p>This prevents degradation of SSD speed and durability.</p>
+
+<p>Depending on use, some manufacturers recommend 40% OP. For general use, 20% of the general capacity of the SSD, that is, more or less 14% counting the minimum that comes from the factory. For example, a 240GB SSD is limited to -14%, which results in 206GB (34GB of OP).</p>
+
+<p>You must consider the file system you will use.</p>
 
 
 <h4>2.01.04 Cost benefit</h4>
@@ -237,7 +244,7 @@ https://www.powerpc-notebook.org<br>
 Command Line - https://github.com/jlevy/the-art-of-command-line#everyday-use<br>
 Terminal - https://github.com/onceupon/Bash-Oneliner#terminal-tricks<br>
 
-• Bash autocompletion with TAB
+• Bash autocompletion with TAB<br>
 
 <code>$ sudo apt install bash-completion</code>
 
@@ -688,11 +695,11 @@ https://manpages.debian.org/bookworm/cryptsetup/crypttab.5.en.html<br>
 
 ∙ Copy and paste blkid to fstab<br>
 
-<code># echo "$(blkid -o export /dev/sdbX | grep ^UUID=) REMEMBEREFI" | tee --append /etc/fstab</code>
+<code># echo "$(blkid -o export /dev/sdbX | grep ^UUID=) REMEMBEREFI" | tee --append /etc/fstab</code><br>
 
 or		
 
-<code># blkid -o value -s UUID >> /etc/fstab</code>
+<code># blkid -o value -s UUID >> /etc/fstab</code><br>
 
 2.3.4 Example 1 - FSTAB - Non-encrypted Boot Removable Medium (USB Key) Multi-device<br>
 
@@ -890,6 +897,8 @@ ADVANCED:
 <details>
 <summary><b>3.04 Sign GRUB for Secure Boot</b></summary>
 <br>
+
+https://wiki.archlinux.org/title/Kernel_parameters
 
 <p><b>Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from its source www.kernel.org must be signed or will not be able to load.</b></p> 
 
@@ -1664,8 +1673,8 @@ https://www.ventoy.net/en/doc_secure.html<br>
 <details>
 <summary><b>3.12 rEFInd Bootloader</b></summary>
 <br>
+https://www.rodsbooks.com/refind/getting.html<br>
 https://wiki.ubuntu.com/EFIBootLoaders<br>
-
 <br>
 </details>
 
@@ -2232,9 +2241,10 @@ EOF
 
 <pre>
 &nbsp; &nbsp; • Create a autologin file
-&nbsp; &nbsp; $ sudo echo 'myuser' > /etc/openvpn/client/auth
-&nbsp; &nbsp; $ sudo echo 'mypassword' > /etc/openvpn/client/auth
-&nbsp; &nbsp; $ sudo chmod 600 /etc/openvpn/client/auth
+&nbsp; &nbsp; $ sudo su
+&nbsp; &nbsp; # echo 'myuser' > /etc/openvpn/client/auth
+&nbsp; &nbsp; # echo 'mypassword' > /etc/openvpn/client/auth
+&nbsp; &nbsp; # chmod 600 /etc/openvpn/client/auth
 &nbsp; &nbsp; 
 &nbsp; &nbsp; • Load daemon
 &nbsp; &nbsp; $ sudo openvpn --config /etc/openvpn/client.conf --daemon
@@ -2244,10 +2254,11 @@ EOF
 
 <pre>
 &nbsp; Commands
-&nbsp; &nbsp; $ sudo cd /etc/openvpn/client
-&nbsp; &nbsp; $ sudo echo "script-security 2" >> /etc/openvpn/client/openvpn.conf
-&nbsp; &nbsp; $ sudo echo "up /etc/openvpn/update-resolv-conf" >> /etc/openvpn/client/openvpn.conf
-&nbsp; &nbsp; $ sudo echo "down /etc/openvpn/update-resolv-conf" >> /etc/openvpn/client/openvpn.conf
+&nbsp; &nbsp; $ sudo su
+&nbsp; &nbsp; # cd /etc/openvpn/client
+&nbsp; &nbsp; # echo "script-security 2" >> /etc/openvpn/client/openvpn.conf
+&nbsp; &nbsp; # echo "up /etc/openvpn/update-resolv-conf" >> /etc/openvpn/client/openvpn.conf
+&nbsp; &nbsp; # echo "down /etc/openvpn/update-resolv-conf" >> /etc/openvpn/client/openvpn.conf
 </pre>
 
 
@@ -2761,6 +2772,10 @@ https://github.com/veracrypt/VeraCrypt<br>
 
 <code>$ sudo ntfsfix /dev/mapper/veracrypt1</code><br>
 
+<p>In Windowns (WinPE, )</p>
+
+<code>C://> chkdsk /F</code><br>
+
 <p>Close and open again</p>
 
 <h4>• Archive Encryption</h4>
@@ -3136,22 +3151,23 @@ https://www.reddit.com/r/sublimetext<br>
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <details>
-<summary><b>8.00 Linux Community</b></summary>
+<summary><b>8.01 Linux Community</b></summary>
 <br>
 
 <h4>Linux Community</h4>
 
 https://forums.debian.net<br>
-https://www.linuxquestions.org<br>
+https://linuxquestions.org<br>
 https://superuser.com<br>
 https://stackoverflow.com<br>
+https://elinux.org<br>
 https://unix.stackexchange.com<br>
 https://security.stackexchange.com<br>
 https://hardforum.com<br>
 https://askubuntu.com<br>
-https://www.reddit.com/r/debian<br>
-https://www.reddit.com/r/linuxquestions<br>
-https://www.reddit.com/r/sysadmin<br>
+https://reddit.com/r/debian<br>
+https://reddit.com/r/linuxquestions<br>
+https://reddit.com/r/sysadmin<br>
 
 <br>
 </details>
@@ -3159,15 +3175,32 @@ https://www.reddit.com/r/sysadmin<br>
 <!-- #################### -->
 
 <details>
-<summary><b>8.01 Logs </b></summary>
+<summary><b>8.02 Audit Logs </b></summary>
 <br>
 
-<h4>Logs</h4>
+<h4>Audit Logs</h4>
 
-<code>$ sudo dmesg --since -5m</code>
-<code>$ sudo journalctl -k -b -1</code>
-<code>$ sudo journalctl -p 3 -xb</code>
-<code>$ sudo journalctl -S "2023-01-01 10:10:10"</code>
+<code>$ sudo dmesg --since -5m</code><br>
+<code>$ sudo dmesg -T | grep xhci</code><br>
+<code>$ sudo journalctl -k -b -1</code><br>
+<code>$ sudo journalctl -p 3 -xb</code><br>
+<code>$ sudo journalctl -S -1h00m</code><br>
+<code>$ sudo journalctl -S today</code><br>
+<code>$ sudo journalctl -S "2023-01-01 10:10:10"</code><br>
+<code>$ sudo journalctl -S "2023-01-01 10:10:10" > ~/journal.txt</code><br>
+
+<h4>Terminal output in English</h4>
+
+<p>To only run a single command in English, you can write the LANG=C directly in front of the command itself, e.g.</p>
+
+<code>LANG=C sudo apt-get update</code><br>
+
+<p>All program output will be in English. You can add a line</p>
+
+<code>export LANG=C</code><br>
+
+<p>to the end of your ~/.bashrc file and restart the terminal.</p>
+
 
 <br>
 </details>
@@ -3175,7 +3208,7 @@ https://www.reddit.com/r/sysadmin<br>
 <!-- #################### -->
 
 <details>
-<summary><b>8.02 System Boot</b></summary>
+<summary><b>8.03 System Boot</b></summary>
 <br>
 
 <h4>System Boot</h4>
@@ -3183,18 +3216,6 @@ https://www.reddit.com/r/sysadmin<br>
 <h5>∙ Live System in Rescue Mode</h5>
 
 <h5>∙ Chroot</h5>
-
-<br>
-</details>
-
-<!-- #################### -->
-
-<details>
-<summary><b>8.03 Desktop Environments</b></summary>
-<br>
-
-<h4>Desktop Environments</h4>
-
 
 <br>
 </details>
@@ -3211,16 +3232,13 @@ https://wiki.archlinux.org/title/Display_manager<br>
 https://www.baeldung.com/linux/display-managers-install-uninstall<br>
 https://github.com/sddm/sddm/releases<br>
 
-<br>
-</details>
 
-<!-- #################### -->
+<h4>Brightness</h4>
 
-<details>
-<summary><b>8.05 Display Manager and Monitors</b></summary>
-<br>
-
-<h4>Display Manager and Monitors</h4>
+<code>$ sudo apt install -y brightnessctl</code><br>
+<code>$ brightnessctl s 100%</code><br>
+<code>$ brightnessctl s 70%</code><br>
+<code>$ brightnessctl s 50%</code><br>
 
 <br>
 </details>
@@ -3228,14 +3246,20 @@ https://github.com/sddm/sddm/releases<br>
 <!-- #################### -->
 
 <details>
-<summary><b>8.06 Network</b></summary>
+<summary><b>8.05 Network</b></summary>
 <br>
 
 <h4>• Network</h4>
 
 <h5>∙ Blocked Hardware</h5>
 
-<code>$ sudo apt install rfkill</code>
+<code>$ sudo apt install rfkill</code><br>
+
+<pre>
+&nbsp; Commands 
+&nbsp; &nbsp;$ sudo rfkill list
+&nbsp; &nbsp;$ sudo rfkill unblock wifi
+</pre>
 
 <h5>∙ Deactivating and Activating WiFi Firmware</h5>
 
@@ -3251,6 +3275,11 @@ https://github.com/sddm/sddm/releases<br>
 <h5>∙ WiFi Connection</h5>
 
 https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX<br>
+https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi<br>
+https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/intel<br>
+https://www.intel.com/content/www/us/en/support/articles/000005511/network-and-io/wireless.html<br>
+https://wiki.archlinux.org/title/Power_management#USB_autosuspend<br>
+https://docs.kernel.org/driver-api/usb/power-management.html<br>
 
 <pre>
 &nbsp; Commands 
@@ -3264,6 +3293,10 @@ https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX<br>
 &nbsp; &nbsp; $ 
 </pre>
 
+<p>Power up</p>
+
+<code>$ ifconfig eth0 up</code>
+
 <h5>∙ DNS Issues</h5>
 
 <code>$ sudo apt install resolvconf</code><br>
@@ -3271,10 +3304,137 @@ https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX<br>
 <br>
 </details>
 
+<details>
+<summary><b>8.06 USB</b></summary>
+<br>
+
+<h4>USB</h4>
+
+https://wiki.ubuntu.com/Kernel/Debugging/USB<br>
+https://wiki.archlinux.org/title/Power_management#USB_autosuspend<br>
+https://docs.kernel.org/driver-api/usb/power-management.html<br>
+https://www.kernel.org/doc/html/v4.16/driver-api/usb/power-management.html<br>
+https://bugzilla.kernel.org/show_bug.cgi?id=202541<br>
+
+<code>$ lsusb</code><br>
+<code>$ lsusb -v</code><br>
+<code>$ sudo dmesg -w</code><br>
+<code>$ sudo dmesg -T | grep xhci</code><br>
+<code>$ sudo modprobe -v xhci-hcd</code><br>
+<code>$ sudo modprobe -v xhci-pci</code><br>
+<code>$ sudo lspci -v | grep xhci</code><br>
+<code>$ sudo grep -i xhci /boot/config-$(uname -r)</code><br>
+<code>$ grep . /sys/bus/usb/devices/*/power/wakeup</code><br>
+<code>$ grep . /sys/bus/usb/devices/*/power/autosuspend</code><br>
+<code>$ sudo nano /sys/bus/usb/devices/1-4/power/autosuspend</code><br>
+
+<p>Deactivate</p>
+<code>$ sudo modprobe -r -v xhci-hcd</code><br>
+<code>$ sudo modprobe -r -v xhci-pci</code><br>
+
+<p>Activate</p>
+<code>$ sudo modprobe -v xhci-hcd</code><br>
+<code>$ sudo modprobe -v xhci-pci</code><br>
+
+<p>Power control</p>
+
+<code>$ sudo cat /etc/tlp.conf</code>
+<code>$ grep . /sys/bus/usb/devices/*/power/autosuspend</code><br>
+<code>$ grep . /sys/bus/usb/devices/*/power/control</code><br>
+<code>$ grep . /sys/bus/usb/devices/*/power/wakeup</code><br>
+
+<h4>If your keyboard and mouse, etc stop working sometimes, see if power manager is affecting you, execute this command:</h4>
+
+<code>$ cat /sys/module/usbcore/parameters/autosuspend</code><br>
+
+<p>You're affected If you get back a "2". To disable it simply writing a -1 to that file, as root:</p>
+
+<code>$ sudo su</code><br>
+
+<code># echo -1 > /sys/module/usbcore/parameters/autosuspend</code><br>
+
+<p>To make the change permanent, edit</p>
+
+<code>$ sudo nano /etc/default/grub</code><br>
+
+<p>and add</p>
+
+<code>usbcore.autosuspend=-1</code><br>
+
+<p>to the end of the command in GRUB_CMDLINE_LINUX_DEFAULT</p>
+
+<code>GRUB_CMDLINE_LINUX_DEFAULT="quiet usbcore.autosuspend=-1"</code><br>
+
+<p>and update grub</p>
+
+<code>$ sudo update-grub</code><br>
+
+<p>Alternativelly:</p>
+
+<code>$ sudo perl -p -i.bak -n -e '{GRUB_CMDLINE_LINUX_DEFAULT} s/"$/ usbcore.autosuspend=-1"/'  /etc/default/grub</code><br>
+
+<code>$ sudo update-grub</code><br>
+
+<h5>Others</h5>
+
+<code>$ sudo systemctl status udisks2.service</code><br>
+<code>$ sudo apt install libblockdev-crypto2 libblockdev-mdraid2 --no-install-recommends</code><br>
+
+<h5>intel_iommu=off</h5>
+
+<h5>quirk</h5>
+
+<h5>BIOS</h5>
+
+<p>Into bios, have usb 3.0 turned on, an any other options turned on, but turn off legacy usb option.But think that after legacy USB disabling, in some cases, you could lost ability to enter your BIOS, if you have USB keyboard, because your keyboard will not work at the moment when you need to press DEL or F2 or whatever.</p>
+
+
+<h5>Mouse</h5>
+
+https://github.com/sriemer/fix-linux-mouse<br>
+
+
+<br>
+</details>
+
 <!-- #################### -->
 
 <details>
-<summary><b>8.07 Bluetooth</b></summary>
+<summary><b>8.07 Sound</b></summary>
+<br>
+
+<h4>Sound</h4>
+
+https://wiki.ubuntu.com/DebuggingSoundProblems<br>
+https://github.com/thesofproject/sof-bin<br>
+
+<p>List of PLAYBACK Hardware Devices</p>
+
+<code>$ aplay -l</code><br>
+
+<p>List of CAPTURE Hardware Devices</p>
+
+<code>$ arecord -l</code><br>
+
+<p>Others commands</p>
+
+<code>$ amixer</code><br>
+<code>$ amixer -c0</code><br>
+<code>$ sudo nano /etc/pulse/default.pa</code><br>
+<code>$ aplay -lL</code><br>
+<code>$ pactl list cards</code><br>
+<code>$ pactl list sinks</code><br>
+<code>$ pactl list sink-inputs</code><br>
+<code>$ </code><br>
+
+<br>
+</details>
+
+
+<!-- #################### -->
+
+<details>
+<summary><b>8.08 Bluetooth</b></summary>
 <br>
 
 <h4>Bluetooth</h4>
@@ -3312,24 +3472,10 @@ or
 
 <h5>Mouse</h5>
 
-https://github.com/sriemer/fix-linux-mouse
+https://github.com/sriemer/fix-linux-mouse<br>
 
 <br>
 </details>
-
-<!-- #################### -->
-
-<details>
-<summary><b>8.08 Sound</b></summary>
-<br>
-
-<h4>Sound</h4>
-
-https://wiki.ubuntu.com/DebuggingSoundProblems<br>
-
-<br>
-</details>
-
 
 <!-- #################### -->
 
@@ -3355,41 +3501,7 @@ https://wiki.ubuntu.com/DebuggingPrintingProblems<br>
 <!-- #################### -->
 
 <details>
-<summary><b>8.10 USB</b></summary>
-<br>
-
-<h4>USB</h4>
-
-https://wiki.ubuntu.com/Kernel/Debugging/USB<br>
-https://www.kernel.org/doc/html/v4.16/driver-api/usb/power-management.html<br>
-
-<code>$ lsusb</code>
-<code>$ lsusb -v</code>
-<code>$ grep . /sys/bus/usb/devices/*/power/wakeup</code>
-<code>$ sudo nano /sys/bus/usb/devices/1-6/power/autosuspend</code>
-<code>$ sudo rmmod xhci_hcd</code>
-<code>$ sudo modprobe xhci_hcd</code>
-<code>$ sudo lspci -v | grep xhci</code>
-<code>$ sudo grep -i xhci /boot/config-$(uname -r)</code>
-
-<h5>BIOS</h5>
-
-<p>Into bios, have usb 3.0 turned on, an any other options turned on, but turn off legacy usb option.But think that after legacy USB disabling, in some cases, you could lost ability to enter your BIOS, if you have USB keyboard, because your keyboard will not work at the moment when you need to press DEL or F2 or whatever.</p>
-
-
-<h5>Mouse</h5>
-
-https://github.com/sriemer/fix-linux-mouse
-
-
-<br>
-</details>
-
-
-<!-- #################### -->
-
-<details>
-<summary><b>8.11 Hardware Utility</b></summary>
+<summary><b>8.10 Hardware Utilities</b></summary>
 <br>
 
 <h4>Hardware Utility</h4>
@@ -3403,11 +3515,10 @@ https://github.com/sriemer/fix-linux-mouse
 <br>
 </details>
 
-
 <!-- #################### -->
 
 <details>
-<summary><b>8.12 Disk Utility</b></summary>
+<summary><b>8.11 Disk Utilities</b></summary>
 <br>
 
 <h4>Disk Utility</h4>
@@ -3478,13 +3589,16 @@ https://www.anarsec.guide<br>
 <br>
 </details>
 
-<a href="#top"><p align="right">Back to Top</p> </a>
+<a href="#"> <p align="right">Back to Top</p> </a>
 
 <!--################################### -->
 
 <div id="footer">
+
 <br>
 <br>
+<br>
+
 <p align="center">Made with ♥</p>
 </div>
 
