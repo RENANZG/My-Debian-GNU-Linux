@@ -18,6 +18,7 @@
 </div>
 
 <hr>
+
 <!--################################### -->
 
 <h3>1.01 System Hardening Must Have</h3>
@@ -62,6 +63,8 @@
 </tr>
 </tbody>
 </table>
+
+<sub>&nbsp; &nbsp; &nbsp; &nbsp;*Kernel Hacking Guides - https://docs.kernel.org/kernel-hacking/index.html</sub>
 
 <hr>
 <!--################################### -->
@@ -194,8 +197,8 @@ https://github.com/openssl/openssl/blob/master/README-FIPS.md<br>
 
 <h5>• Volatile Memory</h5>
 https://usbkill.com<br>
-https://www.kicksecure.com/wiki/Hardened_Mallo<br>
 https://github.com/Kicksecure/ram-wipe<br>
+https://www.kicksecure.com/wiki/Hardened_Malloc<br>
 https://forums.whonix.org/t/hardened-malloc-hardened-memory-allocator/7474/4<br>
 
 <h5>• Hardware Spoof</h5>
@@ -235,12 +238,13 @@ https://github.com/morrownr/USB-WiFi<br>
 <summary><b>2.02 Installation</b></summary>
 <br>
 
-<h4>Verify our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/3.SYSTEM/3.01_Installation</h4>
+<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION</h4>
 
 2.02.01 Basic Installation Guide<br>
 
 • Basic tips about Linux System<br>
 
+Debian Wiki - https://wiki.debian.org/FrontPage<br>
 Command Line - https://github.com/jlevy/the-art-of-command-line#everyday-use<br>
 Terminal - https://github.com/onceupon/Bash-Oneliner#terminal-tricks<br>
 
@@ -572,6 +576,7 @@ Terminal - https://github.com/onceupon/Bash-Oneliner#terminal-tricks<br>
 https://www.debian.org/doc/manuals/debian-handbook/sect.virtualization.en.html<br>
 
 <h5>VirtualBox on Windows 10 Windows 10</h5>
+
 "How to Install Debian Linux in VirtualBox on Windows 10 | Beginners Guide | (Buster)"<br>
 https://www.youtube.com/watch?v=cx8GzudB6uE<br>
 
@@ -580,17 +585,18 @@ https://www.youtube.com/watch?v=cx8GzudB6uE<br>
 <pre>
 KVM, Kernel-based Virtual Machine, is a hypervisor built into the Linux kernel. It is similar to Xen in purpose but much simpler to get running. Unlike native QEMU, which uses emulation, KVM is a special operating mode of QEMU that uses CPU extensions (HVM) for virtualization via a kernel module.
 </pre>
+
 <pre>
 The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a type 1 hypervisor, it is able to run on bare metal, while QEMU is a type 2 hypervisor, it runs on top of the operating system. QEMU will utilize KVM in order to utilize the machine’s physical resources for the virtual machines. In brief, QEMU uses emulation; KVM uses processor extensions (HVM) for virtualization.
 </pre>
 
- <img src="3.System/3.05_QEMU-KVM/QEMU-KVM_Chart.png">
+ <img src="8.SYSADMIN/8.03_Virtualization/QEMU-KVM_Chart.png"/>
 
 <h5>Using QEMU/KVM - "Kernel-based Virtual Machine"</h5>
 https://wiki.debian.org/KVM<br>
 https://wiki.archlinux.org/title/KVM<br>
 
-<h4>Verify our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/3.SYSTEM/3.05_Virtualization</h4>
+<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/8.SYSADMIN/8.03_Virtualization</h4>
 
 <h3>Quick Installation Guide and Others</h3>
 
@@ -624,7 +630,7 @@ https://github.com/linuxdabbler/debian-install-scripts<br>
 <h5>&nbsp; 2.2.3.1 File system: EXT4, XFS, BTRFS AND ZFS</h5>
 
 <div id="table1" align="left">
-<img src=".data/file_system.png"/>
+<img src="2.SYSTEM_INSTALLATION/2.06_Others/file_system.png"/>
 </div>
 
 <h4>2.2.4 Things to do After Installing Debian</h4>
@@ -652,21 +658,16 @@ $ java --version
 $ apt-cache search openjdk | grep openjdk-17
 </pre>
 
-<h4>2.2.5 Linux From Scratch (LFS)</h4>
-
-• Linux From Scratch<br>
-https://www.linuxfromscratch.org<br>
-
-• Reproducible builds<br>
-https://reproducible-builds.org/
-
-<br>
 </details>
 
 <details>
-<summary><b>2.03 Encryption</b></summary> 
+<summary><b>2.02 Encryption</b></summary> 
 <br>
-	
+
+<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.02_Encryption</h4>
+
+<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION/2.02_Debootstrap</h4>
+
 2.3.1 Encryption<br>
 
 https://wiki.archlinux.org/title/Security<br>
@@ -683,12 +684,12 @@ https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page<br>
 
 • Dm-crypt<br>
 https://wiki.archlinux.org/title/Dm-crypt<br>
+
 • Fstab<br>
 https://wiki.debian.org/fstab<br>
 https://manpages.debian.org/bookworm/mount/fstab.5.en.html<br>
 
 • Crypttab<br>
-
 https://manpages.debian.org/bookworm/cryptsetup/crypttab.5.en.html<br>
 
 • Tips<br>
@@ -710,8 +711,8 @@ UUID=e4c627c2-69f2-11ee-8c99-0242ac120002/ ext4errors=remount-ro0 1
 PARTUUID=f2c4ec78-69f2-11ee-8c99-0242ac120002 /bootext2noauto, x-systemd.device-timeout=1m, defaults 0 2
 # /boot/efi was on /dev/sdc1 during installation
 PARTUUID=a15355f4-15ce-4ea6-a57b-161e9eea19fc /boot/efivfatnoauto, x-systemd.device-timeout=1m, umask=0077 0 1
-UUID=2701e126-69f3-11ee-8c99-0242ac120002 /homeext4defaults 0 2
-UUID=447e4a14-69f3-11ee-8c99-0242ac120002noneswapsw 0 0 
+UUID=2701e126-69f3-11ee-8c99-0242ac120002 /home ext4 defaults 0 2
+UUID=447e4a14-69f3-11ee-8c99-0242ac120002 none swap sw 0 0 
 ```
 
 2.3.5 Example 2 - FSTAB - Encrypted Boot Removable Medium (USB Key) Multi-device<br>
@@ -739,7 +740,28 @@ https://www.cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-ke
 2.3.7 Nuke Password<br>
 https://packages.debian.org/bookworm/cryptsetup-nuke-password<br>
 https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password<br>
-sudo apt install cryptsetup-nuke-password<br>
+
+<code>$ sudo apt install cryptsetup-nuke-password</code><br>
+
+<br>
+</details>
+
+<details>
+<summary><b>2.03 Low Level Linux</b></summary> 
+<br>
+
+• Kernel Linux<br>
+https://kernel.org<br>
+
+• Linux Training<br>
+https://training.linuxfoundation.org<br>
+https://training.linuxfoundation.org/training/a-beginners-guide-to-linux-kernel-development-lfd103<br>
+
+• Linux From Scratch (LFS)<br>
+https://www.linuxfromscratch.org<br>
+
+• Reproducible Builds<br>
+https://reproducible-builds.org<br>
 
 <br>
 </details>
@@ -748,9 +770,13 @@ sudo apt install cryptsetup-nuke-password<br>
 <summary><b>2.04 Clonezilla</b></summary> 
 <br>
 
+<p>Clonezilla - The Free and Open Source Software for Disk Imaging and Cloning</p>
+
+https://clonezilla.org//clonezilla-live-doc.php<br>
+
 <p>Changing disk name</p>
 
-<code>$ cnvt-ocs-dev -d /home/partimag 'image' 'sda3' 'sda2' </code>
+<code>$ cnvt-ocs-dev -d /home/partimag 'image' 'sda3' 'sda2'</code><br>
 
 <br>
 </details>
@@ -2135,7 +2161,7 @@ Port Checker - https://portchecker.co<br>
 <h4>• VPN Protocols</h4>
 
 <div id="table2" align="left">
-<img src=".data/vpn_protocols.png"/>
+<img src="5.NETWORK/5.03_Others/vpn_protocols.png"/>
 </div>
 
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
@@ -2515,7 +2541,45 @@ https://github.com/rclone/rclone<br>
 <!-- #################### -->
 
 <details>
-<summary><b>6.04 Office</b></summary>
+<summary><b>6.04 File Host</b></summary>
+<br>
+
+
+<h4>• RAPIDGATOR</h4>
+<br> 
+
+
+<h4>• UPLOADER</h4>
+<br> 
+
+
+<h4>• NITROFLARE</h4>
+<br> 
+
+<h4>• MEDIAFIRE</h4>
+https://www.mediafire.com/upgrade/<br> 
+
+<h4>• 1FICHIER</h4>
+<br> 
+
+<h4>• FILECASE</h4>
+<br> 
+
+
+<h4>• HEX UPLOAD</h4>
+<br> 
+
+<h4>• TEMPSEND</h4>
+<br> 
+
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>6.05 Office</b></summary>
 <br>
 
 <h4>Office</h4>
@@ -2658,7 +2722,7 @@ geometry=50%x96%
 <!-- #################### -->
 
 <details>
-<summary><b>6.05 Email</b></summary>
+<summary><b>6.06 Email</b></summary>
 <br>
 
 <h4>Email</h4>
@@ -2722,10 +2786,14 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
 <!-- #################### -->
 
 <details>
-<summary><b>6.06 Encryption</b></summary>
+<summary><b>6.07 Encryption</b></summary>
 <br>
 
 <h4>Encryption</h4>
+
+<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.02_Encryption</h4>
+
+<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION/2.02_Debootstrap</h4>
 
 <h4>• Disk Encryption</h4>
 
@@ -2814,7 +2882,7 @@ https://www.reddit.com/r/duplicati<br>
 <!-- #################### -->
 
 <details>
-<summary><b>6.07 Compression</b></summary>
+<summary><b>6.08 Compression</b></summary>
 <br>
 
 https://wiki.debian.org/Compression<br>
@@ -2934,7 +3002,7 @@ https://wiki.debian.org/Compression<br>
 <!-- #################### -->
 
 <details>
-<summary><b>6.08 Sanitation</b></summary>
+<summary><b>6.09 Sanitation</b></summary>
 <br>
 
 <h4>Sanitation</h4>
@@ -2972,19 +3040,38 @@ https://wiki.debian.org/Compression<br>
 <!-- #################### -->
 
 <details>
-<summary><b>6.09 Utilities</b></summary>
+<summary><b>6.10 Utilities</b></summary>
 <br>
 
 <h4>Utilities</h4>
 
-<code>$ sudo apt install gnome-disk-utility</code><br>
-<code>$ sudo apt install partitionmanager</code><br>
-<code>$ sudo apt install gparted</code><br>
+
+<h4>Set color temperature of display according to time of day</h4>
+
 <code>$ sudo apt install redshift</code><br>
+
+<h4>Synchronize files and folders</h4>
+
 <code>$ sudo apt install grsync</code><br>
+
+<h4>Renamers</h4>
+
 <code>$ sudo apt install krename</code><br>
 <code>$ sudo apt install gprename</code><br>
+
+<h4>Duplicated files</h4>
+
 <code>$ sudo apt install dupeguru</code><br>
+
+<h4>Disk manager</h4>
+
+<code>$ sudo apt install gparted</code><br>
+<code>$ sudo apt install gnome-disk-utility</code><br>
+
+<h4>Disk manager with LVM support</h4>
+
+<code>$ sudo apt install partitionmanager</code><br>
+
 
 <br>
 </details>
@@ -2992,10 +3079,12 @@ https://wiki.debian.org/Compression<br>
 <!-- #################### -->
 
 <details>
-<summary><b>6.10 Backup</b></summary>
+<summary><b>6.11 Backup</b></summary>
 <br>
 
 <h4>Backup</h4>
+
+<h5>Folders and Files Backup</h5>
 
 <h5>∙ Full Backup</h5>
 
@@ -3008,6 +3097,14 @@ $ cp ~/.local/share/TelegramDesktop/tdata/settingss ~/backup
 <pre>
 $ cp -vur ~/.local/share/TelegramDesktop/tdata ~/backup
 </pre>
+
+<h5>Clonezilla - The Free and Open Source Software for Disk Imaging and Cloning</h5>
+
+https://clonezilla.org//clonezilla-live-doc.php<br>
+
+<p>Changing disk name</p>
+
+<code>$ cnvt-ocs-dev -d /home/partimag 'image' 'sda3' 'sda2' </code><br>
 
 <br>
 </details>
@@ -3146,16 +3243,33 @@ https://www.reddit.com/r/sublimetext<br>
 <hr>
 <!--################################### -->
 
-<h2>8. TROUBLESHOTING</h2>
+<h2>8. SYSADMIN</h2>
 
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <details>
-<summary><b>8.01 Linux Community</b></summary>
+<summary><b>8.01 Sysadmin</b></summary>
+<br>
+
+<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/8.SYSADMIN</h4>
+
+<br>
+</details>
+
+<hr>
+<!--################################### -->
+
+<h2>9. TROUBLESHOTING</h2>
+
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+
+<details>
+<summary><b>9.01 Linux Community</b></summary>
 <br>
 
 <h4>Linux Community</h4>
 
+https://docs.kernel.org<br>
 https://forums.debian.net<br>
 https://linuxquestions.org<br>
 https://superuser.com<br>
@@ -3175,7 +3289,7 @@ https://reddit.com/r/sysadmin<br>
 <!-- #################### -->
 
 <details>
-<summary><b>8.02 Audit Logs </b></summary>
+<summary><b>9.02 Audit Logs </b></summary>
 <br>
 
 <h4>Audit Logs</h4>
@@ -3208,7 +3322,7 @@ https://reddit.com/r/sysadmin<br>
 <!-- #################### -->
 
 <details>
-<summary><b>8.03 System Boot</b></summary>
+<summary><b>9.03 System Boot</b></summary>
 <br>
 
 <h4>System Boot</h4>
@@ -3223,7 +3337,7 @@ https://reddit.com/r/sysadmin<br>
 <!-- #################### -->
 
 <details>
-<summary><b>8.04 Display Manager and Monitors</b></summary>
+<summary><b>9.04 Display Manager and Monitors</b></summary>
 <br>
 
 <h4>Display Manager and Monitors</h4>
@@ -3246,10 +3360,30 @@ https://github.com/sddm/sddm/releases<br>
 <!-- #################### -->
 
 <details>
-<summary><b>8.05 Network</b></summary>
+<summary><b>9.05 Network</b></summary>
 <br>
 
+https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX<br>
+https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi<br>
+https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/intel<br>
+https://www.intel.com/content/www/us/en/support/articles/000005511/network-and-io/wireless.html<br>
+https://wiki.archlinux.org/title/Power_management#USB_autosuspend<br>
+https://docs.kernel.org/driver-api/usb/power-management.html<br>
+
+
+<h4>First things first:</h4>
+
+<code>$ sudo apt install firmware-realtek</code>
+or
+<code>$ sudo apt install firmware-iwlwifi</code>
+
+
 <h4>• Network</h4>
+
+<h5>∙ Debug WiFi</h5>
+
+<code>$ sudo dmesg | grep iwlwifi</code><br>
+<code>$ sudo dmesg | grep rtw</code><br>
 
 <h5>∙ Blocked Hardware</h5>
 
@@ -3274,13 +3408,6 @@ https://github.com/sddm/sddm/releases<br>
 
 <h5>∙ WiFi Connection</h5>
 
-https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX<br>
-https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi<br>
-https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/intel<br>
-https://www.intel.com/content/www/us/en/support/articles/000005511/network-and-io/wireless.html<br>
-https://wiki.archlinux.org/title/Power_management#USB_autosuspend<br>
-https://docs.kernel.org/driver-api/usb/power-management.html<br>
-
 <pre>
 &nbsp; Commands 
 &nbsp; &nbsp; • Connecting WiFi manualy with NM
@@ -3297,6 +3424,7 @@ https://docs.kernel.org/driver-api/usb/power-management.html<br>
 
 <code>$ ifconfig eth0 up</code>
 
+
 <h5>∙ DNS Issues</h5>
 
 <code>$ sudo apt install resolvconf</code><br>
@@ -3304,35 +3432,55 @@ https://docs.kernel.org/driver-api/usb/power-management.html<br>
 <br>
 </details>
 
-<details>
-<summary><b>8.06 USB</b></summary>
-<br>
+<!-- #################### -->
 
-<h4>USB</h4>
+<details>
+<summary><b>9.06 USB Devices</b></summary>
+<br>
 
 https://wiki.ubuntu.com/Kernel/Debugging/USB<br>
 https://wiki.archlinux.org/title/Power_management#USB_autosuspend<br>
 https://docs.kernel.org/driver-api/usb/power-management.html<br>
+https://wiki.debian.org/HowToIdentifyADevice/USB<br>
+https://wiki.debian.org/HowToIdentifyADevice/PCI<br>
 https://www.kernel.org/doc/html/v4.16/driver-api/usb/power-management.html<br>
-https://bugzilla.kernel.org/show_bug.cgi?id=202541<br>
+UAS Issues - https://forums.raspberrypi.com/viewtopic.php?t=245931<br>
+Bug - https://bugzilla.kernel.org/show_bug.cgi?id=202541<br>
+Bug - https://bugzilla.kernel.org/attachment.cgi?id=304188&action=diff<br>
 
-<code>$ lsusb</code><br>
+Tip: If you are transferring large amounts of data via a problematic USB, use grsync as a manager.<br>
+
+
+<h4>USB debug</h4>
+
+<code>$ lsusb -t</code><br>
 <code>$ lsusb -v</code><br>
+<code>$ lsusb -v | grep 1111</code><br>
+<code>$ usb-devices</code><br>
 <code>$ sudo dmesg -w</code><br>
 <code>$ sudo dmesg -T | grep xhci</code><br>
-<code>$ sudo modprobe -v xhci-hcd</code><br>
-<code>$ sudo modprobe -v xhci-pci</code><br>
 <code>$ sudo lspci -v | grep xhci</code><br>
 <code>$ sudo grep -i xhci /boot/config-$(uname -r)</code><br>
-<code>$ grep . /sys/bus/usb/devices/*/power/wakeup</code><br>
-<code>$ grep . /sys/bus/usb/devices/*/power/autosuspend</code><br>
-<code>$ sudo nano /sys/bus/usb/devices/1-4/power/autosuspend</code><br>
+
+<p>See usb device getting plugged in</p>
+
+<code>$ sudo dmesg -wH</code><br>
+
+<p>Firmware</p>
+
+<code>$ sudo modinfo xhci_hcd</code><br>
+<code>$ sudo modinfo ehci_hcd</code><br>
+<code>$ sudo modinfo btusb</code><br>
+<code>$ sudo modprobe -v xhci-hcd</code><br>
+<code>$ sudo modprobe -v xhci-pci</code><br>
 
 <p>Deactivate</p>
+
 <code>$ sudo modprobe -r -v xhci-hcd</code><br>
 <code>$ sudo modprobe -r -v xhci-pci</code><br>
 
 <p>Activate</p>
+
 <code>$ sudo modprobe -v xhci-hcd</code><br>
 <code>$ sudo modprobe -v xhci-pci</code><br>
 
@@ -3375,93 +3523,111 @@ https://bugzilla.kernel.org/show_bug.cgi?id=202541<br>
 
 <code>$ sudo update-grub</code><br>
 
-<h5>Others</h5>
+<h5>UAS Issues</h5>
+
+https://forums.raspberrypi.com/viewtopic.php?t=245931<br>
+
+<p>Symptoms of a misbehaving UAS device</p>
+
+• Slow transference<br>
+• Frequent disconnects-reconnects<br>
+• Dmesg reports errors relating to a UAS device.<br>
+
+<p>Solving</p>
+
+<p>Plug in the USB device(s) and run the command dmesg</p>
+
+<code>$ sudo dmesg --since -2m</code><br>
+
+<p>Take note of the VID (idVendor) and PID (idProduct) of your USB device(s)</p>
+
+<pre>
+(...)
+[ 4906.696463] usb 2-1: New USB device found, idVendor=1111, idProduct=2222, bcdDevice=c3.33
+(...)
+</pre>
+
+<p>Add the quirks to /boot/cmdline.txt</p>
+
+<code>$ sudo nano /boot/cmdline.txt</code><br>
+
+<p>Add the text with your idVendor and idProduct, respectively.
+
+<pre>
+usb-storage.quirks=1111:2222:u
+</pre>
+
+<pre>
+usb-storage.quirks=4444:5555:u,6666:7777:u.,8888:9999:u
+</pre>
+
+<p>Reboot</p>
+
+<code>$ sudo reboot</code><br>
+
+<p>Check</p>
+
+<code>$ sudo dmesg | grep usb-storage</code><br>
+
+<h5>udisks2.service</h5>
 
 <code>$ sudo systemctl status udisks2.service</code><br>
 <code>$ sudo apt install libblockdev-crypto2 libblockdev-mdraid2 --no-install-recommends</code><br>
 
 <h5>intel_iommu=off</h5>
 
-<h5>quirk</h5>
 
-<h5>BIOS</h5>
+<h5>legacy USB</h5>
 
 <p>Into bios, have usb 3.0 turned on, an any other options turned on, but turn off legacy usb option.But think that after legacy USB disabling, in some cases, you could lost ability to enter your BIOS, if you have USB keyboard, because your keyboard will not work at the moment when you need to press DEL or F2 or whatever.</p>
-
 
 <h5>Mouse</h5>
 
 https://github.com/sriemer/fix-linux-mouse<br>
 
-
 <br>
 </details>
 
 <!-- #################### -->
 
 <details>
-<summary><b>8.07 Sound</b></summary>
-<br>
-
-<h4>Sound</h4>
-
-https://wiki.ubuntu.com/DebuggingSoundProblems<br>
-https://github.com/thesofproject/sof-bin<br>
-
-<p>List of PLAYBACK Hardware Devices</p>
-
-<code>$ aplay -l</code><br>
-
-<p>List of CAPTURE Hardware Devices</p>
-
-<code>$ arecord -l</code><br>
-
-<p>Others commands</p>
-
-<code>$ amixer</code><br>
-<code>$ amixer -c0</code><br>
-<code>$ sudo nano /etc/pulse/default.pa</code><br>
-<code>$ aplay -lL</code><br>
-<code>$ pactl list cards</code><br>
-<code>$ pactl list sinks</code><br>
-<code>$ pactl list sink-inputs</code><br>
-<code>$ </code><br>
-
-<br>
-</details>
-
-
-<!-- #################### -->
-
-<details>
-<summary><b>8.08 Bluetooth</b></summary>
+<summary><b>9.07 Bluetooth</b></summary>
 <br>
 
 <h4>Bluetooth</h4>
 
 https://wiki.archlinux.org/title/Bluetooth<br>
+https://wiki.archlinux.org/title/Bluetooth#Troubleshooting<br>
+https://wiki.debian.org/BluetoothUser<br>
+https://wiki.debian.org/Bluetooth/Alsa<br>
+https://github.com/Arkq/bluez-alsa<br>
 
 <h5>First things first:</h5>
 
-<code>$ sudo apt install firmware-realtek</code>
+<code>$ sudo apt install firmware-realtek</code><br>
 or
-<code>$ sudo apt install firmware-iwlwifi</code>
+<code>$ sudo apt install firmware-iwlwifi</code><br>
 
 <h5>Audio compatibility</h5>
 
-<code>$ sudo apt install pulseaudio-module-bluetooth</code>
+<code>$ sudo apt install pulseaudio-module-bluetooth</code><br>
 or
-<code>$ sudo apt install bluez-alsa-utils</code>
+<code>$ sudo apt install bluez-alsa-utils</code><br>
 
 <p>Debug</p>
 
-<code>$ sudo service bluetooth status</code>
+<code>$ sudo service bluetooth status</code><br>
+<code>$ hciconfig -a</code><br>
+<code>$ hciconfig hci0</code><br>
+<code>$ sudo dmesg | grep Bluetooth</code><br>
+<code>$ sudo dmesg | grep iwlwifi</code><br>
+<code>$ sudo dmesg | grep rtl</code><br>
 
-<h5>Connecting Bluetooth manualy with Bluez</h5>
+<h5>Connecting Bluetooth</h5>
 
 <pre>
 &nbsp; Commands 
-&nbsp; &nbsp; • Connecting Bluetooth manualy with Bluez
+&nbsp; &nbsp; • Connecting bluetooth manualy with Bluez
 &nbsp; &nbsp; $ bluetoothctl
 &nbsp; &nbsp; [bluetooth]# scan on
 &nbsp; &nbsp; [bluetooth]# pair xx:xx:xx
@@ -3470,6 +3636,22 @@ or
 &nbsp; &nbsp; [bluetooth]# block yy:yy:yy
 </pre>
 
+<h5>Bluetooth Managment</h5>
+
+<pre>
+&nbsp; Commands 
+&nbsp; &nbsp; • Bluetooth managment
+&nbsp; &nbsp; $ btmgmt
+&nbsp; &nbsp; [btmgmt]# info
+</pre>
+
+<h5>Bluetooth Audio ALSA Backend (bluealsa)</h5>
+
+https://github.com/arkq/bluez-alsa/wiki/Bluetooth-Pairing-And-Connecting<br>
+
+<code>$ sudo apt install bluez-alsa-utils</code><br>
+
+
 <h5>Mouse</h5>
 
 https://github.com/sriemer/fix-linux-mouse<br>
@@ -3480,20 +3662,124 @@ https://github.com/sriemer/fix-linux-mouse<br>
 <!-- #################### -->
 
 <details>
-<summary><b>8.09 Printers</b></summary>
+<summary><b>9.08 Sound</b></summary>
 <br>
 
-<h4>Printers</h4>
+https://wiki.ubuntu.com/DebuggingSoundProblems<br>
+https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture<br>
+https://wiki.archlinux.org/title/PulseAudio/Troubleshooting<br>
+https://thesofproject.github.io/latest/getting_started/intel_debug/suggestions.html<br>
+https://wiki.debian.org/Sound<br>
+https://wiki.debian.org/SoundConfiguration<br>
+https://www.alsa-project.org<br>
+https://github.com/thesofproject/sof/issues<br>
+https://github.com/thesofproject<br>
 
-https://wiki.ubuntu.com/DebuggingPrintingProblems<br>
+<h4>First things first:</h4>
 
-<h5>∙ HP</h5>
+<code>$ sudo apt install firmware-sof-signed</code>
+<code>$ sudo apt install firmware-intel-sound</code>
 
-<code>$ sudo apt install hplip</code><br>
+<h4>Debug commands</h4>
 
-<h5>∙ EPSON</h5>
+<p>List of PLAYBACK Hardware Devices</p>
 
-<code>$ sudo apt install </code><br>
+<code>$ aplay -l</code><br>
+<code>$ lspci |grep -i audio</code><br>
+<code>$ cat /proc/asound/cards</code><br>
+<code>$ cat /proc/asound/card*/id</code><br>
+
+<p>List of CAPTURE Hardware Devices</p>
+
+<code>$ arecord -l</code><br>
+
+<h4>Testing</h4>
+
+<code>$ speaker-test</code><br>
+
+<h4>Other debug commands</h4>
+
+<code>$ cat /proc/asound/cards</code><br>
+<code>$ cat /proc/asound/modules</code><br>
+<code>$ lspci -v | grep Audio</code><br>
+<code>$ lsusb</code><br>
+<code>$ lsmod | grep snd</code><br>
+<code>$ aplay -lL</code><br>
+<code>$ amixer</code><br>
+<code>$ amixer -c0</code><br>
+<code>$ sudo dpkg-reconfigure linux-sound-base</code><br>
+<code>$ sudo alsa-info</code><br>
+
+<h4>ALSA</h4>
+
+<p>The "Advanced Linux Sound Architecture" (ALSA) is a part of the Linux kernel. PulseAudio is a sound server that sits between ALSA and user applications, aiming to provide easy automatic sound configuration for users. PulseAudio controls underlying ALSA-level volume controls.</p>
+
+<code>$ sudo apt install alsa-utils</code><br>
+<code>$ alsamixer</code><br>
+<code>$ amixer -c 0 set Master 100%</code><br>
+<code>$ amixer -c 1 set Speaker 50%</code><br>
+<code>$ amixer -c 1 set Speaker 3db</code><br>
+<code>$ amixer -c 1 set Speaker 2db+</code><br>
+<code>$ amixer -c 0 set Mic unmute</code><br>
+<code>$ sudo nano /etc/pulse/default.pa</code><br>
+
+<h4>PulseAudio Volume Control</h4>
+
+<p>Allows you to control both the volume of hardware devices and of each playback stream separately. It also allows you to redirect a playback stream to another output device.</p>
+
+<code>$ sudo apt install pavucontrol</code><br>
+
+<h4>Advanced solution</h4>
+
+<p>Install the SOF firmware binaries from the source: https://github.com/thesofproject/sof-bin</p>
+
+<p>Clone the repository:</p>
+
+<code>$ git clone https://github.com/thesofproject/sof-bin.git</code><br>
+
+<p>Change to directory: </p>
+
+<code>$ cd sof-bin</code><br>
+
+<p>Follow: https://github.com/thesofproject/sof-bin#install-process-with-installsh </p>
+
+<code>$ sudo mv /lib/firmware/intel/sof* some_backup_location/</code><br>
+
+<code>$ sudo mv /usr/local/bin/sof-*     some_backup_location/ # optional </code><br>
+
+<code>$ sudo ./install.sh v2.2.x/v2.2</code><br>
+
+<p>Reboot</p>
+
+<code>$ sudo reboot</code><br>
+
+
+<h4>"Apollo Lake" platform</h4>
+
+https://thesofproject.github.io/latest/getting_started/intel_debug/suggestions.html#es8336-support<br>
+
+<p>Check your kernel configuration, typically available as a /boot/config-*. These options below will allow you to use Sound Open Firmware, start with:</p>
+
+<code>$ grep SND_SOC_INTEL_APL /boot/config-*</code><br>
+
+<p>For your system you could select:</p>
+
+<pre>
+ALSA for SoC audio support (CONFIG_SND_SOC=m)
+Intel ASoC SST drivers (CONFIG_SND_SOC_INTEL_SST_TOPLEVEL=y)
+and the appropriate platform option, which in your case would be "Broxton/ApolloLake platforms" (CONFIG_SND_SOC_INTEL_APL=m)
+</pre>
+
+<p>Others options:</p>
+
+<pre>
+Sound Open Firmware support (CONFIG_SND_SOC_SOF_TOPLEVEL=y)
+SOF support for Intel Audio DSPs (CONFIG_SND_SOC_SOF_INTEL_TOPLEVEL=y)
+SOF PCI enumeration support (CONFIG_SND_SOC_SOF_PCI=m)
+SOF support for Apollolake (CONFIG_SND_SOC_SOF_APOLLOLAKE_SUPPORT=m)
+SOF support for HDA Links (HDA/HDMI) (CONFIG_SND_SOC_SOF_HDA_LINK=y)
+SOF support for HDAudio codecs (CONFIG_SND_SOC_SOF_HDA_AUDIO_CODEC=y)
+</pre>
 
 <br>
 </details>
@@ -3501,7 +3787,93 @@ https://wiki.ubuntu.com/DebuggingPrintingProblems<br>
 <!-- #################### -->
 
 <details>
-<summary><b>8.10 Hardware Utilities</b></summary>
+<summary><b>9.09 Printers</b></summary>
+<br>
+
+<h4>Printers</h4>
+
+https://wiki.debian.org/SystemPrinting<br>
+https://wiki.ubuntu.com/DebuggingPrintingProblems<br>
+
+<h5>∙ HP</h5>
+
+https://developers.hp.com/hp-linux-imaging-and-printing/install/manual/distros/debian<br>
+https://wiki.debian.org/InstallingDebianOn/HP<br>
+https://developers.hp.com/hp-linux-imaging-and-printing<br>
+
+<code>$ sudo apt install hplip</code><br>
+
+<h5>∙ EPSON</h5>
+
+https://epson.com/Support/wa00821<br>
+
+<code>$ sudo apt install </code><br>
+
+<h5>∙ Wireless Firewall Ports</h5>
+
+<code>$ </code><br>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>9.10 Keyboard</b></summary>
+<br>
+
+<h4>Keyboard</h4>
+
+<br>
+
+<h5>∙ Layout</h5>
+
+<code>$ </code><br>
+
+<h5>∙ </h5>
+
+<code>$ </code><br>
+
+<h5>∙ Remap Apple Magic Keyboard</h5>
+
+<code>$ </code><br>
+
+<h5>∙ Assign Home and End to Fn + Arrows</h5>
+
+https://superuser.com/questions/428945/defining-keyboard-shortcuts-involving-the-fn-key<br>
+
+https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows<br>
+
+<code>$ </code><br>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>9.11 Location and Time/Zone</b></summary>
+<br>
+
+<h4>Location and Time/Zone</h4>
+
+<br>
+
+<h5>∙ </h5>
+
+<code>$ </code><br>
+
+<h5>∙ </h5>
+
+<code>$ </code><br>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>9.12 Hardware Utilities</b></summary>
 <br>
 
 <h4>Hardware Utility</h4>
@@ -3518,15 +3890,16 @@ https://wiki.ubuntu.com/DebuggingPrintingProblems<br>
 <!-- #################### -->
 
 <details>
-<summary><b>8.11 Disk Utilities</b></summary>
+<summary><b>9.11 Disk Utilities</b></summary>
 <br>
 
 <h4>Disk Utility</h4>
 
-*TESTDISK<br>
+<h5>TESTDISK</h5>
+
 https://www.cgsecurity.org/wiki/TestDisk<br>
 
-*SMARTMONTOOLS<br>
+<h5>SMARTMONTOOLS</h5>
 
 <code>$ sudo apt install smartmontools</code><br>
 
@@ -3536,7 +3909,7 @@ https://www.cgsecurity.org/wiki/TestDisk<br>
 &nbsp; &nbsp; $ sudo smartctl -a /dev/sda
 </pre>
 
-*HDPARM<br>
+<h5>HDPARM</h5>
 
 <code>$ sudo apt install hdparm</code><br>
 
@@ -3546,7 +3919,7 @@ https://www.cgsecurity.org/wiki/TestDisk<br>
 &nbsp; &nbsp; $ sudo hdparm -I /dev/sda
 </pre>
 
-*KDISKMARK<br>
+<h5>KDISKMARK</h5>
 
 <code>$ sudo apt install -y kdiskmark</code><br>
 
@@ -3554,12 +3927,13 @@ https://www.cgsecurity.org/wiki/TestDisk<br>
 </details>
 
 <hr>
+
 <!--################################### -->
 
-<h2>9. OTHERS</h2>
+<h2>10. OTHERS</h2>
 
 <details>
-<summary><b>9.01 Some Links</b></summary>
+<summary><b>10.01 Some Links</b></summary>
 <br>
 
 <h3>Some Links</h3>
@@ -3580,6 +3954,10 @@ https://programmerall.com<br>
 https://linuxcnf.com<br>
 https://fabianlee.org<br>
 https://linuxiac.com<br>
+https://vitux.com<br>
+https://tqdev.com<br>
+https://www.dwarmstrong.org<br>
+https://0pointer.net/blog/<br>
 https://www.slant.co<br>
 
 Privacy<br>
@@ -3589,7 +3967,7 @@ https://www.anarsec.guide<br>
 <br>
 </details>
 
-<a href="#"> <p align="right">Back to Top</p> </a>
+<a href="https://github.com/RENANZG/My-Debian-GNU-Linux#1-debian-gnulinux-and-hardening"><p align="right">Back to Top ⬆</p></a>
 
 <!--################################### -->
 
