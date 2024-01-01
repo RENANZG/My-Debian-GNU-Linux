@@ -114,8 +114,29 @@
  </tr>
 </table>
 
-<sub>&nbsp; &nbsp; &nbsp; ¹ Check hash with <a href="https://gtkhash.org">GtkHash (GUI)</a></sub><br>
-<sub>&nbsp; &nbsp; &nbsp; ² How to summarize iso file with <a href="https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html">GNU Coreutils (CLI)</a></sub>
+<!-- ################################## -->
+
+<details>
+<summary><sub>¹ Check hash with <a href="https://gtkhash.org">GtkHash (GUI)</a></sub></summary>
+<br>
+
+<p>Check hash with GtkHash (GUI) <a href="https://gtkhash.org">https://gtkhash.org</a></p>
+
+<br>
+</details>
+
+<!-- ########## -->
+
+<details>
+<summary><sub>² How to summarize iso file with <a href="https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html">GNU Coreutils (CLI)</a></sub></summary>
+<br>
+
+<p>Summarize iso file with GNU Coreutils (CLI)<a href="https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html">https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html</a></p>
+
+<br>
+</details>
+
+<!-- ########## -->
 
 <details>
 <summary><sub>³ Manual method with sha256sum</sub></summary>
@@ -134,6 +155,8 @@
 
 <br>
 </details>
+
+<!-- ########## -->
 
 <details>
 <summary><sub>⁴ Semi-automatic method with sha256sum</sub></summary>
@@ -172,7 +195,6 @@ https://www.passwordcard.org/en<br>
 ∙ Boot
 https://libreboot.org<br>
 https://osresearch.net<br>
-
 
 ∙ Sanitize options<br> 
 
@@ -233,6 +255,8 @@ https://github.com/morrownr/USB-WiFi<br>
 
 <br>
 </details>
+
+<!-- ########## -->
 
 <details>
 <summary><b>2.02 Installation</b></summary>
@@ -633,32 +657,10 @@ https://github.com/linuxdabbler/debian-install-scripts<br>
 <img src="2.SYSTEM_INSTALLATION/2.06_Others/file_system.png"/>
 </div>
 
-<h4>2.2.4 Things to do After Installing Debian</h4>
-
-<p>1: Update and Upgrade</p>
-
-<pre>$ sudo apt update -y && sudo apt upgrade -y</pre>
-
-<p>2: Adding sudo user and common user</p>
-
-<pre>$ </pre>
-
-<p>3. Enable and use UFW </p>
-
-<pre>$ </pre>
-
-<p>4. Installing Java </p>
-
-• JRE (Java Runtime Environment)<br>
-
-• OpenJDK 17 JDK (Java Development Kit)<br>
-
-<pre>
-$ java --version
-$ apt-cache search openjdk | grep openjdk-17
-</pre>
-
+<br>
 </details>
+
+<!-- ########## -->
 
 <details>
 <summary><b>2.02 Encryption</b></summary> 
@@ -746,8 +748,98 @@ https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password<br>
 <br>
 </details>
 
+<!-- ########## -->
+
 <details>
-<summary><b>2.03 Low Level Linux</b></summary> 
+<summary><b>2.04 After Installing</b></summary> 
+<br>
+
+<h5>Basic Things to do After Installing Debian</h5>
+
+<p>1. Update and Upgrade</h5>
+
+<pre>$ sudo apt update -y && sudo apt upgrade -y</pre>
+
+
+<h5>2. Adding sudo user and common user</h5>
+
+<pre>$ </pre>
+
+<sub>***Security alert***</sub>
+
+<h5>3. Firewall</h5>
+
+</p>Install and enable and use UFW</p>
+
+<pre>$ </pre>
+
+
+<h5>4. Fast Grub Time</h5>
+
+<p>Edit and add <code>GRUB_TIMEOUT=0</code></p>
+
+<pre>$ sudo nano /etc/default/grub</pre>
+
+<pre>GRUB_TIMEOUT=0</pre>
+
+<pre>$ sudo update-grub</pre>
+
+
+<h5>5. Swapiness</h5>
+
+https://unix.stackexchange.com/questions/265713/how-to-configure-swappiness-in-linux-memory-management<br>
+
+<p>Verify</p>
+
+<pre>$ sudo cat /proc/sys/vm/swappiness</pre>
+
+<p>Edit and add <code>sw.swappiness=10</code></p>
+
+<pre>$ sudo nano /etc/sysctl.conf</pre>
+
+<pre>sw.swappiness=10</pre>
+
+<p>or simply</p>
+
+<pre>$ sudo bash -c "echo 'vm.swappiness = 10' >> /etc/sysctl.conf"</pre>
+
+<p>To take effect:</p>
+
+<pre>$ sudo sysctl -p</pre>
+
+<pre>$ sysctl vm.swappiness=10</pre>
+
+<p>Verify</p>
+
+<pre>$ sudo cat /proc/sys/vm/swappiness</pre>
+
+<h5>6. Installing Java</h5>
+
+• Java Runtime Environment (JRE)<br>
+
+• OpenJDK - Java Development Kit (JDK)<br>
+
+<pre>
+$ java --version
+$ apt-cache search openjdk | grep openjdk
+</pre>
+
+<pre>$ sudo apt install</pre>
+
+
+<h5>7. Installing Micro$oft Fonts</h5>
+
+<pre>$ sudo apt install -y ttf-mscorefonts-installer</pre>
+
+
+
+<br>
+</details>
+
+<!-- ########## -->
+
+<details>
+<summary><b>2.04 Low Level Linux</b></summary> 
 <br>
 
 • Kernel Linux<br>
@@ -2118,6 +2210,12 @@ Port Checker - https://portchecker.co<br>
 &nbsp; &nbsp; $ sudo ufw allow from 1.2.3.4 to any port 22 proto tcp comment 'Open TCP SSH PORT for VPN IP only'
 &nbsp; &nbsp; • Open TCP Torrent PORT for VPN IP only
 &nbsp; &nbsp; $ sudo ufw allow in on tun0 from 10.8.0.0/16 to any port 60000 proto tcp comment 'Open TCP Torrent PORT for VPN IP only'
+&nbsp; &nbsp; • Port Forwarding to router 
+&nbsp; &nbsp; $ sudo iptables -A INPUT -m state --state RELATED,ESTABLISHED -p udp --dport 51413 -j ACCEPT
+&nbsp; &nbsp; • For uploading torrent
+&nbsp; &nbsp; $ sudo iptables -A OUTPUT -p udp --sport 51413 -j ACCEPT
+&nbsp; &nbsp; $ sudo ufw allow 51413/udp
+&nbsp; &nbsp; $ sudo iptables -L --line-numbers
 &nbsp; &nbsp; • Troubles
 &nbsp; &nbsp; $ sudo apt purge iptables-persistent
 </pre>
@@ -2337,7 +2435,7 @@ https://github.com/strongswan/strongswan<br>
 <a href="https://browserleaks.com/ip">∙ BrowserLeaks IP Test</a><br>
 <a href="https://ipx.ac/run">∙ IPX.AC DNS Leak Test</a><br>
 
-<b>• Torrenting</b><br>
+<h4>• Torrenting</h4>
 
 https://portforward.com<br>
 https://wiki.wireshark.org/BitTorrent<br>
@@ -2351,7 +2449,7 @@ https://www.comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-li
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <pre>
-&nbsp; Commands for Transmission
+&nbsp; Commands for remote Transmission
 &nbsp; &nbsp; $ sudo apt-get install transmission-cli
 &nbsp; &nbsp; $ sudo apt-get install transmission-common
 &nbsp; &nbsp; $ sudo apt-get install transmission-daemon
@@ -3013,6 +3111,37 @@ https://wiki.debian.org/Compression<br>
 
 <code>$ sudo apt install bleachbit</code><br>
 
+<p>Prevent recovery</p>
+
+<p>In both user profile and root Bleachbit, go to Options Icon -> Preferences -> General Tab and check "Overwrite contents of files to prevent recovery".</p>
+
+</p>Free space erase option</p>
+
+<em>Take care with free space erase in root mode, this has several problems. This can block the system from starting because the cache is full of randomized files. </em>
+
+<p>Commands for you to find the large file</p>
+
+<code>$ df -h</code><br>
+<code>$ df -h ~/.cache</code><br>
+<code>$ sudo df -h /mnt</code><br>
+<code>$ find ~/.cache -xdev -type f -size +1G</code><br>
+<code>$ rm ~/.cache/g324hjmmjhhtm2344ty231r42gr</code><br>
+
+<p>Free space erase from CLI</p>
+
+<code>$ sudo bleachbit --clean system.cache system.localizations system.trash</code><br>
+
+<p>Locale Purge</p>
+
+<p>Mark your preferred language besides en-US</p>
+
+<code>$ sudo apt install -y localepurge</code><br>
+<code>$ sudo localepurge</code><br>
+
+<p>In root Bleachbit, go to Options Icon -> Preferences -> Languages Tab and mark your preferred language besides en-US.</p>
+
+<p>Start cleaning in root mode, this may take some time.</p>
+
 <h5>∙ Metadata Cleaner</h5>
 
 <code>$ sudo apt install metadata-cleaner</code><br>
@@ -3020,6 +3149,9 @@ https://wiki.debian.org/Compression<br>
 <code>$ sudo apt install metacam</code><br>
 
 <h4>• Disk Sanitation</h4>
+
+https://wiki.debian.org/SSDOptimization<br>
+https://wiki.archlinux.org/title/Solid_state_drive<br>
 
 <em>*Not all SSD support sanitize. To properly way to erase a SSD is using the SSDs manufacturer's software. Other methods might not work, due to wear leveling and over-provisioning.</em><br>
 
@@ -3049,6 +3181,16 @@ https://wiki.debian.org/Compression<br>
 <h4>Set color temperature of display according to time of day</h4>
 
 <code>$ sudo apt install redshift</code><br>
+
+https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
+
+<code>$ ~/.config/redshift/redshift.conf</code><br>
+<code>$ redshift -P -O TEMPERATURE</code><br>
+<code>$ redshift -P -O 4000</code><br>
+<code>$ redshift -P -O 6000</code><br>
+<code>$ brightnessctl s 25% && redshift -P -O 4000</code><br>
+<code>$ redshift -l LAT:LONG</code><br>
+
 
 <h4>Synchronize files and folders</h4>
 
@@ -3329,7 +3471,32 @@ https://reddit.com/r/sysadmin<br>
 
 <h5>∙ Live System in Rescue Mode</h5>
 
+<p>Debian Live in Rescue Mode</p>
+
+<h5>∙ rEFInd rescue media</h5>
+
+<p>Download rEFInd rescue media</p>
+
+https://www.rodsbooks.com/refind/getting.html<br>
+
 <h5>∙ Chroot</h5>
+
+<code>$ sudo</code><br>
+
+<h5>∙ Grub Issues</h5>
+
+<code>$ sudo grub-install /dev/sdX</code><br>
+<code>$ sudo grub-install /dev/sdX -v --force-extra-removable</code><br>
+
+<pre>
+GRUB_DISABLE_OS_PROBER=false
+</pre>
+
+<pre>
+GRUB_ENABLE_CRYPTODISK=y
+</pre>
+
+<code>$ sudo update-grub</code><br>
 
 <br>
 </details>
@@ -3353,6 +3520,44 @@ https://github.com/sddm/sddm/releases<br>
 <code>$ brightnessctl s 100%</code><br>
 <code>$ brightnessctl s 70%</code><br>
 <code>$ brightnessctl s 50%</code><br>
+
+<h4>Environment variables</h4>
+
+<p>Qt applications can be scaled with the following environment variables, note that many applications are hard-coding sizing and font and thus the result on such app may not be as expected.</p>
+
+<code>$ export QT_AUTO_SCREEN_SET_FACTOR=0</code><br>
+<code>$ export QT_SCALE_FACTOR=1</code><br>
+<code>$ export QT_FONT_DPI=96</code><br>
+
+<h4>Monitor and resolution</h4>
+
+https://dpi.lv<br>
+
+<code>$sudo apt install arandr
+
+<code>$ sudo xrandr --output eDP-1 --primary</code><br>
+<code>$ sudo xrandr --output DP2 --auto --left-to DP1</code><br>
+<code>$ sudo xrandr --output LVDS1 --panning 1920x1080 --scale 1.406x1.406</code><br>
+<code>$ sudo xrandr --output LVDS1 --panning 1366x768 --scale 1x1 </code><br>
+
+<p>You can make this change permanent for a specific user by adding this to the startup applications:</p>
+
+<code>$ /usr/bin/xrandr --output LVDS1 --panning 1920x1080 --scale 1.406x1.406</code><br>
+
+<p>*Firefox and Thunderbird - Advanced Settings</p>
+
+<code>layout.css.devPixelsPerPx	0.8</code><br>
+
+<h4>SSDM</h4>
+
+<p>Debug commands</p>
+
+<code>$ sudo systemctl status default.target</code><br>
+<code>$ sudo systemctl status sddm.service</code><br>
+<code>$ sudo systemctl list-unit-files | grep sddm</code><br>
+<code>$ sudo ls -la /etc/systemd/system/display-manager.service</code><br>
+<code>$ cat /proc/cmdline</code><br>
+
 
 <br>
 </details>
@@ -3422,7 +3627,7 @@ or
 
 <p>Power up</p>
 
-<code>$ ifconfig eth0 up</code>
+<code>$ sudo ifconfig eth0 up</code>
 
 
 <h5>∙ DNS Issues</h5>
@@ -3822,15 +4027,13 @@ https://epson.com/Support/wa00821<br>
 <summary><b>9.10 Keyboard</b></summary>
 <br>
 
-<h4>Keyboard</h4>
+<h4>Keyboard debug</h4>
 
-<br>
+<code>$ sudo dpkg-reconfigure keyboard-configuration</code><br>
+<code>$ sudo service keyboard-setup restart</code><br>
+<code>$ sudo update-initramfs -u</code><br>
 
 <h5>∙ Layout</h5>
-
-<code>$ </code><br>
-
-<h5>∙ </h5>
 
 <code>$ </code><br>
 
@@ -3857,6 +4060,12 @@ https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows<br>
 
 <h4>Location and Time/Zone</h4>
 
+<code>$ sudo dpkg-reconfigure tzdata</code><br>
+
+<h4>NTP</h4>
+
+<code>$ sudo apt install ntpdate && ntpdate in.pool.ntp.org && dpkg-reconfigure tzdata</code><br>
+
 <br>
 
 <h5>∙ </h5>
@@ -3873,10 +4082,23 @@ https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows<br>
 <!-- #################### -->
 
 <details>
-<summary><b>9.12 Hardware Utilities</b></summary>
+<summary><b>9.12 Torrenting</b></summary>
 <br>
 
-<h4>Hardware Utility</h4>
+<h4>Fluctuations in the download speed</h4>
+
+<code>$ sudo </code><br>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>9.13 Hardware</b></summary>
+<br>
+
+<h4>Hardware Utilities</h4>
 
 <code>$ sudo apt install lshw</code><br>
 <code>$ sudo apt install inxi</code><br>
@@ -3890,10 +4112,30 @@ https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows<br>
 <!-- #################### -->
 
 <details>
-<summary><b>9.11 Disk Utilities</b></summary>
+<summary><b>9.14 Disks</b></summary>
 <br>
 
-<h4>Disk Utility</h4>
+https://wiki.debian.org/SSDOptimization<br>
+https://wiki.archlinux.org/title/Solid_state_drive<br>
+
+<h4>Disk debug</h4>
+
+<pre>
+$ dmesg -T | grep xhci
+$ lsusb -tv
+</pre>
+
+<pre>
+&nbsp; Commands for fdisk
+&nbsp; &nbsp; • EXT - Badblock:
+&nbsp; &nbsp; $ sudo fdisk -l /dev/sdb
+&nbsp; &nbsp; • *NTFS - Badblock:
+&nbsp; &nbsp; $ sudo e2fsck -p /dev/sde1
+&nbsp; &nbsp; $ sudo e2fsck -c
+&nbsp; &nbsp; $ sudo e2fsck -l /dev/sdb1 /badblock/file
+</pre>
+
+<h4>Disk Utilities</h4>
 
 <h5>TESTDISK</h5>
 
@@ -3907,6 +4149,7 @@ https://www.cgsecurity.org/wiki/TestDisk<br>
 &nbsp; Commands for smartmontools
 &nbsp; &nbsp; • How to :
 &nbsp; &nbsp; $ sudo smartctl -a /dev/sda
+
 </pre>
 
 <h5>HDPARM</h5>
@@ -3922,6 +4165,10 @@ https://www.cgsecurity.org/wiki/TestDisk<br>
 <h5>KDISKMARK</h5>
 
 <code>$ sudo apt install -y kdiskmark</code><br>
+
+<h5>DEBUGFS</h5>
+
+<code>$ sudo debugfs</code><br>
 
 <br>
 </details>
@@ -3967,7 +4214,8 @@ https://www.anarsec.guide<br>
 <br>
 </details>
 
-<a href="https://github.com/RENANZG/My-Debian-GNU-Linux#1-debian-gnulinux-and-hardening"><p align="right">Back to Top ⬆</p></a>
+<br>
+<p align="right"> <a href="https://github.com/RENANZG/My-Debian-GNU-Linux#1-debian-gnulinux-and-hardening">Back to Top ⬆</a> </p>
 
 <!--################################### -->
 
@@ -3979,6 +4227,8 @@ https://www.anarsec.guide<br>
 
 <p align="center">Made with ♥</p>
 </div>
+
+<!--################################### -->
 
 </body>
 </html>

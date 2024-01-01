@@ -26,3 +26,5 @@ https://github.com/djeada/Bash-Scripts
 https://github.com/kelseyhightower/kubernetes-the-hard-way
 
 https://github.com/extremeshok/xshok-proxmox
+
+https://github.com/tarampampam/free-domains
