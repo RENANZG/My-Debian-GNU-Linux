@@ -238,6 +238,7 @@ https://pine64.org/pinebook-pro<br>
 https://frame.work<br>
 https://powerpc-notebook.org<br>
 https://github.com/morrownr/USB-WiFi<br>
+https://wiki.debian.org/DebianOnIntelMacPro<br>
 	
 <h4>2.01.03 Performance</h4>
 
@@ -758,8 +759,25 @@ https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password<br>
 
 <p>1. Update and Upgrade</h5>
 
+https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
+
 <pre>$ sudo apt update -y && sudo apt upgrade -y</pre>
 
+<pre>$ sudo apt dist-upgrade</pre>
+
+<p>Note:</p>
+
+<p><code>apt upgrade</code> only upgrades existing packages. It doesn’t install new packages or remove existing packages.</p>
+
+<p><code>apt upgrade</code> doesn’t upgrade kernel version.</p>
+
+<p><code>dist-upgrade</code> can remove dependency packages or install new ones (if required).</p>
+
+<p><code>dist-upgrade</code> can also upgrade kernel version.</p>
+
+<p><code>dist-upgrade</code> doesn’t upgrade the distribution version.</p>
+
+ *full-upgrade<br>
 
 <h5>2. Adding sudo user and common user</h5>
 
@@ -3412,6 +3430,7 @@ https://www.reddit.com/r/sublimetext<br>
 <h4>Linux Community</h4>
 
 https://docs.kernel.org<br>
+https://forum.linuxfoundation.org<br>
 https://forums.debian.net<br>
 https://linuxquestions.org<br>
 https://superuser.com<br>
@@ -3467,26 +3486,60 @@ https://reddit.com/r/sysadmin<br>
 <summary><b>9.03 System Boot</b></summary>
 <br>
 
+https://wiki.debian.org/KernelHeaders<br>
+
 <h4>System Boot</h4>
 
-<h5>∙ Live System in Rescue Mode</h5>
+<h5>∙ Rescue Mode</h5>
 
 <p>Debian Live in Rescue Mode</p>
-
-<h5>∙ rEFInd rescue media</h5>
-
-<p>Download rEFInd rescue media</p>
-
-https://www.rodsbooks.com/refind/getting.html<br>
 
 <h5>∙ Chroot</h5>
 
 <code>$ sudo</code><br>
 
-<h5>∙ Grub Issues</h5>
+<h4>Grub</h4>
 
-<code>$ sudo grub-install /dev/sdX</code><br>
+<p>The simplest way to display your Grub is to press and hold the <code>shift</code> button while booting.</p>
+
+<h5>∙ rEFInd (GUI)</h5>
+
+<p>Download rEFInd rescue media</p>
+
+https://www.rodsbooks.com/refind/getting.html<br>
+
+<h5>∙ Grub customizer (GUI)</h5>
+
+<code>$ sudo apt install grub-customizer</code><br>
+
+<h4>∙ Menuentries debug</h4>
+
+<p></p>
+<p></p>
+<p></p>
+<code>$ sudo ls /boot</code><br>
+<code>$ sudo ls -l /vmlinuz</code><br>
+<code>$ sudo ls /boot | grep vmlinuz</code><br>
+<code>$ sudo dpkg -l | grep grub</code><br>
+<code>$ sudo dpkg -l | grep linux-image</code><br>
+<code>$ sudo dpkg -l | grep linux-headers</code><br>
+<code>$ sudo ls /sys/firmware</code><br>
+<code>$ sudo cat /etc/default/grub</code><br>
+<code>$ sudo cat /boot/grub/grub.cfg</code><br>
+<code>$ sudo cat /boot/grub/grub.cfg | grep menuentry</code><br>
+<code>$ sudo cat /boot/grub/grub.cfg | grep submenu</code><br>
+<code>$ sudo cat /etc/grub.d</code><br>
+<code>$ sudo cat /etc/grub.d/40_custom</code><br>
+
+<h4>∙ Grub Issues</h4>
+
+<p>Removable Medium Boot</p>
+
 <code>$ sudo grub-install /dev/sdX -v --force-extra-removable</code><br>
+
+<p>Cryptab</p>
+
+<code>$ sudo nano /boot/grub/grub.cfg</code><br>
 
 <pre>
 GRUB_DISABLE_OS_PROBER=false
@@ -3497,6 +3550,21 @@ GRUB_ENABLE_CRYPTODISK=y
 </pre>
 
 <code>$ sudo update-grub</code><br>
+
+<h4>Remove Old Kernels</h4>
+
+<p>An easy way to remove old kernels is to use Synaptic Package Manager to search for "linux-image" and "linux-headers" and remove all except the version you are currently using.</p>
+
+<h4>Not recommended</h4>
+
+<code>$ sudo dpkg -l | grep linux-image</code><br>
+<code>$ sudo dpkg -l | grep linux-headers</code><br>
+<code>$ sudo rm /boot/*-4.18.0-{15,17}-*</code><br>
+<code>$ sudo dpkg --configure -a</code><br>
+<code>$ sudo apt install -f</code><br>
+<code>$ sudo update-grub</code><br>
+<code>$ sudo apt autoremove</code><br>
+<code>$ sudo apt upgrade</code><br>
 
 <br>
 </details>
@@ -3581,6 +3649,8 @@ https://docs.kernel.org/driver-api/usb/power-management.html<br>
 <code>$ sudo apt install firmware-realtek</code>
 or
 <code>$ sudo apt install firmware-iwlwifi</code>
+or
+<code>$ sudo apt install firmware-atheros</code>
 
 
 <h4>• Network</h4>
@@ -3589,6 +3659,9 @@ or
 
 <code>$ sudo dmesg | grep iwlwifi</code><br>
 <code>$ sudo dmesg | grep rtw</code><br>
+<code>$ sudo dmesg | grep ath</code><br>
+<code>$ journalctl -b | grep -i net</code><br>
+
 
 <h5>∙ Blocked Hardware</h5>
 
@@ -3812,6 +3885,9 @@ https://github.com/Arkq/bluez-alsa<br>
 <code>$ sudo apt install firmware-realtek</code><br>
 or
 <code>$ sudo apt install firmware-iwlwifi</code><br>
+or
+<code>$ sudo apt install firmware-atheros</code>
+
 
 <h5>Audio compatibility</h5>
 
@@ -3827,6 +3903,7 @@ or
 <code>$ sudo dmesg | grep Bluetooth</code><br>
 <code>$ sudo dmesg | grep iwlwifi</code><br>
 <code>$ sudo dmesg | grep rtl</code><br>
+<code>$ sudo dmesg | grep ath</code><br>
 
 <h5>Connecting Bluetooth</h5>
 
@@ -4215,7 +4292,7 @@ https://www.anarsec.guide<br>
 </details>
 
 <br>
-<p align="right"> <a href="https://github.com/RENANZG/My-Debian-GNU-Linux#1-debian-gnulinux-and-hardening">Back to Top ⬆</a> </p>
+<p align="right"> <a href="https://github.com/RENANZG/My-Debian-GNU-Linux?tab=readme-ov-file#">Back to Top ⬆</a> </p>
 
 <!--################################### -->
 
