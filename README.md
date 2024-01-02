@@ -13,7 +13,7 @@
 
 <blockquote><h3>"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately endpoint security is so terrifically weak that NSA can frequently find ways around it." (Edward Snowden)</h3></blockquote>
 
-<img src=".data/la_clef_des_champs_1936_-_rene_magritte_830px.png" title="La Clef Des Champs (1936) - René Magritte" width="100%"/>
+<p align="center"><img src=".data/la_clef_des_champs_1936_-_rene_magritte_830px.png" title="La Clef Des Champs (1936) - René Magritte"/></p>
 
 </div>
 
@@ -3450,7 +3450,7 @@ https://reddit.com/r/sysadmin<br>
 <!-- #################### -->
 
 <details>
-<summary><b>9.02 Audit Logs </b></summary>
+<summary><b>9.02 Audit Logs</b></summary>
 <br>
 
 <h4>Audit Logs</h4>
@@ -3601,7 +3601,7 @@ https://github.com/sddm/sddm/releases<br>
 
 https://dpi.lv<br>
 
-<code>$sudo apt install arandr
+<code>$ sudo apt install arandr</code><br>
 
 <code>$ sudo xrandr --output eDP-1 --primary</code><br>
 <code>$ sudo xrandr --output DP2 --auto --left-to DP1</code><br>
@@ -3886,7 +3886,7 @@ https://github.com/Arkq/bluez-alsa<br>
 or
 <code>$ sudo apt install firmware-iwlwifi</code><br>
 or
-<code>$ sudo apt install firmware-atheros</code>
+<code>$ sudo apt install firmware-atheros</code><br>
 
 
 <h5>Audio compatibility</h5>
@@ -4143,8 +4143,6 @@ https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows<br>
 
 <code>$ sudo apt install ntpdate && ntpdate in.pool.ntp.org && dpkg-reconfigure tzdata</code><br>
 
-<br>
-
 <h5>∙ </h5>
 
 <code>$ </code><br>
@@ -4226,7 +4224,6 @@ https://www.cgsecurity.org/wiki/TestDisk<br>
 &nbsp; Commands for smartmontools
 &nbsp; &nbsp; • How to :
 &nbsp; &nbsp; $ sudo smartctl -a /dev/sda
-
 </pre>
 
 <h5>HDPARM</h5>
@@ -4292,6 +4289,9 @@ https://www.anarsec.guide<br>
 </details>
 
 <br>
+
+<!--################################### -->
+
 <p align="right"> <a href="https://github.com/RENANZG/My-Debian-GNU-Linux?tab=readme-ov-file#">Back to Top ⬆</a> </p>
 
 <!--################################### -->
