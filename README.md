@@ -192,16 +192,23 @@
 ∙ Password Protect BIOS And OS With Laminated Password Card<br>
 https://www.passwordcard.org/en<br>
 
-∙ Boot
+∙ Boot<br>
 https://libreboot.org<br>
 https://osresearch.net<br>
 
 ∙ Sanitize options<br> 
 
-<p>Not all SSD support sanitize. And if you use SSDs, enable TRIM in your BIOS. More details in the rest of this work and in the attached files.</p>
+<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.03_Sanitization</h4>
+
+<p>Not all SSD support sanitize. And if you use SSDs, enable TRIM in your BIOS. Take care with SSD over-provisioning.</p>
 
 ∙ Crack password stored in CMOS used to access BIOS SETUP<br>
 https://github.com/bacher09/pwgen-for-bios<br>
+
+∙ Secure Boot<br>
+
+<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/3.SECURE_BOOT</h4>
+
 
 <h5>Hardware Vulnerabilities</h5>
 https://docs.kernel.org/admin-guide/hw-vuln/index.html<br>
@@ -621,7 +628,7 @@ The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a typ
 https://wiki.debian.org/KVM<br>
 https://wiki.archlinux.org/title/KVM<br>
 
-<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/8.SYSADMIN/8.03_Virtualization</h4>
+<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/8.SYSADMIN/8.03_Containerization_and_Orchestration</h4>
 
 <h3>Quick Installation Guide and Others</h3>
 
@@ -638,7 +645,9 @@ https://www.youtube.com/watch?v=cs8JW3zDDoI<br>
 
 <h4>2.2.3 Debootstrap</h4>
 
-/3.System/3.1_System_Install/3.1.1_Debootstrap.md<br>
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+
+<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION/2.02_Debootstrap</h4>
 
 • Debootstrap<br>
 https://wiki.debian.org/Debootstrap<br>
@@ -767,29 +776,27 @@ https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
 
 <p>Note:</p>
 
-<p><code>apt upgrade</code> only upgrades existing packages. It doesn’t install new packages or remove existing packages.</p>
+<p><code>apt upgrade</code> only upgrades existing packages. It doesn’t install new packages or remove existing packages, doesn’t upgrade kernel version.</p>
 
-<p><code>apt upgrade</code> doesn’t upgrade kernel version.</p>
+<p><code>dist-upgrade</code> can remove dependency packages or install new ones (if required), can also upgrade kernel version, doesn’t upgrade the distribution version.</p>
 
-<p><code>dist-upgrade</code> can remove dependency packages or install new ones (if required).</p>
-
-<p><code>dist-upgrade</code> can also upgrade kernel version.</p>
-
-<p><code>dist-upgrade</code> doesn’t upgrade the distribution version.</p>
-
- *full-upgrade<br>
+ <sub>*sudo apt full-upgrade</sub>
 
 <h5>2. Adding sudo user and common user</h5>
 
 <pre>$ </pre>
 
-<sub>***Security alert***</sub>
+<sub>***Security consideration, under construction***</sub>
 
 <h5>3. Firewall</h5>
 
-</p>Install and enable and use UFW</p>
+</p>Install and enable Uncomplicated Firewall - UFW (CLI)</p>
 
-<pre>$ </pre>
+<pre>$ sudo apt install ufw</pre>
+<pre>$ sudo ufw enable</pre>
+<pre>$ sudo ufw default deny incoming</pre>
+<pre>$ sudo ufw default allow outgoing</pre>
+<pre>$ sudo ufw status verbose</pre>
 
 
 <h5>4. Fast Grub Time</h5>
@@ -849,7 +856,7 @@ $ apt-cache search openjdk | grep openjdk
 
 <pre>$ sudo apt install -y ttf-mscorefonts-installer</pre>
 
-
+<p>*Do not install energy manager TLP, many problems.</p>
 
 <br>
 </details>
@@ -875,6 +882,8 @@ https://reproducible-builds.org<br>
 
 <br>
 </details>
+
+<!-- #################### -->
 
 <details>
 <summary><b>2.04 Clonezilla</b></summary> 
@@ -959,6 +968,8 @@ https://clonezilla.org//clonezilla-live-doc.php<br>
 <br>
 </details>
 
+<!-- #################### -->
+
 <details>
 <summary><b>3.02 Secure Boot References</b></summary>
 <br>
@@ -1014,8 +1025,10 @@ ADVANCED:
 <br>
 </details>
 
+<!-- #################### -->
+
 <details>
-<summary><b>3.03 YouTube Video References</b></summary>
+<summary><b>3.03 YouTube References</b></summary>
 <br>
 
 <ul>
@@ -1028,10 +1041,12 @@ ADVANCED:
 <br>
 </details> 
 
+<!-- #################### -->
+
 <DIV class="section" id="VERDE">
 
 <details>
-<summary><b>3.04 Sign GRUB for Secure Boot</b></summary>
+<summary><b>3.04 Sign GRUB</b></summary>
 <br>
 
 https://wiki.archlinux.org/title/Kernel_parameters
@@ -1041,8 +1056,10 @@ https://wiki.archlinux.org/title/Kernel_parameters
 <br>
 </details>
 
+<!-- #################### -->
+
 <details>
-<summary><b>3.05 Sign Debian Kernel for Secure Boot</b></summary>
+<summary><b>3.05 Sign Debian Kernel</b></summary>
 <br>
 
 <p><b>
@@ -1089,6 +1106,8 @@ $ sudo modinfo /lib/modules/6.1.0-11-amd64/kernel/mm/zsmalloc.ko
 
 <br>
 </details>
+
+<!-- #################### -->
 
 <p>First make sure the key doesn't exist yet:</p>
 
@@ -1193,6 +1212,8 @@ $ sudo apt install dkms
 <br>
 </details>
 
+<!-- #################### -->
+
 <DIV class="subsubsection" id="6.2.1">
 <details>
 <summary><b>DKMS Sign Helper Script</b></summary>
@@ -1221,7 +1242,9 @@ $ KBUILD_DIR=/usr/lib/linux-kbuild-$SHORT_VERSION
 ```
 
 <br>
-</details> 
+</details>
+
+<!-- #################### -->
 
 <DIV class="subsubsection" id="6.2.2">
 <details>
@@ -1251,6 +1274,8 @@ $ sudo dmesg | grep cert # verify your key is loaded
 </DIV>
 </DIV>
 </DIV>
+
+<!-- #################### -->
 
 <DIV class="subsection" id="6.2">
 <details>
@@ -1320,9 +1345,14 @@ $ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-12-amd64
 </DIV>
 </DIV>
 
+<!-- #################### -->
+
 <details>
-<summary><b>3.06 Reset Secure Boot keys for Kernel or Modules</b></summary>
+<summary><b>3.06 Reset Secure Boot Keys</b></summary>
 <br>
+
+<h4>Reset Secure Boot keys for Kernel or Modules</h4>
+
 Reset Key for Kernel
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
@@ -1388,6 +1418,8 @@ $ sudo update-initramfs -k all -u -v
 
 <br>
 </details> 
+
+<!-- #################### -->
 
 <details>
 <summary><em><b>3.07 OpenSSL Errors</b></em></summary>
@@ -1538,8 +1570,10 @@ $ sudo dpkg-reconfigure broadcom-sta-dkms
 <br>
 </details>
 
+<!-- #################### -->
+
 <details>
-<summary><b>3.08 Sign WIFI Module for Secure Boot</b></summary>
+<summary><b>3.08 Sign WIFI</b></summary>
 <br>
 
 How to get WiFi Module signed for Secure Boot
@@ -1555,7 +1589,6 @@ $ sudo apt install git make gcc build-essential linux-image-$(uname -r|sed 's,[^
 Brief - Sign with Sign-file
 
 <pre>
-
 1- Install a driver	and test without Secure Boot	
 2- Enable Secure Boot
 3- Generate a private and public keys		
@@ -1735,10 +1768,12 @@ $ /sbin/modprobe vboxdrv
 ```
 
 <br>
-</details> 
+</details>
+
+<!-- #################### -->
 
 <details>
-<summary><b>3.09 Sign NVIDIA Module for Secure Boot</b></summary>
+<summary><b>3.09 Sign NVIDIA</b></summary>
 <br>
 
 https://wiki.debian.org/DontBreakDebian#Don.27t_use_GPU_manufacturer_install_scripts
@@ -1789,14 +1824,18 @@ Done.
 <br>
 </details> 
 
+<!-- #################### -->
+
 <details>
-<summary><b>3.10 Sign VirtualBox Module for Secure Boot</b></summary>
+<summary><b>3.10 Sign VirtualBox</b></summary>
 <br>
 
 How to get VirtualBox signed for Secure Boot<br>
 
 <br>
 </details> 
+
+<!-- #################### -->
 
 <details>
 <summary><b>3.11 Sign Ventoy</b></summary>
@@ -1806,6 +1845,8 @@ https://www.ventoy.net/en/doc_secure.html<br>
 <br>
 </details> 
 
+<!-- #################### -->
+
 <details>
 <summary><b>3.12 rEFInd Bootloader</b></summary>
 <br>
@@ -1813,6 +1854,8 @@ https://www.rodsbooks.com/refind/getting.html<br>
 https://wiki.ubuntu.com/EFIBootLoaders<br>
 <br>
 </details>
+
+<!-- #################### -->
 
 <details>
 <summary><b>3.13 Sign Custom Secure Keys</b></summary>
@@ -1822,14 +1865,21 @@ https://github.com/nsacyber/Hardware-and-Firmware-Security-Guidance/blob/master/
 <br>
 </details> 
 
+<!-- #################### -->
+
 <details>
-<summary><b>3.14 Encrypted boot partition manager with UEFI Secure Boot support</b></summary>
+<summary><b>3.14 Encrypted boot</b></summary>
 <br>
+
+<p>Encrypted boot partition manager with UEFI Secure Boot support</p>
+
 https://github.com/xmikos/cryptboot<br>
 https://github.com/kmille/cryptboot<br>
 
 <br>
 </details>
+
+<!-- #################### -->
 
 <details>
 <summary><b>3.15 Sign with TPM 2.0</b></summary>
@@ -1839,6 +1889,8 @@ https://github.com/osresearch/safeboot<br>
 
 <br>
 </details>
+
+<!-- #################### -->
 
 <details>
 <summary><b>3.16 Secure Boot with Yubikey</b></summary>
@@ -1977,7 +2029,6 @@ $ sudo chmod 766 -R /media
 <summary><b>4.04 Antimalware</b></summary>
 <br>
 
-
 <h4>CLAMTK (GUI)</h4>
 
 https://github.com/dave-theunsub/clamtk<br>
@@ -2005,9 +2056,14 @@ https://wiki.archlinux.org/title/ClamAV<br>
 &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"
 </pre>
 
+<h4>ESET NOD32 Antivirus for Linux Desktop</h4>
+
+https://www.eset.com/my/home/antivirus-linux/download<br>
+
 <br>
 </details>
 
+<!-- #################### -->
 
 <details>
 <summary><b>4.05 Updating</b></summary>
@@ -2031,15 +2087,17 @@ https://wiki.archlinux.org/title/ClamAV<br>
 <summary><b>5.01 Router</b></summary>
 <br>
 
-<h4># Router Freedom</h4>
+<h4>Router Freedom - open-source routers</h4>
+
 https://docs.fsfe.org/en/teams/router-freedom-tech-wiki<br>
 https://fsfe.org/contribute/spreadtheword#device-neutrality<br>
 
 <p>"There are a number of open-source options for routers that will take even a small consumer router and turn it into a powerful device with enterprise-level capabilities. My personal favorite is DD-WRT, but other popular options include pfSense, OpenWRT, and Tomato. While you can buy pre-flashed devices in some cases (FlashRouters for DD-WRT and Protectli for pfSense), I always encourage you to do it yourself if you’re comfortable to ensure maximum security (and also to be familiar with the update process). Having said all of this, if you are unsure if an open source router is right for you (the wealth of options can be overwhelming to some), I still encourage you to get a router that wasn’t provided by your ISP. Make sure it offers VLANs and VPN capabilities, as we will be using these heavily to protect your home."</p>
-<p>https://thenewoil.org/en/guides/quick-start/wifi-guide </p>
+
+<p>https://thenewoil.org/en/guides/quick-start/wifi-guide</p>
 
 
-<h4>• Examples of VPN routers and firmwares</h4>
+<h5>Examples of VPN routers and firmwares</h5>
 
 <table style="width: 100%" cellspacing="0" cellpadding="0">
 <thead>
@@ -2075,6 +2133,10 @@ https://fsfe.org/contribute/spreadtheword#device-neutrality<br>
 </tbody>
 </table>
 
+<h4>Router Guide</h4>
+
+https://avoidthehack.com/router-wireless-guide<br>
+
 <ul>
 <li>Change the default router password</li>
 <li>Turn off UPnP</li>
@@ -2086,7 +2148,6 @@ https://fsfe.org/contribute/spreadtheword#device-neutrality<br>
 <li>Keep router firmware updated</li>
 <li>Keep other software up to date</li>
 </ul>
-https://avoidthehack.com/router-wireless-guide<br>
 
 <br>
 </details>
@@ -2104,6 +2165,8 @@ https://avoidthehack.com/router-wireless-guide<br>
 https://wiki.debian.org/NetworkConfiguration<br>
 https://wiki.debian.org/resolv.conf<br>
 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_networking/manually-configuring-the-etc-resolv-conf-file_configuring-and-managing-networking<br>
+https://github.com/jonathanio/update-systemd-resolved<br>
+https://www.freedesktop.org/software/systemd/man/systemd.network.html<br>
 
 <h5>• The resolvconf program</h5>
 
@@ -2122,11 +2185,16 @@ https://www.freedesktop.org/software/systemd/man/latest/systemd-resolved.service
 
 https://wiki.debian.org/Avahi<br>
 
+<h4>OpenVPN DNS</h4>
+
+<code>$ sudo apt install openvpn-systemd-resolved</code><br>
+
+
 <!-- #################### -->
 
-<h4>Pi-hole®</h4>
+<h4>Pi-hole ®</h4>
 
-<p>The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content without installing any client-side software.</p>
+<p>The Pi-hole ® is a DNS sinkhole that protects your devices from unwanted content without installing any client-side software.</p>
 
 https://pi-hole.net<br>
 https://docs.pi-hole.net<br>
@@ -2140,35 +2208,49 @@ https://docs.pi-hole.net<br>
 <summary><b>5.03 Firewall</b></summary>
 <br>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/5.NETWORK/5.02_Firewall</h4>
+
+<p>Note that these commands show ports that are in a listening state, but that doesn’t necessarily mean that the ports are open to the internet, because our firewall may be denying connections.</p>
 
 <h4>• GUFW (GUI)</h4>
+
+https://gufw.org<br>
 https://help.ubuntu.com/community/Gufw<br>
 
 <code>$ sudo apt install gufw</code>
 
 <h4>• UFW (CLI)</h4>
+
+https://launchpad.net/ufw<br>
+https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29<br>
 https://wiki.archlinux.org/title/Uncomplicated_Firewall<br>
 http://manpages.ubuntu.com/manpages/precise/man8/ufw.8.html<br>
 https://help.ubuntu.com/community/UFW<br>
 https://www.paulligocki.com/vpn-only-ufw-setup<br>
-
+https://linuxconfig.org/how-to-install-and-use-ufw-firewall-on-linux<br>
+https://openvpn.net<br>
+https://pypi.org/project/openpyn<br>
 
 <code>$ sudo apt install ufw</code>
 
-<h5>∙ Generic UFW configuration</h5>
+<h5>∙ Generic UFW configuration (without VPN)</h5>
 
 <pre>
 &nbsp; Commands, basic to install UFW
-&nbsp; &nbsp; $ sudo ufw status
+&nbsp; &nbsp; $ sudo apt install ufw
 &nbsp; &nbsp; $ sudo ufw enable
+&nbsp; &nbsp; $ sudo ufw status
 &nbsp; &nbsp; $ sudo nano /etc/default/ufw
+&nbsp; &nbsp; &nbsp;
 &nbsp; &nbsp; &nbsp; IPV6=no
+&nbsp; &nbsp; &nbsp;
 &nbsp; &nbsp; $ sudo nano /etc/sysctl.conf
+&nbsp; &nbsp; &nbsp;
 &nbsp; &nbsp; &nbsp; net.ipv6.conf.all.disable_ipv6 = 1
 &nbsp; &nbsp; &nbsp; net.ipv6.conf.default.disable_ipv6 = 1
 &nbsp; &nbsp; &nbsp; net.ipv6.conf.lo.disable_ipv6 = 1
 &nbsp; &nbsp; &nbsp; net.ipv6.conf.tun0.disable_ipv6 = 1
+&nbsp; &nbsp; &nbsp;
 &nbsp; &nbsp; $ sudo ufw default deny incoming 
 &nbsp; &nbsp; $ sudo ufw default allow outgoing
 &nbsp; &nbsp; $ sudo ufw status numbered
@@ -2178,52 +2260,29 @@ https://www.paulligocki.com/vpn-only-ufw-setup<br>
 &nbsp; &nbsp; $ sudo reboot
 </pre>
 
-<pre>
-&nbsp; Commands, basic to setup torrenting 
-&nbsp; &nbsp; • Connect out to anywhere on tun0 (VPN tunnel interface)
-&nbsp; &nbsp; $ sudo ufw allow out on tun0
-&nbsp; &nbsp; • Set torrent software rule
-&nbsp; &nbsp; $ sudo ufw allow 'MyTorrentSoftware'
-&nbsp; &nbsp; • Or set torrent port rule
-&nbsp; &nbsp; $ sudo ufw allow 60000/tcp
-&nbsp; &nbsp; $ sudo ufw allow 60000/udp
-&nbsp; &nbsp; $ sudo ufw status numbered 
-&nbsp; &nbsp; $ sudo ufw reload
-&nbsp; &nbsp; $ sudo reboot
-</pre>
-
-<h5>∙ UFW + OpenVPN</h5>
-
-<pre>
-&nbsp; Commands to setup UFW + OpenVPN
-&nbsp; &nbsp; • First, allow everything in OpenVPN tunnel
-&nbsp; &nbsp; $ sudo ufw allow in on tun0
-&nbsp; &nbsp; $ sudo ufw allow out on tun0
-&nbsp; &nbsp; • Allow OpenVPN to connect to the regular network
-&nbsp; &nbsp; interface (e.g. eth0, wlan0...) through the ports
-&nbsp; &nbsp; present in the .opvn file (e.g.DNS resolution on
-&nbsp; &nbsp; port 53 and VPN server on 1198...)
-&nbsp; &nbsp; $ sudo ufw allow out on eth0 from any to any port 53,1198
-&nbsp; &nbsp; • Consider this
-&nbsp; &nbsp; $ sudo ufw allow out on eth0 to any port 53,1197 proto udp
-&nbsp; &nbsp; • Block the rest and enable the firewall
-&nbsp; &nbsp; $ sudo ufw deny in on eth0
-&nbsp; &nbsp; $ sudo ufw deny out on eth0
-&nbsp; &nbsp; $ sudo ufw enable
-&nbsp; &nbsp; $ sudo ufw reload
-</pre>
-
 <h5>∙ Advanced</h5>
-R-fx Networks Projects - https://www.rfxn.com<br>
-Vuurmuur Firewall - https://www.vuurmuur.org<br>
-Port Checker - https://portchecker.co<br>
+
+• R-fx Networks Projects - https://www.rfxn.com<br>
+• Vuurmuur Firewall - https://www.vuurmuur.org<br>
+• Port Checker - https://portchecker.co<br>
 
 <p>Note: an AppArmor rule could prevent port use by an individual program.</p>
 
 <pre>
 &nbsp; Commands, some advanced commands
+&nbsp; &nbsp; • Show which ports are listening for connections
+&nbsp; &nbsp; $ ss -tlnp
+&nbsp; &nbsp; • Check for open ports with nmap
+&nbsp; &nbsp; $ sudo apt install nmap
+&nbsp; &nbsp; $ sudo nmap localhost
+&nbsp; &nbsp; • Find the name and IP address of your tunnel
+&nbsp; &nbsp; $ ip -o addr | cut -d'\' -f 1
+&nbsp; &nbsp; • Handling DNS queries
+&nbsp; &nbsp; $ sudo tcpdump -eni any port 53
+&nbsp; &nbsp; $ sudo tcpdump -eni any port 53 and host 172.27.10.22
+&nbsp; &nbsp; $ sudo tcpdump -n -i tun0 udp port 53
+&nbsp; &nbsp; • Show Iptables rules
 &nbsp; &nbsp; $ sudo iptables -L --line-numbers
-&nbsp; &nbsp; $ ss -tln
 &nbsp; &nbsp; • Open TCP SSH PORT for VPN IP only
 &nbsp; &nbsp; $ sudo ufw allow from 1.2.3.4 to any port 22 proto tcp comment 'Open TCP SSH PORT for VPN IP only'
 &nbsp; &nbsp; • Open TCP Torrent PORT for VPN IP only
@@ -2234,8 +2293,86 @@ Port Checker - https://portchecker.co<br>
 &nbsp; &nbsp; $ sudo iptables -A OUTPUT -p udp --sport 51413 -j ACCEPT
 &nbsp; &nbsp; $ sudo ufw allow 51413/udp
 &nbsp; &nbsp; $ sudo iptables -L --line-numbers
+&nbsp; &nbsp; • Reset UFW
+&nbsp; &nbsp; $ sudo ufw reset
 &nbsp; &nbsp; • Troubles
 &nbsp; &nbsp; $ sudo apt purge iptables-persistent
+</pre>
+
+<p>Custom application profile</p>
+
+<pre>
+&nbsp; Commands
+&nbsp; &nbsp; $ sudo ls /etc/ufw/applications.d/
+&nbsp; &nbsp; $ sudo touch /etc/ufw/applications.d/ufw-custom
+&nbsp; &nbsp; $ sudo nano /etc/ufw/applications.d/ufw-custom
+&nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; [CustomApp 1 Full]
+&nbsp; &nbsp; &nbsp; title=The first Custom Application
+&nbsp; &nbsp; &nbsp; description=Custom Application Description
+&nbsp; &nbsp; &nbsp; ports=36892|23976|19827
+&nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; [CustomApp 1 TCP]
+&nbsp; &nbsp; &nbsp; title=The first Custom Application - TPC only
+&nbsp; &nbsp; &nbsp; description=Custom Application Description
+&nbsp; &nbsp; &nbsp; ports=36892,23976,19827/tcp
+&nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; [CustomApp 1 UDP]
+&nbsp; &nbsp; &nbsp; title=The first Custom Application - UDP only
+&nbsp; &nbsp; &nbsp; description=Custom Application Description
+&nbsp; &nbsp; &nbsp; ports=36892,23976,19827/udp
+&nbsp; &nbsp; 
+&nbsp; &nbsp; • Check if the syntax is correct 
+&nbsp; &nbsp; $ sudo ufw app info "CustomApp 1 Full"
+&nbsp; &nbsp; • Create new rule based on this profile
+&nbsp; &nbsp; $ sudo ufw allow in on tun0 to any app "CustomApp 1 Full"
+&nbsp; &nbsp; • Check
+&nbsp; &nbsp; $ sudo ufw status numbered | grep CustomApp
+</pre>
+
+<p>Configure NAT with UFW</p>
+
+<pre>
+&nbsp; Commands
+&nbsp; &nbsp; $ sudo nano /etc/default/ufw
+&nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; DEFAULT_FORWARD_POLICY="ACCEPT"
+&nbsp; &nbsp;
+&nbsp; &nbsp; $ sudo nano /etc/ufw/sysctl.conf
+&nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; net/ipv4/ip_forward=1 
+&nbsp; &nbsp;
+&nbsp; &nbsp; $ sudo nano /etc/ufw/before.rules
+&nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; # NAT table rules
+&nbsp; &nbsp; &nbsp; *nat
+&nbsp; &nbsp; &nbsp; :POSTROUTING ACCEPT [0:0]
+&nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; # Forward traffic through eth0 - Change to match you out-interface
+&nbsp; &nbsp; &nbsp; -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE
+&nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; # don't delete the 'COMMIT' line or these nat table rules won't be processed
+&nbsp; &nbsp; &nbsp; COMMIT
+&nbsp; &nbsp;
+&nbsp; &nbsp; $ sudo ufw disable
+&nbsp; &nbsp; $ sudo ufw enable
+</pre>
+
+<p>Configure Port Forwarding with UFW</p>
+
+<pre>
+&nbsp; Commands
+&nbsp; &nbsp; $ sudo nano /etc/default/before.rules
+&nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; :PREROUTING ACCEPT [0:0] 
+&nbsp; &nbsp; &nbsp; -A PREROUTING -i eth0 -d 150.129.148.155   -p tcp --dport 80 -j  DNAT --to-destination 192.168.1.120:80 
+&nbsp; &nbsp; &nbsp; -A PREROUTING -i eth0 -d 150.129.148.155   -p tcp --dport 443 -j  DNAT --to-destination 192.168.1.120:443 
+&nbsp; &nbsp; &nbsp; -A POSTROUTING -s 192.168.1.0/24 ! -d 192.168.1.0/24 -j MASQUERADE 
+&nbsp; &nbsp;
+&nbsp; &nbsp; $ sudo ufw disable
+&nbsp; &nbsp; $ sudo ufw enable
+&nbsp; &nbsp; $ sudo ufw allow proto tcp from any to 150.129.148.155 port 80
+&nbsp; &nbsp; $ sudo ufw allow proto tcp from any to 150.129.148.155 port 443
 </pre>
 
 <br>
@@ -2274,22 +2411,41 @@ Port Checker - https://portchecker.co<br>
 
 <h4>Creating your own VPN with VPS</h4>
 
+<p></p>
+
 <h4>• VPN Protocols</h4>
 
 <div id="table2" align="left">
 <img src="5.NETWORK/5.03_Others/vpn_protocols.png"/>
 </div>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<br>
+</details>
 
-<h4>∙ OpenVPN</h4>
+<!-- #################### -->
+
+
+<details>
+<summary><b>5.05 OpenVPN</b></summary>
+<br>
+
+<h4>OpenVPN</h4>
 https://openvpn.net<br>
 https://community.openvpn.net<br>
 https://openvpn.net/community-resources/how-to/<br>
 https://github.com/OpenVPN/openvpn/tree/master/sample/sample-config-files<br>
 https://github.com/angristan/openvpn-install<br>
 
-<h4>Installing OpenVPN CLI</h4>
+<h4>Installing OpenVPN (GUI)</h4>
+
+<pre>
+&nbsp; Commands GUI
+&nbsp; &nbsp; $ sudo apt install network-manager-openvpn-gnome
+&nbsp; &nbsp; $ sudo apt install openvpn-systemd-resolved
+&nbsp; &nbsp; $ sudo nmcli connection import type openvpn file /path/to/your.ovpn
+</pre>
+
+<h4>Installing OpenVPN (CLI)</h4>
 
 <pre>
 &nbsp; Commands CLI
@@ -2304,17 +2460,6 @@ https://github.com/angristan/openvpn-install<br>
 &nbsp; &nbsp; $ sudo ls
 </pre>
 
-<h6>OpenVPN KillSwitch</h6>
-
-<pre>
-&nbsp; &nbsp; • OpenVPN on Linux uses .conf for config files instead of .ovpn,
-&nbsp; &nbsp; so rename them accordingly.You could simply substitute it in the
-&nbsp; &nbsp; appropriate file name, copy that file to the name vpn.conf:
-&nbsp; &nbsp; $ sudo cp us-miami.ovpn /etc/openvpn/client/client.conf
-&nbsp; &nbsp; • Alternatively
-&nbsp; &nbsp; $ sudo rename 's/ovpn/conf/' openvpn/*.ovpn
-</pre>
-
 <h6>OpenVPN Random Server and Autologin</h6>
 
 <pre>
@@ -2322,62 +2467,64 @@ https://github.com/angristan/openvpn-install<br>
 &nbsp; &nbsp; multiple opvn files and auto login with auth configuration:
 &nbsp; &nbsp; $ sudo cd /etc/openvpn/client/
 &nbsp; &nbsp; $ sudo cat << EOF > client.conf
-client
-dev tun
-proto tcp #It's TCP or UDP server?
-remote my-server-1 1194
-remote my-server-2 1194
-remote my-server-3 1194
-remote my-server-4 1194
-remote my-server-5 1194
-remote my-server-6 1194
-remote my-server-7 1194
-remote my-server-8 1194
-remote my-server-9 1194
-remote my-server-10 1194
-remote-random #It choose a random config server
-resolv-retry infinite
-nobind
-tun-mtu 1500
-tun-mtu-extra 32
-mssfix 1450
-persist-key
-persist-tun
-ping 15
-ping-restart 0
-ping-timer-rem
-reneg-sec 0
-comp-lzo no #Enable it if enabled in the server
-verify-x509-name CN=my.vpn.com
-
-remote-cert-tls server #Protect against MITM see http://openvpn.net/howto.html#mitm
-
-auth-user-pass /etc/openvpn/client/auth #Your autologin config
-verb 3
-pull
-fast-io
-cipher AES-256-CBC
-auth SHA512
-
-# Note SSL/TLS parms.See the server config
-# file for more description. # It's best
-# to use # a separate .crt/.key file pair
-# for each client. A single ca file can
-# be used for all clients.
-
-&lt;ca&gt;
------BEGIN CERTIFICATE-----
------END CERTIFICATE-----
-&lt;/ca&gt;
-key-direction 1
-&lt;tls-auth&gt;
-# 2048 bit OpenVPN static key
------BEGIN OpenVPN Static key V1-----
------END OpenVPN Static key V1-----
-&lt;/tls-auth&gt;
-
-EOF
+ &nbsp; &nbsp; &nbsp;client
+ &nbsp; &nbsp; &nbsp;dev tun
+ &nbsp; &nbsp; &nbsp;proto tcp #It's TCP or UDP server?
+ &nbsp; &nbsp; &nbsp;remote my-server-1 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-2 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-3 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-4 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-5 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-6 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-7 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-8 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-9 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-10 1194
+ &nbsp; &nbsp; &nbsp;remote-random #It choose a random config server
+ &nbsp; &nbsp; &nbsp;resolv-retry infinite
+ &nbsp; &nbsp; &nbsp;nobind
+ &nbsp; &nbsp; &nbsp;tun-mtu 1500
+ &nbsp; &nbsp; &nbsp;tun-mtu-extra 32
+ &nbsp; &nbsp; &nbsp;mssfix 1450
+ &nbsp; &nbsp; &nbsp;persist-key
+ &nbsp; &nbsp; &nbsp;persist-tun
+ &nbsp; &nbsp; &nbsp;ping 15
+ &nbsp; &nbsp; &nbsp;ping-restart 0
+ &nbsp; &nbsp; &nbsp;ping-timer-rem
+ &nbsp; &nbsp; &nbsp;reneg-sec 0
+ &nbsp; &nbsp; &nbsp;comp-lzo no #Enable it if enabled in the server
+ &nbsp; &nbsp; &nbsp;verify-x509-name CN=my.vpn.com
+ &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp;remote-cert-tls server #Protect against MITM see http://openvpn.net/howto.html#mitm
+ &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp;auth-user-pass /etc/openvpn/client/auth #Your autologin config
+ &nbsp; &nbsp; &nbsp;verb 3
+ &nbsp; &nbsp; &nbsp;pull
+ &nbsp; &nbsp; &nbsp;fast-io
+ &nbsp; &nbsp; &nbsp;cipher AES-256-CBC
+ &nbsp; &nbsp; &nbsp;auth SHA512
+ &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp;# Note SSL/TLS parms.See the server config
+ &nbsp; &nbsp; &nbsp;# file for more description. # It's best
+ &nbsp; &nbsp; &nbsp;# to use # a separate .crt/.key file pair
+ &nbsp; &nbsp; &nbsp;# for each client. A single ca file can
+ &nbsp; &nbsp; &nbsp;# be used for all clients.
+ &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp;&lt;ca&gt;
+ &nbsp; &nbsp; &nbsp;-----BEGIN CERTIFICATE-----
+ &nbsp; &nbsp; &nbsp;-----END CERTIFICATE-----
+ &nbsp; &nbsp; &nbsp;&lt;/ca&gt;
+ &nbsp; &nbsp; &nbsp;key-direction 1
+ &nbsp; &nbsp; &nbsp;&lt;tls-auth&gt;
+ &nbsp; &nbsp; &nbsp;# 2048 bit OpenVPN static key
+ &nbsp; &nbsp; &nbsp;-----BEGIN OpenVPN Static key V1-----
+ &nbsp; &nbsp; &nbsp;-----END OpenVPN Static key V1-----
+ &nbsp; &nbsp; &nbsp;&lt;/tls-auth&gt;
+ &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp;EOF
 </pre>
+
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <h6>OpenVPN Autologin</h6>
 
@@ -2392,6 +2539,8 @@ EOF
 &nbsp; &nbsp; $ sudo openvpn --config /etc/openvpn/client.conf --daemon
 </pre>
 
+<p>***Echo, review security leak***</p>
+
 <h6>OpenVPN KillSwitch</h6>
 
 <pre>
@@ -2403,6 +2552,16 @@ EOF
 &nbsp; &nbsp; # echo "down /etc/openvpn/update-resolv-conf" >> /etc/openvpn/client/openvpn.conf
 </pre>
 
+<pre>
+&nbsp; &nbsp; • OpenVPN on Linux uses .conf for config files instead of .ovpn,
+&nbsp; &nbsp;   so rename them accordingly.You could simply substitute it in the
+&nbsp; &nbsp;   appropriate file name, copy that file to the name vpn.conf:
+&nbsp; &nbsp; $ sudo cp us-miami.ovpn /etc/openvpn/client/client.conf
+&nbsp; &nbsp; • Alternatively
+&nbsp; &nbsp; $ sudo rename 's/ovpn/conf/' openvpn/*.ovpn
+</pre>
+
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <em>Is this correct?</em>
 <pre>
@@ -2421,77 +2580,9 @@ EOF
 &nbsp; &nbsp; $ sudo reboot
 </pre>
 
-<h4>Installing OpenVPN GUI</h4>
+<h4>OpenVPN DNS</h4>
 
-<pre>
-&nbsp; Commands GUI
-&nbsp; &nbsp; $ sudo apt install network-manager-openvpn-gnome
-&nbsp; &nbsp; $ sudo apt install openvpn-systemd-resolved
-&nbsp; &nbsp; $ sudo nmcli connection import type openvpn file /path/to/your.ovpn
-</pre>
-
-<h4>∙ WireGuard</h4>
-
-https://github.com/WireGuard<br>
-
-<code>$ sudo apt install wireguard</code><br>
-<code>$ sudo apt install wireguard-tools</code><br>
-
-<h4>∙ strongSwan</h4>
-
-https://github.com/strongswan/strongswan<br>
-
-<code>$ sudo apt install strongswan</code><br>
-
-
-<h4>• Leak Test</h4>
-
-<a href="https://mullvad.net/en/check">∙ Mullvad DNS Leak Test</a><br>
-<a href="https://www.dnsleaktest.com/">∙ DNSLeakTest.com</a> (run the "Extended test")<br>
-<a href="https://ipleak.net/">∙ IPLeak.net</a><br>
-<a href="https://surfshark.com/dns-leak-test">∙ Surfshark DNS Leak Test</a><br>
-<a href="https://browserleaks.com/ip">∙ BrowserLeaks IP Test</a><br>
-<a href="https://ipx.ac/run">∙ IPX.AC DNS Leak Test</a><br>
-
-<h4>• Torrenting</h4>
-
-https://portforward.com<br>
-https://wiki.wireshark.org/BitTorrent<br>
-https://github.com/LiamTheBox/Torrent-With-A-VPN<br>
-https://github.com/mdlam92/vpn_torrenting<br>
-https://github.com/tool-maker/VPN_just_for_torrents/wiki<br>
-https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge<br>
-https://transmissionbt.com<br>
-https://www.comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-linux-with-ufw<br>
-
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
-
-<pre>
-&nbsp; Commands for remote Transmission
-&nbsp; &nbsp; $ sudo apt-get install transmission-cli
-&nbsp; &nbsp; $ sudo apt-get install transmission-common
-&nbsp; &nbsp; $ sudo apt-get install transmission-daemon
-&nbsp; &nbsp; $ sudo service transmission-daemon stop
-&nbsp; &nbsp; • To access Transmission remotely
-&nbsp; &nbsp; $ sudo nano /etc/transmission-daemon/settings.json
-&nbsp; &nbsp; > “rpc-whitelist”: “127.0.0.1,192.168.*.*”,
-&nbsp; &nbsp; > “rpc-whitelist-enabled”: true,
-&nbsp; &nbsp; • To change the download directory
-&nbsp; &nbsp; > "download-dir": /home/user/Downloads
-&nbsp; &nbsp; $ sudo service transmission-daemon start
-&nbsp; &nbsp; • To find local IP address
-&nbsp; &nbsp; $ hostname -I
-&nbsp; &nbsp; • To find local MAC address
-&nbsp; &nbsp; $ sudo cat /sys/class/net/eth0/address 
-&nbsp; &nbsp; • In your browser
-&nbsp; &nbsp; > http://192.168.0.15:9091
-&nbsp; &nbsp; > Login: transmission
-&nbsp; &nbsp; > Password: transmission
-</pre>
-
-<b>• Everyday TOR</b><br>
-https://wiki.debian.org/TorBrowser<br>
-https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy<br>
+<code>$ sudo apt install openvpn-systemd-resolved</code><br>
 
 <br>
 </details>
@@ -2499,17 +2590,131 @@ https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy<br>
 <!-- #################### -->
 
 <details>
-<summary><b>5.05 Spoofing</b></summary>
+<summary><b>5.06 WireGuard</b></summary>
+<br>
+
+<h4>∙ WireGuard</h4>
+
+https://github.com/WireGuard<br>
+https://wiki.ubuntuusers.de/WireGuard<br>
+
+<code>$ sudo apt install wireguard</code><br>
+<code>$ sudo apt install wireguard-tools</code><br>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>5.07 strongSwan</b></summary>
+<br>
+
+<h4>strongSwan</h4>
+
+https://github.com/strongswan/strongswan<br>
+
+<code>$ sudo apt install strongswan</code><br>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>5.08 Firewall + VPN</b></summary>
+<br>
+
+<h4>∙ Firewall (UFW) + VPN (OpenVPN)</h4>
+
+<pre>
+&nbsp; Commands to setup UFW + OpenVPN
+&nbsp; &nbsp; • You could add specifically rules for each port separately on tun0 (VPN tunnel interface)
+&nbsp; &nbsp; $ sudo ufw allow in on tun0 to any port 60000 proto tcp
+&nbsp; &nbsp; $ sudo ufw allow in on tun0 to any port 60000 proto udp
+&nbsp; &nbsp; • You could test to connect in and out to anywhere on tun0
+&nbsp; &nbsp; $ sudo ufw allow in on tun0
+&nbsp; &nbsp; $ sudo ufw allow out on tun0
+&nbsp; &nbsp; • To allow access only from a specific address you could use
+&nbsp; &nbsp; $ sudo ufw allow in on tun0 from 192.168.0.1 to any port 60000 proto tcp
+&nbsp; &nbsp; • Allow OpenVPN to connect to the regular network interface (e.g. eth0, wlan0...)
+&nbsp; &nbsp;   through the ports present in the .opvn file (e.g.DNS resolution on
+&nbsp; &nbsp;   port 53 and VPN server on 1198...)
+&nbsp; &nbsp; $ sudo ufw allow out on eth0 from any to any port 53,1198
+&nbsp; &nbsp; • Consider this tcp or udp rules
+&nbsp; &nbsp; $ sudo ufw allow out on eth0 to any port 53,1197 proto tcp
+&nbsp; &nbsp; $ sudo ufw allow out on eth0 to any port 53,1197 proto udp
+&nbsp; &nbsp; • For a hard policy, working only with tun0, you could block the rest and enable the firewall
+&nbsp; &nbsp; $ sudo ufw deny in on eth0
+&nbsp; &nbsp; $ sudo ufw deny out on eth0
+&nbsp; &nbsp; • For a hard policy, you could block the rest and enable the firewall
+&nbsp; &nbsp; $ sudo ufw status numbered 
+&nbsp; &nbsp; $ sudo ufw enable
+&nbsp; &nbsp; $ sudo ufw reload
+&nbsp; &nbsp; $ sudo reboot
+</pre>
+
+
+<pre>
+&nbsp; Commands to secure the server with iptables
+&nbsp; &nbsp; • Allow everything from within your VPN¶
+&nbsp; &nbsp; $ sudo iptables -I INPUT -i tun0 -j ACCEPT
+&nbsp; &nbsp; • Explicitly allow what can be accessed within the VPN, for example, allow DNS and HTTP
+&nbsp; &nbsp; $ sudo iptables -A INPUT -i tun0 -p tcp --destination-port 53 -j ACCEPT
+&nbsp; &nbsp; $ sudo iptables -A INPUT -i tun0 -p udp --destination-port 53 -j ACCEPT
+&nbsp; &nbsp; $ sudo iptables -A INPUT -i tun0 -p tcp --destination-port 80 -j ACCEPT
+
+&nbsp; &nbsp; • To enable SSH and VPN access from anywhere.
+&nbsp; &nbsp; $ sudo iptables -A INPUT -p tcp --destination-port 22 -j ACCEPT
+&nbsp; &nbsp; $ sudo iptables -A INPUT -p tcp --destination-port 1194 -j ACCEPT
+&nbsp; &nbsp; $ sudo iptables -A INPUT -p udp --destination-port 1194 -j ACCEPT
+&nbsp; &nbsp; • To explicitly allow TCP/IP to do "three-way handshakes"
+&nbsp; &nbsp; $ sudo iptables -I INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+&nbsp; &nbsp; • To allow any loopback traffic, the server is allowed to talk to itself 
+&nbsp; &nbsp; $ sudo iptables -I INPUT -i lo -j ACCEPT
+&nbsp; &nbsp; • To reject access from anywhere else 
+&nbsp; &nbsp; $ sudo iptables -P INPUT DROP
+&nbsp; &nbsp; • To list rules
+&nbsp; &nbsp; $ sudo iptables -L --line-numbers
+</pre>
+
+<p>(*ip6tables)</p>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>5.09 Leak Test</b></summary>
+<br>
+
+<h4>Leak Test</h4>
+
+<a href="https://www.dnsleaktest.com/">∙ DNSLeakTest.com</a> (run the "Extended test")<br>
+<a href="https://ipleak.net/">∙ IPLeak.net</a><br>
+<a href="https://mullvad.net/en/check">∙ Mullvad DNS Leak Test</a><br>
+<a href="https://surfshark.com/dns-leak-test">∙ Surfshark DNS Leak Test</a><br>
+<a href="https://browserleaks.com/ip">∙ BrowserLeaks IP Test</a><br>
+<a href="https://ipx.ac/run">∙ IPX.AC DNS Leak Test</a><br>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>5.10 Spoofing</b></summary>
 <br>
 
 https://github.com/alobbs/macchanger<br>
 https://github.com/refraction-networking/utls<br>
 https://github.com/0xsirus/tirdad<br>
 
-<h4>• Random MAC Address</h4>
+<h4>• Address Spoof</h4>
 
 <pre>
-&nbsp; Commands
+&nbsp; Commands for a random MAC address
 &nbsp; &nbsp; $ ip link
 &nbsp; &nbsp; $ sudo ifconfig wlan0 down
 &nbsp; &nbsp; $ sudo macchanger -r wlan0
@@ -2531,6 +2736,58 @@ https://github.com/0xsirus/tirdad<br>
 <br>
 </details>
 
+<!-- #################### -->
+
+<details>
+<summary><b>5.11 Others</b></summary>
+<br>
+
+<h4>• Torrenting</h4>
+
+https://portforward.com<br>
+https://wiki.wireshark.org/BitTorrent<br>
+https://github.com/LiamTheBox/Torrent-With-A-VPN<br>
+https://github.com/mdlam92/vpn_torrenting<br>
+https://github.com/tool-maker/VPN_just_for_torrents/wiki<br>
+https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge<br>
+https://transmissionbt.com<br>
+https://www.comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-linux-with-ufw<br>
+
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+
+<h4>Transmission remotely access</h4>
+
+<pre>
+&nbsp; Commands for remote Transmission
+&nbsp; &nbsp; $ sudo apt-get install transmission-cli
+&nbsp; &nbsp; $ sudo apt-get install transmission-common
+&nbsp; &nbsp; $ sudo apt-get install transmission-daemon
+&nbsp; &nbsp; $ sudo service transmission-daemon stop
+&nbsp; &nbsp; • To 
+&nbsp; &nbsp; $ sudo nano /etc/transmission-daemon/settings.json
+&nbsp; &nbsp; > “rpc-whitelist”: “127.0.0.1,192.168.*.*”,
+&nbsp; &nbsp; > “rpc-whitelist-enabled”: true,
+&nbsp; &nbsp; • To change the download directory
+&nbsp; &nbsp; > "download-dir": /home/user/Downloads
+&nbsp; &nbsp; $ sudo service transmission-daemon start
+&nbsp; &nbsp; • To find local IP address
+&nbsp; &nbsp; $ hostname -I
+&nbsp; &nbsp; • To find local MAC address
+&nbsp; &nbsp; $ sudo cat /sys/class/net/eth0/address 
+&nbsp; &nbsp; • In your browser
+&nbsp; &nbsp; > http://192.168.0.15:9091
+&nbsp; &nbsp; > Login: transmission
+&nbsp; &nbsp; > Password: transmission
+</pre>
+
+<h4>• Everyday TOR</h4>
+
+https://wiki.debian.org/TorBrowser<br>
+https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy<br>
+
+<br>
+</details>
+
 <hr>
 <!--################################### -->
 
@@ -2547,7 +2804,6 @@ https://github.com/0xsirus/tirdad<br>
 https://keepassxc.org/docs/<br>
 
 <code>$ sudo apt install keepassxc</code><br>
-
 
 <br>
 </details>
@@ -2568,16 +2824,50 @@ https://avoidthehack.com/util/browser-comparison<br>
 
 <h4>• Chromium</h4>
 
-<h5>&nbsp; 6.04.01 Extensions</h5>
-&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a><br>
-&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a><br>
-&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a><br>
-&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a><br>
-&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a><br>
-&nbsp; &nbsp; ∙ <a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a><br>
-&nbsp; &nbsp; ∙ <a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a><br>
+<h5>6.04.01 Extensions</h5>
 
-<p><sub>Note, to open maximized browser window use "--start-maximized" as a parameter.</sub></p>
+<ul>
+<li>
+<a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a><br>
+</li>
+<li>
+<a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a><br>
+</li>
+<li>
+<a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a><br>
+</li>
+<li>
+<a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a><br>
+</li>
+<li>
+<a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a><br>
+</li>
+<li>
+<a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a><br>
+</li>
+<li>
+<a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a><br>
+</li>
+<li>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/terms-of-service-didnt-read">Terms of Service; Didn't Read</a><br>
+</li>
+<li>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/clearurls">ClearURLs</a><br>
+</li>
+<li>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/temporary-containers">Temporary Containers</a><br>
+</li>
+<li>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/canvasblocker">Canvas Blocker</a><br>
+</li>
+<li>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/decentraleyes">Decentraleyes</a><br>
+ </ul>
+ 
+<h4>Browsers Tips</h4>
+
+<p>To open maximized browser window use "--start-maximized" as a parameter.</p>
+
 
 <br>
 </details>
@@ -2591,6 +2881,7 @@ https://avoidthehack.com/util/browser-comparison<br>
 <h4>Cloud Services</h4>
 
 <h4>• Info</h4>
+
 https://forum.rclone.org<br>
 https://www.reddit.com/r/cloudstorage<br>
 https://www.reddit.com/r/DataHoarder<br>
@@ -2660,34 +2951,67 @@ https://github.com/rclone/rclone<br>
 <summary><b>6.04 File Host</b></summary>
 <br>
 
+<h4>File Host</h4>
 
-<h4>• RAPIDGATOR</h4>
-<br> 
+<h4>• Rapidgator</h4>
+https://rapidgator.net<br> 
 
+<h4>• Nitroflare</h4>
+https://nitroflare.net<br> 
 
-<h4>• UPLOADER</h4>
-<br> 
+<h4>• Uploadgig</h4>
+https://uploadgig.com
 
-
-<h4>• NITROFLARE</h4>
-<br> 
-
-<h4>• MEDIAFIRE</h4>
+<h4>• Mediafire</h4>
 https://www.mediafire.com/upgrade/<br> 
 
-<h4>• 1FICHIER</h4>
-<br> 
+<h4>• UploadFiles</h4>
+https://ufile.io<br> 
 
-<h4>• FILECASE</h4>
-<br> 
+<h4>• 1Fichier</h4>
+https://1fichier.com/hlp.html<br>
+
+<h4>• Turbobit</h4>
+https://turbobit.net
+
+<h4>• Filescase</h4>
+http://filescase.com/<br>
+
+<h4>• Hex Upload</h4>
+https://hexupload.org<br>
 
 
-<h4>• HEX UPLOAD</h4>
-<br> 
+<h4>Anonymous File Sharing Services With Temporary Online Storage</h4>
 
-<h4>• TEMPSEND</h4>
-<br> 
+<h4>• Tempsend</h4>
+https://tempsend.com<br>
 
+<h4>• WeTransfer</h4>
+https://wetransfer.com
+
+<h4>• Send Anywhere</h4>
+https://send-anywhere.com<br>
+
+<h4>• SendGB</h4>
+https://www.sendgb.com<br>
+
+<h4>• Volafile</h4>
+https://volafile.org<br>
+
+<h4>• SendSpace</h4>
+https://www.sendspace.com<br>
+
+<h4>• MyAirBridge</h4>
+https://www.myairbridge.com/en/eng<br>
+
+<h4>• Gofile</h4>
+https://gofile.io/welcome<br>
+
+<h4>• OTF One Time File</h4>
+https://gofile.io/welcome<br>
+
+<h4>• Bitwarden Send</h4>
+https://bitwarden.com/products/send<br>
 
 <br>
 </details>
@@ -2906,6 +3230,8 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
 <br>
 
 <h4>Encryption</h4>
+
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.02_Encryption</h4>
 
@@ -3163,15 +3489,49 @@ https://wiki.debian.org/Compression<br>
 <h5>∙ Metadata Cleaner</h5>
 
 <code>$ sudo apt install metadata-cleaner</code><br>
-<code>$ sudo apt install exiftool</code><br>
 <code>$ sudo apt install metacam</code><br>
+<code>$ sudo apt install exiftool</code><br>
+
+Exiftool - https://github.com/exiftool/exiftool<br>
+List of metadata TAGS - https://exiftool.org/TagNames/index.html<br>
+Common Mistakes - https://exiftool.org/mistakes.html<br>
+
+<pre>
+&nbsp; Commands for exiftool basic commands
+&nbsp; &nbsp; • Shows only selected EXIF metadata:
+&nbsp; &nbsp; $ exiftool -Model -ImageSize photo.jpg
+&nbsp; &nbsp; • Process all files of specified file type (case insensitive extension)
+&nbsp; &nbsp; $ exiftool -Model -ImageSize -ext jpg /home/ebah/photo/
+&nbsp; &nbsp; • recursively process all jpg files under specified directory and sub-directory
+&nbsp; &nbsp; $ exiftool -r -Model -ImageSize -ext jpg /home/ebah/photo/
+</pre>
 
 <h4>• Disk Sanitation</h4>
 
 https://wiki.debian.org/SSDOptimization<br>
 https://wiki.archlinux.org/title/Solid_state_drive<br>
 
+<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.03_Sanitization</h4>
+
 <em>*Not all SSD support sanitize. To properly way to erase a SSD is using the SSDs manufacturer's software. Other methods might not work, due to wear leveling and over-provisioning.</em><br>
+
+<h4>Manufacturers supply software to update firmware and perform tasks like secure erase</h4>
+
+<ul>
+<li><a href="https://forum.corsair.com/blog/storage/the-corsair-ssd-toolbox/">Corsair SSD Toolbox</a></li>
+<li><a href="https://semiconductor.samsung.com/consumer-storage/support/tools/">Samsung Magician</a></li>
+<li><a href="https://www.seagate.com/as/en/support/downloads/seatools/">Seagate Seatools</a></li>
+<li><a href="https://support.lenovo.com/my/en/downloads/ds019026-thinkpad-drive-erase-utility-for-resetting-the-cryptographic-key-and-erasing-the-solid-state-drive-thinkpad">Lenovo ThinkPad Drive Erase Utility</a></li>
+<li><a href="https://www.crucial.com/support/storage-executive">Crucial Storage Executive</a></li>
+<li><a href="https://support.wdc.com/downloads.aspx?p=279">Western Digital Dashboard</a></li>
+<li><a href="https://www.hp.com/us-en/shop/tech-takes/how-to-secure-erase-ssd">HP Secure Erase [ BIOS / UEFI ]</a></li>
+<li><a href="https://www.transcend-info.com/Support/Software-10/">Trendscend SSD Scope</a></li>
+<li><a href="https://www.dell.com/support/kbdoc/en-us/000134997/using-the-dell-bios-data-wipe-function-for-optiplex-precision-and-latitude-systems-built-after-november-2015?lwp=rt">Dell Data Wipe function [ BIOS / UEFI ]</a></li>
+<li><a href="https://kb.sandisk.com/app/answers/detail/a_id/15108/~/sandisk-ssd-dashboard-support-information">SanDisk SSD Dashboard</a></li>
+<li><a href="https://www.kingston.com/en/support/technical/ssdmanager">Kingston SSD Manager</a></li>
+<li><a href="https://www.micron.com/products/ssd/storage-executive-software">Micron SSD Management</a></li>
+<li><a href="https://www.intel.com/content/www/us/en/download/19543/intel-memory-and-storage-tool-gui.html?v=t">Intel Memory and Storage Tool</a></li>
+</ul>
 
 <em>**If you use SSDs, enable TRIM in your BIOS. Confirm you are using SSD in the BIOS options.</em><br>
 
@@ -3216,8 +3576,30 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 
 <h4>Renamers</h4>
 
+<h5></h5>
 <code>$ sudo apt install krename</code><br>
+
+<h5></h5>
 <code>$ sudo apt install gprename</code><br>
+
+<h5>Rename (CLI)</h5>
+<code>$ sudo apt install rename</code><br>
+
+<pre>
+&nbsp; Commands for rename 
+&nbsp; &nbsp; • Syntax
+&nbsp; &nbsp; $ rename [options] 's/[pattern]/[replacement]/' [file name]
+&nbsp; &nbsp; • Replacing the blank space with an underscore (_)
+&nbsp; &nbsp; $ rename -v 'y/ /\_/' *.pdf
+&nbsp; &nbsp; $ rename -v 'y/ /\_/' ~/Downloads/*
+&nbsp; &nbsp; $ rename -v 'y/ /\_/' ~/Downloads/*.pdf
+&nbsp; &nbsp; • Convert Lowercase Characters
+&nbsp; &nbsp; $ rename -v 'y/a-z/A-Z/' *.pdf
+&nbsp; &nbsp; • Convert Uppercase Characters
+&nbsp; &nbsp; $ rename -v 'y/A-Z/a-z/' *.PDF
+&nbsp; &nbsp; • Delete a Part of a Filename
+&nbsp; &nbsp; $ rename -v 's/example//' *.pdf
+</pre>
 
 <h4>Duplicated files</h4>
 
@@ -3225,10 +3607,15 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 
 <h4>Disk manager</h4>
 
+<h5>GParted</h5>
 <code>$ sudo apt install gparted</code><br>
+
+<h5>Disks - Gnome Disk</h5>
 <code>$ sudo apt install gnome-disk-utility</code><br>
 
 <h4>Disk manager with LVM support</h4>
+
+<h5>KDE Partition Manager</h5>
 
 <code>$ sudo apt install partitionmanager</code><br>
 
@@ -3242,6 +3629,10 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 <summary><b>6.11 Backup</b></summary>
 <br>
 
+https://github.com/bit-team/backintime<br>
+https://github.com/teejee2008/timeshift<br>
+https://github.com/restic/restic<br>
+
 <h4>Backup</h4>
 
 <h5>Folders and Files Backup</h5>
@@ -3249,13 +3640,13 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 <h5>∙ Full Backup</h5>
 
 <pre>
-$ cp ~/.local/share/TelegramDesktop/tdata/settingss ~/backup
+$ cp ~/.config/example/ /media/backup
 </pre>
 
 <h5>∙ Incremental Backup</h5>
 
 <pre>
-$ cp -vur ~/.local/share/TelegramDesktop/tdata ~/backup
+$ cp -vur ~/.config/example/ /media/backup
 </pre>
 
 <h5>Clonezilla - The Free and Open Source Software for Disk Imaging and Cloning</h5>
@@ -3419,7 +3810,7 @@ https://www.reddit.com/r/sublimetext<br>
 <hr>
 <!--################################### -->
 
-<h2>9. TROUBLESHOTING</h2>
+<h2>9. TROUBLESHOOTING</h2>
 
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
@@ -3440,6 +3831,7 @@ https://unix.stackexchange.com<br>
 https://security.stackexchange.com<br>
 https://hardforum.com<br>
 https://askubuntu.com<br>
+https://www.snbforums.com<br>
 https://reddit.com/r/debian<br>
 https://reddit.com/r/linuxquestions<br>
 https://reddit.com/r/sysadmin<br>
@@ -3657,6 +4049,7 @@ or
 
 <h5>∙ Debug WiFi</h5>
 
+<code>$ ip link</code><br>
 <code>$ sudo dmesg | grep iwlwifi</code><br>
 <code>$ sudo dmesg | grep rtw</code><br>
 <code>$ sudo dmesg | grep ath</code><br>
@@ -3727,7 +4120,6 @@ Bug - https://bugzilla.kernel.org/show_bug.cgi?id=202541<br>
 Bug - https://bugzilla.kernel.org/attachment.cgi?id=304188&action=diff<br>
 
 Tip: If you are transferring large amounts of data via a problematic USB, use grsync as a manager.<br>
-
 
 <h4>USB debug</h4>
 
@@ -4160,7 +4552,45 @@ https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows<br>
 <summary><b>9.12 Torrenting</b></summary>
 <br>
 
-<h4>Fluctuations in the download speed</h4>
+<h4>General debug</h4>
+
+<pre>
+1. Resetting qBittorrent / trying another torrent client
+2. Trying another device on same network
+3. Trying ethernet instead of Wi-Fi
+4. Trying downloading to external storage rather than SSD
+5. Stopping all running apps/services in background
+6. Running speed tests to see if it also happens outside torrenting
+</pre>
+
+<h4>Download speed fluctuations and near zero uploading, speed spikes</h4>
+
+<h5>Possible causes</h5>
+   
+<pre>
+1. Your external disk case, awful flash drive or internal SSD just not being able to handle the simultaneous writes and reads.
+2. Your VPN limiting you bandwidth.
+3. Your ISP throttling. Torrent traffic throttled even through a VPN.
+</pre>
+
+<h5>Possible solutions</h5>
+
+<p>Disk Benchmarks Test</p>
+<code>$ sudo apt install gnome-disk-utility</code><br>
+
+<p>For your ISP throttle, try your VPN Obfuscated Servers or P2P Servers.</p>
+
+<p>Do a Leak Test</p>
+
+<a href="https://www.dnsleaktest.com/">∙ DNSLeakTest.com</a> (run the "Extended test")<br>
+<a href="https://ipleak.net/">∙ IPLeak.net</a><br>
+
+<p>Alternativelly, begin to VPN+Torrent on PC, wait until throttling begins. Try to play back a 1080p video on your smartphone, try to choose one where you can see the quality difference (for example one with many text elements such as computer hardware benchmarks). A 1080p video needs about 1-2Mbps (250KB/s) bandwidth.</p>
+
+<p>Instead you can try to download something on the phone. This is to find out if it's an issue VPN server/software or with your ISP line as a whole. It's possible for your ISP to only throttle the connection to the VPN server and leave the rest alone.</p>
+
+
+<h4>Problem 2</h4>
 
 <code>$ sudo </code><br>
 
@@ -4170,24 +4600,7 @@ https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows<br>
 <!-- #################### -->
 
 <details>
-<summary><b>9.13 Hardware</b></summary>
-<br>
-
-<h4>Hardware Utilities</h4>
-
-<code>$ sudo apt install lshw</code><br>
-<code>$ sudo apt install inxi</code><br>
-<code>$ sudo apt install cpu-x</code><br>
-<code>$ sudo apt install hardinfo</code><br>
-<code>$ sudo apt install s-tui stress</code><br>
-
-<br>
-</details>
-
-<!-- #################### -->
-
-<details>
-<summary><b>9.14 Disks</b></summary>
+<summary><b>9.13 Disks</b></summary>
 <br>
 
 https://wiki.debian.org/SSDOptimization<br>
@@ -4247,6 +4660,23 @@ https://www.cgsecurity.org/wiki/TestDisk<br>
 <br>
 </details>
 
+<!-- #################### -->
+
+<details>
+<summary><b>9.14 Hardware</b></summary>
+<br>
+
+<h4>Hardware Utilities</h4>
+
+<code>$ sudo apt install lshw</code><br>
+<code>$ sudo apt install inxi</code><br>
+<code>$ sudo apt install cpu-x</code><br>
+<code>$ sudo apt install hardinfo</code><br>
+<code>$ sudo apt install s-tui stress</code><br>
+
+<br>
+</details>
+
 <hr>
 
 <!--################################### -->
@@ -4277,11 +4707,11 @@ https://fabianlee.org<br>
 https://linuxiac.com<br>
 https://vitux.com<br>
 https://tqdev.com<br>
-https://www.dwarmstrong.org<br>
+https://dwarmstrong.org<br>
 https://0pointer.net/blog/<br>
-https://www.slant.co<br>
+https://slant.co<br>
 
-Privacy<br>
+Others<br>
 https://www.notrace.how<br>
 https://www.anarsec.guide<br>
 

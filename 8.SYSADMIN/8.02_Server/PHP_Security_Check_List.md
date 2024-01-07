@@ -1,14 +1,12 @@
-## Visit: https://github.com/security-checklist/php-security-check-list
+### PHP Security Check List
 
-### PHP Security Check List [ EN ]
+Credits: https://github.com/guardrailsio/awesome-php-security<br>
 
-<img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg"> <img src="https://img.shields.io/github/stars/security-checklist/php-security-check-list?style=social"> <img src="https://img.shields.io/github/forks/security-checklist/php-security-check-list?style=social"> <img src="https://img.shields.io/github/repo-size/security-checklist/php-security-check-list"> <img src="https://img.shields.io/github/license/anti-ddos/Anti-DDOS"> <img src="https://img.shields.io/github/issues/detail/author/security-checklist/php-security-check-list/2">
+https://cheatsheetseries.owasp.org/cheatsheets/PHP_Configuration_Cheat_Sheet.html<br>
 
-![PHP-Security-Check-List](/image/php-image.png)
+https://paragonie.com/blog/2017/12/2018-guide-building-secure-php-software<br>
 
-PHP: Hypertext Preprocessor is a web-based, server-side, multi-use, general-purpose, scripting and programming language that can be embedded in HTML. The PHP development, which was first created by Rasmus Lerdorf in 1995, is now being run by the PHP community.
 
-The PHP programming language is still used by a large developer. It is the most known backend programming language. In PHP web applications, I prepared a list called "php security check list" which security researchers should know.
 
 * [Full Path Disclosure](https://www.owasp.org/index.php/Full_Path_Disclosure)
 * [Arbitrary File Upload](https://www.owasp.org/index.php/Unrestricted_File_Upload)
