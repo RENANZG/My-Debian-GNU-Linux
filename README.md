@@ -198,7 +198,7 @@ https://osresearch.net<br>
 
 ∙ Sanitize options<br> 
 
-<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.03_Sanitization</h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.03_Sanitization">1.HARDENING/1.03_Sanitization</a></h4>
 
 <p>Not all SSD support sanitize. And if you use SSDs, enable TRIM in your BIOS. Take care with SSD over-provisioning.</p>
 
@@ -207,8 +207,7 @@ https://github.com/bacher09/pwgen-for-bios<br>
 
 ∙ Secure Boot<br>
 
-<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/3.SECURE_BOOT</h4>
-
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/3.SECURE_BOOT">3.SECURE_BOOT</a></h4>
 
 <h5>Hardware Vulnerabilities</h5>
 https://docs.kernel.org/admin-guide/hw-vuln/index.html<br>
@@ -270,7 +269,7 @@ https://wiki.debian.org/DebianOnIntelMacPro<br>
 <summary><b>2.02 Installation</b></summary>
 <br>
 
-<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION</h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION">2.SYSTEM_INSTALLATION</a></h4>
 
 2.02.01 Basic Installation Guide<br>
 
@@ -628,7 +627,7 @@ The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a typ
 https://wiki.debian.org/KVM<br>
 https://wiki.archlinux.org/title/KVM<br>
 
-<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/8.SYSADMIN/8.03_Containerization_and_Orchestration</h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/8.SYSADMIN/8.03_Containerization_and_Orchestration">8.SYSADMIN/8.03_Containerization_and_Orchestration</a></h4>
 
 <h3>Quick Installation Guide and Others</h3>
 
@@ -647,7 +646,7 @@ https://www.youtube.com/watch?v=cs8JW3zDDoI<br>
 
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
-<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION/2.02_Debootstrap</h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION/2.02_Debootstrap">2.SYSTEM_INSTALLATION/2.02_Debootstrap</a></h4>
 
 • Debootstrap<br>
 https://wiki.debian.org/Debootstrap<br>
@@ -673,12 +672,12 @@ https://github.com/linuxdabbler/debian-install-scripts<br>
 <!-- ########## -->
 
 <details>
-<summary><b>2.02 Encryption</b></summary> 
+<summary><b>2.03 Encryption</b></summary> 
 <br>
 
-<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.02_Encryption</h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.02_Encryption">1.HARDENING/1.02_Encryption</a></h4>
 
-<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION/2.02_Debootstrap</h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION/2.02_Debootstrap">2.SYSTEM_INSTALLATION/2.02_Debootstrap</a></h4>
 
 2.3.1 Encryption<br>
 
@@ -864,7 +863,7 @@ $ apt-cache search openjdk | grep openjdk
 <!-- ########## -->
 
 <details>
-<summary><b>2.04 Low Level Linux</b></summary> 
+<summary><b>2.05 Low Level Linux</b></summary> 
 <br>
 
 • Kernel Linux<br>
@@ -886,7 +885,7 @@ https://reproducible-builds.org<br>
 <!-- #################### -->
 
 <details>
-<summary><b>2.04 Clonezilla</b></summary> 
+<summary><b>2.06 Clonezilla</b></summary> 
 <br>
 
 <p>Clonezilla - The Free and Open Source Software for Disk Imaging and Cloning</p>
@@ -2144,10 +2143,13 @@ https://avoidthehack.com/router-wireless-guide<br>
 <li>Use sufficient Wi-Fi encryption</li>
 <li>Set a strong Wi-Fi password</li>
 <li>Change the Wi-Fi (SSID) name from the default</li>
+<li>Hide the Wi-Fi (SSID)</li>
 <li>Consider using open-source router firmware</li>
 <li>Keep router firmware updated</li>
 <li>Keep other software up to date</li>
 </ul>
+
+<p>*These are solutions outside the military level. Forgetting wifi and using an RJ-45 to USB should be considered for home use.</p>
 
 <br>
 </details>
@@ -2208,7 +2210,7 @@ https://docs.pi-hole.net<br>
 <summary><b>5.03 Firewall</b></summary>
 <br>
 
-<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/5.NETWORK/5.02_Firewall</h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/5.NETWORK/5.02_Firewall">5.NETWORK/5.02_Firewall</a></h4>
 
 <p>Note that these commands show ports that are in a listening state, but that doesn’t necessarily mean that the ports are open to the internet, because our firewall may be denying connections.</p>
 
@@ -3074,15 +3076,138 @@ https://bitwarden.com/products/send<br>
 &nbsp; Commands for PDF OCR
 &nbsp; &nbsp; • How to OCR a PDF
 &nbsp; &nbsp; $ ocrmypdf -v /input.pdf ~/output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --skip-text /input.pdf ~/output.pdf
 &nbsp; &nbsp; $ ocrmypdf -v --language deu /input.pdf ~/output.pdf 
 &nbsp; &nbsp; $ ocrmypdf -v --language deu+fra ~/input.pdf ~/output.pdf
 &nbsp; &nbsp; $ ocrmypdf -v --language spa+por ~/input.pdf ~/output.pdf
+&nbsp; &nbsp; • To rotate pages
 &nbsp; &nbsp; $ ocrmypdf -v --rotate-pages ~/input.pdf ~/output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v myfile.pdf myfile.pdf #To modify a file in the same place.
+&nbsp; &nbsp; • To modify a file in the same place
+&nbsp; &nbsp; $ ocrmypdf -v ~/input.pdf ~/input.pdf
+&nbsp; &nbsp; • To skip text 
+&nbsp; &nbsp; $ ocrmypdf -v --skip-text /input.pdf ~/output.pdf
+&nbsp; &nbsp; • To redo OCR 
+&nbsp; &nbsp; $ ocrmypdf -v --redo-ocr /input.pdf ~/output.pdf
 </pre>
 
-<h5>∙ PDF Convert</h5>
+<h5>∙ Doc Convert</h5>
+
+<h6>Libre Office (Headless)</h6>
+
+https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html<br>
+
+<code>$ sudo sudo apt install -y libreoffice</code> &nbsp; &nbsp; #It's a command-line interface method.<br>
+
+<pre>
+&nbsp; Commands for libreoffice headless
+&nbsp; &nbsp; • Syntax
+&nbsp; &nbsp; $ soffice --convert-to OutputFileExtension[:OutputFilterName[:OutputFilterParams[,param]]] [--outdir output_dir]
+&nbsp; &nbsp; • To convert a DOCX file to PDF
+&nbsp; &nbsp; $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.docx
+&nbsp; &nbsp; $ soffice --headless --convert-to pdf:writer_pdf_Export:ExportNotesPages=True --outdir /home/user *.docx
+&nbsp; &nbsp; • To convert a ODT file to PDF
+&nbsp; &nbsp; $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.odt
+&nbsp; &nbsp; • To convert a ODT file to DOCX
+&nbsp; &nbsp; $ soffice –-headless --convert-to pdf:writer_odt_Export --outdir /home/user *.docx
+&nbsp; &nbsp; • To convert a PPTX file to PDF
+&nbsp; &nbsp; $ soffice --headless --convert-to pdf:impress_pdf_Export --outdir /home/user *.pptx
+&nbsp; &nbsp; $ soffice --headless --convert-to pdf:impress_pdf_Export:ExportNotesPages=True --outdir /home/user *.pptx
+&nbsp; &nbsp; • To convert a XLSX file to PDF
+&nbsp; &nbsp; $ soffice --headless --convert-to pdf:calc_pdf_Export --outdir /home/user *.xlsx
+&nbsp; &nbsp; • To convert a ODT file to PDF
+&nbsp; &nbsp; $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.odt
+&nbsp; &nbsp; • To convert a HTML file to PDF
+&nbsp; &nbsp; $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.html
+</pre>
+
+<p>Output as PDF</p>
+
+<p>To control, which LibreOffice component generates PDF output, you can use these variants:</p>
+
+</pre>
+--convert-to pdf:writer_pdf_Export
+--convert-to pdf:calc_pdf_Export
+--convert-to pdf:draw_pdf_Export
+--convert-to pdf:impress_pdf_Export
+--convert-to pdf:writer_web_pdf_Export
+</pre>
+
+<p>Input which is not DOCX</p>
+
+<p>To enforce infilters for non-DOCX input formats, you could use (list is not complete):</p>
+
+<pre>
+--infilter="HTML Document"                      # for HTML input
+--infilter="MediaWiki"                          # for MediaWiki input
+--infilter="Text CSV"                           # for CSV spreadsheet input
+--infilter="Microsoft PowerPoint 2007/2010 XML" # for PPTX input
+--infilter="Microsoft PowerPoint 97/2000/XP"    # for PPT input
+--infilter="Windows Metafile"                   # for WMF input
+--infilter="Enhanced Metafile"                  # for EMF input
+--infilter="Scalable Vector Graphics"           # for SVG input
+--infilter="Microsoft Excel 2007/2010 XML"      # for XLSX input
+--infilter="Microsoft Excel 97/2000/XP"         # for XLS input
+--infilter="Microsoft Excel 95"                 # for some XLS input
+--infilter="Microsoft Excel 5.0"                # for some XLS input
+</pre>
+
+<p>Output which is not PDF</p>
+
+<p>To convert to specific output formats, you could use (list not complete):</p>
+
+<pre>
+--convert-to html:HTML
+--convert-to html:draw_html_Export                 # force "Draw" to generate the HTML
+--convert-to mediawiki:MediaWiki_Web               # generate MediaWiki output
+--convert-to csv:"Text - txt - csv (StarCalc)"     # generate CSV spreadsheet output
+--convert-to pptx:"Impress MS PowerPoint 2007 XML" # generate PPTX
+--convert-to ppt:"MS PowerPoint 97"                # generate PPT
+--convert-to wmf:impress_wmf_Export                # force "Impress" to generate the WMF
+--convert-to wmf:draw_wmf_Export                   # force "Draw" to generate the WMF
+--convert-to emf:impress_emf_Export                # force "Impress" to generate the EMF
+--convert-to emf:draw_emf_Export                   # force "Draw" to generate the EMF
+--convert-to svg:impress_svg_Export                # force "Impress" to generate the SVG
+--convert-to svg:draw_svg_Export                   # force "Draw" to generate the SVG
+--convert-to xlsx:"Calc MS Excel 2007 XML"         # generate XLSX
+--convert-to xls:"MS Excel 97"                     # generate XLS like Excel 97
+--convert-to xls:"MS Excel 95"                     # generate XLS like Excel 95
+--convert-to xls:"MS Excel 5.0/95"                 # generate XLS like Excel 5.0/95
+</pre>
+
+<p>Headless vs. Invisible</p>
+
+<pre>
+--invisible    Starts in invisible mode. Neither the start-up logo nor 
+               the initial program window will be visible. Application 
+               can be controlled, and documents and dialogs can be     
+               controlled and opened via the API. Using the parameter, 
+               the process can only be ended using the taskmanager     
+               (Windows) or the kill command (UNIX-like systems). It   
+               cannot be used in conjunction with --quickstart.        
+
+--headless     Starts in "headless mode" which allows using the      
+               application without GUI. This special mode can be used  
+               when the application is controlled by external clients  
+               via the API.                          
+</pre>
+
+
+<h6>Pandoc</h6>
+
+<code>$ sudo sudo apt install -y pandoc</code> &nbsp; &nbsp; #It's a command-line interface.<br>
+
+<pre>
+&nbsp; Commands for pandoc
+&nbsp; &nbsp; • Convert ODT to DOCX
+&nbsp; &nbsp; $ pandoc -o document.odt document.docx
+&nbsp; &nbsp; • Convert DOCX to PDF
+&nbsp; &nbsp; $ pandoc -s document.docx -o document.pdf
+&nbsp; &nbsp; • Convert ODT to PDF
+&nbsp; &nbsp; $ pandoc -s document.odt -o document.pdf
+&nbsp; &nbsp; • Convert HTML to PDF
+&nbsp; &nbsp; $ pandoc document.html -t latex -o document.pdf
+</pre>
+
+<h6>Ghostscript</h6>
 
 <code>$ sudo apt install -y ghostscript</code> &nbsp; &nbsp; #It's a command-line interface.<br>
 
@@ -3233,9 +3358,9 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
 
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
-<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.02_Encryption</h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.02_Encryption">1.HARDENING/1.02_Encryption</a></h4>
 
-<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION/2.02_Debootstrap</h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION/2.02_Debootstrap">2.SYSTEM_INSTALLATION/2.02_Debootstrap</a></h4>
 
 <h4>• Disk Encryption</h4>
 
@@ -3324,24 +3449,39 @@ https://www.reddit.com/r/duplicati<br>
 <!-- #################### -->
 
 <details>
-<summary><b>6.08 Compression</b></summary>
+<summary><b>6.08 Extracting Files</b></summary>
 <br>
 
 https://wiki.debian.org/Compression<br>
 
-<h4>Command-line: Compression, Decompression and Encryption of Files</h4>
+<h4>All-in-one extract()</h4>
 
-<h4>• GZIP (.gz , .tar and .tar.gz)</h4>
+<code>$ sudo apt install -y tar gzip 7zip unrar-free zlib1g bzip2 xz-utils tarlz</code><br>
 
-<code>$ sudo apt install gzip</code><br>
+<p>Add this function to your `.bashrc` or `.bash_profile` configure file in your home directory.</p>
 
 <pre>
-&nbsp; Commands for .gz archives
-&nbsp; &nbsp; • How to create an .gz file with gzip:
-&nbsp; &nbsp; $ gzip outarchive.gz indoc1.pdf
-&nbsp; &nbsp; • How to decompress a .gz file with gunzip command:
-&nbsp; &nbsp; $ gunzip archive.gz
+# Extract common archive files by file extension
+function extract() {
+    if [ -f $1 ] ; then
+        case $1 in
+#            *.tar.gz|*.tgz)     tar xzf $1          ;;
+#            *.tar|*.tar.xz)     tar xf $1           ;;
+#            *.tar.bz2|*.tbz2)   tar xjf $1          ;;
+#            *.xz)               unxz $1             ;;
+#            *.zip)              unzip $1            ;;
+#            *.Z)                uncompress $1       ;;
+#            *.tar.zst)          tar -I=unzstd xf $1 ;;
+#            *.zst)              unzstd $1           ;;
+#            *.7z)               7z x $1             ;;
+        esac
+    else
+        echo "'$1' is not valid archive file."
+    fi
+}
 </pre>
+
+<h4>• TAR (.gz , .tar and .tar.gz)</h4>
 
 <pre>
 &nbsp; Commands for .tar archives
@@ -3353,13 +3493,25 @@ https://wiki.debian.org/Compression<br>
 
 <pre>
 &nbsp; Commands for .tar.gz archives
-&nbsp; &nbsp; • How to create an .tar.gz file with tar command:
+&nbsp; &nbsp; • How to create an .tar.gz file
 &nbsp; &nbsp; $ tar –cvzf outarchive.tar.gz ~/Documents
 &nbsp; &nbsp; • To list the contents of a .tar.gz file:
 &nbsp; &nbsp; $ tar –tzf archive.tar.gz
-&nbsp; &nbsp; • How to decompress a .tar.gz file with tar command:
+&nbsp; &nbsp; • How to decompress a .tar.gz file
 &nbsp; &nbsp; $ tar –xvzf archive.tar.gz
 &nbsp; &nbsp; $ tar –xvzf archive.tar.gz –C /home/user/Downloads
+</pre>
+
+<h4>• GZIP (.gz , .tar and .tar.gz)</h4>
+
+<code>$ sudo apt install gzip</code><br>
+
+<pre>
+&nbsp; Commands for .gz archives
+&nbsp; &nbsp; • How to create an .gz file
+&nbsp; &nbsp; $ gzip outarchive.gz indoc1.pdf
+&nbsp; &nbsp; • How to decompress a .gz file
+&nbsp; &nbsp; $ gunzip archive.gz
 </pre>
 
 <h4>• 7Z (.7z and .zip)</h4>
@@ -3368,30 +3520,30 @@ https://wiki.debian.org/Compression<br>
 
 <pre>
 &nbsp; Commands for .7z archives
-&nbsp; &nbsp; • How to create an .7z file with 7z archiver:
+&nbsp; &nbsp; • How to create an .7z file
 &nbsp; &nbsp; $ 7z a outarchive.7z indoc1.pdf
-&nbsp; &nbsp; • How to decompress a .7z file 7za command:
+&nbsp; &nbsp; • How to decompress a .7z file
 &nbsp; &nbsp; $ 7z x archive.7z
 </pre>
 
 <pre>
 &nbsp; Commands for .zip archives
-&nbsp; &nbsp; • How to create an zip file with 7z archiver:
+&nbsp; &nbsp; • How to create an zip file
 &nbsp; &nbsp; $ 7z a outarchive.zip indoc1.pdf
-&nbsp; &nbsp; • How to decompress a zip file 7za command:
+&nbsp; &nbsp; • How to decompress a zip file
 &nbsp; &nbsp; $ 7z x archive.zip
 </pre>
 
 <pre>
 &nbsp; Commands for encrypted .7z and .zip archives
-&nbsp; &nbsp; • How to create an encrypted .zip file with 7z archiver:
+&nbsp; &nbsp; • How to create an encrypted .zip file
 &nbsp; &nbsp; $ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory
 &nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 outarchive.zip indoc1.pdf inpdoc2.pdf
 &nbsp; &nbsp; $ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory
-&nbsp; &nbsp; • How to create an encrypted header .7z file (only) with 7z archiver:
+&nbsp; &nbsp; • How to create an encrypted header .7z file (only)
 &nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir
 &nbsp; &nbsp; $ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory
-&nbsp; &nbsp; • How to decompress a .7z and .zip file that is encrypted with 7z command:
+&nbsp; &nbsp; • How to decompress a .7z and .zip file that is encrypted
 &nbsp; &nbsp; $ 7z x archive.zip 
 </pre>
 
@@ -3401,9 +3553,9 @@ https://wiki.debian.org/Compression<br>
 
 <pre>
 &nbsp; Commands for .rar archives (*proprietary: extract only)
-&nbsp; &nbsp; • How to decompress a rar file with unrar-free command:
+&nbsp; &nbsp; • How to decompress a rar file
 &nbsp; &nbsp; $ unrar e ~/Downloads/filename.rar ~/Downloads/
-&nbsp; &nbsp; • How to decompress a rar file encrypted with unrar-free command:
+&nbsp; &nbsp; • How to decompress a rar file encrypted
 &nbsp; &nbsp; $ unrar-free -x ~/Downloads/filename.rar ~/Downloads/
 </pre>
 
@@ -3426,15 +3578,18 @@ https://wiki.debian.org/Compression<br>
 &nbsp; &nbsp; • How to decompress a .zip file to directory:
 &nbsp; &nbsp; $ unzip filename.zip -d /path/to/directory
 &nbsp; &nbsp; $ unzip -d file file.zip
+&nbsp; &nbsp; • Unzip Multiple Files (using single quote or backslash)
+&nbsp; &nbsp; $ unzip '*.zip'
+&nbsp; &nbsp; $ unzip \*.zip
 </pre>
 
 <pre>
 &nbsp; Commands for encrypted .zip archives
-&nbsp; &nbsp; • How to create an encrypted .zip file with zip archiver:
+&nbsp; &nbsp; • How to create an encrypted .zip file
 &nbsp; &nbsp; $ zip -e filename.zip ~/Downloads/
-&nbsp; &nbsp; • How to decompress a encrypted .zip file:
+&nbsp; &nbsp; • How to decompress a encrypted .zip file
 &nbsp; &nbsp; $ unzip ~/Downloads/filename.zip
-&nbsp; &nbsp; • How to decompress a encrypted .zip file to directory:
+&nbsp; &nbsp; • How to decompress a encrypted .zip file to directory
 &nbsp; &nbsp; $ unzip ~/Downloads/filename.zip -d ~/Downloads/
 </pre>
 
@@ -3511,7 +3666,7 @@ Common Mistakes - https://exiftool.org/mistakes.html<br>
 https://wiki.debian.org/SSDOptimization<br>
 https://wiki.archlinux.org/title/Solid_state_drive<br>
 
-<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.03_Sanitization</h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.03_Sanitization">1.HARDENING/1.03_Sanitization</a></h4>
 
 <em>*Not all SSD support sanitize. To properly way to erase a SSD is using the SSDs manufacturer's software. Other methods might not work, due to wear leveling and over-provisioning.</em><br>
 
@@ -3593,10 +3748,10 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 &nbsp; &nbsp; $ rename -v 'y/ /\_/' *.pdf
 &nbsp; &nbsp; $ rename -v 'y/ /\_/' ~/Downloads/*
 &nbsp; &nbsp; $ rename -v 'y/ /\_/' ~/Downloads/*.pdf
-&nbsp; &nbsp; • Convert Lowercase Characters
-&nbsp; &nbsp; $ rename -v 'y/a-z/A-Z/' *.pdf
-&nbsp; &nbsp; • Convert Uppercase Characters
+&nbsp; &nbsp; • Convert Uppercase to Lowercase Characters
 &nbsp; &nbsp; $ rename -v 'y/A-Z/a-z/' *.PDF
+&nbsp; &nbsp; • Convert Lowercase to Uppercase Characters
+&nbsp; &nbsp; $ rename -v 'y/a-z/A-Z/' *.pdf
 &nbsp; &nbsp; • Delete a Part of a Filename
 &nbsp; &nbsp; $ rename -v 's/example//' *.pdf
 </pre>
@@ -3637,6 +3792,15 @@ https://github.com/restic/restic<br>
 
 <h5>Folders and Files Backup</h5>
 
+
+<h4>GRSYNC (GUI)</h4>
+
+<code>$ sudo apt install grsync</code><br>
+
+<p>GRSYNC is a graphical interface for the rsync command line program. It can be used for local directory synchronization.</p>
+
+</h4>Copy files and directories (CLI)</h4>
+
 <h5>∙ Full Backup</h5>
 
 <pre>
@@ -3649,7 +3813,61 @@ $ cp ~/.config/example/ /media/backup
 $ cp -vur ~/.config/example/ /media/backup
 </pre>
 
-<h5>Clonezilla - The Free and Open Source Software for Disk Imaging and Cloning</h5>
+<sub>*This will preserve the files permissions/ownership.</sub>
+
+<h5>∙ To get the progress information</h5>
+
+<pre>
+$ cp -a ~/.config/example/ /media/backup
+</pre>
+
+<h4>∙ Transfer progress and speed when copying files (CLI)</h4>
+
+<h6>RSYNC</h6>
+
+<code>$ sudo apt install rsync</code>
+
+<pre>
+• Copying
+$ rsync -ah --progress ~/source /backup/destination
+$ rsync -ah --info=progress2 ~/source /backup/destination
+$ rsync -rah --info=progress2 ~/source /backup/destination
+$ rsync -rah --dry-run --info=progress2 --stats ~/source /backup/destination
+• Moving
+$ rsync -avzP --remove-sent-files ~/source /backup/destination
+</pre>
+
+<sub>*This will preserve the files permissions/ownership.</sub>
+
+<h6>DD</h6>
+
+<pre>
+$ dd if=~/source of=/backup/destination status=progress
+</pre>
+
+<h6>PV</h6>
+
+<code>$ sudo apt install pv</code>
+
+<pre>
+$ pv ~/source > /backup/destination
+</pre>
+
+<sub>*This won't preserve the files permissions/ownership.</sub>
+
+<h6>CURL</h6>
+
+<pre>
+$ curl -o destination FILE://source
+</pre>
+
+<sub>*This won't preserve the files permissions/ownership.</sub>
+
+<h4>Disk Imaging and Cloning</h4>
+
+<h5>Clonezilla</h5>
+
+<p>The Free and Open Source Software for Disk Imaging and Cloning</p>
 
 https://clonezilla.org//clonezilla-live-doc.php<br>
 
@@ -3670,6 +3888,8 @@ https://clonezilla.org//clonezilla-live-doc.php<br>
 <details>
 <summary><b>7.01 Sytem Tweaks</b></summary>
 <br>
+
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/7.DEVELOPMENT">7.DEVELOPMENT</a></h4>
 
 <h3>Sytem Tweaks</h3>
 
@@ -3802,7 +4022,7 @@ https://www.reddit.com/r/sublimetext<br>
 <summary><b>8.01 Sysadmin</b></summary>
 <br>
 
-<h4>Visit our repo tree: https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/8.SYSADMIN</h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/8.SYSADMIN">8.SYSADMIN</a></h4>
 
 <br>
 </details>
@@ -3826,6 +4046,7 @@ https://forums.debian.net<br>
 https://linuxquestions.org<br>
 https://superuser.com<br>
 https://stackoverflow.com<br>
+https://data.stackexchange.com<br>
 https://elinux.org<br>
 https://unix.stackexchange.com<br>
 https://security.stackexchange.com<br>
@@ -4710,6 +4931,7 @@ https://tqdev.com<br>
 https://dwarmstrong.org<br>
 https://0pointer.net/blog/<br>
 https://slant.co<br>
+https://blog.carsoncheng.ca<br>
 
 Others<br>
 https://www.notrace.how<br>
@@ -4722,7 +4944,7 @@ https://www.anarsec.guide<br>
 
 <!--################################### -->
 
-<p align="right"> <a href="https://github.com/RENANZG/My-Debian-GNU-Linux?tab=readme-ov-file#">Back to Top ⬆</a> </p>
+<p align="right"><a href="https://github.com/RENANZG/My-Debian-GNU-Linux?tab=readme-ov-file#">Back to Top ⬆</a></p>
 
 <!--################################### -->
 

@@ -11,7 +11,7 @@ https://nitroflare.com/view/155616100E02146/SaNet.st_HeadFirstNetworking.pdf<br>
 
 <h4>An Introduction to Computer Networks - Peter L Dordal - Department of Computer Science - Loyola University Chicago</h4>
 
-https://intronetworks.cs.luc.edu/<br>
+https://intronetworks.cs.luc.edu<br>
 
 <!-- #################### -->
 

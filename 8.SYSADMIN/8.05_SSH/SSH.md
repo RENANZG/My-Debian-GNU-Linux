@@ -1,4 +1,5 @@
-UNDER CONSTRUCTION
+
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <h2> Secure Shell (SSH) on the Server</h2>
 
@@ -10,14 +11,6 @@ UNDER CONSTRUCTION
 
 <code>$ sudo apt install debian-archive-keyring</code>
 
-
 <hr>
 
-deny ping request
-nano /etc/ufw/before.rules 
 
--A ufw-before-input -p icmp --icmp-type destination-unreachable -j ACCEPT 
--A ufw-before-input -p icmp --icmp-type source-quench -j ACCEPT 
--A ufw-before-input -p icmp --icmp-type time-exceeded -j ACCEPT 
--A ufw-before-input -p icmp --icmp-type parameter-problem -j ACCEPT 
--A ufw-before-input -p icmp --icmp-type echo-request -j ACCEPT 
