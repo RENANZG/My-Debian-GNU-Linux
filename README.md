@@ -13,7 +13,7 @@
 
 <blockquote><h3>"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately endpoint security is so terrifically weak that NSA can frequently find ways around it." (Edward Snowden)</h3></blockquote>
 
-<p align="center"><img src=".data/la_clef_des_champs_1936_-_rene_magritte_830px.png" title="La Clef Des Champs (1936) - René Magritte"/></p>
+<p align="center"><img src="/.data/la_clef_des_champs_1936_-_rene_magritte_830px.png" title="La Clef Des Champs (1936) - René Magritte"/></p>
 
 </div>
 
@@ -3689,7 +3689,6 @@ https://wiki.archlinux.org/title/Solid_state_drive<br>
 </ul>
 
 <em>**If you use SSDs, enable TRIM in your BIOS. Confirm you are using SSD in the BIOS options.</em><br>
-
 
 <h5>∙ Nwipe</h5>
 
