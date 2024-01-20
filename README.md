@@ -256,9 +256,7 @@ https://wiki.debian.org/DebianOnIntelMacPro<br>
 
 <p>You must consider the file system you will use.</p>
 
-
 <h4>2.01.04 Cost benefit</h4>
-
 
 <br>
 </details>
