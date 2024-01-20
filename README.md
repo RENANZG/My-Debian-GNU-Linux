@@ -3365,18 +3365,18 @@ https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html<
 <p>Headless vs. Invisible</p>
 
 <pre>
---invisible    Starts in invisible mode. Neither the start-up logo nor 
-               the initial program window will be visible. Application 
-               can be controlled, and documents and dialogs can be     
-               controlled and opened via the API. Using the parameter, 
-               the process can only be ended using the taskmanager     
-               (Windows) or the kill command (UNIX-like systems). It   
-               cannot be used in conjunction with --quickstart.        
+--invisible   Starts in invisible mode. Neither the start-up logo nor 
+              the initial program window will be visible. Application 
+              can be controlled, and documents and dialogs can be     
+              controlled and opened via the API. Using the parameter, 
+              the process can only be ended using the taskmanager     
+              (Windows) or the kill command (UNIX-like systems). It   
+              cannot be used in conjunction with --quickstart.        
 
---headless     Starts in "headless mode" which allows using the      
-               application without GUI. This special mode can be used  
-               when the application is controlled by external clients  
-               via the API.                          
+--headless    Starts in "headless mode" which allows using the      
+              application without GUI. This special mode can be used  
+              when the application is controlled by external clients  
+              via the API.                          
 </pre>
 
 
