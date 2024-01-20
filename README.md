@@ -2664,7 +2664,6 @@ $ openvpn --script-security 2 --config yourvpn.com_tcp.ovpn
 $ sudo openvpn --config config.ovpn --up /etc/openvpn/update-resolv-conf --down /etc/openvpn/update-resolv-conf --script-security 2
 </pre>
 
-
 <h6>OpenVPN Random Server and Autologin</h6>
 
 https://openvpn.net/community-resources/how-to/#auth<br>
