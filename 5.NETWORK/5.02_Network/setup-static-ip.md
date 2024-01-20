@@ -30,4 +30,4 @@ Step 5: Restart Networking Service
 
 Restart the networking service so that the updated configuration can be applied. Run the command.
 
-    sudo systemctl restart networking
+     sudo systemctl restart networking

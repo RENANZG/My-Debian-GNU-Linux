@@ -882,7 +882,7 @@ https://reproducible-builds.org<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>2.06 Clonezilla</b></summary> 
@@ -967,7 +967,7 @@ https://clonezilla.org//clonezilla-live-doc.php<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>3.02 Secure Boot References</b></summary>
@@ -1024,7 +1024,7 @@ ADVANCED:
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>3.03 YouTube References</b></summary>
@@ -1040,7 +1040,7 @@ ADVANCED:
 <br>
 </details> 
 
-<!-- #################### -->
+<!-- ################### -->
 
 <DIV class="section" id="VERDE">
 
@@ -1055,7 +1055,7 @@ https://wiki.archlinux.org/title/Kernel_parameters
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>3.05 Sign Debian Kernel</b></summary>
@@ -1106,7 +1106,7 @@ $ sudo modinfo /lib/modules/6.1.0-11-amd64/kernel/mm/zsmalloc.ko
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <p>First make sure the key doesn't exist yet:</p>
 
@@ -1211,7 +1211,7 @@ $ sudo apt install dkms
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <DIV class="subsubsection" id="6.2.1">
 <details>
@@ -1243,7 +1243,7 @@ $ KBUILD_DIR=/usr/lib/linux-kbuild-$SHORT_VERSION
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <DIV class="subsubsection" id="6.2.2">
 <details>
@@ -1274,7 +1274,7 @@ $ sudo dmesg | grep cert # verify your key is loaded
 </DIV>
 </DIV>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <DIV class="subsection" id="6.2">
 <details>
@@ -1344,7 +1344,7 @@ $ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-12-amd64
 </DIV>
 </DIV>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>3.06 Reset Secure Boot Keys</b></summary>
@@ -1418,7 +1418,7 @@ $ sudo update-initramfs -k all -u -v
 <br>
 </details> 
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><em><b>3.07 OpenSSL Errors</b></em></summary>
@@ -1569,7 +1569,7 @@ $ sudo dpkg-reconfigure broadcom-sta-dkms
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>3.08 Sign WIFI</b></summary>
@@ -1702,8 +1702,9 @@ signature:XX:XX:XX:XX:XX:XX:XX:XX...
 NOTE: Filename may be different just use tab completion to find appropriate file to check some other name.
 
 You could try load the modules
+
 ```bash
-$ modprobe -v rtw_8723d
+$ sudo modprobe -v rtw_8723d
 ```
 After any kernel module loading failure, you should check the dmesg output: it might include a more specific error message. In this case it is likely to indicate that a module signature failed a validity check.
 
@@ -1769,7 +1770,7 @@ $ /sbin/modprobe vboxdrv
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>3.09 Sign NVIDIA</b></summary>
@@ -1823,7 +1824,7 @@ Done.
 <br>
 </details> 
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>3.10 Sign VirtualBox</b></summary>
@@ -1834,7 +1835,7 @@ How to get VirtualBox signed for Secure Boot<br>
 <br>
 </details> 
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>3.11 Sign Ventoy</b></summary>
@@ -1844,7 +1845,7 @@ https://www.ventoy.net/en/doc_secure.html<br>
 <br>
 </details> 
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>3.12 rEFInd Bootloader</b></summary>
@@ -1854,7 +1855,7 @@ https://wiki.ubuntu.com/EFIBootLoaders<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>3.13 Sign Custom Secure Keys</b></summary>
@@ -1864,7 +1865,7 @@ https://github.com/nsacyber/Hardware-and-Firmware-Security-Guidance/blob/master/
 <br>
 </details> 
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>3.14 Encrypted boot</b></summary>
@@ -1878,7 +1879,7 @@ https://github.com/kmille/cryptboot<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>3.15 Sign with TPM 2.0</b></summary>
@@ -1889,7 +1890,7 @@ https://github.com/osresearch/safeboot<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>3.16 Secure Boot with Yubikey</b></summary>
@@ -1928,7 +1929,7 @@ https://wiki.ubuntu.com/DebuggingApparmor<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>4.02 Privileges</b></summary>
@@ -2002,7 +2003,7 @@ $ sudo chmod 766 -R /media
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>4.03 Audit System</b></summary>
@@ -2022,7 +2023,7 @@ $ sudo chmod 766 -R /media
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>4.04 Antimalware</b></summary>
@@ -2062,7 +2063,7 @@ https://www.eset.com/my/home/antivirus-linux/download<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>4.05 Updating</b></summary>
@@ -2154,10 +2155,80 @@ https://avoidthehack.com/router-wireless-guide<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
-<summary><b>5.02 DNS</b></summary>
+<summary><b>5.02 Network</b></summary>
+<br>
+
+<h4>Network Managers</h4>
+
+<h5>NetworkManager (GUI)</h5>
+
+<code> $ sudo apt install network-manager-gnome</code>
+
+<h5>NetworkManager (CLI)</h5>
+
+<code> $ sudo apt install network-manager</code>
+
+<pre>
+&nbsp; Commands 
+&nbsp; &nbsp; • Connecting WiFi manualy with nmcli
+&nbsp; &nbsp; $ 
+&nbsp; &nbsp; • 
+&nbsp; &nbsp; $ 
+&nbsp; &nbsp; • 
+&nbsp; &nbsp; $ 
+&nbsp; &nbsp; • 
+&nbsp; &nbsp; $ 
+</pre>
+
+<pre>
+&nbsp; Commands
+&nbsp; &nbsp; $ nmcli connection edit
+&nbsp; &nbsp; $ nmcli connection edit type wifi
+&nbsp; &nbsp; $ nmcli c edit type vpn
+&nbsp; &nbsp; $ nmcli c up wificonnectionname
+&nbsp; &nbsp; $ nmcli c show wificonnectionname
+&nbsp; &nbsp; $ nmcli connection show
+&nbsp; &nbsp; $ nmcli connection reload
+</pre>
+
+<pre>
+&nbsp; Config files
+&nbsp; &nbsp; $ sudo ls /etc/NetworkManager/
+&nbsp; &nbsp; $ sudo ls /etc/NetworkManager/system-connections/
+&nbsp; &nbsp; $ sudo nano /etc/NetworkManager/NetworkManager.conf/mywifiname<br>
+&nbsp; &nbsp; $ sudo nano /etc/NetworkManager/NetworkManager.conf<br>
+</pre>
+
+<h5>Connman</h5>
+
+<h5>Connman (GUI)</h5>
+
+<code> $ sudo apt install connman-ui</code>
+
+<h5>Connman (CLI)</h5>
+
+<code> $ sudo apt install connman</code>
+
+<pre>
+&nbsp; Commands
+&nbsp; &nbsp; $ 
+&nbsp; &nbsp; $ 
+&nbsp; &nbsp; $ 
+&nbsp; &nbsp; $ 
+&nbsp; &nbsp; $ 
+</pre>
+
+
+<br>
+</details>
+
+<!-- ################### -->
+
+<details>
+<summary><b>5.03 DNS</b></summary>
 <br>
 
 <h4>DNS Resolution</h4>
@@ -2176,6 +2247,8 @@ https://salsa.debian.org/debian/resolvconf<br>
 
 <h5>• The openresolv program</h5>
 
+<p>An open-source implementation of resolvconf to properly configure DNS and prevent DNS leaks.</p>
+
 https://roy.marples.name/projects/openresolv<br>
 
 <h5>• The systemd-resolved service</h5>
@@ -2187,12 +2260,69 @@ https://www.freedesktop.org/software/systemd/man/latest/systemd-resolved.service
 
 https://wiki.debian.org/Avahi<br>
 
-<h4>OpenVPN DNS</h4>
+<!-- ################### -->
 
-<code>$ sudo apt install openvpn-systemd-resolved</code><br>
+<h4>Solving DNS problems with OpenVPN</h4>
+
+https://openvpn.net/vpn-server-resources/troubleshooting-dns-resolution-problems<br>
+
+<h5>OpenVPN DNS</h5>
+
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+
+<code>$ sudo apt install resolvconf</code><br>
 
 
-<!-- #################### -->
+<pre>
+$ sudo nano /etc/openvpn/update-resolv-conf
+</pre>
+
+<pre>
+$ sudo mv /etc/resolv.conf /etc/resolv.conf.bak
+
+• Add this lines into your openvpn client.conf:
+
+$ nano client.conf
+
+script-security 2
+up /etc/openvpn/update-resolv-conf
+down /etc/openvpn/update-resolv-conf
+</pre>
+
+<p>Your could run openvpn with killswitch</p>
+
+<pre>
+$ openvpn --script-security 2 --config youropenvpnconfig.ovpn
+</pre>
+
+<h5>Disabling NetworkManager's own dnsmasq</h5>
+
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+
+<pre>
+$ sudo nano /etc/NetworkManager/NetworkManager.conf
+
+#dns=dnsmasq
+
+$ sudo restart network-manager
+</pre>
+
+<h5>NetworkManager dnsmasq (CLI)</h5>
+
+<p>DNS requests are directed to VPN-supplied DNS servers without any manipulations with dnsmasq, up/down/dispatch helper scripts.</p>
+
+<pre>
+nmcli -p connection modify MY_VPN_CONNECTION ipv4.never-default no
+nmcli -p connection modify MY_VPN_CONNECTION ipv4.ignore-auto-dns no
+nmcli -p connection modify MY_VPN_CONNECTION ipv4.dns-priority -42
+</pre>
+
+<p>*Using OpenVPN through NetworkManager (GUI) allows users to disable (turn Off) the connection.</p>
+
+<p>* Consider <code>$ sudo apt install openvpn-systemd-resolved</code><br></p>p>
+
+
+<!-- ################### -->
 
 <h4>Pi-hole ®</h4>
 
@@ -2204,10 +2334,10 @@ https://docs.pi-hole.net<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
-<summary><b>5.03 Firewall</b></summary>
+<summary><b>5.04 Firewall</b></summary>
 <br>
 
 <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/5.NETWORK/5.02_Firewall">5.NETWORK/5.02_Firewall</a></h4>
@@ -2380,10 +2510,10 @@ https://pypi.org/project/openpyn<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
-<summary><b>5.04 VPN</b></summary>
+<summary><b>5.05 VPN</b></summary>
 <br>
 
 <h4>• Buying VPN Services</h4>
@@ -2424,11 +2554,11 @@ https://pypi.org/project/openpyn<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 
 <details>
-<summary><b>5.05 OpenVPN</b></summary>
+<summary><b>5.06 OpenVPN</b></summary>
 <br>
 
 <h4>OpenVPN</h4>
@@ -2436,22 +2566,22 @@ https://openvpn.net<br>
 https://community.openvpn.net<br>
 https://openvpn.net/community-resources/how-to/<br>
 https://github.com/OpenVPN/openvpn/tree/master/sample/sample-config-files<br>
-https://github.com/angristan/openvpn-install<br>
+https://wiki.archlinux.org/index.php/OpenVPN<br>
+https://wiki.archlinux.org/index.php/OpenVPN#DNS<br>
 
 <h4>Installing OpenVPN (GUI)</h4>
 
 <pre>
 &nbsp; Commands GUI
+&nbsp; &nbsp; $ sudo apt install network-manager-gnome
 &nbsp; &nbsp; $ sudo apt install network-manager-openvpn-gnome
-&nbsp; &nbsp; $ sudo apt install openvpn-systemd-resolved
-&nbsp; &nbsp; $ sudo nmcli connection import type openvpn file /path/to/your.ovpn
 </pre>
 
 <h4>Installing OpenVPN (CLI)</h4>
 
 <pre>
 &nbsp; Commands CLI
-&nbsp; &nbsp; $ sudo apt install resolvconf -y
+&nbsp; &nbsp; $ sudo apt install -y resolvconf
 &nbsp; &nbsp; $ sudo systemctl enable --now resolvconf.service
 &nbsp; &nbsp; $ sudo apt install openvpn
 &nbsp; &nbsp; $ sudo wget https://www.openvpnprovider.com/openvpn/openvpn.zip
@@ -2462,7 +2592,30 @@ https://github.com/angristan/openvpn-install<br>
 &nbsp; &nbsp; $ sudo ls
 </pre>
 
+<h6>Basic OpenVPN Connection</h6>
+
+<pre>VPN connection 1
+&nbsp; &nbsp; • Basic connection, provide the username and password
+&nbsp; &nbsp; $ sudo openvpn us-myvpn.com_tcp.ovpn
+&nbsp; &nbsp; • You can save a username and password in a file
+&nbsp; &nbsp; $ sudo openvpn --config yourvpn.com_tcp.ovpn --auth-user-pass /home/user/auth
+(...)
+Initialization Sequence Completed
+</pre>
+
+<p>Your could run openvpn with killswitch</p>
+
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+
+<pre>
+$ openvpn --script-security 2 --config yourvpn.com_tcp.ovpn
+$ sudo openvpn --config config.ovpn --up /etc/openvpn/update-resolv-conf --down /etc/openvpn/update-resolv-conf --script-security 2
+</pre>
+
+
 <h6>OpenVPN Random Server and Autologin</h6>
+
+https://openvpn.net/community-resources/how-to/#auth<br>
 
 <pre>
 &nbsp; &nbsp; • You could use the client.conf below to random access
@@ -2472,16 +2625,16 @@ https://github.com/angristan/openvpn-install<br>
  &nbsp; &nbsp; &nbsp;client
  &nbsp; &nbsp; &nbsp;dev tun
  &nbsp; &nbsp; &nbsp;proto tcp #It's TCP or UDP server?
- &nbsp; &nbsp; &nbsp;remote my-server-1 1194
- &nbsp; &nbsp; &nbsp;remote my-server-2 1194
- &nbsp; &nbsp; &nbsp;remote my-server-3 1194
- &nbsp; &nbsp; &nbsp;remote my-server-4 1194
- &nbsp; &nbsp; &nbsp;remote my-server-5 1194
- &nbsp; &nbsp; &nbsp;remote my-server-6 1194
- &nbsp; &nbsp; &nbsp;remote my-server-7 1194
- &nbsp; &nbsp; &nbsp;remote my-server-8 1194
- &nbsp; &nbsp; &nbsp;remote my-server-9 1194
- &nbsp; &nbsp; &nbsp;remote my-server-10 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-1.com 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-2.com 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-3.com 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-4.com 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-5.com 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-6.com 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-7.com 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-8.com 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-9.com 1194
+ &nbsp; &nbsp; &nbsp;remote my-server-10.com 1194
  &nbsp; &nbsp; &nbsp;remote-random #It choose a random config server
  &nbsp; &nbsp; &nbsp;resolv-retry infinite
  &nbsp; &nbsp; &nbsp;nobind
@@ -2495,7 +2648,7 @@ https://github.com/angristan/openvpn-install<br>
  &nbsp; &nbsp; &nbsp;ping-timer-rem
  &nbsp; &nbsp; &nbsp;reneg-sec 0
  &nbsp; &nbsp; &nbsp;comp-lzo no #Enable it if enabled in the server
- &nbsp; &nbsp; &nbsp;verify-x509-name CN=my.vpn.com
+ &nbsp; &nbsp; &nbsp;verify-x509-name CN=my.vpn-1.com
  &nbsp; &nbsp; &nbsp;
  &nbsp; &nbsp; &nbsp;remote-cert-tls server #Protect against MITM see http://openvpn.net/howto.html#mitm
  &nbsp; &nbsp; &nbsp;
@@ -2505,6 +2658,8 @@ https://github.com/angristan/openvpn-install<br>
  &nbsp; &nbsp; &nbsp;fast-io
  &nbsp; &nbsp; &nbsp;cipher AES-256-CBC
  &nbsp; &nbsp; &nbsp;auth SHA512
+ &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp;# OpenVPN KillSwitch
  &nbsp; &nbsp; &nbsp;
  &nbsp; &nbsp; &nbsp;# Note SSL/TLS parms.See the server config
  &nbsp; &nbsp; &nbsp;# file for more description. # It's best
@@ -2526,8 +2681,6 @@ https://github.com/angristan/openvpn-install<br>
  &nbsp; &nbsp; &nbsp;EOF
 </pre>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
-
 <h6>OpenVPN Autologin</h6>
 
 <pre>
@@ -2536,12 +2689,11 @@ https://github.com/angristan/openvpn-install<br>
 &nbsp; &nbsp; # echo 'myuser' > /etc/openvpn/client/auth
 &nbsp; &nbsp; # echo 'mypassword' > /etc/openvpn/client/auth
 &nbsp; &nbsp; # chmod 600 /etc/openvpn/client/auth
-&nbsp; &nbsp; 
 &nbsp; &nbsp; • Load daemon
 &nbsp; &nbsp; $ sudo openvpn --config /etc/openvpn/client.conf --daemon
 </pre>
 
-<p>***Echo, review security leak***</p>
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <h6>OpenVPN KillSwitch</h6>
 
@@ -2555,9 +2707,17 @@ https://github.com/angristan/openvpn-install<br>
 </pre>
 
 <pre>
+# cd /etc/openvpn/client
+script-security 2
+up /etc/openvpn/update-resolv-conf
+down /etc/openvpn/update-resolv-conf
+</pre>
+
+
+<pre>
 &nbsp; &nbsp; • OpenVPN on Linux uses .conf for config files instead of .ovpn,
 &nbsp; &nbsp;   so rename them accordingly.You could simply substitute it in the
-&nbsp; &nbsp;   appropriate file name, copy that file to the name vpn.conf:
+&nbsp; &nbsp;   appropriate file name, copy VPN connection 1that file to the name vpn.conf:
 &nbsp; &nbsp; $ sudo cp us-miami.ovpn /etc/openvpn/client/client.conf
 &nbsp; &nbsp; • Alternatively
 &nbsp; &nbsp; $ sudo rename 's/ovpn/conf/' openvpn/*.ovpn
@@ -2565,20 +2725,49 @@ https://github.com/angristan/openvpn-install<br>
 
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
-<em>Is this correct?</em>
+<h6>Import OVPN to NetworkManager (CLI)</h6>
+
+<code> $ sudo apt install network-manager</code>
+
 <pre>
 &nbsp; Commands
-&nbsp; &nbsp; $ sudo apt install openresolv
-&nbsp; &nbsp; $ sudo openvpn --config config.ovpn --up /etc/openvpn/update-resolv-conf --down /etc/openvpn/update-resolv-conf --script-security 2
+&nbsp; &nbsp; $ sudo nmcli connection import type openvpn file /etc/openvpn/client/your.ovpn
+&nbsp; &nbsp; $ nmcli connection show
+&nbsp; &nbsp; $ nmcli connection up myopvnname
+&nbsp; &nbsp; $ nmcli connection show 
+&nbsp; &nbsp; $ ip route
+&nbsp; &nbsp; $ nmcli connection edit type wifi
+&nbsp; &nbsp; $ nmcli c edit type vpn
+&nbsp; &nbsp; $ nmcli c up wificonnectionname
+&nbsp; &nbsp; $ nmcli c show wificonnectionname
+&nbsp; &nbsp; $ nmcli connection show
+&nbsp; &nbsp; $ nmcli connection reload
+&nbsp; &nbsp; $ sudo service openvpn restart
+&nbsp; &nbsp; $ sudo service NetworkManager restart
+&nbsp; &nbsp; $ sudo systemctl status NetworkManager 
 </pre>
+
+<pre>
+&nbsp; Config files
+&nbsp; &nbsp; $ sudo ls /etc/NetworkManager/
+&nbsp; &nbsp; $ sudo ls /etc/NetworkManager/system-connections/
+&nbsp; &nbsp; $ sudo nano /etc/NetworkManager/NetworkManager.conf/mywifiname<br>
+&nbsp; &nbsp; $ sudo nano /etc/NetworkManager/NetworkManager.conf<br>
+</pre>
+
 
 <h6>Enable OpenVPN at boot</h6>
 
 <pre>
 &nbsp; Commands
+&nbsp; &nbsp; • At boot, by default config is enabled
+&nbsp; &nbsp; $ sudo ls /etc/openvpn/client
 &nbsp; &nbsp; • Enable the service by calling 
-&nbsp; &nbsp; $ sudo systemctl enable openvpn-client@openvpn
+&nbsp; &nbsp; $ sudo systemctl start openvpn-client@client
+&nbsp; &nbsp; $ sudo systemctl enable openvpn-client@client
 &nbsp; &nbsp; $ sudo cat /etc/default/openvpn
+&nbsp; &nbsp; $ sudo service openvpn restart
+&nbsp; &nbsp; $ sudo systemctl daemon-reload #to enable new vpns
 &nbsp; &nbsp; $ sudo reboot
 </pre>
 
@@ -2589,10 +2778,10 @@ https://github.com/angristan/openvpn-install<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
-<summary><b>5.06 WireGuard</b></summary>
+<summary><b>5.07 WireGuard</b></summary>
 <br>
 
 <h4>∙ WireGuard</h4>
@@ -2606,10 +2795,10 @@ https://wiki.ubuntuusers.de/WireGuard<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
-<summary><b>5.07 strongSwan</b></summary>
+<summary><b>5.08 strongSwan</b></summary>
 <br>
 
 <h4>strongSwan</h4>
@@ -2621,10 +2810,10 @@ https://github.com/strongswan/strongswan<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
-<summary><b>5.08 Firewall + VPN</b></summary>
+<summary><b>5.09 Firewall + VPN</b></summary>
 <br>
 
 <h4>∙ Firewall (UFW) + VPN (OpenVPN)</h4>
@@ -2685,10 +2874,10 @@ https://github.com/strongswan/strongswan<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
-<summary><b>5.09 Leak Test</b></summary>
+<summary><b>5.10 Leak Test</b></summary>
 <br>
 
 <h4>Leak Test</h4>
@@ -2703,10 +2892,10 @@ https://github.com/strongswan/strongswan<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
-<summary><b>5.10 Spoofing</b></summary>
+<summary><b>5.11 Spoofing</b></summary>
 <br>
 
 https://github.com/alobbs/macchanger<br>
@@ -2738,10 +2927,10 @@ https://github.com/0xsirus/tirdad<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
-<summary><b>5.11 Others</b></summary>
+<summary><b>5.12 Others</b></summary>
 <br>
 
 <h4>• Torrenting</h4>
@@ -2810,7 +2999,7 @@ https://keepassxc.org/docs/<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>6.02 Browsers</b></summary>
@@ -2874,7 +3063,7 @@ https://avoidthehack.com/util/browser-comparison<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>6.03 Cloud Services</b></summary>
@@ -2947,7 +3136,7 @@ https://github.com/rclone/rclone<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>6.04 File Host</b></summary>
@@ -3018,7 +3207,7 @@ https://bitwarden.com/products/send<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>6.05 Office</b></summary>
@@ -3284,7 +3473,7 @@ geometry=50%x96%
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>6.06 Email</b></summary>
@@ -3348,7 +3537,7 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>6.07 Encryption</b></summary>
@@ -3446,7 +3635,7 @@ https://www.reddit.com/r/duplicati<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>6.08 Extracting Files</b></summary>
@@ -3596,7 +3785,7 @@ function extract() {
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>6.09 Sanitation</b></summary>
@@ -3701,7 +3890,7 @@ https://wiki.archlinux.org/title/Solid_state_drive<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>6.10 Utilities</b></summary>
@@ -3709,8 +3898,15 @@ https://wiki.archlinux.org/title/Solid_state_drive<br>
 
 <h4>Utilities</h4>
 
+<h4>Set color temperature of display</h4>
 
-<h4>Set color temperature of display according to time of day</h4>
+<h5>Redshift (GUI)</h5>
+
+<code>$ sudo apt install redshift-gtk</code><br>
+
+<!-- ######### -->
+
+<h5>Redshift (CLI)</h5>
 
 <code>$ sudo apt install redshift</code><br>
 
@@ -3723,18 +3919,23 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 <code>$ brightnessctl s 25% && redshift -P -O 4000</code><br>
 <code>$ redshift -l LAT:LONG</code><br>
 
+<!-- ######### -->
 
 <h4>Synchronize files and folders</h4>
 
 <code>$ sudo apt install grsync</code><br>
 
-<h4>Renamers</h4>
+<!-- ######### -->
+
+<h4>Renamers (GUI)</h4>
 
 <h5></h5>
 <code>$ sudo apt install krename</code><br>
 
 <h5></h5>
 <code>$ sudo apt install gprename</code><br>
+
+<!-- ######### -->
 
 <h5>Rename (CLI)</h5>
 <code>$ sudo apt install rename</code><br>
@@ -3747,25 +3948,79 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 &nbsp; &nbsp; $ rename -v 'y/ /\_/' *.pdf
 &nbsp; &nbsp; $ rename -v 'y/ /\_/' ~/Downloads/*
 &nbsp; &nbsp; $ rename -v 'y/ /\_/' ~/Downloads/*.pdf
-&nbsp; &nbsp; • Convert Uppercase to Lowercase Characters
-&nbsp; &nbsp; $ rename -v 'y/A-Z/a-z/' *.PDF
-&nbsp; &nbsp; • Convert Lowercase to Uppercase Characters
-&nbsp; &nbsp; $ rename -v 'y/a-z/A-Z/' *.pdf
+&nbsp; &nbsp; $ rename -v 'y/\n/\_/' ~/Downloads/*.pdf
+&nbsp; &nbsp; $ rename -v 'y/\-/\_/' ~/Downloads/*.pdf
 &nbsp; &nbsp; • Delete a Part of a Filename
 &nbsp; &nbsp; $ rename -v 's/example//' *.pdf
+&nbsp; &nbsp; • Convert Uppercase to Lowercase Characters #bugs
+&nbsp; &nbsp; $ rename -v 'y/A-Z/a-z/' *.PDF 
+&nbsp; &nbsp; • Convert Lowercase to Uppercase Characters #bugs
+&nbsp; &nbsp; $ rename -v 'y/a-z/A-Z/' *.pdf
 </pre>
+
+<pre>
+&#92;n is a symbol for new line
+&#92;t is a symbol for tab
+&#92;r is for 'return'
+</pre>
+
+<p>Note: \n or \t or \r are interpreted inside of &lt;pre&gt; text &lt;&#47;pre&gt; </p>
+
+<h6>Special HTML codes</h6>
+
+<table>
+<thead>
+<tr>
+<th>Char</th>
+<th>Numeric<br>code</th>
+<th>Named<br>code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&nbsp;</td>
+<td>&amp;#09;</td>
+<td>&nbsp;</td>
+<td>horizontal tab</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&amp;#10;</td>
+<td>&nbsp;</td>
+<td>line feed</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&amp;#13;</td>
+<td>&nbsp;</td>
+<td>carriage return / enter</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&amp;#160;</td>
+<td>&amp;nbsp;</td>
+<td>non-breaking space</td>
+</tr>
+</tbody>
+</table>
+
+<!-- ######### -->
 
 <h4>Duplicated files</h4>
 
 <code>$ sudo apt install dupeguru</code><br>
 
-<h4>Disk manager</h4>
+<!-- ######### -->
+
+<h4>Disk managers</h4>
 
 <h5>GParted</h5>
 <code>$ sudo apt install gparted</code><br>
 
 <h5>Disks - Gnome Disk</h5>
 <code>$ sudo apt install gnome-disk-utility</code><br>
+
+<!-- ######### -->
 
 <h4>Disk manager with LVM support</h4>
 
@@ -3777,7 +4032,7 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>6.11 Backup</b></summary>
@@ -3800,13 +4055,13 @@ https://github.com/restic/restic<br>
 
 </h4>Copy files and directories (CLI)</h4>
 
-<h5>∙ Full Backup</h5>
+<h5>∙ "Full" Backup</h5>
 
 <pre>
 $ cp ~/.config/example/ /media/backup
 </pre>
 
-<h5>∙ Incremental Backup</h5>
+<h5>∙ "Incremental" Backup</h5>
 
 <pre>
 $ cp -vur ~/.config/example/ /media/backup
@@ -3907,7 +4162,7 @@ https://clonezilla.org//clonezilla-live-doc.php<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>7.02 IDEs</b></summary>
@@ -3957,7 +4212,7 @@ https://www.reddit.com/r/sublimetext<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>7.03 Git & GitHub</b></summary>
@@ -3971,7 +4226,7 @@ https://www.reddit.com/r/sublimetext<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>7.04 Languages</b></summary>
@@ -3991,7 +4246,7 @@ https://www.reddit.com/r/sublimetext<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>7.05 Others</b></summary>
@@ -4059,7 +4314,7 @@ https://reddit.com/r/sysadmin<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>9.02 Audit Logs</b></summary>
@@ -4092,7 +4347,7 @@ https://reddit.com/r/sysadmin<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>9.03 System Boot</b></summary>
@@ -4100,19 +4355,15 @@ https://reddit.com/r/sysadmin<br>
 
 https://wiki.debian.org/KernelHeaders<br>
 
+<h4>Grub</h4>
+
+<p>The simplest way to display your Grub is to press and hold the <code>shift</code> button while booting.</p>
+
 <h4>System Boot</h4>
 
 <h5>∙ Rescue Mode</h5>
 
 <p>Debian Live in Rescue Mode</p>
-
-<h5>∙ Chroot</h5>
-
-<code>$ sudo</code><br>
-
-<h4>Grub</h4>
-
-<p>The simplest way to display your Grub is to press and hold the <code>shift</code> button while booting.</p>
 
 <h5>∙ rEFInd (GUI)</h5>
 
@@ -4124,11 +4375,14 @@ https://www.rodsbooks.com/refind/getting.html<br>
 
 <code>$ sudo apt install grub-customizer</code><br>
 
+<h4>∙ Restoring grub</h4>
+
+<code>$ sudo cp /usr/share/grub/default/grub /etc/default/grub </code><br>
+<code>$ sudo update-grub</code><br>
+<code>$ sudo apt -f install</code><br>
+
 <h4>∙ Menuentries debug</h4>
 
-<p></p>
-<p></p>
-<p></p>
 <code>$ sudo ls /boot</code><br>
 <code>$ sudo ls -l /vmlinuz</code><br>
 <code>$ sudo ls /boot | grep vmlinuz</code><br>
@@ -4142,6 +4396,10 @@ https://www.rodsbooks.com/refind/getting.html<br>
 <code>$ sudo cat /boot/grub/grub.cfg | grep submenu</code><br>
 <code>$ sudo cat /etc/grub.d</code><br>
 <code>$ sudo cat /etc/grub.d/40_custom</code><br>
+
+<h5>∙ Chroot</h5>
+
+<code>$ sudo</code><br>
 
 <h4>∙ Grub Issues</h4>
 
@@ -4181,7 +4439,7 @@ GRUB_ENABLE_CRYPTODISK=y
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>9.04 Display Manager and Monitors</b></summary>
@@ -4238,11 +4496,10 @@ https://dpi.lv<br>
 <code>$ sudo ls -la /etc/systemd/system/display-manager.service</code><br>
 <code>$ cat /proc/cmdline</code><br>
 
-
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>9.05 Network</b></summary>
@@ -4254,6 +4511,8 @@ https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree
 https://www.intel.com/content/www/us/en/support/articles/000005511/network-and-io/wireless.html<br>
 https://wiki.archlinux.org/title/Power_management#USB_autosuspend<br>
 https://docs.kernel.org/driver-api/usb/power-management.html<br>
+
+<h4>Troubleshooting a network using OSI model, starting from physical to application layer.</h4>
 
 
 <h4>First things first:</h4>
@@ -4267,16 +4526,51 @@ or
 
 <h4>• Network</h4>
 
+PCI vs USB<br>
+
 <h5>∙ Debug WiFi</h5>
 
 <code>$ ip link</code><br>
-<code>$ sudo dmesg | grep iwlwifi</code><br>
+<code>$ nmcli device show</code><br>
+<code>$ nmcli dev wifi</code><br>
+<code>$ ping localhost</code><br>
+<code>$ ping 8.8.8.8</code><br>
+<code>$ traceroute 8.8.8.8</code><br>
+<code>$ sudo ifconfig wlan0</code><br>
+<code>$ sudo iwconfig wlan0</code><br>
+<code>$ sudo dmesg | grep iwl</code><br>
 <code>$ sudo dmesg | grep rtw</code><br>
 <code>$ sudo dmesg | grep ath</code><br>
 <code>$ journalctl -b | grep -i net</code><br>
 
+<p>Power up</p>
 
-<h5>∙ Blocked Hardware</h5>
+<code>$ sudo ifconfig eth0 up</code>
+
+<h5>∙ Debug Hardware</h5>
+
+<code>$ sudo lspci</code><br>
+<code>$ sudo lspci -v -k</code><br>
+<code>$ sudo lspci -v | grep Ethernet</code><br>
+<code>$ sudo lspci -Knn | grep Net -A2</code><br>
+<code>$ sudo lsusb</code><br>
+<code>$ sudo apt install lshw</code><br>
+<code>$ sudo lshw -C network</code><br>
+<code>$ sudo apt install inxi</code><br>
+<code>$ sudo inxi -Fxxz</code><br>
+
+<p>Listing modules</p>
+
+<code>$ sudo lsmod</code><br>
+<code>$ sudo lsmod | grep iwl</code><br>
+<code>$ sudo lsmod | grep rtw</code><br>
+<code>$ sudo lsmod | grep ath</code><br>
+
+<p>Module info</p>
+
+<code>$ sudo modinfo rtw_8723d</code><br>
+
+<h5>∙ Rfkill</h5>
 
 <code>$ sudo apt install rfkill</code><br>
 
@@ -4288,42 +4582,61 @@ or
 
 <h5>∙ Deactivating and Activating WiFi Firmware</h5>
 
-<p>Deactivate</p>
+<p>Deactivating module</p>
 
 <code>$ sudo modprobe -r -v rtw_8723d</code><br>
 <code>$ sudo modprobe -r -v rtw_core</code><br>
 
-<p>Activate</p>
+<p>Activating module</p>
 
 <code>$ sudo modprobe -v rtw_8723d</code><br>
 
-<h5>∙ WiFi Connection</h5>
+<h5>∙ Power and suspend control</h5>
 
-<pre>
-&nbsp; Commands 
-&nbsp; &nbsp; • Connecting WiFi manualy with NM
-&nbsp; &nbsp; $ 
-&nbsp; &nbsp; • 
-&nbsp; &nbsp; $ 
-&nbsp; &nbsp; • 
-&nbsp; &nbsp; $ 
-&nbsp; &nbsp; • 
-&nbsp; &nbsp; $ 
-</pre>
+<code>$ sudo ls /etc/NetworkManager/conf.d</code>
+<code>$ sudo touch /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf</code>
+<code>$ sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf</code>
+<code>$ wifi.powersave = 2</code>
 
-<p>Power up</p>
+or
 
-<code>$ sudo ifconfig eth0 up</code>
+<code>$ sudo sed -i 's/3/2/' /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf</code>
 
+
+Notes:<br>
+pcie_aspm.policy=powersasave<br>
+pcie_aspm.policy=performance<br>
+usbcore<br>
+
+<h5>∙ Wifi stops workin after resume</h5>
+
+<code>$ sudo touch /etc/modprobe.d/50-rtw-core.conf</code><br>
+<code>$ sudo nano /etc/modprobe.d/50-rtw-core.conf</code><br>
+<code>options rtw_core </code><br>
+<code>$ sudo sudo modprobe -rv rtw_9999xy && sudo modprobe -v rtw_6666wz</code><br>
+
+<code>$ sudo </code><br>
+<code>$ sudo </code><br>
+<code>$ sudo </code><br>
 
 <h5>∙ DNS Issues</h5>
 
 <code>$ sudo apt install resolvconf</code><br>
+<code>$ sudo resolvconf -u</code><br>
+<code>nmcli device show wlan0 | grep IP4.DNS</code> </code><br>
+
+<h5>∙ DHCP Issues</h5>
+
+<code>$ sudo apt install tcpdump</code><br>
+
+<code>$ sudo apt install nmap</code><br>
+
+<code>$ sudo apt install wireshark</code><br>
 
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>9.06 USB Devices</b></summary>
@@ -4374,7 +4687,7 @@ Tip: If you are transferring large amounts of data via a problematic USB, use gr
 <code>$ sudo modprobe -v xhci-hcd</code><br>
 <code>$ sudo modprobe -v xhci-pci</code><br>
 
-<p>Power control</p>
+<p>Power and suspend control</p>
 
 <code>$ sudo cat /etc/tlp.conf</code>
 <code>$ grep . /sys/bus/usb/devices/*/power/autosuspend</code><br>
@@ -4478,7 +4791,7 @@ https://github.com/sriemer/fix-linux-mouse<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>9.07 Bluetooth</b></summary>
@@ -4513,7 +4826,7 @@ or
 <code>$ hciconfig -a</code><br>
 <code>$ hciconfig hci0</code><br>
 <code>$ sudo dmesg | grep Bluetooth</code><br>
-<code>$ sudo dmesg | grep iwlwifi</code><br>
+<code>$ sudo dmesg | grep iwl</code><br>
 <code>$ sudo dmesg | grep rtl</code><br>
 <code>$ sudo dmesg | grep ath</code><br>
 
@@ -4553,7 +4866,7 @@ https://github.com/sriemer/fix-linux-mouse<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>9.08 Sound</b></summary>
@@ -4678,7 +4991,7 @@ SOF support for HDAudio codecs (CONFIG_SND_SOC_SOF_HDA_AUDIO_CODEC=y)
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>9.09 Printers</b></summary>
@@ -4710,7 +5023,7 @@ https://epson.com/Support/wa00821<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>9.10 Keyboard</b></summary>
@@ -4741,13 +5054,19 @@ https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
-<summary><b>9.11 Location and Time/Zone</b></summary>
+<summary><b>9.11 Locales and Time </b></summary>
 <br>
 
-<h4>Location and Time/Zone</h4>
+
+<h5>∙ Control the system time and date</h5>
+
+<code>$ timedatectl</code><br>
+<code>$ tzselect</code><br>
+
+<h4>Reconfigure time and date</h4>
 
 <code>$ sudo dpkg-reconfigure tzdata</code><br>
 
@@ -4755,18 +5074,18 @@ https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows<br>
 
 <code>$ sudo apt install ntpdate && ntpdate in.pool.ntp.org && dpkg-reconfigure tzdata</code><br>
 
-<h5>∙ </h5>
+<h5>∙ Coordinated Universal Time - UTC-00:00</h5>
 
 <code>$ </code><br>
 
-<h5>∙ </h5>
+<h5>∙ Greenwich Mean Time - GMT</h5>
 
 <code>$ </code><br>
 
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>9.12 Torrenting</b></summary>
@@ -4817,7 +5136,7 @@ https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>9.13 Disks</b></summary>
@@ -4880,7 +5199,7 @@ https://www.cgsecurity.org/wiki/TestDisk<br>
 <br>
 </details>
 
-<!-- #################### -->
+<!-- ################### -->
 
 <details>
 <summary><b>9.14 Hardware</b></summary>
