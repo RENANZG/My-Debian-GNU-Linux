@@ -882,7 +882,7 @@ https://reproducible-builds.org<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>2.06 Clonezilla</b></summary> 
@@ -967,7 +967,7 @@ https://clonezilla.org//clonezilla-live-doc.php<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>3.02 Secure Boot References</b></summary>
@@ -1024,7 +1024,7 @@ ADVANCED:
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>3.03 YouTube References</b></summary>
@@ -1040,7 +1040,7 @@ ADVANCED:
 <br>
 </details> 
 
-<!-- ################### -->
+<!-- #################### -->
 
 <DIV class="section" id="VERDE">
 
@@ -1055,7 +1055,7 @@ https://wiki.archlinux.org/title/Kernel_parameters
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>3.05 Sign Debian Kernel</b></summary>
@@ -1106,7 +1106,7 @@ $ sudo modinfo /lib/modules/6.1.0-11-amd64/kernel/mm/zsmalloc.ko
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <p>First make sure the key doesn't exist yet:</p>
 
@@ -1211,7 +1211,7 @@ $ sudo apt install dkms
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <DIV class="subsubsection" id="6.2.1">
 <details>
@@ -1243,7 +1243,7 @@ $ KBUILD_DIR=/usr/lib/linux-kbuild-$SHORT_VERSION
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <DIV class="subsubsection" id="6.2.2">
 <details>
@@ -1274,7 +1274,7 @@ $ sudo dmesg | grep cert # verify your key is loaded
 </DIV>
 </DIV>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <DIV class="subsection" id="6.2">
 <details>
@@ -1344,7 +1344,7 @@ $ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-12-amd64
 </DIV>
 </DIV>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>3.06 Reset Secure Boot Keys</b></summary>
@@ -1418,7 +1418,7 @@ $ sudo update-initramfs -k all -u -v
 <br>
 </details> 
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><em><b>3.07 OpenSSL Errors</b></em></summary>
@@ -1569,7 +1569,7 @@ $ sudo dpkg-reconfigure broadcom-sta-dkms
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>3.08 Sign WIFI</b></summary>
@@ -1770,7 +1770,7 @@ $ /sbin/modprobe vboxdrv
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>3.09 Sign NVIDIA</b></summary>
@@ -1824,7 +1824,7 @@ Done.
 <br>
 </details> 
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>3.10 Sign VirtualBox</b></summary>
@@ -1835,7 +1835,7 @@ How to get VirtualBox signed for Secure Boot<br>
 <br>
 </details> 
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>3.11 Sign Ventoy</b></summary>
@@ -1845,7 +1845,7 @@ https://www.ventoy.net/en/doc_secure.html<br>
 <br>
 </details> 
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>3.12 rEFInd Bootloader</b></summary>
@@ -1855,7 +1855,7 @@ https://wiki.ubuntu.com/EFIBootLoaders<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>3.13 Sign Custom Secure Keys</b></summary>
@@ -1865,7 +1865,7 @@ https://github.com/nsacyber/Hardware-and-Firmware-Security-Guidance/blob/master/
 <br>
 </details> 
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>3.14 Encrypted boot</b></summary>
@@ -1879,7 +1879,7 @@ https://github.com/kmille/cryptboot<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>3.15 Sign with TPM 2.0</b></summary>
@@ -1890,7 +1890,7 @@ https://github.com/osresearch/safeboot<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>3.16 Secure Boot with Yubikey</b></summary>
@@ -1929,7 +1929,7 @@ https://wiki.ubuntu.com/DebuggingApparmor<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>4.02 Privileges</b></summary>
@@ -2003,7 +2003,7 @@ $ sudo chmod 766 -R /media
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>4.03 Audit System</b></summary>
@@ -2023,7 +2023,7 @@ $ sudo chmod 766 -R /media
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>4.04 Antimalware</b></summary>
@@ -2063,7 +2063,7 @@ https://www.eset.com/my/home/antivirus-linux/download<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>4.05 Updating</b></summary>
@@ -2155,7 +2155,7 @@ https://avoidthehack.com/router-wireless-guide<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>5.02 Network</b></summary>
@@ -2225,7 +2225,7 @@ https://avoidthehack.com/router-wireless-guide<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>5.03 DNS</b></summary>
@@ -2241,9 +2241,13 @@ https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/co
 https://github.com/jonathanio/update-systemd-resolved<br>
 https://www.freedesktop.org/software/systemd/man/systemd.network.html<br>
 
+<!-- ########## -->
+
 <h5>• The resolvconf program</h5>
 
 https://salsa.debian.org/debian/resolvconf<br>
+
+<!-- ########## -->
 
 <h5>• The openresolv program</h5>
 
@@ -2251,20 +2255,26 @@ https://salsa.debian.org/debian/resolvconf<br>
 
 https://roy.marples.name/projects/openresolv<br>
 
+<!-- ########## -->
+
 <h5>• The systemd-resolved service</h5>
 
 https://wiki.archlinux.org/title/Systemd-resolved<br>
 https://www.freedesktop.org/software/systemd/man/latest/systemd-resolved.service.html<br>
 
+<!-- ########## -->
+
 <h5>• Avahi</h5>
 
 https://wiki.debian.org/Avahi<br>
 
-<!-- ################### -->
+<!-- ########## -->
 
 <h4>Solving DNS problems with OpenVPN</h4>
 
 https://openvpn.net/vpn-server-resources/troubleshooting-dns-resolution-problems<br>
+
+<!-- ########## -->
 
 <h5>OpenVPN DNS</h5>
 
@@ -2272,10 +2282,10 @@ https://openvpn.net/vpn-server-resources/troubleshooting-dns-resolution-problems
 
 <code>$ sudo apt install resolvconf</code><br>
 
+<p>* Consider 
+<code>$ sudo apt install openvpn-systemd-resolved</code><br></p>
 
-<pre>
-$ sudo nano /etc/openvpn/update-resolv-conf
-</pre>
+<code>$ sudo nano /etc/openvpn/update-resolv-conf</code>
 
 <pre>
 $ sudo mv /etc/resolv.conf /etc/resolv.conf.bak
@@ -2295,6 +2305,29 @@ down /etc/openvpn/update-resolv-conf
 $ openvpn --script-security 2 --config youropenvpnconfig.ovpn
 </pre>
 
+<!-- ########## -->
+
+<h5>Disabling OpenVPN's client DNS</h5>
+
+<code>$ sudo nano /etc/openvpn/client/client.conf</code>
+
+<pre>
+#Actual DNS name
+dhcp-option DNS 10.10.10.10
+</pre>
+
+<p>Take care with DNS leaks</p>
+
+<pre>
+#IPV4
+pull-filter ignore "dhcp-option DNS"
+
+#IPV6
+pull-filter ignore "dhcp-option DNS6"
+</pre>
+
+<!-- ########## -->
+
 <h5>Disabling NetworkManager's own dnsmasq</h5>
 
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
@@ -2307,6 +2340,8 @@ $ sudo nano /etc/NetworkManager/NetworkManager.conf
 $ sudo restart network-manager
 </pre>
 
+<!-- ########## -->
+
 <h5>NetworkManager dnsmasq (CLI)</h5>
 
 <p>DNS requests are directed to VPN-supplied DNS servers without any manipulations with dnsmasq, up/down/dispatch helper scripts.</p>
@@ -2317,12 +2352,9 @@ nmcli -p connection modify MY_VPN_CONNECTION ipv4.ignore-auto-dns no
 nmcli -p connection modify MY_VPN_CONNECTION ipv4.dns-priority -42
 </pre>
 
-<p>*Using OpenVPN through NetworkManager (GUI) allows users to disable (turn Off) the connection.</p>
+<p>*Using OpenVPN through NetworkManager (GUI) allows users to disable the connection.</p>
 
-<p>* Consider <code>$ sudo apt install openvpn-systemd-resolved</code><br></p>p>
-
-
-<!-- ################### -->
+<!-- #################### -->
 
 <h4>Pi-hole ®</h4>
 
@@ -2334,7 +2366,7 @@ https://docs.pi-hole.net<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>5.04 Firewall</b></summary>
@@ -2344,12 +2376,16 @@ https://docs.pi-hole.net<br>
 
 <p>Note that these commands show ports that are in a listening state, but that doesn’t necessarily mean that the ports are open to the internet, because our firewall may be denying connections.</p>
 
+<!-- ########## -->
+
 <h4>• GUFW (GUI)</h4>
 
 https://gufw.org<br>
 https://help.ubuntu.com/community/Gufw<br>
 
 <code>$ sudo apt install gufw</code>
+
+<!-- ########## -->
 
 <h4>• UFW (CLI)</h4>
 
@@ -2392,6 +2428,8 @@ https://pypi.org/project/openpyn<br>
 &nbsp; &nbsp; $ sudo reboot
 </pre>
 
+<!-- ########## -->
+
 <h5>∙ Advanced</h5>
 
 • R-fx Networks Projects - https://www.rfxn.com<br>
@@ -2404,34 +2442,46 @@ https://pypi.org/project/openpyn<br>
 &nbsp; Commands, some advanced commands
 &nbsp; &nbsp; • Show which ports are listening for connections
 &nbsp; &nbsp; $ ss -tlnp
+
 &nbsp; &nbsp; • Check for open ports with nmap
 &nbsp; &nbsp; $ sudo apt install nmap
 &nbsp; &nbsp; $ sudo nmap localhost
+
 &nbsp; &nbsp; • Find the name and IP address of your tunnel
 &nbsp; &nbsp; $ ip -o addr | cut -d'\' -f 1
+
 &nbsp; &nbsp; • Handling DNS queries
+&nbsp; &nbsp; $ apt install tcpdump
 &nbsp; &nbsp; $ sudo tcpdump -eni any port 53
 &nbsp; &nbsp; $ sudo tcpdump -eni any port 53 and host 172.27.10.22
 &nbsp; &nbsp; $ sudo tcpdump -n -i tun0 udp port 53
+
 &nbsp; &nbsp; • Show Iptables rules
 &nbsp; &nbsp; $ sudo iptables -L --line-numbers
+
 &nbsp; &nbsp; • Open TCP SSH PORT for VPN IP only
 &nbsp; &nbsp; $ sudo ufw allow from 1.2.3.4 to any port 22 proto tcp comment 'Open TCP SSH PORT for VPN IP only'
+
 &nbsp; &nbsp; • Open TCP Torrent PORT for VPN IP only
 &nbsp; &nbsp; $ sudo ufw allow in on tun0 from 10.8.0.0/16 to any port 60000 proto tcp comment 'Open TCP Torrent PORT for VPN IP only'
 &nbsp; &nbsp; • Port Forwarding to router 
 &nbsp; &nbsp; $ sudo iptables -A INPUT -m state --state RELATED,ESTABLISHED -p udp --dport 51413 -j ACCEPT
+
 &nbsp; &nbsp; • For uploading torrent
 &nbsp; &nbsp; $ sudo iptables -A OUTPUT -p udp --sport 51413 -j ACCEPT
 &nbsp; &nbsp; $ sudo ufw allow 51413/udp
 &nbsp; &nbsp; $ sudo iptables -L --line-numbers
+
 &nbsp; &nbsp; • Reset UFW
 &nbsp; &nbsp; $ sudo ufw reset
+
 &nbsp; &nbsp; • Troubles
 &nbsp; &nbsp; $ sudo apt purge iptables-persistent
 </pre>
 
-<p>Custom application profile</p>
+<!-- ########## -->
+
+<h5>∙ Custom application profile</h5>
 
 <pre>
 &nbsp; Commands
@@ -2462,7 +2512,9 @@ https://pypi.org/project/openpyn<br>
 &nbsp; &nbsp; $ sudo ufw status numbered | grep CustomApp
 </pre>
 
-<p>Configure NAT with UFW</p>
+<!-- ########## -->
+
+<h5>∙ Configure NAT with UFW</h5>
 
 <pre>
 &nbsp; Commands
@@ -2490,15 +2542,17 @@ https://pypi.org/project/openpyn<br>
 &nbsp; &nbsp; $ sudo ufw enable
 </pre>
 
-<p>Configure Port Forwarding with UFW</p>
+<!-- ########## -->
+
+<h5>∙ Configure Port Forwarding with UFW</h5>
 
 <pre>
 &nbsp; Commands
 &nbsp; &nbsp; $ sudo nano /etc/default/before.rules
 &nbsp; &nbsp;
 &nbsp; &nbsp; &nbsp; :PREROUTING ACCEPT [0:0] 
-&nbsp; &nbsp; &nbsp; -A PREROUTING -i eth0 -d 150.129.148.155   -p tcp --dport 80 -j  DNAT --to-destination 192.168.1.120:80 
-&nbsp; &nbsp; &nbsp; -A PREROUTING -i eth0 -d 150.129.148.155   -p tcp --dport 443 -j  DNAT --to-destination 192.168.1.120:443 
+&nbsp; &nbsp; &nbsp; -A PREROUTING -i eth0 -d 150.129.148.155 -p tcp --dport 80 -j DNAT --to-destination 192.168.1.120:80 
+&nbsp; &nbsp; &nbsp; -A PREROUTING -i eth0 -d 150.129.148.155 -p tcp --dport 443 -j DNAT --to-destination 192.168.1.120:443 
 &nbsp; &nbsp; &nbsp; -A POSTROUTING -s 192.168.1.0/24 ! -d 192.168.1.0/24 -j MASQUERADE 
 &nbsp; &nbsp;
 &nbsp; &nbsp; $ sudo ufw disable
@@ -2510,7 +2564,7 @@ https://pypi.org/project/openpyn<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>5.05 VPN</b></summary>
@@ -2541,7 +2595,7 @@ https://pypi.org/project/openpyn<br>
 ∙ privacytools.io - https://www.privacytools.io<br>
 ∙ VPN over SSH - https://wiki.archlinux.org/index.php/VPN_over_SSH<br>
 
-<h4>Creating your own VPN with VPS</h4>
+<h4>• Creating your own VPN with VPS</h4>
 
 <p></p>
 
@@ -2554,7 +2608,7 @@ https://pypi.org/project/openpyn<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 
 <details>
@@ -2762,6 +2816,7 @@ down /etc/openvpn/update-resolv-conf
 &nbsp; Commands
 &nbsp; &nbsp; • At boot, by default config is enabled
 &nbsp; &nbsp; $ sudo ls /etc/openvpn/client
+
 &nbsp; &nbsp; • Enable the service by calling 
 &nbsp; &nbsp; $ sudo systemctl start openvpn-client@client
 &nbsp; &nbsp; $ sudo systemctl enable openvpn-client@client
@@ -2778,7 +2833,7 @@ down /etc/openvpn/update-resolv-conf
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>5.07 WireGuard</b></summary>
@@ -2795,7 +2850,7 @@ https://wiki.ubuntuusers.de/WireGuard<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>5.08 strongSwan</b></summary>
@@ -2810,7 +2865,7 @@ https://github.com/strongswan/strongswan<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>5.09 Firewall + VPN</b></summary>
@@ -2823,21 +2878,27 @@ https://github.com/strongswan/strongswan<br>
 &nbsp; &nbsp; • You could add specifically rules for each port separately on tun0 (VPN tunnel interface)
 &nbsp; &nbsp; $ sudo ufw allow in on tun0 to any port 60000 proto tcp
 &nbsp; &nbsp; $ sudo ufw allow in on tun0 to any port 60000 proto udp
+
 &nbsp; &nbsp; • You could test to connect in and out to anywhere on tun0
 &nbsp; &nbsp; $ sudo ufw allow in on tun0
 &nbsp; &nbsp; $ sudo ufw allow out on tun0
+
 &nbsp; &nbsp; • To allow access only from a specific address you could use
 &nbsp; &nbsp; $ sudo ufw allow in on tun0 from 192.168.0.1 to any port 60000 proto tcp
+
 &nbsp; &nbsp; • Allow OpenVPN to connect to the regular network interface (e.g. eth0, wlan0...)
 &nbsp; &nbsp;   through the ports present in the .opvn file (e.g.DNS resolution on
 &nbsp; &nbsp;   port 53 and VPN server on 1198...)
 &nbsp; &nbsp; $ sudo ufw allow out on eth0 from any to any port 53,1198
+
 &nbsp; &nbsp; • Consider this tcp or udp rules
 &nbsp; &nbsp; $ sudo ufw allow out on eth0 to any port 53,1197 proto tcp
 &nbsp; &nbsp; $ sudo ufw allow out on eth0 to any port 53,1197 proto udp
+
 &nbsp; &nbsp; • For a hard policy, working only with tun0, you could block the rest and enable the firewall
 &nbsp; &nbsp; $ sudo ufw deny in on eth0
 &nbsp; &nbsp; $ sudo ufw deny out on eth0
+
 &nbsp; &nbsp; • For a hard policy, you could block the rest and enable the firewall
 &nbsp; &nbsp; $ sudo ufw status numbered 
 &nbsp; &nbsp; $ sudo ufw enable
@@ -2845,11 +2906,11 @@ https://github.com/strongswan/strongswan<br>
 &nbsp; &nbsp; $ sudo reboot
 </pre>
 
-
 <pre>
 &nbsp; Commands to secure the server with iptables
 &nbsp; &nbsp; • Allow everything from within your VPN¶
 &nbsp; &nbsp; $ sudo iptables -I INPUT -i tun0 -j ACCEPT
+
 &nbsp; &nbsp; • Explicitly allow what can be accessed within the VPN, for example, allow DNS and HTTP
 &nbsp; &nbsp; $ sudo iptables -A INPUT -i tun0 -p tcp --destination-port 53 -j ACCEPT
 &nbsp; &nbsp; $ sudo iptables -A INPUT -i tun0 -p udp --destination-port 53 -j ACCEPT
@@ -2859,12 +2920,16 @@ https://github.com/strongswan/strongswan<br>
 &nbsp; &nbsp; $ sudo iptables -A INPUT -p tcp --destination-port 22 -j ACCEPT
 &nbsp; &nbsp; $ sudo iptables -A INPUT -p tcp --destination-port 1194 -j ACCEPT
 &nbsp; &nbsp; $ sudo iptables -A INPUT -p udp --destination-port 1194 -j ACCEPT
+
 &nbsp; &nbsp; • To explicitly allow TCP/IP to do "three-way handshakes"
 &nbsp; &nbsp; $ sudo iptables -I INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+
 &nbsp; &nbsp; • To allow any loopback traffic, the server is allowed to talk to itself 
 &nbsp; &nbsp; $ sudo iptables -I INPUT -i lo -j ACCEPT
+
 &nbsp; &nbsp; • To reject access from anywhere else 
 &nbsp; &nbsp; $ sudo iptables -P INPUT DROP
+
 &nbsp; &nbsp; • To list rules
 &nbsp; &nbsp; $ sudo iptables -L --line-numbers
 </pre>
@@ -2874,7 +2939,7 @@ https://github.com/strongswan/strongswan<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>5.10 Leak Test</b></summary>
@@ -2892,7 +2957,7 @@ https://github.com/strongswan/strongswan<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>5.11 Spoofing</b></summary>
@@ -2927,7 +2992,7 @@ https://github.com/0xsirus/tirdad<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>5.12 Others</b></summary>
@@ -2999,7 +3064,7 @@ https://keepassxc.org/docs/<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>6.02 Browsers</b></summary>
@@ -3063,7 +3128,7 @@ https://avoidthehack.com/util/browser-comparison<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>6.03 Cloud Services</b></summary>
@@ -3136,7 +3201,7 @@ https://github.com/rclone/rclone<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>6.04 File Host</b></summary>
@@ -3207,7 +3272,7 @@ https://bitwarden.com/products/send<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>6.05 Office</b></summary>
@@ -3472,7 +3537,7 @@ geometry=50%x96%
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>6.06 Email</b></summary>
@@ -3536,7 +3601,7 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>6.07 Encryption</b></summary>
@@ -3634,7 +3699,7 @@ https://www.reddit.com/r/duplicati<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>6.08 Extracting Files</b></summary>
@@ -3784,7 +3849,7 @@ function extract() {
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>6.09 Sanitation</b></summary>
@@ -3889,7 +3954,7 @@ https://wiki.archlinux.org/title/Solid_state_drive<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>6.10 Utilities</b></summary>
@@ -4031,7 +4096,7 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>6.11 Backup</b></summary>
@@ -4161,7 +4226,7 @@ https://clonezilla.org//clonezilla-live-doc.php<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>7.02 IDEs</b></summary>
@@ -4211,7 +4276,7 @@ https://www.reddit.com/r/sublimetext<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>7.03 Git & GitHub</b></summary>
@@ -4225,7 +4290,7 @@ https://www.reddit.com/r/sublimetext<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>7.04 Languages</b></summary>
@@ -4245,7 +4310,7 @@ https://www.reddit.com/r/sublimetext<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>7.05 Others</b></summary>
@@ -4313,7 +4378,7 @@ https://reddit.com/r/sysadmin<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>9.02 Audit Logs</b></summary>
@@ -4346,7 +4411,7 @@ https://reddit.com/r/sysadmin<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>9.03 System Boot</b></summary>
@@ -4438,7 +4503,7 @@ GRUB_ENABLE_CRYPTODISK=y
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>9.04 Display Manager and Monitors</b></summary>
@@ -4498,7 +4563,7 @@ https://dpi.lv<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>9.05 Network</b></summary>
@@ -4635,7 +4700,7 @@ usbcore<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>9.06 USB Devices</b></summary>
@@ -4790,7 +4855,7 @@ https://github.com/sriemer/fix-linux-mouse<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>9.07 Bluetooth</b></summary>
@@ -4865,7 +4930,7 @@ https://github.com/sriemer/fix-linux-mouse<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>9.08 Sound</b></summary>
@@ -4990,7 +5055,7 @@ SOF support for HDAudio codecs (CONFIG_SND_SOC_SOF_HDA_AUDIO_CODEC=y)
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>9.09 Printers</b></summary>
@@ -5022,7 +5087,7 @@ https://epson.com/Support/wa00821<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>9.10 Keyboard</b></summary>
@@ -5053,7 +5118,7 @@ https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>9.11 Locales and Time </b></summary>
@@ -5084,7 +5149,7 @@ https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>9.12 Torrenting</b></summary>
@@ -5135,7 +5200,7 @@ https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>9.13 Disks</b></summary>
@@ -5198,7 +5263,7 @@ https://www.cgsecurity.org/wiki/TestDisk<br>
 <br>
 </details>
 
-<!-- ################### -->
+<!-- #################### -->
 
 <details>
 <summary><b>9.14 Hardware</b></summary>
