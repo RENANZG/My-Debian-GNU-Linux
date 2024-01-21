@@ -6,11 +6,17 @@
 
 <p> "Fork" - Forks copy of git repo to our account (performed by clicking fork on main project)</p>
 
-<h4>Git workflow</h4>
+<hr>
+<!--################################### -->
+
+<h3>Git workflow</h3>
 
 <img src="7.DEVELOPMENT/7.1_Setup/4.02_VCS_-_Version_Control_Systems/git_workflow.png" title="Workflow">
 
-<h4>Git command line</h4>
+<hr>
+<!--################################### -->
+
+<h3>Git command line</h3>
 
 <table>
 <tr>
@@ -114,6 +120,9 @@ git -C <repo_location> pull
 </tr>
 </table>
 
+<hr>
+<!--################################### -->
+
 <h3>Basic configuration for new Git repository</h3>
 
 <p>Set user name and e-mail address (required to do 'commit')</p>
@@ -210,4 +219,22 @@ Your local and remote <code>main</code> branches forked from <code>upstream</cod
 
 <p><a href="https://timonweb.com/misc/how-to-update-a-forked-repo-from-an-upstream-with-git-rebase-or-merge/">Reference: https://timonweb.com/misc/how-to-update-a-forked-repo-from-an-upstream-with-git-rebase-or-merge/</a></p>
 
+<hr>
+<!--################################### -->
+
+<h3>Github - Setting up ignore file</h3>
+
+<h4>Ignore all .DS_store files:</h4>
+
+<p>Create global git ignore file</p>
+
+<pre>
+echo .DS_Store >> ~/.gitignore_global
+</pre>
+
+<p>Set global git ignore file</p>
+
+<pre>
+git config --global core.excludesfile ~/.gitignore_global
+</pre>
 

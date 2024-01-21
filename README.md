@@ -93,8 +93,8 @@
 <td><a href="https://clonezilla.org/downloads.php" target="_blank">(Secure Boot)</a></td>
 <td><a href="https://clonezilla.org/downloads.php" target="_blank">(Checksums)</a></td>
 <td><a href="https://gnupg.org/software/tools.html" target="_blank"><b>8. GnuPG</b></a></td>
-<td><a href="https://github.com/OpenPGP/openpgp.org" target="_blank">(GitHub)</a></td>
-<td><a href="https://keys.openpgp.org/" target="_blank">(Check)</a></td>
+<td><a href="https://gnupg.org/documentation/index.html" target="_blank">(Guides)</a></td>
+<td><a href="https://gnupg.org/documentation/guides.html" target="_blank">(Check)</a></td>
 </tr>
 <tr>
 <td><a href="https://gparted.org/livecd.php" target="_blank"><b>4. GParted</b></a></td>
@@ -3547,10 +3547,12 @@ geometry=50%x96%
 
 <h4>6.05.01 Encrypted Emails</h4>
 
-https://riseup.net/en/security/message-security/openpgp/best-practices<br>
+https://emailselfdefense.fsf.org/en/<br>
+https://emailselfdefense.fsf.org/en/workshops.html<br>
+https://riseup.net/en/s
+urity/message-security/openpgp/best-practices<br>
 https://riseup.net/en/security/message-security/openpgp/enigmail<br>
 https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird<br>
-https://emailselfdefense.fsf.org/en/workshops.html<br>
 https://wiki.archlinux.org/title/Paperkey<br>
 https://keys.openpgp.org/about/usage<br>
 https://efail.de<br>
