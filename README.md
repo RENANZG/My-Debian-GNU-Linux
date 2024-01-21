@@ -4454,6 +4454,25 @@ https://clonezilla.org//clonezilla-live-doc.php<br>
 <br>
 </details>
 
+
+<!-- #################### -->
+
+<details>
+<summary><b>6.12 Tips</b></summary>
+<br>
+
+<code>$ sudo apt install tree</code>
+
+<pre>
+• List directories only
+$ tree -d
+• Control the depth of the tree  
+$ tree -d -L 2 .
+</pre>
+
+<br>
+</details>
+
 <hr>
 <!--################################### -->
 
