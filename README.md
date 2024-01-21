@@ -13,7 +13,7 @@
 
 <blockquote><h3>"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately endpoint security is so terrifically weak that NSA can frequently find ways around it." (Edward Snowden)</h3></blockquote>
 
-<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/.data/la_clef_des_champs_1936_-_rene_magritte_830px.png" title="La Clef Des Champs (1936) - René Magritte"/></p>
+<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/c9013f13-fbc8-4195-adad-58f88c695d4d" title="La Clef Des Champs (1936) - René Magritte"/></p>
 
 </div>
 
