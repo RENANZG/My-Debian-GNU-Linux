@@ -3,7 +3,7 @@
 just an example
 
 
-This iptables rules may be not secure for your network, but for me is just ok :) use it if you wish
+This iptables rules may be not secure for your network
 
     touch /etc/fwrules.sh
     chmod +x /etc/fwrules.sh

@@ -2300,7 +2300,7 @@ down /etc/openvpn/update-resolv-conf
 <p>Your could run openvpn with killswitch</p>
 
 <pre>
-$ openvpn --script-security 2 --config youropenvpnconfig.ovpn
+$ openvpn --script-security 2 --config cc00-myvpn.com_tcp.ovpn
 </pre>
 
 <!-- ########## -->
@@ -2315,6 +2315,9 @@ dhcp-option DNS 10.10.10.10
 </pre>
 
 <p>Take care with DNS leaks</p>
+
+<code>curl ipleak.net/json/</code><br>
+<code>curl ipinfo.io</code><br>
 
 <pre>
 #IPV4
@@ -2360,6 +2363,7 @@ nmcli -p connection modify MY_VPN_CONNECTION ipv4.dns-priority -42
 
 https://pi-hole.net<br>
 https://docs.pi-hole.net<br>
+https://www.reddit.com/r/pihole<br>
 
 <br>
 </details>
@@ -2620,7 +2624,7 @@ https://github.com/OpenVPN/openvpn/tree/master/sample/sample-config-files<br>
 https://wiki.archlinux.org/index.php/OpenVPN<br>
 https://wiki.archlinux.org/index.php/OpenVPN#DNS<br>
 
-<h4>Installing OpenVPN (GUI)</h4>
+<h4>Installing OpenVPN with NetworkManager (GUI)</h4>
 
 <pre>
 &nbsp; Commands GUI
@@ -2628,160 +2632,11 @@ https://wiki.archlinux.org/index.php/OpenVPN#DNS<br>
 &nbsp; &nbsp; $ sudo apt install network-manager-openvpn-gnome
 </pre>
 
-<h4>Installing OpenVPN (CLI)</h4>
+<p>Import OVPN to NetworkManager (CLI)</p>
 
 <pre>
-&nbsp; Commands CLI
-&nbsp; &nbsp; $ sudo apt install -y resolvconf
-&nbsp; &nbsp; $ sudo systemctl enable --now resolvconf.service
-&nbsp; &nbsp; $ sudo apt install openvpn
-&nbsp; &nbsp; $ sudo wget https://www.openvpnprovider.com/openvpn/openvpn.zip
-&nbsp; &nbsp; $ sudo unzip openvpn.zip
-&nbsp; &nbsp; $ sudo rm openvpn.zip
-&nbsp; &nbsp; $ cd /etc/openvpn
-&nbsp; &nbsp; • You could check:
-&nbsp; &nbsp; $ sudo ls
-</pre>
-
-<h6>Basic OpenVPN Connection</h6>
-
-<pre>VPN connection 1
-&nbsp; &nbsp; • Basic connection, provide the username and password
-&nbsp; &nbsp; $ sudo openvpn us-myvpn.com_tcp.ovpn
-&nbsp; &nbsp; • You can save a username and password in a file
-&nbsp; &nbsp; $ sudo openvpn --config yourvpn.com_tcp.ovpn --auth-user-pass /home/user/auth
-(...)
-Initialization Sequence Completed
-</pre>
-
-<p>Your could run openvpn with killswitch</p>
-
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
-
-<pre>
-$ openvpn --script-security 2 --config yourvpn.com_tcp.ovpn
-$ sudo openvpn --config config.ovpn --up /etc/openvpn/update-resolv-conf --down /etc/openvpn/update-resolv-conf --script-security 2
-</pre>
-
-<h6>OpenVPN Random Server and Autologin</h6>
-
-https://openvpn.net/community-resources/how-to/#auth<br>
-
-<pre>
-&nbsp; &nbsp; • You could use the client.conf below to random access
-&nbsp; &nbsp; multiple opvn files and auto login with auth configuration:
-&nbsp; &nbsp; $ sudo cd /etc/openvpn/client/
-&nbsp; &nbsp; $ sudo cat << EOF > client.conf
- &nbsp; &nbsp; &nbsp;client
- &nbsp; &nbsp; &nbsp;dev tun
- &nbsp; &nbsp; &nbsp;proto tcp #It's TCP or UDP server?
- &nbsp; &nbsp; &nbsp;remote my-server-1.com 1194
- &nbsp; &nbsp; &nbsp;remote my-server-2.com 1194
- &nbsp; &nbsp; &nbsp;remote my-server-3.com 1194
- &nbsp; &nbsp; &nbsp;remote my-server-4.com 1194
- &nbsp; &nbsp; &nbsp;remote my-server-5.com 1194
- &nbsp; &nbsp; &nbsp;remote my-server-6.com 1194
- &nbsp; &nbsp; &nbsp;remote my-server-7.com 1194
- &nbsp; &nbsp; &nbsp;remote my-server-8.com 1194
- &nbsp; &nbsp; &nbsp;remote my-server-9.com 1194
- &nbsp; &nbsp; &nbsp;remote my-server-10.com 1194
- &nbsp; &nbsp; &nbsp;remote-random #It choose a random config server
- &nbsp; &nbsp; &nbsp;resolv-retry infinite
- &nbsp; &nbsp; &nbsp;nobind
- &nbsp; &nbsp; &nbsp;tun-mtu 1500
- &nbsp; &nbsp; &nbsp;tun-mtu-extra 32
- &nbsp; &nbsp; &nbsp;mssfix 1450
- &nbsp; &nbsp; &nbsp;persist-key
- &nbsp; &nbsp; &nbsp;persist-tun
- &nbsp; &nbsp; &nbsp;ping 15
- &nbsp; &nbsp; &nbsp;ping-restart 0
- &nbsp; &nbsp; &nbsp;ping-timer-rem
- &nbsp; &nbsp; &nbsp;reneg-sec 0
- &nbsp; &nbsp; &nbsp;comp-lzo no #Enable it if enabled in the server
- &nbsp; &nbsp; &nbsp;verify-x509-name CN=my.vpn-1.com
- &nbsp; &nbsp; &nbsp;
- &nbsp; &nbsp; &nbsp;remote-cert-tls server #Protect against MITM see http://openvpn.net/howto.html#mitm
- &nbsp; &nbsp; &nbsp;
- &nbsp; &nbsp; &nbsp;auth-user-pass /etc/openvpn/client/auth #Your autologin config
- &nbsp; &nbsp; &nbsp;verb 3
- &nbsp; &nbsp; &nbsp;pull
- &nbsp; &nbsp; &nbsp;fast-io
- &nbsp; &nbsp; &nbsp;cipher AES-256-CBC
- &nbsp; &nbsp; &nbsp;auth SHA512
- &nbsp; &nbsp; &nbsp;
- &nbsp; &nbsp; &nbsp;# OpenVPN KillSwitch
- &nbsp; &nbsp; &nbsp;
- &nbsp; &nbsp; &nbsp;# Note SSL/TLS parms.See the server config
- &nbsp; &nbsp; &nbsp;# file for more description. # It's best
- &nbsp; &nbsp; &nbsp;# to use # a separate .crt/.key file pair
- &nbsp; &nbsp; &nbsp;# for each client. A single ca file can
- &nbsp; &nbsp; &nbsp;# be used for all clients.
- &nbsp; &nbsp; &nbsp;
- &nbsp; &nbsp; &nbsp;&lt;ca&gt;
- &nbsp; &nbsp; &nbsp;-----BEGIN CERTIFICATE-----
- &nbsp; &nbsp; &nbsp;-----END CERTIFICATE-----
- &nbsp; &nbsp; &nbsp;&lt;/ca&gt;
- &nbsp; &nbsp; &nbsp;key-direction 1
- &nbsp; &nbsp; &nbsp;&lt;tls-auth&gt;
- &nbsp; &nbsp; &nbsp;# 2048 bit OpenVPN static key
- &nbsp; &nbsp; &nbsp;-----BEGIN OpenVPN Static key V1-----
- &nbsp; &nbsp; &nbsp;-----END OpenVPN Static key V1-----
- &nbsp; &nbsp; &nbsp;&lt;/tls-auth&gt;
- &nbsp; &nbsp; &nbsp;
- &nbsp; &nbsp; &nbsp;EOF
-</pre>
-
-<h6>OpenVPN Autologin</h6>
-
-<pre>
-&nbsp; &nbsp; • Create a autologin file
-&nbsp; &nbsp; $ sudo su
-&nbsp; &nbsp; # echo 'myuser' > /etc/openvpn/client/auth
-&nbsp; &nbsp; # echo 'mypassword' > /etc/openvpn/client/auth
-&nbsp; &nbsp; # chmod 600 /etc/openvpn/client/auth
-&nbsp; &nbsp; • Load daemon
-&nbsp; &nbsp; $ sudo openvpn --config /etc/openvpn/client.conf --daemon
-</pre>
-
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
-
-<h6>OpenVPN KillSwitch</h6>
-
-<pre>
-&nbsp; Commands
-&nbsp; &nbsp; $ sudo su
-&nbsp; &nbsp; # cd /etc/openvpn/client
-&nbsp; &nbsp; # echo "script-security 2" >> /etc/openvpn/client/openvpn.conf
-&nbsp; &nbsp; # echo "up /etc/openvpn/update-resolv-conf" >> /etc/openvpn/client/openvpn.conf
-&nbsp; &nbsp; # echo "down /etc/openvpn/update-resolv-conf" >> /etc/openvpn/client/openvpn.conf
-</pre>
-
-<pre>
-# cd /etc/openvpn/client
-script-security 2
-up /etc/openvpn/update-resolv-conf
-down /etc/openvpn/update-resolv-conf
-</pre>
-
-
-<pre>
-&nbsp; &nbsp; • OpenVPN on Linux uses .conf for config files instead of .ovpn,
-&nbsp; &nbsp;   so rename them accordingly.You could simply substitute it in the
-&nbsp; &nbsp;   appropriate file name, copy VPN connection 1that file to the name vpn.conf:
-&nbsp; &nbsp; $ sudo cp us-miami.ovpn /etc/openvpn/client/client.conf
-&nbsp; &nbsp; • Alternatively
-&nbsp; &nbsp; $ sudo rename 's/ovpn/conf/' openvpn/*.ovpn
-</pre>
-
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
-
-<h6>Import OVPN to NetworkManager (CLI)</h6>
-
-<code> $ sudo apt install network-manager</code>
-
-<pre>
-&nbsp; Commands
-&nbsp; &nbsp; $ sudo nmcli connection import type openvpn file /etc/openvpn/client/your.ovpn
+&nbsp; Commands nmcli
+&nbsp; &nbsp; $ sudo nmcli connection import type openvpn file /etc/openvpn/client/cc00-myvpn.com_tcp.ovpn
 &nbsp; &nbsp; $ nmcli connection show
 &nbsp; &nbsp; $ nmcli connection up myopvnname
 &nbsp; &nbsp; $ nmcli connection show 
@@ -2797,6 +2652,8 @@ down /etc/openvpn/update-resolv-conf
 &nbsp; &nbsp; $ sudo systemctl status NetworkManager 
 </pre>
 
+<p>Editing OVPN with NetworkManager (CLI)</p>
+
 <pre>
 &nbsp; Config files
 &nbsp; &nbsp; $ sudo ls /etc/NetworkManager/
@@ -2805,26 +2662,423 @@ down /etc/openvpn/update-resolv-conf
 &nbsp; &nbsp; $ sudo nano /etc/NetworkManager/NetworkManager.conf<br>
 </pre>
 
+<!-- ########## -->
 
-<h6>Enable OpenVPN at boot</h6>
+<h4>Installing OpenVPN (CLI)</h4>
 
 <pre>
 &nbsp; Commands
-&nbsp; &nbsp; • At boot, by default config is enabled
-&nbsp; &nbsp; $ sudo ls /etc/openvpn/client
-
-&nbsp; &nbsp; • Enable the service by calling 
-&nbsp; &nbsp; $ sudo systemctl start openvpn-client@client
-&nbsp; &nbsp; $ sudo systemctl enable openvpn-client@client
-&nbsp; &nbsp; $ sudo cat /etc/default/openvpn
-&nbsp; &nbsp; $ sudo service openvpn restart
-&nbsp; &nbsp; $ sudo systemctl daemon-reload #to enable new vpns
-&nbsp; &nbsp; $ sudo reboot
+&nbsp; &nbsp; $ sudo apt install resolvconf
+&nbsp; &nbsp; $ sudo systemctl enable --now resolvconf.service
+&nbsp; &nbsp; $ sudo apt install openvpn
+&nbsp; &nbsp; $ sudo wget https://www.vpnprovider.com/openvpn.zip
+&nbsp; &nbsp; $ sudo unzip openvpn.zip
+&nbsp; &nbsp; $ sudo rm openvpn.zip
+&nbsp; &nbsp; $ cd /etc/openvpn
+&nbsp; &nbsp; • Instead of .ovpn extension, OpenVPN on Linux uses .conf 
+&nbsp; &nbsp;   for config files. Rename them accordingly, you could simply
+&nbsp; &nbsp;   substitute it in the appropriate file name with copy
+&nbsp; &nbsp; $ sudo cp cc00-myvpn_tcp.ovpn /etc/openvpn/client/client.conf
+&nbsp; &nbsp; • Alternatively, rename and copy in batch
+&nbsp; &nbsp; $ sudo rename 's/ovpn/conf/' openvpn/*.ovpn
+&nbsp; &nbsp; $ sudo cp openvpn/* /etc/openvpn
 </pre>
+
+<!-- ########## -->
+
+<h4>Basic OpenVPN Connection</h4>
+
+<pre>
+&nbsp; &nbsp; • Basic connection, OpenVPN will ask for a username and
+&nbsp; &nbsp;   password each time you want to connect, and that's
+&nbsp; &nbsp;   not a good headless setup
+&nbsp; &nbsp; $ sudo openvpn cc00-myvpn.com_tcp.ovpn
+&nbsp; &nbsp;   Enter Auth Username: 
+&nbsp; &nbsp;   Enter Auth Password: (press TAB for no echo)
+&nbsp; &nbsp; • You can autoconnect with saved username and password
+&nbsp; &nbsp; $ sudo openvpn --config cc00-myvpn.com_tcp.ovpn --auth-user-pass /home/user/auth
+&nbsp; &nbsp;   (...)
+&nbsp; &nbsp;   Initialization Sequence Completed
+</pre>
+
+<p>Basic connection with autoconnect and killswtich</p>
+
+<pre>
+$ openvpn --script-security 2 --config cc00-myvpn.com_tcp.ovpn 
+$ sudo openvpn --config config.ovpn --up /etc/openvpn/update-resolv-conf --down /etc/openvpn/update-resolv-conf --script-security 2 --auth-user-pass /home/user/auth
+</pre>
+
+
+<p>Creating a autologin file</p>
+
+<pre>
+&nbsp; &nbsp; • Configuring auth manually 
+&nbsp; &nbsp; $ sudo touch /home/user/auth
+&nbsp; &nbsp; $ sudo nano /home/user/auth
+              user
+              password
+&nbsp; &nbsp; • A little protection
+&nbsp; &nbsp; $ sudo chmod 600 /home/user/auth
+</pre>
+
+<!-- ########## -->
+
+<h4>OpenVPN Random Server and Autologin</h4>
+
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+
+https://openvpn.net/community-resources/how-to/#auth<br>
+
+<p>You could use the client.conf example below to random access multiple opvn files and auto login with auth configuration. Make the configurations refer to auth file by appending some directives at the end of each. Also create keepalive, a log record to facilitate troubleshooting and automatically run a script called update-resolv-conf, which may be necessary for DNS resolution to work correctly when enabling VPN and turn off. On Debian, this script is included with the OpenVPN installation.</p>
+
+<pre>
+&nbsp; &nbsp; • Configuring client.conf manually 
+&nbsp; &nbsp; $ sudo nano /etc/openvpn/client/client.conf
+client
+dev tun
+
+#It's TCP or UDP server?
+proto tcp
+
+remote my-server-1.com 1194
+remote my-server-2.com 1194
+remote my-server-3.com 1194
+remote my-server-4.com 1194
+remote my-server-5.com 1194
+remote my-server-6.com 1194
+remote my-server-7.com 1194
+remote my-server-8.com 1194
+remote my-server-9.com 1194
+remote my-server-10.com 1194
+remote-random #It choose a random config server
+resolv-retry infinite
+nobind
+tun-mtu 1500
+tun-mtu-extra 32
+mssfix 1450
+persist-key
+persist-tun
+ping 15
+ping-restart 0
+ping-timer-rem
+reneg-sec 0
+comp-lzo no #Enable it if enabled in the server
+verify-x509-name CN=my.vpn-1.com
+
+#Protect against MITM see http://openvpn.net/howto.html#mitm
+remote-cert-tls server 
+
+#Your autologin config
+auth-user-pass /etc/openvpn/client/auth
+
+#OpenVPN KillSwitch
+script-security 2
+up /etc/openvpn/update-resolv-conf
+down /etc/openvpn/update-resolv-conf
+
+#Others
+keepalive 10 60
+log-append /var/log/openvpn.log
+
+verb 3
+pull
+fast-io
+cipher AES-256-CBC
+auth SHA512
+
+
+# Note SSL/TLS parms.See the server config
+# file for more description. # It's best
+# to use # a separate .crt/.key file pair
+# for each client. A single ca file can
+# be used for all clients.
+
+&lt;ca&gt;
+-----BEGIN CERTIFICATE-----
+-----END CERTIFICATE-----
+&lt;/ca&gt;
+key-direction 1
+&lt;tls-auth&gt;
+# 2048 bit OpenVPN static key
+-----BEGIN OpenVPN Static key V1-----
+-----END OpenVPN Static key V1-----
+&lt;/tls-auth&gt;
+</pre>
+
+<pre>
+&nbsp; &nbsp; • Configuring client.conf automatically
+&nbsp; &nbsp; $ sudo cd /etc/openvpn/client/
+&nbsp; &nbsp; $ sudo cat << EOF > client.conf
+client
+dev tun
+
+#It's TCP or UDP server?
+proto tcp
+
+remote my-server-1.com 1194
+remote my-server-2.com 1194
+remote my-server-3.com 1194
+remote my-server-4.com 1194
+remote my-server-5.com 1194
+remote my-server-6.com 1194
+remote my-server-7.com 1194
+remote my-server-8.com 1194
+remote my-server-9.com 1194
+remote my-server-10.com 1194
+remote-random #It choose a random config server
+resolv-retry infinite
+nobind
+tun-mtu 1500
+tun-mtu-extra 32
+mssfix 1450
+persist-key
+persist-tun
+ping 15
+ping-restart 0
+ping-timer-rem
+reneg-sec 0
+comp-lzo no #Enable it if enabled in the server
+verify-x509-name CN=my.vpn-1.com
+
+#Protect against MITM see http://openvpn.net/howto.html#mitm
+remote-cert-tls server 
+
+#Your autologin config
+auth-user-pass /etc/openvpn/client/auth 
+
+#OpenVPN KillSwitch
+script-security 2
+up /etc/openvpn/update-resolv-conf
+down /etc/openvpn/update-resolv-conf
+
+#Others
+keepalive 10 60
+log-append /var/log/openvpn.log
+
+verb 3
+pull
+fast-io
+cipher AES-256-CBC
+auth SHA512
+
+
+# Note SSL/TLS parms.See the server config
+# file for more description. # It's best
+# to use # a separate .crt/.key file pair
+# for each client. A single ca file can
+# be used for all clients.
+
+&lt;ca&gt;
+-----BEGIN CERTIFICATE-----
+-----END CERTIFICATE-----
+&lt;/ca&gt;
+key-direction 1
+&lt;tls-auth&gt;
+# 2048 bit OpenVPN static key
+-----BEGIN OpenVPN Static key V1-----
+-----END OpenVPN Static key V1-----
+&lt;/tls-auth&gt;
+</pre>
+
+<pre>
+&nbsp; &nbsp; • Configuring client.conf automatically in batch
+&nbsp; &nbsp; $ echo 'auth-user-pass /etc/openvpn/client/auth
+keepalive 10 60
+log-append /var/log/openvpn.log
+script-security 2
+up /etc/openvpn/update-resolv-conf
+down /etc/openvpn/update-resolv-conf' | tee -a openvpn/*.conf
+</pre>
+
+<!-- ########## -->
+
+<h6>Create a autologin file</h6>
+
+<pre>
+&nbsp; &nbsp; • Configuring auth manually 
+&nbsp; &nbsp; $ sudo touch /etc/openvpn/client/auth
+&nbsp; &nbsp; $ sudo nano /etc/openvpn/client/auth
+              user
+              password
+</pre>
+
+<pre>
+&nbsp; &nbsp; • Configuring auth automatically 
+&nbsp; &nbsp; • If you are not going to copy the example, to create a 
+&nbsp; &nbsp;   newline (press ENTER) after you type the \ to tell the 
+&nbsp; &nbsp;   shell you want to enter more parameters but on a
+&nbsp; &nbsp;   separate line.
+&nbsp; &nbsp; $ cd /etc/openvpn/client/auth
+&nbsp; &nbsp; $ sudo echo 'user
+              password' > openvpn/auth
+&nbsp; &nbsp; • A little protection
+&nbsp; &nbsp; # chmod 600 /etc/openvpn/client/auth
+&nbsp; &nbsp; • Load daemon
+&nbsp; &nbsp; $ sudo openvpn --config /etc/openvpn/client.conf --daemon
+<pre>
+
+</pre>
+&nbsp; &nbsp; • Alternatively
+&nbsp; &nbsp; $ sudo chmod 600 /etc/openvpn/client/auth
+&nbsp; &nbsp; $ sudo bash -c 'echo "USERNAME" >> /etc/openvpn/client/auth'
+&nbsp; &nbsp; $ sudo bash -c 'echo "PASSWORD" >> /etc/openvpn/client/auth'
+&nbsp; &nbsp; # chmod 600 /etc/openvpn/client/auth
+&nbsp; &nbsp; • Load daemon
+&nbsp; &nbsp; $ sudo openvpn --config /etc/openvpn/client.conf --daemon
+<pre>
+
+</pre>
+&nbsp; &nbsp; • Alternatively
+&nbsp; &nbsp; $ sudo su
+&nbsp; &nbsp; # echo 'myuser' >> /etc/openvpn/client/auth
+&nbsp; &nbsp; # echo 'mypassword' >> /etc/openvpn/client/auth
+&nbsp; &nbsp; # chmod 600 /etc/openvpn/client/auth
+&nbsp; &nbsp; • Load daemon
+&nbsp; &nbsp; $ sudo openvpn --config /etc/openvpn/client.conf --daemon
+<pre>
+
+</pre>
+&nbsp; &nbsp; • Alternatively
+&nbsp; &nbsp; $ sudo su
+&nbsp; &nbsp; # echo 'myuser' | tee --append /etc/openvpn/client/auth
+&nbsp; &nbsp; # echo 'mypassword' | tee --append /etc/openvpn/client/auth
+&nbsp; &nbsp; # chmod 600 /etc/openvpn/client/auth
+&nbsp; &nbsp; • Load daemon
+&nbsp; &nbsp; $ sudo openvpn --config /etc/openvpn/client.conf --daemon
+</pre>
+
+<!-- ########## -->
+
+<h5>OpenVPN KillSwitch</h5>
+
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+
+<pre>
+&nbsp; Commands
+&nbsp; &nbsp; $ sudo su
+&nbsp; &nbsp; # cd /etc/openvpn/client
+&nbsp; &nbsp; # echo "script-security 2" >> /etc/openvpn/client/openvpn.conf
+&nbsp; &nbsp; # echo "up /etc/openvpn/update-resolv-conf" >> /etc/openvpn/client/openvpn.conf
+&nbsp; &nbsp; # echo "down /etc/openvpn/update-resolv-conf" >> /etc/openvpn/client/openvpn.conf
+</pre>
+
+<!-- ########## -->
+
+<h5>Enable OpenVPN as service at boot</h5>
+
+<p>To make OpenVPN automatically connect with a certain configuration, set the AUTOSTART directive in /etc/default/openvpn to the configuration filename without the extension.</p>
+
+<pre>
+&nbsp; Commands
+&nbsp; &nbsp; • At boot, by default client.conf is enabled
+&nbsp; &nbsp; $ sudo ls /etc/openvpn/client
+&nbsp; &nbsp; • Set the audoestart directive
+&nbsp; &nbsp; $ sudo nano in /etc/default/openvpn
+                AUTOSTART=<country>
+&nbsp; &nbsp; • Save or edit your configuration with
+&nbsp; &nbsp; $ sudo nano /etc/openvpn/client/<country>.conf
+&nbsp; &nbsp; • Alternatively
+&nbsp; &nbsp; $ sudo echo 'AUTOSTART="<country>"' >> /etc/default/openvpn
+&nbsp; &nbsp; • Enable the service by calling 
+&nbsp; &nbsp; $ sudo systemctl start openvpn-client@<country>
+&nbsp; &nbsp; $ sudo systemctl enable openvpn-client@<country>
+&nbsp; &nbsp; • Verify
+&nbsp; &nbsp; $ sudo cat /etc/default/openvpn
+&nbsp; &nbsp; • Load OpenVPN and connect
+&nbsp; &nbsp; $ sudo systemctl daemon-reload 
+&nbsp; &nbsp; $ sudo systemctl restart openvpn
+</pre>
+
+<h5>Test if the killswitch is working</h5>
+
+<pre>
+$ sudo systemctl start openvpn-client@<country>
+$ sudo systemctl stop openvpn-client@<country>
+$ sudo systemctl status openvpn-client@<country>
+$ curl ipleak.net/json/
+$ curl ipinfo.io
+</pre>
+
+<!-- ########## -->
+
+<h4>OpenVPN UFW kill switch</h4>
+
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+
+</p>Set up a firewall to deny everything but the VPN handshake on the regular interfaces eth0 and wlan0 while placing no restrictions on tun0.</p>
+
+
+<pre>
+$ sudo su
+# apt install ufw
+# ufw allow in on tun0
+# ufw allow out on tun0
+# ufw allow out on eth0 from any to any port 53
+# ufw allow out on wlan0 from any to any port 53
+# ufw allow out on eth0 from any to any port 1198
+# ufw allow out on wlan0 from any to any port 1198
+# ufw deny in on eth0
+# ufw deny in on wlan0
+# ufw deny out on eth0
+# ufw deny out on wlan0
+# ufw enable
+</pre>
+
+<p>Testing killswitch</p>
+
+<pre>
+$ sudo systemctl start openvpn-client@<country>
+$ sudo systemctl stop openvpn-client@<country>
+$ sudo systemctl status openvpn-client@<country>
+$ curl ipleak.net/json/
+$ curl ipinfo.io
+</pre>
+
+<pre>
+$ systemctl stop openvpn
+$ curl --connect-timeout 5 ipinfo.io
+</pre>
+
+<!-- ########## -->
 
 <h4>OpenVPN DNS</h4>
 
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+
+<h5>resolv-conf</h5>
+
+<code>$ sudo apt install resolvconf</p>
+
+<p>"Parses DHCP options from openvpn to update resolv.conf .
+To use set as 'up' and 'down' script in your openvpn *.conf:
+
+<pre>
+up /etc/openvpn/update-resolv-conf
+down /etc/openvpn/update-resolv-conf
+</pre> 
+</p>
+
+<p>"Example envs set from openvpn:"
+
+<pre>
+foreign_option_1='dhcp-option DNS 193.43.27.132'
+foreign_option_2='dhcp-option DNS 193.43.27.133'
+foreign_option_3='dhcp-option DOMAIN be.bnc.ch'
+</pre>
+</p>
+
+<h5>openvpn-systemd-resolved</h5>
+
 <code>$ sudo apt install openvpn-systemd-resolved</code><br>
+
+<p>"OpenVPN helper to add DHCP information into systemd-resolved via DBus.(...)This script will parse DHCP options set via OpenVPN (dhcp-option) to update  systemd-resolved directly via DBus, instead of updating /etc/resolv.conf. To  install, set as the 'up' and 'down' script in your OpenVPN configuration file or via the command-line arguments, alongside setting the 'down-pre' option to run the 'down' script before the device is closed. For example:"
+  
+<pre>
+up /etc/openvpn/scripts/update-systemd-resolved
+down /etc/openvpn/scripts/update-systemd-resolved
+down-pre
+</pre>
+</p>
 
 <br>
 </details>
@@ -2904,7 +3158,7 @@ https://github.com/strongswan/strongswan<br>
 
 <pre>
 &nbsp; Commands to secure the server with iptables
-&nbsp; &nbsp; • Allow everything from within your VPN¶
+&nbsp; &nbsp; • Allow everything from within your VPN
 &nbsp; &nbsp; $ sudo iptables -I INPUT -i tun0 -j ACCEPT
 
 &nbsp; &nbsp; • Explicitly allow what can be accessed within the VPN, for example, allow DNS and HTTP
@@ -2949,6 +3203,12 @@ https://github.com/strongswan/strongswan<br>
 <a href="https://surfshark.com/dns-leak-test">∙ Surfshark DNS Leak Test</a><br>
 <a href="https://browserleaks.com/ip">∙ BrowserLeaks IP Test</a><br>
 <a href="https://ipx.ac/run">∙ IPX.AC DNS Leak Test</a><br>
+
+<p>You could test your current public IP address and compare that to the one from before with 'ipleak.net'. If they match, your VPN is not working correctly.</p>
+
+<code>$ curl ipleak.net/json/</code><br>
+<code>$ curl ipinfo.io</code><br>
+<code>$ curl --connect-timeout 5 ipinfo.io</code><br>
 
 <br>
 </details>
@@ -5185,6 +5445,9 @@ https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows<br>
 
 <a href="https://www.dnsleaktest.com/">∙ DNSLeakTest.com</a> (run the "Extended test")<br>
 <a href="https://ipleak.net/">∙ IPLeak.net</a><br>
+
+<code>curl ipleak.net/json/</code><br>
+<code>curl ipinfo.io</code><br>
 
 <p>Alternativelly, begin to VPN+Torrent on PC, wait until throttling begins. Try to play back a 1080p video on your smartphone, try to choose one where you can see the quality difference (for example one with many text elements such as computer hardware benchmarks). A 1080p video needs about 1-2Mbps (250KB/s) bandwidth.</p>
 
