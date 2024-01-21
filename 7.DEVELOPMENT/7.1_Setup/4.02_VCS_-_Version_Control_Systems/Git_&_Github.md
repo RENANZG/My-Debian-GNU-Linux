@@ -1,5 +1,20 @@
 <h2>Git & Github</h2>
 
+
+<h3>Installing in Linux</h3>
+
+<code>$ sudo apt install git</code><br>
+
+
+<h3>Installing in extension</h3>
+
+
+<h4>NeoVim extension</h4>
+
+
+<h4>VSCodium extension</h4>
+
+
 <h3>General</h3>
 
 <h4>Github site</h4>
@@ -53,13 +68,13 @@ git push -u origin main
 <pre>
 git pull origin main
 </pre>
-</td>
-
-<td valign="top">
 <p>Diff for changes from origin main</p>
 <pre>
 git diff HEAD
 </pre>
+</td>
+
+<td valign="top">
 <p>Unstage file</p>
 <pre>
 git reset <file>
@@ -88,13 +103,13 @@ git checkout -b <branch_name>
 <pre>
 git rm ‘*.txt’
 </pre>
-</td>
-
-<td valign="top">
 <p>Remove folder from tracking</p>
 <pre>
 git rm -r <folder_name>
 </pre>
+</td>
+
+<td valign="top">
 <p>Merge branch into main</p>
 <pre>
 git merge <branch_name>
@@ -114,6 +129,18 @@ git commit -a
 <p>Git pull a different directory</p>
 <pre>
 git -C <repo_location> pull
+</pre>
+<p></p>
+<pre>
+git push -f origin master
+</pre>
+<p>Rewriting the remote's history to be exactly like your local copy</p>
+<pre>
+git push -f origin master
+</pre>
+<p>Git</p>
+<pre>
+git
 </pre>
 </td>
 

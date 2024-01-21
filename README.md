@@ -3047,7 +3047,7 @@ $ curl --connect-timeout 5 ipinfo.io
 
 <h5>resolv-conf</h5>
 
-<code>$ sudo apt install resolvconf</p>
+<code>$ sudo apt install resolvconf</code>
 
 <p>"Parses DHCP options from openvpn to update resolv.conf .
 To use set as 'up' and 'down' script in your openvpn *.conf:
