@@ -92,7 +92,7 @@
 <td><a href="https://clonezilla.org/downloads.php" target="_blank"><b>3. Clonezilla</b></a></td>
 <td><a href="https://clonezilla.org/downloads.php" target="_blank">(Secure Boot)</a></td>
 <td><a href="https://clonezilla.org/downloads.php" target="_blank">(Checksums)</a></td>
-<td><a href="https://www.openpgp.org/software/" target="_blank"><b>8. OpenPGP</b></a></td>
+<td><a href="https://gnupg.org/software/tools.html" target="_blank"><b>8. GnuPG</b></a></td>
 <td><a href="https://github.com/OpenPGP/openpgp.org" target="_blank">(GitHub)</a></td>
 <td><a href="https://keys.openpgp.org/" target="_blank">(Check)</a></td>
 </tr>
