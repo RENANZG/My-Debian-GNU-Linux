@@ -13,7 +13,7 @@
 
 <blockquote><h3>"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately endpoint security is so terrifically weak that NSA can frequently find ways around it." (Edward Snowden)</h3></blockquote>
 
-<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/assets/53377291/c9013f13-fbc8-4195-adad-58f88c695d4d" title="La Clef Des Champs (1936) - René Magritte"/></p>
+<p align="center"><img src=".data/the_key_to_the_fields_1936_-_rene_magritte_830px.png" title="The Key to the Fields (1936) - René Magritte"/></p>
 
 </div>
 
@@ -1950,36 +1950,6 @@ User <em>must</em> log out and back in for group membership updates to be applie
 <p>To avoid getting prompted for password when running commands with <a href="https://manpages.ubuntu.com/manpages/precise/en/man8/sudo.8.html"><code>sudo</code></a>, one common option is to append <code>NOPASSWD:ALL</code> to your user name in the <code>/etc/sudoers</code> file. Obviously, this is a security risk. Instead, you can run the <code>sudo</code> command with the <code>-s</code> (&quot;session&quot;) flag to allow the <code>sudo</code> session to be persistent until your close the terminal (end the session). To explicitly end the session run <code>sudo -k</code> (&quot;kill&quot;).
 <a href="https://vitux.com/how-to-specify-time-limit-for-a-sudo-session/">Reference</a></p>
 
-<h4>Change default editor for <code>visudo</code></h4>
-
-<p>By default, Linux systems use the <code>$VISUAL</code> or <code>$EDITOR</code> environment variables (usually defined in your <code>~/.bashrc</code> file or <code>/etc/profile</code>) as the default editor the <a href="https://linux.die.net/man/8/visudo"><code>visudo</code></a> command. If you&#39;d prefer to use a different editor, such as <a href="https://nano-editor.org/">nano</a>, you can use either of these methods.</p>
-
-<ol>
-<li>To <strong>temporarily</strong> use a different editor, run:
-
-<pre>
-<code><span>$ </span>sudo EDITOR=<span>/path/to</span><span>/editor visudo</span></code>
-</pre>
-
-For example, to use <code>nano</code>, you would run:
-
-<pre>
-<code><span>$ </span>sudo EDITOR=nano visudo</code>
-</pre>
-
-</li>
-
-<li> To <strong>permanently</strong> change the default editor, edit the <code>/etc/sudoers</code> file (you can use the <em>temporary</em> method above!) and add the following line to the file near the top, but <em>after</em> <code>Defaults env_reset</code>:
-
-<pre>
-<code>Defaults <span>editor</span>=/path/to/<span>editor</span></code>
-</pre>
-
-</li>
-</ol>
-
-<p><a href="https://unix.stackexchange.com/questions/4408/how-to-set-visudo-to-use-a-different-editor-than-the-default-on-fedora">Reference: https://unix.stackexchange.com/questions/4408/how-to-set-visudo-to-use-a-different-editor-than-the-default-on-fedora</a></p>
-
 <h5>Table</h5>
 
 <h5>Examples</h5>
@@ -2297,7 +2267,7 @@ up /etc/openvpn/update-resolv-conf
 down /etc/openvpn/update-resolv-conf
 </pre>
 
-<p>Your could run openvpn with killswitch</p>
+<p>Your could run openvpn with DNS resolver</p>
 
 <pre>
 $ openvpn --script-security 2 --config cc00-myvpn.com_tcp.ovpn
@@ -2701,7 +2671,7 @@ https://wiki.archlinux.org/index.php/OpenVPN#DNS<br>
 &nbsp; &nbsp;   Initialization Sequence Completed
 </pre>
 
-<p>Basic connection with autoconnect and killswtich</p>
+<p>Basic connection with autoconnect and DNS resolver</p>
 
 <pre>
 $ openvpn --script-security 2 --config cc00-myvpn.com_tcp.ovpn 
@@ -2771,7 +2741,7 @@ remote-cert-tls server
 #Your autologin config
 auth-user-pass /etc/openvpn/client/auth
 
-#OpenVPN KillSwitch
+#OpenVPN DNS Resolver
 script-security 2
 up /etc/openvpn/update-resolv-conf
 down /etc/openvpn/update-resolv-conf
@@ -2846,7 +2816,7 @@ remote-cert-tls server
 #Your autologin config
 auth-user-pass /etc/openvpn/client/auth 
 
-#OpenVPN KillSwitch
+#OpenVPN DNS Resolver
 script-security 2
 up /etc/openvpn/update-resolv-conf
 down /etc/openvpn/update-resolv-conf
@@ -2949,9 +2919,12 @@ down /etc/openvpn/update-resolv-conf' | tee -a openvpn/*.conf
 
 <!-- ########## -->
 
-<h5>OpenVPN KillSwitch</h5>
+<h5>OpenVPN DNS Resolver</h5>
 
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+
+https://wiki.archlinux.org/title/OpenVPN#DNS<br>
+https://github.com/jonathanio/update-systemd-resolved<br>
 
 <pre>
 &nbsp; Commands
@@ -3204,6 +3177,11 @@ https://github.com/strongswan/strongswan<br>
 <a href="https://browserleaks.com/ip">∙ BrowserLeaks IP Test</a><br>
 <a href="https://ipx.ac/run">∙ IPX.AC DNS Leak Test</a><br>
 
+<ul>
+<li>EFF Test — https://coveryourtracks.eff.org/learn</li>
+<li>TOR Fingerprinting — https://blog.torproject.org/browser-fingerprinting-introduction-and-challenges-ahead</li>
+</ul>
+
 <p>You could test your current public IP address and compare that to the one from before with 'ipleak.net'. If they match, your VPN is not working correctly.</p>
 
 <code>$ curl ipleak.net/json/</code><br>
@@ -3376,10 +3354,6 @@ https://avoidthehack.com/util/browser-comparison<br>
 <a href="https://addons.mozilla.org/en-US/firefox/addon/decentraleyes">Decentraleyes</a><br>
  </ul>
  
-<h4>Browsers Tips</h4>
-
-<p>To open maximized browser window use "--start-maximized" as a parameter.</p>
-
 
 <br>
 </details>
@@ -4113,6 +4087,8 @@ function extract() {
 <summary><b>6.09 Sanitation</b></summary>
 <br>
 
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.03_Sanitization">1.HARDENING/1.03_Sanitization</a></h4>
+
 <h4>Sanitation</h4>
 
 <h4>• System Sanitation</h4>
@@ -4176,8 +4152,6 @@ Common Mistakes - https://exiftool.org/mistakes.html<br>
 
 https://wiki.debian.org/SSDOptimization<br>
 https://wiki.archlinux.org/title/Solid_state_drive<br>
-
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.03_Sanitization">1.HARDENING/1.03_Sanitization</a></h4>
 
 <em>*Not all SSD support sanitize. To properly way to erase a SSD is using the SSDs manufacturer's software. Other methods might not work, due to wear leveling and over-provisioning.</em><br>
 
@@ -4454,12 +4428,14 @@ https://clonezilla.org//clonezilla-live-doc.php<br>
 <br>
 </details>
 
-
 <!-- #################### -->
 
 <details>
 <summary><b>6.12 Tips</b></summary>
 <br>
+
+
+<h4>Visualize folder tree</h4>
 
 <code>$ sudo apt install tree</code>
 
@@ -4469,6 +4445,53 @@ $ tree -d
 • Control the depth of the tree  
 $ tree -d -L 2 .
 </pre>
+
+<!-- ########## -->
+
+<h4>Reopen maximized browser</h4>
+
+<p>To open maximized browser window use "--start-maximized" as a parameter.</p>
+
+<pre>
+$ nano /home/user/Desktop/browser.desktop
+
+[Desktop Entry]
+Exec=/usr/bin/browser --start-maximized %U
+</pre>
+
+<!-- ########## -->
+
+<h4>Change default editor for <code>visudo</code></h4>
+
+<p>By default, Linux systems use the <code>$VISUAL</code> or <code>$EDITOR</code> environment variables (usually defined in your <code>~/.bashrc</code> file or <code>/etc/profile</code>) as the default editor the <a href="https://linux.die.net/man/8/visudo"><code>visudo</code></a> command. If you&#39;d prefer to use a different editor, such as <a href="https://nano-editor.org/">nano</a>, you can use either of these methods.</p>
+
+<ol>
+<li>To <strong>temporarily</strong> use a different editor, run:
+
+<pre>
+<code>
+<span>$ </span>sudo EDITOR=<span>/path/to</span><span>/editor visudo</span>
+</code>
+</pre>
+
+For example, to use <code>nano</code>, you would run:
+
+<pre>
+<code><span>$ </span>sudo EDITOR=nano visudo</code>
+</pre>
+
+</li>
+
+<li> To <strong>permanently</strong> change the default editor, edit the <code>/etc/sudoers</code> file (you can use the <em>temporary</em> method above!) and add the following line to the file near the top, but <em>after</em> <code>Defaults env_reset</code>:
+
+<pre>
+<code>Defaults <span>editor</span>=/path/to/<span>editor</span></code>
+</pre>
+
+</li>
+</ol>
+
+<p><a href="https://unix.stackexchange.com/questions/4408/how-to-set-visudo-to-use-a-different-editor-than-the-default-on-fedora">Reference: https://unix.stackexchange.com/questions/4408/how-to-set-visudo-to-use-a-different-editor-than-the-default-on-fedora</a></p>
 
 <br>
 </details>
@@ -4962,9 +4985,24 @@ usbcore<br>
 
 <h5>∙ DNS Issues</h5>
 
-<code>$ sudo apt install resolvconf</code><br>
-<code>$ sudo resolvconf -u</code><br>
+<code>$ ping -c 4 duckduckgo.com</code><br>
+<code>$ nslookup duckduckgo.com</code><br>
+<code>$ dig +trace +nodnssec duckduckgo.com</code><br>
+<code>$ host duckduckgo.com</code><br>
+
+<code>$ sudo cat /etc/resolv.conf</code><br>
+<code>$ sudo cat /var/run/NetworkManager/resolv.conf</code><br>
 <code>nmcli device show wlan0 | grep IP4.DNS</code> </code><br>
+
+<code>$ sudo apt install resolvconf</code><br>
+<code>$ sudo resolvconf --list</code><br>
+<code>$ sudo resolvconf --enable-updates</code><br>
+<code>$ sudo resolvconf -u</code><br>
+
+<code>$ sudo</code><br>
+<code>$ sudo</code><br>
+<code>$ sudo</code><br>
+
 
 <h5>∙ DHCP Issues</h5>
 
