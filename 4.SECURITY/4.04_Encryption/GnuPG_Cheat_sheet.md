@@ -1,4 +1,5 @@
-# Cheatsheet
+# Cheat sheet
+
 ## Create a key pair
 ```
 gpg --full-gen-key
