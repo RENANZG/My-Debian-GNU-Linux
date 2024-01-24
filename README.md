@@ -1907,7 +1907,26 @@ https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi<br>
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <details>
-<summary><b>4.01 Apparmor</b></summary>
+<summary><b>4.01 Introduction</b></summary>
+<br>
+
+<h3>Maintain cautious habits<br>
+(be proactively paranoid DSM-5 301.0 F60.0).</h3>
+<h3>Shut up, keep personal life separated</h3>
+<h3>Nerver contamine</h3>
+<h3>Never reveal yoour operational details</h3>
+<h3>Never reveal your plans</h3>
+<h3>Never trust anyone<br>
+(don't be blackmailed)</h3>
+<h3>Never operate from your own house</h3>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>4.02 Apparmor</b></summary>
 <br>
 
 https://github.com/Kicksecure/security-misc<br>
@@ -1930,7 +1949,7 @@ https://wiki.ubuntu.com/DebuggingApparmor<br>
 <!-- #################### -->
 
 <details>
-<summary><b>4.02 Privileges</b></summary>
+<summary><b>4.03 Privileges</b></summary>
 <br>
 
 <h4>Add <em>existing</em> user to <em>existing</em> group</h4>
@@ -1974,7 +1993,7 @@ $ sudo chmod 766 -R /media
 <!-- #################### -->
 
 <details>
-<summary><b>4.03 Audit System</b></summary>
+<summary><b>4.04 Audit System</b></summary>
 <br>
 
 <h5>System Auditors</h5>
@@ -1994,7 +2013,7 @@ $ sudo chmod 766 -R /media
 <!-- #################### -->
 
 <details>
-<summary><b>4.04 Antimalware</b></summary>
+<summary><b>4.05 Antimalware</b></summary>
 <br>
 
 <h4>CLAMTK (GUI)</h4>
@@ -2034,7 +2053,7 @@ https://www.eset.com/my/home/antivirus-linux/download<br>
 <!-- #################### -->
 
 <details>
-<summary><b>4.05 Updating</b></summary>
+<summary><b>4.06 Updating</b></summary>
 <br>
 
 <p>Apply security updates as quickly as possible. According to 2020 reached conducted by Unit 42 at Palo Alto, approximately 80% of exploits are published faster than common vulnerabilities and exposures (CVEs).</p>
@@ -4694,6 +4713,11 @@ https://reddit.com/r/sysadmin<br>
 <code>$ sudo journalctl -S today</code><br>
 <code>$ sudo journalctl -S "2023-01-01 10:10:10"</code><br>
 <code>$ sudo journalctl -S "2023-01-01 10:10:10" > ~/journal.txt</code><br>
+<code>$ sudo tail /var/log/syslog</code><br>
+<code>$ sudo tail -n20 /var/log/syslog</code><br>
+<code>$ sudo tail -f /var/log/syslog</code><br>
+<code>$ head /home/pat/file.txt</code><br>
+<code>$ head -n20 /home/pat/file.txt</code><br>
 
 <h4>Terminal output in English</h4>
 
