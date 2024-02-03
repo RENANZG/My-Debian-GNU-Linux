@@ -33,6 +33,7 @@ https://github.com/darius-khll/golang-developer-roadmap<br>
 
 PHP <br>
 https://github.com/thecodeholic/php-developer-roadmap<br>
+https://www.php.net<br>
 
 RUBY<br>
 https://github.com/evertonlopesc/Ruby-Roadmap<br>
@@ -44,6 +45,7 @@ JAVA<br>
 https://github.com/s4kibs4mi/java-developer-roadmap<br>
 
 WEBDEV<br>
+https://www.w3schools.com<br>
 https://github.com/thanhluanuit/full-stack-web-developer<br>
 https://github.com/ObjTube/front-end-roadmap<br>
 https://github.com/fullstack-development/developers-roadmap<br>

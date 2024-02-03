@@ -1910,6 +1910,8 @@ https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi<br>
 <summary><b>4.01 Introduction</b></summary>
 <br>
 
+https://linuxsecurity.com<br>
+
 <h3>Maintain cautious habits<br>
 (be proactively paranoid DSM-5 301.0 F60.0).</h3>
 <h3>Shut up, keep personal life separated</h3>
@@ -4267,11 +4269,11 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 &nbsp; &nbsp; $ rename -v 'y/\-/\_/' ~/Downloads/*.pdf
 &nbsp; &nbsp; • Delete a Part of a Filename
 &nbsp; &nbsp; $ rename -v 's/example//' *.pdf
-&nbsp; &nbsp; • Convert Uppercase to Lowercase Characters #bugs
+&nbsp; &nbsp; • Convert Uppercase to Lowercase Characters #FAIL
 &nbsp; &nbsp; $ rename -v 'y/A-Z/a-z/' *.PDF 
-&nbsp; &nbsp; • Convert Lowercase to Uppercase Characters #bugs
+&nbsp; &nbsp; • Convert Lowercase to Uppercase Characters #FAIL
 &nbsp; &nbsp; $ rename -v 'y/a-z/A-Z/' *.pdf
-</pre>
+&nbsp; &nbsp; • To convert Lowercase to Uppercase Characters see</pre>
 
 <pre>
 &#92;n is a symbol for new line
@@ -4453,7 +4455,6 @@ https://clonezilla.org//clonezilla-live-doc.php<br>
 <summary><b>6.12 Tips</b></summary>
 <br>
 
-
 <h4>Visualize folder tree</h4>
 
 <code>$ sudo apt install tree</code>
@@ -4463,6 +4464,80 @@ https://clonezilla.org//clonezilla-live-doc.php<br>
 $ tree -d
 • Control the depth of the tree  
 $ tree -d -L 2 .
+</pre>
+
+<h4>Commands for you to find large files</h4>
+
+<pre>
+$ df -h
+$ df -h ~/.cache
+$ sudo df -h /mnt
+$ find ~/.cache -xdev -type f -size +1G
+</pre>
+
+<!-- ########## -->
+
+<h4>Editig text with sed in terminal</h4>
+
+<p>Be cautious of using <code>-n</code>code> (quiet) with <code>-i</code> (in-place): the former disables aut in-place omatic printing of lines and the latter changes the file in-place without a backup. Make a backup before editing <code>-i.bak</code> .</p>
+
+<code>$ sed --options [optional SCRIPT] [INPUT STREAM]</code>
+
+<pre>
+• Append line after match
+$ sed  '/\option/a Hello World' *.txt
+• Insert line before match
+$ sed  '/\option\/i Hello World' *.txt
+• Append text after a line for the specific match only
+$ sed  '0,/\option\/a Hello World' *.txt 
+• Append text before a line for the specific match only
+$ sed  '0,/\option\/i Hello World' *.txt
+• Inserting a text file
+</pre>
+
+<pre>
+$ sed -i -e '1r text1' text2.txt
+• If you want to append string in a multiline text
+$ sed -i '/pattern/ r snippet.txt' filename
+• Batch inserting specific text after pattern in .txt files
+$ sed -i '/SearchPattern/aNew Text' *.txt
+</pre>
+
+<pre>
+• Replacement syntax
+$ sed s/regexp/replacement/[flags]
+• Replace closed with open on lines containing code
+$ sed '/code/ s/closed/open/' text.txt 
+• Replace all closed with open on lines containing code
+$ sed '/code/ s/closed/open/g' text.txt
+• Replace all occurrences of ‘hello’ to ‘world’ in the file input.txt:
+$ sed ’s/hello/world/’ input.txt > output.txt
+</pre>
+
+<pre>
+• Batch removing specific text in .txt files,
+  the –i option tells to sed make the change
+  in place, inside the file itself
+$ sed -i 's/text//' *.txt
+• Batch making a backup before editing the file,
+  by specifying a suffix when using –i
+$ sed -i.bak 's/word//' *.txt
+</pre>
+
+<pre>
+• Convert Lowercase to Uppercase Characters
+$ sed -i -e '/UPPERCASe/,$s/.*/\U&/' text.txt
+• Remove leading spaces and tabs from line
+$ sed 's/^[ \t]*//' text.txt
+• Remove all digits in a range
+$ sed 's/\([a-z]*\).*/\1/' text.txt
+</pre>
+
+<pre>
+• 
+$ 
+• 
+$ 
 </pre>
 
 <!-- ########## -->
@@ -4977,6 +5052,7 @@ PCI vs USB<br>
 
 <p>Activating module</p>
 
+<code>$ sudo modprobe -v rtw_core</code><br>
 <code>$ sudo modprobe -v rtw_8723d</code><br>
 
 <h5>∙ Power and suspend control</h5>

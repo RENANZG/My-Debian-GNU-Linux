@@ -60,6 +60,7 @@ $ lsblk
 $ lsblk -f
 $ sudo fdisk -l
 $ sudo parted -l
+$ ls -1 /dev/sd?
 $ sudo file -sL /dev/sd*
 </pre>
 
