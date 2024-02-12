@@ -3721,7 +3721,29 @@ https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html<
 &nbsp; &nbsp; $ ps2pdf filename.ps
 </pre>
 
-<h4>• Media Players</h4>
+<pre>
+&nbsp; Commands to optimize pdf size
+&nbsp; gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default \
+    -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages \
+    -dCompressFonts=true -r150 -sOutputFile=output.pdf input.pdf
+</pre>
+
+<pre>
+&nbsp; References
+-dPDFSETTINGS=/screen — Low quality and small size at 72dpi.
+
+-dPDFSETTINGS=/ebook — Slightly better quality but also a larger file size at 150dpi.
+
+-dPDFSETTINGS=/prepress — High quality and large size at 300 dpi.
+
+-dPDFSETTINGS=/default — System chooses the best output, which can create larger PDF files.
+</pre>
+
+
+<p>*LibreOffice Draw: DPI of 100 and JPEG compression of 80%.</p>
+* Try: $ ps2pdf input.pdf output.pdf
+
+<h4>• Media Players</h4> 
 
 <h5>MPV</h5>
 

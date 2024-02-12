@@ -13,7 +13,7 @@
     </ul>
 </ol>
 
-<h4>You password should not :</h4>
+<h4>You password should <b>NOT</b>:</h4>
 <ul>
 <li>Contain words you can find in the dictionary</li>
 <li>Be the same as a passwords shown as "example strong passwords."</li>
