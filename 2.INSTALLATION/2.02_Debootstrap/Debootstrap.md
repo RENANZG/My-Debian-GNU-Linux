@@ -160,6 +160,7 @@ $ sudo apt install cryptsetup lvm2 debootstrap
 
 <h4>LVM on LUKS Partitioning ("Full-disk encryption")</h4>
 
+
 <pre>
 +------------+----------------------------------------------------------+
 |     ESP    |                LUKS2 Encryption  /dev/sda2               |
@@ -170,7 +171,7 @@ $ sudo apt install cryptsetup lvm2 debootstrap
 |            |                  |                   |                   |
 | /dev/sda1  |/dev/host-vg/root | /dev/host-vg/swap | /dev/host-vg/home |
 |            |                  |                   |                   |
-| 100MiB     | 10GiB            | 4GiB              | 16GiB             |
+| 100MiB     | 20GiB            | 4GiB              | 16GiB             |
 |            |                  |                   |                   |
 | fat32      | ext4             | ext4              | swap              |
 | /boot/efi  | /                | /home             | [SWAP]            |
@@ -202,21 +203,17 @@ In brief, 1000 GB = 931.32 "GB"</sub>
 
 <p>• For EFI System partition</br>
 Since 100MiB = 104.8576MB and FAT32 EFI partition at the beginning of the disk consumes 1MiB.</br>
-Thus, 105.8576MB or ~105.858MB is displayed as 100.00MiB in Disk Manager. In Debian Live mode GUI installer.</br></p>
+Thus, 105.8576MB or ~105.858MB is displayed as 100.00MiB in Disk Manager (and in Debian Live mode GUI installer).</br></p>
 
-<p><b>Example in EXT2/3/4</b></p>
+<p><b>Example in EXT</b></p>
 
 <p>• For Boot partition</br>
 Since 500MiB = 524.288MB and space between the partitions consumes 1MiB.</br>
 Thus, 525.288MB is displayed as 500.00MiB in Disk Manager</br></p>
 
 <p>• For Root partition</br>
-For 10GB EXT4 Drive</br>
+For 20GB EXT4 Drive</br>
 It is displayed as 10.00GiB</br></p>
-
-<p>• For Root partition</br>
-For 10GB EXT4 Drive</br>
-It is displayed as 100.00GiB</br></p>
 
 <!-- #################### -->
 
@@ -702,7 +699,6 @@ mkfs.vfat /dev/sda1
 mkswap /dev/sda2
 
 mkfs.ext4 /dev/sda3
-
 
 Create a mapping ("root") for the /dev/sdX2:</br>
 

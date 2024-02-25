@@ -1922,6 +1922,9 @@ https://linuxsecurity.com<br>
 (don't be blackmailed)</h3>
 <h3>Never operate from your own house</h3>
 
+
+*OWASP Principles<br>
+
 <br>
 </details>
 
@@ -2058,9 +2061,12 @@ https://www.eset.com/my/home/antivirus-linux/download<br>
 <summary><b>4.06 Updating</b></summary>
 <br>
 
-<p>Apply security updates as quickly as possible. According to 2020 reached conducted by Unit 42 at Palo Alto, approximately 80% of exploits are published faster than common vulnerabilities and exposures (CVEs).</p>
+<p>Apply security updates as quickly as possible. According to 2020 reached conducted by Unit 42 at Palo Alto, approximately 80% of exploits are published faster than Common Vulnerabilities and Exposures (CVEs).</p>
 
-<p>Set up automatic updates on Debian</p>
+<h4>Set up automatic updates on Debian</h4>
+
+<h5>systemd vs. cron</h5>
+
 
 <br>
 </details>
@@ -3741,7 +3747,27 @@ https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html<
 
 
 <p>*LibreOffice Draw: DPI of 100 and JPEG compression of 80%.</p>
-* Try: $ ps2pdf input.pdf output.pdf
+<p>*Try: $ ps2pdf input.pdf output.pdf</p>
+
+<h5>∙ Remove annotations at once</h5>
+
+<h6>Removing annotations in Okular</h6>
+
+<p>View a page that has an annotation, find them in the annotation side pane. Right-click on the annotation icon in the document, and click Remove Annotation. Then save the changes to a new document by clicking the menu button in the top right, followed by Save As….</p>
+
+<pre>
+&nbsp; Commands for pdftocairo
+&nbsp; &nbsp; • pdftocairo -pdf "input.pdf" "output-with-flatten-annotations.pdf"
+</pre>
+
+<pre>
+&nbsp; Commands for qpdf
+&nbsp; &nbsp; • 
+$ qpdf --flatten-annotations=all input.pdf output.pdf
+</pre>
+
+<p>*May apply some differences</p>
+<p>*May result in larger PDF</p>
 
 <h4>• Media Players</h4> 
 
@@ -4488,6 +4514,8 @@ $ tree -d
 $ tree -d -L 2 .
 </pre>
 
+<!-- ########## -->
+
 <h4>Commands for you to find large files</h4>
 
 <pre>
@@ -4496,6 +4524,33 @@ $ df -h ~/.cache
 $ sudo df -h /mnt
 $ find ~/.cache -xdev -type f -size +1G
 </pre>
+
+<!-- ########## -->
+
+<h4>Schedule a Shutdown in Command Line</h4>
+
+<h6>Shutdown at specific time</h6>
+
+<pre>
+$ sudo shutdown -h 23:59
+</pre>
+
+
+<h6>Shutdown at specific date and time</h6>
+
+<p>Since 24 hours (24×60=1440 minutes), you could adapt</p>
+
+<pre>
+$ sudo shutdown +1440
+</pre>
+
+<p>Execute shutdown +60 at a specific time and day:</p>
+
+<pre>
+$ sudo apt install at
+$ sudo echo "shutdown +767" | at 08:46am 2024-09-11
+</pre>
+
 
 <!-- ########## -->
 
@@ -4549,10 +4604,20 @@ $ sed -i.bak 's/word//' *.txt
 <pre>
 • Convert Lowercase to Uppercase Characters
 $ sed -i -e '/UPPERCASe/,$s/.*/\U&/' text.txt
+$ sed 's/[a-z]/\U&/g' < ./myfile.txt
+$ echo "HELLO WORLD " | sed 's/[A-Z]/\L&/g'
+• Convert Uppercase to Lowercase  Characters
+$ echo "hello world" | sed 's/[a-z]/\U&/g'
 • Remove leading spaces and tabs from line
 $ sed 's/^[ \t]*//' text.txt
 • Remove all digits in a range
 $ sed 's/\([a-z]*\).*/\1/' text.txt
+</pre>
+
+<pre>
+*Note, in terminal:
+Alt + u	Make uppercase from the cursor position to the end of the word.
+Alt + l	Make lowercase from the cursor position to the end of the word/text.
 </pre>
 
 <pre>
@@ -5558,16 +5623,43 @@ https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows<br>
 <!-- #################### -->
 
 <details>
-<summary><b>9.11 Locales and Time </b></summary>
+<summary><b>9.11 Locales and Time/Date</b></summary>
 <br>
 
+<h3>Locales</h3>
 
-<h5>∙ Control the system time and date</h5>
+<code>$ locale</code><br>
+<code>$ sudo locale-gen</code><br>
+<code>$ sudo locale-gen en_US.UTF-8</code><br>
+<code>$ sudo dpkg-reconfigure locales</code><br>
+
+<h4>If locale-gen had not results</h4>
+
+<code>$ locale</code><br>
+<code>$ export LANGUAGE=en_US.UTF-8</code><br>
+<code>$ export LC_ALL=en_US.UTF-8</code><br>
+<code>$ export LANG=en_US.UTF-8</code><br>
+<code>$ export LC_CTYPE=en_US.UTF-8</code><br>
+
+<p>Even no results</p>
+<code>$ export LC_ALL="C.UTF-8"</code><br>
+<code>$ sudo dpkg-reconfigure locales</code><br>
+
+<p>Even no results</p>
+<pre>
+In /etc/locale.gen, uncommenting the line:
+en_US.UTF-8 UTF-8 then running:
+locale-gen
+</pre>
+
+<h3>Time and Date</h3>
+
+<h4>Control the system time and date</h4>
 
 <code>$ timedatectl</code><br>
 <code>$ tzselect</code><br>
 
-<h4>Reconfigure time and date</h4>
+<h4>How Reconfigure time and date</h4>
 
 <code>$ sudo dpkg-reconfigure tzdata</code><br>
 
