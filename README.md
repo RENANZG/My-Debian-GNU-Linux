@@ -125,16 +125,7 @@
 </tbody>
 </table>
 
-Visit:<a href="https://distrowatch.com"></a>DistroWatch.com<br> 
-Others:
-<a href="https://securityonionsolutions.com">Sec.Onion</a><br>
-<a href="https://www.networksecuritytoolkit.org">NST</a><br>
-<a href="https://www.android-x86.org/">Android-x86</a><br>
-<a href="https://hardenedbsd.org">HardenedBSD</a><br>
-<a href="https://live.osgeo.org/">OSGeoLive</a><br>
-<a href="https://openwrt.org">OpenWRT</a><br>
-<a href=""></a><br>
-<a href="https://wiki.libreelec.tv/">LibreELEC.tv</a><br>
+<sub>Visit:<a href="https://distrowatch.com">DistroWatch.com</a>. Others: <a href="https://securityonionsolutions.com">Sec.Onion</a>, <a href="https://www.networksecuritytoolkit.org">NST</a>, <a href="https://www.android-x86.org/">Android-x86</a>, <a href="https://hardenedbsd.org">HardenedBSD</a>, <a href="https://live.osgeo.org/">OSGeoLive</a>, <a href="https://openwrt.org">OpenWRT</a>, <a href=""></a>, <a href="https://wiki.libreelec.tv/">LibreELEC.tv</a></sub><br>
 
 
 <!-- ################################## -->
