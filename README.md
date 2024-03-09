@@ -125,7 +125,7 @@
 </tbody>
 </table>
 
-<sub>Visit:<a href="https://distrowatch.com">DistroWatch.com</a>. Others: <a href="https://securityonionsolutions.com">Sec.Onion</a>, <a href="https://www.networksecuritytoolkit.org">NST</a>, <a href="https://www.android-x86.org/">Android-x86</a>, <a href="https://hardenedbsd.org">HardenedBSD</a>, <a href="https://live.osgeo.org/">OSGeoLive</a>, <a href="https://openwrt.org">OpenWRT</a>, <a href=""></a>, <a href="https://wiki.libreelec.tv/">LibreELEC.tv</a></sub><br>
+<sub>Visit: <a href="https://distrowatch.com">DistroWatch.com</a>. Others: <a href="https://securityonionsolutions.com">Security Onion</a>, <a href="https://www.networksecuritytoolkit.org">NST</a>, <a href="https://www.android-x86.org/">Android-x86</a>, <a href="https://hardenedbsd.org">HardenedBSD</a>, <a href="https://live.osgeo.org/">OSGeoLive</a>, <a href="https://openwrt.org">OpenWRT</a>, <a href="https://wiki.libreelec.tv/">LibreELEC.tv</a> .</sub><br>
 
 
 <!-- ################################## -->
@@ -2098,9 +2098,9 @@ https://www.eset.com/my/home/antivirus-linux/download<br>
 
 <p>Apply security updates as quickly as possible. According to 2020 reached conducted by Unit 42 at Palo Alto, approximately 80% of exploits are published faster than Common Vulnerabilities and Exposures (CVEs).</p>
 
-<h4>Set up automatic updates on Debian</h4>
+<h5>SYSTEMD Vs. CRON</h5>
 
-<h5>systemd vs. cron</h5>
+<code>sudo apt install systemd-cron</code> ?<br>
 
 <pre>
 • Commands
@@ -2110,6 +2110,9 @@ $ systemctl start "service"
 $ systemctl enable "service"
 $ systemctl status "service"
 </pre>
+
+<h4>Set up automatic updates on Debian</h4>
+
 
 <br>
 </details>
