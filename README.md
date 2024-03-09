@@ -71,48 +71,71 @@
 
 <h3>1.02 Essential Tools</h3>
 
-<table style="width:100%" cellspacing="0" cellpadding="0">
-<tr valign="top" style="width:50%">
-<td><a href="https://www.ventoy.net/en/download.html" target="_blank"><b>1. Ventoy</b></a></td>
-<td><a href="https://www.ventoy.net/en/doc_secure.html" target="_blank">(Secure Boot)</a></td>
-<td><a href="https://www.ventoy.net/en/download.html" target="_blank">(Checksums)</a></td>
-<td><a href="https://tails.net/news/new_domain/index.en.html" target="_blank"><b>6. Tails</b></a></td>
-<td><a href="https://tails.net/contribute/design/UEFI/archive/" target="_blank">(Secure Boot)</a></td>
-<td><a href="https://tails.net/install/index.en.html" target="_blank">(Checksums)</a></td>
-</tr>
-<tr valign="top" style="width:50%">
- <td><a href="http://www.rodsbooks.com/refind/getting.html" target="_blank"><b>2. rEFInd</b></a></td>
-<td><a href="http://www.rodsbooks.com/refind/secureboot.html" target="_blank">(Secure Boot)</a></td>
-<td><a href="https://sourceforge.net/p/refind/code/ci/master/tree/" target="_blank">(Checksums)</a></td> 
-<td><a href="https://www.kali.org/get-kali/#kali-installer-images" target="_blank"><b>7. KaliLinux</b></a></td>
-<td><a href="" target="_blank">(Secure Boot)</a></td>
-<td><a href="" target="_blank">(Checksums)</a></td>
-</tr>
- <tr>
-<td><a href="https://clonezilla.org/downloads.php" target="_blank"><b>3. Clonezilla</b></a></td>
-<td><a href="https://clonezilla.org/downloads.php" target="_blank">(Secure Boot)</a></td>
-<td><a href="https://clonezilla.org/downloads.php" target="_blank">(Checksums)</a></td>
-<td><a href="https://gnupg.org/software/tools.html" target="_blank"><b>8. GnuPG</b></a></td>
-<td><a href="https://gnupg.org/documentation/index.html" target="_blank">(Guides)</a></td>
-<td><a href="https://gnupg.org/documentation/guides.html" target="_blank">(Check)</a></td>
-</tr>
-<tr>
-<td><a href="https://gparted.org/livecd.php" target="_blank"><b>4. GParted</b></a></td>
-<td><a href="https://gparted.org/download.php" target="_blank">(Secure Boot)</a></td>
-<td><a href="https://gparted.org/gpg-verify.php" target="_blank">(Checksums)</a></td>
-<td><a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/winpe-intro?view=windows-11" target="_blank"><b>9. WinPE</b></a></td>
-<td><a href="https://sergeistrelec.name/" target="_blank">(Sergei Strelec)</a></td>
-<td><a href="https://sergeistrelec.name/version_history_en.html" target="_blank">(Checksums)</a></td>
-</tr>
-<tr>
-<td><a href="https://github.com/PartialVolume/shredos.x86_64" target="_blank"><b>5. ShredOS</b></a></td>
-<td><a href="" target="_blank">(Secure Boot)</a></td>
-<td><a href="" target="_blank">(Checksums)</a></td>
-<td><a href="https://www.hirensbootcd.org/" target="_blank"><b>10. Hiren's BootCD PE</b></a></td>
-<td><a href="" target="_blank">(Secure Boot)</a></td>
-<td><a href="https://www.hirensbootcd.org/download/" target="_blank">(Checksums)</a></td>
- </tr>
+
+<table>
+<tbody>
+  <tr>
+    <td><a href="https://www.ventoy.net/en/download.html">1. Ventoy</a></td>
+    <td><a href="https://www.ventoy.net/en/doc_secure.html">(Secure Boot)</a></td>
+    <td><a href="https://www.ventoy.net/en/download.html">(Checksums)</a></td>
+    <td><a href="https://www.qubes-os.org/downloads" target="_blank" rel="noopener noreferrer">7. Qubes</a></td>
+    <td><a href="https://www.qubes-os.org/faq/" target="_blank" rel="noopener noreferrer">(*Secure Boot)</a></td>
+    <td><a href="https://www.qubes-os.org/security/verifying-signatures" target="_blank" rel="noopener noreferrer">(Checksums)</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.rodsbooks.com/refind/getting.html">2. rEFInd</a></td>
+    <td><a href="http://www.rodsbooks.com/refind/secureboot.html">(Secure Boot)</a></td>
+    <td><a href="https://sourceforge.net/p/refind/code/ci/master/tree/">(Checksums)</a></td>
+    <td><a href="https://www.kali.org/get-kali/#kali-installer-images" target="_blank" rel="noopener noreferrer">8. KaliLinux</a></td>
+    <td><a href="https://www.kali.org/docs/installation/hard-disk-install/" target="_blank" rel="noopener noreferrer">(*Secure Boot)</a></td>
+    <td><a href="https://www.kali.org/get-kali/#kali-installer-images" target="_blank" rel="noopener noreferrer">(Checksums)</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://clonezilla.org/downloads.php">3. Clonezilla</a></td>
+    <td><a href="https://clonezilla.org/downloads.php">(Secure Boot)</a></td>
+    <td><a href="https://clonezilla.org/downloads.php">(Checksums)</a></td>
+    <td><a href="https://gnupg.org/software/tools.html" target="_blank" rel="noopener noreferrer">9. GnuPG</a></td>
+    <td><a href="https://gnupg.org/documentation/index.html" target="_blank" rel="noopener noreferrer">(Guides)</a></td>
+    <td><a href="https://gnupg.org/documentation/guides.html" target="_blank" rel="noopener noreferrer">(Check)</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://gparted.org/livecd.php">4. GParted</a></td>
+    <td><a href="https://gparted.org/download.php">(Secure Boot)</a></td>
+    <td><a href="https://gparted.org/gpg-verify.php">(Checksums)</a></td>
+    <td><a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/winpe-intro?view=windows-11" target="_blank" rel="noopener noreferrer">10. WinPE</a></td>
+    <td><a href="https://sergeistrelec.name/" target="_blank" rel="noopener noreferrer">(Sergei Strelec)</a></td>
+    <td><a href="https://sergeistrelec.name/version_history_en.html" target="_blank" rel="noopener noreferrer">(Checksums)</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/PartialVolume/shredos.x86_64">5. ShredOS</a></td>
+    <td><a href="">(Secure Boot)</a></td>
+    <td><a href="">(Checksums)</a></td>
+    <td><a href="https://www.hirensbootcd.org/" target="_blank" rel="noopener noreferrer">11. Hiren's BootCD PE</a></td>
+    <td><a href="" target="_blank" rel="noopener noreferrer">(Secure Boot)</a></td>
+    <td><a href="https://www.hirensbootcd.org/download/" target="_blank" rel="noopener noreferrer">(Checksums)</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://tails.net/news/new_domain/index.en.html" target="_blank" rel="noopener noreferrer">6. Tails</a></td>
+    <td><a href="https://tails.net/contribute/design/UEFI/archive/" target="_blank" rel="noopener noreferrer">(Secure Boot)</a></td>
+    <td><a href="https://tails.net/install/index.en.html" target="_blank" rel="noopener noreferrer">(Checksums)</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</tbody>
 </table>
+
+Visit:<a href="https://distrowatch.com"></a>DistroWatch.com<br> 
+Others:
+<a href="https://securityonionsolutions.com">Sec.Onion</a><br>
+<a href="https://www.networksecuritytoolkit.org">NST</a><br>
+<a href="https://www.android-x86.org/">Android-x86</a><br>
+<a href="https://hardenedbsd.org">HardenedBSD</a><br>
+<a href="https://live.osgeo.org/">OSGeoLive</a><br>
+<a href="https://openwrt.org">OpenWRT</a><br>
+<a href=""></a><br>
+<a href="https://wiki.libreelec.tv/">LibreELEC.tv</a><br>
+
 
 <!-- ################################## -->
 
@@ -239,6 +262,7 @@ https://github.com/segofensiva/OSfooler-ng<br>
 
 <h4>2.01.02 Compatibility</h4>
 https://linux-hardware.org<br>
+https://www.reddit.com/r/linuxhardware<br>
 https://ryf.fsf.org<br>
 https://pine64.org/pinebook-pro<br>
 https://frame.work<br>
@@ -1922,7 +1946,6 @@ https://linuxsecurity.com<br>
 (don't be blackmailed)</h3>
 <h3>Never operate from your own house</h3>
 
-
 *OWASP Principles<br>
 
 <br>
@@ -2001,10 +2024,18 @@ $ sudo chmod 766 -R /media
 <summary><b>4.04 Audit System</b></summary>
 <br>
 
+https://www.redhat.com/sysadmin/configure-linux-auditing-auditd<br>
+
 <h5>System Auditors</h5>
+
+<h4>Automatic</h4>
 
 <code>$ sudo apt install lynis</code><br>
 <code>$ sudo apt install checksecurity</code><br>
+
+<h4>Manual</h4>
+
+<code>$ sudo apt install audit</code><br>
 
 <h5>Rootkit Detect</h5>
 
@@ -2037,15 +2068,28 @@ https://wiki.archlinux.org/title/ClamAV<br>
 <code>$ sudo apt install -y clamav</code><br>
 <code>$ sudo apt install -y clamav-daemon</code><br>
 
+
 <pre>
 &nbsp; Commands
 &nbsp; &nbsp; $ man clamscan
+&nbsp; &nbsp; • Update database
+&nbsp; &nbsp; $ freshclam
+&nbsp; &nbsp; • Scanning
 &nbsp; &nbsp; $ clamscan --verbose /file.ext
 &nbsp; &nbsp; $ clamscan --verbose --scan --alert-exceeds-max --alert-encrypted /file.zip
 &nbsp; &nbsp; $ clamscan --verbose --recursive --suppress-ok-results --bell /home
 &nbsp; &nbsp; $ clamscan -v -r -o --heuristic-alert --bell /home
 &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home --remove
 &nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"
+</pre>
+
+<pre>
+• Debug
+$ sudo systemctl start clamav-freshclam
+$ sudo systemctl enable clamav-freshclam
+$ sudo systemctl status clamav-freshclam
+$ sudo crontab -l 
+$ sudo systemctl list-timers
 </pre>
 
 <h4>ESET NOD32 Antivirus for Linux Desktop</h4>
@@ -2067,6 +2111,14 @@ https://www.eset.com/my/home/antivirus-linux/download<br>
 
 <h5>systemd vs. cron</h5>
 
+<pre>
+• Commands
+$ sudo crontab -l 
+$ sudo systemctl list-timers
+$ systemctl start "service"
+$ systemctl enable "service"
+$ systemctl status "service"
+</pre>
 
 <br>
 </details>
@@ -2090,7 +2142,6 @@ https://fsfe.org/contribute/spreadtheword#device-neutrality<br>
 <p>"There are a number of open-source options for routers that will take even a small consumer router and turn it into a powerful device with enterprise-level capabilities. My personal favorite is DD-WRT, but other popular options include pfSense, OpenWRT, and Tomato. While you can buy pre-flashed devices in some cases (FlashRouters for DD-WRT and Protectli for pfSense), I always encourage you to do it yourself if you’re comfortable to ensure maximum security (and also to be familiar with the update process). Having said all of this, if you are unsure if an open source router is right for you (the wealth of options can be overwhelming to some), I still encourage you to get a router that wasn’t provided by your ISP. Make sure it offers VLANs and VPN capabilities, as we will be using these heavily to protect your home."</p>
 
 <p>https://thenewoil.org/en/guides/quick-start/wifi-guide</p>
-
 
 <h5>Examples of VPN routers and firmwares</h5>
 
@@ -2127,6 +2178,11 @@ https://fsfe.org/contribute/spreadtheword#device-neutrality<br>
 </tr>
 </tbody>
 </table>
+
+
+https://openwrt.org<br>
+https://www.pfsense.org<br>
+
 
 <h4>Router Guide</h4>
 
@@ -3448,13 +3504,6 @@ https://www.box.com<br>
 https://github.com/box/boxcli<br>
 https://github.com/rclone/rclone<br>
 
-<h4>• Dropbox</h4>
-
-https://www.dropbox.com
-https://www.dropbox.com/install-linux<br>
-https://github.com/dropbox/dbxcli<br>
-https://github.com/rclone/rclone<br>
-
 <br>
 </details>
 
@@ -3783,23 +3832,42 @@ $ qpdf --flatten-annotations=all input.pdf output.pdf
 
 <p> Video Autofit - https://mpv.io/manual/master/#options-autofit</p>
 
-<p>Coping basic MPV config</p>
+<p>Coping basic MPV configs</p>
 
-<code>$ cp -r /usr/share/doc/mpv/ ~/.config/</code>
+<code>$ cp -r /usr/share/doc/mpv/ ~/.config/mpv/</code><br>
 
-<p>To automatically save the current playback position on quit, start mpv with --save-position-on-quit, or add save-position-on-quit to the configuration file.</p>
+<p>Editing only MPV configuration file (.conf)</p>
 
-<code>$ sudo nano ~/.config/mpv/mpv.conf</code>
+<code>$ cp /usr/share/doc/mpv/mpv.conf.gz  ~/.config/mpv/</code><br>
+<code>$ gzip -d ~/.config/mpv/mpv.conf.gz</code><br>
+<code>$ nano ~/.config/mpv/mpv.conf</code><br>
+
+<p>Examples:</p>
 
 <pre>
-save-position-on-quit
+save-position-on-quit=yes
 no-border
+volume-max=125
 geometry=50%x96%
 </pre>
 
-<code>$ sudo gzip -d~/.config/mpv/README.md.gz ~/.config/mpv/</code>
 
-<p>Set volume-max=value in your configuration file to a reasonable amount, such as volume-max=150, which then allows you to increase your volume up to 150%, which is more than twice as loud. Increasing your volume too high will result in clipping artefacts. Additionally (or alternatively), you can utilize dynamic range compression with af=acompressor.</p>
+<p>To automatically save the current playback position on quit, start mpv with --save-position-on-quit, or add save-position-on-quit=yes to the configuration file.</p>
+
+<p>Set volume-max=value in your configuration file to a reasonable amount, such as <code>volume-max=150</code>, which then allows you to increase your volume up to 150%, which is more than twice as loud. Increasing your volume too high will result in clipping artefacts. Additionally (or alternatively), you can utilize dynamic range compression with <code>af=acompressor</code>.</p>
+
+<p>MPV Read-me and examples</p>
+
+<code>$ sudo gzip -d /usr/share/doc/README.md.gz ~/ </code><br>
+<code>$ ls ~/.config/mpv/examples/lua/ </code><br>
+
+<p>Editing only MPV keybindings (input.conf)</p>
+
+<code>$ cp /usr/share/doc/mpv/input.conf.gz  ~/.config/mpv/</code><br>
+<code>$ gzip -d ~/.config/mpv/input.conf.gz</code><br>
+<code>$ nano ~/.config/mpv/input.conf</code><br>
+
+<sub><b>*It's recommended to use mplayer-input.conf as reference-only. To use it save as input.conf</b></sub>
 
 <h5>VLC</h5>
 
@@ -3815,6 +3883,10 @@ geometry=50%x96%
 <code>$ sudo apt install gimp</code><br>
 <code>$ sudo apt install webp</code><br>
 
+<h4>• Image Convert</h4>
+
+<h5>webp (dwebp)</h5>
+
 <pre>
 &nbsp; Commands for webp files
 &nbsp; &nbsp; • How to convert .webp to .png #It's a command-line interface
@@ -3822,6 +3894,24 @@ geometry=50%x96%
 &nbsp; &nbsp; $ dwebp -v -resize width x height in_file.webp -o ~/out_file_png_default.png
 &nbsp; &nbsp; *If either (but not both) of the width or height parameters is 0,
 &nbsp; &nbsp;the value will be calculated preserving the aspect-ratio.
+</pre>
+
+<h5>imagemagick</h5>
+
+https://imagemagick.org/script/formats.php<br>
+
+<code>$ sudo apt install imagemagick</code><br>
+
+<pre>
+• Commands
+$ mogrify -format png *.jpg
+$ mogrify -format png *.jpeg
+$ mogrify -format png *.gif
+• In batch
+$ cd ~/Donwloads
+$ find . -name "*.jpg" -exec mogrify -format png {} \;
+$ find . -name "*.jpeg" -exec mogrify -format png {} \;
+$ find . -name "*.gif" -exec mogrify -format png {} \;
 </pre>
 
 <h4>• Audio Edit</h4>
@@ -4199,22 +4289,25 @@ function extract() {
 
 <h5>∙ Metadata Cleaner</h5>
 
-<code>$ sudo apt install metadata-cleaner</code><br>
-<code>$ sudo apt install metacam</code><br>
-<code>$ sudo apt install exiftool</code><br>
+<code>$ sudo apt install exiftool</code> *CLI<br>
+<code>$ sudo apt install metadata-cleaner</code> *GUI<br>
+<code>$ sudo apt install metacam</code> *GUI<br>
 
-Exiftool - https://github.com/exiftool/exiftool<br>
-List of metadata TAGS - https://exiftool.org/TagNames/index.html<br>
-Common Mistakes - https://exiftool.org/mistakes.html<br>
+• Exiftool - https://github.com/exiftool/exiftool<br>
+• List of metadata TAGS - https://exiftool.org/TagNames/index.html<br>
+• Metacam - https://packages.debian.org/unstable/graphics/metacam<br>
+• Common Mistakes - https://exiftool.org/mistakes.html<br>
 
 <pre>
 &nbsp; Commands for exiftool basic commands
+&nbsp; &nbsp; • Remove all metadata from all files possible inside a folder and all its subfolders without backup (take care, might affect the colors)
+&nbsp; &nbsp; $ exiftool -all:all= -overwrite_original -r /path/to/files/ 
 &nbsp; &nbsp; • Shows only selected EXIF metadata:
 &nbsp; &nbsp; $ exiftool -Model -ImageSize photo.jpg
 &nbsp; &nbsp; • Process all files of specified file type (case insensitive extension)
-&nbsp; &nbsp; $ exiftool -Model -ImageSize -ext jpg /home/ebah/photo/
+&nbsp; &nbsp; $ exiftool -Model -ImageSize -ext jpg /path/to/files/
 &nbsp; &nbsp; • recursively process all jpg files under specified directory and sub-directory
-&nbsp; &nbsp; $ exiftool -r -Model -ImageSize -ext jpg /home/ebah/photo/
+&nbsp; &nbsp; $ exiftool -r -Model -ImageSize -ext jpg /path/to/files/
 </pre>
 
 <h4>• Disk Sanitation</h4>
@@ -4500,7 +4593,49 @@ https://clonezilla.org//clonezilla-live-doc.php<br>
 <!-- #################### -->
 
 <details>
-<summary><b>6.12 Tips</b></summary>
+<summary><b>6.12 Metaverse</b></summary>
+<br>
+
+<h4>Vircadia - Open Source Metaverse Platform</h4>
+
+https://vircadia.com<br>
+
+<a href="https://www.youtube.com/watch?v=4ZPz4rvMEwk">
+  <img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D4ZPz4rvMEwk" alt="An introduction to Vircadia - an Open Source desktop and VR metaverse" title="An introduction to Vircadia - an Open Source desktop and VR metaverse"/>
+</a>
+
+<h4>Overte - Open source virtual worlds and social VR</h4>
+
+https://overte.org<br>
+
+<a href="https://www.youtube.com/watch?v=-1tU6H2A7pQ">
+  <img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D-1tU6H2A7pQ" alt="Introduction to the Overte project" title="Introduction to the Overte project"/>
+</a>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>6.13 Fun</b></summary>
+<br>
+
+<h4>Steam OS</h4>
+
+https://store.steampowered.com/steamos<br>
+
+<h4>Linux distribution that transforms devices in consoles</h4>
+
+https://batocera.org<br>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>6.14 Tips</b></summary>
 <br>
 
 <h4>Visualize folder tree</h4>
@@ -4638,6 +4773,14 @@ $ nano /home/user/Desktop/browser.desktop
 
 [Desktop Entry]
 Exec=/usr/bin/browser --start-maximized %U
+</pre>
+
+<!-- ########## -->
+
+<h4>Geting windows sizes in shell</h4>
+
+<pre>
+$ wmctrl -lG
 </pre>
 
 <!-- ########## -->
@@ -5846,6 +5989,7 @@ https://dwarmstrong.org<br>
 https://0pointer.net/blog/<br>
 https://slant.co<br>
 https://blog.carsoncheng.ca<br>
+https://linux-tips.us<br>
 
 Others<br>
 https://www.notrace.how<br>

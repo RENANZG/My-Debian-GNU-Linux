@@ -7,21 +7,23 @@
 ## Installation
 
 * Install [Go](https://go.dev/doc/install)
-* Install [GO with Brew](https://formulae.brew.sh/formula/go)
+* Install [Go All releases](https://go.dev/dl/)
 
 ```
-brew install go
+$ sudo apt update && sudo apt upgrade
+$ wget https://go.dev/dl/linux
+$ sudo tar -C /usr/local -xzf *.tar.gz
+
 ```
 
 Install golang using brew
 
 ```
-export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$PATH"
+echo "export PATH=/usr/local/go/bin:${PATH}" | sudo tee -a $HOME/.profile
+source $HOME/.profile
+go version
 ```
 
-Set gopath and append gobin path so that packages installed with go install can be located by your terminal (add to .zshrc for persistence)
-  
 ## References
 * [Get Started](https://go.dev/learn/)
 * [Go documentation](https://go.dev/doc/)
