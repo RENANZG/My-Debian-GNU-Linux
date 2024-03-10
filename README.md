@@ -71,7 +71,6 @@
 
 <h3>1.02 Essential Tools</h3>
 
-
 <table>
 <tbody>
   <tr>
@@ -126,7 +125,6 @@
 </table>
 
 <sub>Visit: <a href="https://distrowatch.com">DistroWatch.com</a>. Others: <a href="https://securityonionsolutions.com">Security Onion</a>, <a href="https://www.networksecuritytoolkit.org">NST</a>, <a href="https://www.android-x86.org/">Android-x86</a>, <a href="https://hardenedbsd.org">HardenedBSD</a>, <a href="https://live.osgeo.org/">OSGeoLive</a>, <a href="https://openwrt.org">OpenWRT</a>, <a href="https://wiki.libreelec.tv/">LibreELEC.tv</a> .</sub><br>
-
 
 <!-- ################################## -->
 
@@ -2059,28 +2057,51 @@ https://wiki.archlinux.org/title/ClamAV<br>
 <code>$ sudo apt install -y clamav</code><br>
 <code>$ sudo apt install -y clamav-daemon</code><br>
 
+<sub><b>*Note that the "clamd" process (clamav-daemon.service) uses about 1GB of memory (doubles to 2G when new database is loaded), it loads the complete database of virus definitions into memory. In the other side, this allows it to be super fast. You could test:</b>
+
+$ sudo nano /etc/clamav/clamd.conf<br>
+
+ConcurrentDatabaseReload no<br>
+ReadTimeout 10<br>
+MaxThreads 3<br>
+
+$ sudo nano /etc/systemd/system/clamav-daemon.service.d/extend.conf <br>
+
+[Service]<br>
+IOSchedulingPriority = 7<br>
+CPUSchedulingPolicy = 5<br>
+MemoryLimit=256M<br>
+CPUQuota=30%<br>
+Nice = 19<br>
+</sub>
 
 <pre>
-&nbsp; Commands
-&nbsp; &nbsp; $ man clamscan
-&nbsp; &nbsp; • Update database
-&nbsp; &nbsp; $ freshclam
-&nbsp; &nbsp; • Scanning
-&nbsp; &nbsp; $ clamscan --verbose /file.ext
-&nbsp; &nbsp; $ clamscan --verbose --scan --alert-exceeds-max --alert-encrypted /file.zip
-&nbsp; &nbsp; $ clamscan --verbose --recursive --suppress-ok-results --bell /home
-&nbsp; &nbsp; $ clamscan -v -r -o --heuristic-alert --bell /home
-&nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell /home --remove
-&nbsp; &nbsp; $ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"
+&nbsp; • Commands
+&nbsp; $ man clamscan
+&nbsp; • Update database
+&nbsp; $ freshclam
+&nbsp; • Scanning
+&nbsp; $ clamscan --verbose /file.ext
+&nbsp; $ clamscan --verbose --scan --alert-exceeds-max --alert-encrypted /file.zip
+&nbsp; $ clamscan --verbose --recursive --suppress-ok-results --bell /home
+&nbsp; $ clamscan -v -r -o --heuristic-alert --bell /home
+&nbsp; $ clamscan --verbose --recursive -o --bell /home --remove
+&nbsp; $ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"
 </pre>
 
 <pre>
-• Debug
-$ sudo systemctl start clamav-freshclam
-$ sudo systemctl enable clamav-freshclam
-$ sudo systemctl status clamav-freshclam
-$ sudo crontab -l 
-$ sudo systemctl list-timers
+&nbsp; • Debug
+&nbsp; $ sudo nano /etc/clamav/clamd.conf
+&nbsp; $ sudo nano /etc/systemd/system/clamav-daemon.service.d/extend.conf
+&nbsp; $ sudo cat /var/log/clamav/clamav.log
+&nbsp; $ sudo systemctl status clamav-daemon
+&nbsp; $ sudo systemctl stop clamav-daemon
+&nbsp; $ sudo systemctl disable clamav-daemon
+&nbsp; $ sudo systemctl status clamav-freshclam
+&nbsp; $ sudo systemctl stop clamav-freshclam
+&nbsp; $ sudo systemctl disable clamav-freshclam
+&nbsp; $ sudo crontab -l 
+&nbsp; $ sudo systemctl list-timers
 </pre>
 
 <h4>ESET NOD32 Antivirus for Linux Desktop</h4>
