@@ -50,7 +50,7 @@
 <td> <a href="https://cryptomator.org/" target="_blank" rel="noopener noreferrer">Cryptomator - Put a lock on your cloud</a> </td>
 </tr>
 <tr>
-<td> <a href="https://www.cisecurity.org/benchmark/debian_linux">CIS Benchmark - Debian Linux Guides</a> </td>
+<td> <a href="https://downloads.cisecurity.org/#/">CIS Benchmark - Debian Linux Guides</a> </td>
 <td> <a href="https://www.duplicati.com/" target="_blank" rel="noopener noreferrer">Duplicati - Store securely encrypted backups on cloud storage services!</a> </td>
 </tr>
 <tr>
@@ -124,7 +124,7 @@
 </tbody>
 </table>
 
-<sub>Visit: <a href="https://distrowatch.com">DistroWatch.com</a>. Others: <a href="https://securityonionsolutions.com">Security Onion</a>, <a href="https://www.networksecuritytoolkit.org">NST</a>, <a href="https://www.android-x86.org/">Android-x86</a>, <a href="https://hardenedbsd.org">HardenedBSD</a>, <a href="https://live.osgeo.org/">OSGeoLive</a>, <a href="https://openwrt.org">OpenWRT</a>, <a href="https://wiki.libreelec.tv/">LibreELEC.tv</a> .</sub><br>
+<sub>Others: <a href="https://securityonionsolutions.com">Security Onion</a>, <a href="https://www.networksecuritytoolkit.org">NST</a>, <a href="https://www.android-x86.org/">Android-x86</a>, <a href="https://hardenedbsd.org">HardenedBSD</a>, <a href="https://live.osgeo.org/">OSGeoLive</a>, <a href="https://openwrt.org">OpenWRT</a>, <a href="https://wiki.libreelec.tv/">LibreELEC.tv</a>, <a href="https://store.steampowered.com/steamos">SteamOS</a> .</sub><br>
 
 <!-- ################################## -->
 
@@ -1986,6 +1986,7 @@ User <em>must</em> log out and back in for group membership updates to be applie
 <p>To avoid getting prompted for password when running commands with <a href="https://manpages.ubuntu.com/manpages/precise/en/man8/sudo.8.html"><code>sudo</code></a>, one common option is to append <code>NOPASSWD:ALL</code> to your user name in the <code>/etc/sudoers</code> file. Obviously, this is a security risk. Instead, you can run the <code>sudo</code> command with the <code>-s</code> (&quot;session&quot;) flag to allow the <code>sudo</code> session to be persistent until your close the terminal (end the session). To explicitly end the session run <code>sudo -k</code> (&quot;kill&quot;).
 <a href="https://vitux.com/how-to-specify-time-limit-for-a-sudo-session/">Reference</a></p>
 
+
 <h5>Table</h5>
 
 <h5>Examples</h5>
@@ -2041,23 +2042,31 @@ https://www.redhat.com/sysadmin/configure-linux-auditing-auditd<br>
 <summary><b>4.05 Antimalware</b></summary>
 <br>
 
-<h4>CLAMTK (GUI)</h4>
-
-https://github.com/dave-theunsub/clamtk<br>
-
-<code>$ sudo apt install clamtk</code>
-
-<h4>CLAMAV (CLI)</h4>
+<h4>ClamAV</h4>
 
 https://clamav.net<br>
 https://docs.clamav.net<br>
 https://github.com/Cisco-Talos/clamav<br>
 https://wiki.archlinux.org/title/ClamAV<br>
 
+<p>"Clam AntiVirus is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. <b>Because ClamAV's main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures</b>."</p>
+
+<h4>ClamAV (GUI)</h4>
+
+https://github.com/dave-theunsub/clamtk<br>
+
+<code>$ sudo apt install clamtk</code>
+
+<h4>ClamAV (CLI)</h4>
+
 <code>$ sudo apt install -y clamav</code><br>
 <code>$ sudo apt install -y clamav-daemon</code><br>
+<code>$ sudo systemctl start clamav-freshclam</code><br>
+<code>$ sudo freshclam</code><br>
 
-<sub><b>*Note that the "clamd" process (clamav-daemon.service) uses about 1GB of memory (doubles to 2G when new database is loaded), it loads the complete database of virus definitions into memory. In the other side, this allows it to be super fast. You could test:</b>
+<sub><b>*Note that Clamscan doesn't need the daemon running.</sub><br>
+
+<sub><b>*Note that the "clamd" process (clamav-daemon.service) uses about 1GB of memory (doubles to 2G when new database is loaded), it loads the complete database of virus definitions into memory. In the other side, this allows it to be super fast. You could circunvent:</b>
 
 $ sudo nano /etc/clamav/clamd.conf<br>
 
@@ -2078,11 +2087,14 @@ Nice = 19<br>
 <pre>
 &nbsp; • Commands
 &nbsp; $ man clamscan
-&nbsp; • Update database
-&nbsp; $ freshclam
-&nbsp; • Scanning
+&nbsp; • Basic command to scan all system
+&nbsp; $ sudo freshclam
+&nbsp; $ sudo clamscan -r -i --exclude-dir="^/sys" / 
+&nbsp; • Scan file
 &nbsp; $ clamscan --verbose /file.ext
-&nbsp; $ clamscan --verbose --scan --alert-exceeds-max --alert-encrypted /file.zip
+&nbsp; • Scan compressed files
+&nbsp; $ clamscan --verbose --scan-archive --alert-exceeds-max --alert-encrypted /file.zip
+&nbsp; • Scan files recursively
 &nbsp; $ clamscan --verbose --recursive --suppress-ok-results --bell /home
 &nbsp; $ clamscan -v -r -o --heuristic-alert --bell /home
 &nbsp; $ clamscan --verbose --recursive -o --bell /home --remove
@@ -2103,6 +2115,14 @@ Nice = 19<br>
 &nbsp; $ sudo crontab -l 
 &nbsp; $ sudo systemctl list-timers
 </pre>
+
+If you get AppArmor denials about clamd, set the profile to a complain-only mode:<br>
+
+<code>$ sudo aa-complain clamd</code>
+
+Signatures compatible with ClamAV<br>
+https://www.rfxn.com/projects/linux-malware-detect<br>
+https://malwareblocklist.org<br>
 
 <h4>ESET NOD32 Antivirus for Linux Desktop</h4>
 
@@ -2691,6 +2711,24 @@ https://openvpn.net/community-resources/how-to/<br>
 https://github.com/OpenVPN/openvpn/tree/master/sample/sample-config-files<br>
 https://wiki.archlinux.org/index.php/OpenVPN<br>
 https://wiki.archlinux.org/index.php/OpenVPN#DNS<br>
+https://linuxconfig.org/how-to-run-openvpn-automatically-on-debian-with-a-static-ip-address<br>
+https://linuxconfig.org/how-to-encrypt-your-dns-with-dnscrypt-on-ubuntu-and-debian<br>
+
+<pre>
+&nbsp; OpenVPN Sample Configuration Files
+&nbsp; &nbsp; $ sudo ls /usr/share/doc/openvpn
+</pre>
+
+<h4>OpenVPN Client Possibilities</h4>
+
+<pre>
+OpenVPN + Network Manager (GUI) + Autostart + Autoconnect + Kill Switch
+OpenVPN + nmcli (CLI) + Autostart + Autoconnect + Kill Switch
+</pre>
+
+<p>*Autoconnect: random server selection</p>
+
+<!-- ########## -->
 
 <h4>Installing OpenVPN with NetworkManager (GUI)</h4>
 
@@ -2700,10 +2738,10 @@ https://wiki.archlinux.org/index.php/OpenVPN#DNS<br>
 &nbsp; &nbsp; $ sudo apt install network-manager-openvpn-gnome
 </pre>
 
-<p>Import OVPN to NetworkManager (CLI)</p>
+<p>Import OVPN to NetworkManager in terminal</p>
 
-<pre>
-&nbsp; Commands nmcli
+<pre>Copy the OpenVPN configuration from your VPN provider into /etc/openvpn
+&nbsp; Commands nmcli, to easy import
 &nbsp; &nbsp; $ sudo nmcli connection import type openvpn file /etc/openvpn/client/cc00-myvpn.com_tcp.ovpn
 &nbsp; &nbsp; $ nmcli connection show
 &nbsp; &nbsp; $ nmcli connection up myopvnname
@@ -2720,7 +2758,7 @@ https://wiki.archlinux.org/index.php/OpenVPN#DNS<br>
 &nbsp; &nbsp; $ sudo systemctl status NetworkManager 
 </pre>
 
-<p>Editing OVPN with NetworkManager (CLI)</p>
+<p>Editing OVPN with NetworkManager in terminal</p>
 
 <pre>
 &nbsp; Config files
@@ -2739,6 +2777,7 @@ https://wiki.archlinux.org/index.php/OpenVPN#DNS<br>
 &nbsp; &nbsp; $ sudo apt install resolvconf
 &nbsp; &nbsp; $ sudo systemctl enable --now resolvconf.service
 &nbsp; &nbsp; $ sudo apt install openvpn
+&nbsp; &nbsp; • Copy the OpenVPN configuration from your VPN provider into /etc/openvpn
 &nbsp; &nbsp; $ sudo wget https://www.vpnprovider.com/openvpn.zip
 &nbsp; &nbsp; $ sudo unzip openvpn.zip
 &nbsp; &nbsp; $ sudo rm openvpn.zip
@@ -2752,30 +2791,42 @@ https://wiki.archlinux.org/index.php/OpenVPN#DNS<br>
 &nbsp; &nbsp; $ sudo cp openvpn/* /etc/openvpn
 </pre>
 
+<p>*resolvconf vs. openresolv</p>
+
 <!-- ########## -->
 
-<h4>Basic OpenVPN Connection</h4>
+<h4>Basic OpenVPN Connection (Manual Connection)</h4>
 
 <pre>
 &nbsp; &nbsp; • Basic connection, OpenVPN will ask for a username and
 &nbsp; &nbsp;   password each time you want to connect, and that's
-&nbsp; &nbsp;   not a good headless setup
+&nbsp; &nbsp;   not a good headless setup.
 &nbsp; &nbsp; $ sudo openvpn cc00-myvpn.com_tcp.ovpn
 &nbsp; &nbsp;   Enter Auth Username: 
 &nbsp; &nbsp;   Enter Auth Password: (press TAB for no echo)
-&nbsp; &nbsp; • You can autoconnect with saved username and password
-&nbsp; &nbsp; $ sudo openvpn --config cc00-myvpn.com_tcp.ovpn --auth-user-pass /home/user/auth
+&nbsp; &nbsp; • You can autoconnect with saved username and password,
+&nbsp; &nbsp;   create another file in the OpenVPN folder called, auth.txt .
+&nbsp; &nbsp;   Inside that file, put your VPN username on the first
+&nbsp; &nbsp;   line and your password on the second one.
+&nbsp; &nbsp; $ sudo touch /etc/openvpn/auth.txt
+&nbsp; &nbsp; $ sudo nano /etc/openvpn/auth.txt
+&nbsp; &nbsp;   user
+&nbsp; &nbsp;   password
+&nbsp; &nbsp; $ sudo chmod 600 /etc/openvpn/auth.txt
+&nbsp; &nbsp; • You can autoconnect with saved login
+&nbsp; &nbsp; $ sudo openvpn --config cc00-myvpn.com_tcp.ovpn --auth-user-pass /etc/openvpn/auth.txt
 &nbsp; &nbsp;   (...)
 &nbsp; &nbsp;   Initialization Sequence Completed
 </pre>
 
-<p>Basic connection with autoconnect and DNS resolver</p>
+<p>Basic connection with autoconnect and DNS resolver, make OpenVPN update its nameservers when it starts and exits.</p>
 
 <pre>
-$ openvpn --script-security 2 --config cc00-myvpn.com_tcp.ovpn 
-$ sudo openvpn --config config.ovpn --up /etc/openvpn/update-resolv-conf --down /etc/openvpn/update-resolv-conf --script-security 2 --auth-user-pass /home/user/auth
+&nbsp; Commands
+&nbsp; &nbsp; $ openvpn --script-security 2 --config cc00-myvpn.com_tcp.ovpn 
+&nbsp; &nbsp; • Or
+&nbsp; &nbsp; $ sudo openvpn --config cc00-myvpn.com_tcp.ovpn --up /etc/openvpn/update-resolv-conf --down /etc/openvpn/update-resolv-conf --script-security 2 --auth-user-pass /home/user/auth
 </pre>
-
 
 <p>Creating a autologin file</p>
 
@@ -2791,7 +2842,7 @@ $ sudo openvpn --config config.ovpn --up /etc/openvpn/update-resolv-conf --down 
 
 <!-- ########## -->
 
-<h4>OpenVPN Random Server and Autologin</h4>
+<h4>OpenVPN Random Server Selection and Autologin</h4>
 
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
@@ -2950,7 +3001,7 @@ key-direction 1
 
 <pre>
 &nbsp; &nbsp; • Configuring client.conf automatically in batch
-&nbsp; &nbsp; $ echo 'auth-user-pass /etc/openvpn/client/auth
+$ echo 'auth-user-pass /etc/openvpn/client/auth
 keepalive 10 60
 log-append /var/log/openvpn.log
 script-security 2
@@ -2983,9 +3034,9 @@ down /etc/openvpn/update-resolv-conf' | tee -a openvpn/*.conf
 &nbsp; &nbsp; # chmod 600 /etc/openvpn/client/auth
 &nbsp; &nbsp; • Load daemon
 &nbsp; &nbsp; $ sudo openvpn --config /etc/openvpn/client.conf --daemon
-<pre>
-
 </pre>
+
+<pre>
 &nbsp; &nbsp; • Alternatively
 &nbsp; &nbsp; $ sudo chmod 600 /etc/openvpn/client/auth
 &nbsp; &nbsp; $ sudo bash -c 'echo "USERNAME" >> /etc/openvpn/client/auth'
@@ -2993,9 +3044,9 @@ down /etc/openvpn/update-resolv-conf' | tee -a openvpn/*.conf
 &nbsp; &nbsp; # chmod 600 /etc/openvpn/client/auth
 &nbsp; &nbsp; • Load daemon
 &nbsp; &nbsp; $ sudo openvpn --config /etc/openvpn/client.conf --daemon
-<pre>
-
 </pre>
+
+<pre>
 &nbsp; &nbsp; • Alternatively
 &nbsp; &nbsp; $ sudo su
 &nbsp; &nbsp; # echo 'myuser' >> /etc/openvpn/client/auth
@@ -3003,9 +3054,9 @@ down /etc/openvpn/update-resolv-conf' | tee -a openvpn/*.conf
 &nbsp; &nbsp; # chmod 600 /etc/openvpn/client/auth
 &nbsp; &nbsp; • Load daemon
 &nbsp; &nbsp; $ sudo openvpn --config /etc/openvpn/client.conf --daemon
-<pre>
-
 </pre>
+
+<pre>
 &nbsp; &nbsp; • Alternatively
 &nbsp; &nbsp; $ sudo su
 &nbsp; &nbsp; # echo 'myuser' | tee --append /etc/openvpn/client/auth
@@ -3045,14 +3096,14 @@ https://github.com/jonathanio/update-systemd-resolved<br>
 &nbsp; &nbsp; $ sudo ls /etc/openvpn/client
 &nbsp; &nbsp; • Set the audoestart directive
 &nbsp; &nbsp; $ sudo nano in /etc/default/openvpn
-                AUTOSTART=<country>
+                AUTOSTART="nameofopvnconfigfile"
 &nbsp; &nbsp; • Save or edit your configuration with
 &nbsp; &nbsp; $ sudo nano /etc/openvpn/client/<country>.conf
 &nbsp; &nbsp; • Alternatively
-&nbsp; &nbsp; $ sudo echo 'AUTOSTART="<country>"' >> /etc/default/openvpn
+&nbsp; &nbsp; $ sudo echo 'AUTOSTART="nameofopvnconfigfile"' >> /etc/default/openvpn
 &nbsp; &nbsp; • Enable the service by calling 
-&nbsp; &nbsp; $ sudo systemctl start openvpn-client@<country>
-&nbsp; &nbsp; $ sudo systemctl enable openvpn-client@<country>
+&nbsp; &nbsp; $ sudo systemctl start openvpn-client@nameofopvnconfigfile
+&nbsp; &nbsp; $ sudo systemctl enable openvpn-client@nameofopvnconfigfile
 &nbsp; &nbsp; • Verify
 &nbsp; &nbsp; $ sudo cat /etc/default/openvpn
 &nbsp; &nbsp; • Load OpenVPN and connect
@@ -3957,8 +4008,7 @@ $ find . -name "*.gif" -exec mogrify -format png {} \;
 
 https://emailselfdefense.fsf.org/en/<br>
 https://emailselfdefense.fsf.org/en/workshops.html<br>
-https://riseup.net/en/s
-urity/message-security/openpgp/best-practices<br>
+https://riseup.net/en/security/message-security/openpgp/best-practices<br>
 https://riseup.net/en/security/message-security/openpgp/enigmail<br>
 https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird<br>
 https://wiki.archlinux.org/title/Paperkey<br>
@@ -4175,6 +4225,8 @@ function extract() {
 
 <h4>• 7Z (.7z and .zip)</h4>
 
+https://www.7-zip.org<br>
+
 <code>$ sudo apt install p7zip-full</code><br>
 
 <pre>
@@ -4206,6 +4258,8 @@ function extract() {
 &nbsp; &nbsp; $ 7z x archive.zip 
 </pre>
 
+<p>*Encrypted header: no file list contents visible without the password</p>
+
 <h4>• RAR (.rar)</h4>
 
 <code>$ sudo apt install unrar-free</code><br>
@@ -4219,6 +4273,8 @@ function extract() {
 </pre>
 
 <h4>• ZIP (.zip)</h4>
+
+https://infozip.sourceforge.net<br>
 
 <code>$ sudo apt install zip unzip</code><br>
 
@@ -4291,7 +4347,7 @@ function extract() {
 
 <code>$ sudo bleachbit --clean system.cache system.localizations system.trash</code><br>
 
-<p>Locale Purge</p>
+<h5>∙ Locale Purge</h5>
 
 <p>Mark your preferred language besides en-US</p>
 
@@ -4304,14 +4360,14 @@ function extract() {
 
 <h5>∙ Metadata Cleaner</h5>
 
-<code>$ sudo apt install exiftool</code> *CLI<br>
-<code>$ sudo apt install metadata-cleaner</code> *GUI<br>
-<code>$ sudo apt install metacam</code> *GUI<br>
+<code>$ sudo apt install exiftool</code> (CLI)<br>
+<code>$ sudo apt install metadata-cleaner</code> (GUI)<br>
+<code>$ sudo apt install metacam</code> (GUI)<br>
 
 • Exiftool - https://github.com/exiftool/exiftool<br>
 • List of metadata TAGS - https://exiftool.org/TagNames/index.html<br>
-• Metacam - https://packages.debian.org/unstable/graphics/metacam<br>
 • Common Mistakes - https://exiftool.org/mistakes.html<br>
+• Metacam - https://packages.debian.org/unstable/graphics/metacam<br>
 
 <pre>
 &nbsp; Commands for exiftool basic commands
@@ -4535,7 +4591,7 @@ $ cp ~/.config/example/ /media/backup
 </pre>
 
 <h5>∙ "Incremental" Backup</h5>
-
+</h5>
 <pre>
 $ cp -vur ~/.config/example/ /media/backup
 </pre>
@@ -4601,6 +4657,11 @@ https://clonezilla.org//clonezilla-live-doc.php<br>
 <p>Changing disk name</p>
 
 <code>$ cnvt-ocs-dev -d /home/partimag 'image' 'sda3' 'sda2' </code><br>
+
+
+<h4>Data Integrity</h4>
+
+https://www.debian.org/doc/manuals/securing-debian-manual/ch04s17.en.html#check-integ<br>
 
 <br>
 </details>
