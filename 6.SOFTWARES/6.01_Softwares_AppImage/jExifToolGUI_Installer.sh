@@ -2,7 +2,7 @@
 
 ########################################################################
 # VISIT: https://github.com/hvdwolf/jExifToolGUI
-# SCRIPT CREDITS: https://portable-linux-apps.github.io/
+# SCRIPT CREDITS: https://portable-linux-apps.github.io
 # 1. Make it executable:
 # $ sudo chmod +x ./file.sh
 # 2. Then run

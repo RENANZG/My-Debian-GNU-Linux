@@ -1969,11 +1969,14 @@ https://wiki.ubuntu.com/DebuggingApparmor<br>
 <summary><b>4.03 Privileges</b></summary>
 <br>
 
-<h4>Add <em>existing</em> user to <em>existing</em> group</h4>
+<h4>How to Add User to Sudoers</h4>
 
-<pre>
-<code>sudo usermod -<span>a</span> -G groupnames username</code>
-</pre>
+<code> $ su</code>
+<code> # usermod -aG sudo username</code>
+<code> # exit</code>
+<code> $ getent group sudo</code>
+
+<p>*Logoff to take effect.</p>
 
 <p>
 <code>-a</code> - <em>append</em> groups to group user belongs to (instead of overwrite). 
@@ -2088,8 +2091,7 @@ Nice = 19<br>
 &nbsp; • Commands
 &nbsp; $ man clamscan
 &nbsp; • Basic command to scan all system
-&nbsp; $ sudo freshclam
-&nbsp; $ sudo clamscan -r -i --exclude-dir="^/sys" / 
+&nbsp; $ sudo freshclam && sudo clamscan -v -r -i --exclude-dir="^/sys" / 
 &nbsp; • Scan file
 &nbsp; $ clamscan --verbose /file.ext
 &nbsp; • Scan compressed files
@@ -2116,13 +2118,28 @@ Nice = 19<br>
 &nbsp; $ sudo systemctl list-timers
 </pre>
 
-If you get AppArmor denials about clamd, set the profile to a complain-only mode:<br>
+*If you get AppArmor denials about clamd, set the profile to a complain-only mode:<br>
 
 <code>$ sudo aa-complain clamd</code>
 
-Signatures compatible with ClamAV<br>
+<h4>Signatures compatible with ClamAV</h4>
+
+• RFXN
 https://www.rfxn.com/projects/linux-malware-detect<br>
+
+• Malware Blocklist
 https://malwareblocklist.org<br>
+
+• YARA rules
+
+https://github.com/Cisco-Talos/clamav-documentation/blob/873bc5f95c1b79f94d7f55602b5e433423ba9705/src/manual/Signatures/YaraRules.md <br>
+
+https://www.infosecinstitute.com/resources/reverse-engineering/malware-analysis-clamav-yara<br>
+
+<pre>
+$ sudo apt install yara
+$ sudo clamscan -d yara.rule -r /
+</pre>
 
 <h4>ESET NOD32 Antivirus for Linux Desktop</h4>
 
@@ -2169,7 +2186,7 @@ $ systemctl status "service"
 <summary><b>5.01 Router</b></summary>
 <br>
 
-<h4>Router Freedom - open-source routers</h4>
+<h4>Router Freedom - Open-source routers - Device Neutrality</h4>
 
 https://docs.fsfe.org/en/teams/router-freedom-tech-wiki<br>
 https://fsfe.org/contribute/spreadtheword#device-neutrality<br>
@@ -2214,10 +2231,8 @@ https://fsfe.org/contribute/spreadtheword#device-neutrality<br>
 </tbody>
 </table>
 
-
 https://openwrt.org<br>
 https://www.pfsense.org<br>
-
 
 <h4>Router Guide</h4>
 
@@ -2237,6 +2252,8 @@ https://avoidthehack.com/router-wireless-guide<br>
 </ul>
 
 <p>*These are solutions outside the military level. Forgetting wifi and using an RJ-45 to USB should be considered for home use.</p>
+
+<p>*Misconfigured DNS settings on a router may lead to the device sending DNS queries to unintended DNS servers.</p>
 
 <br>
 </details>
@@ -2356,92 +2373,14 @@ https://wiki.debian.org/Avahi<br>
 
 <!-- ########## -->
 
-<h4>Solving DNS problems with OpenVPN</h4>
+<h4>Router DNS</h4>
 
-https://openvpn.net/vpn-server-resources/troubleshooting-dns-resolution-problems<br>
+https://developers.cloudflare.com/1.1.1.1/ip-addresses<br>
+https://www.opendns.com/setupguide<br>
+https://docs.fsfe.org/en/teams/router-freedom-tech-wiki<br>
 
-<!-- ########## -->
+<p>Misconfigured DNS settings on a router may lead to the device sending DNS queries to unintended DNS servers. Verify the DNS of your WAN are set in your router.</p>
 
-<h5>OpenVPN DNS</h5>
-
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
-
-<code>$ sudo apt install resolvconf</code><br>
-
-<p>* Consider 
-<code>$ sudo apt install openvpn-systemd-resolved</code><br></p>
-
-<code>$ sudo nano /etc/openvpn/update-resolv-conf</code>
-
-<pre>
-$ sudo mv /etc/resolv.conf /etc/resolv.conf.bak
-
-• Add this lines into your openvpn client.conf:
-
-$ nano client.conf
-
-script-security 2
-up /etc/openvpn/update-resolv-conf
-down /etc/openvpn/update-resolv-conf
-</pre>
-
-<p>Your could run openvpn with DNS resolver</p>
-
-<pre>
-$ openvpn --script-security 2 --config cc00-myvpn.com_tcp.ovpn
-</pre>
-
-<!-- ########## -->
-
-<h5>Disabling OpenVPN's client DNS</h5>
-
-<code>$ sudo nano /etc/openvpn/client/client.conf</code>
-
-<pre>
-#Actual DNS name
-dhcp-option DNS 10.10.10.10
-</pre>
-
-<p>Take care with DNS leaks</p>
-
-<code>curl ipleak.net/json/</code><br>
-<code>curl ipinfo.io</code><br>
-
-<pre>
-#IPV4
-pull-filter ignore "dhcp-option DNS"
-
-#IPV6
-pull-filter ignore "dhcp-option DNS6"
-</pre>
-
-<!-- ########## -->
-
-<h5>Disabling NetworkManager's own dnsmasq</h5>
-
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
-
-<pre>
-$ sudo nano /etc/NetworkManager/NetworkManager.conf
-
-#dns=dnsmasq
-
-$ sudo restart network-manager
-</pre>
-
-<!-- ########## -->
-
-<h5>NetworkManager dnsmasq (CLI)</h5>
-
-<p>DNS requests are directed to VPN-supplied DNS servers without any manipulations with dnsmasq, up/down/dispatch helper scripts.</p>
-
-<pre>
-nmcli -p connection modify MY_VPN_CONNECTION ipv4.never-default no
-nmcli -p connection modify MY_VPN_CONNECTION ipv4.ignore-auto-dns no
-nmcli -p connection modify MY_VPN_CONNECTION ipv4.dns-priority -42
-</pre>
-
-<p>*Using OpenVPN through NetworkManager (GUI) allows users to disable the connection.</p>
 
 <!-- #################### -->
 
@@ -2705,18 +2644,22 @@ https://pypi.org/project/openpyn<br>
 <br>
 
 <h4>OpenVPN</h4>
-https://openvpn.net<br>
-https://community.openvpn.net<br>
 https://openvpn.net/community-resources/how-to/<br>
-https://github.com/OpenVPN/openvpn/tree/master/sample/sample-config-files<br>
+https://wiki.debian.org/OpenVPN<br>
+https://debian-handbook.info/browse/stable/sect.virtual-private-network.html<br>
+https://www.debian.org/doc/manuals/securing-debian-manual/vpn.en.html<br>
 https://wiki.archlinux.org/index.php/OpenVPN<br>
 https://wiki.archlinux.org/index.php/OpenVPN#DNS<br>
+https://ubuntu.com/core/docs/networkmanager/configure-vpn<br>
+https://community.openvpn.net<br>
+https://github.com/OpenVPN/openvpn/tree/master/sample/sample-config-files<br>
 https://linuxconfig.org/how-to-run-openvpn-automatically-on-debian-with-a-static-ip-address<br>
 https://linuxconfig.org/how-to-encrypt-your-dns-with-dnscrypt-on-ubuntu-and-debian<br>
 
 <pre>
 &nbsp; OpenVPN Sample Configuration Files
 &nbsp; &nbsp; $ sudo ls /usr/share/doc/openvpn
+&nbsp; &nbsp; $ /usr/share/doc/openvpn/README.Debian.gz
 </pre>
 
 <h4>OpenVPN Client Possibilities</h4>
@@ -2732,11 +2675,15 @@ OpenVPN + nmcli (CLI) + Autostart + Autoconnect + Kill Switch
 
 <h4>Installing OpenVPN with NetworkManager (GUI)</h4>
 
+<p>You may use graphical VPN tool network-manager UI by providing the key and certificates</p>
+
 <pre>
 &nbsp; Commands GUI
-&nbsp; &nbsp; $ sudo apt install network-manager-gnome
 &nbsp; &nbsp; $ sudo apt install network-manager-openvpn-gnome
+&nbsp; &nbsp; $ nm-connection-editor
 </pre>
+
+<p>"Find a network connection, open its settings, then under General, enable Automatically connect to VPN. After saving, a secondaries= line is added in that network's configuration file in the [connection] section. It will contain a list of secondary connection UUIDs to be activated. The configuration file is usually <code>/etc/NetworkManager/system-connections/</code>."</p>
 
 <p>Import OVPN to NetworkManager in terminal</p>
 
@@ -2795,7 +2742,7 @@ OpenVPN + nmcli (CLI) + Autostart + Autoconnect + Kill Switch
 
 <!-- ########## -->
 
-<h4>Basic OpenVPN Connection (Manual Connection)</h4>
+<h4>Basic OpenVPN Connection (Manual connection for test)</h4>
 
 <pre>
 &nbsp; &nbsp; • Basic connection, OpenVPN will ask for a username and
@@ -3075,6 +3022,9 @@ down /etc/openvpn/update-resolv-conf' | tee -a openvpn/*.conf
 https://wiki.archlinux.org/title/OpenVPN#DNS<br>
 https://github.com/jonathanio/update-systemd-resolved<br>
 
+
+<p>"By default, all configured VPNs in <code>/etc/openvpn/</code> are started during system boot. Edit <code>/etc/default/openvpn</code> to start specific VPNs or to disable this behavior. You need to run <code>systemctl daemon-reload</code> once to enable new VPNs."</p>
+
 <pre>
 &nbsp; Commands
 &nbsp; &nbsp; $ sudo su
@@ -3086,9 +3036,98 @@ https://github.com/jonathanio/update-systemd-resolved<br>
 
 <!-- ########## -->
 
+<h4>Solving DNS problems with OpenVPN</h4>
+
+https://openvpn.net/vpn-server-resources/troubleshooting-dns-resolution-problems<br>
+
+<!-- ########## -->
+
+<h5>OpenVPN DNS</h5>
+
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+
+<code>$ sudo apt install resolvconf</code><br>
+
+<p>* Consider 
+<code>$ sudo apt install openvpn-systemd-resolved</code><br></p>
+
+<code>$ sudo nano /etc/openvpn/update-resolv-conf</code>
+
+<pre>
+$ sudo mv /etc/resolv.conf /etc/resolv.conf.bak
+
+• Add this lines into your openvpn client.conf:
+
+$ nano client.conf
+
+script-security 2
+up /etc/openvpn/update-resolv-conf
+down /etc/openvpn/update-resolv-conf
+</pre>
+
+<p>Your could run openvpn with DNS resolver</p>
+
+<pre>
+$ openvpn --script-security 2 --config cc00-myvpn.com_tcp.ovpn
+</pre>
+
+<!-- ########## -->
+
+<h5>Disabling OpenVPN's client DNS</h5>
+
+<code>$ sudo nano /etc/openvpn/client/client.conf</code>
+
+<pre>
+#Actual DNS name
+dhcp-option DNS 10.10.10.10
+</pre>
+
+<p>Take care with DNS leaks</p>
+
+<code>curl ipleak.net/json/</code><br>
+<code>curl ipinfo.io</code><br>
+
+<pre>
+#IPV4
+pull-filter ignore "dhcp-option DNS"
+
+#IPV6
+pull-filter ignore "dhcp-option DNS6"
+</pre>
+
+<!-- ########## -->
+
+<h5>Disabling NetworkManager's own dnsmasq</h5>
+
+👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+
+<pre>
+$ sudo nano /etc/NetworkManager/NetworkManager.conf
+
+#dns=dnsmasq
+
+$ sudo restart network-manager
+</pre>
+
+<!-- ########## -->
+
+<h5>NetworkManager dnsmasq (CLI)</h5>
+
+<p>DNS requests are directed to VPN-supplied DNS servers without any manipulations with dnsmasq, up/down/dispatch helper scripts.</p>
+
+<pre>
+nmcli -p connection modify MY_VPN_CONNECTION ipv4.never-default no
+nmcli -p connection modify MY_VPN_CONNECTION ipv4.ignore-auto-dns no
+nmcli -p connection modify MY_VPN_CONNECTION ipv4.dns-priority -42
+</pre>
+
+<p>*Using OpenVPN through NetworkManager (GUI) allows users to disable the connection.</p>
+
+<!-- ########## -->
+
 <h5>Enable OpenVPN as service at boot</h5>
 
-<p>To make OpenVPN automatically connect with a certain configuration, set the AUTOSTART directive in /etc/default/openvpn to the configuration filename without the extension.</p>
+<p>To make OpenVPN automatically connect with a certain configuration, set the AUTOSTART directive in <code>/etc/default/openvpn</code> to the configuration filename without the extension.</p>
 
 <pre>
 &nbsp; Commands
@@ -3201,6 +3240,8 @@ down /etc/openvpn/scripts/update-systemd-resolved
 down-pre
 </pre>
 </p>
+
+
 
 <br>
 </details>
@@ -3486,7 +3527,11 @@ https://avoidthehack.com/util/browser-comparison<br>
 </li>
 <li>
 <a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a><br>
+<a href="https://privacybadger.org">Privacy Badger is a browser extension that automatically learns to block invisible trackers</a><br>
 </li>
+</ul>
+
+<ul>
 <li>
 <a href="https://addons.mozilla.org/en-US/firefox/addon/terms-of-service-didnt-read">Terms of Service; Didn't Read</a><br>
 </li>
@@ -3501,8 +3546,12 @@ https://avoidthehack.com/util/browser-comparison<br>
 </li>
 <li>
 <a href="https://addons.mozilla.org/en-US/firefox/addon/decentraleyes">Decentraleyes</a><br>
- </ul>
+</ul>
  
+<h4>URL shorteners</h4>
+
+https://kutt.it<br>
+https://shlink.io<br>
 
 <br>
 </details>
@@ -3513,15 +3562,33 @@ https://avoidthehack.com/util/browser-comparison<br>
 <summary><b>6.03 Cloud Services</b></summary>
 <br>
 
-<h4>Cloud Services</h4>
-
-<h4>• Info</h4>
+<h4>Info</h4>
 
 https://forum.rclone.org<br>
 https://www.reddit.com/r/cloudstorage<br>
 https://www.reddit.com/r/DataHoarder<br>
 https://www.reddit.com/r/Piracy<br>
 https://www.reddit.com/r/Scams<br>
+
+<h4>Cloud Privacy</h4>
+
+<h5>∙ Cryptomator (GUI)</h5>
+
+https://cryptomator.org<br>
+
+<h5>∙ Duplicati (GUI)</h5>
+
+https://www.duplicati.com<br>
+
+<h5>∙ Tahoe-LAFS</h5>
+
+https://tahoe-lafs.org/trac/tahoe-lafs<br>
+
+<h5>∙ </h5>
+
+<br>
+
+<h4>Cloud Providers</h4>
 
 <h4>• Google Drive</h4>
 
@@ -3580,6 +3647,9 @@ https://github.com/rclone/rclone<br>
 <br>
 
 <h4>File Host</h4>
+
+<h4>• Unsee</h4>
+https://unsee.cc<br>
 
 <h4>• Rapidgator</h4>
 https://rapidgator.net<br> 
@@ -3665,7 +3735,9 @@ https://bitwarden.com/products/send<br>
 
 &nbsp; &nbsp;<a href="https://www.zotero.org/">Zotero</a><br>
 
-<h4>• PDFs</h4>
+<!-- ######### -->
+
+<h4>• PDF Documents</h4>
 
 <h5>∙ PDF Reader</h5>
 
@@ -3678,15 +3750,40 @@ https://bitwarden.com/products/send<br>
 
 <h5>∙ PDF Crop</h5>
 
+<p>Krop (GUI or CLI)</p>
+
 <code>$ sudo apt install -y krop</code><br>
+
+<p>ImageMagick (GUI or CLI)</p>
+
+https://www.imagemagick.org/Usage/crop<br>
+
+<code>$ sudo apt install imagemagick</code><br>
+
+<pre>
+$ convert -monitor `ls input-*.png` -crop 3704x1852+160+20 output.png
+$ convert -monitor -density 200x200 -quality 60 -compress jpeg input.pdf output.pdf
+$ convert -monitor -density 150x150 -quality 70 -compress jpeg -resize 15% input.pdf output.pdf
+$ convert -monitor -density 150x150 -compress Zip input.pdf output.pdf
+$ convert -monitor -density 80 -page a4 input.pdf output.pdf
+</pre>
+
+<p>pdfCropMargins - Python</p>
+
+https://pypi.org/project/pdfCropMargins<br>
+
+<pre>
+$ pip install "pdfCropMargins" --upgrade
+$ pdf-crop-margins -v -p 0 -a -6 input.pdf
+</pre>
 
 <h5>∙ PDF OCR</h5>
 
-<p>Install Ocrmypdf. It's a command-line interface.</p>
+<p>Ocrmypdf (CLI)</p>
 
 <code>$ sudo apt install -y ocrmypdf</code><br>
 
-<p>Install Tesseract OCR plugins</p>
+<p>Also install the Tesseract OCR plugins for your language</p>
 
 <code>$ sudo apt install -y tesseract-ocr-eng</code><br>
 <code>$ sudo apt install -y tesseract-ocr-deu</code><br>
@@ -3715,13 +3812,13 @@ https://bitwarden.com/products/send<br>
 &nbsp; &nbsp; $ ocrmypdf -v --redo-ocr /input.pdf ~/output.pdf
 </pre>
 
-<h5>∙ Doc Convert</h5>
+<h5>∙ Document Converter</h5>
 
 <h6>Libre Office (Headless)</h6>
 
 https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html<br>
 
-<code>$ sudo sudo apt install -y libreoffice</code> &nbsp; &nbsp; #It's a command-line interface method.<br>
+<code>$ sudo sudo apt install -y libreoffice</code> (CLI)<br>
 
 <pre>
 &nbsp; Commands for libreoffice headless
@@ -3818,7 +3915,7 @@ https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html<
 
 <h6>Pandoc</h6>
 
-<code>$ sudo sudo apt install -y pandoc</code> &nbsp; &nbsp; #It's a command-line interface.<br>
+<code>$ sudo sudo apt install -y pandoc</code> (CLI)<br>
 
 <pre>
 &nbsp; Commands for pandoc
@@ -3834,7 +3931,7 @@ https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html<
 
 <h6>Ghostscript</h6>
 
-<code>$ sudo apt install -y ghostscript</code> &nbsp; &nbsp; #It's a command-line interface.<br>
+<code>$ sudo apt install -y ghostscript</code> (CLI)<br>
 
 <pre>
 &nbsp; Commands for ghostscript
@@ -3842,29 +3939,59 @@ https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html<
 &nbsp; &nbsp; $ ps2pdf filename.ps
 </pre>
 
+<p>Optimize PDF files</p>
+
+Commands to optimize pdf size.<br>
+
 <pre>
-&nbsp; Commands to optimize pdf size
-&nbsp; gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default \
-    -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages \
-    -dCompressFonts=true -r150 -sOutputFile=output.pdf input.pdf
+$ gs -dNOPAUSE -dBATCH -dQUIET \
+-sDEVICE=pdfwrite \
+-dPDFSETTINGS=/printer \
+-sOutputFile=output.pdf \
+input.pdf
 </pre>
 
 <pre>
+$ gs -dNOPAUSE -dBATCH -dQUIET \
+-sDEVICE=pdfwrite \
+-dCompatibilityLevel=1.4 \
+-dPDFSETTINGS=/prepress \
+-dDetectDuplicateImages \
+-dCompressFonts=true \
+-r150  \
+-sOutputFile=output.pdf \
+input.pdf
+</pre>
+
+<pre>
+$ gs -q -dNOPAUSE -dBATCH -dSAFER \
+-sDEVICE=pdfwrite \
+-dCompatibilityLevel=1.3 \
+-dPDFSETTINGS=/screen \
+-dEmbedAllFonts=true \
+-dSubsetFonts=true \
+-dColorImageDownsampleType=/Bicubic \
+-dColorImageResolution=72 \
+-dGrayImageDownsampleType=/Bicubic \
+-dGrayImageResolution=72 \
+-dMonoImageDownsampleType=/Bicubic \
+-dMonoImageResolution=72 \
+-sOutputFile=output.pdf \
+input.pdf
+</pre>
+
+<sub>
 &nbsp; References
 -dPDFSETTINGS=/screen — Low quality and small size at 72dpi.
-
 -dPDFSETTINGS=/ebook — Slightly better quality but also a larger file size at 150dpi.
-
 -dPDFSETTINGS=/prepress — High quality and large size at 300 dpi.
-
 -dPDFSETTINGS=/default — System chooses the best output, which can create larger PDF files.
-</pre>
-
+</sub>
 
 <p>*LibreOffice Draw: DPI of 100 and JPEG compression of 80%.</p>
 <p>*Try: $ ps2pdf input.pdf output.pdf</p>
 
-<h5>∙ Remove annotations at once</h5>
+<h5>∙ Remove PDF annotations at once</h5>
 
 <h6>Removing annotations in Okular</h6>
 
@@ -3872,17 +3999,308 @@ https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html<
 
 <pre>
 &nbsp; Commands for pdftocairo
-&nbsp; &nbsp; • pdftocairo -pdf "input.pdf" "output-with-flatten-annotations.pdf"
+&nbsp; &nbsp; $ pdftocairo -pdf "input.pdf" "output-with-flatten-annotations.pdf"
 </pre>
 
 <pre>
 &nbsp; Commands for qpdf
-&nbsp; &nbsp; • 
-$ qpdf --flatten-annotations=all input.pdf output.pdf
+&nbsp; &nbsp; $ qpdf --flatten-annotations=all input.pdf output.pdf
 </pre>
 
-<p>*May apply some differences</p>
-<p>*May result in larger PDF</p>
+<p>*May apply some differences.</p>
+<p>*May result in larger PDF.</p>
+
+<!-- ######### -->
+
+<h4>• Image Editors</h4>
+
+<code>$ sudo apt install gthumb</code> (GUI)<br> 
+<code>$ sudo apt install gimp</code> (GUI)<br>
+<code>$ sudo apt install imagemagick</code> (GUI or CLI)<br>
+<code>$ sudo apt install webp</code (CLI)<br>
+
+<!-- ######### -->
+
+<h4>• Image Convert</h4>
+
+<h5>Convert with webp (dwebp)</h5>
+
+<code>$ sudo apt install webp</code><br>
+
+<pre>
+&nbsp; Commands for webp files
+&nbsp; &nbsp; • How to convert .webp to .png #It's a command-line interface
+&nbsp; &nbsp; $ dwebp -v in_file.webp -o ~/out_file_png_default.png 
+&nbsp; &nbsp; $ dwebp -v -resize width x height in_file.webp -o ~/out_file_png_default.png
+&nbsp; &nbsp; *If either (but not both) of the width or height parameters is 0,
+&nbsp; &nbsp;the value will be calculated preserving the aspect-ratio.
+</pre>
+
+<h5>Convert image with ImageMagick</h5>
+
+https://imagemagick.org/script/formats.php<br>
+https://imagemagick.org/script/mogrify.php<br>
+https://imagemagick.org/script/command-line-tools.php<br>
+
+<code>$ sudo apt install imagemagick</code><br>
+
+<p>*Note that <code>convert</code> is part of ImageMagick package.</p>
+
+<pre>
+• Commands
+$ mogrify -format png *.jpg
+$ mogrify -format png *.jpeg
+$ mogrify -format png *.gif
+• In batch
+$ cd ~/Donwloads
+$ find . -name "*.jpg" -exec mogrify -format png {} \;
+$ find . -name "*.jpeg" -exec mogrify -format png {} \;
+$ find . -name "*.gif" -exec mogrify -format png {} \;
+</pre>
+
+<h5>Rotate image with ImageMagick</h5>
+
+<code>$ sudo apt install imagemagick</code><br>
+
+<pre>
+• Commands
+$ mogrify -monitor -rotate -90 *.png
+</pre>
+
+<h5>Unpaper - A post-processing tool for scanned sheets of paper</h5>
+
+https://github.com/unpaper/unpaper<br>
+https://github.com/unpaper/unpaper/blob/main/doc/basic-concepts.md<br>
+https://github.com/unpaper/unpaper/blob/main/doc/image-processing.md<br>
+https://mesonbuild.com/Quick-guide.html#compiling-a-meson-project<br>
+https://gallium.readthedocs.io/en/latest/meson.html<br>
+https://imagemagick.org/script/formats.php<br>
+https://netpbm.sourceforge.net/doc/pnm.html<br>
+http://www.sane-project.org<br>
+SANE - Lists of supported scanners<br>
+http://www.sane-project.org/sane-supported-devices.html<br>
+
+<p>The output format of Unpaper is restricted to the PNM family of formats, and conversions to other formats need to happen with tools such as pnmtopng, pnmtotiff or pnmtojpeg. Alternatively you can use the convert tool from ImageMagick.</p>
+
+<p>PNM is a family of formats supporting portable bitmaps (.pbm) , graymaps (.pgm), and pixmaps (.ppm). There is no file format associated with pnm itself. If PNM is used as the output format specifier, then ImageMagick automagically selects the most appropriate format to represent the image. The default is to write the binary version of the formats. Use -compress none to write the ASCII version of the formats. On some platforms, ImageMagick automagically processes a PNM image, called image.pnm.gz is automagically uncompressed.</p>
+
+<p>Unpaper uses the Meson Build system, which can be installed using Python's package manage (pip3 or pip), the only hard dependency of Unpaper is ffmpeg, </p>
+
+<pre>
+• Commands, python and ffmpeg installation using package manager
+$ sudo apt install python3 &&
+sudo apt install python3-pip &&
+sudo apt install python3-setuptools &&
+sudo apt install python3-wheel &&
+sudo apt install ninja-build &&
+sudo apt install python3-mesonpy &&
+sudo apt install python3-sphinx &&
+sudo apt install python3-pytest &&
+sudo apt install python3-pil &&
+sudo apt install cmake &&
+sudo apt install pkg-config &&
+sudo apt install libavformat-dev &&
+sudo apt install ffmpeg &&
+sudo apt install git 
+<pre>
+
+<sub>
+
+<h6>Error: libavformat-dev</h6>
+
+Install other depedencies<br>
+
+<code>$ sudo apt install libsdl2-dev libavcodec-dev libavdevice-dev libavformat-dev libavutil-dev libswresample-dev libusb-1.0-0 libusb-1.0-0-dev</code>
+</sub>
+
+
+<p>Basic configuration. The most common use case of Meson is compiling code on a code base you are working on.</p>
+
+<pre>
+• Compiling Unpaper with Meson project
+$ git clone https://github.com/unpaper/unpaper
+$ cd unpaper
+$ CFLAGS="-march=native" meson --buildtype=debugoptimized builddir -Db_lto=true
+$ meson compile -C builddir
+</pre>
+
+<em>Warning: Before making modifications to files, create backup copies.</em>
+
+<p>File formats</p>
+
+https://github.com/unpaper/unpaper/blob/main/doc/file-formats.md<br>
+
+<pre>
+• Converter
+$ sudo apt install imagemagick
+• Commands to convert .png in .pbm
+$ cd ~/Folder
+$ find . -name "*.png" -exec mogrify -monitor -format pbm {} \;
+• Commands to convert .pdf in .pbm
+$ find . -name "*.pdf" -exec mogrify -monitor -format pbm {} \; 
+• Commands to convert multiple .pbm in .pdf
+• Commands to convert multiple .pbm in .pdf
+$ convert -monitor *.pbm out.pdf
+$ convert image-0001.pnm image-0002.pnm ../myscan_modified.pdf
+$ find . -name "*.pbm" -exec convert -units PixelsPerInch *.pbm -density 96 output.pdf
+</pre>
+
+Alternative - Combining pictures into PDF file<br>
+https://gitlab.mister-muffin.de/josch/img2pdf<br>
+
+<pre>
+$ img2pdf -o output.pdf --imgsize 300dpix300dpi -i *.jp2
+</pre>
+
+<h6>Error: mogrify-im6.q16: attempt to perform an operation not allowed by the security policy `PDF' @ error/constitute.c/IsCoderAuthorized/426</h6>
+
+<pre>
+• Policy edit
+$ sudo sed -i '/disable ghostscript format types/,+6d' /etc/ImageMagick-6/policy.xml
+
+• Alternatively uncomment 
+$ sudo nano /etc/ImageMagick-6/policy.xml
+
+<policy domain="coder" rights="none" pattern="{PS,PS2,PS3,EPS,PDF,XPS}" />
+
+• Alternatively remove this whole following section 
+$ sudo nano /etc/ImageMagick-6/policy.xml
+
+<!-- disable ghostscript format types -->
+<policy domain="coder" rights="none" pattern="PS" />
+<policy domain="coder" rights="none" pattern="PS2" />
+<policy domain="coder" rights="none" pattern="PS3" />
+<policy domain="coder" rights="none" pattern="EPS" />
+<policy domain="coder" rights="none" pattern="PDF" />
+<policy domain="coder" rights="none" pattern="XPS" />
+
+</pre>
+
+<h6>Error: convert-im6.q16: cache resources exhausted</h6>
+
+<pre>
+• Increase the available memoryfile
+$ sudo nano /etc/ImageMagick-6/policy.xml
+
+<policy domain="resource" name="memory" value="3GB"/>
+<policy domain="resource" name="disk" value="3GB"/>
+
+• Alternatively use
+$ convert -limit memory 1GiB -limit disk 1GiB *.png new.pdf
+</pre>
+
+<pre>
+• Renamer
+$ sudo apt install rename
+• Commands to rename to numbered order
+$ cd /bookfolder
+• Test the output before
+$ rename -n 's/.+/our $i; sprintf("input%03d.png", 1+$i++)/e' *
+• Apply the change
+$ rename 's/.+/our $i; sprintf("input%03d.png", 1+$i++)/e' *
+</pre>
+
+<p>Basic usage</p>
+
+https://github.com/unpaper/unpaper/blob/main/doc/basic-concepts.md<br>
+
+<p>Use case: two pages per sheet, "open book" format where the input image-file already contains two scanned pages in a double-page layout</p>
+
+<img src=".data/multiple-output-files.png" title="Multiple Output Files" alt="Multiple Output Files" />
+
+<p>Process multiple files using a wildcard of the form %0nd, e.g. input%03d.pbm and output%03d.pbm. It will successively read images from files input001.pbm, input002.pbm, input003.pbm etc., and write output to the files output001.pbm, output002.pbm, output003.pbm etc., until no more input image-files with the current index number are available. Wildcards in filenames like "%03d" will get replaced with strings in the sequence 001, 002, 003 etc.</p>
+
+<pre>
+• Commands for double-page layout
+$ unpaper --layout double input%03d.pbm output%03d.pbm
+$ unpaper --layout double input%03d.pbm --output-pages 2 output%03d.pbm
+</pre>
+
+<p>Use case: combine single-page image-files onto a double-page layout sheet</p>
+
+<img src=".data/multiple-input-files.png" title="Multiple Input Files" alt="Multiple Input Files" />
+
+<pre>
+• Commands for single-page onto a double-page layout sheet
+$ unpaper --no-processing --input-pages 2 singlepage%03d.pgm output%03d.pgm
+</pre>
+
+• Commands
+$ 
+• Commands
+$ 
+• Commands
+$ 
+</pre>
+
+<p>Image processing</p>
+
+https://github.com/unpaper/unpaper/blob/main/doc/image-processing.md<br>
+
+<pre>
+• Commands
+$ unpaper 
+• Commands
+$ 
+</pre>
+
+<h5>Processing of multipage with ImageMagick</h5>
+
+<p>Command line processing of multipage book-type scanned documents with ImageMagick.</p>
+
+https://edison23.net/blog/posts/crop-and-split-book-scan-in-3-commands<br>
+http://www.imagemagick.org/script/command-line-processing.php#geometry<br>
+https://diybookscanner.org<br>
+
+<code>$ sudo apt install imagemagick</code><br>
+
+<p>*Note that <code>convert</code> is part of ImageMagick package.</p>
+
+<p>How to make a clean PDF with one page per sheet. The quality and quantity of additional work depends on how carefully you digitized the book.</p>
+
+<pre>
+• Command all-in-one
+$ convert -monitor -density 300 orig-scan.pdf pages.png convert `ls pages-*.png` -crop 3704x1852+160+20 +repage -crop 50%x100% pages-split.png convert `ls pages-split*` -page 100%x100% result.pdf
+</pre>
+
+<pre>
+• Commands
+• Convert PDF to images in ordered sequence
+$ convert -density 300 orig-scan.pdf pages.png
+$ convert -density 300 orig-scan.pdf[0-9] pages.png
+• Batch cropping and batch splitting the pages (*before, test the resullt)
+$ convert `ls pages-*.png` -crop 3704x1852+160+20 +repage -crop 50%x100% pages-split.png
+• Recombining all the single pages back to PDF
+$ convert `ls pages-split*` -page 100%x100% result.pdf
+• Commands
+$ 
+</pre>
+
+
+<!-- ######### -->
+
+<h4>• PDF Bookmarks Creation</h4>
+
+https://github.com/SiddharthPant/booky<br>
+
+
+<!-- ######### -->
+
+<h4>• Audio Editors</h4>
+
+<code>$ sudo apt install audacity</code> (GUI)<br>
+
+<!-- ######### -->
+
+<h4>• Office Utility</h4>
+
+<code>$ sudo apt install xpad</code><br>
+<code>$ sudo apt install kcalc</code><br>
+
+<br>
+</details>
+
+<!-- ######### -->
 
 <h4>• Media Players</h4> 
 
@@ -3892,11 +4310,13 @@ $ qpdf --flatten-annotations=all input.pdf output.pdf
 
 <p>Shortcuts - https://github.com/mpv-player/mpv/blob/master/DOCS/man/mpv.rst#keyboard-control</p>
 
+<p>Window Geometry - https://mpv.io/manual/master/#options-geometry</p>
+
+<p>Video Autofit - https://mpv.io/manual/master/#options-autofit</p>
+
+<h6>MPV Config</h6>
+
 <p>Config - https://github.com/mpv-player/mpv/blob/master/etc/mpv.conf</p>
-
-<p> Window Geometry - https://mpv.io/manual/master/#options-geometry</p>
-
-<p> Video Autofit - https://mpv.io/manual/master/#options-autofit</p>
 
 <p>Coping basic MPV configs</p>
 
@@ -3916,7 +4336,6 @@ no-border
 volume-max=125
 geometry=50%x96%
 </pre>
-
 
 <p>To automatically save the current playback position on quit, start mpv with --save-position-on-quit, or add save-position-on-quit=yes to the configuration file.</p>
 
@@ -3943,54 +4362,143 @@ geometry=50%x96%
 
 <code>$ sudo apt install totem</code><br>
 
-<h4>• Image Edit</h4>
+<!-- ######### -->
 
-<code>$ sudo apt install gthumb</code><br>
-<code>$ sudo apt install gimp</code><br>
-<code>$ sudo apt install webp</code><br>
+<h4>• Video Editors</h4>
 
-<h4>• Image Convert</h4>
+<code>$ sudo apt install handbrake</code> (GUI)<br>
+<code>$ sudo apt install handbrake-cli</code> (CLI)<br>
+<code>$ sudo apt install ffmpeg</code> (CLI)<br> 
 
-<h5>webp (dwebp)</h5>
+<p>Usefull links:</p>
 
-<pre>
-&nbsp; Commands for webp files
-&nbsp; &nbsp; • How to convert .webp to .png #It's a command-line interface
-&nbsp; &nbsp; $ dwebp -v in_file.webp -o ~/out_file_png_default.png 
-&nbsp; &nbsp; $ dwebp -v -resize width x height in_file.webp -o ~/out_file_png_default.png
-&nbsp; &nbsp; *If either (but not both) of the width or height parameters is 0,
-&nbsp; &nbsp;the value will be calculated preserving the aspect-ratio.
-</pre>
+<ul>
+<li>https://keepvid.ch</li>
+<li>https://gifs.com</li>
+<li>https://www.omnicalculator.com/other/video-size</li>
+<li>https://vidon.me/compress-mp4</li>
+<li>https://dvdfab.at/resource/blu-ray/free-blu-ray-to-mp4-converter</li>
+<li></li>
+<ul>
 
-<h5>imagemagick</h5>
+<h5>FFmpeg editor</h5>
 
-https://imagemagick.org/script/formats.php<br>
-
-<code>$ sudo apt install imagemagick</code><br>
+https://trac.ffmpeg.org/wiki/Encode/H.264<br>
 
 <pre>
 • Commands
-$ mogrify -format png *.jpg
-$ mogrify -format png *.jpeg
-$ mogrify -format png *.gif
-• In batch
-$ cd ~/Donwloads
-$ find . -name "*.jpg" -exec mogrify -format png {} \;
-$ find . -name "*.jpeg" -exec mogrify -format png {} \;
-$ find . -name "*.gif" -exec mogrify -format png {} \;
+• Compressing videos
+$ ffmpeg -i input.ext output.mp4
+$ ffmpeg -i input.ext -b:v output.mp4 
+$ ffmpeg -i input.ext -vf scale=1280:720 output.mp4
+$ ffmpeg -i input.ext -c:v libx265 output.mp4 
+$ ffmpeg -i input.mp4 -vcodec h264 -acodec mp2 output.mp4
+$ ffmpeg -y -i input.mp4 -vcodec h264 -acodec mp3 output.mp4
+$ ffmpeg -y -i input.mp4 -vcodec h264 -acodec aac output.mp4
+$ ffmpeg -i input.mp4 -vcodec h264 -b:a 96k output.mp4
+$ ffmpeg -i input.mp4 -vcodec h264 -b:v 1000k -acodec mp3 output.mp4
+$ ffmpeg -i input.mp4 -vcodec libx265 -acodec aac -crf 23 output.mp4
+$ ffmpeg -i input.mp4 -c:v libx265 -preset ultrafast -crf 28 -c:a aac -b:a 250k output.mp4
+$ ffmpeg -i input.mov -c:v libx265 -preset veryfast -tag:v hvc1 -vf format=yuv420p -c:a copy output.mp4 
+
+• Compressing video removing sound (to disable audio you must use -an)
+$ ffmpeg -i input.mp4 -vcodec h264 -an output.mp4
+
+• Converting videos
+$ ffmpeg -y -i input.wmv output.mp4
+$ ffmpeg -i input.mp4 -vf "scale=-2:240" output.mp4
+$ ffmpeg -i input.wmv -c:v libx264 -crf 23 output.mp4
+$ ffmpeg -i input.wmv -c:v libx264 -crf 23 -c:a aac -q:a 100 output.mp4
+$ ffmpeg -i input.wmv -c:v libx264 -crf 23 -c:a aac -strict -2 -q:a 100 output.mp4
+$ ffmpeg -i input.wmv -c:v libx264 -crf 23 -profile:v high -r 30 -c:a aac -q:a 100 -ar 48000 output.mp4
+
+• Scaling down the size of the MP4 
+$ ffmpeg -i input.mp4 -s 1280x720 -acodec copy -y output.mp4
+$ ffmpeg -i input.mp4 -vf "scale=-2:720" -c:v libx264 -crf 20 -preset slow -c:a copy output.mp4
+$ ffmpeg -i input.mp4 -s 1920x1080 -c:v libx265 -preset ultrafast -crf 28 -c:a aac -b:a 250k output.mp4
+$ ffmpeg -i input.mp4 scale=1080:1920,format=yuv420p -c:v libx265 -preset veryfast -tag:v hvc1 -b:v 800k -bufsize 1200k -vf -b:a 128k output.mp4
+$ ffmpeg -i input.mp4 -c:v libx265 -preset veryfast -tag:v hvc1 -vf format=yuv420p -c:a copy output.mp4
+$ ffmpeg -i input.mp4 -c:v libx265 -preset veryfast -tag:v hvc1 -b:v new_bitrate -vf scale=new_width:new_height,format=yuv420p -c:a copy output.mp4
 </pre>
 
-<h4>• Audio Edit</h4>
+<h5>Bulk compress MP4</h5>
 
-<code>$ sudo apt install audacity</code><br>
+<p>Bulk compress MP4 with ffmpeg</p>
 
-<h4>• Office Utility</h4>
+<pre>
+• One-line convert script
+$ for file in *.mp4; do ffmpeg -i "$file" -vf "scale=-2:240" "Output-${file%.*}.mp4"; done
+</pre>
 
-<code>$ sudo apt install xpad</code><br>
-<code>$ sudo apt install kcalc</code><br>
+<p>Bulk compress script</p>
 
-<br>
-</details>
+
+<pre>
+#!/bin/bash
+
+# This script converts automatically a folder of video files.
+# You need to change SRC (source folder) and DEST (destination folder)
+# The default scale is -2x240.
+#
+# Commands to create
+#  $ touch video-convert.sh
+#  $ chmod +x convert.sh
+#  $ nano video-convert.sh
+#  $ bash video-convert.sh
+
+mkdir converted_videos
+
+for file in *.mp4; do
+    filename=$(basename -- "$file")
+    extension="${filename##*.}"
+    filename="${filename%.*}"
+    output="converted_videos/Output_${filename}.mp4"
+    ffmpeg -i "$file" -vf "scale=-2:240" "$output"
+done
+</pre>
+
+<p>Bulk compress script with ffmpeg and handbreak-cli</p>
+
+<code>$ touch video-convert.sh</code>
+<code>$ chmod +x convert.sh</code>
+<code>$ nano convert.sh</code>
+<code>$ bash convert.sh</code>
+
+<pre>
+#!/bin/bash
+
+# This script is to convert automatically a folder of video files to MP4.
+# You need to change SRC (source folder) and DEST (destination folder)
+# The MP4 format is 480x270.
+#
+# Commands to create
+#  $ touch video-convert.sh
+#  $ chmod +x convert.sh
+#  $ nano video-convert.sh
+#  $ bash video-convert.sh
+
+SRC=/home/video/
+DEST=/home/www/mp4files/
+DEST_EXT=mp4
+HANDBRAKE_CLI=HandBrakeCLI
+
+for FILE in `ls $SRC`
+do
+        filename=$(basename $FILE)
+        extension=${filename##*.}
+        filename=${filename%.*}
+
+        $HANDBRAKE_CLI -i $SRC/$FILE -o $DEST/$filename.$DEST_EXT -e x264 -q 22 -r 12 -B 64 -X 480 -O
+done
+</pre>
+
+
+<h5>HTML code to add video in GitHub README.md</h5>
+
+<code><video src="/video.mp4"></video></code>
+<code><video src="/video.mp4" width="320" height="240" controls></video></code>
+
+<p>Not working.</p>
 
 <!-- #################### -->
 
@@ -4167,7 +4675,7 @@ https://wiki.debian.org/Compression<br>
 
 <code>$ sudo apt install -y tar gzip 7zip unrar-free zlib1g bzip2 xz-utils tarlz</code><br>
 
-<p>Add this function to your `.bashrc` or `.bash_profile` configure file in your home directory.</p>
+<p>Add this function to your <code>.bashrc</code> or <code>.bash_profile</code> configure file in your home directory.</p>
 
 <pre>
 # Extract common archive files by file extension
@@ -4479,6 +4987,12 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 &nbsp; &nbsp; $ rename -v 'y/ /\_/' ~/Downloads/*.pdf
 &nbsp; &nbsp; $ rename -v 'y/\n/\_/' ~/Downloads/*.pdf
 &nbsp; &nbsp; $ rename -v 'y/\-/\_/' ~/Downloads/*.pdf
+&nbsp; &nbsp; • Commands to rename to numbered order
+&nbsp; &nbsp; $ cd /Files
+&nbsp; &nbsp; • Test the output before
+&nbsp; &nbsp; $ rename -n 's/.+/our $i; sprintf("input%03d.png", 1+$i++)/e' *
+&nbsp; &nbsp; • Apply the change
+&nbsp; &nbsp; $ rename 's/.+/our $i; sprintf("input%03d.png", 1+$i++)/e' *
 &nbsp; &nbsp; • Delete a Part of a Filename
 &nbsp; &nbsp; $ rename -v 's/example//' *.pdf
 &nbsp; &nbsp; • Convert Uppercase to Lowercase Characters #FAIL
@@ -4486,6 +5000,7 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 &nbsp; &nbsp; • Convert Lowercase to Uppercase Characters #FAIL
 &nbsp; &nbsp; $ rename -v 'y/a-z/A-Z/' *.pdf
 &nbsp; &nbsp; • To convert Lowercase to Uppercase Characters see</pre>
+</pre>
 
 <pre>
 &#92;n is a symbol for new line
@@ -4557,7 +5072,6 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 
 <code>$ sudo apt install partitionmanager</code><br>
 
-
 <br>
 </details>
 
@@ -4574,7 +5088,6 @@ https://github.com/restic/restic<br>
 <h4>Backup</h4>
 
 <h5>Folders and Files Backup</h5>
-
 
 <h4>GRSYNC (GUI)</h4>
 
@@ -4608,6 +5121,8 @@ $ cp -a ~/.config/example/ /media/backup
 
 <h6>RSYNC</h6>
 
+https://wiki.archlinux.org/title/Rsync<br>
+
 <code>$ sudo apt install rsync</code>
 
 <pre>
@@ -4615,9 +5130,10 @@ $ cp -a ~/.config/example/ /media/backup
 $ rsync -ah --progress ~/source /backup/destination
 $ rsync -ah --info=progress2 ~/source /backup/destination
 $ rsync -rah --info=progress2 ~/source /backup/destination
-$ rsync -rah --dry-run --info=progress2 --stats ~/source /backup/destination
 • Moving
-$ rsync -avzP --remove-sent-files ~/source /backup/destination
+$ rsync -ravzP --remove-sent-files ~/source /backup/destination
+• Copy a File or Directory from Local to Remote Machine
+$ rsync -ravP Directory/ server@192.168.1.56:/home/server
 </pre>
 
 <sub>*This will preserve the files permissions/ownership.</sub>
@@ -5432,12 +5948,15 @@ https://wiki.archlinux.org/title/Power_management#USB_autosuspend<br>
 https://docs.kernel.org/driver-api/usb/power-management.html<br>
 https://wiki.debian.org/HowToIdentifyADevice/USB<br>
 https://wiki.debian.org/HowToIdentifyADevice/PCI<br>
+https://www.kernel.org/doc/html/latest/usb/index.html<br>
 https://www.kernel.org/doc/html/v4.16/driver-api/usb/power-management.html<br>
 UAS Issues - https://forums.raspberrypi.com/viewtopic.php?t=245931<br>
-Bug - https://bugzilla.kernel.org/show_bug.cgi?id=202541<br>
-Bug - https://bugzilla.kernel.org/attachment.cgi?id=304188&action=diff<br>
 
-Tip: If you are transferring large amounts of data via a problematic USB, use grsync as a manager.<br>
+Bug - xhci_hcd 0000:15:00.0: WARN Set TR Deq Ptr cmd failed due to incorrect slot or ep state - https://bugzilla.kernel.org/show_bug.cgi?id=202541<br>
+Bug - CPU hard lockup related to xhci/dma - https://bugzilla.kernel.org/show_bug.cgi?id=217242<br>
+Bug - Debootstrap is very slow. Please use eatmydata to fix this. - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=700633<br>
+
+<p>Tip: If you are transferring large amounts of data via a problematic USB, use grsync as a manager.</p>
 
 <h4>USB debug</h4>
 
@@ -5459,13 +5978,20 @@ Tip: If you are transferring large amounts of data via a problematic USB, use gr
 <code>$ sudo modinfo xhci_hcd</code><br>
 <code>$ sudo modinfo ehci_hcd</code><br>
 <code>$ sudo modinfo btusb</code><br>
+<code>$ sudo modprobe -v ohci-pci</code><br>
+<code>$ sudo modprobe -v ehci-hcd</code><br>
 <code>$ sudo modprobe -v xhci-hcd</code><br>
 <code>$ sudo modprobe -v xhci-pci</code><br>
 
+<p>You may try to force your system to use USB 2.0 insted of USB 1.1:</p>
+
+<code>$ sudo modprobe -vr ohci-pci</code><br>
+<code>$ sudo modprobe -v ehci-hcd</code><br>
+
 <p>Deactivate</p>
 
-<code>$ sudo modprobe -r -v xhci-hcd</code><br>
-<code>$ sudo modprobe -r -v xhci-pci</code><br>
+<code>$ sudo modprobe -vr xhci-hcd</code><br>
+<code>$ sudo modprobe -vr xhci-pci</code><br>
 
 <p>Activate</p>
 
@@ -6046,6 +6572,9 @@ https://www.cgsecurity.org/wiki/TestDisk<br>
 YouTube<br>
 https://www.youtube.com/@DebConfVideos<br>
 https://www.youtube.com/@BlackHatOfficialYT<br>
+https://www.youtube.com/@DEFCONConference<br>
+https://www.youtube.com/@mediacccde<br>
+https://www.youtube.com/@DFRWS<br>
 https://www.youtube.com/@44contv<br>
 https://www.youtube.com/@secwestnet<br>
 https://www.youtube.com/@EkopartyConference<br>
@@ -6068,8 +6597,18 @@ https://blog.carsoncheng.ca<br>
 https://linux-tips.us<br>
 
 Others<br>
-https://www.notrace.how<br>
-https://www.anarsec.guide<br>
+• https://www.notrace.how<br>
+• https://www.anarsec.guide<br>
+• https://0x00sec.org<br>
+• Necessary and Proportionate - https://www.necessaryandproportionate.org<br>
+• Privacy International - https://www.privacyinternational.org<br>
+• EFF - https://www.eff.org<br>
+• Citizenlab - https://citizenlab.ca<br>
+• BBW - https://bigbrotherwatch.org.uk<br>
+• Bad Internet Bills - https://www.badinternetbills.com<br>
+• Software Freedom Law Center - https://softwarefreedom.org<br>
+• UN Internet Governance Forum - https://www.intgovforum.org<br>
+• Exposing the Invisible (ETI) - https://kit.exposingtheinvisible.org<br>
 
 <br>
 </details>
