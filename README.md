@@ -3678,7 +3678,6 @@ http://filescase.com/<br>
 <h4>• Hex Upload</h4>
 https://hexupload.org<br>
 
-
 <h4>Anonymous File Sharing Services With Temporary Online Storage</h4>
 
 <h4>• Tempsend</h4>
@@ -3737,22 +3736,37 @@ https://bitwarden.com/products/send<br>
 
 <!-- ######### -->
 
-<h4>• PDF Documents</h4>
-
-<h5>∙ PDF Reader</h5>
+<h4>• PDF Reader</h4>
 
 <code>$ sudo apt install -y okular</code><br>
 <code>$ sudo apt install -y okular-extra-backends</code><br>
 
-<h5>∙ PDF Edit</h5>
+<h5>∙ PDF Editor</h5>
+
+<p>PDF Arranger (GUI)</p>
+
+https://github.com/pdfarranger/pdfarranger<br>
 
 <code>$ sudo apt install -y pdfarranger</code><br>
 
-<h5>∙ PDF Crop</h5>
+<h5>∙ PDF Crop and Split</h5>
 
-<p>Krop (GUI or CLI)</p>
+<p>Krop (GUI)</p>
+
+https://arminstraub.com/software/krop<br>
+
+<p>Note, krop only adjusts which parts of a PDF are displayed; the original content is still there in the file and will, for instance, show up when editing the file in inkscape. As a result, krop is not suited for censoring a PDF document or decreasing the size of a PDF file. You may have some success in decreasing the size of the PDF (and even censoring some parts) using the option to use Ghostscript to optimize the final PDF.</p>
 
 <code>$ sudo apt install -y krop</code><br>
+
+<pre>
+• To automatically undo 4 pages print onto a single page:
+$ krop --go --grid=2x2 file.pdf
+• To trim each of these pages:
+$ krop --go --grid=2x2 --trim --trim-use=all file.pdf
+• Others
+krop --grid=2x1 --initialpage=3 --exceptions=1 --trim-use=all --trim ~/file.pdf
+</pre>
 
 <p>ImageMagick (GUI or CLI)</p>
 
@@ -3761,11 +3775,19 @@ https://www.imagemagick.org/Usage/crop<br>
 <code>$ sudo apt install imagemagick</code><br>
 
 <pre>
+• Commands to crop .pdf 
 $ convert -monitor `ls input-*.png` -crop 3704x1852+160+20 output.png
+$ convert -monitor -crop 1000x1350+20+145 +repage -path cropped *.png
+</pre>
+
+<pre>
+• Commands to reduce .pdf size
 $ convert -monitor -density 200x200 -quality 60 -compress jpeg input.pdf output.pdf
 $ convert -monitor -density 150x150 -quality 70 -compress jpeg -resize 15% input.pdf output.pdf
 $ convert -monitor -density 150x150 -compress Zip input.pdf output.pdf
 $ convert -monitor -density 80 -page a4 input.pdf output.pdf
+$ convert -monitor input.pdf -resample 85% output.pdf
+$ convert -monitor *.png -colorspace gray -resample 100% "input.pdf"
 </pre>
 
 <p>pdfCropMargins - Python</p>
@@ -3777,9 +3799,13 @@ $ pip install "pdfCropMargins" --upgrade
 $ pdf-crop-margins -v -p 0 -a -6 input.pdf
 </pre>
 
-<h5>∙ PDF OCR</h5>
+<!-- ######### -->
 
-<p>Ocrmypdf (CLI)</p>
+<h4>• PDF OCR - Optical Character Recognition</h4>
+
+<p>OcrmOCRmyPDF (CLI)</p>
+
+https://ocrmypdf.readthedocs.io<br>
 
 <code>$ sudo apt install -y ocrmypdf</code><br>
 
@@ -3798,21 +3824,95 @@ $ pdf-crop-margins -v -p 0 -a -6 input.pdf
 <pre>
 &nbsp; Commands for PDF OCR
 &nbsp; &nbsp; • How to OCR a PDF
-&nbsp; &nbsp; $ ocrmypdf -v /input.pdf ~/output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --language deu /input.pdf ~/output.pdf 
-&nbsp; &nbsp; $ ocrmypdf -v --language deu+fra ~/input.pdf ~/output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --language spa+por ~/input.pdf ~/output.pdf
-&nbsp; &nbsp; • To rotate pages
-&nbsp; &nbsp; $ ocrmypdf -v --rotate-pages ~/input.pdf ~/output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --language deu input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --language deu+fra input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --language spa+por input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --optimize=0 --language=por+deu input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --output-type=pdf --language por+deu input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --optimize=0 --output-type=pdf --language por+deu input.pdf output.pdf
+</pre>
+
+*--continue-on-soft-render-error 
+
+<pre>
+&nbsp; &nbsp; • To automatic correct the rotation of each page
+&nbsp; &nbsp; $ ocrmypdf -v --deskew input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --rotate-pages input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --rotate-pages-threshold {0.0-2.0} input.pdf output.pdf
+</pre>
+
+<pre>
 &nbsp; &nbsp; • To modify a file in the same place
 &nbsp; &nbsp; $ ocrmypdf -v ~/input.pdf ~/input.pdf
 &nbsp; &nbsp; • To skip text 
-&nbsp; &nbsp; $ ocrmypdf -v --skip-text /input.pdf ~/output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --skip-text input.pdf output.pdf
 &nbsp; &nbsp; • To redo OCR 
-&nbsp; &nbsp; $ ocrmypdf -v --redo-ocr /input.pdf ~/output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --redo-ocr input.pdf output.pdf
 </pre>
 
-<h5>∙ Document Converter</h5>
+<h5>OcrmOCRmyPDF - PDF optimization</h5>
+
+<p>By default OCRmyPDF will attempt to perform lossless optimizations on the images inside PDFs after OCR is complete. Optimization is performed even if no OCR text is found.</p>
+
+<p>The --optimize N (short form -O) argument controls optimization, where N ranges from 0 to 3 inclusive, analogous to the optimization levels in the GCC compiler.<p>
+
+<p>Level</p>
+
+<p>Comments</p>
+
+<code>--optimize 0</code>
+
+<p>Disables optimization.</p>
+
+<code>--optimize 1</code>
+
+<p>Enables lossless optimizations, such as transcoding images to more efficient formats. Also compress other uncompressed objects in the PDF and enables the more efficient “object streams” within the PDF. (If --jbig2-lossy is issued, then lossy JBIG2 optimization is used. The decision to use lossy JBIG2 is separate from standard optimization settings.)</p>
+
+<code>--optimize 2</code>
+
+<p>All of the above, and enables lossy optimizations and color quantization.</p>
+
+<code>--optimize 3</code>
+
+<p>All of the above, and enables more aggressive optimizations and targets lower image quality.</p>
+
+<p>Optimization is improved when a JBIG2 encoder is available and when pngquant is installed. If either of these components are missing, then some types of images cannot be optimized.</p>
+
+<p>The types of optimization available may expand over time. By default, OCRmyPDF compresses data streams inside PDFs, and will change inefficient compression modes to more modern versions. A program like qpdf can be used to change encodings, e.g. to inspect the internals for a PDF.</p>
+
+<p>ocrmypdf --optimize 3 in.pdf out.pdf  # Make it small
+Some users may consider enabling lossy JBIG2. See: jbig2-lossy.</p>
+
+<p>Note</p>
+
+<p>Image processing and PDF/A conversion can also introduce lossy transformations to your PDF images, even when --optimize 1 is in use.</p>
+
+<h5>OcrmOCRmyPDF - Image processing</h5>
+
+<p>Note</p>
+
+<p>In many cases image processing will rasterize PDF pages as images, potentially losing quality. We caution against using ImageMagick or Ghostscript to convert images to PDF, since they may transcode images or produce downsampled images, sometimes without warning.</p>
+
+<p>Warning</p>
+
+<p>--clean-final and --remove-background may leave undesirable visual artifacts in some images where their algorithms have shortcomings. Files should be visually reviewed after using these options.</p>
+
+<p>OCRmyPDF perform some image processing on each page of a PDF, if desired. The same processing is applied to each page. It is suggested that the user review files after image processing as these commands might remove desirable content, especially from poor quality scans.</p>
+
+<p>--rotate-pages attempts to determine the correct orientation for each page and rotates the page if necessary.</p>
+
+<p>--deskew will correct pages that were scanned at a skewed angle by rotating them back into place.</p>
+
+<p>--remove-background attempts to detect and remove a noisy background from grayscale or color images. Monochrome images are ignored. This should not be used on documents that contain color photos as it may remove them.</p>
+
+<p>--clean uses unpaper to clean up pages before OCR, but does not alter the final output. This makes it less likely that OCR will try to find text in background noise.</p>
+
+<p>--clean-final uses unpaper to clean up pages before OCR and inserts the page into the final output. You will want to review each page to ensure that unpaper did not remove something important.</p>
+
+<!-- ######### -->
+
+<h4>• Document Converter</h4>
 
 <h6>Libre Office (Headless)</h6>
 
@@ -3931,17 +4031,21 @@ https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html<
 
 <h6>Ghostscript</h6>
 
+https://www.ghostscript.com<br>
+
 <code>$ sudo apt install -y ghostscript</code> (CLI)<br>
 
+Commands to optimize pdf size with ghostscript.<br>
+
 <pre>
-&nbsp; Commands for ghostscript
-&nbsp; &nbsp; • How to convert .ps to .pdf
-&nbsp; &nbsp; $ ps2pdf filename.ps
+• Reduce size of scanned book
+$ gs -dNOPAUSE -dBATCH -dQUIET \
+-sDEVICE=pdfwrite \
+-dCompatibilityLevel=1.4 \
+-dPDFSETTINGS=/screen \
+-sOutputFile=output.pdf \
+input.pdf
 </pre>
-
-<p>Optimize PDF files</p>
-
-Commands to optimize pdf size.<br>
 
 <pre>
 $ gs -dNOPAUSE -dBATCH -dQUIET \
@@ -3988,27 +4092,14 @@ input.pdf
 -dPDFSETTINGS=/default — System chooses the best output, which can create larger PDF files.
 </sub>
 
+<pre>
+Commands for ps2pdf
+• How to convert .ps to .pdf
+$ ps2pdf -dPDFSETTINGS=/ebook input.pdf output.pdf
+</pre>
+
 <p>*LibreOffice Draw: DPI of 100 and JPEG compression of 80%.</p>
 <p>*Try: $ ps2pdf input.pdf output.pdf</p>
-
-<h5>∙ Remove PDF annotations at once</h5>
-
-<h6>Removing annotations in Okular</h6>
-
-<p>View a page that has an annotation, find them in the annotation side pane. Right-click on the annotation icon in the document, and click Remove Annotation. Then save the changes to a new document by clicking the menu button in the top right, followed by Save As….</p>
-
-<pre>
-&nbsp; Commands for pdftocairo
-&nbsp; &nbsp; $ pdftocairo -pdf "input.pdf" "output-with-flatten-annotations.pdf"
-</pre>
-
-<pre>
-&nbsp; Commands for qpdf
-&nbsp; &nbsp; $ qpdf --flatten-annotations=all input.pdf output.pdf
-</pre>
-
-<p>*May apply some differences.</p>
-<p>*May result in larger PDF.</p>
 
 <!-- ######### -->
 
@@ -4069,6 +4160,7 @@ $ mogrify -monitor -rotate -90 *.png
 
 <h5>Unpaper - A post-processing tool for scanned sheets of paper</h5>
 
+https://diybookscanner.org<br>
 https://github.com/unpaper/unpaper<br>
 https://github.com/unpaper/unpaper/blob/main/doc/basic-concepts.md<br>
 https://github.com/unpaper/unpaper/blob/main/doc/image-processing.md<br>
@@ -4076,6 +4168,7 @@ https://mesonbuild.com/Quick-guide.html#compiling-a-meson-project<br>
 https://gallium.readthedocs.io/en/latest/meson.html<br>
 https://imagemagick.org/script/formats.php<br>
 https://netpbm.sourceforge.net/doc/pnm.html<br>
+
 http://www.sane-project.org<br>
 SANE - Lists of supported scanners<br>
 http://www.sane-project.org/sane-supported-devices.html<br>
@@ -4113,7 +4206,6 @@ Install other depedencies<br>
 <code>$ sudo apt install libsdl2-dev libavcodec-dev libavdevice-dev libavformat-dev libavutil-dev libswresample-dev libusb-1.0-0 libusb-1.0-0-dev</code>
 </sub>
 
-
 <p>Basic configuration. The most common use case of Meson is compiling code on a code base you are working on.</p>
 
 <pre>
@@ -4130,27 +4222,53 @@ $ meson compile -C builddir
 
 https://github.com/unpaper/unpaper/blob/main/doc/file-formats.md<br>
 
-<pre>
-• Converter
 $ sudo apt install imagemagick
+
+<pre>
 • Commands to convert .png in .pbm
 $ cd ~/Folder
 $ find . -name "*.png" -exec mogrify -monitor -format pbm {} \;
+</pre>
+
+<pre>
 • Commands to convert .pdf in .pbm
-$ find . -name "*.pdf" -exec mogrify -monitor -format pbm {} \; 
+$ convert -monitor input.pdf +repage -quality 100 output%03d.pbm
+$ convert -monitor "*.pdf" +repage -path /livros output%03d.pbm
+$ find . -name "*.pdf" -exec convert *.pdf output%03d.pbm
+</pre>
+
+<p>* -repage: adjust the canvas and offset information of the image.</p>
+<p>* +repage: offset may need to be removed using +repage, to remove if it is unwanted.</p>
+
+<pre>
 • Commands to convert multiple .pbm in .pdf
-• Commands to convert multiple .pbm in .pdf
-$ convert -monitor *.pbm out.pdf
-$ convert image-0001.pnm image-0002.pnm ../myscan_modified.pdf
+$ convert -monitor *.png +adjoin output.pdf
+$ convert -monitor *.pbm output.pdf
 $ find . -name "*.pbm" -exec convert -units PixelsPerInch *.pbm -density 96 output.pdf
 </pre>
 
+<p>* -adjoin: join images into a single multi-image file</p>
+<p>* +adjoin: to force each image to be written to separate files, whether or not the file format allows multiple images per file (for example, GIF, MIFF, and TIFF).</p>
+
 Alternative - Combining pictures into PDF file<br>
-https://gitlab.mister-muffin.de/josch/img2pdf<br>
+
+ttps://gitlab.mister-muffin.de/josch/img2pdf<br>
 
 <pre>
-$ img2pdf -o output.pdf --imgsize 300dpix300dpi -i *.jp2
+$ img2pdf --pagesize A4 img*.png
+$ img2pdf --pagesize A4 img*.png | ocrmypdf - myfile.pdf
+$ img2pdf --imgsize 300dpix300dpi -i *.jp2 -o output.pdf 
 </pre>
+
+<pre>
+• Commands to reduce .pdf size
+$ convert -monitor -density 200x200 -quality 60 -compress jpeg input.pdf output.pdf
+$ convert -monitor input.pdf -resample 85% output.pdf
+$ convert -monitor scan*.jpg -colorspace gray -resample 100% "input.pdf"
+$ convert -monitor -compress Zip -density 150x150 input.pdf output.pdf
+</pre>
+
+-----------------------------------------------------------
 
 <h6>Error: mogrify-im6.q16: attempt to perform an operation not allowed by the security policy `PDF' @ error/constitute.c/IsCoderAuthorized/426</h6>
 
@@ -4176,6 +4294,10 @@ $ sudo nano /etc/ImageMagick-6/policy.xml
 
 </pre>
 
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+
 <h6>Error: convert-im6.q16: cache resources exhausted</h6>
 
 <pre>
@@ -4189,6 +4311,10 @@ $ sudo nano /etc/ImageMagick-6/policy.xml
 $ convert -limit memory 1GiB -limit disk 1GiB *.png new.pdf
 </pre>
 
+-----------------------------------------------------------
+
+<p>Renaming in numbered order</p>
+
 <pre>
 • Renamer
 $ sudo apt install rename
@@ -4200,7 +4326,7 @@ $ rename -n 's/.+/our $i; sprintf("input%03d.png", 1+$i++)/e' *
 $ rename 's/.+/our $i; sprintf("input%03d.png", 1+$i++)/e' *
 </pre>
 
-<p>Basic usage</p>
+<p>Unpaper - Basic usage</p>
 
 https://github.com/unpaper/unpaper/blob/main/doc/basic-concepts.md<br>
 
@@ -4225,14 +4351,6 @@ $ unpaper --layout double input%03d.pbm --output-pages 2 output%03d.pbm
 $ unpaper --no-processing --input-pages 2 singlepage%03d.pgm output%03d.pgm
 </pre>
 
-• Commands
-$ 
-• Commands
-$ 
-• Commands
-$ 
-</pre>
-
 <p>Image processing</p>
 
 https://github.com/unpaper/unpaper/blob/main/doc/image-processing.md<br>
@@ -4250,7 +4368,7 @@ $
 
 https://edison23.net/blog/posts/crop-and-split-book-scan-in-3-commands<br>
 http://www.imagemagick.org/script/command-line-processing.php#geometry<br>
-https://diybookscanner.org<br>
+
 
 <code>$ sudo apt install imagemagick</code><br>
 
@@ -4276,19 +4394,32 @@ $ convert `ls pages-split*` -page 100%x100% result.pdf
 $ 
 </pre>
 
+<!-- ######### -->
+
+<h5>∙ Remove PDF annotations</h5>
+
+<h6>Removing annotations at once in Okular</h6>
+
+<p>View a page that has an annotation, find them in the annotation side pane. Right-click on the annotation icon in the document, and click Remove Annotation. Then save the changes to a new document by clicking the menu button in the top right, followed by Save As….</p>
+
+<pre>
+&nbsp; Commands for pdftocairo
+&nbsp; &nbsp; $ pdftocairo -pdf "input.pdf" "output-with-flatten-annotations.pdf"
+</pre>
+
+<pre>
+&nbsp; Commands for qpdf
+&nbsp; &nbsp; $ qpdf --flatten-annotations=all input.pdf output.pdf
+</pre>
+
+<p>*May apply some differences.</p>
+<p>*May result in larger PDF.</p>
 
 <!-- ######### -->
 
 <h4>• PDF Bookmarks Creation</h4>
 
 https://github.com/SiddharthPant/booky<br>
-
-
-<!-- ######### -->
-
-<h4>• Audio Editors</h4>
-
-<code>$ sudo apt install audacity</code> (GUI)<br>
 
 <!-- ######### -->
 
@@ -4380,6 +4511,29 @@ geometry=50%x96%
 <li>https://dvdfab.at/resource/blu-ray/free-blu-ray-to-mp4-converter</li>
 <li></li>
 <ul>
+
+<h5>yt-dlp</h5>
+
+<code>$ sudo apt install yt-dlp</code> (CLI)<br> 
+
+<p>Download YouTube videos</p>
+
+<pre>
+• Commands
+• Download a video or playlist
+$ yt-dlp <URL>
+$ yt-dlp -F <URL>
+$ yt-dlp -f 247 <URL>
+$ yt-dlp -f "best[height<=480]" <URL>
+$ yt-dlp -f "best[height<=480]" <URL>
+$ yt-dlp -f worstvideo <URL>
+$ yt-dlp -o 'qwerty' <URL>
+• Download with metadata
+$ yt-dlp -o '%(title)s by %(uploader)s on %(upload_date)s in %(playlist)s.%(ext)s' <URL>
+$ yt-dlp --write-description --write-info-json --write-annotations --write-sub --write-thumbnail <URL>
+• Download audio-only
+$ yt-dlp -x --audio-format mp3 <URL>
+</pre>
 
 <h5>FFmpeg editor</h5>
 
@@ -4499,6 +4653,12 @@ done
 <code><video src="/video.mp4" width="320" height="240" controls></video></code>
 
 <p>Not working.</p>
+
+<!-- ######### -->
+
+<h4>• Audio Editors</h4>
+
+<code>$ sudo apt install audacity</code> (GUI)<br>
 
 <!-- #################### -->
 
@@ -4837,21 +4997,23 @@ https://infozip.sourceforge.net<br>
 
 <p>Prevent recovery</p>
 
-<p>In both user profile and root Bleachbit, go to Options Icon -> Preferences -> General Tab and check "Overwrite contents of files to prevent recovery".</p>
+<p>In both user profile and root Bleachbit, go to Options -> Preferences -> General Tab and check "Overwrite contents of files to prevent recovery".</p>
 
 </p>Free space erase option</p>
 
-<em>Take care with free space erase in root mode, this has several problems. This can block the system from starting because the cache is full of randomized files. </em>
+<em>Take care with free space erase in root mode, this has several problems. This can block the system from starting because the disk is full of randomized files. </em>
 
-<p>Commands for you to find the large file</p>
+<p>Commands for you to find the large files</p>
 
 <code>$ df -h</code><br>
 <code>$ df -h ~/.cache</code><br>
 <code>$ sudo df -h /mnt</code><br>
 <code>$ find ~/.cache -xdev -type f -size +1G</code><br>
-<code>$ rm ~/.cache/g324hjmmjhhtm2344ty231r42gr</code><br>
+<code>$ sudo find /root -xdev -type f -size +1G</code><br>
+<code>$ rm ~/.cache/tmpqwerty</code><br>
+<code>$ sudo rm /root/tmpqwerty</code><br>
 
-<p>Free space erase from CLI</p>
+<h5>∙ Free space erase from CLI</h5>
 
 <code>$ sudo bleachbit --clean system.cache system.localizations system.trash</code><br>
 
@@ -4862,9 +5024,7 @@ https://infozip.sourceforge.net<br>
 <code>$ sudo apt install -y localepurge</code><br>
 <code>$ sudo localepurge</code><br>
 
-<p>In root Bleachbit, go to Options Icon -> Preferences -> Languages Tab and mark your preferred language besides en-US.</p>
-
-<p>Start cleaning in root mode, this may take some time.</p>
+<p>In Bleachbit as Administrator, go to Options -> Preferences -> Languages Tab and mark your preferred language besides en-US.Start cleaning, this may take some time.</p>
 
 <h5>∙ Metadata Cleaner</h5>
 
@@ -4937,15 +5097,12 @@ https://wiki.archlinux.org/title/Solid_state_drive<br>
 
 <h4>Set color temperature of display</h4>
 
-<h5>Redshift (GUI)</h5>
+<h5>Redshift</h5>
 
-<code>$ sudo apt install redshift-gtk</code><br>
+<code>$ sudo apt install redshift</code> (CLI)<br>
+<code>$ sudo apt install redshift-gtk</code> (GUI)<br>
 
-<!-- ######### -->
-
-<h5>Redshift (CLI)</h5>
-
-<code>$ sudo apt install redshift</code><br>
+<p>redshift.conf</p>
 
 https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 
@@ -4953,32 +5110,45 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 <code>$ redshift -P -O TEMPERATURE</code><br>
 <code>$ redshift -P -O 4000</code><br>
 <code>$ redshift -P -O 6000</code><br>
+<code>$ sudo apt install brightnessctl</code><br>
 <code>$ brightnessctl s 25% && redshift -P -O 4000</code><br>
+<code>$ brightnessctl s 50% && redshift -P -O 6500</code><br>
 <code>$ redshift -l LAT:LONG</code><br>
 
 <!-- ######### -->
 
 <h4>Synchronize files and folders</h4>
 
-<code>$ sudo apt install grsync</code><br>
+<code>$ sudo apt install grsync</code> (GUI)<br>
 
 <!-- ######### -->
 
-<h4>Renamers (GUI)</h4>
+<h4>Renamers</h4>
 
-<h5></h5>
-<code>$ sudo apt install krename</code><br>
-
-<h5></h5>
-<code>$ sudo apt install gprename</code><br>
-
-<!-- ######### -->
-
-<h5>Rename (CLI)</h5>
-<code>$ sudo apt install rename</code><br>
+<h5>Move (built-in)</h5>
 
 <pre>
-&nbsp; Commands for rename 
+• Commands for move 
+$ mv /home/user/oldname /home/user/newname
+• Convert Uppercase to Lowercase Characters #FAIL
+$ for f in *; do mv -T "$f" "$(echo $f | tr [A-Z] [a-z])"; done
+$ for i in $( ls | grep [A-Z] ); do mv -f $i `echo $i | tr 'A-Z' 'a-z'`; done
+</pre>
+
+<h5>KRename</h5>
+
+<code>$ sudo apt install krename</code> (GUI)<br>
+
+<h5>GPRename</h5>
+
+<code>$ sudo apt install gprename</code> (GUI)<br>
+
+<h5>Rename</h5>
+
+<code>$ sudo apt install rename</code> (CLI)<br>
+
+<pre>
+&nbsp; • Commands for rename 
 &nbsp; &nbsp; • Syntax
 &nbsp; &nbsp; $ rename [options] 's/[pattern]/[replacement]/' [file name]
 &nbsp; &nbsp; • Replacing the blank space with an underscore (_)
@@ -4989,7 +5159,7 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 &nbsp; &nbsp; $ rename -v 'y/\-/\_/' ~/Downloads/*.pdf
 &nbsp; &nbsp; • Commands to rename to numbered order
 &nbsp; &nbsp; $ cd /Files
-&nbsp; &nbsp; • Test the output before
+&nbsp; &nbsp; • Test the output before (* -n)
 &nbsp; &nbsp; $ rename -n 's/.+/our $i; sprintf("input%03d.png", 1+$i++)/e' *
 &nbsp; &nbsp; • Apply the change
 &nbsp; &nbsp; $ rename 's/.+/our $i; sprintf("input%03d.png", 1+$i++)/e' *
@@ -4997,9 +5167,11 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 &nbsp; &nbsp; $ rename -v 's/example//' *.pdf
 &nbsp; &nbsp; • Convert Uppercase to Lowercase Characters #FAIL
 &nbsp; &nbsp; $ rename -v 'y/A-Z/a-z/' *.PDF 
+&nbsp; &nbsp; $ find my_dir -type f -execdir rename 'y/A-Z/a-z/' {} \;
 &nbsp; &nbsp; • Convert Lowercase to Uppercase Characters #FAIL
 &nbsp; &nbsp; $ rename -v 'y/a-z/A-Z/' *.pdf
-&nbsp; &nbsp; • To convert Lowercase to Uppercase Characters see</pre>
+&nbsp; &nbsp; • Convert to camel case
+&nbsp; &nbsp; $ rename 's/ /_/g' *
 </pre>
 
 <pre>
@@ -5052,16 +5224,20 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 
 <h4>Duplicated files</h4>
 
-<code>$ sudo apt install dupeguru</code><br>
+<h5>dupeGuru</h5>
+
+<code>$ sudo apt install dupeguru</code> (GUI)<br>
 
 <!-- ######### -->
 
 <h4>Disk managers</h4>
 
 <h5>GParted</h5>
+
 <code>$ sudo apt install gparted</code><br>
 
-<h5>Disks - Gnome Disk</h5>
+<h5>Gnome Disk - "Disks"</h5>
+
 <code>$ sudo apt install gnome-disk-utility</code><br>
 
 <!-- ######### -->
@@ -5084,6 +5260,9 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 https://github.com/bit-team/backintime<br>
 https://github.com/teejee2008/timeshift<br>
 https://github.com/restic/restic<br>
+
+<h4>Recover plan</h4>
+
 
 <h4>Backup</h4>
 
@@ -5574,16 +5753,17 @@ https://www.reddit.com/r/sublimetext<br>
 
 <h4>Linux Community</h4>
 
-https://docs.kernel.org<br>
-https://forum.linuxfoundation.org<br>
 https://forums.debian.net<br>
+https://forum.linuxfoundation.org<br>
+https://docs.kernel.org<br>
 https://linuxquestions.org<br>
 https://superuser.com<br>
 https://stackoverflow.com<br>
-https://data.stackexchange.com<br>
-https://elinux.org<br>
+https://www.howtoforge.com<br>
 https://unix.stackexchange.com<br>
 https://security.stackexchange.com<br>
+https://data.stackexchange.com<br>
+https://elinux.org<br>
 https://hardforum.com<br>
 https://askubuntu.com<br>
 https://www.snbforums.com<br>
@@ -5921,10 +6101,20 @@ usbcore<br>
 <code>$ sudo resolvconf --enable-updates</code><br>
 <code>$ sudo resolvconf -u</code><br>
 
-<code>$ sudo</code><br>
-<code>$ sudo</code><br>
+<code>$ sudo apt install iproute2</code><br>
+<code>$ sudo ss -nlup</code><br>
 <code>$ sudo</code><br>
 
+<pre>
+• Syntax checks
+$ dnsmasq --test
+• Print errors
+$ grep -c dnsmasq /var/log/*
+$ grep -c dnsmasq /var/log/syslog
+$ dnsmasq --no-daemon --log-queries=extra --log-dhcp --log-debug -C /etc/dnsmasq.conf
+</pre>
+
+conflicts between dnsmasq and systemd-resolved
 
 <h5>∙ DHCP Issues</h5>
 
@@ -6600,6 +6790,7 @@ Others<br>
 • https://www.notrace.how<br>
 • https://www.anarsec.guide<br>
 • https://0x00sec.org<br>
+• https://www.shellcheck.net<br>
 • Necessary and Proportionate - https://www.necessaryandproportionate.org<br>
 • Privacy International - https://www.privacyinternational.org<br>
 • EFF - https://www.eff.org<br>
