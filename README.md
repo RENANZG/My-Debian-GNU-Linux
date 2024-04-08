@@ -3771,6 +3771,7 @@ krop --grid=2x1 --initialpage=3 --exceptions=1 --trim-use=all --trim ~/file.pdf
 <p>ImageMagick (GUI or CLI)</p>
 
 https://www.imagemagick.org/Usage/crop<br>
+https://www.imagemagick.org/Usage/crop/#crop_repage<br>
 
 <code>$ sudo apt install imagemagick</code><br>
 
@@ -3779,6 +3780,11 @@ https://www.imagemagick.org/Usage/crop<br>
 $ convert -monitor `ls input-*.png` -crop 3704x1852+160+20 output.png
 $ convert -monitor -crop 1000x1350+20+145 +repage -path cropped *.png
 </pre>
+
+
+<p>Monitor progress: -monitor</p>
+
+<p>Print detailed information about the image: -verbose</p>
 
 <pre>
 • Commands to reduce .pdf size
@@ -3803,13 +3809,21 @@ $ pdf-crop-margins -v -p 0 -a -6 input.pdf
 
 <h4>• PDF OCR - Optical Character Recognition</h4>
 
+<p>OCRFeeder (GUI)</p>
+
+https://wiki.gnome.org/Apps/OCRFeeder<br>
+
+<code>$ sudo apt install -y ocrfeeder</code><br>
+
+<b>*Unpaper</b>
+
 <p>OcrmOCRmyPDF (CLI)</p>
 
 https://ocrmypdf.readthedocs.io<br>
 
 <code>$ sudo apt install -y ocrmypdf</code><br>
 
-<p>Also install the Tesseract OCR plugins for your language</p>
+<p>Also install the Tesseract OCR plugins for your desired language</p>
 
 <code>$ sudo apt install -y tesseract-ocr-eng</code><br>
 <code>$ sudo apt install -y tesseract-ocr-deu</code><br>
@@ -3822,27 +3836,11 @@ https://ocrmypdf.readthedocs.io<br>
 <code>$ sudo apt install -y tesseract-ocr-chi-tra</code><br>
 
 <pre>
-&nbsp; Commands for PDF OCR
+&nbsp; Basic commands
 &nbsp; &nbsp; • How to OCR a PDF
 &nbsp; &nbsp; $ ocrmypdf -v input.pdf output.pdf
 &nbsp; &nbsp; $ ocrmypdf -v --language deu input.pdf output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --language deu+fra input.pdf output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --language spa+por input.pdf output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --optimize=0 --language=por+deu input.pdf output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --output-type=pdf --language por+deu input.pdf output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --optimize=0 --output-type=pdf --language por+deu input.pdf output.pdf
-</pre>
-
-*--continue-on-soft-render-error 
-
-<pre>
-&nbsp; &nbsp; • To automatic correct the rotation of each page
-&nbsp; &nbsp; $ ocrmypdf -v --deskew input.pdf output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --rotate-pages input.pdf output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --rotate-pages-threshold {0.0-2.0} input.pdf output.pdf
-</pre>
-
-<pre>
+&nbsp; &nbsp; $ ocrmypdf -v --language por+deu input.pdf output.pdf
 &nbsp; &nbsp; • To modify a file in the same place
 &nbsp; &nbsp; $ ocrmypdf -v ~/input.pdf ~/input.pdf
 &nbsp; &nbsp; • To skip text 
@@ -3851,7 +3849,43 @@ https://ocrmypdf.readthedocs.io<br>
 &nbsp; &nbsp; $ ocrmypdf -v --redo-ocr input.pdf output.pdf
 </pre>
 
+<pre>
+&nbsp; &nbsp; • Compression settings
+&nbsp; &nbsp; $ ocrmypdf -v --pdfa-image-compression=jpeg --language=por+deu input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --pdfa-image-compression=lossless --language=por+deu input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --output-type=pdf --language por+deu input.pdf output.pdf
+<pre>
+
+<h5>OcrmOCRmyPDF - Image processing</h5>
+
+
+<pre>
+&nbsp; &nbsp; • Image processing
+&nbsp; &nbsp; $ ocrmypdf -v --clean --language=por+deu input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --clean-final --language=por+deu input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --remove-background --language=por+deu input.pdf output.pdf
+<pre>
+
+<em>Warning</em>
+
+<p>In many cases image processing will rasterize PDF pages as images, potentially losing quality. We caution against using ImageMagick or Ghostscript to convert images to PDF, since they may transcode images or produce downsampled images, sometimes without warning.</p>
+
+<p>OCRmyPDF perform some image processing on each page of a PDF, if desired. The same processing is applied to each page. It is suggested that the user review files after image processing as these commands might remove desirable content, especially from poor quality scans.</p>
+
+<p>Note that <code>--clean-final</code> and <code>--remove-background</code> may leave undesirable visual artifacts in some images where their algorithms have shortcomings. Files should be visually reviewed after using these options.</p>
+
+<p><code>--clean</code> uses <code>unpaper</code> to clean up pages before OCR, but does not alter the final output. This makes it less likely that OCR will try to find text in background noise.</p>
+
+<p><code>--clean-final</code> uses <code>unpaper</code> to clean up pages before OCR and inserts the page into the final output. You will want to review each page to ensure that unpaper did not remove something important.</p>
+
+<p><code>--remove-background</code> attempts to detect and remove a noisy background from grayscale or color images. Monochrome images are ignored. This should not be used on documents that contain color photos as it may remove them.</p>
+
 <h5>OcrmOCRmyPDF - PDF optimization</h5>
+
+</pre>
+&nbsp; &nbsp; • Optimization settings
+&nbsp; &nbsp; $ ocrmypdf -v --optimize={0,1,2,3} input.pdf output.pdf
+</pre>
 
 <p>By default OCRmyPDF will attempt to perform lossless optimizations on the images inside PDFs after OCR is complete. Optimization is performed even if no OCR text is found.</p>
 
@@ -3888,27 +3922,18 @@ Some users may consider enabling lossy JBIG2. See: jbig2-lossy.</p>
 
 <p>Image processing and PDF/A conversion can also introduce lossy transformations to your PDF images, even when --optimize 1 is in use.</p>
 
-<h5>OcrmOCRmyPDF - Image processing</h5>
+<h5>OcrmOCRmyPDF - PDF Rotation</h5>
 
-<p>Note</p>
+<pre>
+&nbsp; &nbsp; • To automatic correct the rotation of each page
+&nbsp; &nbsp; $ ocrmypdf -v --deskew input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --rotate-pages input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --rotate-pages-threshold {0.0-2.0} input.pdf output.pdf
+</pre>
 
-<p>In many cases image processing will rasterize PDF pages as images, potentially losing quality. We caution against using ImageMagick or Ghostscript to convert images to PDF, since they may transcode images or produce downsampled images, sometimes without warning.</p>
+<p><code>--rotate-pages</code> attempts to determine the correct orientation for each page and rotates the page if necessary.</p>
 
-<p>Warning</p>
-
-<p>--clean-final and --remove-background may leave undesirable visual artifacts in some images where their algorithms have shortcomings. Files should be visually reviewed after using these options.</p>
-
-<p>OCRmyPDF perform some image processing on each page of a PDF, if desired. The same processing is applied to each page. It is suggested that the user review files after image processing as these commands might remove desirable content, especially from poor quality scans.</p>
-
-<p>--rotate-pages attempts to determine the correct orientation for each page and rotates the page if necessary.</p>
-
-<p>--deskew will correct pages that were scanned at a skewed angle by rotating them back into place.</p>
-
-<p>--remove-background attempts to detect and remove a noisy background from grayscale or color images. Monochrome images are ignored. This should not be used on documents that contain color photos as it may remove them.</p>
-
-<p>--clean uses unpaper to clean up pages before OCR, but does not alter the final output. This makes it less likely that OCR will try to find text in background noise.</p>
-
-<p>--clean-final uses unpaper to clean up pages before OCR and inserts the page into the final output. You will want to review each page to ensure that unpaper did not remove something important.</p>
+<p><code>--deskew</code> will correct pages that were scanned at a skewed angle by rotating them back into place.</p>
 
 <!-- ######### -->
 
@@ -4050,6 +4075,7 @@ input.pdf
 <pre>
 $ gs -dNOPAUSE -dBATCH -dQUIET \
 -sDEVICE=pdfwrite \
+-dCompatibilityLevel=1.4 \
 -dPDFSETTINGS=/printer \
 -sOutputFile=output.pdf \
 input.pdf
@@ -4070,16 +4096,16 @@ input.pdf
 <pre>
 $ gs -q -dNOPAUSE -dBATCH -dSAFER \
 -sDEVICE=pdfwrite \
--dCompatibilityLevel=1.3 \
--dPDFSETTINGS=/screen \
+-dCompatibilityLevel=1.4 \
+-dPDFSETTINGS=/ebook \
 -dEmbedAllFonts=true \
 -dSubsetFonts=true \
 -dColorImageDownsampleType=/Bicubic \
--dColorImageResolution=72 \
+-dColorImageResolution=96 \
 -dGrayImageDownsampleType=/Bicubic \
--dGrayImageResolution=72 \
+-dGrayImageResolution=96 \
 -dMonoImageDownsampleType=/Bicubic \
--dMonoImageResolution=72 \
+-dMonoImageResolution=96 \
 -sOutputFile=output.pdf \
 input.pdf
 </pre>
@@ -4092,9 +4118,23 @@ input.pdf
 -dPDFSETTINGS=/default — System chooses the best output, which can create larger PDF files.
 </sub>
 
+
+<pre>
+Commands for ebook-convert
+• How to convert .epub to .pdf
+$ sudo apt install calibre
+$ ebook-convert input.epub  output.pdf
+$ ebook-convert input.epub  output.pdf --enable-heuristics
+$ find ./ -iname "*pdf" -type f | while read f; do echo -e "\e[1mConverting file $f \e[0m" ; ebook-convert "$f" "${f%.pdf}.epub" --enable-heuristics ; done
+</pre>
+
+<p>*Ref.: https://manpages.debian.org/bookworm/calibre/ebook-convert.1.en.html</p>
+<p>*Utility.: https://www.convertfiles.com</p>
+
 <pre>
 Commands for ps2pdf
 • How to convert .ps to .pdf
+$ sudo apt install ps2pdf 
 $ ps2pdf -dPDFSETTINGS=/ebook input.pdf output.pdf
 </pre>
 
@@ -4158,9 +4198,40 @@ $ find . -name "*.gif" -exec mogrify -format png {} \;
 $ mogrify -monitor -rotate -90 *.png
 </pre>
 
+<h4>Unpaper</h4>
+
+<h6>Unpaper built-in - OCRFeeder (GUI)</h6>
+
+https://wiki.gnome.org/Apps/OCRFeeder<br>
+
+<code>$ sudo apt install -y ocrfeeder</code><br>
+
+<p>Tools -> Unpaper</p>
+
+<h6>Unpaper built-in - OcrmOCRmyPDF (CLI)</h6>
+
+https://ocrmypdf.readthedocs.io<br>
+
+<code>$ sudo apt install -y ocrmypdf</code><br>
+<code>$ ocrmypdf --clean </code><br>
+<code>$ ocrmypdf --clean-final </code><br>
+<code>$ ocrmypdf --remove-background </code><br>
+
+<p>Note that <code>--clean-final</code> and <code>--remove-background</code> may leave undesirable visual artifacts in some images where their algorithms have shortcomings. Files should be visually reviewed after using these options.</p>
+
+<p><code>--remove-background</code> attempts to detect and remove a noisy background from grayscale or color images. Monochrome images are ignored. This should not be used on documents that contain color photos as it may remove them.</p>
+
+<p><code>--clean</code> uses <code>unpaper</code> to clean up pages before OCR, but does not alter the final output. This makes it less likely that OCR will try to find text in background noise.</p>
+
+<p><code>--clean-final</code> uses <code>unpaper</code> to clean up pages before OCR and inserts the page into the final output. You will want to review each page to ensure that unpaper did not remove something important.</p>
+
+<p>--clean uses <code>unpaper</code> to clean up pages before OCR, but does not alter the final output. This makes it less likely that OCR will try to find text in background noise.</p>
+
+
 <h5>Unpaper - A post-processing tool for scanned sheets of paper</h5>
 
 https://diybookscanner.org<br>
+https://scantips.com<br>
 https://github.com/unpaper/unpaper<br>
 https://github.com/unpaper/unpaper/blob/main/doc/basic-concepts.md<br>
 https://github.com/unpaper/unpaper/blob/main/doc/image-processing.md<br>
@@ -4169,8 +4240,8 @@ https://gallium.readthedocs.io/en/latest/meson.html<br>
 https://imagemagick.org/script/formats.php<br>
 https://netpbm.sourceforge.net/doc/pnm.html<br>
 
-http://www.sane-project.org<br>
 SANE - Lists of supported scanners<br>
+http://www.sane-project.org<br>
 http://www.sane-project.org/sane-supported-devices.html<br>
 
 <p>The output format of Unpaper is restricted to the PNM family of formats, and conversions to other formats need to happen with tools such as pnmtopng, pnmtotiff or pnmtojpeg. Alternatively you can use the convert tool from ImageMagick.</p>
@@ -4237,6 +4308,11 @@ $ convert -monitor "*.pdf" +repage -path /livros output%03d.pbm
 $ find . -name "*.pdf" -exec convert *.pdf output%03d.pbm
 </pre>
 
+<p>Imagemagick Repage</p>
+https://www.imagemagick.org/Usage/crop/#crop_repage
+
+<p>You can use the special "+repage" operator to reset the page canvas and position to match the actual cropped image.</p>
+
 <p>* -repage: adjust the canvas and offset information of the image.</p>
 <p>* +repage: offset may need to be removed using +repage, to remove if it is unwanted.</p>
 
@@ -4246,6 +4322,12 @@ $ convert -monitor *.png +adjoin output.pdf
 $ convert -monitor *.pbm output.pdf
 $ find . -name "*.pbm" -exec convert -units PixelsPerInch *.pbm -density 96 output.pdf
 </pre>
+
+<p>Imagemagick Adjoin</p>
+
+https://imagemagick.org/script/command-line-options.php#adjoin</p>
+
+<p>Join images into a single multi-image file.</p>
 
 <p>* -adjoin: join images into a single multi-image file</p>
 <p>* +adjoin: to force each image to be written to separate files, whether or not the file format allows multiple images per file (for example, GIF, MIFF, and TIFF).</p>
@@ -4262,10 +4344,10 @@ $ img2pdf --imgsize 300dpix300dpi -i *.jp2 -o output.pdf
 
 <pre>
 • Commands to reduce .pdf size
-$ convert -monitor -density 200x200 -quality 60 -compress jpeg input.pdf output.pdf
-$ convert -monitor input.pdf -resample 85% output.pdf
-$ convert -monitor scan*.jpg -colorspace gray -resample 100% "input.pdf"
-$ convert -monitor -compress Zip -density 150x150 input.pdf output.pdf
+$ convert -monitor +repage -density 200x200 -quality 60 -compress jpeg input.pdf output.pdf
+$ convert -monitor +repage input.pdf -resample 85% output.pdf
+$ convert -monitor +repage scan*.jpg -colorspace gray -resample 100% "input.pdf"
+$ convert -monitor +repage -compress Zip -density 200x200 input.pdf output.pdf
 </pre>
 
 -----------------------------------------------------------
