@@ -3879,7 +3879,7 @@ https://ocrmypdf.readthedocs.io<br>
 &nbsp; &nbsp; $ ocrmypdf -v --pdfa-image-compression=jpeg --language=por+deu input.pdf output.pdf
 &nbsp; &nbsp; $ ocrmypdf -v --pdfa-image-compression=lossless --language=por+deu input.pdf output.pdf
 &nbsp; &nbsp; $ ocrmypdf -v --output-type=pdf --language por+deu input.pdf output.pdf
-<pre>
+</pre>
 
 <h5>OcrmOCRmyPDF - Image processing</h5>
 
@@ -3889,7 +3889,7 @@ https://ocrmypdf.readthedocs.io<br>
 &nbsp; &nbsp; $ ocrmypdf -v --clean --language=por+deu input.pdf output.pdf
 &nbsp; &nbsp; $ ocrmypdf -v --clean-final --language=por+deu input.pdf output.pdf
 &nbsp; &nbsp; $ ocrmypdf -v --remove-background --language=por+deu input.pdf output.pdf
-<pre>
+</pre>
 
 <em>Warning</em>
 
@@ -3907,7 +3907,7 @@ https://ocrmypdf.readthedocs.io<br>
 
 <h5>OcrmOCRmyPDF - PDF optimization</h5>
 
-</pre>
+<pre>
 &nbsp; &nbsp; • Optimization settings
 &nbsp; &nbsp; $ ocrmypdf -v --optimize={0,1,2,3} input.pdf output.pdf
 </pre>
@@ -3996,7 +3996,7 @@ https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html<
 
 <p>To control, which LibreOffice component generates PDF output, you can use these variants:</p>
 
-</pre>
+<pre>
 --convert-to pdf:writer_pdf_Export
 --convert-to pdf:calc_pdf_Export
 --convert-to pdf:draw_pdf_Export
@@ -4185,7 +4185,7 @@ $ ps2pdf -dPDFSETTINGS=/ebook input.pdf output.pdf
 <code>$ sudo apt install gthumb</code> (GUI)<br> 
 <code>$ sudo apt install gimp</code> (GUI)<br>
 <code>$ sudo apt install imagemagick</code> (GUI or CLI)<br>
-<code>$ sudo apt install webp</code (CLI)<br>
+<code>$ sudo apt install webp</code> (CLI)<br>
 
 <!-- ######### -->
 
@@ -4306,14 +4306,13 @@ sudo apt install ffmpeg &&
 sudo apt install git 
 <pre>
 
-<sub>
 
 <h6>Error: libavformat-dev</h6>
 
 Install other depedencies<br>
 
 <code>$ sudo apt install libsdl2-dev libavcodec-dev libavdevice-dev libavformat-dev libavutil-dev libswresample-dev libusb-1.0-0 libusb-1.0-0-dev</code>
-</sub>
+
 
 <p>Basic configuration. The most common use case of Meson is compiling code on a code base you are working on.</p>
 
@@ -4549,7 +4548,6 @@ https://github.com/SiddharthPant/booky<br>
 <code>$ sudo apt install kcalc</code><br>
 
 <br>
-</details>
 
 <!-- ######### -->
 
@@ -4630,7 +4628,7 @@ geometry=50%x96%
 <li>https://vidon.me/compress-mp4</li>
 <li>https://dvdfab.at/resource/blu-ray/free-blu-ray-to-mp4-converter</li>
 <li></li>
-<ul>
+</ul>
 
 <h5>yt-dlp</h5>
 
@@ -4779,6 +4777,9 @@ done
 <h4>• Audio Editors</h4>
 
 <code>$ sudo apt install audacity</code> (GUI)<br>
+
+<br>
+</details>
 
 <!-- #################### -->
 
