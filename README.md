@@ -2738,6 +2738,7 @@ OpenVPN + nmcli (CLI) + Autostart + Autoconnect + Kill Switch
 &nbsp; &nbsp; $ sudo cp openvpn/* /etc/openvpn
 </pre>
 
+<p>*resolvconf vs. systemd-resolved</p>
 <p>*resolvconf vs. openresolv</p>
 
 <!-- ########## -->
@@ -3349,6 +3350,15 @@ https://github.com/strongswan/strongswan<br>
 
 <p>(*ip6tables)</p>
 
+<p>Troubleshooting iptables</p>
+
+<pre>
+$ sudo systemctl restart servicedaemon.service
+$ sudo systemctl restart service.service
+$ sudo iptables -S
+$ ping google.com
+</pre>
+
 <br>
 </details>
 
@@ -3781,7 +3791,6 @@ $ convert -monitor `ls input-*.png` -crop 3704x1852+160+20 output.png
 $ convert -monitor -crop 1000x1350+20+145 +repage -path cropped *.png
 </pre>
 
-
 <p>Monitor progress: -monitor</p>
 
 <p>Print detailed information about the image: -verbose</p>
@@ -3795,6 +3804,19 @@ $ convert -monitor -density 80 -page a4 input.pdf output.pdf
 $ convert -monitor input.pdf -resample 85% output.pdf
 $ convert -monitor *.png -colorspace gray -resample 100% "input.pdf"
 </pre>
+
+<pre>
+• Commands to scanned books
+$ convert -normalize -density 300 -depth 8 *.png
+$ convert -normalize -density 300 -depth 8 -crop 50%x100% +repage *.png
+$ convert -monochrome -normalize -density 300 *.png
+</pre>
+
+<p>-normalize : increase the contrast in an image by stretching the range of intensity values.</p>
+
+<p>-depth : the number of bits per channel for each pixel.</p>
+
+<p>-monochrome : transform the image to black and white.</p>
 
 <p>pdfCropMargins - Python</p>
 
@@ -3816,6 +3838,9 @@ https://wiki.gnome.org/Apps/OCRFeeder<br>
 <code>$ sudo apt install -y ocrfeeder</code><br>
 
 <b>*Unpaper</b>
+
+<p>Cuneiform (CLI)</p>
+https://packages.debian.org/bookworm/cuneiform
 
 <p>OcrmOCRmyPDF (CLI)</p>
 
@@ -4094,6 +4119,18 @@ input.pdf
 </pre>
 
 <pre>
+$ gs -dNOPAUSE -dBATCH -dQUIET \
+-sDEVICE=pdfwrite \
+-dCompatibilityLevel=1.4 \
+-dPDFSETTINGS=/prepress \
+-dDetectDuplicateImages \
+-dCompressFonts=true \
+-r300  \
+-sOutputFile=output.pdf \
+input.pdf
+</pre>
+
+<pre>
 $ gs -q -dNOPAUSE -dBATCH -dSAFER \
 -sDEVICE=pdfwrite \
 -dCompatibilityLevel=1.4 \
@@ -4231,6 +4268,7 @@ https://ocrmypdf.readthedocs.io<br>
 <h5>Unpaper - A post-processing tool for scanned sheets of paper</h5>
 
 https://diybookscanner.org<br>
+https://diybookscanner.org/forum<br>
 https://scantips.com<br>
 https://github.com/unpaper/unpaper<br>
 https://github.com/unpaper/unpaper/blob/main/doc/basic-concepts.md<br>
@@ -4344,10 +4382,10 @@ $ img2pdf --imgsize 300dpix300dpi -i *.jp2 -o output.pdf
 
 <pre>
 • Commands to reduce .pdf size
-$ convert -monitor +repage -density 200x200 -quality 60 -compress jpeg input.pdf output.pdf
+$ convert -monitor +repage -density 200 -quality 60 -compress jpeg input.pdf output.pdf
 $ convert -monitor +repage input.pdf -resample 85% output.pdf
 $ convert -monitor +repage scan*.jpg -colorspace gray -resample 100% "input.pdf"
-$ convert -monitor +repage -compress Zip -density 200x200 input.pdf output.pdf
+$ convert -monitor +repage -compress Zip -density 200 input.pdf output.pdf
 </pre>
 
 -----------------------------------------------------------
@@ -4844,23 +4882,23 @@ https://github.com/veracrypt/VeraCrypt<br>
 
 <code>$ sudo groupadd veracrypt</code><br>
 <code>$ sudo usermod -aG veracrypt "$(whoami)"</code><br>
+<code>(*or) $ sudo usermod -aG veracrypt $USER</code><br>
 <code>$ sudoedit /etc/sudoers</code><br>
 
-&nbsp; &nbsp; Add: <br>
-&nbsp; &nbsp; <pre>
+<pre>
 %veracrypt ALL=(root) NOPASSWD:/usr/bin/veracrypt
 
 #Allow members of group sudo to execute any command
 %sudo ALL=(ALL:ALL) ALL
 %veracrypt ALL=(root) NOPASSWD:/usr/bin/veracrypt
-
 
 #Allow members of group sudo to execute any command
 %sudo ALL=(ALL:ALL) ALL
 %veracrypt ALL=(root) NOPASSWD:/usr/bin/veracrypt
 </pre>
 
-&nbsp; &nbsp; Reboot 
+*Reboot 
+<code>$ sudo reboot</code><br>
 
 <p>∙ NTFS - Read only error</p>
 
@@ -5081,23 +5119,43 @@ https://infozip.sourceforge.net<br>
 
 <p>In both user profile and root Bleachbit, go to Options -> Preferences -> General Tab and check "Overwrite contents of files to prevent recovery".</p>
 
-</p>Free space erase option</p>
+</p>Freeze Bug - Free space erase option</p>
 
 <em>Take care with free space erase in root mode, this has several problems. This can block the system from starting because the disk is full of randomized files. </em>
 
-<p>Commands for you to find the large files</p>
+<p>Commands to debug if your are freeze</p>
 
+<code>• Acess tty (teletype)</code><br>
+<code>CTRL + ALT + {2,3,4,5,6}</code><br>
+<code>• Delete tmp files in root</code><br>
+<code>user:</code><br>
+<code>password:</code><br>
+<code>$ sudo su</code><br>
+<code>user@host /: ls</code><br>
+<code>user@host /: rm -R tmp*</code><br>
+<code>user@host /: sudo reboot</code><br>
+<code>• To find the large files in other folders</code><br>
 <code>$ df -h</code><br>
 <code>$ df -h ~/.cache</code><br>
 <code>$ sudo df -h /mnt</code><br>
 <code>$ find ~/.cache -xdev -type f -size +1G</code><br>
 <code>$ sudo find /root -xdev -type f -size +1G</code><br>
-<code>$ rm ~/.cache/tmpqwerty</code><br>
-<code>$ sudo rm /root/tmpqwerty</code><br>
+<code>$ rm ~/.cache/tmp*</code><br>
+<code>$ sudo rm /root/tmp*</code><br>
 
 <h5>∙ Free space erase from CLI</h5>
 
-<code>$ sudo bleachbit --clean system.cache system.localizations system.trash</code><br>
+<code>
+$ sudo bleachbit --clean system.cache \
+system.localizations \
+system.free_disk_space \
+system.trash \
+system.tmp \
+system.memory \
+apt.package_lists
+</code><br>
+
+<p>* cron</p>
 
 <h5>∙ Locale Purge</h5>
 
@@ -5122,13 +5180,13 @@ https://infozip.sourceforge.net<br>
 <pre>
 &nbsp; Commands for exiftool basic commands
 &nbsp; &nbsp; • Remove all metadata from all files possible inside a folder and all its subfolders without backup (take care, might affect the colors)
-&nbsp; &nbsp; $ exiftool -all:all= -overwrite_original -r /path/to/files/ 
+&nbsp; &nbsp; $ exiftool -v -all:all= -overwrite_original -r /path/to/files/ 
 &nbsp; &nbsp; • Shows only selected EXIF metadata:
-&nbsp; &nbsp; $ exiftool -Model -ImageSize photo.jpg
+&nbsp; &nbsp; $ exiftool -v -Model -ImageSize photo.jpg
 &nbsp; &nbsp; • Process all files of specified file type (case insensitive extension)
-&nbsp; &nbsp; $ exiftool -Model -ImageSize -ext jpg /path/to/files/
+&nbsp; &nbsp; $ exiftool -v -Model -ImageSize -ext jpg /path/to/files/
 &nbsp; &nbsp; • recursively process all jpg files under specified directory and sub-directory
-&nbsp; &nbsp; $ exiftool -r -Model -ImageSize -ext jpg /path/to/files/
+&nbsp; &nbsp; $ exiftool -v -r -Model -ImageSize -ext jpg /path/to/files/
 </pre>
 
 <h4>• Disk Sanitation</h4>
@@ -5137,6 +5195,8 @@ https://wiki.debian.org/SSDOptimization<br>
 https://wiki.archlinux.org/title/Solid_state_drive<br>
 
 <em>*Not all SSD support sanitize. To properly way to erase a SSD is using the SSDs manufacturer's software. Other methods might not work, due to wear leveling and over-provisioning.</em><br>
+
+<em>*Consider hardware flaws.</em><br>
 
 <h4>Manufacturers supply software to update firmware and perform tasks like secure erase</h4>
 
@@ -5566,6 +5626,7 @@ $ sed -i -e '1r text1' text2.txt
 $ sed -i '/pattern/ r snippet.txt' filename
 • Batch inserting specific text after pattern in .txt files
 $ sed -i '/SearchPattern/aNew Text' *.txt
+$ find . -name '*.txt' -exec sed -i -e 's/textp1/textp2\ text.txt/g' {} \;
 </pre>
 
 <pre>
@@ -5865,13 +5926,20 @@ https://reddit.com/r/sysadmin<br>
 <h4>Audit Logs</h4>
 
 <code>$ sudo dmesg --since -5m</code><br>
+<code>$ sudo dmesg -w</code><br>
+<code>$ sudo dmesg | grep iwl</code><br>
+<code>$ sudo dmesg | grep rtw</code><br>
+<code>$ sudo dmesg | grep ath</code><br><code>$ sudo dmesg -w</code><br>
+<code>$ sudo dmesg -T | grep xhci</code><br>
 <code>$ sudo dmesg -T | grep xhci</code><br>
 <code>$ sudo journalctl -k -b -1</code><br>
 <code>$ sudo journalctl -p 3 -xb</code><br>
+<code>$ sudo journalctl -b | grep -i net</code><br>
 <code>$ sudo journalctl -S -1h00m</code><br>
 <code>$ sudo journalctl -S today</code><br>
-<code>$ sudo journalctl -S "2023-01-01 10:10:10"</code><br>
-<code>$ sudo journalctl -S "2023-01-01 10:10:10" > ~/journal.txt</code><br>
+<code>$ sudo journalctl -S today -u name.service</code><br>
+<code>$ sudo journalctl -S "2024-01-01 00:00:00"</code><br>
+<code>$ sudo journalctl -S "2024-01-01 00:00:00" > ~/journal.txt</code><br>
 <code>$ sudo tail /var/log/syslog</code><br>
 <code>$ sudo tail -n20 /var/log/syslog</code><br>
 <code>$ sudo tail -f /var/log/syslog</code><br>
@@ -6018,7 +6086,14 @@ https://github.com/sddm/sddm/releases<br>
 
 https://dpi.lv<br>
 
-<code>$ sudo apt install arandr</code><br>
+<code>$ sudo apt install arandr</code> (GUI)<br>
+<code>$ sudo apt install xserver-xorg-input-all</code><br>
+
+<p>Debug commands</p>
+
+<code>$ sudo apt install inxi</code><br>
+<code>$ sudo inxi -G</code><br>
+<code>$ sudo inxi -Fxxrzc0</code><br>
 
 <code>$ sudo xrandr --output eDP-1 --primary</code><br>
 <code>$ sudo xrandr --output DP2 --auto --left-to DP1</code><br>
@@ -6042,6 +6117,7 @@ https://dpi.lv<br>
 <code>$ sudo systemctl list-unit-files | grep sddm</code><br>
 <code>$ sudo ls -la /etc/systemd/system/display-manager.service</code><br>
 <code>$ cat /proc/cmdline</code><br>
+<code>$ sudo dpkg-reconfigure sddm</code><br>
 
 <br>
 </details>
@@ -6061,7 +6137,6 @@ https://docs.kernel.org/driver-api/usb/power-management.html<br>
 
 <h4>Troubleshooting a network using OSI model, starting from physical to application layer.</h4>
 
-
 <h4>First things first:</h4>
 
 <code>$ sudo apt install firmware-realtek</code>
@@ -6072,8 +6147,6 @@ or
 
 
 <h4>• Network</h4>
-
-PCI vs USB<br>
 
 <h5>∙ Debug WiFi</h5>
 
@@ -6088,7 +6161,7 @@ PCI vs USB<br>
 <code>$ sudo dmesg | grep iwl</code><br>
 <code>$ sudo dmesg | grep rtw</code><br>
 <code>$ sudo dmesg | grep ath</code><br>
-<code>$ journalctl -b | grep -i net</code><br>
+<code>$ sudo journalctl -b | grep -i net</code><br>
 
 <p>Power up</p>
 
@@ -6105,6 +6178,8 @@ PCI vs USB<br>
 <code>$ sudo lshw -C network</code><br>
 <code>$ sudo apt install inxi</code><br>
 <code>$ sudo inxi -Fxxz</code><br>
+
+<p>*PCI vs USB - Kernel - Integrated chip - Need to investigate</p>
 
 <p>Listing modules</p>
 
@@ -6131,8 +6206,8 @@ PCI vs USB<br>
 
 <p>Deactivating module</p>
 
-<code>$ sudo modprobe -r -v rtw_8723d</code><br>
-<code>$ sudo modprobe -r -v rtw_core</code><br>
+<code>$ sudo modprobe -vr rtw_8723d</code><br>
+<code>$ sudo modprobe -vr rtw_core</code><br>
 
 <p>Activating module</p>
 
@@ -6149,7 +6224,6 @@ PCI vs USB<br>
 or
 
 <code>$ sudo sed -i 's/3/2/' /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf</code>
-
 
 Notes:<br>
 pcie_aspm.policy=powersasave<br>
@@ -6174,6 +6248,7 @@ usbcore<br>
 <code>$ dig +trace +nodnssec duckduckgo.com</code><br>
 <code>$ host duckduckgo.com</code><br>
 
+<code>$ sudo resolvectl status</code><br>
 <code>$ sudo cat /etc/resolv.conf</code><br>
 <code>$ sudo cat /var/run/NetworkManager/resolv.conf</code><br>
 <code>nmcli device show wlan0 | grep IP4.DNS</code> </code><br>
@@ -6189,14 +6264,14 @@ usbcore<br>
 
 <pre>
 • Syntax checks
-$ dnsmasq --test
+$ sudo dnsmasq --test
 • Print errors
-$ grep -c dnsmasq /var/log/*
-$ grep -c dnsmasq /var/log/syslog
-$ dnsmasq --no-daemon --log-queries=extra --log-dhcp --log-debug -C /etc/dnsmasq.conf
+$ sudo grep -c dnsmasq /var/log/*
+$ sudo grep -c dnsmasq /var/log/syslog
+$ sudo dnsmasq --no-daemon --log-queries=extra --log-dhcp --log-debug -C /etc/dnsmasq.conf
 </pre>
 
-conflicts between dnsmasq and systemd-resolved
+<p>*Conflicts between dnsmasq and systemd-resolved</p>
 
 <h5>∙ DHCP Issues</h5>
 
@@ -6228,7 +6303,7 @@ Bug - xhci_hcd 0000:15:00.0: WARN Set TR Deq Ptr cmd failed due to incorrect slo
 Bug - CPU hard lockup related to xhci/dma - https://bugzilla.kernel.org/show_bug.cgi?id=217242<br>
 Bug - Debootstrap is very slow. Please use eatmydata to fix this. - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=700633<br>
 
-<p>Tip: If you are transferring large amounts of data via a problematic USB, use grsync as a manager.</p>
+<p>Tip: If you are transferring large amounts of data via a problematic USB, use <code>grsync</code> as a manager.</p>
 
 <h4>USB debug</h4>
 
@@ -6854,35 +6929,26 @@ https://www.youtube.com/@reconmtl<br>
 https://www.youtube.com/@TROOPERScon<br>
 
 Linux Blogs<br>
+https://linux-tips.us<br>
+https://linuxcnf.com<br>
+https://linuxiac.com<br>
 https://ostechnix.com<br>
 https://techviewleo.com<br>
 https://programmerall.com<br>
-https://linuxcnf.com<br>
 https://fabianlee.org<br>
-https://linuxiac.com<br>
 https://vitux.com<br>
 https://tqdev.com<br>
 https://dwarmstrong.org<br>
 https://0pointer.net/blog/<br>
 https://slant.co<br>
 https://blog.carsoncheng.ca<br>
-https://linux-tips.us<br>
 
 Others<br>
+• https://www.shellcheck.net<br>
+• https://www.shellscript.sh<br>
 • https://www.notrace.how<br>
 • https://www.anarsec.guide<br>
 • https://0x00sec.org<br>
-• https://www.shellcheck.net<br>
-• Necessary and Proportionate - https://www.necessaryandproportionate.org<br>
-• Privacy International - https://www.privacyinternational.org<br>
-• EFF - https://www.eff.org<br>
-• Citizenlab - https://citizenlab.ca<br>
-• BBW - https://bigbrotherwatch.org.uk<br>
-• Bad Internet Bills - https://www.badinternetbills.com<br>
-• Software Freedom Law Center - https://softwarefreedom.org<br>
-• UN Internet Governance Forum - https://www.intgovforum.org<br>
-• Exposing the Invisible (ETI) - https://kit.exposingtheinvisible.org<br>
-
 <br>
 </details>
 
