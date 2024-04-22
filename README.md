@@ -726,16 +726,16 @@ or
 
 2.3.4 Example 1 - FSTAB - Non-encrypted Boot Removable Medium (USB Key) Multi-device<br>
 
-```sh
-# <file system> <mount point> <type><options><dump><pass>
-UUID=e4c627c2-69f2-11ee-8c99-0242ac120002/ ext4errors=remount-ro0 1
+<pre>
+# <file system> <mount point> <type> <options> <dump> <pass>
+UUID=e4c627c2-69f2-11ee-8c99-0242ac120002  / ext4 errors=remount-ro 0 1
 # /boot was on /dev/sdc2 during installation
-PARTUUID=f2c4ec78-69f2-11ee-8c99-0242ac120002 /bootext2noauto, x-systemd.device-timeout=1m, defaults 0 2
+PARTUUID=f2c4ec78-69f2-11ee-8c99-0242ac120002 /boot ext2 noauto, x-systemd.device-timeout=1m, defaults 0 2
 # /boot/efi was on /dev/sdc1 during installation
-PARTUUID=a15355f4-15ce-4ea6-a57b-161e9eea19fc /boot/efivfatnoauto, x-systemd.device-timeout=1m, umask=0077 0 1
+PARTUUID=a15355f4-15ce-4ea6-a57b-161e9eea19fc /boot/efi vfat noauto, x-systemd.device-timeout=1m, umask=0077 0 1
 UUID=2701e126-69f3-11ee-8c99-0242ac120002 /home ext4 defaults 0 2
 UUID=447e4a14-69f3-11ee-8c99-0242ac120002 none swap sw 0 0 
-```
+</pre>
 
 2.3.5 Example 2 - FSTAB - Encrypted Boot Removable Medium (USB Key) Multi-device<br>
 
@@ -1971,10 +1971,10 @@ https://wiki.ubuntu.com/DebuggingApparmor<br>
 
 <h4>How to Add User to Sudoers</h4>
 
-<code> $ su</code>
-<code> # usermod -aG sudo username</code>
-<code> # exit</code>
-<code> $ getent group sudo</code>
+<code> $ su</code><br>
+<code> # usermod -aG sudo username</code><br>
+<code> # exit</code><br>
+<code> $ getent group sudo</code><br>
 
 <p>*Logoff to take effect.</p>
 
@@ -4954,7 +4954,8 @@ https://wiki.debian.org/Compression<br>
 
 <h4>All-in-one extract()</h4>
 
-<code>$ sudo apt install -y tar gzip 7zip unrar-free zlib1g bzip2 xz-utils tarlz</code><br>
+<code>$ sudo apt install -y tar gzip 7zip unrar
+ zlib1g bzip2 xz-utils tarlz</code><br>
 
 <p>Add this function to your <code>.bashrc</code> or <code>.bash_profile</code> configure file in your home directory.</p>
 
@@ -5059,6 +5060,9 @@ https://www.7-zip.org<br>
 &nbsp; &nbsp; $ unrar e ~/Downloads/filename.rar ~/Downloads/
 &nbsp; &nbsp; • How to decompress a rar file encrypted
 &nbsp; &nbsp; $ unrar-free -x ~/Downloads/filename.rar ~/Downloads/
+&nbsp; &nbsp; • How to decompress a rar file encrypted parts, only unrar the first part01.rar and it goes itself for the rest. Navigate to the directory containing the file:
+&nbsp; &nbsp; $ cd /path/to/directory/
+&nbsp; &nbsp; $ unrar-free -xp /part01.rar ~/Downloads/
 </pre>
 
 <h4>• ZIP (.zip)</h4>
@@ -5085,6 +5089,9 @@ https://infozip.sourceforge.net<br>
 &nbsp; &nbsp; • Unzip Multiple Files (using single quote or backslash)
 &nbsp; &nbsp; $ unzip '*.zip'
 &nbsp; &nbsp; $ unzip \*.zip
+&nbsp; &nbsp; • Locale encoding name error
+&nbsp; &nbsp; $ unzip -I (encoding) (FILE_PATH) -d (Destination)
+&nbsp; &nbsp; $ unzip -I UTF-8 Desktop.zip
 </pre>
 
 <pre>
@@ -5565,17 +5572,6 @@ $ tree -d -L 2 .
 
 <!-- ########## -->
 
-<h4>Commands for you to find large files</h4>
-
-<pre>
-$ df -h
-$ df -h ~/.cache
-$ sudo df -h /mnt
-$ find ~/.cache -xdev -type f -size +1G
-</pre>
-
-<!-- ########## -->
-
 <h4>Schedule a Shutdown in Command Line</h4>
 
 <h6>Shutdown at specific time</h6>
@@ -5600,6 +5596,33 @@ $ sudo apt install at
 $ sudo echo "shutdown +767" | at 08:46am 2024-09-11
 </pre>
 
+<!-- ########## -->
+
+<h4>Set an Alarm from the Terminal</h4>
+
+<pre>
+$ sleep 5m && mpv alarm.mp3
+</pre>
+
+<!-- ########## -->
+
+<h4>Use Terminal as a Stopwatch</h4>
+
+<pre>
+$ time cat
+CTRL + C
+</pre>
+
+<!-- ########## -->
+
+<h4>Commands for you to find large files</h4>
+
+<pre>
+$ df -h
+$ df -h ~/.cache
+$ sudo df -h /mnt
+$ find ~/.cache -xdev -type f -size +1G
+</pre>
 
 <!-- ########## -->
 
@@ -6722,9 +6745,11 @@ https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows<br>
 <h3>Locales</h3>
 
 <code>$ locale</code><br>
+<code>$ sudo apt reinstall locales</code><br>
 <code>$ sudo locale-gen</code><br>
 <code>$ sudo locale-gen en_US.UTF-8</code><br>
 <code>$ sudo dpkg-reconfigure locales</code><br>
+<code>*Logoff</code><br>
 
 <h4>If locale-gen had not results</h4>
 
@@ -6947,6 +6972,7 @@ https://blog.carsoncheng.ca<br>
 Others<br>
 • https://www.shellcheck.net<br>
 • https://www.shellscript.sh<br>
+• https://explainshell.com<br>
 • https://www.notrace.how<br>
 • https://www.anarsec.guide<br>
 • https://0x00sec.org<br>
