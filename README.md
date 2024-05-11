@@ -3523,256 +3523,9 @@ https://whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy<br>
 
 <h2>6. SOFTWARES</h2>
 
-<details>
-<summary><b>6.01 Password Manager</b></summary>
-<br>
-
-<h3>Password Manager</h3>
-
-<h4>• KeePassXC</h4>
-
-https://keepassxc.org/docs/<br>
-
-<code>$ sudo apt install keepassxc</code><br>
-
-<br>
-</details>
-
-<!-- #################### -->
 
 <details>
-<summary><b>6.02 Browsers</b></summary>
-<br>
-
-<h4>Browsers</h4>
-
-https://avoidthehack.com/util/browser-comparison<br>
-
-<h4>• LibreWolf</h4>
-
-https://librewolf.net/installation/debian/<br>
-
-<h4>• Firefox</h4>
-
-<code>$ sudo apt install </code><br>
-
-<h4>• Chromium</h4>
-
-<code>$ sudo apt install </code><br>
-
-<h5>Extensions</h5>
-
-<ul>
-<li>
-<a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a><br>
-</li>
-<li>
-<a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a><br>
-</li>
-<li>
-<a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a><br>
-</li>
-<li>
-<a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a><br>
-</li>
-<li>
-<a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a><br>
-</li>
-<li>
-<a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a><br>
-</li>
-<li>
-<a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a><br>
-<li><a href="https://privacybadger.org">Privacy Badger is a browser extension that automatically learns to block invisible trackers</a><br>
-</li>
-</ul>
-
-<ul>
-<li>
-<a href="https://addons.mozilla.org/en-US/firefox/addon/terms-of-service-didnt-read">Terms of Service; Didn't Read</a><br>
-</li>
-<li>
-<a href="https://addons.mozilla.org/en-US/firefox/addon/clearurls">ClearURLs</a><br>
-</li>
-<li>
-<a href="https://addons.mozilla.org/en-US/firefox/addon/temporary-containers">Temporary Containers</a><br>
-</li>
-<li>
-<a href="https://addons.mozilla.org/en-US/firefox/addon/canvasblocker">Canvas Blocker</a><br>
-</li>
-<li>
-<a href="https://addons.mozilla.org/en-US/firefox/addon/decentraleyes">Decentraleyes</a><br>
-</ul>
- 
-<h4>URL shorteners</h4>
-
-https://kutt.it<br>
-https://shlink.io<br>
-
-<br>
-</details>
-
-<!-- #################### -->
-
-<details>
-<summary><b>6.03 Cloud Services</b></summary>
-<br>
-
-<h4>Info</h4>
-
-https://forum.rclone.org<br>
-https://reddit.com/r/cloudstorage<br>
-https://reddit.com/r/DataHoarder<br>
-https://reddit.com/r/Piracy<br>
-https://reddit.com/r/Scams<br>
-
-<h4>Cloud Privacy</h4>
-
-<h5>∙ Cryptomator (GUI)</h5>
-
-https://cryptomator.org<br>
-
-<h5>∙ Duplicati (GUI)</h5>
-
-https://duplicati.com<br>
-
-<h5>∙ Tahoe-LAFS</h5>
-
-https://tahoe-lafs.org/trac/tahoe-lafs<br>
-
-<h5>∙ </h5>
-
-<br>
-
-<h4>Cloud Providers</h4>
-
-<h4>• Google Drive</h4>
-
-https://github.com/glotlabs/gdrive<br>
-
-<h4>• MEGA</h4>
-
-https://mega.io<br> 
-https://mega.io/desktop<br>
-https://github.com/rclone/rclone<br> 
-
-<h4>• Yandex</h4>
-
-https://360.yandex.com<br>
-https://rclone.org/yandex (*Backend supported)<br> 
-
-*Russian<br>
-
-<h4>• IDrive</h4>
-
-https://idrive.com<br>
-https://idrive.com/online-backup-linux<br>
-https://idrive.com/linux-backup-scripts<br>
-https://rclone.org/s3/#idrive-e2<br>
-
-<h4>• TeraBox</h4>
-
-https://1024tera.com<br>
-https://1024tera.com/terabox-cloud-storage-for-pc-free-download<br>
-https://reddit.com/r/TeraBox/<br>
-
-<h4>• pCloud</h4>
-
-https://pcloud.com<br> 
-https://pcloud.com/how-to-install-pcloud-drive-linux.html<br> 
-https://github.com/pcloudcom/console-client<br> 
-
-<h4>• SugarSync</h4>
-
-https://sugarsync.com<br>
-https://rclone.org/sugarsync (*Not backend supported) <br> 
-
-<h4>• Box</h4>
-
-https://box.com<br>
-https://github.com/box/boxcli<br>
-https://github.com/rclone/rclone<br>
-
-<br>
-</details>
-
-<!-- #################### -->
-
-<details>
-<summary><b>6.04 File Host</b></summary>
-<br>
-
-<h4>File Host</h4>
-
-<h4>• Unsee</h4>
-https://unsee.cc<br>
-
-<h4>• Rapidgator</h4>
-https://rapidgator.net<br> 
-
-<h4>• Nitroflare</h4>
-https://nitroflare.net<br> 
-
-<h4>• Uploadgig</h4>
-https://uploadgig.com
-
-<h4>• Mediafire</h4>
-https://mediafire.com/upgrade/<br> 
-
-<h4>• UploadFiles</h4>
-https://ufile.io<br> 
-
-<h4>• 1Fichier</h4>
-https://1fichier.com/hlp.html<br>
-
-<h4>• Turbobit</h4>
-https://turbobit.net
-
-<h4>• Filescase</h4>
-http://filescase.com/<br>
-
-<h4>• Hex Upload</h4>
-https://hexupload.org<br>
-
-<h4>Anonymous File Sharing Services With Temporary Online Storage</h4>
-
-<h4>• Tempsend</h4>
-https://tempsend.com<br>
-
-<h4>• WeTransfer</h4>
-https://wetransfer.com
-
-<h4>• Send Anywhere</h4>
-https://send-anywhere.com<br>
-
-<h4>• SendGB</h4>
-https://sendgb.com<br>
-
-<h4>• Volafile</h4>
-https://volafile.org<br>
-
-<h4>• SendSpace</h4>
-https://sendspace.com<br>
-
-<h4>• MyAirBridge</h4>
-https://myairbridge.com/en/eng<br>
-
-<h4>• Gofile</h4>
-https://gofile.io/welcome<br>
-
-<h4>• OTF One Time File</h4>
-https://gofile.io/welcome<br>
-
-<h4>• Bitwarden Send</h4>
-https://bitwarden.com/products/send<br>
-
-<br>
-</details>
-
-<!-- #################### -->
-
-<details>
-<summary><b>6.05 Office Softwares</b></summary>
+<summary><b>6.01 Office Softwares</b></summary>
 <br>
 
 
@@ -4651,6 +4404,254 @@ $
 
 <br>
 </details>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>6.02 Password Manager</b></summary>
+<br>
+
+<h3>Password Manager</h3>
+
+<h4>• KeePassXC</h4>
+
+https://keepassxc.org/docs/<br>
+
+<code>$ sudo apt install keepassxc</code><br>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>6.03 Browsers</b></summary>
+<br>
+
+<h4>Browsers</h4>
+
+https://avoidthehack.com/util/browser-comparison<br>
+
+<h4>• LibreWolf</h4>
+
+https://librewolf.net/installation/debian/<br>
+
+<h4>• Firefox</h4>
+
+<code>$ sudo apt install </code><br>
+
+<h4>• Chromium</h4>
+
+<code>$ sudo apt install </code><br>
+
+<h5>Extensions</h5>
+
+<ul>
+<li>
+<a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a><br>
+</li>
+<li>
+<a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a><br>
+</li>
+<li>
+<a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a><br>
+</li>
+<li>
+<a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a><br>
+</li>
+<li>
+<a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a><br>
+</li>
+<li>
+<a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a><br>
+</li>
+<li>
+<a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a><br>
+<li><a href="https://privacybadger.org">Privacy Badger is a browser extension that automatically learns to block invisible trackers</a><br>
+</li>
+</ul>
+
+<ul>
+<li>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/terms-of-service-didnt-read">Terms of Service; Didn't Read</a><br>
+</li>
+<li>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/clearurls">ClearURLs</a><br>
+</li>
+<li>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/temporary-containers">Temporary Containers</a><br>
+</li>
+<li>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/canvasblocker">Canvas Blocker</a><br>
+</li>
+<li>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/decentraleyes">Decentraleyes</a><br>
+</ul>
+ 
+<h4>URL shorteners</h4>
+
+https://kutt.it<br>
+https://shlink.io<br>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>6.04 Cloud Services</b></summary>
+<br>
+
+<h4>Info</h4>
+
+https://forum.rclone.org<br>
+https://reddit.com/r/cloudstorage<br>
+https://reddit.com/r/DataHoarder<br>
+https://reddit.com/r/Piracy<br>
+https://reddit.com/r/Scams<br>
+
+<h4>Cloud Privacy</h4>
+
+<h5>∙ Cryptomator (GUI)</h5>
+
+https://cryptomator.org<br>
+
+<h5>∙ Duplicati (GUI)</h5>
+
+https://duplicati.com<br>
+
+<h5>∙ Tahoe-LAFS</h5>
+
+https://tahoe-lafs.org/trac/tahoe-lafs<br>
+
+<h5>∙ </h5>
+
+<br>
+
+<h4>Cloud Providers</h4>
+
+<h4>• Google Drive</h4>
+
+https://github.com/glotlabs/gdrive<br>
+
+<h4>• MEGA</h4>
+
+https://mega.io<br> 
+https://mega.io/desktop<br>
+https://github.com/rclone/rclone<br> 
+
+<h4>• Yandex</h4>
+
+https://360.yandex.com<br>
+https://rclone.org/yandex (*Backend supported)<br> 
+
+*Russian<br>
+
+<h4>• IDrive</h4>
+
+https://idrive.com<br>
+https://idrive.com/online-backup-linux<br>
+https://idrive.com/linux-backup-scripts<br>
+https://rclone.org/s3/#idrive-e2<br>
+
+<h4>• TeraBox</h4>
+
+https://1024tera.com<br>
+https://1024tera.com/terabox-cloud-storage-for-pc-free-download<br>
+https://reddit.com/r/TeraBox/<br>
+
+<h4>• pCloud</h4>
+
+https://pcloud.com<br> 
+https://pcloud.com/how-to-install-pcloud-drive-linux.html<br> 
+https://github.com/pcloudcom/console-client<br> 
+
+<h4>• SugarSync</h4>
+
+https://sugarsync.com<br>
+https://rclone.org/sugarsync (*Not backend supported) <br> 
+
+<h4>• Box</h4>
+
+https://box.com<br>
+https://github.com/box/boxcli<br>
+https://github.com/rclone/rclone<br>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>6.05 File Host</b></summary>
+<br>
+
+<h4>File Host</h4>
+
+<h4>• Unsee</h4>
+https://unsee.cc<br>
+
+<h4>• Rapidgator</h4>
+https://rapidgator.net<br> 
+
+<h4>• Nitroflare</h4>
+https://nitroflare.net<br> 
+
+<h4>• Uploadgig</h4>
+https://uploadgig.com
+
+<h4>• Mediafire</h4>
+https://mediafire.com/upgrade/<br> 
+
+<h4>• UploadFiles</h4>
+https://ufile.io<br> 
+
+<h4>• 1Fichier</h4>
+https://1fichier.com/hlp.html<br>
+
+<h4>• Turbobit</h4>
+https://turbobit.net
+
+<h4>• Filescase</h4>
+http://filescase.com/<br>
+
+<h4>• Hex Upload</h4>
+https://hexupload.org<br>
+
+<h4>Anonymous File Sharing Services With Temporary Online Storage</h4>
+
+<h4>• Tempsend</h4>
+https://tempsend.com<br>
+
+<h4>• WeTransfer</h4>
+https://wetransfer.com
+
+<h4>• Send Anywhere</h4>
+https://send-anywhere.com<br>
+
+<h4>• SendGB</h4>
+https://sendgb.com<br>
+
+<h4>• Volafile</h4>
+https://volafile.org<br>
+
+<h4>• SendSpace</h4>
+https://sendspace.com<br>
+
+<h4>• MyAirBridge</h4>
+https://myairbridge.com/en/eng<br>
+
+<h4>• Gofile</h4>
+https://gofile.io/welcome<br>
+
+<h4>• OTF One Time File</h4>
+https://gofile.io/welcome<br>
+
+<h4>• Bitwarden Send</h4>
+https://bitwarden.com/products/send<br>
 
 <br>
 </details>
