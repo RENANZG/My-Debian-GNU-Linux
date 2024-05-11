@@ -48,6 +48,16 @@ https://nitroflare.com/view/AD0EC23C7FA885A/Sanet.st_Head_First_Python_-_Paul_Ba
 
 <!-- #################### -->
 
+<h4>Head First PHP & MySQL: A Brain-Friendly Guide (2013)</h4>
+
+https://rapidgator.net/file/d8dfae4452e551d402c39e68c27d78ca/Sanet.cd_Head_First_PHP_&_MySQL_-_Lynn_Beighley.epub.html<br>
+
+http://nitroflare.com/view/76658B8FAA19CFE/Sanet.cd_Head_First_PHP_%26_MySQL_-_Lynn_Beighley.epub<br>
+
+Password: WWW.sanet.cd<br>
+
+<!-- #################### -->
+
 <h4>Head First Java: A Brain-Friendly Guide, 3rd Ed. (True PDF) (2022)</h4>
 
 https://rapidgator.net/file/3c8599358438ce8ff079e5becd19d076/<br>
@@ -62,15 +72,6 @@ https://rapidgator.net/file/6e4eeb5a7666f5e221e57344953db88e/Sanet.st_Head_First
 
 https://nitroflare.com/view/A7F11144DB30EA3/Sanet.st_Head_First_Go_-_Jay_McGavren.pdf<br>
 
-<!-- #################### -->
-
-<h4>Head First PHP & MySQL: A Brain-Friendly Guide (2013)</h4>
-
-https://rapidgator.net/file/d8dfae4452e551d402c39e68c27d78ca/Sanet.cd_Head_First_PHP_&_MySQL_-_Lynn_Beighley.epub.html<br>
-
-http://nitroflare.com/view/76658B8FAA19CFE/Sanet.cd_Head_First_PHP_%26_MySQL_-_Lynn_Beighley.epub<br>
-
-Password: WWW.sanet.cd<br>
 
 <!-- #################### -->
 

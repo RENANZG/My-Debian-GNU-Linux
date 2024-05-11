@@ -13,7 +13,7 @@
 
 <blockquote><h3>"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately endpoint security is so terrifically weak that NSA can frequently find ways around it." (Edward Snowden)</h3></blockquote>
 
-<p align="center"><img src=".data/the_key_to_the_fields_1936_-_rene_magritte_830px.png" title="The Key to the Fields (1936) - René Magritte"/></p>
+<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/.data/the_key_to_the_fields_1936_-_rene_magritte_830px.png" title="The Key to the Fields (1936) - René Magritte"/></p>
 
 </div>
 
@@ -30,15 +30,15 @@
 <td> <a href="https://madaidans-insecurities.github.io/">Madaidan's - Security &amp; Privacy Evaluations</a> </th>
 </tr>
 <tr>
-<td> <a href="https://www.whonix.org/wiki/Essential_Host_Security">Whonix - Essential Host Security</a> </td>
+<td> <a href="https://whonix.org/wiki/Essential_Host_Security">Whonix - Essential Host Security</a> </td>
 <td> <a href="https://hardenedlinux.github.io/">Hardened GNU/Linux</a> </td>
 </tr>
 <tr>
-<td> <a href="https://www.whonix.org/wiki/System_Hardening_Checklist">Whonix - System Hardening Checklist</a> </td>
-<td> <a href="https://www.bleachbit.org/">Bleachbit - Clean Your System and Free Disk Space</a> </td>
+<td> <a href="https://whonix.org/wiki/System_Hardening_Checklist">Whonix - System Hardening Checklist</a> </td>
+<td> <a href="https://bleachbit.org/">Bleachbit - Clean Your System and Free Disk Space</a> </td>
 </tr>
 <tr>
-<td> <a href="https://www.kicksecure.com/wiki/Documentation">Kicksecure - Documentation</a> </td>
+<td> <a href="https://kicksecure.com/wiki/Documentation">Kicksecure - Documentation</a> </td>
 <td> <a href="https://github.com/PartialVolume/shredos.x86_64">ShredOS - Secure disk erasure/wipe</a> </td>
 </tr>
 <tr>
@@ -51,15 +51,15 @@
 </tr>
 <tr>
 <td> <a href="https://downloads.cisecurity.org/#/">CIS Benchmark - Debian Linux Guides</a> </td>
-<td> <a href="https://www.duplicati.com/" target="_blank" rel="noopener noreferrer">Duplicati - Store securely encrypted backups on cloud storage services!</a> </td>
+<td> <a href="https://duplicati.com/" target="_blank" rel="noopener noreferrer">Duplicati - Store securely encrypted backups on cloud storage services!</a> </td>
 </tr>
 <tr>
-<td> <a href="https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance">NSA GOV - Cybersecurity Advisories &amp; Guidance</a><a href="https://github.com/nsacyber"> (GitHub)</a> </td>
-<td> <a href="https://www.virustotal.com/gui/home/upload" target="_blank" rel="noopener noreferrer">Virus Total - Free virus, malware and URL online scanning</a> </td>
+<td> <a href="https://nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance">NSA GOV - Cybersecurity Advisories &amp; Guidance</a><a href="https://github.com/nsacyber"> (GitHub)</a> </td>
+<td> <a href="https://virustotal.com/gui/home/upload" target="_blank" rel="noopener noreferrer">Virus Total - Free virus, malware and URL online scanning</a> </td>
 </tr>
 <tr>
-<td> <a href="https://www.nist.gov/cyberframework">NIST GOV - Cybersecurity Framework</a> </td>
-<td> <a href="https://www.hybrid-analysis.com/" target="_blank" rel="noopener noreferrer">Hybrid Analysis - This is a free malware analysis service</a></td>
+<td> <a href="https://nist.gov/cyberframework">NIST GOV - Cybersecurity Framework</a> </td>
+<td> <a href="https://hybrid-analysis.com/" target="_blank" rel="noopener noreferrer">Hybrid Analysis - This is a free malware analysis service</a></td>
 </tr>
 </tbody>
 </table>
@@ -74,20 +74,20 @@
 <table>
 <tbody>
   <tr>
-    <td><a href="https://www.ventoy.net/en/download.html">1. Ventoy</a></td>
-    <td><a href="https://www.ventoy.net/en/doc_secure.html">(Secure Boot)</a></td>
-    <td><a href="https://www.ventoy.net/en/download.html">(Checksums)</a></td>
-    <td><a href="https://www.qubes-os.org/downloads" target="_blank" rel="noopener noreferrer">7. Qubes</a></td>
-    <td><a href="https://www.qubes-os.org/faq/" target="_blank" rel="noopener noreferrer">(*Secure Boot)</a></td>
-    <td><a href="https://www.qubes-os.org/security/verifying-signatures" target="_blank" rel="noopener noreferrer">(Checksums)</a></td>
+    <td><a href="https://ventoy.net/en/download.html">1. Ventoy</a></td>
+    <td><a href="https://ventoy.net/en/doc_secure.html">(Secure Boot)</a></td>
+    <td><a href="https://ventoy.net/en/download.html">(Checksums)</a></td>
+    <td><a href="https://qubes-os.org/downloads" target="_blank" rel="noopener noreferrer">7. Qubes</a></td>
+    <td><a href="https://qubes-os.org/faq/" target="_blank" rel="noopener noreferrer">(*Secure Boot)</a></td>
+    <td><a href="https://qubes-os.org/security/verifying-signatures" target="_blank" rel="noopener noreferrer">(Checksums)</a></td>
   </tr>
   <tr>
     <td><a href="http://www.rodsbooks.com/refind/getting.html">2. rEFInd</a></td>
     <td><a href="http://www.rodsbooks.com/refind/secureboot.html">(Secure Boot)</a></td>
     <td><a href="https://sourceforge.net/p/refind/code/ci/master/tree/">(Checksums)</a></td>
-    <td><a href="https://www.kali.org/get-kali/#kali-installer-images" target="_blank" rel="noopener noreferrer">8. KaliLinux</a></td>
-    <td><a href="https://www.kali.org/docs/installation/hard-disk-install/" target="_blank" rel="noopener noreferrer">(*Secure Boot)</a></td>
-    <td><a href="https://www.kali.org/get-kali/#kali-installer-images" target="_blank" rel="noopener noreferrer">(Checksums)</a></td>
+    <td><a href="https://kali.org/get-kali/#kali-installer-images" target="_blank" rel="noopener noreferrer">8. KaliLinux</a></td>
+    <td><a href="https://kali.org/docs/installation/hard-disk-install/" target="_blank" rel="noopener noreferrer">(*Secure Boot)</a></td>
+    <td><a href="https://kali.org/get-kali/#kali-installer-images" target="_blank" rel="noopener noreferrer">(Checksums)</a></td>
   </tr>
   <tr>
     <td><a href="https://clonezilla.org/downloads.php">3. Clonezilla</a></td>
@@ -109,9 +109,9 @@
     <td><a href="https://github.com/PartialVolume/shredos.x86_64">5. ShredOS</a></td>
     <td><a href="">(Secure Boot)</a></td>
     <td><a href="">(Checksums)</a></td>
-    <td><a href="https://www.hirensbootcd.org/" target="_blank" rel="noopener noreferrer">11. Hiren's BootCD PE</a></td>
+    <td><a href="https://hirensbootcd.org/" target="_blank" rel="noopener noreferrer">11. Hiren's BootCD PE</a></td>
     <td><a href="" target="_blank" rel="noopener noreferrer">(Secure Boot)</a></td>
-    <td><a href="https://www.hirensbootcd.org/download/" target="_blank" rel="noopener noreferrer">(Checksums)</a></td>
+    <td><a href="https://hirensbootcd.org/download/" target="_blank" rel="noopener noreferrer">(Checksums)</a></td>
   </tr>
   <tr>
     <td><a href="https://tails.net/news/new_domain/index.en.html" target="_blank" rel="noopener noreferrer">6. Tails</a></td>
@@ -124,7 +124,7 @@
 </tbody>
 </table>
 
-<sub>Others: <a href="https://securityonionsolutions.com">Security Onion</a>, <a href="https://www.networksecuritytoolkit.org">NST</a>, <a href="https://www.android-x86.org/">Android-x86</a>, <a href="https://hardenedbsd.org">HardenedBSD</a>, <a href="https://live.osgeo.org/">OSGeoLive</a>, <a href="https://openwrt.org">OpenWRT</a>, <a href="https://wiki.libreelec.tv/">LibreELEC.tv</a>, <a href="https://store.steampowered.com/steamos">SteamOS</a> .</sub><br>
+<sub>Others: <a href="https://securityonionsolutions.com">Security Onion</a>, <a href="https://networksecuritytoolkit.org">NST</a>, <a href="https://android-x86.org/">Android-x86</a>, <a href="https://hardenedbsd.org">HardenedBSD</a>, <a href="https://live.osgeo.org/">OSGeoLive</a>, <a href="https://openwrt.org">OpenWRT</a>, <a href="https://wiki.libreelec.tv/">LibreELEC.tv</a>, <a href="https://store.steampowered.com/steamos">SteamOS</a> .</sub><br>
 
 <!-- ################################## -->
 
@@ -140,10 +140,10 @@
 <!-- ########## -->
 
 <details>
-<summary><sub>² How to summarize iso file with <a href="https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html">GNU Coreutils (CLI)</a></sub></summary>
+<summary><sub>² How to summarize iso file with <a href="https://gnu.org/software/coreutils/manual/html_node/Summarizing-files.html">GNU Coreutils (CLI)</a></sub></summary>
 <br>
 
-<p>Summarize iso file with GNU Coreutils (CLI)<a href="https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html">https://www.gnu.org/software/coreutils/manual/html_node/Summarizing-files.html</a></p>
+<p>Summarize iso file with GNU Coreutils (CLI)<a href="https://gnu.org/software/coreutils/manual/html_node/Summarizing-files.html">https://gnu.org/software/coreutils/manual/html_node/Summarizing-files.html</a></p>
 
 <br>
 </details>
@@ -195,71 +195,81 @@
 <summary><b>2.01 Hardware</b></summary>
 <br>
 
-<h4>Points to check</h4>
+<h4>BIOS Simulators</h4>
+• Phoenix BIOS Simulator<br>
+https://www.grs-software.de/sims/bios/phoenix/pages/<br>
+• Phoenix BIOS Setup Utility Simulator - Pranx<br>
+https://pranx.com/bios<br>
+• Lenovo BIOS Simulator<br>
+https://download.lenovo.com/bsco/index.html<br>
 
-<h4>2.01.01 Security</h4>
+<h4>Hardware Compatibility</h4>
+• Hardware for Linux<br>
+https://linux-hardware.org<br>
+• Linux Vendor Firmware Service<br>
+https://fwupd.org/lvfs/devices<br>
+• r/linuxhardware<br>
+https://reddit.com/r/linuxhardware<br>
+• SANE - Lists of supported scanners firmware<br>
+http://www.sane-project.org/sane-supported-devices.html<br>
+• USB WiFI<br>
+https://github.com/morrownr/USB-WiFi<br>
+• Mac<br>
+https://wiki.debian.org/DebianOnIntelMacPro<br>
 
-<h5>• BIOS</h5>
+<h4>Open Hardware</h4>
+• GNU/Linux Open Hardware PowerPC notebook<br>
+https://powerpc-notebook.org<br>
+• PINE64 - Community-driven hardware projects<br>
+https://pine64.com<br>
+https://pine64.org<br>
+• Framework - Fix Consumer Electronics<br>
+https://frame.work<br>
+• "Respects Your Freedom" Certification Program<br>
+https://ryf.fsf.org<br>
 
-∙ Password Protect BIOS And OS With Laminated Password Card<br>
-https://www.passwordcard.org/en<br>
-
-∙ Boot<br>
-https://libreboot.org<br>
-https://osresearch.net<br>
-
-∙ Sanitize options<br> 
-
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.03_Sanitization">1.HARDENING/1.03_Sanitization</a></h4>
-
-<p>Not all SSD support sanitize. And if you use SSDs, enable TRIM in your BIOS. Take care with SSD over-provisioning.</p>
-
-∙ Crack password stored in CMOS used to access BIOS SETUP<br>
-https://github.com/bacher09/pwgen-for-bios<br>
-
-∙ Secure Boot<br>
-
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/3.SECURE_BOOT">3.SECURE_BOOT</a></h4>
-
-<h5>Hardware Vulnerabilities</h5>
+<h4>Hardware Vulnerabilities</h4>
 https://docs.kernel.org/admin-guide/hw-vuln/index.html<br>
 https://github.com/chipsec/chipsec<br>
 
-<h5>• Hardware Security Based</h5>
+<h4>Hardware Security Based</h4>
 https://en.wikipedia.org/wiki/Open-source_firmware<br>
 https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption<br>
 https://en.wikipedia.org/wiki/Write_protection<br>
 https://en.m.wikipedia.org/wiki/Random-access_memory<br>
 https://usbguard.github.io<br>
 https://digistor.com<br>
-https://www.seagate.com/enterprise-storage/enterprise-security<br>
+https://seagate.com/enterprise-storage/enterprise-security<br>
 https://github.com/openssl/openssl/blob/master/README-FIPS.md<br>
 
-<h5>• Volatile Memory</h5>
-https://usbkill.com<br>
-https://github.com/Kicksecure/ram-wipe<br>
-https://www.kicksecure.com/wiki/Hardened_Malloc<br>
-https://forums.whonix.org/t/hardened-malloc-hardened-memory-allocator/7474/4<br>
-
-<h5>• Hardware Spoof</h5>
-https://www.whonix.org/wiki/Protocol-Leak-Protection_and_Fingerprinting-Protection#Less_important_identifiers<br>
-https://www.whonix.org/wiki/MAC_Address<br>
+<h4>Hardware Spoof</h4>
+https://whonix.org/wiki/Protocol-Leak-Protection_and_Fingerprinting-Protection#Less_important_identifiers<br>
+https://whonix.org/wiki/MAC_Address<br>
 https://github.com/alobbs/macchanger<br>
 https://hwidspoofer.com<br>
 https://xaze.gitbook.io/how-to-spoof-with-hwid-serial-changer<br>
 https://github.com/segofensiva/OSfooler-ng<br>
 
-<h4>2.01.02 Compatibility</h4>
-https://linux-hardware.org<br>
-https://www.reddit.com/r/linuxhardware<br>
-https://ryf.fsf.org<br>
-https://pine64.org/pinebook-pro<br>
-https://frame.work<br>
-https://powerpc-notebook.org<br>
-https://github.com/morrownr/USB-WiFi<br>
-https://wiki.debian.org/DebianOnIntelMacPro<br>
-	
-<h4>2.01.03 Performance</h4>
+<h4>Secure Boot</h4>
+
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/3.SECURE_BOOT">3.SECURE_BOOT</a></h4>
+
+https://libreboot.org<br>
+https://osresearch.net<br>
+
+<h4>Sanitize options</h4>
+
+<h5>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.03_Sanitization">1.HARDENING/1.03_Sanitization</a></h5>
+
+<p>Not all SSD support sanitize. And if you use SSDs, enable TRIM in your BIOS. Take care with SSD over-provisioning. Take care with SSD flaws.</p>
+
+<h4>Volatile Memory</h4>
+https://usbkill.com<br>
+https://github.com/Kicksecure/ram-wipe<br>
+https://kicksecure.com/wiki/Hardened_Malloc<br>
+https://forums.whonix.org/t/hardened-malloc-hardened-memory-allocator/7474/4<br>
+
+<h4>Performance</h4>
 
 • SSD Over-provisioning<br>
 
@@ -615,12 +625,12 @@ Terminal - https://github.com/onceupon/Bash-Oneliner#terminal-tricks<br>
 
 <h5>• Using VirtualBox as training or to test ultra-advanced configurations</h5>
 
-https://www.debian.org/doc/manuals/debian-handbook/sect.virtualization.en.html<br>
+https://debian.org/doc/manuals/debian-handbook/sect.virtualization.en.html<br>
 
 <h5>VirtualBox on Windows 10 Windows 10</h5>
 
 "How to Install Debian Linux in VirtualBox on Windows 10 | Beginners Guide | (Buster)"<br>
-https://www.youtube.com/watch?v=cx8GzudB6uE<br>
+https://youtube.com/watch?v=cx8GzudB6uE<br>
 
 <h5>Hypervisor</h5>
 
@@ -632,7 +642,7 @@ KVM, Kernel-based Virtual Machine, is a hypervisor built into the Linux kernel. 
 The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a type 1 hypervisor, it is able to run on bare metal, while QEMU is a type 2 hypervisor, it runs on top of the operating system. QEMU will utilize KVM in order to utilize the machine’s physical resources for the virtual machines. In brief, QEMU uses emulation; KVM uses processor extensions (HVM) for virtualization.
 </pre>
 
- <img src="8.SYSADMIN/8.03_Virtualization/QEMU-KVM_Chart.png"/>
+ <img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/8.SYSADMIN/8.03_Containerization_and_Orchestration/QEMU-KVM/QEMU-KVM_Chart.png"/>
 
 <h5>Using QEMU/KVM - "Kernel-based Virtual Machine"</h5>
 https://wiki.debian.org/KVM<br>
@@ -645,12 +655,12 @@ https://wiki.archlinux.org/title/KVM<br>
 http://www.rodsbooks.com/linux-uefi<br>
 https://wiki.debian.org/DontBreakDebian<br>
 https://distrowatch.com/table.php?distribution=debian<br>
-https://www.debian.org/releases/bookworm/amd64/apb.en.html<br>
+https://debian.org/releases/bookworm/amd64/apb.en.html<br>
 
 <h4>2.2.2 Desktop interface</h4>
 
 XFCE vs LXQt - Lightweight Linux Desktop Environments<br>
-https://www.youtube.com/watch?v=cs8JW3zDDoI<br>
+https://youtube.com/watch?v=cs8JW3zDDoI<br>
 
 
 <h4>2.2.3 Debootstrap</h4>
@@ -662,9 +672,9 @@ https://www.youtube.com/watch?v=cs8JW3zDDoI<br>
 • Debootstrap<br>
 https://wiki.debian.org/Debootstrap<br>
 • Debian 11.0 Debootstrap | Debian Command Line Install Guide<br>
-https://www.youtube.com/watch?v=oKnkOwdysNs<br>
+https://youtube.com/watch?v=oKnkOwdysNs<br>
 • Debian 11.4 ZFS Bootstrap | Debian ZFS Command Line Installation<br>
-https://www.youtube.com/watch?v=7F7Ch-ZkiQU<br>
+https://youtube.com/watch?v=7F7Ch-ZkiQU<br>
 • Nilsmeyer - An ansible role for bootstrapping new Debian based systems, including setting up partitions, file systems, encryption (luks), RAID and LVM<br>
 https://github.com/nilsmeyer/ansible-debootstrap<br>
 • Linux Dabbler - Scripts to run after installing debian<br>
@@ -674,7 +684,7 @@ https://github.com/linuxdabbler/debian-install-scripts<br>
 <h5>&nbsp; 2.2.3.1 File system: EXT4, XFS, BTRFS AND ZFS</h5>
 
 <div id="table1" align="left">
-<img src="2.SYSTEM_INSTALLATION/2.06_Others/file_system.png"/>
+<img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/2.INSTALLATION/2.08_Others/file_system.png"/>
 </div>
 
 <br>
@@ -755,9 +765,9 @@ https://github.com/aomgiwjc/Unix-Bootstrap-Installs/wiki<br>
 https://github.com/aomgiwjc/Unix-Bootstrap-Installs.wiki.git<br>
 https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key<br>
 https://blog.fidelramos.net/software/unlock-luks-usb-drive<br>
-https://www.willhaley.com/blog/unlock-luks-volumes-with-usb-key<br>
-https://www.dwarmstrong.org/fde-debian<br>
-https://www.cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux<br>
+https://willhaley.com/blog/unlock-luks-volumes-with-usb-key<br>
+https://dwarmstrong.org/fde-debian<br>
+https://cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux<br>
 
 2.3.7 Nuke Password<br>
 https://packages.debian.org/bookworm/cryptsetup-nuke-password<br>
@@ -885,7 +895,7 @@ https://training.linuxfoundation.org<br>
 https://training.linuxfoundation.org/training/a-beginners-guide-to-linux-kernel-development-lfd103<br>
 
 • Linux From Scratch (LFS)<br>
-https://www.linuxfromscratch.org<br>
+https://linuxfromscratch.org<br>
 
 • Reproducible Builds<br>
 https://reproducible-builds.org<br>
@@ -986,9 +996,9 @@ https://clonezilla.org//clonezilla-live-doc.php<br>
 
 <ul>
 BASIC:
-<li>https://www.rodsbooks.com/efi-bootloaders</li>
-<li>https://www.rodsbooks.com/efi-bootloaders/secureboot.html</li>
-<li>https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html</li>
+<li>https://rodsbooks.com/efi-bootloaders</li>
+<li>https://rodsbooks.com/efi-bootloaders/secureboot.html</li>
+<li>https://rodsbooks.com/efi-bootloaders/controlling-sb.html</li>
 <li>https://ubuntu.com/blog/how-to-sign-things-for-secure-boot</li>
 <li>https://wiki.ubuntu.com/UEFI/SecureBoot/DKMS</li>
 <li>https://help.ubuntu.com/community/DKMS</li>
@@ -999,12 +1009,12 @@ BASIC:
 <li>https://github.com/Batu33TR/secureboot-mok-keys</li>
 <li>https://github.com/M-P-P-C/Signing-an-Ubuntu-Kernel-for-Secure-Boot</li>
 <li>https://medium.com/@vvvrrooomm/practical-secure-boot-for-linux-d91021ae6471</li>
-<li>https://www.lastdragon.net/?p=2513</li>
+<li>https://lastdragon.net/?p=2513</li>
 ADVANCED:
 <li>https://uefi.org</li>
-<li>https://www.intel.com/content/www/us/en/developer/articles/tool/unified-extensible-firmware-interface.html</li>
-<li>https://www.kernel.org/doc/html/v4.15/admin-guide/module-signing.html</li>
-<li>https://www.kernel.org/doc./html/latest/admin-guide/module-signing.html</li>
+<li>https://intel.com/content/www/us/en/developer/articles/tool/unified-extensible-firmware-interface.html</li>
+<li>https://kernel.org/doc/html/v4.15/admin-guide/module-signing.html</li>
+<li>https://kernel.org/doc./html/latest/admin-guide/module-signing.html</li>
 <li>https://docs.oracle.com/en/operating-systems/oracle-linux/secure-boot/toc.htm#Table-of-Contents</li>
 <li>https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/managing_monitoring_and_updating_the_kernel/signing-a-kernel-and-modules-for-secure-boot_managing-monitoring-and-updating-the-kernel</li>
 <li>https://ubs_csse.gitlab.io/secu_os/tutorials/linux_secure_boot.html</li>
@@ -1017,10 +1027,10 @@ ADVANCED:
 <li>https://manpages.debian.org/stretch/keyutils/keyctl.1.en.html</li>
 <li>https://manpages.debian.org/testing/pesign/pesign.1.en.html</li>
 <li>https://manpages.debian.org/testing/libnss3-tools/index.html</li>
-<li>https://www.openssl.org/docs/man1.0.2/man1/openssl-req.html</li>
-<li>https://www.openssl.org/docs/man1.1.1/man1/req.html</li>
-<li>https://www.openssl.org/docs/manmaster/man5/x509v3_config.html</li>
-<li>https://www.kicksecure.com/wiki/Verified_Boot</li>
+<li>https://openssl.org/docs/man1.0.2/man1/openssl-req.html</li>
+<li>https://openssl.org/docs/man1.1.1/man1/req.html</li>
+<li>https://openssl.org/docs/manmaster/man5/x509v3_config.html</li>
+<li>https://kicksecure.com/wiki/Verified_Boot</li>
 <li>https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html</li>
 <li>https://github.com/nsacyber/TrustedSHIM</li>
 <li>https://github.com/nsacyber/HIRS</li>
@@ -1029,7 +1039,7 @@ ADVANCED:
 <li>https://help.ggcircuit.com/knowledge/how-to-inject-custom-secure-boot-keys-example</li>
 <li>https://blogs.oracle.com/linux/post/the-machine-keyring</li>
 <li>https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250 </li>
-<li>https://www.linuxjournal.com/content/take-control-your-pc-uefi-secure-boot</li>
+<li>https://linuxjournal.com/content/take-control-your-pc-uefi-secure-boot</li>
 </ul>
 
 <br>
@@ -1042,10 +1052,10 @@ ADVANCED:
 <br>
 
 <ul>
-<li><a href="https://www.youtube.com/watch?v=Mqh9o8YY2dg" target="_blank">Use UEFI Secure Boot NOW! (Trafotin)</a></li>
-<li><a href="https://www.youtube.com/watch?v=WBemkwMHLJM" target="_blank">Best Practices for UEFI Secure Boot Customization (UEFIForum)</a></li>
-<li><a href="https://www.youtube.com/watch?v=jtLQ8SzfrDU" target="_blank">Secure Boot from A to Z (The Linux Foundation)</a></li>
-<li><a href="https://www.youtube.com/watch?v=_3mwK6AXo_k" target="_blank">Secure Boot. In Debian. In Buster. Really (DebConf Videos)</a></li>
+<li><a href="https://youtube.com/watch?v=Mqh9o8YY2dg" target="_blank">Use UEFI Secure Boot NOW! (Trafotin)</a></li>
+<li><a href="https://youtube.com/watch?v=WBemkwMHLJM" target="_blank">Best Practices for UEFI Secure Boot Customization (UEFIForum)</a></li>
+<li><a href="https://youtube.com/watch?v=jtLQ8SzfrDU" target="_blank">Secure Boot from A to Z (The Linux Foundation)</a></li>
+<li><a href="https://youtube.com/watch?v=_3mwK6AXo_k" target="_blank">Secure Boot. In Debian. In Buster. Really (DebConf Videos)</a></li>
 </ul>
 
 <br>
@@ -1366,14 +1376,14 @@ $ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-12-amd64
 Reset Key for Kernel
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
-https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#setuputil<br>
+https://rodsbooks.com/efi-bootloaders/controlling-sb.html#setuputil<br>
 
 "The ASUS permits to you restore the default keys, so this isn't really vital if you're starting from the factory defaults with this model; but if yours doesn't offer such a reset-to-defaults option or if you've modified the keys, saving them may be prudent. As the name implies, this option also erases all your Secure Boot keys. (It does not erase your MOKs, though.)"<br>
 
 <b>Reset MOK Keys for Modules</b>
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
-https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#key-revocation<br>
+https://rodsbooks.com/efi-bootloaders/controlling-sb.html#key-revocation<br>
 
 ```
 $ sudo mokuitil --sb-state
@@ -1475,7 +1485,7 @@ Wrong syntax of sign-file
 $ sudo scripts/sign-file sha512 kernel-signkey.priv kernel-signkey.x509 module.ko
 ```
 
-https://www.kernel.org/doc/html/v4.15/admin-guide/module-signing.html
+https://kernel.org/doc/html/v4.15/admin-guide/module-signing.html
 
 Cause 2
 
@@ -1497,7 +1507,7 @@ Cause 2
 Wrong syntax of OpenSSL
 
 *Man Page OpenSSL:
-<a href="https://www.openssl.org/docs/man1.0.2/man1/openssl-req.html">Man OpenSSL</a> 
+<a href="https://openssl.org/docs/man1.0.2/man1/openssl-req.html">Man OpenSSL</a> 
 ```bash
 $ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -config openssl.cnf -outform DER -out MOK.der -keyout MOK.priv
 $ sudo openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -batch -outform DER -out MOK.der -keyout MOK.priv
@@ -1791,7 +1801,7 @@ https://wiki.debian.org/DontBreakDebian#Don.27t_use_GPU_manufacturer_install_scr
 https://github.com/NVIDIA/open-gpu-kernel-modules
 https://askubuntu.com/questions/1023036/how-to-install-nvidia-driver-with-secure-boot-enabled
 
-Download the latest driver from the NVIDIA website: https://www.geforce.com/drivers.
+Download the latest driver from the NVIDIA website: https://geforce.com/drivers.
 
 Create a new pair of private key (Nvidia.key) and public key (Nvidia.der) by running the command:
 
@@ -1851,7 +1861,7 @@ How to get VirtualBox signed for Secure Boot<br>
 <details>
 <summary><b>3.11 Sign Ventoy</b></summary>
 <br>
-https://www.ventoy.net/en/doc_secure.html<br>
+https://ventoy.net/en/doc_secure.html<br>
 
 <br>
 </details> 
@@ -1861,7 +1871,7 @@ https://www.ventoy.net/en/doc_secure.html<br>
 <details>
 <summary><b>3.12 rEFInd Bootloader</b></summary>
 <br>
-https://www.rodsbooks.com/refind/getting.html<br>
+https://rodsbooks.com/refind/getting.html<br>
 https://wiki.ubuntu.com/EFIBootLoaders<br>
 <br>
 </details>
@@ -1923,17 +1933,17 @@ https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi<br>
 <summary><b>4.01 Introduction</b></summary>
 <br>
 
-https://linuxsecurity.com<br>
-
-<h3>Maintain cautious habits<br>
-(be proactively paranoid DSM-5 301.0 F60.0).</h3>
-<h3>Shut up, keep personal life separated</h3>
-<h3>Nerver contamine</h3>
-<h3>Never reveal yoour operational details</h3>
-<h3>Never reveal your plans</h3>
-<h3>Never trust anyone<br>
-(don't be blackmailed)</h3>
-<h3>Never operate from your own house</h3>
+<h4>Shut up, keep personal life separated and do not boast</h4>
+<h4>Nerver contamine systems</h4>
+<h4>Never reveal yoour operational details</h4>
+<h4>Never reveal your plans</h4>
+<h4>Never trust anyone<br>
+(don't be blackmailed)</h4>
+<h4>Never operate from your own house</h4>
+<h4>Maintain cautious habits<br>
+(be proactively paranoid DSM-5 301.0 F60.0).</h4>
+<h4>The weakest link is human</h4>
+<h4>Drink water</h4>
 
 *OWASP Principles<br>
 
@@ -1989,7 +1999,6 @@ User <em>must</em> log out and back in for group membership updates to be applie
 <p>To avoid getting prompted for password when running commands with <a href="https://manpages.ubuntu.com/manpages/precise/en/man8/sudo.8.html"><code>sudo</code></a>, one common option is to append <code>NOPASSWD:ALL</code> to your user name in the <code>/etc/sudoers</code> file. Obviously, this is a security risk. Instead, you can run the <code>sudo</code> command with the <code>-s</code> (&quot;session&quot;) flag to allow the <code>sudo</code> session to be persistent until your close the terminal (end the session). To explicitly end the session run <code>sudo -k</code> (&quot;kill&quot;).
 <a href="https://vitux.com/how-to-specify-time-limit-for-a-sudo-session/">Reference</a></p>
 
-
 <h5>Table</h5>
 
 <h5>Examples</h5>
@@ -2017,7 +2026,7 @@ $ sudo chmod 766 -R /media
 <summary><b>4.04 Audit System</b></summary>
 <br>
 
-https://www.redhat.com/sysadmin/configure-linux-auditing-auditd<br>
+https://redhat.com/sysadmin/configure-linux-auditing-auditd<br>
 
 <h5>System Auditors</h5>
 
@@ -2044,6 +2053,13 @@ https://www.redhat.com/sysadmin/configure-linux-auditing-auditd<br>
 <details>
 <summary><b>4.05 Antimalware</b></summary>
 <br>
+
+<h4>Dangerous PDFs, office documents, or images and</h4>
+
+<p>Take potentially dangerous PDFs, office documents, or images and convert them to safe PDFs.</p>
+
+https://dangerzone.rocks<br>
+https://github.com/freedomofpress/dangerzone<br>
 
 <h4>ClamAV</h4>
 
@@ -2125,7 +2141,7 @@ Nice = 19<br>
 <h4>Signatures compatible with ClamAV</h4>
 
 • RFXN
-https://www.rfxn.com/projects/linux-malware-detect<br>
+https://rfxn.com/projects/linux-malware-detect<br>
 
 • Malware Blocklist
 https://malwareblocklist.org<br>
@@ -2134,7 +2150,7 @@ https://malwareblocklist.org<br>
 
 https://github.com/Cisco-Talos/clamav-documentation/blob/873bc5f95c1b79f94d7f55602b5e433423ba9705/src/manual/Signatures/YaraRules.md <br>
 
-https://www.infosecinstitute.com/resources/reverse-engineering/malware-analysis-clamav-yara<br>
+https://infosecinstitute.com/resources/reverse-engineering/malware-analysis-clamav-yara<br>
 
 <pre>
 $ sudo apt install yara
@@ -2143,7 +2159,7 @@ $ sudo clamscan -d yara.rule -r /
 
 <h4>ESET NOD32 Antivirus for Linux Desktop</h4>
 
-https://www.eset.com/my/home/antivirus-linux/download<br>
+https://eset.com/my/home/antivirus-linux/download<br>
 
 <br>
 </details>
@@ -2232,7 +2248,7 @@ https://fsfe.org/contribute/spreadtheword#device-neutrality<br>
 </table>
 
 https://openwrt.org<br>
-https://www.pfsense.org<br>
+https://pfsense.org<br>
 
 <h4>Router Guide</h4>
 
@@ -2277,17 +2293,23 @@ https://avoidthehack.com/router-wireless-guide<br>
 <pre>
 &nbsp; Commands 
 &nbsp; &nbsp; • Connecting WiFi manualy with nmcli
-&nbsp; &nbsp; $ 
-&nbsp; &nbsp; • 
-&nbsp; &nbsp; $ 
-&nbsp; &nbsp; • 
-&nbsp; &nbsp; $ 
-&nbsp; &nbsp; • 
-&nbsp; &nbsp; $ 
+&nbsp; &nbsp; $ nmcli dev status
+&nbsp; &nbsp; $ nmcli radio wifi on
+&nbsp; &nbsp; • List wifi
+&nbsp; &nbsp; $ nmcli dev wifi list
+&nbsp; &nbsp; • Connect
+&nbsp; &nbsp; $ sudo nmcli dev wifi connect SSID(TAB)
+&nbsp; &nbsp; $ sudo nmcli --ask dev wifi connect SSID(TAB)
+&nbsp; &nbsp; • Disconnecting
+&nbsp; &nbsp; $ nmcli con down NAME 
+&nbsp; &nbsp; • Saved ones
+&nbsp; &nbsp; $ ls /etc/NetworkManager/system-connections/
+
 </pre>
 
 <pre>
 &nbsp; Commands
+&nbsp; &nbsp; • Editing
 &nbsp; &nbsp; $ nmcli connection edit
 &nbsp; &nbsp; $ nmcli connection edit type wifi
 &nbsp; &nbsp; $ nmcli c edit type vpn
@@ -2295,6 +2317,8 @@ https://avoidthehack.com/router-wireless-guide<br>
 &nbsp; &nbsp; $ nmcli c show wificonnectionname
 &nbsp; &nbsp; $ nmcli connection show
 &nbsp; &nbsp; $ nmcli connection reload
+&nbsp; &nbsp; • Avtivating MAC randomization
+nmcli connection modify NAME 802-11-wireless.mac-address-randomization always
 </pre>
 
 <pre>
@@ -2324,6 +2348,22 @@ https://avoidthehack.com/router-wireless-guide<br>
 &nbsp; &nbsp; $ 
 </pre>
 
+<h5>Setting up networking without a network manager</h5>
+
+https://unix.stackexchange.com/questions/253030/how-to-setup-network-without-wicd-or-networkmanager <br>
+
+<pre>
+&nbsp; Commands
+&nbsp; &nbsp; • Interfaces
+&nbsp; &nbsp; $ ip a show
+&nbsp; &nbsp; • Gateway
+&nbsp; &nbsp; $ sudo route -n
+&nbsp; &nbsp; • 
+&nbsp; &nbsp; $ 
+&nbsp; &nbsp; $ 
+&nbsp; &nbsp; $ 
+</pre>
+
 
 <br>
 </details>
@@ -2342,7 +2382,7 @@ https://wiki.debian.org/NetworkConfiguration<br>
 https://wiki.debian.org/resolv.conf<br>
 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_networking/manually-configuring-the-etc-resolv-conf-file_configuring-and-managing-networking<br>
 https://github.com/jonathanio/update-systemd-resolved<br>
-https://www.freedesktop.org/software/systemd/man/systemd.network.html<br>
+https://freedesktop.org/software/systemd/man/systemd.network.html<br>
 
 <!-- ########## -->
 
@@ -2363,7 +2403,7 @@ https://roy.marples.name/projects/openresolv<br>
 <h5>• The systemd-resolved service</h5>
 
 https://wiki.archlinux.org/title/Systemd-resolved<br>
-https://www.freedesktop.org/software/systemd/man/latest/systemd-resolved.service.html<br>
+https://freedesktop.org/software/systemd/man/latest/systemd-resolved.service.html<br>
 
 <!-- ########## -->
 
@@ -2376,7 +2416,7 @@ https://wiki.debian.org/Avahi<br>
 <h4>Router DNS</h4>
 
 https://developers.cloudflare.com/1.1.1.1/ip-addresses<br>
-https://www.opendns.com/setupguide<br>
+https://opendns.com/setupguide<br>
 https://docs.fsfe.org/en/teams/router-freedom-tech-wiki<br>
 
 <p>Misconfigured DNS settings on a router may lead to the device sending DNS queries to unintended DNS servers. Verify the DNS of your WAN are set in your router.</p>
@@ -2390,7 +2430,7 @@ https://docs.fsfe.org/en/teams/router-freedom-tech-wiki<br>
 
 https://pi-hole.net<br>
 https://docs.pi-hole.net<br>
-https://www.reddit.com/r/pihole<br>
+https://reddit.com/r/pihole<br>
 
 <br>
 </details>
@@ -2423,7 +2463,7 @@ https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29<br>
 https://wiki.archlinux.org/title/Uncomplicated_Firewall<br>
 http://manpages.ubuntu.com/manpages/precise/man8/ufw.8.html<br>
 https://help.ubuntu.com/community/UFW<br>
-https://www.paulligocki.com/vpn-only-ufw-setup<br>
+https://paulligocki.com/vpn-only-ufw-setup<br>
 https://linuxconfig.org/how-to-install-and-use-ufw-firewall-on-linux<br>
 https://openvpn.net<br>
 https://pypi.org/project/openpyn<br>
@@ -2461,8 +2501,8 @@ https://pypi.org/project/openpyn<br>
 
 <h5>∙ Advanced</h5>
 
-• R-fx Networks Projects - https://www.rfxn.com<br>
-• Vuurmuur Firewall - https://www.vuurmuur.org<br>
+• R-fx Networks Projects - https://rfxn.com<br>
+• Vuurmuur Firewall - https://vuurmuur.org<br>
 • Port Checker - https://portchecker.co<br>
 
 <p>Note: an AppArmor rule could prevent port use by an individual program.</p>
@@ -2602,26 +2642,26 @@ https://pypi.org/project/openpyn<br>
 <h4>• Buying VPN Services</h4>
 
 ∙ Choosing the VPN that's right for you - https://ssd.eff.org/en/module/choosing-vpn-thats-right-you<br>
-∙ Choosing the best VPN (for you) - https://www.reddit.com/r/VPN/comments/4iho8e/that_one_privacy_guys_guide_to_choosing_the_best/?st=iu9u47u7&sh=459a76f2<br>
-∙ r/vpnrecommendations - https://www.reddit.com/r/vpnrecommendations<br>
-∙ r/VPN - https://www.reddit.com/r/VPN<br>
-∙ r/VPNTorrents - https://www.reddit.com/r/VPNTorrents<br>
+∙ Choosing the best VPN (for you) - https://reddit.com/r/VPN/comments/4iho8e/that_one_privacy_guys_guide_to_choosing_the_best/?st=iu9u47u7&sh=459a76f2<br>
+∙ r/vpnrecommendations - https://reddit.com/r/vpnrecommendations<br>
+∙ r/VPN - https://reddit.com/r/VPN<br>
+∙ r/VPNTorrents - https://reddit.com/r/VPNTorrents<br>
 ∙ VPN Alert - https://vpnalert.com<br>
 ∙ VPN-reviews - https://github.com/techlore/VPN-reviews<br>
 ∙ Mullvad - https://mullvad.net<br>
 ∙ Mullvad - http://o54hon2e2vj6c7m3aqqu6uyece65by3vgoxxhlqlsvkmacw6a7m7kiad.onion<br>
-∙ Private Internet Access (PIA) - https://www.privateinternetaccess.com<br>
+∙ Private Internet Access (PIA) - https://privateinternetaccess.com<br>
 ∙ ProtonVPN - https://protonvpn.com<br>
-∙ IVPN - https://www.ivpn.net<br> 
+∙ IVPN - https://ivpn.net<br> 
 ∙ AirVPN - https://airvpn.org<br>
-∙ VPN.XXX - https://www.vpn.xxx<br>
+∙ VPN.XXX - https://vpn.xxx<br>
 ∙ Windscribe - https://windscribe.com<br>
-∙ ExpressVPN - https://www.expressvpn.com/vpnmentor1<br>
+∙ ExpressVPN - https://expressvpn.com/vpnmentor1<br>
 ∙ NordVPN - https://nordvpn.com<br>
 
 <h4>• VPN Guides and Tutorials</h4>
 ∙ That One Privacy Site - https://thatoneprivacysite.net/vpn-section<br>
-∙ privacytools.io - https://www.privacytools.io<br>
+∙ privacytools.io - https://privacytools.io<br>
 ∙ VPN over SSH - https://wiki.archlinux.org/index.php/VPN_over_SSH<br>
 
 <h4>• Creating your own VPN with VPS</h4>
@@ -2631,7 +2671,7 @@ https://pypi.org/project/openpyn<br>
 <h4>• VPN Protocols</h4>
 
 <div id="table2" align="left">
-<img src="5.NETWORK/5.03_Others/vpn_protocols.png"/>
+<img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/5.NETWORK/5.08_Others/vpn_protocols.png"/>
 </div>
 
 <br>
@@ -2647,7 +2687,7 @@ https://pypi.org/project/openpyn<br>
 https://openvpn.net/community-resources/how-to/<br>
 https://wiki.debian.org/OpenVPN<br>
 https://debian-handbook.info/browse/stable/sect.virtual-private-network.html<br>
-https://www.debian.org/doc/manuals/securing-debian-manual/vpn.en.html<br>
+https://debian.org/doc/manuals/securing-debian-manual/vpn.en.html<br>
 https://wiki.archlinux.org/index.php/OpenVPN<br>
 https://wiki.archlinux.org/index.php/OpenVPN#DNS<br>
 https://ubuntu.com/core/docs/networkmanager/configure-vpn<br>
@@ -2725,7 +2765,7 @@ OpenVPN + nmcli (CLI) + Autostart + Autoconnect + Kill Switch
 &nbsp; &nbsp; $ sudo systemctl enable --now resolvconf.service
 &nbsp; &nbsp; $ sudo apt install openvpn
 &nbsp; &nbsp; • Copy the OpenVPN configuration from your VPN provider into /etc/openvpn
-&nbsp; &nbsp; $ sudo wget https://www.vpnprovider.com/openvpn.zip
+&nbsp; &nbsp; $ sudo wget https://vpnprovider.com/openvpn.zip
 &nbsp; &nbsp; $ sudo unzip openvpn.zip
 &nbsp; &nbsp; $ sudo rm openvpn.zip
 &nbsp; &nbsp; $ cd /etc/openvpn
@@ -3370,7 +3410,7 @@ $ ping google.com
 
 <h4>Leak Test</h4>
 
-<a href="https://www.dnsleaktest.com/">∙ DNSLeakTest.com</a> (run the "Extended test")<br>
+<a href="https://dnsleaktest.com/">∙ DNSLeakTest.com</a> (run the "Extended test")<br>
 <a href="https://ipleak.net/">∙ IPLeak.net</a><br>
 <a href="https://mullvad.net/en/check">∙ Mullvad DNS Leak Test</a><br>
 <a href="https://surfshark.com/dns-leak-test">∙ Surfshark DNS Leak Test</a><br>
@@ -3441,7 +3481,7 @@ https://github.com/mdlam92/vpn_torrenting<br>
 https://github.com/tool-maker/VPN_just_for_torrents/wiki<br>
 https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge<br>
 https://transmissionbt.com<br>
-https://www.comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-linux-with-ufw<br>
+https://comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-linux-with-ufw<br>
 
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
@@ -3473,7 +3513,7 @@ https://www.comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-li
 <h4>• Everyday TOR</h4>
 
 https://wiki.debian.org/TorBrowser<br>
-https://www.whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy<br>
+https://whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy<br>
 
 <br>
 </details>
@@ -3510,11 +3550,17 @@ https://avoidthehack.com/util/browser-comparison<br>
 
 <h4>• LibreWolf</h4>
 
+https://librewolf.net/installation/debian/<br>
+
 <h4>• Firefox</h4>
+
+<code>$ sudo apt install </code><br>
 
 <h4>• Chromium</h4>
 
-<h5>6.04.01 Extensions</h5>
+<code>$ sudo apt install </code><br>
+
+<h5>Extensions</h5>
 
 <ul>
 <li>
@@ -3537,7 +3583,7 @@ https://avoidthehack.com/util/browser-comparison<br>
 </li>
 <li>
 <a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a><br>
-<a href="https://privacybadger.org">Privacy Badger is a browser extension that automatically learns to block invisible trackers</a><br>
+<li><a href="https://privacybadger.org">Privacy Badger is a browser extension that automatically learns to block invisible trackers</a><br>
 </li>
 </ul>
 
@@ -3575,10 +3621,10 @@ https://shlink.io<br>
 <h4>Info</h4>
 
 https://forum.rclone.org<br>
-https://www.reddit.com/r/cloudstorage<br>
-https://www.reddit.com/r/DataHoarder<br>
-https://www.reddit.com/r/Piracy<br>
-https://www.reddit.com/r/Scams<br>
+https://reddit.com/r/cloudstorage<br>
+https://reddit.com/r/DataHoarder<br>
+https://reddit.com/r/Piracy<br>
+https://reddit.com/r/Scams<br>
 
 <h4>Cloud Privacy</h4>
 
@@ -3588,7 +3634,7 @@ https://cryptomator.org<br>
 
 <h5>∙ Duplicati (GUI)</h5>
 
-https://www.duplicati.com<br>
+https://duplicati.com<br>
 
 <h5>∙ Tahoe-LAFS</h5>
 
@@ -3619,31 +3665,31 @@ https://rclone.org/yandex (*Backend supported)<br>
 
 <h4>• IDrive</h4>
 
-https://www.idrive.com<br>
-https://www.idrive.com/online-backup-linux<br>
-https://www.idrive.com/linux-backup-scripts<br>
+https://idrive.com<br>
+https://idrive.com/online-backup-linux<br>
+https://idrive.com/linux-backup-scripts<br>
 https://rclone.org/s3/#idrive-e2<br>
 
 <h4>• TeraBox</h4>
 
-https://www.1024tera.com<br>
-https://www.1024tera.com/terabox-cloud-storage-for-pc-free-download<br>
-https://www.reddit.com/r/TeraBox/<br>
+https://1024tera.com<br>
+https://1024tera.com/terabox-cloud-storage-for-pc-free-download<br>
+https://reddit.com/r/TeraBox/<br>
 
 <h4>• pCloud</h4>
 
-https://www.pcloud.com<br> 
-https://www.pcloud.com/how-to-install-pcloud-drive-linux.html<br> 
+https://pcloud.com<br> 
+https://pcloud.com/how-to-install-pcloud-drive-linux.html<br> 
 https://github.com/pcloudcom/console-client<br> 
 
 <h4>• SugarSync</h4>
 
-https://www.sugarsync.com<br>
+https://sugarsync.com<br>
 https://rclone.org/sugarsync (*Not backend supported) <br> 
 
 <h4>• Box</h4>
 
-https://www.box.com<br>
+https://box.com<br>
 https://github.com/box/boxcli<br>
 https://github.com/rclone/rclone<br>
 
@@ -3671,7 +3717,7 @@ https://nitroflare.net<br>
 https://uploadgig.com
 
 <h4>• Mediafire</h4>
-https://www.mediafire.com/upgrade/<br> 
+https://mediafire.com/upgrade/<br> 
 
 <h4>• UploadFiles</h4>
 https://ufile.io<br> 
@@ -3700,16 +3746,16 @@ https://wetransfer.com
 https://send-anywhere.com<br>
 
 <h4>• SendGB</h4>
-https://www.sendgb.com<br>
+https://sendgb.com<br>
 
 <h4>• Volafile</h4>
 https://volafile.org<br>
 
 <h4>• SendSpace</h4>
-https://www.sendspace.com<br>
+https://sendspace.com<br>
 
 <h4>• MyAirBridge</h4>
-https://www.myairbridge.com/en/eng<br>
+https://myairbridge.com/en/eng<br>
 
 <h4>• Gofile</h4>
 https://gofile.io/welcome<br>
@@ -3726,245 +3772,38 @@ https://bitwarden.com/products/send<br>
 <!-- #################### -->
 
 <details>
-<summary><b>6.05 Office</b></summary>
+<summary><b>6.05 Office Softwares</b></summary>
 <br>
 
-<h4>Office</h4>
 
-<h4>• Office Resources</h4>
+<details>
+<summary>&nbsp; Office Suites</summary>
+<br>
 
-<h5>∙ Libre Office</h5>
+<h4>Libre Office</h4>
 
-<h5>&nbsp;Extensions</h5>
+https://www.libreoffice.org<br>
+https://wiki.documentfoundation.org/Documentation/Install/Linux<br>
+
+<h5>Libre Office - Extensions</h5>
 
 &nbsp; &nbsp;<a href="https://languagetool.org/insights/post/product-libreoffice/">Language Tool</a><br>
-&nbsp; &nbsp;<a href="https://www.zotero.org/">Zotero</a><br>
+&nbsp; &nbsp;<a href="https://zotero.org/">Zotero</a><br>
 
-<h5>∙ Zotero</h5>
+<h5>Zotero - Personal research assistant</h5>
 
-&nbsp; &nbsp;<a href="https://www.zotero.org/">Zotero</a><br>
+<a href="https://zotero.org">Zotero</a> - https://zotero.org<br>
 
-<!-- ######### -->
-
-<h4>• PDF Reader</h4>
-
-<code>$ sudo apt install -y okular</code><br>
-<code>$ sudo apt install -y okular-extra-backends</code><br>
-
-<h5>∙ PDF Editor</h5>
-
-<p>PDF Arranger (GUI)</p>
-
-https://github.com/pdfarranger/pdfarranger<br>
-
-<code>$ sudo apt install -y pdfarranger</code><br>
-
-<h5>∙ PDF Crop and Split</h5>
-
-<p>Krop (GUI)</p>
-
-https://arminstraub.com/software/krop<br>
-
-<p>Note, krop only adjusts which parts of a PDF are displayed; the original content is still there in the file and will, for instance, show up when editing the file in inkscape. As a result, krop is not suited for censoring a PDF document or decreasing the size of a PDF file. You may have some success in decreasing the size of the PDF (and even censoring some parts) using the option to use Ghostscript to optimize the final PDF.</p>
-
-<code>$ sudo apt install -y krop</code><br>
-
-<pre>
-• To automatically undo 4 pages print onto a single page:
-$ krop --go --grid=2x2 file.pdf
-• To trim each of these pages:
-$ krop --go --grid=2x2 --trim --trim-use=all file.pdf
-• Others
-krop --grid=2x1 --initialpage=3 --exceptions=1 --trim-use=all --trim ~/file.pdf
-</pre>
-
-<p>ImageMagick (GUI or CLI)</p>
-
-https://www.imagemagick.org/Usage/crop<br>
-https://www.imagemagick.org/Usage/crop/#crop_repage<br>
-
-<code>$ sudo apt install imagemagick</code><br>
-
-<pre>
-• Commands to crop .pdf 
-$ convert -monitor `ls input-*.png` -crop 3704x1852+160+20 output.png
-$ convert -monitor -crop 1000x1350+20+145 +repage -path cropped *.png
-</pre>
-
-<p>Monitor progress: -monitor</p>
-
-<p>Print detailed information about the image: -verbose</p>
-
-<pre>
-• Commands to reduce .pdf size
-$ convert -monitor -density 200x200 -quality 60 -compress jpeg input.pdf output.pdf
-$ convert -monitor -density 150x150 -quality 70 -compress jpeg -resize 15% input.pdf output.pdf
-$ convert -monitor -density 150x150 -compress Zip input.pdf output.pdf
-$ convert -monitor -density 80 -page a4 input.pdf output.pdf
-$ convert -monitor input.pdf -resample 85% output.pdf
-$ convert -monitor *.png -colorspace gray -resample 100% "input.pdf"
-</pre>
-
-<pre>
-• Commands to scanned books
-$ convert -normalize -density 300 -depth 8 *.png
-$ convert -normalize -density 300 -depth 8 -crop 50%x100% +repage *.png
-$ convert -monochrome -normalize -density 300 *.png
-</pre>
-
-<p>-normalize : increase the contrast in an image by stretching the range of intensity values.</p>
-
-<p>-depth : the number of bits per channel for each pixel.</p>
-
-<p>-monochrome : transform the image to black and white.</p>
-
-<p>pdfCropMargins - Python</p>
-
-https://pypi.org/project/pdfCropMargins<br>
-
-<pre>
-$ pip install "pdfCropMargins" --upgrade
-$ pdf-crop-margins -v -p 0 -a -6 input.pdf
-</pre>
+<br>
+</details>
 
 <!-- ######### -->
 
-<h4>• PDF OCR - Optical Character Recognition</h4>
+<details>
+<summary>&nbsp; Document Converter</summary>
+<br>
 
-<p>OCRFeeder (GUI)</p>
-
-https://wiki.gnome.org/Apps/OCRFeeder<br>
-
-<code>$ sudo apt install -y ocrfeeder</code><br>
-
-<b>*Unpaper</b>
-
-<p>Cuneiform (CLI)</p>
-https://packages.debian.org/bookworm/cuneiform
-
-<p>OcrmOCRmyPDF (CLI)</p>
-
-https://ocrmypdf.readthedocs.io<br>
-
-<code>$ sudo apt install -y ocrmypdf</code><br>
-
-<p>Also install the Tesseract OCR plugins for your desired language</p>
-
-<code>$ sudo apt install -y tesseract-ocr-eng</code><br>
-<code>$ sudo apt install -y tesseract-ocr-deu</code><br>
-<code>$ sudo apt install -y tesseract-ocr-fra</code><br>
-<code>$ sudo apt install -y tesseract-ocr-spa</code><br>
-<code>$ sudo apt install -y tesseract-ocr-por</code><br>
-<code>$ sudo apt install -y tesseract-ocr-rus</code><br>
-<code>$ sudo apt install -y tesseract-ocr-ara</code><br>
-<code>$ sudo apt install -y tesseract-ocr-chi-sim</code><br>
-<code>$ sudo apt install -y tesseract-ocr-chi-tra</code><br>
-
-<pre>
-&nbsp; Basic commands
-&nbsp; &nbsp; • How to OCR a PDF
-&nbsp; &nbsp; $ ocrmypdf -v input.pdf output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --language deu input.pdf output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --language por+deu input.pdf output.pdf
-&nbsp; &nbsp; • To modify a file in the same place
-&nbsp; &nbsp; $ ocrmypdf -v ~/input.pdf ~/input.pdf
-&nbsp; &nbsp; • To skip text 
-&nbsp; &nbsp; $ ocrmypdf -v --skip-text input.pdf output.pdf
-&nbsp; &nbsp; • To redo OCR 
-&nbsp; &nbsp; $ ocrmypdf -v --redo-ocr input.pdf output.pdf
-</pre>
-
-<pre>
-&nbsp; &nbsp; • Compression settings
-&nbsp; &nbsp; $ ocrmypdf -v --pdfa-image-compression=jpeg --language=por+deu input.pdf output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --pdfa-image-compression=lossless --language=por+deu input.pdf output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --output-type=pdf --language por+deu input.pdf output.pdf
-</pre>
-
-<h5>OcrmOCRmyPDF - Image processing</h5>
-
-
-<pre>
-&nbsp; &nbsp; • Image processing
-&nbsp; &nbsp; $ ocrmypdf -v --clean --language=por+deu input.pdf output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --clean-final --language=por+deu input.pdf output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --remove-background --language=por+deu input.pdf output.pdf
-</pre>
-
-<em>Warning</em>
-
-<p>In many cases image processing will rasterize PDF pages as images, potentially losing quality. We caution against using ImageMagick or Ghostscript to convert images to PDF, since they may transcode images or produce downsampled images, sometimes without warning.</p>
-
-<p>OCRmyPDF perform some image processing on each page of a PDF, if desired. The same processing is applied to each page. It is suggested that the user review files after image processing as these commands might remove desirable content, especially from poor quality scans.</p>
-
-<p>Note that <code>--clean-final</code> and <code>--remove-background</code> may leave undesirable visual artifacts in some images where their algorithms have shortcomings. Files should be visually reviewed after using these options.</p>
-
-<p><code>--clean</code> uses <code>unpaper</code> to clean up pages before OCR, but does not alter the final output. This makes it less likely that OCR will try to find text in background noise.</p>
-
-<p><code>--clean-final</code> uses <code>unpaper</code> to clean up pages before OCR and inserts the page into the final output. You will want to review each page to ensure that unpaper did not remove something important.</p>
-
-<p><code>--remove-background</code> attempts to detect and remove a noisy background from grayscale or color images. Monochrome images are ignored. This should not be used on documents that contain color photos as it may remove them.</p>
-
-<h5>OcrmOCRmyPDF - PDF optimization</h5>
-
-<pre>
-&nbsp; &nbsp; • Optimization settings
-&nbsp; &nbsp; $ ocrmypdf -v --optimize={0,1,2,3} input.pdf output.pdf
-</pre>
-
-<p>By default OCRmyPDF will attempt to perform lossless optimizations on the images inside PDFs after OCR is complete. Optimization is performed even if no OCR text is found.</p>
-
-<p>The --optimize N (short form -O) argument controls optimization, where N ranges from 0 to 3 inclusive, analogous to the optimization levels in the GCC compiler.<p>
-
-<p>Level</p>
-
-<p>Comments</p>
-
-<code>--optimize 0</code>
-
-<p>Disables optimization.</p>
-
-<code>--optimize 1</code>
-
-<p>Enables lossless optimizations, such as transcoding images to more efficient formats. Also compress other uncompressed objects in the PDF and enables the more efficient “object streams” within the PDF. (If --jbig2-lossy is issued, then lossy JBIG2 optimization is used. The decision to use lossy JBIG2 is separate from standard optimization settings.)</p>
-
-<code>--optimize 2</code>
-
-<p>All of the above, and enables lossy optimizations and color quantization.</p>
-
-<code>--optimize 3</code>
-
-<p>All of the above, and enables more aggressive optimizations and targets lower image quality.</p>
-
-<p>Optimization is improved when a JBIG2 encoder is available and when pngquant is installed. If either of these components are missing, then some types of images cannot be optimized.</p>
-
-<p>The types of optimization available may expand over time. By default, OCRmyPDF compresses data streams inside PDFs, and will change inefficient compression modes to more modern versions. A program like qpdf can be used to change encodings, e.g. to inspect the internals for a PDF.</p>
-
-<p>ocrmypdf --optimize 3 in.pdf out.pdf  # Make it small
-Some users may consider enabling lossy JBIG2. See: jbig2-lossy.</p>
-
-<p>Note</p>
-
-<p>Image processing and PDF/A conversion can also introduce lossy transformations to your PDF images, even when --optimize 1 is in use.</p>
-
-<h5>OcrmOCRmyPDF - PDF Rotation</h5>
-
-<pre>
-&nbsp; &nbsp; • To automatic correct the rotation of each page
-&nbsp; &nbsp; $ ocrmypdf -v --deskew input.pdf output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --rotate-pages input.pdf output.pdf
-&nbsp; &nbsp; $ ocrmypdf -v --rotate-pages-threshold {0.0-2.0} input.pdf output.pdf
-</pre>
-
-<p><code>--rotate-pages</code> attempts to determine the correct orientation for each page and rotates the page if necessary.</p>
-
-<p><code>--deskew</code> will correct pages that were scanned at a skewed angle by rotating them back into place.</p>
-
-<!-- ######### -->
-
-<h4>• Document Converter</h4>
-
-<h6>Libre Office (Headless)</h6>
+<h4>Libre Office (Headless)</h4>
 
 https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html<br>
 
@@ -4063,7 +3902,7 @@ https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html<
               via the API.                          
 </pre>
 
-<h6>Pandoc</h6>
+<h4>Pandoc</h4>
 
 <code>$ sudo sudo apt install -y pandoc</code> (CLI)<br>
 
@@ -4079,9 +3918,280 @@ https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html<
 &nbsp; &nbsp; $ pandoc document.html -t latex -o document.pdf
 </pre>
 
-<h6>Ghostscript</h6>
+<br>
+</details>
 
-https://www.ghostscript.com<br>
+<!-- ######### -->
+
+<details>
+<summary>&nbsp; PDF Suites</summary>
+<br>
+
+<h4>PDF Reader</h4>
+
+<code>$ sudo apt install -y okular</code><br>
+<code>$ sudo apt install -y okular-extra-backends</code><br>
+
+<!-- ######### -->
+
+<h4>PDF Editor</h4>
+
+<p>PDF Arranger (GUI)</p>
+
+https://github.com/pdfarranger/pdfarranger<br>
+
+<code>$ sudo apt install -y pdfarranger</code><br>
+
+<!-- ######### -->
+
+<h4>PDF Crop and Split</h4>
+
+<p>Krop (GUI)</p>
+
+https://arminstraub.com/software/krop<br>
+
+<p>Note, krop only adjusts which parts of a PDF are displayed; the original content is still there in the file and will, for instance, show up when editing the file in inkscape. As a result, krop is not suited for censoring a PDF document or decreasing the size of a PDF file. You may have some success in decreasing the size of the PDF (and even censoring some parts) using the option to use Ghostscript to optimize the final PDF.</p>
+
+<code>$ sudo apt install -y krop</code><br>
+
+<pre>
+• To automatically undo 4 pages print onto a single page:
+$ krop --go --grid=2x2 file.pdf
+• To trim each of these pages:
+$ krop --go --grid=2x2 --trim --trim-use=all file.pdf
+• Others
+krop --grid=2x1 --initialpage=3 --exceptions=1 --trim-use=all --trim ~/file.pdf
+</pre>
+
+<!-- ######### -->
+
+<h4>Remove PDF annotations</h4>
+
+<h6>Removing annotations at once in Okular</h6>
+
+<p>View a page that has an annotation, find them in the annotation side pane. Right-click on the annotation icon in the document, and click Remove Annotation. Then save the changes to a new document by clicking the menu button in the top right, followed by Save As….</p>
+
+<pre>
+&nbsp; Commands for pdftocairo
+&nbsp; &nbsp; $ pdftocairo -pdf "input.pdf" "output-with-flatten-annotations.pdf"
+</pre>
+
+<pre>
+&nbsp; Commands for qpdf
+&nbsp; &nbsp; $ qpdf --flatten-annotations=all input.pdf output.pdf
+</pre>
+
+<p>*May apply some differences.</p>
+<p>*May result in larger PDF.</p>
+
+<!-- ######### -->
+
+<h4>PDF Bookmarks Creation</h4>
+
+https://github.com/SiddharthPant/booky<br>
+
+
+<br>
+</details>
+
+<!-- ######### -->
+
+<details>
+<summary>&nbsp; PDF OCR</summary>
+<br>
+
+<h4>• PDF OCR - Optical Character Recognition</h4>
+
+<p>OCRFeeder (GUI)</p>
+
+https://wiki.gnome.org/Apps/OCRFeeder<br>
+
+<code>$ sudo apt install -y ocrfeeder</code><br>
+
+<b>*Unpaper</b>
+
+<p>Cuneiform (CLI)</p>
+https://packages.debian.org/bookworm/cuneiform
+
+<p>OcrmOCRmyPDF (CLI)</p>
+
+https://ocrmypdf.readthedocs.io<br>
+
+<code>$ sudo apt install -y ocrmypdf</code><br>
+
+<p>Also install the Tesseract OCR plugins for your desired language</p>
+
+<code>$ sudo apt install -y tesseract-ocr-eng</code><br>
+<code>$ sudo apt install -y tesseract-ocr-deu</code><br>
+<code>$ sudo apt install -y tesseract-ocr-fra</code><br>
+<code>$ sudo apt install -y tesseract-ocr-spa</code><br>
+<code>$ sudo apt install -y tesseract-ocr-por</code><br>
+<code>$ sudo apt install -y tesseract-ocr-rus</code><br>
+<code>$ sudo apt install -y tesseract-ocr-ara</code><br>
+<code>$ sudo apt install -y tesseract-ocr-chi-sim</code><br>
+<code>$ sudo apt install -y tesseract-ocr-chi-tra</code><br>
+
+<pre>
+&nbsp; Basic commands
+&nbsp; &nbsp; • How to OCR a PDF
+&nbsp; &nbsp; $ ocrmypdf -v input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --language deu input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --language por+deu input.pdf output.pdf
+&nbsp; &nbsp; • To modify a file in the same place
+&nbsp; &nbsp; $ ocrmypdf -v ~/input.pdf ~/input.pdf
+&nbsp; &nbsp; • To skip text 
+&nbsp; &nbsp; $ ocrmypdf -v --skip-text input.pdf output.pdf
+&nbsp; &nbsp; • To redo OCR 
+&nbsp; &nbsp; $ ocrmypdf -v --redo-ocr input.pdf output.pdf
+</pre>
+
+<pre>
+&nbsp; &nbsp; • Compression settings
+&nbsp; &nbsp; $ ocrmypdf -v --pdfa-image-compression=jpeg --language=por+deu input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --pdfa-image-compression=lossless --language=por+deu input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --output-type=pdf --language por+deu input.pdf output.pdf
+</pre>
+
+<h5>OcrmOCRmyPDF - Image processing</h5>
+
+<pre>
+&nbsp; &nbsp; • Image processing
+&nbsp; &nbsp; $ ocrmypdf -v --clean --language=por+deu input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --clean-final --language=por+deu input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --remove-background --language=por+deu input.pdf output.pdf
+</pre>
+
+<em>Warning</em>
+
+<p>In many cases image processing will rasterize PDF pages as images, potentially losing quality. We caution against using ImageMagick or Ghostscript to convert images to PDF, since they may transcode images or produce downsampled images, sometimes without warning.</p>
+
+<p>OCRmyPDF perform some image processing on each page of a PDF, if desired. The same processing is applied to each page. It is suggested that the user review files after image processing as these commands might remove desirable content, especially from poor quality scans.</p>
+
+<p>Note that <code>--clean-final</code> and <code>--remove-background</code> may leave undesirable visual artifacts in some images where their algorithms have shortcomings. Files should be visually reviewed after using these options.</p>
+
+<p><code>--clean</code> uses <code>unpaper</code> to clean up pages before OCR, but does not alter the final output. This makes it less likely that OCR will try to find text in background noise.</p>
+
+<p><code>--clean-final</code> uses <code>unpaper</code> to clean up pages before OCR and inserts the page into the final output. You will want to review each page to ensure that unpaper did not remove something important.</p>
+
+<p><code>--remove-background</code> attempts to detect and remove a noisy background from grayscale or color images. Monochrome images are ignored. This should not be used on documents that contain color photos as it may remove them.</p>
+
+<h5>OcrmOCRmyPDF - PDF optimization</h5>
+
+<pre>
+&nbsp; &nbsp; • Optimization settings
+&nbsp; &nbsp; $ ocrmypdf -v --optimize={0,1,2,3} input.pdf output.pdf
+</pre>
+
+<p>By default OCRmyPDF will attempt to perform lossless optimizations on the images inside PDFs after OCR is complete. Optimization is performed even if no OCR text is found.</p>
+
+<p>The --optimize N (short form -O) argument controls optimization, where N ranges from 0 to 3 inclusive, analogous to the optimization levels in the GCC compiler.<p>
+
+<p>Level</p>
+
+<p>Comments</p>
+
+<code>--optimize 0</code>
+
+<p>Disables optimization.</p>
+
+<code>--optimize 1</code>
+
+<p>Enables lossless optimizations, such as transcoding images to more efficient formats. Also compress other uncompressed objects in the PDF and enables the more efficient “object streams” within the PDF. (If --jbig2-lossy is issued, then lossy JBIG2 optimization is used. The decision to use lossy JBIG2 is separate from standard optimization settings.)</p>
+
+<code>--optimize 2</code>
+
+<p>All of the above, and enables lossy optimizations and color quantization.</p>
+
+<code>--optimize 3</code>
+
+<p>All of the above, and enables more aggressive optimizations and targets lower image quality.</p>
+
+<p>Optimization is improved when a JBIG2 encoder is available and when pngquant is installed. If either of these components are missing, then some types of images cannot be optimized.</p>
+
+<p>The types of optimization available may expand over time. By default, OCRmyPDF compresses data streams inside PDFs, and will change inefficient compression modes to more modern versions. A program like qpdf can be used to change encodings, e.g. to inspect the internals for a PDF.</p>
+
+<p>ocrmypdf --optimize 3 in.pdf out.pdf  # Make it small
+Some users may consider enabling lossy JBIG2. See: jbig2-lossy.</p>
+
+<p>Note</p>
+
+<p>Image processing and PDF/A conversion can also introduce lossy transformations to your PDF images, even when --optimize 1 is in use.</p>
+
+<h5>OcrmOCRmyPDF - PDF Rotation</h5>
+
+<pre>
+&nbsp; &nbsp; • To automatic correct the rotation of each page
+&nbsp; &nbsp; $ ocrmypdf -v --deskew input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --rotate-pages input.pdf output.pdf
+&nbsp; &nbsp; $ ocrmypdf -v --rotate-pages-threshold {0.0-2.0} input.pdf output.pdf
+</pre>
+
+<p><code>--rotate-pages</code> attempts to determine the correct orientation for each page and rotates the page if necessary.</p>
+
+<p><code>--deskew</code> will correct pages that were scanned at a skewed angle by rotating them back into place.</p>
+
+</details>
+
+<!-- ######### -->
+
+<details>
+<summary>&nbsp; PDF Optimizers</summary>
+<br>
+
+<h4>ImageMagick (GUI or CLI)</h4>
+
+https://imagemagick.org/Usage/crop<br>
+https://imagemagick.org/Usage/crop/#crop_repage<br>
+
+<code>$ sudo apt install imagemagick</code><br>
+
+<pre>
+• Commands to crop .pdf 
+$ convert -monitor `ls input-*.png` -crop 3704x1852+160+20 output.png
+$ convert -monitor -crop 1000x1350+20+145 +repage -path cropped *.png
+</pre>
+
+<p>Monitor progress: -monitor</p>
+
+<p>Print detailed information about the image: -verbose</p>
+
+<pre>
+• Commands to reduce .pdf size
+$ convert -monitor -density 200x200 -quality 60 -compress jpeg input.pdf output.pdf
+$ convert -monitor -density 150x150 -quality 70 -compress jpeg -resize 15% input.pdf output.pdf
+$ convert -monitor -density 150x150 -compress Zip input.pdf output.pdf
+$ convert -monitor -density 80 -page a4 input.pdf output.pdf
+$ convert -monitor input.pdf -resample 85% output.pdf
+$ convert -monitor *.png -colorspace gray -resample 100% "input.pdf"
+</pre>
+
+<pre>
+• Commands to scanned books
+$ convert -normalize -density 300 -depth 8 *.png
+$ convert -normalize -density 300 -depth 8 -crop 50%x100% +repage *.png
+$ convert -monochrome -normalize -density 300 *.png
+</pre>
+
+<p>-normalize : increase the contrast in an image by stretching the range of intensity values.</p>
+
+<p>-depth : the number of bits per channel for each pixel.</p>
+
+<p>-monochrome : transform the image to black and white.</p>
+
+<p>pdfCropMargins - Python</p>
+
+https://pypi.org/project/pdfCropMargins<br>
+
+<pre>
+$ pip install "pdfCropMargins" --upgrade
+$ pdf-crop-margins -v -p 0 -a -6 input.pdf
+</pre>
+
+<!-- ######### -->
+
+<h4>Ghostscript</h4>
+
+https://ghostscript.com<br>
 
 <code>$ sudo apt install -y ghostscript</code> (CLI)<br>
 
@@ -4155,7 +4265,6 @@ input.pdf
 -dPDFSETTINGS=/default — System chooses the best output, which can create larger PDF files.
 </sub>
 
-
 <pre>
 Commands for ebook-convert
 • How to convert .epub to .pdf
@@ -4166,7 +4275,7 @@ $ find ./ -iname "*pdf" -type f | while read f; do echo -e "\e[1mConverting file
 </pre>
 
 <p>*Ref.: https://manpages.debian.org/bookworm/calibre/ebook-convert.1.en.html</p>
-<p>*Utility.: https://www.convertfiles.com</p>
+<p>*Utility.: https://convertfiles.com</p>
 
 <pre>
 Commands for ps2pdf
@@ -4178,18 +4287,32 @@ $ ps2pdf -dPDFSETTINGS=/ebook input.pdf output.pdf
 <p>*LibreOffice Draw: DPI of 100 and JPEG compression of 80%.</p>
 <p>*Try: $ ps2pdf input.pdf output.pdf</p>
 
+<br>
+</details>
+
 <!-- ######### -->
 
-<h4>• Image Editors</h4>
+<details>
+<summary>&nbsp; Image Editors</summary>
+<br>
+
+<h4>Image Editors</h4>
 
 <code>$ sudo apt install gthumb</code> (GUI)<br> 
 <code>$ sudo apt install gimp</code> (GUI)<br>
 <code>$ sudo apt install imagemagick</code> (GUI or CLI)<br>
 <code>$ sudo apt install webp</code> (CLI)<br>
 
+<br>
+</details>
+
 <!-- ######### -->
 
-<h4>• Image Convert</h4>
+<details>
+<summary>&nbsp; Image Convert</summary>
+<br>
+
+<h4>Image Convert</h4>
 
 <h5>Convert with webp (dwebp)</h5>
 
@@ -4278,7 +4401,7 @@ https://gallium.readthedocs.io/en/latest/meson.html<br>
 https://imagemagick.org/script/formats.php<br>
 https://netpbm.sourceforge.net/doc/pnm.html<br>
 
-SANE - Lists of supported scanners<br>
+SANE - Lists of supported scanners firmware<br>
 http://www.sane-project.org<br>
 http://www.sane-project.org/sane-supported-devices.html<br>
 
@@ -4305,7 +4428,6 @@ sudo apt install libavformat-dev &&
 sudo apt install ffmpeg &&
 sudo apt install git 
 <pre>
-
 
 <h6>Error: libavformat-dev</h6>
 
@@ -4346,7 +4468,7 @@ $ find . -name "*.pdf" -exec convert *.pdf output%03d.pbm
 </pre>
 
 <p>Imagemagick Repage</p>
-https://www.imagemagick.org/Usage/crop/#crop_repage
+https://imagemagick.org/Usage/crop/#crop_repage
 
 <p>You can use the special "+repage" operator to reset the page canvas and position to match the actual cropped image.</p>
 
@@ -4451,7 +4573,7 @@ https://github.com/unpaper/unpaper/blob/main/doc/basic-concepts.md<br>
 
 <p>Use case: two pages per sheet, "open book" format where the input image-file already contains two scanned pages in a double-page layout</p>
 
-<img src=".data/multiple-output-files.png" title="Multiple Output Files" alt="Multiple Output Files" />
+<img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/.data/multiple-output-files.png" title="Multiple Output Files" alt="Multiple Output Files" />
 
 <p>Process multiple files using a wildcard of the form %0nd, e.g. input%03d.pbm and output%03d.pbm. It will successively read images from files input001.pbm, input002.pbm, input003.pbm etc., and write output to the files output001.pbm, output002.pbm, output003.pbm etc., until no more input image-files with the current index number are available. Wildcards in filenames like "%03d" will get replaced with strings in the sequence 001, 002, 003 etc.</p>
 
@@ -4513,47 +4635,33 @@ $ convert `ls pages-split*` -page 100%x100% result.pdf
 $ 
 </pre>
 
-<!-- ######### -->
-
-<h5>∙ Remove PDF annotations</h5>
-
-<h6>Removing annotations at once in Okular</h6>
-
-<p>View a page that has an annotation, find them in the annotation side pane. Right-click on the annotation icon in the document, and click Remove Annotation. Then save the changes to a new document by clicking the menu button in the top right, followed by Save As….</p>
-
-<pre>
-&nbsp; Commands for pdftocairo
-&nbsp; &nbsp; $ pdftocairo -pdf "input.pdf" "output-with-flatten-annotations.pdf"
-</pre>
-
-<pre>
-&nbsp; Commands for qpdf
-&nbsp; &nbsp; $ qpdf --flatten-annotations=all input.pdf output.pdf
-</pre>
-
-<p>*May apply some differences.</p>
-<p>*May result in larger PDF.</p>
+<br>
+</details>
 
 <!-- ######### -->
 
-<h4>• PDF Bookmarks Creation</h4>
+<details>
+<summary>&nbsp; Office Utilities</summary>
+<br>
 
-https://github.com/SiddharthPant/booky<br>
-
-<!-- ######### -->
-
-<h4>• Office Utility</h4>
+<h4>Office Utilities</h4>
 
 <code>$ sudo apt install xpad</code><br>
 <code>$ sudo apt install kcalc</code><br>
 
 <br>
+</details>
 
-<!-- ######### -->
+<br>
+</details>
 
-<h4>• Media Players</h4> 
+<!-- #################### -->
 
-<h5>MPV</h5>
+<details>
+<summary>6.06 Media Players</summary>
+<br>
+
+<h4>MPV</h4> 
 
 <code>$ sudo apt install mpv</code><br>
 
@@ -4611,9 +4719,16 @@ geometry=50%x96%
 
 <code>$ sudo apt install totem</code><br>
 
+<br>
+</details>
+
 <!-- ######### -->
 
-<h4>• Video Editors</h4>
+<details>
+<summary>6.07 Video Editors</summary>
+<br>
+
+<h4>Video Editors</h4>
 
 <code>$ sudo apt install handbrake</code> (GUI)<br>
 <code>$ sudo apt install handbrake-cli</code> (CLI)<br>
@@ -4624,7 +4739,7 @@ geometry=50%x96%
 <ul>
 <li>https://keepvid.ch</li>
 <li>https://gifs.com</li>
-<li>https://www.omnicalculator.com/other/video-size</li>
+<li>https://omnicalculator.com/other/video-size</li>
 <li>https://vidon.me/compress-mp4</li>
 <li>https://dvdfab.at/resource/blu-ray/free-blu-ray-to-mp4-converter</li>
 <li></li>
@@ -4770,11 +4885,18 @@ done
 <code><video src="/video.mp4"></video></code>
 <code><video src="/video.mp4" width="320" height="240" controls></video></code>
 
-<p>Not working.</p>
+<p>*Not working.</p>
+
+<br>
+</details>
 
 <!-- ######### -->
 
-<h4>• Audio Editors</h4>
+<details>
+<summary><b>6.08 Audio Editors</b></summary>
+<br>
+
+<h4>Audacity</h4>
 
 <code>$ sudo apt install audacity</code> (GUI)<br>
 
@@ -4784,7 +4906,7 @@ done
 <!-- #################### -->
 
 <details>
-<summary><b>6.06 Email</b></summary>
+<summary><b>6.09 Email</b></summary>
 <br>
 
 <h4>Email</h4>
@@ -4799,7 +4921,7 @@ https://emailselfdefense.fsf.org/en/<br>
 https://emailselfdefense.fsf.org/en/workshops.html<br>
 https://riseup.net/en/security/message-security/openpgp/best-practices<br>
 https://riseup.net/en/security/message-security/openpgp/enigmail<br>
-https://www.linuxbabe.com/security/encrypt-emails-gpg-thunderbird<br>
+https://linuxbabe.com/security/encrypt-emails-gpg-thunderbird<br>
 https://wiki.archlinux.org/title/Paperkey<br>
 https://keys.openpgp.org/about/usage<br>
 https://efail.de<br>
@@ -4849,7 +4971,7 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
 <!-- #################### -->
 
 <details>
-<summary><b>6.07 Encryption</b></summary>
+<summary><b>6.10 Encryption</b></summary>
 <br>
 
 <h4>Encryption</h4>
@@ -4871,8 +4993,8 @@ https://github.com/mhogomchungu/zuluCrypt<br>
 
 <h5>∙ VeraCrypt (GUI)</h5>
 
-https://www.veracrypt.fr/en/Downloads.html<br>
-https://www.reddit.com/r/VeraCrypt<br>
+https://veracrypt.fr/en/Downloads.html<br>
+https://reddit.com/r/VeraCrypt<br>
 https://github.com/veracrypt/VeraCrypt<br>
 
 <p>∙ Command to automount favorite volume at startup session:</p>
@@ -4882,8 +5004,8 @@ https://github.com/veracrypt/VeraCrypt<br>
 <p>∙ Password less:</p>
 
 <code>$ sudo groupadd veracrypt</code><br>
-<code>$ sudo usermod -aG veracrypt "$(whoami)"</code><br>
-<code>(*or) $ sudo usermod -aG veracrypt $USER</code><br>
+<code>$ sudo usermod -aG veracrypt "$(whoami)"</code>(or)<br>
+<code>$ sudo usermod -aG veracrypt $USER</code><br>
 <code>$ sudoedit /etc/sudoers</code><br>
 
 <pre>
@@ -4932,14 +5054,14 @@ https://github.com/veracrypt/VeraCrypt<br>
 https://cryptomator.org<br>
 https://github.com/cryptomator/cryptomator<br>
 https://github.com/cryptomator/cli<br>
-https://www.reddit.com/r/Cryptomator<br>
+https://reddit.com/r/Cryptomator<br>
 
 <h5>∙ Duplicati (GUI)</h5>
 
-https://www.duplicati.com<br>
+https://duplicati.com<br>
 https://github.com/duplicati/duplicati<br>
 https://forum.duplicati.com<br>
-https://www.reddit.com/r/duplicati<br>
+https://reddit.com/r/duplicati<br>
 
 <br>
 </details>
@@ -4947,7 +5069,7 @@ https://www.reddit.com/r/duplicati<br>
 <!-- #################### -->
 
 <details>
-<summary><b>6.08 Extracting Files</b></summary>
+<summary><b>6.11 Extracting Files</b></summary>
 <br>
 
 https://wiki.debian.org/Compression<br>
@@ -5015,7 +5137,7 @@ function extract() {
 
 <h4>• 7Z (.7z and .zip)</h4>
 
-https://www.7-zip.org<br>
+https://7-zip.org<br>
 
 <code>$ sudo apt install p7zip-full</code><br>
 
@@ -5110,7 +5232,7 @@ https://infozip.sourceforge.net<br>
 <!-- #################### -->
 
 <details>
-<summary><b>6.09 Sanitation</b></summary>
+<summary><b>6.12 Sanitation</b></summary>
 <br>
 
 <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.03_Sanitization">1.HARDENING/1.03_Sanitization</a></h4>
@@ -5154,13 +5276,20 @@ https://infozip.sourceforge.net<br>
 <h5>∙ Free space erase from CLI</h5>
 
 <code>
+• List system targets
+$ sudo bleachbit -l
+• Erase space
 $ sudo bleachbit --clean system.cache \
-system.localizations \
+system.clipboard \
+system.custom \
+system.desktop_entry \
 system.free_disk_space \
-system.trash \
-system.tmp \
+system.localizations \
 system.memory \
-apt.package_lists
+system.recent_documents \
+system.rotated_logs \
+system.tmp \
+system.trash 
 </code><br>
 
 <p>* cron</p>
@@ -5211,17 +5340,17 @@ https://wiki.archlinux.org/title/Solid_state_drive<br>
 <ul>
 <li><a href="https://forum.corsair.com/blog/storage/the-corsair-ssd-toolbox/">Corsair SSD Toolbox</a></li>
 <li><a href="https://semiconductor.samsung.com/consumer-storage/support/tools/">Samsung Magician</a></li>
-<li><a href="https://www.seagate.com/as/en/support/downloads/seatools/">Seagate Seatools</a></li>
+<li><a href="https://seagate.com/as/en/support/downloads/seatools/">Seagate Seatools</a></li>
 <li><a href="https://support.lenovo.com/my/en/downloads/ds019026-thinkpad-drive-erase-utility-for-resetting-the-cryptographic-key-and-erasing-the-solid-state-drive-thinkpad">Lenovo ThinkPad Drive Erase Utility</a></li>
-<li><a href="https://www.crucial.com/support/storage-executive">Crucial Storage Executive</a></li>
+<li><a href="https://crucial.com/support/storage-executive">Crucial Storage Executive</a></li>
 <li><a href="https://support.wdc.com/downloads.aspx?p=279">Western Digital Dashboard</a></li>
-<li><a href="https://www.hp.com/us-en/shop/tech-takes/how-to-secure-erase-ssd">HP Secure Erase [ BIOS / UEFI ]</a></li>
-<li><a href="https://www.transcend-info.com/Support/Software-10/">Trendscend SSD Scope</a></li>
-<li><a href="https://www.dell.com/support/kbdoc/en-us/000134997/using-the-dell-bios-data-wipe-function-for-optiplex-precision-and-latitude-systems-built-after-november-2015?lwp=rt">Dell Data Wipe function [ BIOS / UEFI ]</a></li>
+<li><a href="https://hp.com/us-en/shop/tech-takes/how-to-secure-erase-ssd">HP Secure Erase [ BIOS / UEFI ]</a></li>
+<li><a href="https://transcend-info.com/Support/Software-10/">Trendscend SSD Scope</a></li>
+<li><a href="https://dell.com/support/kbdoc/en-us/000134997/using-the-dell-bios-data-wipe-function-for-optiplex-precision-and-latitude-systems-built-after-november-2015?lwp=rt">Dell Data Wipe function [ BIOS / UEFI ]</a></li>
 <li><a href="https://kb.sandisk.com/app/answers/detail/a_id/15108/~/sandisk-ssd-dashboard-support-information">SanDisk SSD Dashboard</a></li>
-<li><a href="https://www.kingston.com/en/support/technical/ssdmanager">Kingston SSD Manager</a></li>
-<li><a href="https://www.micron.com/products/ssd/storage-executive-software">Micron SSD Management</a></li>
-<li><a href="https://www.intel.com/content/www/us/en/download/19543/intel-memory-and-storage-tool-gui.html?v=t">Intel Memory and Storage Tool</a></li>
+<li><a href="https://kingston.com/en/support/technical/ssdmanager">Kingston SSD Manager</a></li>
+<li><a href="https://micron.com/products/ssd/storage-executive-software">Micron SSD Management</a></li>
+<li><a href="https://intel.com/content/www/us/en/download/19543/intel-memory-and-storage-tool-gui.html?v=t">Intel Memory and Storage Tool</a></li>
 </ul>
 
 <em>**If you use SSDs, enable TRIM in your BIOS. Confirm you are using SSD in the BIOS options.</em><br>
@@ -5240,7 +5369,7 @@ https://wiki.archlinux.org/title/Solid_state_drive<br>
 <!-- #################### -->
 
 <details>
-<summary><b>6.10 Utilities</b></summary>
+<summary><b>6.13 Display</b></summary>
 <br>
 
 <h4>Utilities</h4>
@@ -5265,7 +5394,13 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 <code>$ brightnessctl s 50% && redshift -P -O 6500</code><br>
 <code>$ redshift -l LAT:LONG</code><br>
 
+</details>
+
 <!-- ######### -->
+
+<details>
+<summary><b>6.14 Files and Folders</b></summary>
+<br>
 
 <h4>Synchronize files and folders</h4>
 
@@ -5273,25 +5408,128 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 
 <!-- ######### -->
 
+<h4>Duplicated files</h4>
+
+<h5>dupeGuru</h5>
+
+<code>$ sudo apt install dupeguru</code> (GUI)<br>
+
+</details>
+
+<!-- ######### -->
+
+<details>
+<summary><b>6.15 Renamers</b></summary>
+<br>
+
 <h4>Renamers</h4>
 
-<h5>Move (built-in)</h5>
+<h5>File Naming Best Practices</h5>
 
-<pre>
-• Commands for move 
-$ mv /home/user/oldname /home/user/newname
-• Convert Uppercase to Lowercase Characters #FAIL
-$ for f in *; do mv -T "$f" "$(echo $f | tr [A-Z] [a-z])"; done
-$ for i in $( ls | grep [A-Z] ); do mv -f $i `echo $i | tr 'A-Z' 'a-z'`; done
-</pre>
+<p>You might consider including some of the following information in your file names, but you can include any information that will allow you to distinguish your files from one another.</p>
+
+<ul>
+	<li>Project or experiment name or acronym</li>
+	<li>Location/spatial coordinates</li>
+	<li>Researcher name/initials</li>
+	<li>Date or date range of experiment</li>
+	<li>Type of data</li>
+	<li>Conditions</li>
+	<li>Version number of file</li>
+	<li>Three-letter file extension for application-specific files</li>
+</ul>
+
+<sub>Another good idea is to include in the directory a readme.txt file that explains your naming format along with any abbreviations or codes you have used.</sub>
+
+<p>Machine readable</p>
+
+<ul>
+  <li>Regular expression and globbing friendly
+    <ul>
+      <li>Avoid spaces, punctuation, accented characters, case sensitivity</li>
+      <li>Easy to compute on</li>
+    </ul>
+  </li>
+  <li>Deliberate use of delimiters</li>
+</ul>
+
+<p>Consider these additional tips as you develop a file naming scheme:</p>
+
+<ul>
+	<li>A good format for date designations is YYYYMMDD or YYMMDD. This format makes sure all of your files stay in chronological order, even over the span of many years.</li>
+	<li>Try not to make file names too long, since long file names do not work well with all types of software.</li>
+	<li>Special characters such as ~ ! @ # $ % ^ &amp; * ( ) ` ; &lt; &gt; ? , [ ] { } ' " and | should be avoided.</li>
+	<li>When using a sequential numbering system, using leading zeros for clarity and to make sure files sort in sequential order. For example, use "001, 002, ...010, 011 ... 100, 101, etc." instead of "1, 2, ...10, 11 ... 100, 101, etc."</li>
+	<li>Do not use spaces. Some software will not recognize file names with spaces, and file names with spaces must be enclosed in quotes when using the command line. Other options include:
+	<ul>
+		<li>Underscores, e.g. file_name.xxx</li>
+		<li>Dashes, e.g. file-name.xxx</li>
+		<li>No separation, e.g. filename.xxx</li>
+		<li>Camel case, where the first letter of each section of text is capitalized, e.g. FileName.xxx</li>
+	</ul>
+	</li>
+	<li>Periods can be used in files names&nbsp;but consider these points before doing so and proceed cautiously:
+	<ul>
+		<li>Periods are used in regular expressions.</li>
+		<li>Periods at the start of a file name are used to indicate configuration and/or hidden files in a file directory.</li>
+		<li>Periods are used to separate file names from file extensions.</li>
+	</ul>
+	</li>
+</ul>
+
+<!-- ######### -->
 
 <h5>KRename</h5>
 
 <code>$ sudo apt install krename</code> (GUI)<br>
 
+<!-- ######### -->
+
 <h5>GPRename</h5>
 
 <code>$ sudo apt install gprename</code> (GUI)<br>
+
+<!-- ######### -->
+
+<h5>Case Styles</h5>
+
+<code>camelCase</code>
+<code>PascalCase</code>
+<code>kebab-case</code>
+<code>snake_case</code>
+<code>UPPER_CASE_(SNAKE_CASE)</code>
+
+<!-- ######### -->
+
+<h5>Built-in Debian/GNU rename commands</h5>
+
+<pre>
+&nbsp; • Commands with move 
+&nbsp; &nbsp; • Simply rename
+&nbsp; &nbsp; $ mv /home/user/oldname /home/user/newname
+&nbsp; &nbsp; • Convert Uppercase to Lowercase Characters #FAIL
+&nbsp; &nbsp; $ for f in *; do mv -T "$f" "$(echo $f | tr [A-Z] [a-z])"; done
+&nbsp; &nbsp; $ for i in $( ls | grep [A-Z] ); do mv -f $i `echo $i | tr 'A-Z' 'a-z'`; done
+</pre>
+
+<pre>
+&nbsp; • Commands with sed 
+&nbsp; &nbsp; • Convert Camel case to kebab-case
+&nbsp; &nbsp; $ echo "MyDirectoryFileLine" | sed -e 's/\([A-Z]\)/-\L\1/g'
+&nbsp; &nbsp; $ echo "MyDirectoryFileLine" | sed -e 's/\([A-Z]\)/-\L\1/g' -e 's/^-//'
+&nbsp; &nbsp; $ echo "MyDirectoryFileLine" | sed -e 's/\([A-Z]\)/-\1/g' -e 's/^-//'
+&nbsp; &nbsp; $ echo "MyDirectoryFileLine" | sed -e 's/[A-Z]/-\L&/g' -e 's/^-//'
+&nbsp; &nbsp; $ echo "MyDirectoryFileLine" | sed -e 's/[A-Z]/-\l&/g;s/.//'
+&nbsp; &nbsp; $ echo "SomeACRONYMInCamelCaseString" | sed -e 's/\([a-z]\)\([A-Z]\)/\1-\L\2/' | sed -e 's/\(.*\)/\L\1/')
+&nbsp; &nbsp; • 
+&nbsp; &nbsp; $ 
+&nbsp; &nbsp; • 
+&nbsp; &nbsp; $ 
+&nbsp; &nbsp; • 
+&nbsp; &nbsp; $ 
+</pre>
+
+<!-- ######### -->
 
 <h5>Rename</h5>
 
@@ -5316,13 +5554,17 @@ $ for i in $( ls | grep [A-Z] ); do mv -f $i `echo $i | tr 'A-Z' 'a-z'`; done
 &nbsp; &nbsp; • Delete a Part of a Filename
 &nbsp; &nbsp; $ rename -v 's/example//' *.pdf
 &nbsp; &nbsp; • Convert Uppercase to Lowercase Characters #FAIL
-&nbsp; &nbsp; $ rename -v 'y/A-Z/a-z/' *.PDF 
+&nbsp; &nbsp; $ rename -v 'y/[A-Z]/[a-z]/' *.PDF 
 &nbsp; &nbsp; $ find my_dir -type f -execdir rename 'y/A-Z/a-z/' {} \;
 &nbsp; &nbsp; • Convert Lowercase to Uppercase Characters #FAIL
-&nbsp; &nbsp; $ rename -v 'y/a-z/A-Z/' *.pdf
-&nbsp; &nbsp; • Convert to camel case
+&nbsp; &nbsp; $ rename -v 'y/[a-z]/[A-Z]/' *.pdf
+&nbsp; &nbsp; • Convert to Camel case
 &nbsp; &nbsp; $ rename 's/ /_/g' *
 </pre>
+
+<!-- ######### -->
+
+<h5>Special Symbols</h5>
 
 <pre>
 &#92;n is a symbol for new line
@@ -5370,41 +5612,12 @@ $ for i in $( ls | grep [A-Z] ); do mv -f $i `echo $i | tr 'A-Z' 'a-z'`; done
 </tbody>
 </table>
 
-<!-- ######### -->
-
-<h4>Duplicated files</h4>
-
-<h5>dupeGuru</h5>
-
-<code>$ sudo apt install dupeguru</code> (GUI)<br>
-
-<!-- ######### -->
-
-<h4>Disk managers</h4>
-
-<h5>GParted</h5>
-
-<code>$ sudo apt install gparted</code><br>
-
-<h5>Gnome Disk - "Disks"</h5>
-
-<code>$ sudo apt install gnome-disk-utility</code><br>
-
-<!-- ######### -->
-
-<h4>Disk manager with LVM support</h4>
-
-<h5>KDE Partition Manager</h5>
-
-<code>$ sudo apt install partitionmanager</code><br>
-
-<br>
 </details>
 
 <!-- #################### -->
 
 <details>
-<summary><b>6.11 Backup</b></summary>
+<summary><b>6.16 Backup</b></summary>
 <br>
 
 https://github.com/bit-team/backintime<br>
@@ -5506,7 +5719,7 @@ https://clonezilla.org//clonezilla-live-doc.php<br>
 
 <h4>Data Integrity</h4>
 
-https://www.debian.org/doc/manuals/securing-debian-manual/ch04s17.en.html#check-integ<br>
+https://debian.org/doc/manuals/securing-debian-manual/ch04s17.en.html#check-integ<br>
 
 <br>
 </details>
@@ -5514,14 +5727,14 @@ https://www.debian.org/doc/manuals/securing-debian-manual/ch04s17.en.html#check-
 <!-- #################### -->
 
 <details>
-<summary><b>6.12 Metaverse</b></summary>
+<summary><b>6.17 Metaverse</b></summary>
 <br>
 
 <h4>Vircadia - Open Source Metaverse Platform</h4>
 
 https://vircadia.com<br>
 
-<a href="https://www.youtube.com/watch?v=4ZPz4rvMEwk">
+<a href="https://youtube.com/watch?v=4ZPz4rvMEwk">
   <img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D4ZPz4rvMEwk" alt="An introduction to Vircadia - an Open Source desktop and VR metaverse" title="An introduction to Vircadia - an Open Source desktop and VR metaverse"/>
 </a>
 
@@ -5529,7 +5742,7 @@ https://vircadia.com<br>
 
 https://overte.org<br>
 
-<a href="https://www.youtube.com/watch?v=-1tU6H2A7pQ">
+<a href="https://youtube.com/watch?v=-1tU6H2A7pQ">
   <img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D-1tU6H2A7pQ" alt="Introduction to the Overte project" title="Introduction to the Overte project"/>
 </a>
 
@@ -5539,7 +5752,7 @@ https://overte.org<br>
 <!-- #################### -->
 
 <details>
-<summary><b>6.13 Fun</b></summary>
+<summary><b>6.18 Fun</b></summary>
 <br>
 
 <h4>Steam OS</h4>
@@ -5556,7 +5769,7 @@ https://batocera.org<br>
 <!-- #################### -->
 
 <details>
-<summary><b>6.14 Tips</b></summary>
+<summary><b>6.19 Tips</b></summary>
 <br>
 
 <h4>Visualize folder tree</h4>
@@ -5804,9 +6017,9 @@ https://neovim.io<br>
 https://neovim.io/doc/user/starting.html<br>
 https://neovim.io/doc/user/usr_01.html#vimtutor<br>
 https://github.com/neovim/nvim-lspconfig#suggested-configuration<br>
-https://www.youtube.com/watch?v=RZ4p-saaQkc<br>
+https://youtube.com/watch?v=RZ4p-saaQkc<br>
 https://github.com/rockerBOO/awesome-neovim<br>
-https://www.reddit.com/r/neovim<br>
+https://reddit.com/r/neovim<br>
 
 <h5>∙ Setups</h5>
 https://github.com/nvim-lua/kickstart.nvim<br>
@@ -5816,7 +6029,7 @@ https://github.com/NvChad/NvChad<br>
 https://spacevim.org/<br>
 
 <h5>∙ Plugins</h5>
-https://www.siddharta.me/configuring-neovim-as-a-python-ide-2023.html<br>
+https://siddharta.me/configuring-neovim-as-a-python-ide-2023.html<br>
 https://thevaluable.dev/vim-php-ide/<br>
 
 <!-- ##### -->
@@ -5824,7 +6037,7 @@ https://thevaluable.dev/vim-php-ide/<br>
 <h4>• VSCodium</h4>
 
 https://github.com/VSCodium/vscodium<br>
-https://www.reddit.com/r/vscodium<br>
+https://reddit.com/r/vscodium<br>
 
  <h5>∙ Extensions</h5>
 
@@ -5832,8 +6045,8 @@ https://www.reddit.com/r/vscodium<br>
 
 <h4>• Sublime-text ®</h4>
 
-https://www.sublimetext.com/docs/linux_repositories.html<br>
-https://www.reddit.com/r/sublimetext<br>
+https://sublimetext.com/docs/linux_repositories.html<br>
+https://reddit.com/r/sublimetext<br>
 
 <br>
 </details>
@@ -5926,14 +6139,14 @@ https://docs.kernel.org<br>
 https://linuxquestions.org<br>
 https://superuser.com<br>
 https://stackoverflow.com<br>
-https://www.howtoforge.com<br>
+https://howtoforge.com<br>
 https://unix.stackexchange.com<br>
 https://security.stackexchange.com<br>
 https://data.stackexchange.com<br>
 https://elinux.org<br>
 https://hardforum.com<br>
 https://askubuntu.com<br>
-https://www.snbforums.com<br>
+https://snbforums.com<br>
 https://reddit.com/r/debian<br>
 https://reddit.com/r/linuxquestions<br>
 https://reddit.com/r/sysadmin<br>
@@ -6008,7 +6221,7 @@ https://wiki.debian.org/KernelHeaders<br>
 
 <p>Download rEFInd rescue media</p>
 
-https://www.rodsbooks.com/refind/getting.html<br>
+https://rodsbooks.com/refind/getting.html<br>
 
 <h5>∙ Grub customizer (GUI)</h5>
 
@@ -6087,7 +6300,7 @@ GRUB_ENABLE_CRYPTODISK=y
 <h4>Display Manager and Monitors</h4>
 
 https://wiki.archlinux.org/title/Display_manager<br>
-https://www.baeldung.com/linux/display-managers-install-uninstall<br>
+https://baeldung.com/linux/display-managers-install-uninstall<br>
 https://github.com/sddm/sddm/releases<br>
 
 
@@ -6155,7 +6368,7 @@ https://dpi.lv<br>
 https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX<br>
 https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi<br>
 https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/intel<br>
-https://www.intel.com/content/www/us/en/support/articles/000005511/network-and-io/wireless.html<br>
+https://intel.com/content/www/us/en/support/articles/000005511/network-and-io/wireless.html<br>
 https://wiki.archlinux.org/title/Power_management#USB_autosuspend<br>
 https://docs.kernel.org/driver-api/usb/power-management.html<br>
 
@@ -6319,8 +6532,8 @@ https://wiki.archlinux.org/title/Power_management#USB_autosuspend<br>
 https://docs.kernel.org/driver-api/usb/power-management.html<br>
 https://wiki.debian.org/HowToIdentifyADevice/USB<br>
 https://wiki.debian.org/HowToIdentifyADevice/PCI<br>
-https://www.kernel.org/doc/html/latest/usb/index.html<br>
-https://www.kernel.org/doc/html/v4.16/driver-api/usb/power-management.html<br>
+https://kernel.org/doc/html/latest/usb/index.html<br>
+https://kernel.org/doc/html/v4.16/driver-api/usb/power-management.html<br>
 UAS Issues - https://forums.raspberrypi.com/viewtopic.php?t=245931<br>
 
 Bug - xhci_hcd 0000:15:00.0: WARN Set TR Deq Ptr cmd failed due to incorrect slot or ep state - https://bugzilla.kernel.org/show_bug.cgi?id=202541<br>
@@ -6560,7 +6773,7 @@ https://wiki.archlinux.org/title/PulseAudio/Troubleshooting<br>
 https://thesofproject.github.io/latest/getting_started/intel_debug/suggestions.html<br>
 https://wiki.debian.org/Sound<br>
 https://wiki.debian.org/SoundConfiguration<br>
-https://www.alsa-project.org<br>
+https://alsa-project.org<br>
 https://github.com/thesofproject/sof/issues<br>
 https://github.com/thesofproject<br>
 
@@ -6832,7 +7045,7 @@ locale-gen
 
 <p>Do a Leak Test</p>
 
-<a href="https://www.dnsleaktest.com/">∙ DNSLeakTest.com</a> (run the "Extended test")<br>
+<a href="https://dnsleaktest.com/">∙ DNSLeakTest.com</a> (run the "Extended test")<br>
 <a href="https://ipleak.net/">∙ IPLeak.net</a><br>
 
 <code>curl ipleak.net/json/</code><br>
@@ -6859,6 +7072,28 @@ locale-gen
 https://wiki.debian.org/SSDOptimization<br>
 https://wiki.archlinux.org/title/Solid_state_drive<br>
 
+<!-- ######### -->
+
+<h4>Disk managers</h4>
+
+<h5>GParted</h5>
+
+<code>$ sudo apt install gparted</code><br>
+
+<h5>Gnome Disk - "Disks"</h5>
+
+<code>$ sudo apt install gnome-disk-utility</code><br>
+
+<!-- ######### -->
+
+<h4>Disk manager with LVM support</h4>
+
+<h5>KDE Partition Manager</h5>
+
+<code>$ sudo apt install partitionmanager</code><br>
+
+<!-- ######### -->
+
 <h4>Disk debug</h4>
 
 <pre>
@@ -6880,7 +7115,7 @@ $ lsusb -tv
 
 <h5>TESTDISK</h5>
 
-https://www.cgsecurity.org/wiki/TestDisk<br>
+https://cgsecurity.org/wiki/TestDisk<br>
 
 <h5>SMARTMONTOOLS</h5>
 
@@ -6943,16 +7178,16 @@ https://www.cgsecurity.org/wiki/TestDisk<br>
 <h3>Some Links</h3>
 
 YouTube<br>
-https://www.youtube.com/@DebConfVideos<br>
-https://www.youtube.com/@BlackHatOfficialYT<br>
-https://www.youtube.com/@DEFCONConference<br>
-https://www.youtube.com/@mediacccde<br>
-https://www.youtube.com/@DFRWS<br>
-https://www.youtube.com/@44contv<br>
-https://www.youtube.com/@secwestnet<br>
-https://www.youtube.com/@EkopartyConference<br>
-https://www.youtube.com/@reconmtl<br>
-https://www.youtube.com/@TROOPERScon<br>
+https://youtube.com/@DebConfVideos<br>
+https://youtube.com/@BlackHatOfficialYT<br>
+https://youtube.com/@DEFCONConference<br>
+https://youtube.com/@mediacccde<br>
+https://youtube.com/@DFRWS<br>
+https://youtube.com/@44contv<br>
+https://youtube.com/@secwestnet<br>
+https://youtube.com/@EkopartyConference<br>
+https://youtube.com/@reconmtl<br>
+https://youtube.com/@TROOPERScon<br>
 
 Linux Blogs<br>
 https://linux-tips.us<br>
@@ -6968,13 +7203,14 @@ https://dwarmstrong.org<br>
 https://0pointer.net/blog/<br>
 https://slant.co<br>
 https://blog.carsoncheng.ca<br>
+https://shellhacks.com<br>
 
 Others<br>
-• https://www.shellcheck.net<br>
-• https://www.shellscript.sh<br>
+• https://shellcheck.net<br>
+• https://shellscript.sh<br>
 • https://explainshell.com<br>
-• https://www.notrace.how<br>
-• https://www.anarsec.guide<br>
+• https://notrace.how<br>
+• https://anarsec.guide<br>
 • https://0x00sec.org<br>
 <br>
 </details>
