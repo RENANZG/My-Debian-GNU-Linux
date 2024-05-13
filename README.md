@@ -5238,9 +5238,39 @@ https://infozip.sourceforge.net<br>
 
 <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.03_Sanitization">1.HARDENING/1.03_Sanitization</a></h4>
 
-<h4>Sanitation</h4>
+<h4>Metadata Cleaners</h4>
 
-<h4>• System Sanitation</h4>
+<code>$ sudo apt install exiftool</code> (CLI)<br>
+<code>$ sudo apt install metadata-cleaner</code> (GUI)<br>
+<code>$ sudo apt install metacam</code> (GUI)<br>
+
+• Exiftool - https://github.com/exiftool/exiftool<br>
+• List of metadata TAGS - https://exiftool.org/TagNames/index.html<br>
+• Common Mistakes - https://exiftool.org/mistakes.html<br>
+• Metacam - https://packages.debian.org/unstable/graphics/metacam<br>
+
+<h5>∙ Exiftool</h5>
+
+<pre>
+&nbsp; Commands for exiftool basic commands
+&nbsp; &nbsp; • Remove all metadata from all files possible inside a folder and all its subfolders without backup (take care, might affect the colors)
+&nbsp; &nbsp; $ exiftool -v -all:all= -overwrite_original -r /path/to/files/ 
+&nbsp; &nbsp; • Shows only selected EXIF metadata:
+&nbsp; &nbsp; $ exiftool -v -Model -ImageSize photo.jpg
+&nbsp; &nbsp; • Process all files of specified file type (case insensitive extension)
+&nbsp; &nbsp; $ exiftool -v -Model -ImageSize -ext jpg /path/to/files/
+&nbsp; &nbsp; • recursively process all jpg files under specified directory and sub-directory
+&nbsp; &nbsp; $ exiftool -v -r -Model -ImageSize -ext jpg /path/to/files/
+</pre>
+
+<h5>∙ Metadata Cleaner</h5>
+
+<pre>
+&nbsp; Commands 
+&nbsp; &nbsp; $ metadata-cleaner /path/to/file.png
+</pre>
+
+<h4>System Sanitation</h4>
 
 <h5>∙ Bleachbit</h5>
 
@@ -5276,7 +5306,7 @@ https://infozip.sourceforge.net<br>
 
 <h5>∙ Free space erase from CLI</h5>
 
-<code>
+<pre>
 • List system targets
 $ sudo bleachbit -l
 • Erase space
@@ -5291,7 +5321,7 @@ system.recent_documents \
 system.rotated_logs \
 system.tmp \
 system.trash 
-</code><br>
+</pre>
 
 <p>* cron</p>
 
@@ -5304,39 +5334,18 @@ system.trash
 
 <p>In Bleachbit as Administrator, go to Options -> Preferences -> Languages Tab and mark your preferred language besides en-US.Start cleaning, this may take some time.</p>
 
-<h5>∙ Metadata Cleaner</h5>
-
-<code>$ sudo apt install exiftool</code> (CLI)<br>
-<code>$ sudo apt install metadata-cleaner</code> (GUI)<br>
-<code>$ sudo apt install metacam</code> (GUI)<br>
-
-• Exiftool - https://github.com/exiftool/exiftool<br>
-• List of metadata TAGS - https://exiftool.org/TagNames/index.html<br>
-• Common Mistakes - https://exiftool.org/mistakes.html<br>
-• Metacam - https://packages.debian.org/unstable/graphics/metacam<br>
-
-<pre>
-&nbsp; Commands for exiftool basic commands
-&nbsp; &nbsp; • Remove all metadata from all files possible inside a folder and all its subfolders without backup (take care, might affect the colors)
-&nbsp; &nbsp; $ exiftool -v -all:all= -overwrite_original -r /path/to/files/ 
-&nbsp; &nbsp; • Shows only selected EXIF metadata:
-&nbsp; &nbsp; $ exiftool -v -Model -ImageSize photo.jpg
-&nbsp; &nbsp; • Process all files of specified file type (case insensitive extension)
-&nbsp; &nbsp; $ exiftool -v -Model -ImageSize -ext jpg /path/to/files/
-&nbsp; &nbsp; • recursively process all jpg files under specified directory and sub-directory
-&nbsp; &nbsp; $ exiftool -v -r -Model -ImageSize -ext jpg /path/to/files/
-</pre>
-
-<h4>• Disk Sanitation</h4>
+<h4>Full Disk Sanitation</h4>
 
 https://wiki.debian.org/SSDOptimization<br>
 https://wiki.archlinux.org/title/Solid_state_drive<br>
 
 <em>*Not all SSD support sanitize. To properly way to erase a SSD is using the SSDs manufacturer's software. Other methods might not work, due to wear leveling and over-provisioning.</em><br>
 
+<em>*If you use SSDs, enable TRIM in your BIOS. Confirm you are using SSD in the BIOS options.</em><br>
+
 <em>*Consider hardware flaws.</em><br>
 
-<h4>Manufacturers supply software to update firmware and perform tasks like secure erase</h4>
+<h4>Manufacturers that supply software to update firmware and perform tasks like secure erase</h4>
 
 <ul>
 <li><a href="https://forum.corsair.com/blog/storage/the-corsair-ssd-toolbox/">Corsair SSD Toolbox</a></li>
@@ -5354,8 +5363,6 @@ https://wiki.archlinux.org/title/Solid_state_drive<br>
 <li><a href="https://intel.com/content/www/us/en/download/19543/intel-memory-and-storage-tool-gui.html?v=t">Intel Memory and Storage Tool</a></li>
 </ul>
 
-<em>**If you use SSDs, enable TRIM in your BIOS. Confirm you are using SSD in the BIOS options.</em><br>
-
 <h5>∙ Nwipe</h5>
 
 <code>$ sudo apt install -y nwipe</code><br>
@@ -5363,6 +5370,11 @@ https://wiki.archlinux.org/title/Solid_state_drive<br>
 <h5>∙ Hdparm</h5>
 
 <code>$ sudo apt install -y hdparm</code><br>
+
+<pre>
+• Commands
+$ 
+</pre>
 
 <br>
 </details>
