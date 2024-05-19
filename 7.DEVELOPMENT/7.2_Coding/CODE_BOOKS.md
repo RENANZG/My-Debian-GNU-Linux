@@ -1,5 +1,25 @@
 <!-- #################### -->
 
+<h4>Head First C (2012)</h4>
+
+<!-- #################### -->
+
+<h4>Head First Python: A Learner's Guide to the Fundamentals of Python Programming, A Brain-Friendly Guide, 3rd Ed. (Retail) (2023)</h4>
+
+https://rapidgator.net/file/88a4f25dc296a67c75330ca36e306d77/Sanet.st_Head_First_Python_-_Paul_Barry.epub.html<br>
+
+https://nitroflare.com/view/AD0EC23C7FA885A/Sanet.st_Head_First_Python_-_Paul_Barry.epub<br>
+
+<!-- #################### -->
+
+<h4>Head First Git: A Learner's Guide to Understanding Git from the Inside Out (True PDF) (2022)</h4>
+
+https://rapidgator.net/file/867be1a8e039fee979c3e0a3376faecb/<br>
+
+https://nitro.download/view/39F41793EB3696B/<br>
+
+<!-- #################### -->
+
 <h4>Head First Software Architecture A Learner's Guide to Architectural Thinking (3rd Early Release) (2023)</h4>
 
 https://rapidgator.net/file/3ebe2c73259f183aa52c2b15f4775277/Head.First.Software.Architecture.Sanet.st.epub.html<br>
@@ -16,11 +36,11 @@ http://nitroflare.com/view/AC12BCE9502BA89/sanet.st_Head.First.Design.Patterns.2
 
 <!-- #################### -->
 
-<h4>Head First Git: A Learner's Guide to Understanding Git from the Inside Out (True PDF) (2022)</h4>
+<h4>Head First C#, 5th Ed. (First Early Release) (2023)</h4>
 
-https://rapidgator.net/file/867be1a8e039fee979c3e0a3376faecb/<br>
+https://rapidgator.net/file/9481ead19fea54857245501df07eda18/HeadFirstC5thEd..sanet.st.rar.html<br>
 
-https://nitro.download/view/39F41793EB3696B/<br>
+https://nitroflare.com/view/0A75660CEAF7B5C/Head_First_C_5th_Ed..sanet.st.rar<br>
 
 <!-- #################### -->
 
@@ -32,19 +52,13 @@ http://nitroflare.com/view/C170ABDFD9D8359/Sanet.st_A_Learner%27s_Guide_to_Creat
 
 <!-- #################### -->
 
-<h4>Head First C#, 5th Ed. (First Early Release) (2023)</h4>
+<h4>Head First PHP & MySQL: A Brain-Friendly Guide (2013)</h4>
 
-https://rapidgator.net/file/9481ead19fea54857245501df07eda18/HeadFirstC5thEd..sanet.st.rar.html<br>
+https://rapidgator.net/file/d8dfae4452e551d402c39e68c27d78ca/Sanet.cd_Head_First_PHP_&_MySQL_-_Lynn_Beighley.epub.html<br>
 
-https://nitroflare.com/view/0A75660CEAF7B5C/Head_First_C_5th_Ed..sanet.st.rar<br>
+http://nitroflare.com/view/76658B8FAA19CFE/Sanet.cd_Head_First_PHP_%26_MySQL_-_Lynn_Beighley.epub<br>
 
-<!-- #################### -->
-
-<h4>Head First Python: A Learner's Guide to the Fundamentals of Python Programming, A Brain-Friendly Guide, 3rd Ed. (Retail) (2023)</h4>
-
-https://rapidgator.net/file/88a4f25dc296a67c75330ca36e306d77/Sanet.st_Head_First_Python_-_Paul_Barry.epub.html<br>
-
-https://nitroflare.com/view/AD0EC23C7FA885A/Sanet.st_Head_First_Python_-_Paul_Barry.epub<br>
+Password: WWW.sanet.cd<br>
 
 <!-- #################### -->
 
@@ -62,15 +76,6 @@ https://rapidgator.net/file/6e4eeb5a7666f5e221e57344953db88e/Sanet.st_Head_First
 
 https://nitroflare.com/view/A7F11144DB30EA3/Sanet.st_Head_First_Go_-_Jay_McGavren.pdf<br>
 
-<!-- #################### -->
-
-<h4>Head First PHP & MySQL: A Brain-Friendly Guide (2013)</h4>
-
-https://rapidgator.net/file/d8dfae4452e551d402c39e68c27d78ca/Sanet.cd_Head_First_PHP_&_MySQL_-_Lynn_Beighley.epub.html<br>
-
-http://nitroflare.com/view/76658B8FAA19CFE/Sanet.cd_Head_First_PHP_%26_MySQL_-_Lynn_Beighley.epub<br>
-
-Password: WWW.sanet.cd<br>
 
 <!-- #################### -->
 

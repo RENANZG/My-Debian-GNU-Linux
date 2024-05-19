@@ -238,7 +238,7 @@ https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption<br>
 https://en.wikipedia.org/wiki/Write_protection<br>
 https://en.m.wikipedia.org/wiki/Random-access_memory<br>
 https://usbguard.github.io<br>
-https://digistor.com<br>
+https://digistor.com (*EUA partner)<br>
 https://seagate.com/enterprise-storage/enterprise-security<br>
 https://github.com/openssl/openssl/blob/master/README-FIPS.md<br>
 
@@ -259,7 +259,7 @@ https://osresearch.net<br>
 
 <h4>Sanitize options</h4>
 
-<h5>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.03_Sanitization">1.HARDENING/1.03_Sanitization</a></h5>
+<h5>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.HARDENING/1.03_Sanitization">2.HARDENING/1.03_Sanitization</a></h5>
 
 <p>Not all SSD support sanitize. And if you use SSDs, enable TRIM in your BIOS. Take care with SSD over-provisioning. Take care with SSD flaws.</p>
 
@@ -279,7 +279,9 @@ https://forums.whonix.org/t/hardened-malloc-hardened-memory-allocator/7474/4<br>
 
 <p>You must consider the file system you will use.</p>
 
-<h4>2.01.04 Cost benefit</h4>
+<h4>Cost benefit</h4>
+
+• <br>
 
 <br>
 </details>
@@ -680,11 +682,10 @@ https://github.com/nilsmeyer/ansible-debootstrap<br>
 • Linux Dabbler - Scripts to run after installing debian<br>
 https://github.com/linuxdabbler/debian-install-scripts<br>
 
-
-<h5>&nbsp; 2.2.3.1 File system: EXT4, XFS, BTRFS AND ZFS</h5>
+<h5>&nbsp;File system: EXT4, XFS, BTRFS AND ZFS</h5>
 
 <div id="table1" align="left">
-<img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/2.INSTALLATION/2.08_Others/file_system.png"/>
+<img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/.data/1.INSTALLATION/2.08_Others/file_system.png"/>
 </div>
 
 <br>
@@ -696,7 +697,7 @@ https://github.com/linuxdabbler/debian-install-scripts<br>
 <summary><b>2.03 Encryption</b></summary> 
 <br>
 
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.02_Encryption">1.HARDENING/1.02_Encryption</a></h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.HARDENING/1.02_Encryption">2.HARDENING/1.02_Encryption</a></h4>
 
 <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION/2.02_Debootstrap">2.SYSTEM_INSTALLATION/2.02_Debootstrap</a></h4>
 
@@ -906,15 +907,57 @@ https://reproducible-builds.org<br>
 <!-- #################### -->
 
 <details>
-<summary><b>2.06 Clonezilla</b></summary> 
+<summary><b>2.06 Ventoy</b></summary> 
 <br>
 
-<p>Clonezilla - The Free and Open Source Software for Disk Imaging and Cloning</p>
+<h4>Ventoy</h4>
+
+<p>Ventoy - A New Bootable USB Solution - Downloads</p>
+
+https://ventoy.net/en/download.html<br>
+
+<p>Ventoy - Source Code - Releases</p>
+
+https://github.com/ventoy/Ventoy/releases<br>
+
+<h4>Start to use Ventoy - Install Ventoy To USB Drive</h4>
+
+https://www.ventoy.net/en/doc_start.html<br>
+https://woshub.com/multi-iso-boot-usb-flash-ventoy<br>
+https://pureinfotech.com/ventoy-create-bootable-usb-windows-11-10<br>
+
+<h4>About Secure Boot in UEFI mode</h4>
+
+https://www.ventoy.net/en/doc_secure.html<br>
+
+<h4>Ventoy Persistence Plugin</h4>
+
+https://ventoy.net/en/plugin_persistence.html<br>
+
+(*recomended only for rescue disk pourouses)<br>
+
+<br>
+</details>
+
+<!-- #################### -->
+
+<details>
+<summary><b>2.07 Clonezilla</b></summary> 
+<br>
+
+<h4>Clonezilla</h4>
+
+<p>Clonezilla - The Free and Open Source Software for Disk Imaging and Cloning.</p>
 
 https://clonezilla.org//clonezilla-live-doc.php<br>
 
-<p>Changing disk name</p>
+<h4>How to Use Clonezilla Software</h4>
 
+https://www.wikihow.com/Use-Clonezilla<br>
+
+<h4>Changing disk name</h4>
+
+<code>Command</code><br>
 <code>$ cnvt-ocs-dev -d /home/partimag 'image' 'sda3' 'sda2'</code><br>
 
 <br>
@@ -1861,6 +1904,9 @@ How to get VirtualBox signed for Secure Boot<br>
 <details>
 <summary><b>3.11 Sign Ventoy</b></summary>
 <br>
+
+<h4>About Secure Boot in UEFI mode</h4>
+
 https://ventoy.net/en/doc_secure.html<br>
 
 <br>
@@ -1944,6 +1990,8 @@ https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi<br>
 (be proactively paranoid DSM-5 301.0 F60.0).</h4>
 <h4>The weakest link is human</h4>
 <h4>Drink water</h4>
+
+*It seems that the worst problem is collateral intrusion, the involvement of seemingly trustworthy uninvolved close third parties. The end of trust.<br>
 
 *OWASP Principles<br>
 
@@ -3543,7 +3591,45 @@ https://wiki.documentfoundation.org/Documentation/Install/Linux<br>
 &nbsp; &nbsp;<a href="https://languagetool.org/insights/post/product-libreoffice/">Language Tool</a><br>
 &nbsp; &nbsp;<a href="https://zotero.org/">Zotero</a><br>
 
-<h5>Zotero - Personal research assistant</h5>
+<h4>Libre Office - <a href="https://help.libreoffice.org/latest/en-US/text/shared/05/new_help.html?&DbPAR=SHARED&System=UNIX#helpindx">Tips and Tricks</a></h4>
+
+<h5>Cursor Position</h5>
+
+<p>In general, all documents open with the cursor at the start of the document.</p>
+
+<p>One exception appears when the author of a Writer text document saves and reopens a document: The cursor will be at the same position where it has been when the document was saved. This only works when the name of the author was entered in Tools - Options - LibreOffice - User Data.</p>
+
+<p>Press Shift+F5 to set the cursor to the last saved position.</p>
+
+<h5>Version Management</h5>
+
+<p>The File menu contains a Versions command that enables you to save multiple versions of a document in the same file.</p>
+
+<p>You can choose to view individual versions of a document, or you can display the differences between versions with color markings.</p>
+
+<p>In the dialog to open a document, you can select from a combo box which version of this document you want to open.</p>
+
+<h5>Saving Documents Automatically</h5>
+
+<p>To create a backup file every time you save a document
+Choose Tools - Options - Load/Save - General.</p>
+
+<p>Mark Always create backup copy.</p>
+
+<p>If the Always create backup copy option is selected, the old version of the file is saved to the backup directory whenever you save the current version of the file.</p>
+
+<p>You can change the backup directory by choosing Tools - Options - LibreOffice - Paths, then change the Backups path in the dialog.</p>
+
+<p>The backup copy has the same name as the document, but the extension is .BAK. If the backup folder already contains such a file, it will be overwritten without warning.</p>
+
+<p>To save recovery information automatically every n minutes
+Choose Tools - Options - Load/Save - General.</p>
+
+<p>Mark Save AutoRecovery information every and select the time interval.</p>
+
+<p>This command saves the information necessary to restore the current document in case of a crash. Additionally, in case of a crash LibreOffice tries automatically to save AutoRecovery information for all open documents, if possible.</p>
+
+<h5>Zotero - Your personal research assistant</h5>
 
 <a href="https://zotero.org">Zotero</a> - https://zotero.org<br>
 
@@ -4049,12 +4135,56 @@ $ ps2pdf -dPDFSETTINGS=/ebook input.pdf output.pdf
 <summary>&nbsp; Image Editors</summary>
 <br>
 
-<h4>Image Editors</h4>
+<h4>Basic Image Editors</h4>
+
+<h5>Gthumb</h5>
+
+https://gitlab.gnome.org/GNOME/gthumb<br>
 
 <code>$ sudo apt install gthumb</code> (GUI)<br> 
-<code>$ sudo apt install gimp</code> (GUI)<br>
+
+<h5>Image Magick</h5>
+
+https://imagemagick.org<br>
+
 <code>$ sudo apt install imagemagick</code> (GUI or CLI)<br>
-<code>$ sudo apt install webp</code> (CLI)<br>
+
+<h4>Advanced Image Editors</h4>
+
+<h5>GIMP</h5>
+
+https://www.gimp.org<br>
+
+<p>"Whether you are a graphic designer, photographer, illustrator, or scientist, GIMP provides you with sophisticated tools to get your job done."</p>
+
+<code>$ sudo apt install gimp</code> (GUI)<br>
+
+<a href="https://www.youtube.com/watch?v=G_PjQAy0iiU">
+  <img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DG_PjQAy0iiU" alt="Learn How To Use GIMP 2 10 For Beginners" title="Learn How To Use GIMP 2 10 For Beginners"/>
+</a>
+
+<h5>Inkscape</h5>
+
+https://inkscape.org<br>
+
+<p>"Inkscape is a Free and open source vector graphics editor for GNU/Linux, Windows and macOS. It offers a rich set of features and is widely used for both artistic and technical illustrations such as cartoons, clip art, logos, typography, diagramming and flowcharting."</p>
+
+<a href="https://www.youtube.com/watch?v=mmJGpBJFBxY">
+  <img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DmmJGpBJFBxY" alt="Full Inkscape Beginner Course" title="Full Inkscape Beginner Course"/>
+</a>
+
+<h4>Other</h4>
+
+<h4>Memegen (Open Source)</h4>
+
+<p>An API to programmatically generate memes based solely on requested URLs</p>
+
+https://github.com/jacebrowning/memegen<br>
+https://memegen.link<br>
+
+<h4>imgflip (Free)</h4>
+
+https://imgflip.com/memegenerator<br>
 
 <br>
 </details>
@@ -4074,11 +4204,25 @@ $ ps2pdf -dPDFSETTINGS=/ebook input.pdf output.pdf
 <pre>
 &nbsp; Commands for webp files
 &nbsp; &nbsp; • How to convert .webp to .png #It's a command-line interface
-&nbsp; &nbsp; $ dwebp -v in_file.webp -o ~/out_file_png_default.png 
-&nbsp; &nbsp; $ dwebp -v -resize width x height in_file.webp -o ~/out_file_png_default.png
+&nbsp; &nbsp; $ dwebp -v input.webp -o ~/output.png 
+&nbsp; &nbsp; $ dwebp -v -resize width x height input.webp -o ~/output.png
 &nbsp; &nbsp; *If either (but not both) of the width or height parameters is 0,
 &nbsp; &nbsp;the value will be calculated preserving the aspect-ratio.
 </pre>
+
+<pre>
+&nbsp; Commands for webp files in batch
+&nbsp; &nbsp; $ for file in *.webp ; do dwebp "$file" -o "${file%.*}.png" ; done
+&nbsp; &nbsp; • Testing alternatives
+&nbsp; &nbsp; $ find . -name "*.webp" -exec dwebp {} -o "${file%.*}.png" \;
+&nbsp; &nbsp; $ find . -type f -name "*.webp" -exec dwebp {} -o *.png
+&nbsp; &nbsp; $ sudo apt install parallel
+&nbsp; &nbsp; $ parallel dwebp {} -o *.png
+&nbsp; &nbsp; $ find . -name "*.webp" -print0 | parallel --progress -0 dwebp {} -o *.png
+&nbsp; &nbsp; $ for x in `ls -1 *.jpg`; do dwebp {} -o ${x%.*}.png ; done
+&nbsp; &nbsp; $ for x in `find . -name "*.webp"`; do dwebp {} -o ${x%.*}.png ; done
+</pre>
+
 
 <h5>Convert image with ImageMagick</h5>
 
@@ -4979,7 +5123,7 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
 
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.02_Encryption">1.HARDENING/1.02_Encryption</a></h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.HARDENING/1.02_Encryption">2.HARDENING/1.02_Encryption</a></h4>
 
 <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION/2.02_Debootstrap">2.SYSTEM_INSTALLATION/2.02_Debootstrap</a></h4>
 
@@ -4989,6 +5133,10 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
 
 https://mhogomchungu.github.io/zuluCrypt<br>
 https://github.com/mhogomchungu/zuluCrypt<br>
+
+<h5>∙ SiriKali (GUI)</h5>
+
+https://mhogomchungu.github.io/sirikali<br>
 
 <code>$ sudo apt install zulucrypt-gui</code><br>
 
@@ -5236,7 +5384,7 @@ https://infozip.sourceforge.net<br>
 <summary><b>6.12 Sanitation</b></summary>
 <br>
 
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.HARDENING/1.03_Sanitization">1.HARDENING/1.03_Sanitization</a></h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.HARDENING/1.03_Sanitization">2.HARDENING/1.03_Sanitization</a></h4>
 
 <h4>Metadata Cleaners</h4>
 
@@ -5363,7 +5511,13 @@ https://wiki.archlinux.org/title/Solid_state_drive<br>
 <li><a href="https://intel.com/content/www/us/en/download/19543/intel-memory-and-storage-tool-gui.html?v=t">Intel Memory and Storage Tool</a></li>
 </ul>
 
+<h5>∙ ShredOS</h5>
+
+https://github.com/PartialVolume/shredos.x86_64<br>
+
 <h5>∙ Nwipe</h5>
+
+https://github.com/martijnvanbrummelen/nwipe<br>
 
 <code>$ sudo apt install -y nwipe</code><br>
 
@@ -5489,6 +5643,16 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 	</ul>
 	</li>
 </ul>
+
+<!-- ######### -->
+
+<h5>Online regex tools</h5>
+
+• Dencode — https://dencode.com<br>
+• Commonly Used Software Development Tools - https://ctool.dev</br>
+• Text Fixer - https://textfixer.com</br>
+• SS64 Syntax Utils - https://ss64.com</br>
+• Tools4noobs - https://tools4noobs.com</br>
 
 <!-- ######### -->
 
@@ -5765,7 +5929,94 @@ https://overte.org<br>
 <!-- #################### -->
 
 <details>
-<summary><b>6.18 Fun</b></summary>
+<summary><b>6.18 Online Utilities</b></summary>
+<br>
+
+<h4>Utilities</h4>
+
+• Message Header Analyzer — https://mha.azurewebsites.net<br>
+• Message Header Analyzer — https://github.com/microsoft/MHA<br>
+• PhishTank — https://phishtank.org<br>
+• Simple Email Reputation — https://emailrep.io<br>
+• Whois — https://iana.org/whois<br>
+• ViewDNS — https://viewdns.info<br>
+• WhoisMyDNS — https://whoismydns.com<br>
+• NSLookup — https://nslookup.io<br>
+• My-Addr — https://my-addr.com<br>
+• Malpedia — https://malpedia.caad.fkie.fraunhofer.de<br>
+• CVE Details — https://cvedetails.com<br>
+• Exploit Database — https://exploit-db.com<br>
+• FileInfo — https://fileinfo.co<br>
+• xCyclopedia — https://strontic.github.io/xcyclopedia<br>
+• The Windows Binary Index — https://winbindex.m417z.com<br>
+• Palo Alto Applipedia — https://applipedia.paloaltonetworks.com<br>
+• Windows Securitiy Logs — https://ultimatewindowssecurity.com/securitylog/encyclopedia<br>
+• Internet Archive (WayBackMachine) - https://web.archive.org<br>
+• Archive web content — https://archive.ph<br>
+• Internet Archive — https://archive.org<br>
+• HTTrack — https://httrack.com<br>
+• IPVOID — https://ipvoid.com<br>
+• AbuseIPDB — https://abuseipdb.com<br>
+• Grabify IP Logger — https://grabify.link/<br>
+• IP Logger — https://iplogger.org<br>
+• IP Tracker — https://iplogger.org/ip-tracker<br>
+• IP Location Tracker — https://iplogger.org/location-tracker<br>
+• IP Location — https://iplocation.net<br>
+• URL Checker —  https://iplogger.org/url_checker<br>
+• MAC Address Lookup — https://iplogger.org/mac-checker<br>
+• MAC Vendor — https://macvendors.com<br>
+• IP API<br>
+&emsp; — ip-api — https://ip-api.com<br>
+&emsp; — ipify — https://ipify.org<br>
+&emsp; — ipapi — https://ipapi.co<br>
+&emsp; — vpnapi — https://vpnapi.io<br>
+&emsp; — ipapi — https://ipapi.com<br>
+• The ZMap Project — https://zmap.io<br>
+• WiGLE — https://wigle.net<br>
+• urlscan.io — https://urlscan.io<br>
+• Virus Total — https://virustotal.com<br>
+• Hybrid Analysis — https://hybrid-analysis.com<br>
+• Cuckoo Sandbox — https://cuckoo.cert.ee<br>
+• AlienVault OTX — https://otx.alienvault.com<br>
+• IBM X-Force Exchange — https://exchange.xforce.ibmcloud.com<br>
+• Cisco Talos — https://talosintelligence.com/reputation_center<br>
+• Maltiverse — https://maltiverse.com/collection<br>
+• GreyNoise — https://greynoise.io<br>
+• SANS Internet Storm Center — https://isc.sans.edu<br>
+• Intelligence X — https://intelx.io<br>
+• MetaDefender Cloud — https://metadefender.opswat.com<br>
+• RiskIQ Community Edition — https://community.riskiq.com/home<br>
+• Pulsedive — https://pulsedive.com<br>
+• Valhalla YARA Rules — https://valhalla.nextron-systems.com<br>
+• ANY.RUN — https://any.run<br>
+• Binvis — https://binvis.io<br>
+• JoeSandbox — https://joesandbox.com<br>
+• Verexif - https://verexif.com/en/<br>
+• Reverse Shell Generator — https://revshells.com<br>
+• Rainbow Tables (Hashes) — https://hashes.com/en/decrypt/hash<br>
+• File Signatures ("Magic Numbers") — https://en.wikipedia.org/wiki/Magic_number_(programming)<br> 
+• List of File Signatures — https://en.wikipedia.org/wiki/List_of_file_signatures<br>
+• CyberChef — https://gchq.github.io/CyberChef<br>
+• explainshell — https://explainshell.com<br>
+• Epoch Converter — https://epochconverter.com<br>
+• Regex - https://regex-generator.olafneumann.org</br>
+• DeHashed — https://dehashed.com<br>
+• Dencode — https://dencode.com<br>
+• Commonly Used Software Development Tools - https://ctool.dev</br>
+• Text Fixer - https://textfixer.com</br>
+• SS64 Syntax Utils - https://ss64.com</br>
+• Tools4noobs - https://tools4noobs.com</br>
+• Text to ASCII Art Generator - https://patorjk.com/software/taag</br>
+• Have I Been Pwned — https://haveibeenpwned.com<br>
+• Name OSINT — https://namechk.com<br>
+• Breach Directory - https://breachdirectory.org<br>
+• MD5 Decrypt - https://md5decrypt.net/en/Sha1<br>
+
+<br>
+</details>
+
+<details>
+<summary><b>6.19 Fun</b></summary>
 <br>
 
 <h4>Steam OS</h4>
@@ -5782,7 +6033,7 @@ https://batocera.org<br>
 <!-- #################### -->
 
 <details>
-<summary><b>6.19 Tips</b></summary>
+<summary><b>6.20 Tips</b></summary>
 <br>
 
 <h4>Visualize folder tree</h4>
@@ -7188,9 +7439,15 @@ https://cgsecurity.org/wiki/TestDisk<br>
 <summary><b>10.01 Some Links</b></summary>
 <br>
 
-<h3>Some Links</h3>
+<h4>Links</h4>
 
-YouTube<br>
+https://fsf.org<br>
+https://gnu.org<br>
+https://opensource.com<br>
+https://linuxfoundation.org<br>
+
+<h4>YouTube Links</h4>
+
 https://youtube.com/@DebConfVideos<br>
 https://youtube.com/@BlackHatOfficialYT<br>
 https://youtube.com/@DEFCONConference<br>
@@ -7202,29 +7459,38 @@ https://youtube.com/@EkopartyConference<br>
 https://youtube.com/@reconmtl<br>
 https://youtube.com/@TROOPERScon<br>
 
-Linux Blogs<br>
+<h4>Linux Blogs</h4>
+
+https://0pointer.net/blog/<br>
+https://blog.carsoncheng.ca<br>
+https://dwarmstrong.org<br>
+https://fabianlee.org<br>
+https://itsfoss.com<br>
 https://linux-tips.us<br>
+https://linuxconfig.org<br>
 https://linuxcnf.com<br>
 https://linuxiac.com<br>
+https://linuxinsider.com<br>
+https://linuxhandbook.com<br>
+https://linuxsecurity.com<br>q
 https://ostechnix.com<br>
-https://techviewleo.com<br>
 https://programmerall.com<br>
-https://fabianlee.org<br>
-https://vitux.com<br>
-https://tqdev.com<br>
-https://dwarmstrong.org<br>
-https://0pointer.net/blog/<br>
 https://slant.co<br>
-https://blog.carsoncheng.ca<br>
-https://shellhacks.com<br>
+https://techviewleo.com<br>
+https://tqdev.com<br>
+https://vitux.com<br>
 
-Others<br>
+<h4>Others</h4>
+
+• https://riptutorial.com/ebook<br>
 • https://shellcheck.net<br>
 • https://shellscript.sh<br>
+• https://shellhacks.com<br>
 • https://explainshell.com<br>
 • https://notrace.how<br>
 • https://anarsec.guide<br>
 • https://0x00sec.org<br>
+
 <br>
 </details>
 
