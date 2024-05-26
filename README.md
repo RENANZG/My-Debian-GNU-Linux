@@ -793,9 +793,9 @@ https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password<br>
 
 https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
 
-<pre><span>$ </span><code class="lang-bash">sudo apt update -y && sudo apt upgrade -y</code></pre>
+<pre><p>$ </p><code class="lang-bash">sudo apt update -y && sudo apt upgrade -y</code></pre>
 
-<pre><code class="lang-bash"><span>$ </span>sudo apt dist-upgrade</code></pre>
+<pre><code class="lang-bash"><p>$ </p>sudo apt dist-upgrade</code></pre>
 
 <p>Note:</p>
 
@@ -2961,8 +2961,8 @@ OpenVPN + nmcli (CLI) + Autostart + Autoconnect + Kill Switch
 &nbsp; &nbsp;   password each time you want to connect, and that's
 &nbsp; &nbsp;   not a good headless setup.
 &nbsp; &nbsp; $ sudo openvpn cc00-myvpn.com_tcp.ovpn
-&nbsp; &nbsp;   Enter Auth Username: 
-&nbsp; &nbsp;   Enter Auth Password: (press TAB for no echo)
+&nbsp; &nbsp;   <samp>Enter Auth Username: </samp>
+&nbsp; &nbsp;   <samp>Enter Auth Password: (press TAB for no echo)</samp>
 &nbsp; &nbsp; • You can autoconnect with saved username and password,
 &nbsp; &nbsp;   create another file in the OpenVPN folder called, auth.txt .
 &nbsp; &nbsp;   Inside that file, put your VPN username on the first
@@ -3494,7 +3494,7 @@ https://github.com/strongswan/strongswan<br>
 $ sudo nano /etc/ipsec.secrets​
 •
 $ sudo su
-$ Password
+$ <samp>Password</samp>
 
 <code>
 sudo printf '%s\n\t' 'conn MyVPN' 'keyexchange=ikev2' 'dpdaction=clear' 'dpddelay=300' 'eap_identity=Username' 'leftauth=eap-mschapv2' 'left=%defaultroute' 'leftsourceip=%config' 'right=my.vpn.com' 'rightauth=pubkey' 'rightsubnet=0.0.0.0/0' 'rightid=%my.vpn.com' 'rightca="C = PA, O = VPN, CN = VPN Root CA"' 'type=tunnel' 'auto=add' > /etc/ipsec.conf
