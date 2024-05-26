@@ -197,7 +197,7 @@
 
 <h4>BIOS Simulators</h4>
 • Phoenix BIOS Simulator<br>
-https://www.grs-software.de/sims/bios/phoenix/pages/<br>
+https://grs-software.de/sims/bios/phoenix/pages/<br>
 • Phoenix BIOS Setup Utility Simulator - Pranx<br>
 https://pranx.com/bios<br>
 • Lenovo BIOS Simulator<br>
@@ -785,7 +785,7 @@ https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password<br>
 <summary><b>2.04 After Installing</b></summary> 
 <br>
 
-<h5>Basic Things to do After Installing Debian</h5>
+<h5>Basic Things to do After Installing Debian for Everyday Use</h5>
 
 <p>1. Update and Upgrade</h5>
 
@@ -922,13 +922,13 @@ https://github.com/ventoy/Ventoy/releases<br>
 
 <h4>Start to use Ventoy - Install Ventoy To USB Drive</h4>
 
-https://www.ventoy.net/en/doc_start.html<br>
+https://ventoy.net/en/doc_start.html<br>
 https://woshub.com/multi-iso-boot-usb-flash-ventoy<br>
 https://pureinfotech.com/ventoy-create-bootable-usb-windows-11-10<br>
 
 <h4>About Secure Boot in UEFI mode</h4>
 
-https://www.ventoy.net/en/doc_secure.html<br>
+https://ventoy.net/en/doc_secure.html<br>
 
 <h4>Ventoy Persistence Plugin</h4>
 
@@ -953,7 +953,7 @@ https://clonezilla.org//clonezilla-live-doc.php<br>
 
 <h4>How to Use Clonezilla Software</h4>
 
-https://www.wikihow.com/Use-Clonezilla<br>
+https://wikihow.com/Use-Clonezilla<br>
 
 <h4>Changing disk name</h4>
 
@@ -988,7 +988,7 @@ https://www.wikihow.com/Use-Clonezilla<br>
 ! • In Debian, if you do not install the DKMS package, you will have more work to create the X.509
 ! keys or OpenSSL keys, import the keys with sbsigntool or mokutil, sign the kernel or the kernel
 ! module file with sbsigntool or sign-file, respectively.
-! • Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be 
+! • Debian comes with signed kernels to work with your GRUB so it will most likely not be 
 ! necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from
 ! its source www.kernel.org must be signed or will not be able to load.
 ! • Ubuntu uses DKMS with signed key by default, Ubuntu creates and imports mok key during system
@@ -1114,7 +1114,7 @@ ADVANCED:
 
 https://wiki.archlinux.org/title/Kernel_parameters
 
-<p><b>Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from its source www.kernel.org must be signed or will not be able to load.</b></p> 
+<p><b>Debian comes with signed kernels to work with your GRUB so it will most likely not be necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from its source www.kernel.org must be signed or will not be able to load.</b></p> 
 
 <br>
 </details>
@@ -1126,7 +1126,7 @@ https://wiki.archlinux.org/title/Kernel_parameters
 <br>
 
 <p><b>
-Debian 11 comes with signed kernels to work with your GRUB so it will most likely not be necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from its source www.kernel.org must be signed or will not be able to load.
+Debian comes with signed kernels to work with your GRUB so it will most likely not be necessary to sign the kernel that includes Debian, however any foreign kernel or compiled from its source www.kernel.org must be signed or will not be able to load.
 </b></p>
 <p><b>
 Only a single custom certificate can be added to the kernel because the compressed size of the kernel's boot image can not increase. Do not add multiple certificates to the kernel boot image.
@@ -1636,10 +1636,10 @@ $ sudo dpkg-reconfigure broadcom-sta-dkms
 <!-- #################### -->
 
 <details>
-<summary><b>3.08 Sign WIFI</b></summary>
+<summary><b>3.08 Sign Wi-Fi</b></summary>
 <br>
 
-How to get WiFi Module signed for Secure Boot
+How to get Wi-Fi Module signed for Secure Boot
 
 Mandatory packages: <code>openssl</code>, <code>sign-file</code> and <code>mokutil</code>.
 
@@ -1652,12 +1652,12 @@ $ sudo apt install git make gcc build-essential linux-image-$(uname -r|sed 's,[^
 Brief - Sign with Sign-file
 
 <pre>
-1- Install a driver	and test without Secure Boot	
+1- Install a driver and test without Secure Boot
 2- Enable Secure Boot
-3- Generate a private and public keys		
+3- Generate a private and public keys
 5- Import
 6- Reboot and Enroll
-4- Sign the module with sign-file		
+4- Sign the module with sign-file
 </pre>
 
 1. Check if secure boot is enabled. When Secure Boot is disabled, the shimx64.efi will just directly load the real grubx64.efi bypassing all the Secure Boot steps, including loading the MOK. With the MOK not loaded, the kernel will have no way to recognize the signature on your module as valid. And with Secure Boot disabled, a signed module with an invalid signature is rejected, while unsigned modules only get a warning and a taint mark on any future oops/panic messages.
@@ -1840,50 +1840,53 @@ $ /sbin/modprobe vboxdrv
 <summary><b>3.09 Sign NVIDIA</b></summary>
 <br>
 
-https://wiki.debian.org/DontBreakDebian#Don.27t_use_GPU_manufacturer_install_scripts
-https://github.com/NVIDIA/open-gpu-kernel-modules
-https://askubuntu.com/questions/1023036/how-to-install-nvidia-driver-with-secure-boot-enabled
+https://wiki.debian.org/DontBreakDebian#Don.27t_use_GPU_manufacturer_install_scripts<br>
+https://github.com/NVIDIA/open-gpu-kernel-modules<br>
+https://askubuntu.com/questions/1023036/how-to-install-nvidia-driver-with-secure-boot-enabled<br>
 
-Download the latest driver from the NVIDIA website: https://geforce.com/drivers.
+<p>Download the latest driver from the NVIDIA website: https://geforce.com/drivers.</p>
 
-Create a new pair of private key (Nvidia.key) and public key (Nvidia.der) by running the command:
+<p>Create a new pair of private key (Nvidia.key) and public key (Nvidia.der) by running the command:</p>
 
-`openssl req -new -x509 -newkey rsa:2048 -keyout PATH_TO_PRIVATE_KEY -outform DER -out PATH_TO_PUBLIC_KEY -nodes -days 36500 -subj "/CN=Graphics Drivers"`
-Example:
-
-`openssl req -new -x509 -newkey rsa:2048 -keyout /home/itpropmn07/Nvidia.key -outform DER -out /home/itpropmn07/Nvidia.der -nodes -days 36500 -subj "/CN=Graphics Drivers"`
-
-Enroll the public key (nvidia.der) to MOK (Machine Owner Key) by entering the command:
-
-`sudo mokutil --import PATH_TO_PUBLIC_KE`
-Example:
-
-`sudo mokutil --import /home/itpropmn07/Nvidia.der`
-This command requires you to create a password for enrolling. Afterwards, reboot your computer, in the next boot, when the system asks you to enroll, you enter the password you created in this step to enroll it. Read more: https://sourceware.org/systemtap/wiki/SecureBoot
-
-For installing the NVidia driver for the first time, you need to disable the Nouveau kernel driver by entering the command:
-
-`echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf; sudo update-initramfs -u`
-
-Reboot.
-
-Install the driver by entering the command:
-
-`sudo sh ./XXXXXX.run -s --module-signing-secret-key=PATH_TO_PRIVATE_KEY --module-signing-public-key=PATH_TO_PUBLIC_KEY`
-
-where:
-
-XXXXXX: name of file installer (downloaded from NVIDIA).
-
-PATH_TO_PRIVATE_KEY: full path to private key. If you place it in your home folder, use /home/USER_NAME/ instead of ~.
-
-PATH_TO_PUBLIC_KEY: full path to public key. If you place it in your home folder, use /home/USER_NAME/ instead of ~.
+<code>openssl req -new -x509 -newkey rsa:2048 -keyout PATH_TO_PRIVATE_KEY -outform DER -out PATH_TO_PUBLIC_KEY -nodes -days 36500 -subj "/CN=Graphics Drivers"</code>
 
 Example:
 
-`sudo sh ./NVIDIA-Linux-x86_64-390.67.run -s --module-signing-secret-key=/home/itpropmn07/Nvidia.key --module-signing-public-key=/home/itpropmn07/Nvidia.der`
+<code>openssl req -new -x509 -newkey rsa:2048 -keyout /home/$USER/Nvidia.key -outform DER -out /home/$USER/Nvidia.der -nodes -days 36500 -subj "/CN=Graphics Drivers"</code>
 
-Done.
+<p>Enroll the public key (nvidia.der) to MOK (Machine Owner Key) by entering the command:</p>
+
+<code>sudo mokutil --import PATH_TO_PUBLIC_KEY</code>
+
+<p>Example:</p>
+
+<code>sudo mokutil --import /home/$USER/Nvidia.der`</code>
+
+<p>This command requires you to create a password for enrolling. Afterwards, reboot your computer, in the next boot, when the system asks you to enroll, you enter the password you created in this step to enroll it. Read more: https://sourceware.org/systemtap/wiki/SecureBoot</p>
+
+<p>For installing the NVidia driver for the first time, you need to disable the Nouveau kernel driver by entering the command:</p>
+
+<code>echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf; sudo update-initramfs -u</code>
+
+<p>Reboot.</p>
+
+<p>Install the driver by entering the command:</p>
+
+<code>sudo sh ./XXXXXX.run -s --module-signing-secret-key=PATH_TO_PRIVATE_KEY --module-signing-public-key=PATH_TO_PUBLIC_KEY</code>
+
+<p>here:</p>
+
+<p>XXXXXX: name of file installer (downloaded from NVIDIA).</p>
+
+<p>PATH_TO_PRIVATE_KEY: full path to private key. If you place it in your home folder, use /home/USER_NAME/ instead of ~.</p>
+
+<p>PATH_TO_PUBLIC_KEY: full path to public key. If you place it in your home folder, use /home/USER_NAME/ instead of ~.</p>
+
+<p>Example:</p>
+
+<code>sudo sh ./NVIDIA-Linux-x86_64-390.67.run -s --module-signing-secret-key=/home/$USER/Nvidia.key --module-signing-public-key=/home/$USER/Nvidia.der</code>
+
+<p>Done.</p>
 
 <br>
 </details> 
@@ -1895,6 +1898,8 @@ Done.
 <br>
 
 How to get VirtualBox signed for Secure Boot<br>
+
+https://wiki.debian.org/SecureBoot#MOK_-_Machine_Owner_Key<br>
 
 <br>
 </details> 
@@ -2113,10 +2118,15 @@ https://github.com/freedomofpress/dangerzone<br>
 
 https://clamav.net<br>
 https://docs.clamav.net<br>
+https://docs.clamav.net/manual/Usage<br>
 https://github.com/Cisco-Talos/clamav<br>
 https://wiki.archlinux.org/title/ClamAV<br>
 
+<p>ClamAV is malware detection toolkit, not an endpoint security suite. ClamAV does not disinfect files, It only removes them from the system or moves them to a specified location.</p>
+
 <p>"Clam AntiVirus is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. <b>Because ClamAV's main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures</b>."</p>
+
+<p>False positives happen, include --remove options for deleting any file which alerts during a scan is generally a terrible idea.</p>
 
 <h4>ClamAV (GUI)</h4>
 
@@ -2154,21 +2164,25 @@ Nice = 19<br>
 <pre>
 &nbsp; • Commands
 &nbsp; $ man clamscan
-&nbsp; • Basic command to scan all system
-&nbsp; $ sudo freshclam && sudo clamscan -v -r -i --exclude-dir="^/sys" / 
+&nbsp; • Basic command to scan all system, copy infected files and log
+&nbsp; $ mkdir /home/$USER/Virus && touch /home/$USER/Virus/Virus.txt  
+&nbsp; $ sudo freshclam && sudo clamscan -vir --copy=/home/$USER/Virus --log=/home/$USER/Virus/Virus.txt --exclude-dir="^/sys" /
+&nbsp; • Basic command to scan all system, move infected files and log
+&nbsp; $ mkdir /home/$USER/Virus && touch /home/$USER/Virus/Virus.txt  
+&nbsp; $ sudo freshclam && sudo clamscan -vir --move=/home/$USER/Virus --log=/home/$USER/Virus/Virus.txt --exclude-dir="^/sys" /
 &nbsp; • Scan file
-&nbsp; $ clamscan --verbose /file.ext
+&nbsp; $ clamscan --verbose /file.bin
 &nbsp; • Scan compressed files
 &nbsp; $ clamscan --verbose --scan-archive --alert-exceeds-max --alert-encrypted /file.zip
-&nbsp; • Scan files recursively
-&nbsp; $ clamscan --verbose --recursive --suppress-ok-results --bell /home
-&nbsp; $ clamscan -v -r -o --heuristic-alert --bell /home
-&nbsp; $ clamscan --verbose --recursive -o --bell /home --remove
-&nbsp; $ clamscan --verbose --recursive -o --bell / --exclude-dir="^/sys"
+&nbsp; • Others
+&nbsp; $ clamscan -vr --suppress-ok-results --bell /$USER/home
+&nbsp; $ clamscan -vro --heuristic-alert --copy=/home/$USER/Virus --log=/home/$USER/Virus/Virus.txt --bell /$USER/home
+&nbsp; $ clamscan -vro --bell --remove /$USER/home 
 </pre>
 
 <pre>
 &nbsp; • Debug
+&nbsp; $ sudo cat /etc/clamav/clamd.conf
 &nbsp; $ sudo nano /etc/clamav/clamd.conf
 &nbsp; $ sudo nano /etc/systemd/system/clamav-daemon.service.d/extend.conf
 &nbsp; $ sudo cat /var/log/clamav/clamav.log
@@ -2195,8 +2209,7 @@ https://rfxn.com/projects/linux-malware-detect<br>
 https://malwareblocklist.org<br>
 
 • YARA rules
-
-https://github.com/Cisco-Talos/clamav-documentation/blob/873bc5f95c1b79f94d7f55602b5e433423ba9705/src/manual/Signatures/YaraRules.md <br>
+https://github.com/Cisco-Talos/clamav-documentation/blob/873bc5f95c1b79f94d7f55602b5e433423ba9705/src/manual/Signatures/YaraRules.md<br>
 
 https://infosecinstitute.com/resources/reverse-engineering/malware-analysis-clamav-yara<br>
 
@@ -2217,6 +2230,8 @@ https://eset.com/my/home/antivirus-linux/download<br>
 <details>
 <summary><b>4.06 Updating</b></summary>
 <br>
+
+https://www.debian.org/doc/manuals/debian-handbook/sect.regular-upgrades.en.html<br>
 
 <p>Apply security updates as quickly as possible. According to 2020 reached conducted by Unit 42 at Palo Alto, approximately 80% of exploits are published faster than Common Vulnerabilities and Exposures (CVEs).</p>
 
@@ -2315,7 +2330,7 @@ https://avoidthehack.com/router-wireless-guide<br>
 <li>Keep other software up to date</li>
 </ul>
 
-<p>*These are solutions outside the military level. Forgetting wifi and using an RJ-45 to USB should be considered for home use.</p>
+<p>*These are solutions outside the military level. Forgetting Wi-Fi and using an RJ-45 to USB should be considered for home use.</p>
 
 <p>*Misconfigured DNS settings on a router may lead to the device sending DNS queries to unintended DNS servers.</p>
 
@@ -3466,8 +3481,8 @@ $ ping google.com
 <a href="https://ipx.ac/run">∙ IPX.AC DNS Leak Test</a><br>
 
 <ul>
-<li>EFF Test — https://coveryourtracks.eff.org/learn</li>
-<li>TOR Fingerprinting — https://blog.torproject.org/browser-fingerprinting-introduction-and-challenges-ahead</li>
+<li>EFF Test - https://coveryourtracks.eff.org/learn</li>
+<li>TOR Fingerprinting - https://blog.torproject.org/browser-fingerprinting-introduction-and-challenges-ahead</li>
 </ul>
 
 <p>You could test your current public IP address and compare that to the one from before with 'ipleak.net'. If they match, your VPN is not working correctly.</p>
@@ -3558,11 +3573,6 @@ https://comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-linux-
 &nbsp; &nbsp; > Password: transmission
 </pre>
 
-<h4>• Everyday TOR</h4>
-
-https://wiki.debian.org/TorBrowser<br>
-https://whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy<br>
-
 <br>
 </details>
 
@@ -3583,7 +3593,7 @@ https://whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy<br>
 
 <h4>Libre Office</h4>
 
-https://www.libreoffice.org<br>
+https://libreoffice.org<br>
 https://wiki.documentfoundation.org/Documentation/Install/Linux<br>
 
 <h5>Libre Office - Extensions</h5>
@@ -3591,17 +3601,17 @@ https://wiki.documentfoundation.org/Documentation/Install/Linux<br>
 &nbsp; &nbsp;<a href="https://languagetool.org/insights/post/product-libreoffice/">Language Tool</a><br>
 &nbsp; &nbsp;<a href="https://zotero.org/">Zotero</a><br>
 
-<h4>Libre Office - <a href="https://help.libreoffice.org/latest/en-US/text/shared/05/new_help.html?&DbPAR=SHARED&System=UNIX#helpindx">Tips and Tricks</a></h4>
+<h5>Libre Office - <a href="https://help.libreoffice.org/latest/en-US/text/shared/05/new_help.html?&DbPAR=SHARED&System=UNIX#helpindx">Tips and Tricks</a></h5>
 
-<h5>Cursor Position</h5>
+<h6>Cursor Position</h6>
 
 <p>In general, all documents open with the cursor at the start of the document.</p>
 
-<p>One exception appears when the author of a Writer text document saves and reopens a document: The cursor will be at the same position where it has been when the document was saved. This only works when the name of the author was entered in Tools - Options - LibreOffice - User Data.</p>
+<p>One exception appears when the author of a Writer text document saves and reopens a document: The cursor will be at the same position where it has been when the document was saved. This only works when the name of the author was entered in <code>Tools - Options - LibreOffice - User Data</code>.</p>
 
-<p>Press Shift+F5 to set the cursor to the last saved position.</p>
+<p>Press <code>Shift+F5</code> to set the cursor to the last saved position.</p>
 
-<h5>Version Management</h5>
+<h6>Version Management</h6>
 
 <p>The File menu contains a Versions command that enables you to save multiple versions of a document in the same file.</p>
 
@@ -3609,7 +3619,7 @@ https://wiki.documentfoundation.org/Documentation/Install/Linux<br>
 
 <p>In the dialog to open a document, you can select from a combo box which version of this document you want to open.</p>
 
-<h5>Saving Documents Automatically</h5>
+<h6>Saving Documents Automatically</h6>
 
 <p>To create a backup file every time you save a document
 Choose Tools - Options - Load/Save - General.</p>
@@ -3629,14 +3639,106 @@ Choose Tools - Options - Load/Save - General.</p>
 
 <p>This command saves the information necessary to restore the current document in case of a crash. Additionally, in case of a crash LibreOffice tries automatically to save AutoRecovery information for all open documents, if possible.</p>
 
-<h5>Zotero - Your personal research assistant</h5>
+<h4>Zotero</h4>
 
-<a href="https://zotero.org">Zotero</a> - https://zotero.org<br>
+<p>Zotero - Your personal research assistant.</p>
+
+<a href="https://zotero.org">Zotero</a><br>
+
+<a href="https://zotero.org/support">Zotero - Support</a><br>
+
+<a href="https://zotero.org/support/kb/default_translators">Zotero - Default Translators</a><br>
+
+<a href="https://zotero.org/support/kb/item_types_and_fields">Zotero - Item Types and Fields</a><br>
+
+<a href="https://zotero.org/support/kb/item_types_and_fields#citing_fields_from_extra"> Zotero - Citing Fields from "Extra"</a><a href="https://retorque.re/zotero-better-bibtex/exporting/extra-fields/"> (Exporting - Extra fields)</a><br>
+
+<table>
+<tr>
+<td> <b>Place</b> <br>
+(Publisher and Publisher Place)</td>
+<td>
+<code>publisher: Publisher</code><br>
+<code>publisher-place: Publisher Place</code>
+</td>
+<td>For Presentations, the place where the meeting was held or the presentation was made. For Conference Papers (published in a conference proceedings), use this field for the place where the proceedings was published. If separate locations are needed for the publication place and the location of the conference, leave this field blank and add Event Place and Publisher Place fields to Extra</td>
+</tr>
+<tr>
+<td> <b>Archive Place</b> </td>
+<td> <code>archive-place: Archive Place</code> </td>
+<td> The geographic location of an archive. </td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td> <b>Original Title</b> </td>
+<td> <code>original-title: Original Title </code></td>
+<td> The original title of a work (e.g., the untranslated title). </td>
+</tr>
+<tr>
+<td> <b>Original Publisher</b> </td>
+<td> <code>original-publisher: Original Publisher </code> </td>
+<td> The publisher of the original version of an item (e.g., the untranslated version). </td>
+</td>
+</tr>
+<tr>
+<td> <b>Original Publisher Place</b> </td>
+<td> <code>original-publisher-place: Original Publisher Place</code> </td>
+<td> The geographic location of the publisher of the original version of an item (e.g., the untranslated version). </td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td> <b>Issue Date, Date Decided or Enacted</b> </td>
+<td> <code>issued: Issue Date </code> </td>
+<td> The original date an item was published. Enter in ISO format (year-month-day).</td>
+</tr>
+<tr>
+<td> <b>Submitted Date or Filing Date</b> </td>
+<td> <code>submitted: Submitted</code> </td>
+<td> The date an item was submitted for publication. </td>
+</tr>
+<tr>
+<td> <b>Access Date</b> </td>
+<td> <code>Accessed</code> </td>
+<td> Date an electronic resource was accessed.</td>
+</tr>
+<tr>
+<td> <b>Event Date</b> </td>
+<td> <code>event-date: Event Date</code> </td>
+<td> The date an event took place. Enter in ISO format (year-month-day). </td>
+</tr>
+<tr>
+<td> <b>Original Date</b> </td>
+<td> <code>original-date: Original Date </code> </td>
+<td> The original date an item was published. Enter in ISO format (year-month-day). </td>
+</tr>
+</table>
+	
+<a href="https://zotero.org/groups">Zotero - Groups</a><br>
+
+<a href="https://zotero.org/support/kb/importing_standardized_formats<br>">Zotero - Importing standardized bib. formats</a><br>
+
+<p>*Importing bibliographic data: the most popular formats are BibLaTex (.bib), RIS (.ris) and MODS (.xml).</p>
+
+<h5>Juris-M (For Legal Citations)</h5>
+
+<p>Jurism is based on Zotero reference manager, to which it adds feature for handling legal and multilingual resources.</p>
+
+<p>Juris-M for heavy or frequent legal citations for US, UK and GE legal cases and legislation.</p>
+
+<p>It is possible to create proper citation for basic legal citations in Zotero, particularly if only a few such citations are needed.</p>
+
+
+<a href="https://juris-m.github.io">Juris-M</a><br>
+<a href="https://zotero.org/support/kb/legal_citations">Zotero - Legal Citations: Juris-M</a><br>
 
 <br>
 </details>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <details>
 <summary>&nbsp; Document Converter</summary>
@@ -3760,7 +3862,7 @@ https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html<
 <br>
 </details>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <details>
 <summary>&nbsp; PDF Suites</summary>
@@ -3771,7 +3873,7 @@ https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html<
 <code>$ sudo apt install -y okular</code><br>
 <code>$ sudo apt install -y okular-extra-backends</code><br>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <h4>PDF Editor</h4>
 
@@ -3781,7 +3883,22 @@ https://github.com/pdfarranger/pdfarranger<br>
 
 <code>$ sudo apt install -y pdfarranger</code><br>
 
-<!-- ######### -->
+<!-- ########## -->
+
+<h4>How to combine PDFs in CLI</h4>
+
+<code>$ sudo apt install -y ghostscript</code> (CLI)<br>
+
+<pre>
+• Command to combine
+$ gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=combined.pdf file1.pdf file2.pdf
+• Output in low resolution
+$ gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=merged.pdf mine1.pdf mine2.pdf
+</pre>
+
+
+
+<!-- ########## -->
 
 <h4>PDF Crop and Split</h4>
 
@@ -3802,7 +3919,7 @@ $ krop --go --grid=2x2 --trim --trim-use=all file.pdf
 krop --grid=2x1 --initialpage=3 --exceptions=1 --trim-use=all --trim ~/file.pdf
 </pre>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <h4>Remove PDF annotations</h4>
 
@@ -3823,7 +3940,7 @@ krop --grid=2x1 --initialpage=3 --exceptions=1 --trim-use=all --trim ~/file.pdf
 <p>*May apply some differences.</p>
 <p>*May result in larger PDF.</p>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <h4>PDF Bookmarks Creation</h4>
 
@@ -3833,7 +3950,7 @@ https://github.com/SiddharthPant/booky<br>
 <br>
 </details>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <details>
 <summary>&nbsp; PDF OCR</summary>
@@ -3971,7 +4088,7 @@ Some users may consider enabling lossy JBIG2. See: jbig2-lossy.</p>
 
 </details>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <details>
 <summary>&nbsp; PDF Optimizers</summary>
@@ -3996,6 +4113,7 @@ $ convert -monitor -crop 1000x1350+20+145 +repage -path cropped *.png
 
 <pre>
 • Commands to reduce .pdf size
+$ convert -density 300x300 -quality 100 input.pdf output.pdf
 $ convert -monitor -density 200x200 -quality 60 -compress jpeg input.pdf output.pdf
 $ convert -monitor -density 150x150 -quality 70 -compress jpeg -resize 15% input.pdf output.pdf
 $ convert -monitor -density 150x150 -compress Zip input.pdf output.pdf
@@ -4026,7 +4144,7 @@ $ pip install "pdfCropMargins" --upgrade
 $ pdf-crop-margins -v -p 0 -a -6 input.pdf
 </pre>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <h4>Ghostscript</h4>
 
@@ -4079,6 +4197,8 @@ $ gs -dNOPAUSE -dBATCH -dQUIET \
 input.pdf
 </pre>
 
+<h5>Editing Acrobat PDF</h5>
+
 <pre>
 $ gs -q -dNOPAUSE -dBATCH -dSAFER \
 -sDEVICE=pdfwrite \
@@ -4096,12 +4216,29 @@ $ gs -q -dNOPAUSE -dBATCH -dSAFER \
 input.pdf
 </pre>
 
+<pre>
+gs -q -dNOPAUSE -dBATCH -dSAFER \
+-sDEVICE=pdfwrite \
+-dCompatibilityLevel=1.3 \
+-dPDFSETTINGS=/screen \
+-dEmbedAllFonts=true \
+-dSubsetFonts=true \
+-dColorImageDownsampleType=/Bicubic \
+-dColorImageResolution=144 \
+-dGrayImageDownsampleType=/Bicubic \
+-dGrayImageResolution=144 \
+-dMonoImageDownsampleType=/Bicubic -\
+dMonoImageResolution=144 \
+-sOutputFile=output.pdf \
+input.pdf
+</pre>
+
 <sub>
 &nbsp; References
--dPDFSETTINGS=/screen — Low quality and small size at 72dpi.
--dPDFSETTINGS=/ebook — Slightly better quality but also a larger file size at 150dpi.
--dPDFSETTINGS=/prepress — High quality and large size at 300 dpi.
--dPDFSETTINGS=/default — System chooses the best output, which can create larger PDF files.
+-dPDFSETTINGS=/screen - Low quality and small size at 72dpi.
+-dPDFSETTINGS=/ebook - Slightly better quality but also a larger file size at 150dpi.
+-dPDFSETTINGS=/prepress - High quality and large size at 300 dpi.
+-dPDFSETTINGS=/default - System chooses the best output, which can create larger PDF files.
 </sub>
 
 <pre>
@@ -4129,7 +4266,7 @@ $ ps2pdf -dPDFSETTINGS=/ebook input.pdf output.pdf
 <br>
 </details>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <details>
 <summary>&nbsp; Image Editors</summary>
@@ -4153,13 +4290,13 @@ https://imagemagick.org<br>
 
 <h5>GIMP</h5>
 
-https://www.gimp.org<br>
+https://gimp.org<br>
 
 <p>"Whether you are a graphic designer, photographer, illustrator, or scientist, GIMP provides you with sophisticated tools to get your job done."</p>
 
 <code>$ sudo apt install gimp</code> (GUI)<br>
 
-<a href="https://www.youtube.com/watch?v=G_PjQAy0iiU">
+<a href="https://youtube.com/watch?v=G_PjQAy0iiU">
   <img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DG_PjQAy0iiU" alt="Learn How To Use GIMP 2 10 For Beginners" title="Learn How To Use GIMP 2 10 For Beginners"/>
 </a>
 
@@ -4169,7 +4306,7 @@ https://inkscape.org<br>
 
 <p>"Inkscape is a Free and open source vector graphics editor for GNU/Linux, Windows and macOS. It offers a rich set of features and is widely used for both artistic and technical illustrations such as cartoons, clip art, logos, typography, diagramming and flowcharting."</p>
 
-<a href="https://www.youtube.com/watch?v=mmJGpBJFBxY">
+<a href="https://youtube.com/watch?v=mmJGpBJFBxY">
   <img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DmmJGpBJFBxY" alt="Full Inkscape Beginner Course" title="Full Inkscape Beginner Course"/>
 </a>
 
@@ -4189,7 +4326,7 @@ https://imgflip.com/memegenerator<br>
 <br>
 </details>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <details>
 <summary>&nbsp; Image Convert</summary>
@@ -4535,7 +4672,7 @@ $
 <br>
 </details>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <details>
 <summary>&nbsp; Office Utilities</summary>
@@ -4593,34 +4730,26 @@ https://librewolf.net/installation/debian/<br>
 
 <h5>Extensions</h5>
 
-<ul>
-<li>
-<a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a><br>
-</li>
-<li>
-<a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a><br>
-</li>
-<li>
-<a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a><br>
-</li>
-<li>
-<a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a><br>
-</li>
-<li>
-<a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a><br>
-</li>
-<li>
-<a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a><br>
-</li>
-<li>
-<a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a><br>
-<li><a href="https://privacybadger.org">Privacy Badger is a browser extension that automatically learns to block invisible trackers</a><br>
-</li>
-</ul>
 
+<table>
+<thead>
+  <tr>
+    <th align="center">Firefox</th>
+    <th align="center">Chrome</th>
+    <th align="center">Make</th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+
+<td valign="top">
 <ul>
+
 <li>
-<a href="https://addons.mozilla.org/en-US/firefox/addon/terms-of-service-didnt-read">Terms of Service; Didn't Read</a><br>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin">Ublock Origin</a><br>
+</li>
+<li>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/languagetool">LanguageTool</a><br>
 </li>
 <li>
 <a href="https://addons.mozilla.org/en-US/firefox/addon/clearurls">ClearURLs</a><br>
@@ -4633,8 +4762,70 @@ https://librewolf.net/installation/debian/<br>
 </li>
 <li>
 <a href="https://addons.mozilla.org/en-US/firefox/addon/decentraleyes">Decentraleyes</a><br>
+</li>
+<li>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/terms-of-service-didnt-read">Terms of Service; Didn't Read</a><br>
+</li>
 </ul>
- 
+</td>
+
+<td valign="top">
+<ul>
+<li>
+<a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a><br>
+</li>
+<li>
+<a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm/related?hl=en-US">Ublock Origin</a><br>
+</li>
+<li>
+<a href="https://chromewebstore.google.com/detail/ai-grammar-checker-paraph/oldceeleldhonbafppcapldpdifcinji?hl=en-US">LanguageTool</a><br>
+</li>
+<li>
+<a href="https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc?hl=en-US">XBrowserSync</a><br>
+</li>
+<li>
+<a href="https://chrome.google.com/webstore/detail/reader-view/ecabifbgmdmgdllomnfinbmaellmclnh/related?hl=en-US">Reader View</a><br>
+</li>
+<li>
+<a href="https://chrome.google.com/webstore/detail/myjdownloader-browser-ext/fbcohnmimjicjdomonkcbcpbpnhggkip">jDownloader</a><br>
+</li>
+<li>
+<a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a><br>
+<li><a href="https://privacybadger.org">Privacy Badger is a browser extension that automatically learns to block invisible trackers</a><br>
+</li>
+</ul>
+</td>
+
+<td valign="top">
+<ul>
+<li>
+<a href="https://github.com/j3nda/speed-dial-chrome">Simple Speed Dial</a><br>
+</li>
+<li>
+<a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a><br>
+</li>
+</td>
+</ul>
+
+</tr>
+</tbody>
+</table>
+
+
+<h4>Everyday TOR</h4>
+
+<h5>torbrowser-launcher [contrib]</h5>
+https://wiki.debian.org/TorBrowser<br>
+https://whonix.org/wiki/Install_Tor_Browser_Outside_of_Whonix#Easy<br>
+
+<code>$ sudo apt install torbrowser-launcher</code><br>
+<code>$ torbrowser-launcher</code><br>
+<code>$ torbrowser-launcher --settings</code><br>
+
+<h5>AppImage</h5>
+
+https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/6.SOFTWARES/6.01_Softwares_AppImage/Tor-Browser_Installer.sh<br>
+
 <h4>URL shorteners</h4>
 
 https://kutt.it<br>
@@ -4867,7 +5058,7 @@ geometry=50%x96%
 <br>
 </details>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <details>
 <summary>6.07 Video Editors</summary>
@@ -4890,7 +5081,16 @@ geometry=50%x96%
 <li></li>
 </ul>
 
-<h5>yt-dlp</h5>
+<!-- ##### -->
+
+<h5>OBS Studio</h5>
+<code>$ sudo apt install </code> (GUI)<br>
+
+<!-- ##### -->
+
+<h5>YT-DLP - A feature-rich command-line audio/video downloader</h5>
+
+https://github.com/yt-dlp/yt-dlp<br> 
 
 <code>$ sudo apt install yt-dlp</code> (CLI)<br> 
 
@@ -4912,6 +5112,8 @@ $ yt-dlp --write-description --write-info-json --write-annotations --write-sub -
 • Download audio-only
 $ yt-dlp -x --audio-format mp3 <URL>
 </pre>
+
+<!-- ##### -->
 
 <h5>FFmpeg editor</h5>
 
@@ -4953,6 +5155,8 @@ $ ffmpeg -i input.mp4 -c:v libx265 -preset veryfast -tag:v hvc1 -vf format=yuv42
 $ ffmpeg -i input.mp4 -c:v libx265 -preset veryfast -tag:v hvc1 -b:v new_bitrate -vf scale=new_width:new_height,format=yuv420p -c:a copy output.mp4
 </pre>
 
+<!-- ##### -->
+
 <h5>Bulk compress MP4</h5>
 
 <p>Bulk compress MP4 with ffmpeg</p>
@@ -4963,7 +5167,6 @@ $ for file in *.mp4; do ffmpeg -i "$file" -vf "scale=-2:240" "Output-${file%.*}.
 </pre>
 
 <p>Bulk compress script</p>
-
 
 <pre>
 #!/bin/bash
@@ -5024,6 +5227,7 @@ do
 done
 </pre>
 
+<!-- ##### -->
 
 <h5>HTML code to add video in GitHub README.md</h5>
 
@@ -5035,7 +5239,7 @@ done
 <br>
 </details>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <details>
 <summary><b>6.08 Audio Editors</b></summary>
@@ -5044,6 +5248,14 @@ done
 <h4>Audacity</h4>
 
 <code>$ sudo apt install audacity</code> (GUI)<br>
+
+<a href="https://youtube.com/watch?v=fSmmaAD8XD8">
+  <img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DfSmmaAD8XD8" alt="Audacity Step-by-Step Tutorial for Beginners (2024)" title="Audacity Step-by-Step Tutorial for Beginners (2024)"/>
+</a>
+
+<a href="https://youtube.com/watch?v=bsZOHcDDKeQ">
+  <img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DbsZOHcDDKeQ" alt="How to make voice sound better with Audacity (2024)" title="How to make voice sound better with Audacity (2024)"/>
+</a>
 
 <br>
 </details>
@@ -5060,7 +5272,7 @@ done
 <code>$ sudo apt install -y birdtray</code><br>
 
 
-<h4>6.05.01 Encrypted Emails</h4>
+<h4>Encrypted Emails</h4>
 
 https://emailselfdefense.fsf.org/en/<br>
 https://emailselfdefense.fsf.org/en/workshops.html<br>
@@ -5071,13 +5283,13 @@ https://wiki.archlinux.org/title/Paperkey<br>
 https://keys.openpgp.org/about/usage<br>
 https://efail.de<br>
 
-<p><strong>Note 1: </strong>You cannot recover the secret key from the public key and the passphrase. You cannot recover your secret gpg key without a backup.</p>
+<p>Note 1: You cannot recover the secret key from the public key and the passphrase. You cannot recover your secret gpg key without a backup.</p>
 
-<p><strong>Note 2: </strong>Create an expiration date for security reasons.</p>
+<p>Note 2: Create an expiration date for security reasons.</p>
 
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
-<p><strong>Note 3: </strong>Create an .</p>
+<p>Note 3: Create an .</p>
 
 <pre>
 &nbsp; Commands for gnupg (GnuPG - GNU Privacy Guard) 
@@ -5108,7 +5320,9 @@ https://efail.de<br>
 &nbsp; &nbsp; gpg --keyserver site.com --send-keys (key id)
 </pre>
 
+<pre>
 gpg --list-secret-keys --verbose --with-subkey-fingerprints
+</pre>
 
 <br>
 </details>
@@ -5563,7 +5777,7 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 
 </details>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <details>
 <summary><b>6.14 Files and Folders</b></summary>
@@ -5573,17 +5787,60 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 
 <code>$ sudo apt install grsync</code> (GUI)<br>
 
-<!-- ######### -->
+<!-- ##### -->
 
 <h4>Duplicated files</h4>
+
+(*by name, size, hash)
 
 <h5>dupeGuru</h5>
 
 <code>$ sudo apt install dupeguru</code> (GUI)<br>
 
+<h5>fdupes (slow)</h5>
+
+<code>$ sudo apt install fdupes</code> (CLI)<br>
+
+<pre>
+• Command
+$ fdupes -r dir
+$ fdupes -r -S .
+</pre>
+
+<h5>md5sum</h5>
+
+https://github.com/pixelb/fslint
+
+<code>$ sudo apt install coreutils</code> (CLI) (BUILT-IN)<br>
+
+<pre>
+• For small files based on hash
+$ find . -type f -print0 | xargs -0 md5sum | sort | uniq -w32 --all-repeated=separate
+• For large ones based on size
+$ find . -type f -size {}c -print0 | xargs -0 md5sum | sort | uniq -w32 --all-repeated=separate
+• For large ones based in based on size first and then hash
+$ find . -not -empty -type f -printf "%s\n" | sort -rn | uniq -d |\
+xargs -I{} -n1 find . -type f -size {}c -print0 | xargs -0 md5sum |\
+sort | uniq -w32 --all-repeated=separate
+</pre>
+
+
+<!-- ##### -->
+
+<h4>Visualize folder tree</h4>
+
+<code>$ sudo apt install tree</code>
+
+<pre>
+• List directories only
+$ tree -d
+• Control the depth of the tree  
+$ tree -d -L 2 .
+</pre>
+
 </details>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <details>
 <summary><b>6.15 Renamers</b></summary>
@@ -5644,29 +5901,29 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 	</li>
 </ul>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <h5>Online regex tools</h5>
 
-• Dencode — https://dencode.com<br>
+• Dencode - https://dencode.com<br>
 • Commonly Used Software Development Tools - https://ctool.dev</br>
 • Text Fixer - https://textfixer.com</br>
 • SS64 Syntax Utils - https://ss64.com</br>
 • Tools4noobs - https://tools4noobs.com</br>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <h5>KRename</h5>
 
 <code>$ sudo apt install krename</code> (GUI)<br>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <h5>GPRename</h5>
 
 <code>$ sudo apt install gprename</code> (GUI)<br>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <h5>Case Styles</h5>
 
@@ -5676,9 +5933,9 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 <code>snake_case</code>
 <code>UPPER_CASE_(SNAKE_CASE)</code>
 
-<!-- ######### -->
+<!-- ########## -->
 
-<h5>Built-in Debian/GNU rename commands</h5>
+<h5>Bash's built-in commands to rename (Debian/GNU Linux)</h5>
 
 <pre>
 &nbsp; • Commands with move 
@@ -5706,7 +5963,7 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 &nbsp; &nbsp; $ 
 </pre>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <h5>Rename</h5>
 
@@ -5739,7 +5996,7 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 &nbsp; &nbsp; $ rename 's/ /_/g' *
 </pre>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <h5>Special Symbols</h5>
 
@@ -5789,6 +6046,9 @@ https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample<br>
 </tbody>
 </table>
 
+<!-- ########## -->
+
+<br>
 </details>
 
 <!-- #################### -->
@@ -5898,6 +6158,8 @@ https://clonezilla.org//clonezilla-live-doc.php<br>
 
 https://debian.org/doc/manuals/securing-debian-manual/ch04s17.en.html#check-integ<br>
 
+<!-- ########## -->
+
 <br>
 </details>
 
@@ -5934,83 +6196,84 @@ https://overte.org<br>
 
 <h4>Utilities</h4>
 
-• Message Header Analyzer — https://mha.azurewebsites.net<br>
-• Message Header Analyzer — https://github.com/microsoft/MHA<br>
-• PhishTank — https://phishtank.org<br>
-• Simple Email Reputation — https://emailrep.io<br>
-• Whois — https://iana.org/whois<br>
-• ViewDNS — https://viewdns.info<br>
-• WhoisMyDNS — https://whoismydns.com<br>
-• NSLookup — https://nslookup.io<br>
-• My-Addr — https://my-addr.com<br>
-• Malpedia — https://malpedia.caad.fkie.fraunhofer.de<br>
-• CVE Details — https://cvedetails.com<br>
-• Exploit Database — https://exploit-db.com<br>
-• FileInfo — https://fileinfo.co<br>
-• xCyclopedia — https://strontic.github.io/xcyclopedia<br>
-• The Windows Binary Index — https://winbindex.m417z.com<br>
-• Palo Alto Applipedia — https://applipedia.paloaltonetworks.com<br>
-• Windows Securitiy Logs — https://ultimatewindowssecurity.com/securitylog/encyclopedia<br>
+• Message Header Analyzer - https://mha.azurewebsites.net<br>
+• Message Header Analyzer - https://github.com/microsoft/MHA<br>
+• PhishTank - https://phishtank.org<br>
+• Simple Email Reputation - https://emailrep.io<br>
+• Whois - https://iana.org/whois<br>
+• ViewDNS - https://viewdns.info<br>
+• WhoisMyDNS - https://whoismydns.com<br>
+• NSLookup - https://nslookup.io<br>
+• My-Addr - https://my-addr.com<br>
+• Malpedia - https://malpedia.caad.fkie.fraunhofer.de<br>
+• CVE Details - https://cvedetails.com<br>
+• Exploit Database - https://exploit-db.com<br>
+• FileInfo - https://fileinfo.co<br>
+• xCyclopedia - https://strontic.github.io/xcyclopedia<br>
+• The Windows Binary Index - https://winbindex.m417z.com<br>
+• Palo Alto Applipedia - https://applipedia.paloaltonetworks.com<br>
+• Windows Securitiy Logs - https://ultimatewindowssecurity.com/securitylog/encyclopedia<br>
 • Internet Archive (WayBackMachine) - https://web.archive.org<br>
-• Archive web content — https://archive.ph<br>
-• Internet Archive — https://archive.org<br>
-• HTTrack — https://httrack.com<br>
-• IPVOID — https://ipvoid.com<br>
-• AbuseIPDB — https://abuseipdb.com<br>
-• Grabify IP Logger — https://grabify.link/<br>
-• IP Logger — https://iplogger.org<br>
-• IP Tracker — https://iplogger.org/ip-tracker<br>
-• IP Location Tracker — https://iplogger.org/location-tracker<br>
-• IP Location — https://iplocation.net<br>
-• URL Checker —  https://iplogger.org/url_checker<br>
-• MAC Address Lookup — https://iplogger.org/mac-checker<br>
-• MAC Vendor — https://macvendors.com<br>
+• Archive web content - https://archive.ph<br>
+• Internet Archive - https://archive.org<br>
+• HTTrack - https://httrack.com<br>
+• IPVOID - https://ipvoid.com<br>
+• AbuseIPDB - https://abuseipdb.com<br>
+• Grabify IP Logger - https://grabify.link/<br>
+• IP Logger - https://iplogger.org<br>
+• IP Tracker - https://iplogger.org/ip-tracker<br>
+• IP Location Tracker - https://iplogger.org/location-tracker<br>
+• IP Location - https://iplocation.net<br>
+• URL Checker -  https://iplogger.org/url_checker<br>
+• MAC Address Lookup - https://iplogger.org/mac-checker<br>
+• MAC Vendor - https://macvendors.com<br>
 • IP API<br>
-&emsp; — ip-api — https://ip-api.com<br>
-&emsp; — ipify — https://ipify.org<br>
-&emsp; — ipapi — https://ipapi.co<br>
-&emsp; — vpnapi — https://vpnapi.io<br>
-&emsp; — ipapi — https://ipapi.com<br>
-• The ZMap Project — https://zmap.io<br>
-• WiGLE — https://wigle.net<br>
-• urlscan.io — https://urlscan.io<br>
-• Virus Total — https://virustotal.com<br>
-• Hybrid Analysis — https://hybrid-analysis.com<br>
-• Cuckoo Sandbox — https://cuckoo.cert.ee<br>
-• AlienVault OTX — https://otx.alienvault.com<br>
-• IBM X-Force Exchange — https://exchange.xforce.ibmcloud.com<br>
-• Cisco Talos — https://talosintelligence.com/reputation_center<br>
-• Maltiverse — https://maltiverse.com/collection<br>
-• GreyNoise — https://greynoise.io<br>
-• SANS Internet Storm Center — https://isc.sans.edu<br>
-• Intelligence X — https://intelx.io<br>
-• MetaDefender Cloud — https://metadefender.opswat.com<br>
-• RiskIQ Community Edition — https://community.riskiq.com/home<br>
-• Pulsedive — https://pulsedive.com<br>
-• Valhalla YARA Rules — https://valhalla.nextron-systems.com<br>
-• ANY.RUN — https://any.run<br>
-• Binvis — https://binvis.io<br>
-• JoeSandbox — https://joesandbox.com<br>
+&emsp; - ip-api - https://ip-api.com<br>
+&emsp; - ipify - https://ipify.org<br>
+&emsp; - ipapi - https://ipapi.co<br>
+&emsp; - vpnapi - https://vpnapi.io<br>
+&emsp; - ipapi - https://ipapi.com<br>
+• The ZMap Project - https://zmap.io<br>
+• WiGLE - https://wigle.net<br>
+• urlscan.io - https://urlscan.io<br>
+• Virus Total - https://virustotal.com<br>
+• Hybrid Analysis - https://hybrid-analysis.com<br>
+• Cuckoo Sandbox - https://cuckoo.cert.ee<br>
+• AlienVault OTX - https://otx.alienvault.com<br>
+• IBM X-Force Exchange - https://exchange.xforce.ibmcloud.com<br>
+• Cisco Talos - https://talosintelligence.com/reputation_center<br>
+• Maltiverse - https://maltiverse.com/collection<br>
+• GreyNoise - https://greynoise.io<br>
+• SANS Internet Storm Center - https://isc.sans.edu<br>
+• Intelligence X - https://intelx.io<br>
+• MetaDefender Cloud - https://metadefender.opswat.com<br>
+• RiskIQ Community Edition - https://community.riskiq.com/home<br>
+• Pulsedive - https://pulsedive.com<br>
+• Valhalla YARA Rules - https://valhalla.nextron-systems.com<br>
+• ANY.RUN - https://any.run<br>
+• Binvis - https://binvis.io<br>
+• JoeSandbox - https://joesandbox.com<br>
 • Verexif - https://verexif.com/en/<br>
-• Reverse Shell Generator — https://revshells.com<br>
-• Rainbow Tables (Hashes) — https://hashes.com/en/decrypt/hash<br>
-• File Signatures ("Magic Numbers") — https://en.wikipedia.org/wiki/Magic_number_(programming)<br> 
-• List of File Signatures — https://en.wikipedia.org/wiki/List_of_file_signatures<br>
-• CyberChef — https://gchq.github.io/CyberChef<br>
-• explainshell — https://explainshell.com<br>
-• Epoch Converter — https://epochconverter.com<br>
+• Reverse Shell Generator - https://revshells.com<br>
+• Rainbow Tables (Hashes) - https://hashes.com/en/decrypt/hash<br>
+• File Signatures ("Magic Numbers") - https://en.wikipedia.org/wiki/Magic_number_(programming)<br> 
+• List of File Signatures - https://en.wikipedia.org/wiki/List_of_file_signatures<br>
+• CyberChef - https://gchq.github.io/CyberChef<br>
+• explainshell - https://explainshell.com<br>
+• Epoch Converter - https://epochconverter.com<br>
 • Regex - https://regex-generator.olafneumann.org</br>
-• DeHashed — https://dehashed.com<br>
-• Dencode — https://dencode.com<br>
+• DeHashed - https://dehashed.com<br>
+• Dencode - https://dencode.com<br>
 • Commonly Used Software Development Tools - https://ctool.dev</br>
 • Text Fixer - https://textfixer.com</br>
 • SS64 Syntax Utils - https://ss64.com</br>
 • Tools4noobs - https://tools4noobs.com</br>
 • Text to ASCII Art Generator - https://patorjk.com/software/taag</br>
-• Have I Been Pwned — https://haveibeenpwned.com<br>
-• Name OSINT — https://namechk.com<br>
+• Have I Been Pwned - https://haveibeenpwned.com<br>
+• Name OSINT - https://namechk.com<br>
 • Breach Directory - https://breachdirectory.org<br>
 • MD5 Decrypt - https://md5decrypt.net/en/Sha1<br>
+• DeepL - https://deepl.com/translator<br>
 
 <br>
 </details>
@@ -6027,13 +6290,15 @@ https://store.steampowered.com/steamos<br>
 
 https://batocera.org<br>
 
+<!-- ########## -->
+
 <br>
 </details>
 
 <!-- #################### -->
 
 <details>
-<summary><b>6.20 Tips</b></summary>
+<summary><b>6.20 Tips and Tricks</b></summary>
 <br>
 
 <h4>Visualize folder tree</h4>
@@ -6096,9 +6361,11 @@ CTRL + C
 
 <pre>
 $ df -h
-$ df -h ~/.cache
-$ sudo df -h /mnt
-$ find ~/.cache -xdev -type f -size +1G
+$ df -h /home/$USER/Downloads
+$ du -h ~/Downloads | sort -rh | head -n 10
+$ find ~/Downloads -type f -size +3G -exec du -h {} + | sort -rh
+$ find /home/$USER/Downloads -xdev -type f -size +1G
+$ find . -size +1M  -printf "%p \t%k kb\n" | sort -k2n
 </pre>
 
 <!-- ########## -->
@@ -6231,6 +6498,69 @@ For example, to use <code>nano</code>, you would run:
 </ol>
 
 <p><a href="https://unix.stackexchange.com/questions/4408/how-to-set-visudo-to-use-a-different-editor-than-the-default-on-fedora">Reference: https://unix.stackexchange.com/questions/4408/how-to-set-visudo-to-use-a-different-editor-than-the-default-on-fedora</a></p>
+
+<!-- ########## -->
+
+<h4>Test if a bash shell built-in command or external program package</h4>
+
+http://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html
+https://www.gnu.org/software/bash/manual/html_node/Shell-Builtin-Commands.html<br>
+http://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html#tag_02_04<br>
+https://en.wikipedia.org/wiki/POSIX<br>
+https://packages.debian.org/stable<br>
+http://www.gsp.com/cgi-bin/man.cgi?section=1&topic=zshbuiltins<br>
+
+<pre>
+• Use type command
+$ type -t cd
+$ type -t ls
+$ type -t test
+$ type -t echo
+$ type -t apt
+$ type -t grep
+$ type -t for
+• Use builtin command 
+$ builtin cd
+$ builtin ls
+$ builtin test
+$ builtin echo
+$ builtin apt
+$ builtin grep
+$ builtin for
+• You can use the builtin command enable to show the list of builtin commands and their activation state
+$ enable -a
+</pre>
+
+<p>Why use the built-in command? It does not depend on granting permissions to install packages, work on reduced sets like linux embedded hardwares (IoTs), reduces the attack surface and has better performance.</p>
+
+<!-- ########## -->
+
+<h4>Changing terminal command output language</h4>
+
+<pre>
+• For just a single command, from native language to english 
+$ LC_ALL=C man ls
+$ LC_ALL=C sudo apt update
+</pre>
+
+<!-- ########## -->
+
+<h4>Grep - Global regular expression search</h4>
+
+<pre>
+• Commands
+$ man find | grep -A 4 -- '-size'
+• 
+$ man find | grep -e '-size'
+• 
+$ 
+• 
+$ 
+• 
+$ 
+</pre>
+
+<!-- ########## -->
 
 <br>
 </details>
@@ -7188,21 +7518,26 @@ https://epson.com/Support/wa00821<br>
 <summary><b>9.10 Keyboard</b></summary>
 <br>
 
+https://pubs.opengroup.org/onlinepubs/7908799/xbd/envvar.html#tag_002_002<br>
+
 <h4>Keyboard debug</h4>
+
+<code>$ locale</code><br>
+<code>$ locale -a</code><br>
+
+<h4>Reset Layout</h4>
 
 <code>$ sudo dpkg-reconfigure keyboard-configuration</code><br>
 <code>$ sudo service keyboard-setup restart</code><br>
 <code>$ sudo update-initramfs -u</code><br>
 
-<h5>∙ Layout</h5>
+<h4>Accents not working</h4>
+
+<p>Can't type accented letters in certain programs.</p>
 
 <code>$ </code><br>
 
-<h5>∙ Remap Apple Magic Keyboard</h5>
-
-<code>$ </code><br>
-
-<h5>∙ Assign Home and End to Fn + Arrows</h5>
+<h4>Assign Home and End to Fn + Arrows</h4>
 
 https://superuser.com/questions/428945/defining-keyboard-shortcuts-involving-the-fn-key<br>
 
@@ -7210,14 +7545,23 @@ https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows<br>
 
 <code>$ </code><br>
 
+<h4>Remap Apple Magic Keyboard</h4>
+
+https://github.com/dongjinleekr/hid-apple-numberless-ko<br>
+https://github.com/isakhauge/nor-apple-keyboard-xmodmap<br>
+
 <br>
-</details>
+</details> 
 
 <!-- #################### -->
 
 <details>
 <summary><b>9.11 Locales and Time/Date</b></summary>
 <br>
+
+https://man7.org/linux/man-pages/man1/locale.1.html<br>
+https://linuxfromscratch.org/lfs/view/stable-systemd/chapter09/locale.html<br>
+https://pubs.opengroup.org/onlinepubs/7908799/xbd/envvar.html#tag_002_002<br>
 
 <h3>Locales</h3>
 
@@ -7246,6 +7590,54 @@ In /etc/locale.gen, uncommenting the line:
 en_US.UTF-8 UTF-8 then running:
 locale-gen
 </pre>
+
+<h4>Switch terminal command output</h4>
+
+UNDER TEST! NOT FULL TESTED!
+
+http://manpages.ubuntu.com/manpages/trusty/man7/locale.7.html<br>
+
+</pre>
+• Defitenelly change output language from native language to english
+$ env
+$ env | egrep -e 'LC_ALL|LANG'
+$ cat ~/.bashrc
+$ cat ~/.bash_profile
+$ LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LANGUAGE=en_US.UTF-8 $SHELL
+</pre>
+
+<p>Bash function for terminal</p>
+
+<p>Switching between DE and EN locales. Put it in your ~/.bashrc (or ~/.bash_profile).</p>
+
+<p>Call it with <code>_configure_locale</code> EN to switch to English.</p>
+
+<pre>
+function _configure_locale() { # [profile]
+    local profile=${1:-EN}
+    case ${profile} in
+      DE|DE_DE|de_DE)
+          LC_ALL="de_DE.UTF-8"
+          LANG="de_DE.UTF-8"
+          LANGUAGE="de_DE:de:en_US:en"
+          ;;
+      EN|EN_US|en|en_US)
+          LC_ALL="en_US.UTF-8"
+          LANG="en_US.UTF-8"
+          LANGUAGE="en_US:en"
+          ;;
+      *)
+          echo "ALERT" "${FUNCNAME}: unknown profile '${profile}'"
+          ;;
+      esac
+      LC_PAPER="de_DE.UTF-8"; # independent from locale
+      LESSCHARSET="utf-8";    # independent from locale
+      MM_CHARSET="utf-8"      # independent from locale
+      echo "locale settings" "${LANG}";
+      export LC_ALL LANG LANGUAGE LC_PAPER LESSCHARSET MM_CHARSET
+}
+</pre>
+
 
 <h3>Time and Date</h3>
 
@@ -7319,7 +7711,6 @@ locale-gen
 
 <p>Instead you can try to download something on the phone. This is to find out if it's an issue VPN server/software or with your ISP line as a whole. It's possible for your ISP to only throttle the connection to the VPN server and leave the rest alone.</p>
 
-
 <h4>Problem 2</h4>
 
 <code>$ sudo </code><br>
@@ -7336,7 +7727,7 @@ locale-gen
 https://wiki.debian.org/SSDOptimization<br>
 https://wiki.archlinux.org/title/Solid_state_drive<br>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <h4>Disk managers</h4>
 
@@ -7348,7 +7739,7 @@ https://wiki.archlinux.org/title/Solid_state_drive<br>
 
 <code>$ sudo apt install gnome-disk-utility</code><br>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <h4>Disk manager with LVM support</h4>
 
@@ -7356,7 +7747,7 @@ https://wiki.archlinux.org/title/Solid_state_drive<br>
 
 <code>$ sudo apt install partitionmanager</code><br>
 
-<!-- ######### -->
+<!-- ########## -->
 
 <h4>Disk debug</h4>
 
@@ -7441,10 +7832,20 @@ https://cgsecurity.org/wiki/TestDisk<br>
 
 <h4>Links</h4>
 
+https://creativecommons.org<br>
 https://fsf.org<br>
+https://fsfe.org<br>
 https://gnu.org<br>
-https://opensource.com<br>
+https://iec.ch/cyber-security<br>
+https://iso.org/standards.html<br>
 https://linuxfoundation.org<br>
+https://linuxfromscratch.org<br>
+https://man7.org<br>
+https://nist.gov/standards<br>
+https://opengroup.org<br>
+https://opensource.com<br>
+https://opensource.org<br>
+https://todogroup.org<br>
 
 <h4>YouTube Links</h4>
 
@@ -7466,13 +7867,14 @@ https://blog.carsoncheng.ca<br>
 https://dwarmstrong.org<br>
 https://fabianlee.org<br>
 https://itsfoss.com<br>
+https://lwn.net<br>
 https://linux-tips.us<br>
-https://linuxconfig.org<br>
 https://linuxcnf.com<br>
+https://linuxconfig.org<br>
+https://linuxhandbook.com<br>
 https://linuxiac.com<br>
 https://linuxinsider.com<br>
-https://linuxhandbook.com<br>
-https://linuxsecurity.com<br>q
+https://linuxsecurity.com<br>
 https://ostechnix.com<br>
 https://programmerall.com<br>
 https://slant.co<br>
@@ -7482,11 +7884,18 @@ https://vitux.com<br>
 
 <h4>Others</h4>
 
+• chttps://en.wikiversity.org/wiki/Open_Educational_Resources/Open_Courses<br>
+• https://en.wikiversity.org/wiki/Open_Educational_Resources/Open_Textbooks<br>
+• https://freecomputerbooks.com<br>
+• http://www.freetechbooks.com<br>
+• https://www.ibiblio.org/kuphaldt/electricCircuits<br>
+• https://www.electronics-tutorials.ws<br>
 • https://riptutorial.com/ebook<br>
 • https://shellcheck.net<br>
 • https://shellscript.sh<br>
 • https://shellhacks.com<br>
 • https://explainshell.com<br>
+• https://regular-expressions.info<br>
 • https://notrace.how<br>
 • https://anarsec.guide<br>
 • https://0x00sec.org<br>
