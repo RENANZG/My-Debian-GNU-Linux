@@ -644,7 +644,7 @@ KVM, Kernel-based Virtual Machine, is a hypervisor built into the Linux kernel. 
 The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a type 1 hypervisor, it is able to run on bare metal, while QEMU is a type 2 hypervisor, it runs on top of the operating system. QEMU will utilize KVM in order to utilize the machine’s physical resources for the virtual machines. In brief, QEMU uses emulation; KVM uses processor extensions (HVM) for virtualization.
 </pre>
 
- <img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/8.SYSADMIN/8.03_Containerization_and_Orchestration/QEMU-KVM/QEMU-KVM_Chart.png"/>
+ <img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/6.SYSADMIN/6.05_VMs_and_Containers/QEMU-KVM/QEMU-KVM_Chart.png"/>
 
 <h5>Using QEMU/KVM - "Kernel-based Virtual Machine"</h5>
 https://wiki.debian.org/KVM<br>
@@ -685,7 +685,7 @@ https://github.com/linuxdabbler/debian-install-scripts<br>
 <h5>&nbsp;File system: EXT4, XFS, BTRFS AND ZFS</h5>
 
 <div id="table1" align="left">
-<img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/.data/1.INSTALLATION/2.08_Others/file_system.png"/>
+<img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/1.INSTALLATION/2.08_Others/file_system.png"/>
 </div>
 
 <br>
@@ -2381,15 +2381,15 @@ https://avoidthehack.com/router-wireless-guide<br>
 &nbsp; &nbsp; $ nmcli connection show
 &nbsp; &nbsp; $ nmcli connection reload
 &nbsp; &nbsp; • Avtivating MAC randomization
-nmcli connection modify NAME 802-11-wireless.mac-address-randomization always
+&nbsp; &nbsp; $ nmcli connection modify NAME 802-11-wireless.mac-address-randomization always
 </pre>
 
 <pre>
 &nbsp; Config files
 &nbsp; &nbsp; $ sudo ls /etc/NetworkManager/
 &nbsp; &nbsp; $ sudo ls /etc/NetworkManager/system-connections/
-&nbsp; &nbsp; $ sudo nano /etc/NetworkManager/NetworkManager.conf/mywifiname<br>
-&nbsp; &nbsp; $ sudo nano /etc/NetworkManager/NetworkManager.conf<br>
+&nbsp; &nbsp; $ sudo nano /etc/NetworkManager/NetworkManager.conf/mywifiname
+&nbsp; &nbsp; $ sudo nano /etc/NetworkManager/NetworkManager.conf
 </pre>
 
 <h5>Connman</h5>
@@ -2415,18 +2415,112 @@ nmcli connection modify NAME 802-11-wireless.mac-address-randomization always
 
 https://unix.stackexchange.com/questions/253030/how-to-setup-network-without-wicd-or-networkmanager <br>
 
+<p>I had problems with network manager on ubuntu , so i set up static networking. You can follow these steps and it will work ( i configured only wlan0 because i use wireless , you just need to skip the wireless related things in it)</p>
+
+<p>Show your interfaces:</p>
+
+<pre><code> $ ip a show
+</code></pre>
+
+<p>Note the default Ethernet and wifi interfaces:</p>
+
+<p>It looks like our Ethernet port is eth0. Our WiFi radio is wlan0. Want to make this briefer?</p>
+
 <pre>
-&nbsp; Commands
-&nbsp; &nbsp; • Interfaces
-&nbsp; &nbsp; $ ip a show
-&nbsp; &nbsp; • Gateway
-&nbsp; &nbsp; $ sudo route -n
-&nbsp; &nbsp; • 
-&nbsp; &nbsp; $ 
-&nbsp; &nbsp; $ 
-&nbsp; &nbsp; $ 
+<code>$ ip a show | awk  '/^[0-9]: /{print $2}'</code>
 </pre>
 
+<p>The output of this command will look something like this:</p>
+
+<pre>
+<code>
+lo:
+eth0:
+wlan0:
+</code>
+</pre>
+
+<p>Your gateway IP address is found with:</p>
+
+<pre>
+<code>$ sudo route -n</code>
+</pre>
+
+<p>It provides access to destination 0.0.0.0 (everything). In the below image it is 192.168.0.1, which is perfectly nominal.</p>
+
+<p>$ sudo route-n
+
+Let’s do a bit of easy configuration in our /etc/networking/interfaces file. The format of this file is not difficult to put together from the man page, but really, you should search for examples first.
+interfaces
+Plug in your Ethernet port.</p>
+
+<p>Basically, we’re just adding DHCP entries for our interfaces. Above you’ll see a route to another network that appears when I get a DHCP lease on my Ethernet port. Next, add this:</p>
+
+<pre><code>auto lo
+iface lo inet loopback
+auto eth0
+iface eth0 inet dhcp
+auto wlan0
+iface wlan0 inet dhcp
+</code></pre>
+
+<p>Next, enable and start the networking service:</p>
+
+<pre><code>sudo update-rc.d networking enable
+sudo /etc/init.d/networking start
+</code></pre>
+
+<p>Let’s make sure this works, by resetting the port with these commands:</p>
+
+<pre>
+<code>sudo ifdown eth0
+sudo ip a flush eth0
+
+    sudo ifup eth0
+</code>
+</pre>
+
+<p>This downs the interface, flushes the address assignment to it, and then brings it up. Test it out by pinging your gateway IP: ping 192.168.0.1. If you don’t get a response, your interface is not connected or your made a typo.</p>
+
+<p>Let’s “do some WiFi” next! We want to make an /etc/wpa_supplicant.conf file. Consider mine:</p>
+
+<pre>
+<code>network={
+ssid="CenturyLink7851"
+scan_ssid=1
+key_mgmt=WPA-PSK
+psk="4f-------------ac"
+}
+</code>
+</pre>
+
+<p>Now we can reset the WiFi interface and put this to work:</p>
+
+<pre>
+<code>sudo ifdown wlan0
+
+sudo ip a flush wlan0
+
+    sudo ifup wlan0
+
+sudo wpa_supplicant -Dnl80211 -c /root/wpa_supplicant.conf -iwlan0 -B
+
+sudo dhclient wlan0
+</code>
+</pre>
+
+<p>That should do it. Use a ping to find out, and do it explicitly from wlan0, so it gets it’s address first:</p>
+
+<pre>
+<code>$ ip a show wlan0 | grep "inet"
+
+Presumably dhclient updated your /etc/resolv.conf, so you can also do a:
+
+ping -I 192.168.0.45 www.yahoo.com
+</code>
+</pre>
+
+<p>You’re now running without NetworkManager!</p>
 
 <br>
 </details>
@@ -2734,7 +2828,7 @@ https://pypi.org/project/openpyn<br>
 <h4>• VPN Protocols</h4>
 
 <div id="table2" align="left">
-<img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/5.NETWORK/5.08_Others/vpn_protocols.png"/>
+<img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/3.NETWORK/3.08_Others/vpn_protocols.png"/>
 </div>
 
 <br>
@@ -4619,7 +4713,7 @@ $ unpaper --layout double input%03d.pbm --output-pages 2 output%03d.pbm
 
 <p>Use case: combine single-page image-files onto a double-page layout sheet</p>
 
-<img src=".data/multiple-input-files.png" title="Multiple Input Files" alt="Multiple Input Files" />
+<img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/.data/multiple-input-files.png" title="Multiple Input Files" alt="Multiple Input Files" />
 
 <pre>
 • Commands for single-page onto a double-page layout sheet
