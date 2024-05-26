@@ -774,7 +774,9 @@ https://cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfil
 https://packages.debian.org/bookworm/cryptsetup-nuke-password<br>
 https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password<br>
 
-<code>$ sudo apt install cryptsetup-nuke-password</code><br>
+<pre>$ 
+<code>sudo apt install cryptsetup-nuke-password</code>
+</pre>
 
 <br>
 </details>
@@ -791,7 +793,11 @@ https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password<br>
 
 https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
 
-<pre>$ sudo apt update -y && sudo apt upgrade -y</pre>
+<pre>$ 
+<code>
+sudo apt update -y && sudo apt upgrade -y
+</code>
+</pre>
 
 <pre>$ sudo apt dist-upgrade</pre>
 
@@ -813,23 +819,37 @@ https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
 
 </p>Install and enable Uncomplicated Firewall - UFW (CLI)</p>
 
-<pre>$ sudo apt install ufw</pre>
-<pre>$ sudo ufw enable</pre>
-<pre>$ sudo ufw default deny incoming</pre>
-<pre>$ sudo ufw default allow outgoing</pre>
-<pre>$ sudo ufw status verbose</pre>
-
+<pre>$ 
+<code>sudo apt install ufw</code>
+</pre>
+<pre>$ 
+<code>sudo ufw enable</code>
+</pre>
+<pre>$ 
+<code>sudo ufw default deny incoming</code>
+</pre>
+<pre>$ 
+<code>sudo ufw default allow outgoing</code>
+</pre>
+<pre>$ 
+<code>sudo ufw status verbose</code>
+</pre>
 
 <h5>4. Fast Grub Time</h5>
 
 <p>Edit and add <code>GRUB_TIMEOUT=0</code></p>
 
-<pre>$ sudo nano /etc/default/grub</pre>
+<pre>$ 
+<code>sudo nano /etc/default/grub</code>
+</pre>
 
-<pre>GRUB_TIMEOUT=0</pre>
+<pre>
+<code>GRUB_TIMEOUT=0</code>
+</pre>
 
-<pre>$ sudo update-grub</pre>
-
+<pre>$
+<code>sudo update-grub</code>
+</pre>
 
 <h5>5. Swapiness</h5>
 
@@ -837,27 +857,42 @@ https://unix.stackexchange.com/questions/265713/how-to-configure-swappiness-in-l
 
 <p>Verify</p>
 
-<pre>$ sudo cat /proc/sys/vm/swappiness</pre>
+<pre>$ 
+<code>sudo cat /proc/sys/vm/swappiness</code>
+</pre>
 
 <p>Edit and add <code>sw.swappiness=10</code></p>
 
-<pre>$ sudo nano /etc/sysctl.conf</pre>
+<pre>$ 
+<code>sudo nano /etc/sysctl.conf</code>
+</pre>
 
-<pre>sw.swappiness=10</pre>
+<pre>
+<code>sw.swappiness=10</code>
+</pre>
 
 <p>or simply</p>
 
-<pre>$ sudo bash -c "echo 'vm.swappiness = 10' >> /etc/sysctl.conf"</pre>
+<pre>$ 
+<code>sudo bash -c "echo 'vm.swappiness = 10' >> /etc/sysctl.conf"</code>
+</pre>
 
 <p>To take effect:</p>
 
-<pre>$ sudo sysctl -p</pre>
+<pre>$ 
+<code>sudo sysctl -p</code>
+</pre>
 
-<pre>$ sysctl vm.swappiness=10</pre>
+<pre>$ 
+<code>sysctl vm.swappiness=10</code>
+</pre>
 
 <p>Verify</p>
 
-<pre>$ sudo cat /proc/sys/vm/swappiness</pre>
+<pre>$ 
+<code>
+sudo cat /proc/sys/vm/swappiness</code>
+</pre>
 
 <h5>6. Installing Java</h5>
 
@@ -870,12 +905,15 @@ $ java --version
 $ apt-cache search openjdk | grep openjdk
 </pre>
 
-<pre>$ sudo apt install</pre>
-
+<pre>$ 
+<code>sudo apt install</code>
+</pre>
 
 <h5>7. Installing Micro$oft Fonts</h5>
 
-<pre>$ sudo apt install -y ttf-mscorefonts-installer</pre>
+<pre>$ 
+<code>sudo apt install -y ttf-mscorefonts-installer</code>
+</pre>
 
 <p>*Do not install energy manager TLP, many problems.</p>
 
@@ -2345,11 +2383,13 @@ https://avoidthehack.com/router-wireless-guide<br>
 
 <h4>Network Managers</h4>
 
-<h5>NetworkManager (GUI)</h5>
+<h4>NetworkManager (GUI)</h4>
 
 <code> $ sudo apt install network-manager-gnome</code>
 
-<h5>NetworkManager (CLI)</h5>
+<!-- ##### -->
+
+<h4>NetworkManager (CLI)</h4>
 
 <code> $ sudo apt install network-manager</code>
 
@@ -2392,11 +2432,15 @@ https://avoidthehack.com/router-wireless-guide<br>
 &nbsp; &nbsp; $ sudo nano /etc/NetworkManager/NetworkManager.conf
 </pre>
 
-<h5>Connman</h5>
+<!-- ##### -->
+
+<h4>Connman</h4>
 
 <h5>Connman (GUI)</h5>
 
 <code> $ sudo apt install connman-ui</code>
+
+<!-- ##### -->
 
 <h5>Connman (CLI)</h5>
 
@@ -2411,20 +2455,23 @@ https://avoidthehack.com/router-wireless-guide<br>
 &nbsp; &nbsp; $ 
 </pre>
 
-<h5>Setting up networking without a network manager</h5>
+<!-- ##### -->
+
+<h4>Setting up networking without a network manager</h4>
 
 https://unix.stackexchange.com/questions/253030/how-to-setup-network-without-wicd-or-networkmanager <br>
 
-<p>I had problems with network manager on ubuntu , so i set up static networking. You can follow these steps and it will work ( i configured only wlan0 because i use wireless , you just need to skip the wireless related things in it)</p>
+<p>Set up static networking. Configured only wlan0 because of wireless, you just need to skip the wireless related things in it.</p>
 
 <p>Show your interfaces:</p>
 
-<pre><code> $ ip a show
-</code></pre>
+<pre>
+<code>$ ip a show</code>
+</pre>
 
 <p>Note the default Ethernet and wifi interfaces:</p>
 
-<p>It looks like our Ethernet port is eth0. Our WiFi radio is wlan0. Want to make this briefer?</p>
+<p>Looks our Ethernet port is eth0 and WiFi radio is wlan0</p>
 
 <pre>
 <code>$ ip a show | awk  '/^[0-9]: /{print $2}'</code>
@@ -2446,13 +2493,9 @@ wlan0:
 <code>$ sudo route -n</code>
 </pre>
 
-<p>It provides access to destination 0.0.0.0 (everything). In the below image it is 192.168.0.1, which is perfectly nominal.</p>
+<p>It provides access to destination 0.0.0.0 (everything). Possible it is 192.168.0.1, which is perfectly nominal.</p>
 
-<p>$ sudo route-n
-
-Let’s do a bit of easy configuration in our /etc/networking/interfaces file. The format of this file is not difficult to put together from the man page, but really, you should search for examples first.
-interfaces
-Plug in your Ethernet port.</p>
+<p>Let’s do a bit of easy configuration in our /etc/networking/interfaces file. The format of this file is not difficult to put together from the man page, but really, you should search for examples first. Plug in your Ethernet port.</p>
 
 <p>Basically, we’re just adding DHCP entries for our interfaces. Above you’ll see a route to another network that appears when I get a DHCP lease on my Ethernet port. Next, add this:</p>
 
@@ -2521,6 +2564,13 @@ ping -I 192.168.0.45 www.yahoo.com
 </pre>
 
 <p>You’re now running without NetworkManager!</p>
+
+<!-- ##### -->
+
+<h4>How to reset Network Manager to default?</h4>
+
+https://askubuntu.com/questions/637637/how-to-reset-network-manager-to-default<br>
+
 
 <br>
 </details>
@@ -3471,7 +3521,36 @@ https://wiki.ubuntuusers.de/WireGuard<br>
 
 https://github.com/strongswan/strongswan<br>
 
-<code>$ sudo apt install strongswan</code><br>
+<h4>strongSwan Client</h4>
+
+<code>$ sudo apt install strongswan-charon</code><br>
+
+<pre>
+•
+$ sudo nano /etc/ipsec.secrets​
+•
+$ sudo su
+$ Password
+
+<code>
+sudo printf '%s\n\t' 'conn MyVPN' 'keyexchange=ikev2' 'dpdaction=clear' 'dpddelay=300' 'eap_identity=Username' 'leftauth=eap-mschapv2' 'left=%defaultroute' 'leftsourceip=%config' 'right=my.vpn.com' 'rightauth=pubkey' 'rightsubnet=0.0.0.0/0' 'rightid=%my.vpn.com' 'rightca="C = PA, O = VPN, CN = VPN Root CA"' 'type=tunnel' 'auto=add' > /etc/ipsec.conf
+</code>
+ 
+• Inside the file change load = yes to load = no.
+$ sudo nano /etc/strongswan.d/charon/constraints.conf
+• Download the NordVPN RSA certificate.
+$ sudo wget https://download/certificate/root.pem -O /etc/ipsec.d/cacerts/VPN.pem
+• Connecting
+$ sudo ipsec restart
+$ sudo ipsec up VPN
+“Connection VPN has been established successfully”.
+• Disconnecting
+$ sudo ipsec down NordVPN
+• Debuging
+$ sudo cat /var/log/syslog
+</pre>
+
+
 
 <br>
 </details>
@@ -6667,7 +6746,7 @@ $
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
 <details>
-<summary><b>7.01 Sytem Tweaks</b></summary>
+<summary><b>7.01 System Tweaks</b></summary>
 <br>
 
 <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/5.DEVELOPMENT">5.DEVELOPMENT</a></h4>
@@ -7141,14 +7220,14 @@ or
 
 <h5>∙ Power and suspend control</h5>
 
-<code>$ sudo ls /etc/NetworkManager/conf.d</code>
-<code>$ sudo touch /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf</code>
-<code>$ sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf</code>
-<code>$ wifi.powersave = 2</code>
+<code>$ sudo ls /etc/NetworkManager/conf.d</code><br>
+<code>$ sudo touch /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf</code><br>
+<code>$ sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf</code><br>
+<code>$ wifi.powersave = 2</code><br>
 
 or
 
-<code>$ sudo sed -i 's/3/2/' /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf</code>
+<code>$ sudo sed -i 's/3/2/' /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf</code><br>
 
 Notes:<br>
 pcie_aspm.policy=powersasave<br>
