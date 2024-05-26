@@ -252,14 +252,14 @@ https://github.com/segofensiva/OSfooler-ng<br>
 
 <h4>Secure Boot</h4>
 
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/3.SECURE_BOOT">3.SECURE_BOOT</a></h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SECURITY/2.05_Secure_Boot">2.SECURITY/2.05_Secure_Boot</a></h4>
 
 https://libreboot.org<br>
 https://osresearch.net<br>
 
 <h4>Sanitize options</h4>
 
-<h5>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.HARDENING/1.03_Sanitization">2.HARDENING/1.03_Sanitization</a></h5>
+<h5>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SECURITY/2.06_Sanitization">2.SECURITY/2.06_Sanitization</a></h5>
 
 <p>Not all SSD support sanitize. And if you use SSDs, enable TRIM in your BIOS. Take care with SSD over-provisioning. Take care with SSD flaws.</p>
 
@@ -292,7 +292,7 @@ https://forums.whonix.org/t/hardened-malloc-hardened-memory-allocator/7474/4<br>
 <summary><b>2.02 Installation</b></summary>
 <br>
 
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION">2.SYSTEM_INSTALLATION</a></h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.INSTALLATION">1.INSTALLATION</a></h4>
 
 2.02.01 Basic Installation Guide<br>
 
@@ -650,7 +650,7 @@ The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a typ
 https://wiki.debian.org/KVM<br>
 https://wiki.archlinux.org/title/KVM<br>
 
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/8.SYSADMIN/8.03_Containerization_and_Orchestration">8.SYSADMIN/8.03_Containerization_and_Orchestration</a></h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/6.SYSADMIN/6.05_VMs_and_Containers">6.SYSADMIN/6.05_VMs_and_Containers</a></h4>
 
 <h3>Quick Installation Guide and Others</h3>
 
@@ -669,7 +669,7 @@ https://youtube.com/watch?v=cs8JW3zDDoI<br>
 
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION/2.02_Debootstrap">2.SYSTEM_INSTALLATION/2.02_Debootstrap</a></h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.INSTALLATION/2.02_Debootstrap">1.INSTALLATION/2.02_Debootstrap</a></h4>
 
 • Debootstrap<br>
 https://wiki.debian.org/Debootstrap<br>
@@ -697,9 +697,9 @@ https://github.com/linuxdabbler/debian-install-scripts<br>
 <summary><b>2.03 Encryption</b></summary> 
 <br>
 
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.HARDENING/1.02_Encryption">2.HARDENING/1.02_Encryption</a></h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SECURITY/2.03_Encryption">2.SECURITY/2.03_Encryption</a></h4>
 
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION/2.02_Debootstrap">2.SYSTEM_INSTALLATION/2.02_Debootstrap</a></h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.INSTALLATION/2.02_Debootstrap">1.INSTALLATION/2.02_Debootstrap</a></h4>
 
 2.3.1 Encryption<br>
 
@@ -2598,7 +2598,7 @@ https://reddit.com/r/pihole<br>
 <summary><b>5.04 Firewall</b></summary>
 <br>
 
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/5.NETWORK/5.02_Firewall">5.NETWORK/5.02_Firewall</a></h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/3.NETWORK/3.03_Firewall">3.NETWORK/3.03_Firewall</a></h4>
 
 <p>Note that these commands show ports that are in a listening state, but that doesn’t necessarily mean that the ports are open to the internet, because our firewall may be denying connections.</p>
 
@@ -5431,9 +5431,9 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
 
 👷🛠️UNDER CONSTRUCTION🚧🏗<br>
 
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.HARDENING/1.02_Encryption">2.HARDENING/1.02_Encryption</a></h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SECURITY/2.03_Encryption">2.SECURITY/2.03_Encryption</a></h4>
 
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SYSTEM_INSTALLATION/2.02_Debootstrap">2.SYSTEM_INSTALLATION/2.02_Debootstrap</a></h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/1.INSTALLATION/2.02_Debootstrap">1.INSTALLATION/2.02_Debootstrap</a></h4>
 
 <h4>• Disk Encryption</h4>
 
@@ -5692,7 +5692,7 @@ https://infozip.sourceforge.net<br>
 <summary><b>6.12 Sanitation</b></summary>
 <br>
 
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.HARDENING/1.03_Sanitization">2.HARDENING/1.03_Sanitization</a></h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/2.SECURITY/2.06_Sanitization">2.SECURITY/2.06_Sanitization</a></h4>
 
 <h4>Metadata Cleaners</h4>
 
@@ -6670,7 +6670,7 @@ $
 <summary><b>7.01 Sytem Tweaks</b></summary>
 <br>
 
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/7.DEVELOPMENT">7.DEVELOPMENT</a></h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/5.DEVELOPMENT">5.DEVELOPMENT</a></h4>
 
 <h3>Sytem Tweaks</h3>
 
@@ -6803,7 +6803,7 @@ https://reddit.com/r/sublimetext<br>
 <summary><b>8.01 Sysadmin</b></summary>
 <br>
 
-<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/8.SYSADMIN">8.SYSADMIN</a></h4>
+<h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/6.SYSADMIN">6.SYSADMIN</a></h4>
 
 <br>
 </details>
