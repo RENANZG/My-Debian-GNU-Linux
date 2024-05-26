@@ -793,9 +793,9 @@ https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password<br>
 
 https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
 
-<pre class="console">$ <code>sudo apt update -y && sudo apt upgrade -y</code></pre>
+<pre><span>$ </span><code class="lang-bash">sudo apt update -y && sudo apt upgrade -y</code></pre>
 
-<pre class="console">$ <code>sudo apt dist-upgrade</code></pre>
+<pre><code class="lang-bash"><span>$ </span>sudo apt dist-upgrade</code></pre>
 
 <p>Note:</p>
 
@@ -815,7 +815,7 @@ https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
 
 </p>Install and enable Uncomplicated Firewall - UFW (CLI)</p>
 
-<pre>$ <code class="console">sudo apt install ufw</code></pre>
+<pre>$ <code class="lang-bash">sudo apt install ufw</code></pre>
 <pre>$ <code>sudo ufw enable</code></pre>
 <pre>$ <code>sudo ufw default deny incoming</code></pre>
 <pre>$ <code>sudo ufw default allow outgoing</code></pre>
@@ -825,11 +825,11 @@ https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
 
 <p>Edit and add <code>GRUB_TIMEOUT=0</code></p>
 
-<pre>$ <code class="console">sudo nano /etc/default/grub</code></pre>
+<pre>$ <code class="lang-bash">sudo nano /etc/default/grub</code></pre>
 
 <pre><code>GRUB_TIMEOUT=0</code></pre>
 
-<pre>$ <code class="console">sudo update-grub</code></pre>
+<pre>$ <code class="lang-bash">sudo update-grub</code></pre>
 
 <h5>5. Swapiness</h5>
 
@@ -837,28 +837,28 @@ https://unix.stackexchange.com/questions/265713/how-to-configure-swappiness-in-l
 
 <p>Verify</p>
 
-<pre>$ <code class="console">sudo cat /proc/sys/vm/swappiness</code></pre>
+<pre>$ <code class="lang-bash">sudo cat /proc/sys/vm/swappiness</code></pre>
 
-<p>Edit and add <code class="console">sw.swappiness=10</code></p>
+<p>Edit and add <code class="lang-bash">sw.swappiness=10</code></p>
 
-<pre>$ <code class="console">sudo nano /etc/sysctl.conf</code></pre>
+<pre>$ <code class="lang-bash">sudo nano /etc/sysctl.conf</code></pre>
 
 <pre><code>sw.swappiness=10</code></pre>
 
 <p>or simply</p>
 
-<pre>$ <code class="console">sudo bash -c "echo 'vm.swappiness = 10' >> /etc/sysctl.conf"</code></pre>
+<pre>$ <code class="lang-bash">sudo bash -c "echo 'vm.swappiness = 10' >> /etc/sysctl.conf"</code></pre>
 
 <p>To take effect:</p>
 
-<pre>$ <code class="console">sudo sysctl -p</code></pre>
+<pre>$ <code class="lang-bash">sudo sysctl -p</code></pre>
 
-<pre>$ <code class="console">sysctl vm.swappiness=10</code>
+<pre>$ <code class="lang-bash">sysctl vm.swappiness=10</code>
 </pre>
 
 <p>Verify</p>
 
-<pre>$ <code class="console">sudo cat /proc/sys/vm/swappiness</code></pre>
+<pre>$ <code class="lang-bash">sudo cat /proc/sys/vm/swappiness</code></pre>
 
 <h5>6. Installing Java</h5>
 
@@ -867,17 +867,17 @@ https://unix.stackexchange.com/questions/265713/how-to-configure-swappiness-in-l
 • OpenJDK - Java Development Kit (JDK)<br>
 
 <pre>
-<code class="console">
+<code class="lang-bash">
 $ java --version
 $ apt-cache search openjdk | grep openjdk
 </code>
 </pre>
 
-<pre>$ <code class="console">sudo apt install</code></pre>
+<pre>$ <code class="lang-bash">sudo apt install</code></pre>
 
 <h5>7. Installing Micro$oft Fonts</h5>
 
-<pre>$ <code class="console">sudo apt install -y ttf-mscorefonts-installer</code></pre>
+<pre>$ <code class="lang-bash">sudo apt install -y ttf-mscorefonts-installer</code></pre>
 
 <p>*Do not install energy manager TLP, many problems.</p>
 
