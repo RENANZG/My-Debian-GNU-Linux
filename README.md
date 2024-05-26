@@ -793,9 +793,9 @@ https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password<br>
 
 https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
 
-<pre>$ <code>sudo apt update -y && sudo apt upgrade -y</code></pre>
+<pre>$ </pre><code>sudo apt update -y && sudo apt upgrade -y</code><br>
 
-<pre>$ <code>sudo apt dist-upgrade</code>code></pre>
+<pre>$ </pre><code>sudo apt dist-upgrade</code><br>
 
 <p>Note:</p>
 
