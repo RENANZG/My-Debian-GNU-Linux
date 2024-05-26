@@ -793,9 +793,9 @@ https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password<br>
 
 https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
 
-<pre class="shell">$ <code>sudo apt update -y && sudo apt upgrade -y</code></pre>
+<pre class="bash">$ <code>sudo apt update -y && sudo apt upgrade -y</code></pre>
 
-<pre class="shell">$ <code>sudo apt dist-upgrade</code></pre>
+<pre class="bash">$ <code>sudo apt dist-upgrade</code></pre>
 
 <p>Note:</p>
 
@@ -815,37 +815,21 @@ https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
 
 </p>Install and enable Uncomplicated Firewall - UFW (CLI)</p>
 
-<pre>$ 
-<code>sudo apt install ufw</code>
-</pre>
-<pre>$ 
-<code>sudo ufw enable</code>
-</pre>
-<pre>$ 
-<code>sudo ufw default deny incoming</code>
-</pre>
-<pre>$ 
-<code>sudo ufw default allow outgoing</code>
-</pre>
-<pre>$ 
-<code>sudo ufw status verbose</code>
-</pre>
+<pre>$ <code class="bash">sudo apt install ufw</code></pre>
+<pre>$ <code>sudo ufw enable</code></pre>
+<pre>$ <code>sudo ufw default deny incoming</code></pre>
+<pre>$ <code>sudo ufw default allow outgoing</code></pre>
+<pre>$ <code>sudo ufw status verbose</code></pre>
 
 <h5>4. Fast Grub Time</h5>
 
 <p>Edit and add <code>GRUB_TIMEOUT=0</code></p>
 
-<pre>$ 
-<code>sudo nano /etc/default/grub</code>
-</pre>
+<pre>$ <code class="bash">sudo nano /etc/default/grub</code></pre>
 
-<pre>
-<code>GRUB_TIMEOUT=0</code>
-</pre>
+<pre><code>GRUB_TIMEOUT=0</code></pre>
 
-<pre>$
-<code>sudo update-grub</code>
-</pre>
+<pre>$ <code class="bash">sudo update-grub</code></pre>
 
 <h5>5. Swapiness</h5>
 
@@ -853,15 +837,11 @@ https://unix.stackexchange.com/questions/265713/how-to-configure-swappiness-in-l
 
 <p>Verify</p>
 
-<pre>$ 
-<code>sudo cat /proc/sys/vm/swappiness</code>
-</pre>
+<pre>$ <code class="bash">sudo cat /proc/sys/vm/swappiness</code></pre>
 
-<p>Edit and add <code>sw.swappiness=10</code></p>
+<p>Edit and add <code class="bash">sw.swappiness=10</code></p>
 
-<pre>$ 
-<code>sudo nano /etc/sysctl.conf</code>
-</pre>
+<pre>$ <code class="bash">sudo nano /etc/sysctl.conf</code></pre>
 
 <pre>
 <code>sw.swappiness=10</code>
@@ -869,18 +849,13 @@ https://unix.stackexchange.com/questions/265713/how-to-configure-swappiness-in-l
 
 <p>or simply</p>
 
-<pre>$ 
-<code>sudo bash -c "echo 'vm.swappiness = 10' >> /etc/sysctl.conf"</code>
-</pre>
+<pre>$ <code class="bash">sudo bash -c "echo 'vm.swappiness = 10' >> /etc/sysctl.conf"</code></pre>
 
 <p>To take effect:</p>
 
-<pre>$ 
-<code>sudo sysctl -p</code>
-</pre>
+<pre>$ <code class="bash">sudo sysctl -p</code></pre>
 
-<pre>$ 
-<code>sysctl vm.swappiness=10</code>
+<pre>$ <code>sysctl vm.swappiness=10</code>
 </pre>
 
 <p>Verify</p>
