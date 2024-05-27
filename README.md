@@ -391,237 +391,248 @@ Terminal - https://github.com/onceupon/Bash-Oneliner#terminal-tricks<br>
 
 <h4>Overview of Nano's Shortcuts</h4>
 
-<table>
-<thead>
-<tr>
-<th>Shortcut</th>
-<th>Action</th>
-<th>Shortcut</th>
-<th>Action</th>
-</tr>
-</thead>
+<p>Basically we will use <kbd>CTRL+O</kbd> and <kbd>ENTER</kbd> to save the changes and then <kbd>CTRL+X</kbd> exit nano editor.</p>
+
+<table><thead>
+  <tr>
+    <th>Shortcut</th>
+    <th>Action</th>
+    <th>Shortcut</th>
+    <th>Action</th>
+  </tr></thead>
 <tbody>
-<tr>
-<td colspan="2"> File handling </td>
-<td colspan="2">Moving around</td>
-</tr>
-<tr>
-<td> Ctrl+S </td>
-<td> Save current file </td>
-<td>Ctrl+B </td>
-<td> One character backward </td>
-</tr>
-<tr>
-<td>Ctrl+O </td>
-<td> Offer to write file ("Save as") </td>
-<td>Ctrl+F </td>
-<td> One character forward </td>
-</tr>
-<tr>
-<td>Ctrl+R </td>
-<td> Insert a file into current one </td>
-<td>Ctrl+← </td>
-<td> One word backward </td>
-</tr>
-<tr>
-<td>Ctrl+X </td>
-<td> Close buffer, exit from nano </td>
-<td>Ctrl+→ </td>
-<td> One word forward </td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Ctrl+A </td>
-<td> To start of line </td>
-</tr>
-<tr>
-<td colspan="2">Editing</td>
-<td>Ctrl+E </td>
-<td> To end of line </td>
-</tr>
-<tr>
-<td>Ctrl+K </td>
-<td> Cut current line into cutbuffer </td>
-<td>Ctrl+P </td>
-<td> One line up </td>
-</tr>
-<tr>
-<td>Alt+6 </td>
-<td> Copy current line into cutbuffer </td>
-<td>Ctrl+N </td>
-<td> One line down </td>
-</tr>
-<tr>
-<td>Ctrl+U </td>
-<td> Paste contents of cutbuffer </td>
-<td>Ctrl+↑ </td>
-<td> To previous block </td>
-</tr>
-<tr>
-<td>Alt+T </td>
-<td> Cut until end of buffer </td>
-<td>Ctrl+↓ </td>
-<td> To next block </td>
-</tr>
-<tr>
-<td>Ctrl+]	 </td>
-<td> Complete current word </td>
-<td>Ctrl+Y </td>
-<td> One page up </td>
-</tr>
-<tr>
-<td>Alt+3 </td>
-<td> Comment/uncomment line/region </td>
-<td>Ctrl+V </td>
-<td> One page down </td>
-</tr>
-<tr>
-<td>Alt+U </td>
-<td> Undo last action </td>
-<td>Alt+\	To </td>
-<td> top of buffer </td>
-</tr>
-<tr>
-<td>Alt+E </td>
-<td> Redo last undone action </td>
-<td>Alt+/	To </td>
-<td> end of buffer </td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2">Search and replace</td>
-<td colspan="2">Special movement</td>
-</tr>
-<tr>
-<td>Ctrl+Q </td>
-<td> Start backward search </td>
-<td>Alt+G </td>
-<td> Go to specified line </td>
-</tr>
-<tr>
-<td>Ctrl+W </td>
-<td> Start forward search </td>
-<td>Alt+]	Go </td>
-<td> to complementary bracket </td>
-</tr>
-<tr>
-<td>Alt+Q </td>
-<td> Find next occurrence backward </td>
-<td>Alt+↑ </td>
-<td> Scroll viewport up </td>
-</tr>
-<tr>
-<td>Alt+W </td>
-<td> Find next occurrence forward </td>
-<td>Alt+↓ </td>
-<td> Scroll viewport down </td>
-</tr>
-<tr>
-<td>Alt+R </td>
-<td> Start a replacing session </td>
-<td>Alt+&lt;	Switch </td>
-<td> to preceding buffer </td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Alt+&gt;	Switch </td>
-<td> to succeeding buffer </td>
-</tr>
-<tr>
-<td colspan="2">Deletion</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Ctrl+H </td>
-<td> Delete character before cursor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-<td colspan="2">Information</td>
-</tr>
-<tr>
-<td>Ctrl+D </td>
-<td> Delete character under cursor </td>
-<td>Ctrl+C </td>
-<td> Report cursor position </td>
-</tr>
-<tr>
-<td>Alt+Bsp </td>
-<td> Delete word to the left </td>
-<td>Alt+D </td>
-<td> Report line/word/character count </td>
-</tr>
-<tr>
-<td>Ctrl+Del </td>
-<td> Delete word to the right </td>
-<td>Ctrl+G </td>
-<td> Display help text </td>
-</tr>
-<tr>
-<td>Alt+Del </td>
-<td> Delete current line </td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td colspan="2">Various</td>
-</tr>
-<tr>
-<td colspan="2">Operations</td>
-<td>Alt+A </td>
-<td> Turn the mark on/off </td>
-</tr>
-<tr>
-<td>Ctrl+T </td>
-<td> Execute some command </td>
-<td>Tab</td>
-<td>Indent</td>
-</tr>
-<tr>
-<td>Ctrl+J </td>
-<td> Justify paragraph or region </td>
-<td>Shift+Tab </td>
-<td>Unindent marked region</td>
-</tr>
-<tr>
-<td>Alt+J </td>
-<td> Justify entire buffer </td>
-<td>Alt+V </td>
-<td> Enter next keystroke verbatim </td>
-</tr>
-<tr>
-<td>Alt+B </td>
-<td> Run a syntax check </td>
-<td>Alt+N </td>
-<td> Turn line numbers on/off </td>
-</tr>
-<tr>
-<td>Alt+F </td>
-<td> Run a formatter/fixer/arranger </td>
-<td>Alt+P </td>
-<td> Turn visible whitespace on/off </td>
-</tr>
-<tr>
-<td>Alt+:	Start </td>
-<td> /stop recording of macro </td>
-<td>Alt+X </td>
-<td> Hide or unhide the help lines </td>
-</tr>
-<tr>
-<td>Alt+;	Replay </td>
-<td> macro</td>
-<td>Ctrl+L </td>
-<td> Refresh the screen </td>
-</tr>
-</tbody>
-</table>
+  <tr>
+    <td colspan="2"> File handling </td>
+    <td colspan="2">Moving around</td>
+  </tr>
+  <tr>
+    <td> Ctrl+S </td>
+    <td> Save current file </td>
+    <td>Ctrl+B </td>
+    <td> One character backward </td>
+  </tr>
+  <tr>
+    <td>Ctrl+O </td>
+    <td> Offer to write file ("Save as") </td>
+    <td>Ctrl+F </td>
+    <td> One character forward </td>
+  </tr>
+  <tr>
+    <td>Ctrl+R </td>
+    <td> Insert a file into current one </td>
+    <td>Ctrl+← </td>
+    <td> One word backward </td>
+  </tr>
+  <tr>
+    <td>Ctrl+X </td>
+    <td> Close buffer, exit from nano </td>
+    <td>Ctrl+→ </td>
+    <td> One word forward </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Ctrl+A </td>
+    <td> To start of line </td>
+  </tr>
+  <tr>
+    <td colspan="2">Editing</td>
+    <td>Ctrl+E </td>
+    <td> To end of line </td>
+  </tr>
+  <tr>
+    <td>Ctrl+K </td>
+    <td> Cut current line into cutbuffer </td>
+    <td>Ctrl+P </td>
+    <td> One line up </td>
+  </tr>
+  <tr>
+    <td>Alt+6 </td>
+    <td> Copy current line into cutbuffer </td>
+    <td>Ctrl+N </td>
+    <td> One line down </td>
+  </tr>
+  <tr>
+    <td>Ctrl+U </td>
+    <td> Paste contents of cutbuffer </td>
+    <td>Ctrl+↑ </td>
+    <td> To previous block </td>
+  </tr>
+  <tr>
+    <td>Alt+T </td>
+    <td> Cut until end of buffer </td>
+    <td>Ctrl+↓ </td>
+    <td> To next block </td>
+  </tr>
+  <tr>
+    <td>Ctrl+]	 </td>
+    <td> Complete current word </td>
+    <td>Ctrl+Y </td>
+    <td> One page up </td>
+  </tr>
+  <tr>
+    <td>Alt+3 </td>
+    <td> Comment/uncomment line/region </td>
+    <td>Ctrl+V </td>
+    <td> One page down </td>
+  </tr>
+  <tr>
+    <td>Alt+U </td>
+    <td> Undo last action </td>
+    <td>Alt+\	To </td>
+    <td> top of buffer </td>
+  </tr>
+  <tr>
+    <td>Alt+E </td>
+    <td> Redo last undone action </td>
+    <td>Alt+/	To </td>
+    <td> end of buffer </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td colspan="2">Search and replace</td>
+    <td colspan="2">Special movement</td>
+  </tr>
+  <tr>
+    <td>Ctrl+Q </td>
+    <td> Start backward search </td>
+    <td>Alt+G </td>
+    <td> Go to specified line </td>
+  </tr>
+  <tr>
+    <td>Ctrl+W </td>
+    <td> Start forward search </td>
+    <td>Alt+]	Go </td>
+    <td> to complementary bracket </td>
+  </tr>
+  <tr>
+    <td>Alt+Q </td>
+    <td> Find next occurrence backward </td>
+    <td>Alt+↑ </td>
+    <td> Scroll viewport up </td>
+  </tr>
+  <tr>
+    <td>Alt+W </td>
+    <td> Find next occurrence forward </td>
+    <td>Alt+↓ </td>
+    <td> Scroll viewport down </td>
+  </tr>
+  <tr>
+    <td>Alt+R </td>
+    <td> Start a replacing session </td>
+    <td>Alt+&lt;	Switch </td>
+    <td> to preceding buffer </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Alt+&gt;	Switch </td>
+    <td> to succeeding buffer </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td colspan="2">Deletion</td>
+    <td colspan="2">Information</td>
+  </tr>
+  <tr>
+    <td>Ctrl+H </td>
+    <td> Delete character before cursor       </td>
+    <td>Ctrl+C </td>
+    <td> Report cursor position </td>
+  </tr>
+  <tr>
+    <td>Ctrl+D </td>
+    <td> Delete character under cursor </td>
+    <td>Alt+D </td>
+    <td> Report line/word/character count </td>
+  </tr>
+  <tr>
+    <td>Alt+Bsp </td>
+    <td> Delete word to the left </td>
+    <td>Ctrl+G </td>
+    <td> Display help text </td>
+  </tr>
+  <tr>
+    <td>Ctrl+Del </td>
+    <td> Delete word to the right </td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Alt+Del </td>
+    <td> Delete current line </td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td colspan="2">Operations</td>
+    <td colspan="2">Various</td>
+  </tr>
+  <tr>
+    <td>Ctrl+T </td>
+    <td> Execute some command </td>
+    <td>Alt+A </td>
+    <td> Turn the mark on/off </td>
+  </tr>
+  <tr>
+    <td>Ctrl+J </td>
+    <td> Justify paragraph or region </td>
+    <td>Tab</td>
+    <td>Indent</td>
+  </tr>
+  <tr>
+    <td>Alt+J </td>
+    <td> Justify entire buffer </td>
+    <td>Shift+Tab </td>
+    <td>Unindent marked region</td>
+  </tr>
+  <tr>
+    <td>Alt+B </td>
+    <td> Run a syntax check </td>
+    <td>Alt+V </td>
+    <td> Enter next keystroke verbatim </td>
+  </tr>
+  <tr>
+    <td>Alt+F </td>
+    <td> Run a formatter/fixer/arranger </td>
+    <td>Alt+N </td>
+    <td> Turn line numbers on/off </td>
+  </tr>
+  <tr>
+    <td>Alt+:	Start </td>
+    <td> /stop recording of macro </td>
+    <td>Alt+P </td>
+    <td> Turn visible whitespace on/off </td>
+  </tr>
+  <tr>
+    <td>Alt+;	Replay </td>
+    <td> macro</td>
+    <td>Alt+X </td>
+    <td> Hide or unhide the help lines </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Ctrl+L </td>
+    <td> Refresh the screen </td>
+  </tr>
+</tbody></table>
 
 <h4>Virtual Machines</h4>
 
@@ -793,9 +804,9 @@ https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password<br>
 
 https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
 
-<pre><p>$ </p><code class="lang-bash">sudo apt update -y && sudo apt upgrade -y</code></pre>
+<pre>$ <code class="lang-bash">sudo apt update -y && sudo apt upgrade -y</code></pre>
 
-<pre><code class="lang-bash"><p>$ </p>sudo apt dist-upgrade</code></pre>
+<pre>$ <code class="lang-bash">sudo apt dist-upgrade</code></pre>
 
 <p>Note:</p>
 
@@ -3484,26 +3495,34 @@ https://wiki.ubuntuusers.de/WireGuard<br>
 <h4>strongSwan</h4>
 
 https://github.com/strongswan/strongswan<br>
+https://docs.strongswan.org/docs/5.9/index.html<br>
+https://docs.strongswan.org/docs/5.9/config/IKEv2.html<br>
+https://docs.strongswan.org/docs/5.9/config/logging.html<br>
 
-<h4>strongSwan Client</h4>
+<h4>strongSwan (Client Side)</h4>
 
-<code>$ sudo apt install strongswan-charon</code><br>
+<pre><code>$ sudo apt install strongswan-charon</code></pre>
+<pre><code>$ sudo apt install libcharon-extra-plugins</code></pre>
+<pre><code>$ sudo apt install libcharon-extauth-plugins</code></pre>
 
 <pre>
-•
+• Add username and password
 $ sudo nano /etc/ipsec.secrets​
-•
+"</stamp>Username : EAP "Password"</stamp>
+• Configure
 $ sudo su
 $ <samp>Password</samp>
 
-<code>
-sudo printf '%s\n\t' 'conn MyVPN' 'keyexchange=ikev2' 'dpdaction=clear' 'dpddelay=300' 'eap_identity=Username' 'leftauth=eap-mschapv2' 'left=%defaultroute' 'leftsourceip=%config' 'right=my.vpn.com' 'rightauth=pubkey' 'rightsubnet=0.0.0.0/0' 'rightid=%my.vpn.com' 'rightca="C = PA, O = VPN, CN = VPN Root CA"' 'type=tunnel' 'auto=add' > /etc/ipsec.conf
+<code class="lang-bash">
+sudo printf '%s\n\t' 'conn MyVPN' 'keyexchange=ikev2' 'dpdaction=clear' 'dpddelay=300s' 'eap_identity="USERNAME"' 'leftauth=eap-mschapv2' 'left=%defaultroute' 'leftsourceip=%config' 'right=SERVER_IP' 'rightauth=pubkey' 'rightsubnet=0.0.0.0/0' 'rightid=%SERVER_HOSTNAME' 'rightca=/etc/ipsec.d/cacerts/VPN.pem' 'type=tunnel' 'auto=add' > /etc/ipsec.conf
 </code>
- 
+
 • Inside the file change load = yes to load = no.
-$ sudo nano /etc/strongswan.d/charon/constraints.conf
-• Download the NordVPN RSA certificate.
-$ sudo wget https://download/certificate/root.pem -O /etc/ipsec.d/cacerts/VPN.pem
+<code class="lang-bash"> $ sudo nano /etc/strongswan.d/charon/constraints.conf</code>
+• Download the VPN certificate.
+<code class="lang-bash">$ sudo wget https://download/certificate/root.pem -O /etc/ipsec.d/cacerts/VPN.pem</code>
+
+<code class="lang-bash">$ sudo wget https://download/certificate/root.pem -O /etc/ipsec.d/cacerts/VPN.pem</code>
 • Connecting
 $ sudo ipsec restart
 $ sudo ipsec up VPN
@@ -3514,7 +3533,9 @@ $ sudo ipsec down NordVPN
 $ sudo cat /var/log/syslog
 </pre>
 
-
+<pre>
+sudo ls /etc/strongswan.d/charon/
+</pre>
 
 <br>
 </details>
@@ -8021,7 +8042,7 @@ https://vitux.com<br>
 
 <h4>Others</h4>
 
-• chttps://en.wikiversity.org/wiki/Open_Educational_Resources/Open_Courses<br>
+• https://en.wikiversity.org/wiki/Open_Educational_Resources/Open_Courses<br>
 • https://en.wikiversity.org/wiki/Open_Educational_Resources/Open_Textbooks<br>
 • https://freecomputerbooks.com<br>
 • http://www.freetechbooks.com<br>
