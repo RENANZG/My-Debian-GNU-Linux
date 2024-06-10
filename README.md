@@ -6593,7 +6593,7 @@ $ find . -maxdepth 1 -type f -name '*-*' -exec bash -c '
 
 • Rename files into directories according to metadata contained in.<br>
 • Exiftool Pseudo Tags - https://exiftool.org/filename.html<br>
-• Illegal characters in Windows file names are: <code>/ \ ? * : | " < ></code>
+• Illegal characters in Windows file names are: <code>/ \ ? * : | " < > </code>
 
 <h5>• Basic of metadata</h5>
 <pre><code><span>$ </span>exiftool -a input.pdf</code></pre>
@@ -6602,7 +6602,7 @@ $ find . -maxdepth 1 -type f -name '*-*' -exec bash -c '
 <pre><code><span>$ </span>pdfinfo -meta input.pdf</code></pre>
 
 <h5>• Rename by creation date and time tags [20060327_1058-2.jpg]</h5>
-<pre><code><span>$ </span>exiftool -d %Y%m%d_%H%M%%-c.%%e '-filename<CreateDate' /file.jpg</code></pre>
+<pre><code><span>$ </span>exiftool -d %Y%m%d_%H%M%%-c.%%e "-filename<CreateDate" /file.jpg</code></pre>
 
 <h5>• Rename by title tag [title.pdf]</h5>
 <pre><code><span>$ </span>exiftool '-filename<Title' /input.pdf</code></pre>
@@ -8073,7 +8073,7 @@ https://forums.raspberrypi.com/viewtopic.php?t=245931<br>
 
 <pre><code><span>$ </span>sudo nano /boot/cmdline.txt</code></pre><button onclick="navigator.clipboard.writeText('sudo nano /boot/cmdline.txt')">Copy</button>
 
-<p>Add the text with your idVendor and idProduct, respectively.
+<p>Add the text with your idVendor and idProduct, respectively.</p>
 
 <pre>
 usb-storage.quirks=1111:2222:u
