@@ -2,11 +2,11 @@
 
 ########################################################################
 # VISIT: https://github.com/crow-translate
-# SCRIPT CREDITS: https://portable-linux-apps.github.io/
+# SCRIPT CREDITS: https://portable-linux-apps.github.io
 # 1. Make it executable:
-# $ sudo chmod +x ./file.sh
+# $ sudo chmod +x ~/Downloads/Crow-Translate_Installer.sh
 # 2. Then run
-# $ sudo bash ./file.sh
+# $ sudo bash ~/Downloads/Crow-Translate_Installer.sh
 ########################################################################
 
 APP=crow-translate

@@ -1,13 +1,15 @@
 #!/bin/sh
-
+    
 ########################################################################
-# VISIT: https://github.com/prusa3d/PrusaSlicer
-# SCRIPT CREDITS: https://portable-linux-apps.github.io/
-# 1. Make it executable:
-# $ sudo chmod +x ./file.sh
-# 2. Then run
-# $ sudo bash ./file.sh
-########################################################################    
+# VISIT          : 
+# SCRIPT CREDITS : https://portable-linux-apps.github.io
+# USAGE          :
+# Make it executable:
+# $ sudo chmod +x ~/Downloads/Prusa-Slicer_Installer.sh
+# Then run
+# $ sudo bash ~/Downloads/Prusa-Slicer_Installer.sh
+########################################################################
+
 
 APP=prusa-slicer
 REPO="prusa3d/PrusaSlicer"

@@ -1,13 +1,15 @@
 #!/bin/sh
-
+    
 ########################################################################
-# VISIT: https://github.com/slic3r/Slic3r
-# SCRIPT CREDITS: https://portable-linux-apps.github.io/
-# 1. Make it executable:
-# $ sudo chmod +x ./file.sh
-# 2. Then run
-# $ sudo bash ./file.sh
-########################################################################    
+# VISIT          : 
+# SCRIPT CREDITS : https://portable-linux-apps.github.io
+# USAGE          :
+# Make it executable:
+# $ sudo chmod +x ~/Downloads/Slic3r-appimage_Installer.sh
+# Then run
+# $ sudo bash ~/Downloads/Slic3r-appimage_Installer.sh
+########################################################################
+
 
 APP=slic3r-appimage
 REPO="slic3r/Slic3r"

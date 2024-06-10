@@ -1,13 +1,15 @@
 #!/bin/sh
-
+    
 ########################################################################
-# VISIT: https://github.com/trevorsandy/lpub3d
-# SCRIPT CREDITS: https://portable-linux-apps.github.io/
-# 1. Make it executable:
-# $ sudo chmod +x ./file.sh
-# 2. Then run
-# $ sudo bash ./file.sh
-########################################################################    
+# VISIT          : 
+# SCRIPT CREDITS : https://portable-linux-apps.github.io
+# USAGE          :
+# Make it executable:
+# $ sudo chmod +x ~/Downloads/lpub3d_Installer.sh
+# Then run
+# $ sudo bash ~/Downloads/lpub3d_Installer.sh
+########################################################################
+
 
 APP=lpub3d
 REPO="trevorsandy/lpub3d"

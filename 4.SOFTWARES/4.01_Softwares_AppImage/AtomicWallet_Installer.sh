@@ -2,11 +2,11 @@
 
 ########################################################################
 # VISIT: https://get.atomicwallet.io
-# SCRIPT CREDITS: https://portable-linux-apps.github.io/
+# SCRIPT CREDITS: https://portable-linux-apps.github.io
 # 1. Make it executable:
-# $ sudo chmod +x ./file.sh
+# $ sudo chmod +x ~/Donwloads/name.sh
 # 2. Then run
-# $ sudo bash ./file.sh
+# $ sudo bash ~/Donwloads/name.sh
 ########################################################################
 
 APP=atomicwallet

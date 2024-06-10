@@ -5,9 +5,9 @@
 # SCRIPT CREDITS: https://portable-linux-apps.github.io
 # DESCRIPTION: Collect, organize, cite, and share your research sources...
 # 1. Make it executable:
-# $ sudo chmod +x ./file.sh
+# $ sudo chmod +x ~/Downloads/Zotero_Installer.sh
 # 2. Then run
-# $ sudo bash ./file.sh
+# $ sudo bash ~/Downloads/Zotero_Installer.sh
 ########################################################################
 
 APP=zotero

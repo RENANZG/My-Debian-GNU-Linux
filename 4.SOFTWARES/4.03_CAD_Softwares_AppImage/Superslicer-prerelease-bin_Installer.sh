@@ -1,13 +1,15 @@
 #!/bin/sh
-
+    
 ########################################################################
-# VISIT: https://github.com/supermerill/SuperSlicer
-# SCRIPT CREDITS: https://portable-linux-apps.github.io
-# 1. Make it executable:
-# $ sudo chmod +x ./file.sh
-# 2. Then run
-# $ sudo bash ./file.sh
-########################################################################    
+# VISIT          : 
+# SCRIPT CREDITS : https://portable-linux-apps.github.io
+# USAGE          :
+# Make it executable:
+# $ sudo chmod +x ~/Downloads/Superslicer-prerelease-bin_Installer.sh
+# Then run
+# $ sudo bash ~/Downloads/Superslicer-prerelease-bin_Installer.sh
+########################################################################
+
 
 APP=superslicer-prerelease-bin
 REPO="supermerill/SuperSlicer"

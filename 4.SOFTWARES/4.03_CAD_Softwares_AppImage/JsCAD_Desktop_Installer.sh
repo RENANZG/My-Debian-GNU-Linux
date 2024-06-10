@@ -1,13 +1,15 @@
 #!/bin/sh
-
+    
 ########################################################################
-# VISIT: https://github.com/jscad/jscad-desktop
-# SCRIPT CREDITS: https://portable-linux-apps.github.io
-# 1. Make it executable:
-# $ sudo chmod +x ./file.sh
-# 2. Then run
-# $ sudo bash ./file.sh
-########################################################################    
+# VISIT          : 
+# SCRIPT CREDITS : https://portable-linux-apps.github.io
+# USAGE          :
+# Make it executable:
+# $ sudo chmod +x ~/Downloads/JsCAD_Desktop_Installer.sh
+# Then run
+# $ sudo bash ~/Downloads/JsCAD_Desktop_Installer.sh
+########################################################################
+
 
 APP=jscad-desktop
 REPO="jscad/jscad-desktop"

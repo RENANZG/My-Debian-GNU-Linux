@@ -1,4 +1,5 @@
 # KVM/QEMU security
+
 ## Architecture
 3 components:
 - KVM (in-kernel)
@@ -40,6 +41,7 @@ By far qemu-kvm has the largest attack surface: much more code than the KVM modu
   - https://googleprojectzero.blogspot.com/2021/06/an-epyc-escape-case-study-of-kvm.html
 
 ## Mitigations
+
 No mitigations for KVM vulnerabilities, the entire host is compromised.
 
 Mitigations for QEMU vulnerabilities:

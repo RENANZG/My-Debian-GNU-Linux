@@ -1,13 +1,15 @@
 #!/bin/sh
-
+    
 ########################################################################
-# VISIT: https://github.com/openscad/openscad
-# SCRIPT CREDITS: https://portable-linux-apps.github.io
-# 1. Make it executable:
-# $ sudo chmod +x ./file.sh
-# 2. Then run
-# $ sudo bash ./file.sh
-########################################################################    
+# VISIT          : 
+# SCRIPT CREDITS : https://portable-linux-apps.github.io
+# USAGE          :
+# Make it executable:
+# $ sudo chmod +x ~/Downloads/Openscad_Installer.sh
+# Then run
+# $ sudo bash ~/Downloads/Openscad_Installer.sh
+########################################################################
+
 
 APP=openscad
 SITE="https://github.com/openscad/openscad"

@@ -1,13 +1,15 @@
 #!/bin/sh
-
+    
 ########################################################################
-# VISIT: https://github.com/Ultimaker/Cura
-# SCRIPT CREDITS: https://portable-linux-apps.github.io/
-# 1. Make it executable:
-# $ sudo chmod +x ./file.sh
-# 2. Then run
-# $ sudo bash ./file.sh
-########################################################################    
+# VISIT          : 
+# SCRIPT CREDITS : https://portable-linux-apps.github.io
+# USAGE          :
+# Make it executable:
+# $ sudo chmod +x ~/Downloads/Cura_Installer.sh
+# Then run
+# $ sudo bash ~/Downloads/Cura_Installer.sh
+########################################################################
+
 
 APP=cura
 REPO="Ultimaker/Cura"

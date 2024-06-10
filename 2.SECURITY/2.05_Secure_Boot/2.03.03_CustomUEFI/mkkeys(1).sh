@@ -1,6 +1,4 @@
 #!/bin/bash
-# Copyright (c) 2015 by Roderick W. Smith
-# Licensed under the terms of the GPL v3
 
 echo -n "Enter a Common Name to embed in the keys: "
 read NAME
