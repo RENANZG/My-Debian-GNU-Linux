@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-
   <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- HIDDEN CSS IN HTML SANITIZED FOR MARKDOWN 
@@ -159,7 +156,7 @@ hr {
 }
 </style>
 -->
-<title>DEBIAN GNU/LINUX</title>
+<title></title>
 </head>
 <body>
 
@@ -9425,11 +9422,9 @@ $ sudo hdparm -I /dev/sda
 
 <!-- ############################################################-->
 
-<p align="right"><a href="https://github.com/RENANZG/My-Debian-GNU-Linux?tab=readme-ov-file#">Back to Top ⬆</a></p>
-
-<!-- ############################################################-->
-
 <div id="footer">
+
+<p align="right"><a href="https://github.com/RENANZG/My-Debian-GNU-Linux?tab=readme-ov-file#">Back to Top ⬆</a></p>
 
 <br>
 <br>
