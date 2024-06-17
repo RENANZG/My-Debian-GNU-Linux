@@ -733,30 +733,30 @@ https://github.com/linuxdabbler/debian-install-scripts<br>
 
 <h4>Encryption</h4>
     
-    <ul>
-        <li><a href="https://wiki.archlinux.org/title/Security" target="_blank">Arch Linux Security</a></li>
-        <li><a href="https://wiki.archlinux.org/title/Data-at-rest_encryption" target="_blank">Data-at-rest encryption</a></li>
-        <li><a href="https://en.wikipedia.org/wiki/Disk_encryption#Implementations" target="_blank">Disk encryption implementations</a></li>
-        <li><a href="https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-2" target="_blank">FIPS 140-2 Cryptographic Module Validation Program</a></li>
-    </ul>
+  <ul>
+<li><a href="https://wiki.archlinux.org/title/Security" target="_blank">Arch Linux Security</a></li>
+<li><a href="https://wiki.archlinux.org/title/Data-at-rest_encryption" target="_blank">Data-at-rest encryption</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Disk_encryption#Implementations" target="_blank">Disk encryption implementations</a></li>
+<li><a href="https://csrc.nist.gov/Projects/cryptographic-module-validation-program/fips-140-2" target="_blank">FIPS 140-2 Cryptographic Module Validation Program</a></li>
+  </ul>
 
 <h4>Partitioning scenarios: advantages and disadvantages</h4>
     
-    <ul>
-        <li><a href="https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system" target="_blank">Encrypting an entire system with dm-crypt</a></li>
-        <li><a href="https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page" target="_blank">Device encryption with dm-crypt</a></li>
-    </ul>
+  <ul>
+<li><a href="https://wiki.archlinux.org/title/dm-crypt/Encrypting_an_entire_system" target="_blank">Encrypting an entire system with dm-crypt</a></li>
+<li><a href="https://wiki.archlinux.org/title/dm-crypt/Device_encryption#top-page" target="_blank">Device encryption with dm-crypt</a></li>
+  </ul>
 
 <h4>FSTAB, CRYPTTAB AND DM-CRYPT - Linux kernel's device mapper crypto target</h4>
     
-    <ul>
-        <li><a href="https://wiki.archlinux.org/title/Dm-crypt" target="_blank">Dm-crypt</a></li>
-        <li><a href="https://wiki.debian.org/fstab" target="_blank">Fstab</a></li>
-        <li><a href="https://manpages.debian.org/bookworm/cryptsetup/crypttab.5.en.html" target="_blank">Crypttab</a></li>
-        <li><strong>Tips:</strong> Copy and paste blkid to fstab</li>
-        <li><code># echo "$(blkid -o export /dev/sdbX | grep ^UUID=) REMEMBEREFI" | tee --append /etc/fstab</code></li>
-       <li><code># blkid -o value -s UUID | sudo tee -a /etc/fstab</code></li>
-    </ul>
+  <ul>
+<li><a href="https://wiki.archlinux.org/title/Dm-crypt" target="_blank">Dm-crypt</a></li>
+<li><a href="https://wiki.debian.org/fstab" target="_blank">Fstab</a></li>
+<li><a href="https://manpages.debian.org/bookworm/cryptsetup/crypttab.5.en.html" target="_blank">Crypttab</a></li>
+<li><strong>Tips:</strong> Copy and paste blkid to fstab</li>
+<li><code># echo "$(blkid -o export /dev/sdbX | grep ^UUID=) REMEMBEREFI" | tee --append /etc/fstab</code></li>
+   <li><code># blkid -o value -s UUID | sudo tee -a /etc/fstab</code></li>
+  </ul>
 
 <h5>Example 1 - FSTAB - Non-encrypted Boot Removable Medium (USB Key) Multi-device</h5>
 <pre><code>
@@ -773,61 +773,61 @@ UUID=447e4a14-69f3-11ee-8c99-0242ac120002 none swap sw 0 0
 <h5>Example 2 - FSTAB - Encrypted Boot Removable Medium (USB Key) Multi-device</h5>
 
 <p><strong>👷🛠️UNDER CONSTRUCTION🚧🏗</strong></p>
-    <ul>
-        <li><a href="https://tqdev.com/2022-luks-with-usb-unlock" target="_blank">LUKS with USB unlock</a></li>
-        <li><a href="https://github.com/rob31415/cryptBoot" target="_blank">cryptBoot</a></li>
-        <li><a href="https://github.com/stupidpupil/https-keyscript" target="_blank">https-keyscript</a></li>
-    </ul>
+  <ul>
+<li><a href="https://tqdev.com/2022-luks-with-usb-unlock" target="_blank">LUKS with USB unlock</a></li>
+<li><a href="https://github.com/rob31415/cryptBoot" target="_blank">cryptBoot</a></li>
+<li><a href="https://github.com/stupidpupil/https-keyscript" target="_blank">https-keyscript</a></li>
+  </ul>
 
 <h5>Example 3 - FSTAB - Encrypted Boot Removable Medium (USB Key) Multi-device and Keyfile</h5>
 
-<ul>
-    <li><a href="https://github.com/aomgiwjc/Unix-Bootstrap-Installs/wiki" target="_blank">Unix Bootstrap Installs</a></li>
-    <li><a href="https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key" target="_blank">Unlock a LUKS partition with a USB key</a></li>
-    <li><a href="https://blog.fidelramos.net/software/unlock-luks-usb-drive" target="_blank">Unlock LUKS USB drive</a></li>
-    <li><a href="https://willhaley.com/blog/unlock-luks-volumes-with-usb-key" target="_blank">Unlock LUKS volumes with USB key - Will Haley's Blog</a></li>
-    <li><a href="https://dwarmstrong.org/fde-debian" target="_blank">Full Disk Encryption in Debian</a></li>
-    <li><a href="https://cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux" target="_blank">Cryptsetup: Add a New Disk Encryption Key Using a Linux Command Line</a></li>
-</ul>
+  <ul>
+<li><a href="https://github.com/aomgiwjc/Unix-Bootstrap-Installs/wiki" target="_blank">Unix Bootstrap Installs</a></li>
+<li><a href="https://cloudkid.fr/unlock-a-luks-partition-with-a-usb-key" target="_blank">Unlock a LUKS partition with a USB key</a></li>
+<li><a href="https://blog.fidelramos.net/software/unlock-luks-usb-drive" target="_blank">Unlock LUKS USB drive</a></li>
+<li><a href="https://willhaley.com/blog/unlock-luks-volumes-with-usb-key" target="_blank">Unlock LUKS volumes with USB key - Will Haley's Blog</a></li>
+<li><a href="https://dwarmstrong.org/fde-debian" target="_blank">Full Disk Encryption in Debian</a></li>
+<li><a href="https://cyberciti.biz/hardware/cryptsetup-add-enable-luks-disk-encryption-keyfile-linux" target="_blank">Cryptsetup: Add a New Disk Encryption Key Using a Linux Command Line</a></li>
+  </ul>
 
 <h4>Time-based Autentication (OTP, TOTP, and HOTP)</h4>
 
-<ul>
+  <ul>
 <li>https://packages.debian.org/bookworm/nitrokey-authenticator</li>
 <li>https://packages.debian.org/bullseye/libpam-google-authenticator</li>
-</ul>
+  </ul>
 
 <table border="1">
-  <tr>
-    <th>Term</th>
-    <th>Definition</th>
-    <th>Example</th>
-  </tr>
-  <tr>
-    <td>OTP</td>
-    <td>One-Time Password</td>
-    <td>A unique password that is valid for only one login session or transaction.</td>
-  </tr>
-  <tr>
-    <td>TOTP</td>
-    <td>Time-Based One-Time Password</td>
-    <td>An OTP that is valid for a certain period of time, typically 30 seconds.</td>
-  </tr>
-  <tr>
-    <td>HOTP</td>
-    <td>HMAC-Based One-Time Password</td>
-    <td>An OTP that is generated based on a counter and a shared secret key.</td>
-  </tr>
+<tr>
+  <th>Term</th>
+  <th>Definition</th>
+  <th>Example</th>
+</tr>
+<tr>
+  <td>OTP</td>
+  <td>One-Time Password</td>
+  <td>A unique password that is valid for only one login session or transaction.</td>
+</tr>
+<tr>
+  <td>TOTP</td>
+  <td>Time-Based One-Time Password</td>
+  <td>An OTP that is valid for a certain period of time, typically 30 seconds.</td>
+</tr>
+<tr>
+  <td>HOTP</td>
+  <td>HMAC-Based One-Time Password</td>
+  <td>An OTP that is generated based on a counter and a shared secret key.</td>
+</tr>
 </table>
 
 <h4>Nuke Password</h4>
 
-<ul>
-    <li><a href="https://packages.debian.org/bookworm/cryptsetup-nuke-password" target="_blank">Cryptsetup Nuke Password - Debian Packages</a></li>
-    <li><a href="https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password" target="_blank">Cryptsetup Nuke Password - Debian Salsa</a></li>
-</ul>
+  <ul>
+<li><a href="https://packages.debian.org/bookworm/cryptsetup-nuke-password" target="_blank">Cryptsetup Nuke Password - Debian Packages</a></li>
+<li><a href="https://salsa.debian.org/pkg-security-team/cryptsetup-nuke-password" target="_blank">Cryptsetup Nuke Password - Debian Salsa</a></li>
+  </ul>
     
-    <pre><code><span>$ </span>sudo apt install cryptsetup-nuke-password</code></pre><button onclick="navigator.clipboard.writeText('sudo apt install cryptsetup-nuke-password')">Copy</button>
+ <pre><code><span>$ </span>sudo apt install cryptsetup-nuke-password</code></pre><button onclick="navigator.clipboard.writeText('sudo apt install cryptsetup-nuke-password')">Copy</button>
 
 <br>
 </details>
@@ -846,102 +846,89 @@ UUID=447e4a14-69f3-11ee-8c99-0242ac120002 none swap sw 0 0
 
 <h5>How to securely configure sudo for everyday use on your personal Linux machine</h5>
 
-<ol>
-    <li><strong>Open a Terminal Window:</strong>
-        <ul>
-            <li>Press <kbd>Ctrl + Alt + T</kbd> or search for "Terminal" in your application menu.</li>
-        </ul>
-    </li>
-    <li><strong>Switch to the Root User:</strong>
-        <ul>
-            <li>If you have access to the root account, switch to root by running:</li>
-            <li>
-            <pre><code><span>$ </span>su -</code></pre><button onclick="navigator.clipboard.writeText('su -')">Copy</button>
-            </li>
-            <li>Enter the root password when prompted.</li>
-        </ul>
-    </li>
-    <li><strong>Run <code>visudo</code>:</strong>
-        <ul>
-            <li>As the root user, execute:</li>
-            <li>
-            <pre><code><span># </span>visudo</code></pre><button onclick="navigator.clipboard.writeText('visudo')">Copy</button>
-            </li>
-            <li>This command opens the sudoers file in your default text editor and ensures that any syntax errors won't be saved, preventing potential misconfigurations.</li>
-        </ul>
-    </li>
-    <li><strong>Add Your User to the Sudoers File:</strong>
-        <ul>
-            <li>Locate the line that includes <code>root ALL=(ALL:ALL) ALL</code>.</li>
-            <li>Below that line, add the following line, replacing <code> your_username</code> with your actual username:</li>
-            <li>
-            <pre><code><span>$ </span>your_username ALL=(ALL:ALL) ALL</code></pre><button onclick="navigator.clipboard.writeText('your_username ALL=(ALL:ALL) ALL')">Copy</button>
-            </li>
-            <li>Save the file and exit the editor:
-                <ul>
-                    <li>For <code>nano</code>, use <kbd>Ctrl + O</kbd> to save and press <kbd>Enter</kbd>, press <kbd>Ctrl + X</kbd> to exit.</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-</ol>
+  <ol>
+<li><strong>Open a Terminal Window:</strong></li>
+  <ul>
+<li>Press <kbd>Ctrl + Alt + T</kbd> or search for "Terminal" in your application menu.</li>
+  </ul>
+<li><strong>Switch to the Root User:</strong></li>
+  <ul>
+<li>If you have access to the root account, switch to root by running:</li>
+<li>
+<pre><code><span>$ </span>su -</code></pre><button onclick="navigator.clipboard.writeText('su -')">Copy</button>
+</li>
+<li>Enter the root password when prompted.</li>
+  </ul>
+<li><strong>Run <code>visudo</code>:</strong></li>
+  <ul>
+<li>As the root user, execute:</li>
+<li>
+<pre><code><span># </span>visudo</code></pre><button onclick="navigator.clipboard.writeText('visudo')">Copy</button>
+</li>
+<li>This command opens the sudoers file in your default text editor and ensures that any syntax errors won't be saved, preventing potential misconfigurations.</li>
+  </ul>
+<li><strong>Add Your User to the Sudoers File:</strong></li>
+  <ul>
+<li>Locate the line that includes <code>root ALL=(ALL:ALL) ALL</code>.</li>
+<li>Below that line, add the following line, replacing <code> your_username</code> with your actual username:</li>
+<li>
+<pre><code><span>$ </span>your_username ALL=(ALL:ALL) ALL</code></pre><button onclick="navigator.clipboard.writeText('your_username ALL=(ALL:ALL) ALL')">Copy</button>
+</li>
+<li>Save the file and exit the editor:
+  <ul>
+<li>For <code>nano</code>, use <kbd>Ctrl + O</kbd> to save and press <kbd>Enter</kbd>, press <kbd>Ctrl + X</kbd> to exit.</li>
+  </ul>
+  </ul>
+  </ol>
 <h3>Test Sudo Access</h3>
-<ol>
-    <li><strong>Open a New Terminal Window or Log Out and Log Back In:</strong>
-        <ul>
-            <li>This ensures that the changes take effect.</li>
-        </ul>
-    </li>
-    <li><strong>Test Sudo Access:</strong>
-        <ul>
-            <li>Run a command with <code>sudo</code> to verify:</li>
-            <li>
-             <pre><code><span>$ </span>sudo ls</code></pre><button onclick="navigator.clipboard.writeText('sudo ls')">Copy</button>
-            </li>
-            <li>Enter your password when prompted.</li>
-            <li>If the command executes successfully, sudo is configured correctly for your user.</li>
-        </ul>
-    </li>
-</ol>
+  <ol>
+<li><strong>Open a New Terminal Window or Log Out and Log Back In:</strong></li>
+  <ul>
+<li>This ensures that the changes take effect.</li>
+  </ul>
+<li><strong>Test Sudo Access:</strong></li>
+  <ul>
+<li>Run a command with <code>sudo</code> to verify:</li>
+<li>
+<pre><code><span>$ </span>sudo ls</code></pre><button onclick="navigator.clipboard.writeText('sudo ls')">Copy</button>
+</li>
+<li>Enter your password when prompted.</li>
+<li>If the command executes successfully, sudo is configured correctly for your user.</li>
+  </ul>
+  </ol>
 <h3>Optional: Configure Sudo Timeout</h3>
-<ol>
-    <li><strong>Open the Sudoers Configuration for Timeout:</strong>
-        <ul>
-            <li>Create or edit a specific sudoers configuration file for the timeout setting:</li>
-            <li>
-            <pre><code><span>$ </span>sudo nano /etc/sudoers.d/timeout</code></pre><button onclick="navigator.clipboard.writeText('sudo nano /etc/sudoers.d/timeout')">Copy</button>
-            </li>
-        </ul>
-    </li>
-    <li><strong>Set the Timeout Value:</strong>
-        <ul>
-            <li>Add or modify the following line to set the timeout (e.g., 3 minutes):</li>
-            <li>
-           <pre><code>Defaults timestamp_timeout=3</code></pre><button onclick="navigator.clipboard.writeText('Defaults timestamp_timeout=3')">Copy</button>
-            </li>
-            <li>Save the file and exit nano.</li>
-        </ul>
-    </li>
-</ol>
+  <ol>
+<li><strong>Open the Sudoers Configuration for Timeout:</strong></li>
+  <ul>
+<li>Create or edit a specific sudoers configuration file for the timeout setting:</li>
+<li>
+<pre><code><span>$ </span>sudo nano /etc/sudoers.d/timeout</code></pre><button onclick="navigator.clipboard.writeText('sudo nano /etc/sudoers.d/timeout')">Copy</button>
+</li>
+  </ul>
+<li><strong>Set the Timeout Value:</strong></li>
+  <ul>
+<li>Add or modify the following line to set the timeout (e.g., 3 minutes):</li>
+<li>
+<pre><code>Defaults timestamp_timeout=3</code></pre><button onclick="navigator.clipboard.writeText('Defaults timestamp_timeout=3')">Copy</button>
+</li>
+<li>Save the file and exit nano.</li>
+  </ul>
+  </ol>
 <h3>Additional Tips</h3>
-<ul>
-    <li><strong>Use Sudo Only When Necessary:</strong>
-        <ul>
-            <li>Only use sudo for commands that require elevated privileges to minimize the risk of accidental
-                system changes.</li>
-        </ul>
-    </li>
-    <li><strong>Keep Your System Updated Regularly:</strong>
-        <ul>
-            <li>Run updates frequently to ensure you have the latest security patches and software versions.</li>
-        </ul>
-    </li>
-    <li><strong>Secure Your Password:</strong>
-        <ul>
-            <li>Use a strong and unique password for your user account to enhance security.</li>
-        </ul>
-    </li>
-</ul>
+  <ul>
+<li><strong>Use Sudo Only When Necessary:</strong></li>
+  <ul>
+<li>Only use sudo for commands that require elevated privileges to minimize the risk of accidental system changes.</li>
+  </ul>
+<li><strong>Keep Your System Updated Regularly:</strong></li>
+  <ul>
+<li>Run updates frequently to ensure you have the latest security patches and software versions.</li>
+  </ul>
+<li><strong>Secure Your Password:</strong></li>li>
+  <ul>
+<li>Use a strong and unique password for your user account to enhance security.</li>
+  </ul>
+  </ul>
     
 <p><small>*Note: logoff to take effect.</small></p>
 
@@ -1004,11 +991,11 @@ https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
 
 <di>
 <h6>References</h6>
-<ol>
+  <ol>
 <li>Debian Manual Page for <code>apt(8)</code>. Available at: <a href="https://manpages.debian.org/buster/apt/apt.8.en.html" target="_blank">https://manpages.debian.org/buster/apt/apt.8.en.html</a></li>
 <li>Debian Reference - Package Management. Available at: <a href="https://debian.org/doc/manuals/debian-reference/ch02.en.html" target="_blank">https://debian.org/doc/manuals/debian-reference/ch02.en.html</a></li>
 <li>APT User Manual. Available at: <a href="https://manpages.debian.org/buster/apt-get/apt-get.8.en.html" target="_blank">https://manpages.debian.org/buster/apt-get/apt-get.8.en.html</a></li>
-</ol>
+  </ol>
 
 
 <!-- ##### -->
@@ -1091,29 +1078,26 @@ https://keepassxc.org/docs/KeePassXC_UserGuide#_openssh_agent_on_linux<br>
 
 <p>Open source alternatives to these fonts are available:</p>
 
-<ul>
-    <li><strong>Times New Roman</strong>:
-        <ul>
-            <li><em>Liberation Serif</em>: Designed to be metrically compatible with Times New Roman.</li>
-            <li><em>Nimbus Roman</em>: A serif typeface that is very similar to Times New Roman.</li>
-            <li><em>DejaVu Serif</em>: Another good open-source serif font with broad language support.</li>
-        </ul>
-    </li>
-    <li><strong>Arial</strong>:
-        <ul>
-            <li><em>Liberation Sans</em>: Designed to be metrically compatible with Arial.</li>
-            <li><em>Nimbus Sans</em>: A sans-serif typeface similar to Arial.</li>
-            <li><em>DejaVu Sans</em>: An open-source sans-serif font with extensive language support.</li>
-        </ul>
-    </li>
-    <li><strong>Courier New</strong>:
-        <ul>
-            <li><em>Liberation Mono</em>: Designed to be metrically compatible with Courier New.</li>
-            <li><em>Nimbus Mono</em>: A monospaced typeface similar to Courier New.</li>
-            <li><em>DejaVu Sans Mono</em>: A good open-source monospaced font with broad language support.</li>
-        </ul>
-    </li>
-</ul>
+  <ul>
+<li><strong>Times New Roman</strong>:</li>
+  <ul>
+<li><em>Liberation Serif</em>: Designed to be metrically compatible with Times New Roman.</li>
+<li><em>Nimbus Roman</em>: A serif typeface that is very similar to Times New Roman.</li>
+<li><em>DejaVu Serif</em>: Another good open-source serif font with broad language support.</li>
+  </ul>
+<li><strong>Arial</strong>:</li>
+  <ul>
+<li><em>Liberation Sans</em>: Designed to be metrically compatible with Arial.</li>
+<li><em>Nimbus Sans</em>: A sans-serif typeface similar to Arial.</li>
+<li><em>DejaVu Sans</em>: An open-source sans-serif font with extensive language support.</li>
+  </ul>
+<li><strong>Courier New</strong>:</li>
+  <ul>
+<li><em>Liberation Mono</em>: Designed to be metrically compatible with Courier New.</li>
+<li><em>Nimbus Mono</em>: A monospaced typeface similar to Courier New.</li>
+<li><em>DejaVu Sans Mono</em>: A good open-source monospaced font with broad language support.</li>
+  </ul>
+  </ul>
 
 <h5>8. TLP</h5>
 
@@ -1128,36 +1112,36 @@ https://keepassxc.org/docs/KeePassXC_UserGuide#_openssh_agent_on_linux<br>
 <summary>2.05 Low Level Linux</summary> 
 <br>
 
-    <ul>
-        <li>Kernel Linux<br>
-            <a href="https://kernel.org" target="_blank">https://kernel.org</a>
-        </li>
-        <li>Linux Training<br>
-            <a href="https://training.linuxfoundation.org" target="_blank">https://training.linuxfoundation.org</a><br>
-            <a href="https://training.linuxfoundation.org/training/a-beginners-guide-to-linux-kernel-development-lfd103" target="_blank">A Beginner's Guide to Linux Kernel Development (LFD103)</a>
-        </li>
-        <li>Linux From Scratch (LFS)<br>
-            <a href="https://linuxfromscratch.org" target="_blank">https://linuxfromscratch.org</a>
-        </li>
-        <li>Reproducible Builds<br>
-            <a href="https://reproducible-builds.org" target="_blank">https://reproducible-builds.org</a>
-        </li>
-        <li>Unix & Linux Stack Exchange<br>
-            <a href="https://unix.stackexchange.com" target="_blank">https://unix.stackexchange.com</a>
-        </li>
-        <li>Linux Journal<br>
-            <a href="https://linuxjournal.com" target="_blank">https://linuxjournal.com</a>
-        </li>
-        <li>Linux Performance<br>
-            <a href="https://brendangregg.com/linuxperf.html" target="_blank">https://brendangregg.com/linuxperf.html</a>
-        </li>
-        <li>Linux Assembly Language Programming<br>
-            <a href="https://asmtutor.com" target="_blank">https://asmtutor.com</a>
-        </li>
-        <li>Linux System Programming<br>
-            <a href="https://cs.fsu.edu/~baker/opsys/" target="_blank">https://cs.fsu.edu/~baker/opsys/</a>
-        </li>
-    </ul>
+  <ul>
+<li>Kernel Linux<br>
+<a href="https://kernel.org" target="_blank">https://kernel.org</a>
+</li>
+<li>Linux Training<br>
+<a href="https://training.linuxfoundation.org" target="_blank">https://training.linuxfoundation.org</a><br>
+<a href="https://training.linuxfoundation.org/training/a-beginners-guide-to-linux-kernel-development-lfd103" target="_blank">A Beginner's Guide to Linux Kernel Development (LFD103)</a>
+</li>
+<li>Linux From Scratch (LFS)<br>
+<a href="https://linuxfromscratch.org" target="_blank">https://linuxfromscratch.org</a>
+</li>
+<li>Reproducible Builds<br>
+<a href="https://reproducible-builds.org" target="_blank">https://reproducible-builds.org</a>
+</li>
+<li>Unix & Linux Stack Exchange<br>
+<a href="https://unix.stackexchange.com" target="_blank">https://unix.stackexchange.com</a>
+</li>
+<li>Linux Journal<br>
+<a href="https://linuxjournal.com" target="_blank">https://linuxjournal.com</a>
+</li>
+<li>Linux Performance<br>
+<a href="https://brendangregg.com/linuxperf.html" target="_blank">https://brendangregg.com/linuxperf.html</a>
+</li>
+<li>Linux Assembly Language Programming<br>
+<a href="https://asmtutor.com" target="_blank">https://asmtutor.com</a>
+</li>
+<li>Linux System Programming<br>
+<a href="https://cs.fsu.edu/~baker/opsys/" target="_blank">https://cs.fsu.edu/~baker/opsys/</a>
+</li>
+  </ul>
 
 <br>
 </details>
@@ -1172,35 +1156,35 @@ https://keepassxc.org/docs/KeePassXC_UserGuide#_openssh_agent_on_linux<br>
 
 <p>Ventoy - A New Bootable USB Solution - Downloads</p>
 
-<ul>
-    <li><a href="https://ventoy.net/en/download.html" target="_blank">Download Ventoy</a></li>
-</ul>
+  <ul>
+<li><a href="https://ventoy.net/en/download.html" target="_blank">Download Ventoy</a></li>
+  </ul>
 
 <p>Ventoy - Source Code - Releases</p>
 
-<ul>
-    <li><a href="https://github.com/ventoy/Ventoy/releases" target="_blank">Ventoy Releases on GitHub</a></li>
-</ul>
+  <ul>
+<li><a href="https://github.com/ventoy/Ventoy/releases" target="_blank">Ventoy Releases on GitHub</a></li>
+  </ul>
 
 <h4>Start to use Ventoy - Install Ventoy To USB Drive</h4>
 
-<ul>
-    <li><a href="https://ventoy.net/en/doc_start.html" target="_blank">Ventoy Documentation - Getting Started</a></li>
-    <li><a href="https://woshub.com/multi-iso-boot-usb-flash-ventoy" target="_blank">How to Use Ventoy for Multi-ISO Boot on USB Flash Drive</a></li>
-    <li><a href="https://pureinfotech.com/ventoy-create-bootable-usb-windows-11-10" target="_blank">Ventoy Tutorial: Create Bootable USB Drive for Windows 11/10</a></li>
-</ul>
+  <ul>
+<li><a href="https://ventoy.net/en/doc_start.html" target="_blank">Ventoy Documentation - Getting Started</a></li>
+<li><a href="https://woshub.com/multi-iso-boot-usb-flash-ventoy" target="_blank">How to Use Ventoy for Multi-ISO Boot on USB Flash Drive</a></li>
+<li><a href="https://pureinfotech.com/ventoy-create-bootable-usb-windows-11-10" target="_blank">Ventoy Tutorial: Create Bootable USB Drive for Windows 11/10</a></li>
+  </ul>
 
 <h4>About Secure Boot in UEFI mode</h4>
 
-<ul>
-    <li><a href="https://ventoy.net/en/doc_secure.html" target="_blank">Ventoy Documentation - Secure Boot in UEFI mode</a></li>
-</ul>
+  <ul>
+<li><a href="https://ventoy.net/en/doc_secure.html" target="_blank">Ventoy Documentation - Secure Boot in UEFI mode</a></li>
+  </ul>
 
 <h4>Ventoy Persistence Plugin</h4>
 
-<ul>
-    <li><a href="https://ventoy.net/en/plugin_persistence.html" target="_blank">Ventoy Persistence Plugin Documentation</a></li>
-</ul>
+  <ul>
+<li><a href="https://ventoy.net/en/plugin_persistence.html" target="_blank">Ventoy Persistence Plugin Documentation</a></li>
+  </ul>
 
 <p>(*recommended only for rescue disk purposes)</p>
 
@@ -1217,15 +1201,15 @@ https://keepassxc.org/docs/KeePassXC_UserGuide#_openssh_agent_on_linux<br>
 
 <p>Clonezilla - The Free and Open Source Software for Disk Imaging and Cloning.</p>
 
-<ul>
-    <li><a href="https://clonezilla.org/clonezilla-live-doc.php" target="_blank">Clonezilla Documentation</a></li>
-</ul>
+  <ul>
+<li><a href="https://clonezilla.org/clonezilla-live-doc.php" target="_blank">Clonezilla Documentation</a></li>
+  </ul>
 
 <h4>How to Use Clonezilla Software</h4>
 
-<ul>
-    <li><a href="https://wikihow.com/Use-Clonezilla" target="_blank">WikiHow Guide: How to Use Clonezilla</a></li>
-</ul>
+  <ul>
+<li><a href="https://wikihow.com/Use-Clonezilla" target="_blank">WikiHow Guide: How to Use Clonezilla</a></li>
+  </ul>
 
 <h4>Changing disk name</h4>
 
@@ -1310,7 +1294,7 @@ https://keepassxc.org/docs/KeePassXC_UserGuide#_openssh_agent_on_linux<br>
 <summary>3.02 Secure Boot References</summary>
 <br>
 
-<ul>
+  <ul>
 <li>BASIC:</li>
 <li>https://rodsbooks.com/efi-bootloaders</li>
 <li>https://rodsbooks.com/efi-bootloaders/secureboot.html</li>
@@ -1354,9 +1338,9 @@ https://keepassxc.org/docs/KeePassXC_UserGuide#_openssh_agent_on_linux<br>
 <li>https://help.eset.com/efs/8.1/en-US/secure-boot.html</li>
 <li>https://help.ggcircuit.com/knowledge/how-to-inject-custom-secure-boot-keys-example</li>
 <li>https://blogs.oracle.com/linux/post/the-machine-keyring</li>
-<li>https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250 </li>
+<li>https://paldan.altervista.org/signed-linux-kernel-deb-creation-how-to/?doing_wp_cron=1690057748.1645970344543457031250</li>
 <li>https://linuxjournal.com/content/take-control-your-pc-uefi-secure-boot</li>
-</ul>
+  </ul>
 
 <br>
 </details>
@@ -1367,12 +1351,12 @@ https://keepassxc.org/docs/KeePassXC_UserGuide#_openssh_agent_on_linux<br>
 <summary>3.03 YouTube References</summary>
 <br>
 
-<ul>
+  <ul>
 <li><a href="https://youtube.com/watch?v=Mqh9o8YY2dg" target="_blank">Use UEFI Secure Boot NOW! (Trafotin)</a></li>
 <li><a href="https://youtube.com/watch?v=WBemkwMHLJM" target="_blank">Best Practices for UEFI Secure Boot Customization (UEFIForum)</a></li>
 <li><a href="https://youtube.com/watch?v=jtLQ8SzfrDU" target="_blank">Secure Boot from A to Z (The Linux Foundation)</a></li>
 <li><a href="https://youtube.com/watch?v=_3mwK6AXo_k" target="_blank">Secure Boot. In Debian. In Buster. Really (DebConf Videos)</a></li>
-</ul>
+  </ul>
 
 <br>
 </details> 
@@ -2228,22 +2212,22 @@ https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi<br>
 
 <h4>General guidelines for protecting yourself</h4>
 
-  <ol>
-        <li>Stay Silent: Avoid discussing sensitive information, especially online or in public.</li>
-        <li>Keep Personal and Professional Separate: Don't mix your personal life with any potentially sensitive or illegal activities.</li>
-        <li>Avoid Bragging: Don’t boast about your activities, connections, or capabilities, as this can draw unwanted attention.</li>
-        <li>Avoid contaminating ("watering hole"): Refrain from contamination of systems, maintain strict compartmentalization.</li>
-        <li>Keep Operational Details Confidential: Never disclose specific details about your operations or plans to anyone.</li>
-        <li>Maintain OpSec: Operational Security (OpSec) is crucial; don't reveal your plans, strategies, or tactics.</li>
-        <li>Be Mindful of Metadata: Understand that even seemingly harmless metadata (e.g., location data, timestamps) can be used to track your activities, so be cautious about what information you share and how it can be interpreted.</li>
-        <li>Exercise Caution with Trust: Be wary of trusting anyone, and never allow yourself to be blackmailed.</li>
-        <li>Operate Discreetly: Avoid conducting any sensitive activities from your home or easily traceable locations.</li>
-        <li>Cultivate Safe Habits: Practice cautious behaviors online and offline to minimize risks.</li>
-        <li>Understand Human Vulnerabilities: Remember that humans can be the weakest link in security, so be mindful of social engineering tactics.</li>
-        <li>Know Your Rights: Familiarize yourself with your legal rights and protections regarding surveillance and privacy (search warrant rules), so you can assert them if necessary.</li>
-       <li>Stay Informed about Surveillance Practices: Educate yourself about common surveillance techniques used by law enforcement and intelligence agencies, so you can take appropriate precautions to protect your privacy.</li>
-       <li>Seek Specialized Advice if Needed: If you believe you are being unfairly targeted or monitored, seek legal advice from a qualified attorney who specializes in privacy and surveillance issues. Report suspicious behavior or incidents to journalists or tech NGOs.</li>
-       </ol>
+    <ol>
+<li>Stay Silent: Avoid discussing sensitive information, especially online or in public.</li>
+<li>Keep Personal and Professional Separate: Don't mix your personal life with any potentially sensitive or illegal activities.</li>
+<li>Avoid Bragging: Don’t boast about your activities, connections, or capabilities, as this can draw unwanted attention.</li>
+<li>Avoid contaminating ("watering hole"): Refrain from contamination of systems, maintain strict compartmentalization.</li>
+<li>Keep Operational Details Confidential: Never disclose specific details about your operations or plans to anyone.</li>
+<li>Maintain OpSec: Operational Security (OpSec) is crucial; don't reveal your plans, strategies, or tactics.</li>
+<li>Be Mindful of Metadata: Understand that even seemingly harmless metadata (e.g., location data, timestamps) can be used to track your activities, so be cautious about what information you share and how it can be interpreted.</li>
+<li>Exercise Caution with Trust: Be wary of trusting anyone, and never allow yourself to be blackmailed.</li>
+<li>Operate Discreetly: Avoid conducting any sensitive activities from your home or easily traceable locations.</li>
+<li>Cultivate Safe Habits: Practice cautious behaviors online and offline to minimize risks.</li>
+<li>Understand Human Vulnerabilities: Remember that humans can be the weakest link in security, so be mindful of social engineering tactics.</li>
+<li>Know Your Rights: Familiarize yourself with your legal rights and protections regarding surveillance and privacy (search warrant rules), so you can assert them if necessary.</li>
+   <li>Stay Informed about Surveillance Practices: Educate yourself about common surveillance techniques used by law enforcement and intelligence agencies, so you can take appropriate precautions to protect your privacy.</li>
+   <li>Seek Specialized Advice if Needed: If you believe you are being unfairly targeted or monitored, seek legal advice from a qualified attorney who specializes in privacy and surveillance issues. Report suspicious behavior or incidents to journalists or tech NGOs.</li>
+         </ol>
 
        <h5>*Social engineering tactics and contaminated systems (watering hole): It seems that the worst problem is collateral intrusion, the involvement of seemingly trustworthy uninvolved close third parties. The end of trust.</h5>
 
@@ -2255,87 +2239,87 @@ https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi<br>
 
     <h4>Install and Update Security Software</h4>
  
-    <ul>
-        <li>Use reputable antivirus software compatible with Linux, such as ClamAV.</li>
-        <li>Update your antivirus definitions regularly to detect new threats.</li>
-    </ul>
+  <ul>
+<li>Use reputable antivirus software compatible with Linux, such as ClamAV.</li>
+<li>Update your antivirus definitions regularly to detect new threats.</li>
+  </ul>
 
     <h4>Secure System Updates</h4>
     
-    <ul>
-        <li>Set up automatic updates for your Linux distribution to ensure you receive security patches promptly.</li>
-        <li>Regularly update installed software and libraries to the latest versions.</li>
-    </ul>
+  <ul>
+<li>Set up automatic updates for your Linux distribution to ensure you receive security patches promptly.</li>
+<li>Regularly update installed software and libraries to the latest versions.</li>
+  </ul>
 
     <h4>Enable Firewall</h4>
     
-    <ul>
-        <li>Configure a firewall, such as UFW (Uncomplicated Firewall) or iptables, to control incoming and outgoing network traffic.</li>
-        <li>Define strict rules to block unauthorized access and suspicious connections.</li>
-    </ul>
+  <ul>
+<li>Configure a firewall, such as UFW (Uncomplicated Firewall) or iptables, to control incoming and outgoing network traffic.</li>
+<li>Define strict rules to block unauthorized access and suspicious connections.</li>
+  </ul>
 
     <h4>Secure Network Connections</h4>
     
-    <ul>
-        <li>Use encrypted connections (HTTPS, SSH, VPN) for sensitive activities and avoid public or unsecured networks.</li>
-        <li>Disable unnecessary network services and ports to reduce the attack surface.</li>
-    </ul>
+  <ul>
+<li>Use encrypted connections (HTTPS, SSH, VPN) for sensitive activities and avoid public or unsecured networks.</li>
+<li>Disable unnecessary network services and ports to reduce the attack surface.</li>
+  </ul>
 
     <h4>Implement User Permissions</h4>
     
-    <ul>
-        <li>Use non-administrator (regular) user accounts for daily tasks to limit the impact of malware if a compromise occurs.</li>
-        <li>Avoid running applications with root privileges unless absolutely necessary.</li>
-    </ul>
+  <ul>
+<li>Use non-administrator (regular) user accounts for daily tasks to limit the impact of malware if a compromise occurs.</li>
+<li>Avoid running applications with root privileges unless absolutely necessary.</li>
+  </ul>
 
     <h4>Secure File Systems</h4>
     
-    <ul>
-        <li>Enable filesystem encryption (e.g., using LUKS for disk encryption) to protect sensitive data.</li>
-        <li>Set appropriate file permissions to restrict access to critical system files and directories.</li>
-    </ul>
+  <ul>
+<li>Enable filesystem encryption (e.g., using LUKS for disk encryption) to protect sensitive data.</li>
+<li>Set appropriate file permissions to restrict access to critical system files and directories.</li>
+  </ul>
 
     <h4>Monitor System Logs</h4>
     
-    <ul>
-        <li>Regularly review system logs (e.g., /var/log/syslog, /var/log/auth.log) for unusual activities or potential security incidents.</li>
-        <li>Install and configure intrusion detection systems (IDS) or security monitoring tools.</li>
-    </ul>
+  <ul>
+<li>Regularly review system logs (e.g., /var/log/syslog, /var/log/auth.log) for unusual activities or potential security incidents.</li>
+<li>Install and configure intrusion detection systems (IDS) or security monitoring tools.</li>
+  </ul>
 
     <h4>Backup and Recovery</h4>
     
-    <ul>
-        <li>Implement regular backups of important data to an external device or secure cloud storage.</li>
-        <li>Test your backup and recovery procedures periodically to ensure they work effectively.</li>
-    </ul>
+  <ul>
+<li>Implement regular backups of important data to an external device or secure cloud storage.</li>
+<li>Test your backup and recovery procedures periodically to ensure they work effectively.</li>
+  </ul>
 
     <h4>Hardening Services</h4>
     
-    <ul>
-        <li>Disable or remove unnecessary services and daemons to reduce the attack surface.</li>
-        <li>Configure services securely, following best practices and guidelines for each service.</li>
-    </ul>
+  <ul>
+<li>Disable or remove unnecessary services and daemons to reduce the attack surface.</li>
+<li>Configure services securely, following best practices and guidelines for each service.</li>
+  </ul>
 
     <h4>Stay Informed and Educated</h4>
     
-    <ul>
-        <li>Stay updated with cybersecurity news, vulnerabilities, and threat intelligence related to Linux systems.</li>
-        <li>Educate yourself on Linux security best practices and techniques for detecting and mitigating malware.</li>
-    </ul>
+  <ul>
+<li>Stay updated with cybersecurity news, vulnerabilities, and threat intelligence related to Linux systems.</li>
+<li>Educate yourself on Linux security best practices and techniques for detecting and mitigating malware.</li>
+  </ul>
 
     <h4>Utilize Security Tools</h4>
     
-    <ul>
-        <li>Use tools like Lynis, OpenVAS, or Nessus for vulnerability scanning and system hardening.</li>
-        <li>Consider employing intrusion prevention systems (IPS) or endpoint security solutions for additional protection.</li>
-    </ul>
+  <ul>
+<li>Use tools like Lynis, OpenVAS, or Nessus for vulnerability scanning and system hardening.</li>
+<li>Consider employing intrusion prevention systems (IPS) or endpoint security solutions for additional protection.</li>
+  </ul>
 
     <h4>Secure Boot and BIOS/UEFI</h4>
     
-    <ul>
-        <li>Enable Secure Boot in your system's BIOS/UEFI settings to ensure that only trusted software can boot.</li>
-        <li>Regularly update your BIOS/UEFI firmware to patch known vulnerabilities.</li>
-    </ul>
+  <ul>
+<li>Enable Secure Boot in your system's BIOS/UEFI settings to ensure that only trusted software can boot.</li>
+<li>Regularly update your BIOS/UEFI firmware to patch known vulnerabilities.</li>
+  </ul>
 
 <br>
 </details>
@@ -2371,102 +2355,89 @@ https://wiki.ubuntu.com/DebuggingApparmor<br>
 
 <h5>How to securely configure sudo for everyday use on your personal Linux machine</h5>
 
-<ol>
-    <li><strong>Open a Terminal Window:</strong>
-        <ul>
-            <li>Press <kbd>Ctrl + Alt + T</kbd> or search for "Terminal" in your application menu.</li>
-        </ul>
-    </li>
-    <li><strong>Switch to the Root User:</strong>
-        <ul>
-            <li>If you have access to the root account, switch to root by running:</li>
-            <li>
-            <pre><code><span>$ </span>su -</code></pre><button onclick="navigator.clipboard.writeText('su -')">Copy</button>
-            </li>
-            <li>Enter the root password when prompted.</li>
-        </ul>
-    </li>
-    <li><strong>Run <code>visudo</code>:</strong>
-        <ul>
-            <li>As the root user, execute:</li>
-            <li>
-            <pre><code><span># </span>visudo</code></pre><button onclick="navigator.clipboard.writeText('visudo')">Copy</button>
-            </li>
-            <li>This command opens the sudoers file in your default text editor and ensures that any syntax errors won't be saved, preventing potential misconfigurations.</li>
-        </ul>
-    </li>
-    <li><strong>Add Your User to the Sudoers File:</strong>
-        <ul>
-            <li>Locate the line that includes <code>root ALL=(ALL:ALL) ALL</code>.</li>
-            <li>Below that line, add the following line, replacing <code> your_username</code> with your actual username:</li>
-            <li>
-            <pre><code><span>$ </span>your_username ALL=(ALL:ALL) ALL</code></pre><button onclick="navigator.clipboard.writeText('your_username ALL=(ALL:ALL) ALL')">Copy</button>
-            </li>
-            <li>Save the file and exit the editor:
-                <ul>
-                    <li>For <code>nano</code>, use <kbd>Ctrl + O</kbd> to save and press <kbd>Enter</kbd>, press <kbd>Ctrl + X</kbd> to exit.</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-</ol>
+  <ol>
+<li><strong>Open a Terminal Window:</strong></li>
+  <ul>
+<li>Press <kbd>Ctrl + Alt + T</kbd> or search for "Terminal" in your application menu.</li>
+  </ul>
+<li><strong>Switch to the Root User:</strong></li>
+  <ul>
+<li>If you have access to the root account, switch to root by running:</li>
+<li>
+<pre><code><span>$ </span>su -</code></pre><button onclick="navigator.clipboard.writeText('su -')">Copy</button>
+</li>
+<li>Enter the root password when prompted.</li>
+  </ul>
+<li><strong>Run <code>visudo</code>:</strong></li>
+  <ul>
+<li>As the root user, execute:</li>
+<li>
+  <pre><code><span># </span>visudo</code></pre><button onclick="navigator.clipboard.writeText('visudo')">Copy</button>
+</li>
+<li>This command opens the sudoers file in your default text editor and ensures that any syntax errors won't be saved, preventing potential misconfigurations.</li>
+  </ul>
+<li><strong>Add Your User to the Sudoers File:</strong></li>
+  <ul>
+<li>Locate the line that includes <code>root ALL=(ALL:ALL) ALL</code>.</li>
+<li>Below that line, add the following line, replacing <code> your_username</code> with your actual username:</li>
+<li>
+<pre><code><span>$ </span>your_username ALL=(ALL:ALL) ALL</code></pre><button onclick="navigator.clipboard.writeText('your_username ALL=(ALL:ALL) ALL')">Copy</button>
+</li>
+<li>Save the file and exit the editor:
+  <ul>
+<li>For <code>nano</code>, use <kbd>Ctrl + O</kbd> to save and press <kbd>Enter</kbd>, press <kbd>Ctrl + X</kbd> to exit.</li>
+  </ul>
+  </ul>
+  </ol>
 <h3>Test Sudo Access</h3>
-<ol>
-    <li><strong>Open a New Terminal Window or Log Out and Log Back In:</strong>
-        <ul>
-            <li>This ensures that the changes take effect.</li>
-        </ul>
-    </li>
-    <li><strong>Test Sudo Access:</strong>
-        <ul>
-            <li>Run a command with <code>sudo</code> to verify:</li>
-            <li>
-             <pre><code><span>$ </span>sudo ls</code></pre><button onclick="navigator.clipboard.writeText('sudo ls')">Copy</button>
-            </li>
-            <li>Enter your password when prompted.</li>
-            <li>If the command executes successfully, sudo is configured correctly for your user.</li>
-        </ul>
-    </li>
-</ol>
+  <ol>
+<li><strong>Open a New Terminal Window or Log Out and Log Back In:</strong></li>
+  <ul>
+<li>This ensures that the changes take effect.</li>
+  </ul>
+<li><strong>Test Sudo Access:</strong></li>
+  <ul>
+<li>Run a command with <code>sudo</code> to verify:</li>
+<li>
+<pre><code><span>$ </span>sudo ls</code></pre><button onclick="navigator.clipboard.writeText('sudo ls')">Copy</button>
+</li>
+<li>Enter your password when prompted.</li>
+<li>If the command executes successfully, sudo is configured correctly for your user.</li>
+  </ul>
+    
+  </ol>
 <h3>Optional: Configure Sudo Timeout</h3>
-<ol>
-    <li><strong>Open the Sudoers Configuration for Timeout:</strong>
-        <ul>
-            <li>Create or edit a specific sudoers configuration file for the timeout setting:</li>
-            <li>
-            <pre><code><span>$ </span>sudo nano /etc/sudoers.d/timeout</code></pre><button onclick="navigator.clipboard.writeText('sudo nano /etc/sudoers.d/timeout')">Copy</button>
-            </li>
-        </ul>
-    </li>
-    <li><strong>Set the Timeout Value:</strong>
-        <ul>
-            <li>Add or modify the following line to set the timeout (e.g., 3 minutes):</li>
-            <li>
-           <pre><code>Defaults timestamp_timeout=3</code></pre><button onclick="navigator.clipboard.writeText('Defaults timestamp_timeout=3')">Copy</button>
-            </li>
-            <li>Save the file and exit nano.</li>
-        </ul>
-    </li>
-</ol>
+  <ol>
+<li><strong>Open the Sudoers Configuration for Timeout:</strong></li>
+  <ul>
+<li>Create or edit a specific sudoers configuration file for the timeout setting:</li>
+<li>
+<pre><code><span>$ </span>sudo nano /etc/sudoers.d/timeout</code></pre><button onclick="navigator.clipboard.writeText('sudo nano /etc/sudoers.d/timeout')">Copy</button>
+</li>
+  </ul>
+<li><strong>Set the Timeout Value:</strong></li>
+  <ul>
+<li>Add or modify the following line to set the timeout (e.g., 3 minutes):</li>
+<li><pre><code>Defaults timestamp_timeout=3</code></pre><button onclick="navigator.clipboard.writeText('Defaults timestamp_timeout=3')">Copy</button></li>
+<li>Save the file and exit nano.</li>
+  </ul>
+  </ol>
 <h3>Additional Tips</h3>
-<ul>
-    <li><strong>Use Sudo Only When Necessary:</strong>
-        <ul>
-            <li>Only use sudo for commands that require elevated privileges to minimize the risk of accidental
+  <ul>
+<li><strong>Use Sudo Only When Necessary:</strong></li>
+  <ul>
+<li>Only use sudo for commands that require elevated privileges to minimize the risk of accidental
                 system changes.</li>
-        </ul>
-    </li>
-    <li><strong>Keep Your System Updated Regularly:</strong>
-        <ul>
-            <li>Run updates frequently to ensure you have the latest security patches and software versions.</li>
-        </ul>
-    </li>
-    <li><strong>Secure Your Password:</strong>
-        <ul>
-            <li>Use a strong and unique password for your user account to enhance security.</li>
-        </ul>
-    </li>
-</ul>
+  </ul>
+<li><strong>Keep Your System Updated Regularly:</strong></li>
+  <ul>
+<li>Run updates frequently to ensure you have the latest security patches and software versions.</li>
+  </ul>
+<li><strong>Secure Your Password:</strong></li>
+  <ul>
+<li>Use a strong and unique password for your user account to enhance security.</li>
+  </ul>
+  </ul>
     
 <p><small>Note: Logoff to take effect.</small></p>
 <p><small>Note: It's worthless if full disk encryption with strong password is not implemented.</small></p>
@@ -2539,34 +2510,34 @@ https://redhat.com/sysadmin/configure-linux-auditing-auditd<br>
 
 <h4>Online Virus and URL Scanning</h4>
 
-<ul>
-    <li><a href="https://urlscan.io">urlscan.io</a></li>
-    <li><a href="https://virustotal.com">Virus Total</a></li>
-    <li><a href="https://hybrid-analysis.com">Hybrid Analysis</a></li>
-    <li><a href="https://cuckoo.cert.ee">Cuckoo Sandbox</a></li>
-    <li><a href="https://otx.alienvault.com">AlienVault OTX</a></li>
-    <li><a href="https://exchange.xforce.ibmcloud.com">IBM X-Force Exchange</a></li>
-    <li><a href="https://talosintelligence.com/reputation_center">Cisco Talos</a></li>
-    <li><a href="https://maltiverse.com/collection">Maltiverse</a></li>
-    <li><a href="https://greynoise.io">GreyNoise</a></li>
-    <li><a href="https://isc.sans.edu">SANS Internet Storm Center</a></li>
-    <li><a href="https://intelx.io">Intelligence X</a></li>
-    <li><a href="https://metadefender.opswat.com">MetaDefender Cloud</a></li>
-    <li><a href="https://community.riskiq.com/home">RiskIQ Community Edition</a></li>
-    <li><a href="https://pulsedive.com">Pulsedive</a></li>
-    <li><a href="https://valhalla.nextron-systems.com">Valhalla YARA Rules</a></li>
-    <li><a href="https://any.run">ANY.RUN</a></li>
-    <li><a href="https://binvis.io">Binvis</a></li>
-    <li><a href="https://joesandbox.com">JoeSandbox</a></li>
-</ul>
+  <ul>
+<li><a href="https://urlscan.io">urlscan.io</a></li>
+<li><a href="https://virustotal.com">Virus Total</a></li>
+<li><a href="https://hybrid-analysis.com">Hybrid Analysis</a></li>
+<li><a href="https://cuckoo.cert.ee">Cuckoo Sandbox</a></li>
+<li><a href="https://otx.alienvault.com">AlienVault OTX</a></li>
+<li><a href="https://exchange.xforce.ibmcloud.com">IBM X-Force Exchange</a></li>
+<li><a href="https://talosintelligence.com/reputation_center">Cisco Talos</a></li>
+<li><a href="https://maltiverse.com/collection">Maltiverse</a></li>
+<li><a href="https://greynoise.io">GreyNoise</a></li>
+<li><a href="https://isc.sans.edu">SANS Internet Storm Center</a></li>
+<li><a href="https://intelx.io">Intelligence X</a></li>
+<li><a href="https://metadefender.opswat.com">MetaDefender Cloud</a></li>
+<li><a href="https://community.riskiq.com/home">RiskIQ Community Edition</a></li>
+<li><a href="https://pulsedive.com">Pulsedive</a></li>
+<li><a href="https://valhalla.nextron-systems.com">Valhalla YARA Rules</a></li>
+<li><a href="https://any.run">ANY.RUN</a></li>
+<li><a href="https://binvis.io">Binvis</a></li>
+<li><a href="https://joesandbox.com">JoeSandbox</a></li>
+  </ul>
 
 <h4>Online Phishing and Email Reputation Verifiers</h4>
 
-<ul>
-    <li><a href="https://phishtank.org">PhishTank</a></li>
-    <li><a href="https://emailrep.io">Simple Email Reputation</a></li>
-    <li><a href="https://mxtoolbox.com/blacklists.aspx">Email Blacklist Check</a></li>
-</ul>
+  <ul>
+<li><a href="https://phishtank.org">PhishTank</a></li>
+<li><a href="https://emailrep.io">Simple Email Reputation</a></li>
+<li><a href="https://mxtoolbox.com/blacklists.aspx">Email Blacklist Check</a></li>
+  </ul>
 
 <h4>ClamAV</h4>
 
@@ -2772,7 +2743,7 @@ https://pfsense.org<br>
 
 https://avoidthehack.com/router-wireless-guide<br>
 
-<ul>
+  <ul>
 <li>Change the default router password</li>
 <li>Turn off UPnP</li>
 <li>Use the router’s firewall capabilities</li>
@@ -2783,7 +2754,7 @@ https://avoidthehack.com/router-wireless-guide<br>
 <li>Consider using open-source router firmware</li>
 <li>Keep router firmware updated</li>
 <li>Keep other software up to date</li>
-</ul>
+  </ul>
 
 <p>*These are solutions outside the military level. Forgetting Wi-Fi and using an RJ-45 to USB should be considered for home use.</p>
 
@@ -3060,10 +3031,10 @@ https://reddit.com/r/pihole<br>
 
 <h4>Others</h4>
 
- <ul>
+   <ul>
 	<li><a href="https://opennicproject.org/" target="_blank"><strong>OpenNIC</strong></a></li>
 	<li><a href="https://bit.namecoin.org/" target="_blank"><strong>Dot-Bit</strong></a>: Decentralized DNS using Bitcoin technology</li>
-</ul>
+  </ul>
 
 <br>
 </details>
@@ -4094,10 +4065,10 @@ $ ping duckduckgo.com
 <a href="https://browserleaks.com/ip">∙ BrowserLeaks IP Test</a><br>
 <a href="https://ipx.ac/run">∙ IPX.AC DNS Leak Test</a><br>
 
-<ul>
+  <ul>
 <li>EFF Test - https://coveryourtracks.eff.org/learn</li>
 <li>TOR Fingerprinting - https://blog.torproject.org/browser-fingerprinting-introduction-and-challenges-ahead</li>
-</ul>
+  </ul>
 
 <p>You could test your current public IP address and compare that to the one from before with 'ipleak.net'. If they match, your VPN is not working correctly.</p>
 
@@ -5248,8 +5219,7 @@ https://cvedetails.com/vulnerability-list/vendor_id-1224/product_id-15031/Google
 <tr>
 
 <td valign="top">
-<ul>
-
+  <ul>
 <li>
 <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin">Ublock Origin</a>
 </li>
@@ -5271,11 +5241,11 @@ https://cvedetails.com/vulnerability-list/vendor_id-1224/product_id-15031/Google
 <li>
 <a href="https://addons.mozilla.org/en-US/firefox/addon/terms-of-service-didnt-read">Terms of Service; Didn't Read</a>
 </li>
-</ul>
+  </ul>
 </td>
 
 <td valign="top">
-<ul>
+  <ul>
 <li>
 <a href="https://chrome.google.com/webstore/detail/simple-speed-dial/gpdpldlbafdmhlmcdllcjgoigmpjonfc?hl=en-US">Simple Speed Dial</a>
 </li>
@@ -5296,40 +5266,40 @@ https://cvedetails.com/vulnerability-list/vendor_id-1224/product_id-15031/Google
 <li>
 <a href="https://chrome.google.com/webstore/detail/tracking-token-stripper/kcpnkledgcbobhkgimpbmejgockkplob">Strips Google Analytics</a><br>
 <li><a href="https://privacybadger.org">Privacy Badger is a browser extension that automatically learns to block invisible trackers</a></li>
-</ul>
+  </ul>
 </td>
 
 <td valign="top">
-<ul>
+  <ul>
 <li>
 <a href="https://github.com/j3nda/speed-dial-chrome">Simple Speed Dial</a></li>
 <li>
 <a href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a></li>
 </td>
-</ul>
+  </ul>
 
 <h5>Others</h5>
 
-<ul>
+  <ul>
 <li><a href="https://adblockplus.org" target="_blank"><strong>Adblock Plus</strong></a> (Firefox, Chome, Opera, Android): Customizable ad-blocking plugin</li>
-      <li><a href="https://addons.mozilla.org/en-US/firefox/addon/beef-taco-targeted-advertising/" target="_blank"><strong>Beef Taco (Targeted Advertising Cookie Opt-Out)</strong></a> (Firefox): Sets permanent targeted-advertising opt-out cookies</li>
-      <li><a href="https://addons.mozilla.org/en-US/firefox/addon/betterprivacy/" target="_blank"><strong>BetterPrivacy</strong></a> (Firefox): Removes and deletes long-term “super-cookies”</li>
-      <li><a href="https://abine.com/index.html" target="_blank"><strong>Blur</strong></a> (Firefox): Tracker blocking, password management, and e-mail masking</li>
-      <li><a href="https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/"><strong>Decentraleyes</strong></a> (Firefox): Limits tracking by third-party content delivery networks by storing copies of the content locally</li>
-      <li><a href="https://disconnect.me/" target="_blank"><strong>Disconnect</strong></a> (Firefox, Chrome, Safari, Opera): Stops 3rd party tracking sites around the web.</li>
-      <li><a href="http://mybrowseraddon.com/facebook-disconnect.html" target="_blank"><strong>Facebook Disconnect</strong></a> (Firefox, Chrome, Opera): Blocks third-party website requests to Facebook to limit Facebook's tracking of users' web activity</li>
-      <li><a href="https://addons.mozilla.org/en-US/firefox/addon/flashblock/" target="_blank"><strong>Flashblock</strong></a> (Firefox): Allows selective blocking and execution of Flash content.</li>
-      <li><a href="https://chrome.google.com/webstore/detail/flashcontrol/mfidmkgnfgnkihnjeklbekckimkipmoe" target="_blank"><strong>Flash Control</strong></a> (Chrome): Allows selective blocking and execution of Flash content.</li> 
-      <li><a href="https://ghostery.com/our-solutions/ghostery-browser-extension/" target="_blank"><strong>Ghostery</strong></a> (Firefox, Chrome, Safari, Opera): Script and tracker blocking.</li>
-      <li><a href="https://eff.org/https-everywhere" target="_blank"><strong>HTTPS Everywhere</strong></a> (Firefox, Chrome): Forces HTTPS versions of websites were they are available</li>
-      <li><a href="https://addons.mozilla.org/en-US/firefox/addon/lightbeam/"><strong>Lightbeam</strong></a> (Firefox): Visualization plugin that shows web sites visited, including the third-party web sites that users may not be aware of</li>
-      <li><a href="http://noscript.net" target="_blank"><strong>NoScript</strong></a> (Firefox, derivatives of Mozilla): highly customizable plugin to selectively allow Javascript, Java, and Flash to run.</li>
-      <li><a href="https://eff.org/privacybadger" target="_blank"><strong>Privacy Badger</strong></a> (Firefox, Chrome, Opera): Blocks third-party scripts and images</li>
-      <li><a href="https://chrome.google.com/webstore/detail/protect-my-choices/hdgloanjhdcenjgiafkpbehddcnonlic/reviews" target="_blank"><strong>Protect My Choices</strong></a> (Chrome): Sets cookies to opt out of targeted advertising</li>
-      <li><a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank"><strong>ScriptSafe</strong></a> (Chrome): Script blocking</li>
-      <li><a href="https://addons.mozilla.org/en-US/firefox/addon/self-destructing-cookies/" target="_blank"><strong>Self-Destructing Cookies</strong></a> (Firefox): Automatically removes a site's cookies on closing its browser tab</li>
-      <li><strong>uBlock Origin</strong> (<a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" target="_blank">Firefox</a>, <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" target="_blank">Chrome</a>, <a href="https://github.com/el1t/uBlock-Safari/releases" target="_blank">Safari</a>, <a href="https://addons.opera.com/en/extensions/details/ublock/" target="_blank">Opera</a>): Lightweight blocking plug-in for multiple browsers</li>
-</ul>
+  <li><a href="https://addons.mozilla.org/en-US/firefox/addon/beef-taco-targeted-advertising/" target="_blank"><strong>Beef Taco (Targeted Advertising Cookie Opt-Out)</strong></a> (Firefox): Sets permanent targeted-advertising opt-out cookies</li>
+  <li><a href="https://addons.mozilla.org/en-US/firefox/addon/betterprivacy/" target="_blank"><strong>BetterPrivacy</strong></a> (Firefox): Removes and deletes long-term “super-cookies”</li>
+  <li><a href="https://abine.com/index.html" target="_blank"><strong>Blur</strong></a> (Firefox): Tracker blocking, password management, and e-mail masking</li>
+  <li><a href="https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/"><strong>Decentraleyes</strong></a> (Firefox): Limits tracking by third-party content delivery networks by storing copies of the content locally</li>
+  <li><a href="https://disconnect.me/" target="_blank"><strong>Disconnect</strong></a> (Firefox, Chrome, Safari, Opera): Stops 3rd party tracking sites around the web.</li>
+  <li><a href="http://mybrowseraddon.com/facebook-disconnect.html" target="_blank"><strong>Facebook Disconnect</strong></a> (Firefox, Chrome, Opera): Blocks third-party website requests to Facebook to limit Facebook's tracking of users' web activity</li>
+  <li><a href="https://addons.mozilla.org/en-US/firefox/addon/flashblock/" target="_blank"><strong>Flashblock</strong></a> (Firefox): Allows selective blocking and execution of Flash content.</li>
+  <li><a href="https://chrome.google.com/webstore/detail/flashcontrol/mfidmkgnfgnkihnjeklbekckimkipmoe" target="_blank"><strong>Flash Control</strong></a> (Chrome): Allows selective blocking and execution of Flash content.</li> 
+  <li><a href="https://ghostery.com/our-solutions/ghostery-browser-extension/" target="_blank"><strong>Ghostery</strong></a> (Firefox, Chrome, Safari, Opera): Script and tracker blocking.</li>
+  <li><a href="https://eff.org/https-everywhere" target="_blank"><strong>HTTPS Everywhere</strong></a> (Firefox, Chrome): Forces HTTPS versions of websites were they are available</li>
+  <li><a href="https://addons.mozilla.org/en-US/firefox/addon/lightbeam/"><strong>Lightbeam</strong></a> (Firefox): Visualization plugin that shows web sites visited, including the third-party web sites that users may not be aware of</li>
+  <li><a href="http://noscript.net" target="_blank"><strong>NoScript</strong></a> (Firefox, derivatives of Mozilla): highly customizable plugin to selectively allow Javascript, Java, and Flash to run.</li>
+  <li><a href="https://eff.org/privacybadger" target="_blank"><strong>Privacy Badger</strong></a> (Firefox, Chrome, Opera): Blocks third-party scripts and images</li>
+  <li><a href="https://chrome.google.com/webstore/detail/protect-my-choices/hdgloanjhdcenjgiafkpbehddcnonlic/reviews" target="_blank"><strong>Protect My Choices</strong></a> (Chrome): Sets cookies to opt out of targeted advertising</li>
+  <li><a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank"><strong>ScriptSafe</strong></a> (Chrome): Script blocking</li>
+  <li><a href="https://addons.mozilla.org/en-US/firefox/addon/self-destructing-cookies/" target="_blank"><strong>Self-Destructing Cookies</strong></a> (Firefox): Automatically removes a site's cookies on closing its browser tab</li>
+  <li><strong>uBlock Origin</strong> (<a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" target="_blank">Firefox</a>, <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" target="_blank">Chrome</a>, <a href="https://github.com/el1t/uBlock-Safari/releases" target="_blank">Safari</a>, <a href="https://addons.opera.com/en/extensions/details/ublock/" target="_blank">Opera</a>): Lightweight blocking plug-in for multiple browsers</li>
+  </ul>
 
 </tr>
 </tbody>
@@ -5409,15 +5379,15 @@ https://reddit.com/r/Scams<br>
 
 <h4>Cloud Privacy</h4>
 
-<ul>
+  <ul>
 <li><a href="https://owncloud.org/" target="_blank"><strong>ownCloud</strong></a>: Self-hosted file and sync server</li>
 
 <li><a href="https://tahoe-lafs.org/trac/tahoe-lafs" target="_blank"><strong>Tahoe-LAFS</strong></a>: Encrypted cloud storage system</li>
 
-<li><a href="https://cryptomator.org" target="_blank">Cryptomator (GUI)<strong></strong></a>: </li>
+<li><a href="https://cryptomator.org" target="_blank">Cryptomator (GUI)<strong></strong></a>:</li>
 
-<li><a href="https://duplicati.com" target="_blank"><strong>Duplicati (GUI)</strong></a>: </li>
-</ul>
+<li><a href="https://duplicati.com" target="_blank"><strong>Duplicati (GUI)</strong></a>:</li>
+  </ul>
 
 
 <h4>Cloud Providers</h4>
@@ -5626,14 +5596,14 @@ geometry=50%x96%
 
 <p>Usefull links:</p>
 
-<ul>
+  <ul>
 <li>https://keepvid.ch</li>
 <li>https://gifs.com</li>
 <li>https://omnicalculator.com/other/video-size</li>
 <li>https://vidon.me/compress-mp4</li>
 <li>https://dvdfab.at/resource/blu-ray/free-blu-ray-to-mp4-converter</li>
 <li></li>
-</ul>
+  </ul>
 
 <!-- ########## -->
 
@@ -6356,7 +6326,7 @@ https://wiki.archlinux.org/title/Solid_state_drive<br>
 
 <h4>Manufacturers that supply software to update firmware and perform tasks like secure erase</h4>
 
-<ul>
+  <ul>
 <li><a href="https://forum.corsair.com/blog/storage/the-corsair-ssd-toolbox/">Corsair SSD Toolbox</a></li>
 <li><a href="https://semiconductor.samsung.com/consumer-storage/support/tools/">Samsung Magician</a></li>
 <li><a href="https://seagate.com/as/en/support/downloads/seatools/">Seagate Seatools</a></li>
@@ -6370,7 +6340,7 @@ https://wiki.archlinux.org/title/Solid_state_drive<br>
 <li><a href="https://kingston.com/en/support/technical/ssdmanager">Kingston SSD Manager</a></li>
 <li><a href="https://micron.com/products/ssd/storage-executive-software">Micron SSD Management</a></li>
 <li><a href="https://intel.com/content/www/us/en/download/19543/intel-memory-and-storage-tool-gui.html?v=t">Intel Memory and Storage Tool</a></li>
-</ul>
+  </ul>
 
 <!-- ##### -->
 
@@ -6524,7 +6494,7 @@ $ tree -d -L 2 .
 
 <p>You might consider including some of the following information in your file names, but you can include any information that will allow you to distinguish your files from one another.</p>
 
-<ul>
+  <ul>
 	<li>Project or experiment name or acronym</li>
 	<li>Location/spatial coordinates</li>
 	<li>Researcher name/initials</li>
@@ -6533,46 +6503,43 @@ $ tree -d -L 2 .
 	<li>Conditions</li>
 	<li>Version number of file</li>
 	<li>Three-letter file extension for application-specific files</li>
-</ul>
+  </ul>
 
 <p><small>Another good idea is to include in the directory a readme.txt file that explains your naming format along with any abbreviations or codes you have used.</small></p>
 
 <p>Machine readable</p>
 
-<ul>
-  <li>Regular expression and globbing friendly
-    <ul>
-      <li>Avoid spaces, punctuation, accented characters, case sensitivity</li>
-      <li>Easy to compute on</li>
-    </ul>
-  </li>
-  <li>Deliberate use of delimiters</li>
-</ul>
+  <ul>
+<li>Regular expression and globbing friendly</li>
+  <ul>
+  <li>Avoid spaces, punctuation, accented characters, case sensitivity</li>
+  <li>Easy to compute on</li>
+  </ul>
+<li>Deliberate use of delimiters</li>
+  </ul>
 
 <p>Consider these additional tips as you develop a file naming scheme:</p>
 
-<ul>
+  <ul>
 	<li>A good format for date designations is YYYYMMDD or YYMMDD. This format makes sure all of your files stay in chronological order, even over the span of many years.</li>
 	<li>Try not to make file names too long, since long file names do not work well with all types of software.</li>
 	<li>Special characters such as ~ ! @ # $ % ^ &amp; * ( ) ` ; &lt; &gt; ? , [ ] { } ' " and | should be avoided.</li>
 	<li>Illegal characters in Windows file names.</li>
 	<li>When using a sequential numbering system, using leading zeros for clarity and to make sure files sort in sequential order. For example, use "001, 002, ...010, 011 ... 100, 101, etc." instead of "1, 2, ...10, 11 ... 100, 101, etc."</li>
-	<li>Do not use spaces. Some software will not recognize file names with spaces, and file names with spaces must be enclosed in quotes when using the command line. Other options include:
-	<ul>
+	<li>Do not use spaces. Some software will not recognize file names with spaces, and file names with spaces must be enclosed in quotes when using the command line. Other options include:</li>
+	  <ul>
 		<li>Underscores, e.g. file_name.xxx</li>
 		<li>Dashes, e.g. file-name.xxx</li>
 		<li>No separation, e.g. filename.xxx</li>
 		<li>Camel case, where the first letter of each section of text is capitalized, e.g. FileName.xxx</li>
-	</ul>
-	</li>
-	<li>Periods can be used in files names&nbsp;but consider these points before doing so and proceed cautiously:
-	<ul>
+	  </ul>
+	<li>Periods can be used in files names&nbsp;but consider these points before doing so and proceed cautiously:</li>
+	  <ul>
 		<li>Periods are used in regular expressions.</li>
 		<li>Periods at the start of a file name are used to indicate configuration and/or hidden files in a file directory.</li>
 		<li>Periods are used to separate file names from file extensions.</li>
-	</ul>
-	</li>
-</ul>
+	  </ul>
+  </ul>
 
 <!-- ########## -->
 
@@ -7008,14 +6975,14 @@ https://wiki.archlinux.org/title/Rsync<br>
 
 <pre><code><span>$ </span>sudo apt install rsync</code></pre><button onclick="navigator.clipboard.writeText('sudo apt install rsync')">Copy</button>
 
-<ol>
+  <ol>
 <li><code>rsync</code> is a powerful tool for copying and syncing files locally or remotely.</li>
 <li>The <code>-ah</code> options preserve permissions and ownership (-a for archive mode, -h for human-readable output).</li>
 <li><code>--progress</code> shows the transfer progress and speed.</li>
 <li><code>--info=progress2</code> provides detailed progress information.</li>
 <li><code>--remove-sent-files</code> is useful for moving files after successful transfer.
 </li>
-</ol>
+  </ol>
 
 <pre>
 • Copying
@@ -7034,11 +7001,11 @@ $ rsync -ravP Directory/ server@192.168.1.56:/home/server
 
 <h5>DD</h5>
 
-<ol>
+  <ol>
 <li><code>dd</code> is a command-line utility for copying and converting files and block-level data.</li>
 <li>It preserves file permissions and ownership by default.</li>
 <li><code>status=progress</code> option shows the progress of data transfer.</li>
-</ol>
+  </ol>
 
 <pre>
 $ dd if=~/source of=/backup/destination status=progress
@@ -7052,10 +7019,10 @@ $ dd if=~/source of=/backup/destination status=progress
 
 <pre><code><span>$ </span>sudo apt install pv</code></pre><button onclick="navigator.clipboard.writeText('sudo apt install pv')">Copy</button>
 
-<ol>
+  <ol>
 <li><code>pv</code> is a command-line tool to monitor the progress of data through a pipeline</li>
 <li><code>pv ~/source > /backup/destination</code> copies the content of ~/source to /backup/destination but doesn't preserve file permissions and ownership.</li>
-</ol>
+  </ol>
 
 <pre>
 $ pv ~/source > /backup/destination
@@ -7069,10 +7036,10 @@ $ pv ~/source > /backup/destination
 
 <pre><code><span>$ </span>sudo apt install curl</code></pre><button onclick="navigator.clipboard.writeText('sudo apt install curl')">Copy</button>
 
-<ol>
+  <ol>
 <li><code>curl</code> is mainly used for transferring data over various protocols.</li>
 <li><code>curl -o destination FILE://source</code> downloads a file from a URL (FILE://source) to a destination but doesn't preserve permissions and ownership.</li>
-</ol>
+  </ol>
 
 <pre>
 $ curl -o destination FILE://source
@@ -7137,133 +7104,133 @@ https://overte.org<br>
 <h4>Utilities</h4>
 
 <h5>Message Header Analysis</h5>
-<ul>
-    <li><a href="https://mha.azurewebsites.net">Message Header Analyzer (Azure)</a></li>
-    <li><a href="https://github.com/microsoft/MHA">Message Header Analyzer (GitHub)</a></li>
-</ul>
+  <ul>
+<li><a href="https://mha.azurewebsites.net">Message Header Analyzer (Azure)</a></li>
+<li><a href="https://github.com/microsoft/MHA">Message Header Analyzer (GitHub)</a></li>
+  </ul>
 <h5>Phishing and Email Reputation</h5>
-<ul>
-    <li><a href="https://phishtank.org">PhishTank</a></li>
-    <li><a href="https://emailrep.io">Simple Email Reputation</a></li>
-    <li><a href="https://mxtoolbox.com/blacklists.aspx">Email Blacklist Check</a></li>
-</ul>
+  <ul>
+<li><a href="https://phishtank.org">PhishTank</a></li>
+<li><a href="https://emailrep.io">Simple Email Reputation</a></li>
+<li><a href="https://mxtoolbox.com/blacklists.aspx">Email Blacklist Check</a></li>
+  </ul>
 <h5>Whois and DNS Lookup</h5>
-<ul>
-    <li><a href="https://iana.org/whois">Whois</a></li>
-    <li><a href="https://viewdns.info">ViewDNS</a></li>
-    <li><a href="https://whoismydns.com">WhoisMyDNS</a></li>
-    <li><a href="https://nslookup.io">NSLookup</a></li>
-    <li><a href="https://my-addr.com">My-Addr</a></li>
-    <li><a href="https://mxtoolbox.com">MXToolbox</a></li>
-    <li><a href="https://dnsstuff.com">DNSstuff</a></li>
-</ul>
+  <ul>
+<li><a href="https://iana.org/whois">Whois</a></li>
+<li><a href="https://viewdns.info">ViewDNS</a></li>
+<li><a href="https://whoismydns.com">WhoisMyDNS</a></li>
+<li><a href="https://nslookup.io">NSLookup</a></li>
+<li><a href="https://my-addr.com">My-Addr</a></li>
+<li><a href="https://mxtoolbox.com">MXToolbox</a></li>
+<li><a href="https://dnsstuff.com">DNSstuff</a></li>
+  </ul>
 <h5>Malware and Vulnerability Databases</h5>
-<ul>
-    <li><a href="https://malpedia.caad.fkie.fraunhofer.de">Malpedia</a></li>
-    <li><a href="https://cvedetails.com">CVE Details</a></li>
-    <li><a href="https://exploit-db.com">Exploit Database</a></li>
-    <li><a href="https://fileinfo.co">FileInfo</a></li>
-    <li><a href="https://strontic.github.io/xcyclopedia">xCyclopedia</a></li>
-    <li><a href="https://winbindex.m417z.com">The Windows Binary Index</a></li>
-    <li><a href="https://applipedia.paloaltonetworks.com">Palo Alto Applipedia</a></li>
-    <li><a href="https://ultimatewindowssecurity.com/securitylog/encyclopedia">Windows Security Logs</a></li>
-    <li><a href="https://nvd.nist.gov">National Vulnerability Database (NVD)</a></li>
-</ul>
+  <ul>
+<li><a href="https://malpedia.caad.fkie.fraunhofer.de">Malpedia</a></li>
+<li><a href="https://cvedetails.com">CVE Details</a></li>
+<li><a href="https://exploit-db.com">Exploit Database</a></li>
+<li><a href="https://fileinfo.co">FileInfo</a></li>
+<li><a href="https://strontic.github.io/xcyclopedia">xCyclopedia</a></li>
+<li><a href="https://winbindex.m417z.com">The Windows Binary Index</a></li>
+<li><a href="https://applipedia.paloaltonetworks.com">Palo Alto Applipedia</a></li>
+<li><a href="https://ultimatewindowssecurity.com/securitylog/encyclopedia">Windows Security Logs</a></li>
+<li><a href="https://nvd.nist.gov">National Vulnerability Database (NVD)</a></li>
+  </ul>
 <h5>Archiving Tools</h5>
-<ul>
-    <li><a href="https://web.archive.org">Internet Archive (WayBackMachine)</a></li>
-    <li><a href="https://archive.ph">Archive Web Content</a></li>
-    <li><a href="https://archive.org">Internet Archive</a></li>
-    <li><a href="https://httrack.com">HTTrack</a></li>
-    <li><a href="https://perma.cc">Perma.cc</a></li>
-</ul>
+  <ul>
+<li><a href="https://web.archive.org">Internet Archive (WayBackMachine)</a></li>
+<li><a href="https://archive.ph">Archive Web Content</a></li>
+<li><a href="https://archive.org">Internet Archive</a></li>
+<li><a href="https://httrack.com">HTTrack</a></li>
+<li><a href="https://perma.cc">Perma.cc</a></li>
+  </ul>
 <h5>IP and MAC Address Tools</h5>
-<ul>
-    <li><a href="https://ipvoid.com">IPVOID</a></li>
-    <li><a href="https://abuseipdb.com">AbuseIPDB</a></li>
-    <li><a href="https://grabify.link/">Grabify IP Logger</a></li>
-    <li><a href="https://iplogger.org">IP Logger</a></li>
-    <li><a href="https://iplogger.org/ip-tracker">IP Tracker</a></li>
-    <li><a href="https://iplogger.org/location-tracker">IP Location Tracker</a></li>
-    <li><a href="https://iplocation.net">IP Location</a></li>
-    <li><a href="https://iplogger.org/url_checker">URL Checker</a></li>
-    <li><a href="https://iplogger.org/mac-checker">MAC Address Lookup</a></li>
-    <li><a href="https://macvendors.com">MAC Vendor</a></li>
-    <li><a href="https://ip-api.com">Ip-api</a></li>
-    <li><a href="https://ipify.org">Ipify</a></li>
-    <li><a href="https://ipapi.co">Ipapi</a></li>
-    <li><a href="https://vpnapi.io">Vpnapi</a></li>
-    <li><a href="https://ipapi.com">Ipapi</a></li>
-    <li><a href="https://zmap.io">The ZMap Project</a></li>
-    <li><a href="https://wigle.net">WiGLE</a></li>
-    <li><a href="https://shodan.io">Shodan</a></li>
-    <li><a href="https://censys.io">Censys</a></li>
-</ul>
+  <ul>
+<li><a href="https://ipvoid.com">IPVOID</a></li>
+<li><a href="https://abuseipdb.com">AbuseIPDB</a></li>
+<li><a href="https://grabify.link/">Grabify IP Logger</a></li>
+<li><a href="https://iplogger.org">IP Logger</a></li>
+<li><a href="https://iplogger.org/ip-tracker">IP Tracker</a></li>
+<li><a href="https://iplogger.org/location-tracker">IP Location Tracker</a></li>
+<li><a href="https://iplocation.net">IP Location</a></li>
+<li><a href="https://iplogger.org/url_checker">URL Checker</a></li>
+<li><a href="https://iplogger.org/mac-checker">MAC Address Lookup</a></li>
+<li><a href="https://macvendors.com">MAC Vendor</a></li>
+<li><a href="https://ip-api.com">Ip-api</a></li>
+<li><a href="https://ipify.org">Ipify</a></li>
+<li><a href="https://ipapi.co">Ipapi</a></li>
+<li><a href="https://vpnapi.io">Vpnapi</a></li>
+<li><a href="https://ipapi.com">Ipapi</a></li>
+<li><a href="https://zmap.io">The ZMap Project</a></li>
+<li><a href="https://wigle.net">WiGLE</a></li>
+<li><a href="https://shodan.io">Shodan</a></li>
+<li><a href="https://censys.io">Censys</a></li>
+  </ul>
 <h5>URL and Virus Scanning</h5>
-<ul>
-    <li><a href="https://urlscan.io">urlscan.io</a></li>
-    <li><a href="https://virustotal.com">Virus Total</a></li>
-    <li><a href="https://hybrid-analysis.com">Hybrid Analysis</a></li>
-    <li><a href="https://cuckoo.cert.ee">Cuckoo Sandbox</a></li>
-    <li><a href="https://otx.alienvault.com">AlienVault OTX</a></li>
-    <li><a href="https://exchange.xforce.ibmcloud.com">IBM X-Force Exchange</a></li>
-    <li><a href="https://talosintelligence.com/reputation_center">Cisco Talos</a></li>
-    <li><a href="https://maltiverse.com/collection">Maltiverse</a></li>
-    <li><a href="https://greynoise.io">GreyNoise</a></li>
-    <li><a href="https://isc.sans.edu">SANS Internet Storm Center</a></li>
-    <li><a href="https://intelx.io">Intelligence X</a></li>
-    <li><a href="https://metadefender.opswat.com">MetaDefender Cloud</a></li>
-    <li><a href="https://community.riskiq.com/home">RiskIQ Community Edition</a></li>
-    <li><a href="https://pulsedive.com">Pulsedive</a></li>
-    <li><a href="https://valhalla.nextron-systems.com">Valhalla YARA Rules</a></li>
-    <li><a href="https://any.run">ANY.RUN</a></li>
-    <li><a href="https://binvis.io">Binvis</a></li>
-    <li><a href="https://joesandbox.com">JoeSandbox</a></li>
-</ul>
+  <ul>
+<li><a href="https://urlscan.io">urlscan.io</a></li>
+<li><a href="https://virustotal.com">Virus Total</a></li>
+<li><a href="https://hybrid-analysis.com">Hybrid Analysis</a></li>
+<li><a href="https://cuckoo.cert.ee">Cuckoo Sandbox</a></li>
+<li><a href="https://otx.alienvault.com">AlienVault OTX</a></li>
+<li><a href="https://exchange.xforce.ibmcloud.com">IBM X-Force Exchange</a></li>
+<li><a href="https://talosintelligence.com/reputation_center">Cisco Talos</a></li>
+<li><a href="https://maltiverse.com/collection">Maltiverse</a></li>
+<li><a href="https://greynoise.io">GreyNoise</a></li>
+<li><a href="https://isc.sans.edu">SANS Internet Storm Center</a></li>
+<li><a href="https://intelx.io">Intelligence X</a></li>
+<li><a href="https://metadefender.opswat.com">MetaDefender Cloud</a></li>
+<li><a href="https://community.riskiq.com/home">RiskIQ Community Edition</a></li>
+<li><a href="https://pulsedive.com">Pulsedive</a></li>
+<li><a href="https://valhalla.nextron-systems.com">Valhalla YARA Rules</a></li>
+<li><a href="https://any.run">ANY.RUN</a></li>
+<li><a href="https://binvis.io">Binvis</a></li>
+<li><a href="https://joesandbox.com">JoeSandbox</a></li>
+  </ul>
 <h5>File Analysis and Reverse Engineering</h5>
-<ul>
-    <li><a href="https://verexif.com/en/">Verexif</a></li>
-    <li><a href="https://revshells.com">Reverse Shell Generator</a></li>
-    <li><a href="https://hashes.com/en/decrypt/hash">Rainbow Tables (Hashes)</a></li>
-    <li><a href="https://en.wikipedia.org/wiki/Magic_number_(programming)">File Signatures ("Magic Numbers")</a></li>
-    <li><a href="https://en.wikipedia.org/wiki/List_of_file_signatures">List of File Signatures</a></li>
-    <li><a href="https://gchq.github.io/CyberChef">CyberChef</a></li>
-    <li><a href="https://explainshell.com">explainshell</a></li>
-    <li><a href="https://virusshare.com">VirusShare</a></li>
-    <li><a href="https://reverse.it">Reverse.IT</a></li>
-</ul>
+  <ul>
+<li><a href="https://verexif.com/en/">Verexif</a></li>
+<li><a href="https://revshells.com">Reverse Shell Generator</a></li>
+<li><a href="https://hashes.com/en/decrypt/hash">Rainbow Tables (Hashes)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Magic_number_(programming)">File Signatures ("Magic Numbers")</a></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_file_signatures">List of File Signatures</a></li>
+<li><a href="https://gchq.github.io/CyberChef">CyberChef</a></li>
+<li><a href="https://explainshell.com">explainshell</a></li>
+<li><a href="https://virusshare.com">VirusShare</a></li>
+<li><a href="https://reverse.it">Reverse.IT</a></li>
+  </ul>
 <h5>Utilities and Development Tools</h5>
-<ul>
-    <li><a href="https://epochconverter.com">Epoch Converter</a></li>
-    <li><a href="https://regex-generator.olafneumann.org">Regex Generator</a></li>
-    <li><a href="https://dehashed.com">DeHashed</a></li>
-    <li><a href="https://dencode.com">Dencode</a></li>
-    <li><a href="https://ctool.dev">Commonly Used Software Development Tools</a></li>
-    <li><a href="https://textfixer.com">Text Fixer</a></li>
-    <li><a href="https://ss64.com">SS64 Syntax Utils</a></li
-    <li><a href="https://tools4noobs.com">Tools4noobs</a></li>
-    <li><a href="https://patorjk.com/software/taag">Text to ASCII Art Generator</a></li>
-    <li><a href="https://regex101.com">Regex101</a></li>
-    <li><a href="https://crontab.guru">Cron Expression Generator</a></li>
-</ul>
+  <ul>
+<li><a href="https://epochconverter.com">Epoch Converter</a></li>
+<li><a href="https://regex-generator.olafneumann.org">Regex Generator</a></li>
+<li><a href="https://dehashed.com">DeHashed</a></li>
+<li><a href="https://dencode.com">Dencode</a></li>
+<li><a href="https://ctool.dev">Commonly Used Software Development Tools</a></li>
+<li><a href="https://textfixer.com">Text Fixer</a></li>
+<li><a href="https://ss64.com">SS64 Syntax Utils</a></li
+<li><a href="https://tools4noobs.com">Tools4noobs</a></li>
+<li><a href="https://patorjk.com/software/taag">Text to ASCII Art Generator</a></li>
+<li><a href="https://regex101.com">Regex101</a></li>
+<li><a href="https://crontab.guru">Cron Expression Generator</a></li>
+  </ul>
 <h5>OSINT and Breach Checking</h5>
-<ul>
-    <li><a href="https://haveibeenpwned.com">Have I Been Pwned</a></li>
-    <li><a href="https://namechk.com">Name OSINT</a></li>
-    <li><a href="https://breachdirectory.org">Breach Directory</a></li>
-    <li><a href="https://hunter.io">Hunter.io</a></li>
-    <li><a href="https://inteltechniques.com">Intel Techniques</a></li>
-</ul>
+  <ul>
+<li><a href="https://haveibeenpwned.com">Have I Been Pwned</a></li>
+<li><a href="https://namechk.com">Name OSINT</a></li>
+<li><a href="https://breachdirectory.org">Breach Directory</a></li>
+<li><a href="https://hunter.io">Hunter.io</a></li>
+<li><a href="https://inteltechniques.com">Intel Techniques</a></li>
+  </ul>
 <h5>Translation and Others Tools</h5>
-<ul>
-    <li><a href="https://deepl.com/translator">DeepL</a></li>
-    <li><a href="https://markdowntoolbox.com">Markdown Toolbox</a></li>
-    <li><a href="https://mermaid.live">Mermaid</a></li>
-    <li><a href="https://tableconvert.com">Table Convert</a></li>
-    <li><a href="https://tablesgenerator.com">Tables Generator</a></li>
-    <li><a href="https://kutt.it">Kutt your links shorter</a></li>
-    <li><a href="https://grammarly.com">Grammarly</a></li>
-</ul>
+  <ul>
+<li><a href="https://deepl.com/translator">DeepL</a></li>
+<li><a href="https://markdowntoolbox.com">Markdown Toolbox</a></li>
+<li><a href="https://mermaid.live">Mermaid</a></li>
+<li><a href="https://tableconvert.com">Table Convert</a></li>
+<li><a href="https://tablesgenerator.com">Tables Generator</a></li>
+<li><a href="https://kutt.it">Kutt your links shorter</a></li>
+<li><a href="https://grammarly.com">Grammarly</a></li>
+  </ul>
 
 <br>
 </details>
@@ -7486,7 +7453,7 @@ $ wmctrl -lG
 
 <p>By default, Linux systems use the <code>$VISUAL</code> or <code>$EDITOR</code> environment variables (usually defined in your <code>~/.bashrc</code> file or <code>/etc/profile</code>) as the default editor the <a href="https://linux.die.net/man/8/visudo">visudo</a> command. If you&#39;d prefer to use a different editor, such as <a href="https://nano-editor.org/">nano</a>, you can use either of these methods.</p>
 
-<ol>
+  <ol>
 <li>
 To <strong>temporarily</strong> use a different editor, run:
 <pre><code><span>$</span>sudo EDITOR=/path/to/editor visudo</code>
@@ -7499,7 +7466,7 @@ For example, to use <code>nano</code>, you would run:
 To <strong>permanently</strong> change the default editor, edit the <code>/etc/sudoers</code> file (you can use the <em>temporary</em> method above!) and add the following line to the file near the top, but <em>after</em> <code>Defaults env_reset</code>:
 <pre><code>Defaults <span>editor=/path/to/editor</span></code></pre>
 </li>
-</ol>
+  </ol>
 
 <p><a href="https://unix.stackexchange.com/questions/4408/how-to-set-visudo-to-use-a-different-editor-than-the-default-on-fedora">Reference: https://unix.stackexchange.com/questions/4408/how-to-set-visudo-to-use-a-different-editor-than-the-default-on-fedora</a></p>
 
@@ -7996,102 +7963,102 @@ or
 <h4>Debug WiFi by OSI Layers</h4>
 
 <h5>Application Layer (7)</h5>
-<ul>
-  <li><code>$ nmcli radio wifi off</code></li>
-  <li><code>$ nmcli radio wifi on</code></li>
-  <li><code>$ sudo ls /etc/NetworkManager/</code></li>
-  <li><code>$ sudo cat /etc/NetworkManager/NetworkManager.conf</code></li>
-  <li><code>$ sudo journalctl -u NetworkManager</code></li>
-  <li><code>$ sudo journalctl -xe NM_CONNECTION=123456 + NM_DEVICE=eth0</code></li>
-  <li><code>$ sudo systemctl status NetworkManager.service</code></li>
-  <li><code>$ sudo systemctl restart NetworkManager.service</code></li>
-  <li><code>$ sudo systemctl status resolvconf.service</code></li>
-  <li><code>$ sudo systemctl restart resolvconf.service</code></li>
-  <li><code>$ sudo systemctl status systemd-resolved.service</code></li>
-  <li><code>$ sudo systemctl restart systemd-resolved.service</code></li>
-</ul>
+  <ul>
+<li><code>$ nmcli radio wifi off</code></li>
+<li><code>$ nmcli radio wifi on</code></li>
+<li><code>$ sudo ls /etc/NetworkManager/</code></li>
+<li><code>$ sudo cat /etc/NetworkManager/NetworkManager.conf</code></li>
+<li><code>$ sudo journalctl -u NetworkManager</code></li>
+<li><code>$ sudo journalctl -xe NM_CONNECTION=123456 + NM_DEVICE=eth0</code></li>
+<li><code>$ sudo systemctl status NetworkManager.service</code></li>
+<li><code>$ sudo systemctl restart NetworkManager.service</code></li>
+<li><code>$ sudo systemctl status resolvconf.service</code></li>
+<li><code>$ sudo systemctl restart resolvconf.service</code></li>
+<li><code>$ sudo systemctl status systemd-resolved.service</code></li>
+<li><code>$ sudo systemctl restart systemd-resolved.service</code></li>
+  </ul>
 
 <h5>Presentation Layer (6)</h5>
-<ul>
-  <li><code>$ sudo cat /etc/resolv.conf</code></li>
-  <li><code>$ sudo cat /run/resolvconf/resolv.conf</code></li>
-  <li><code>$ sudo cat /lib/systemd/resolv.conf</code></li>
-  <li><code>$ sudo cat /etc/systemd/resolved.conf</code></li>
-  <li><code>$ sudo cat /run/systemd/resolve/stub-resolv.conf</code></li>
-  <li><code>$ sudo cat /var/run/NetworkManager/resolv.conf</code></li>
-  <li><code>$ echo "blacklist conflicting_driver" | sudo tee -a /etc/modprobe.d/blacklist.conf</code></li>
-</ul>
+  <ul>
+<li><code>$ sudo cat /etc/resolv.conf</code></li>
+<li><code>$ sudo cat /run/resolvconf/resolv.conf</code></li>
+<li><code>$ sudo cat /lib/systemd/resolv.conf</code></li>
+<li><code>$ sudo cat /etc/systemd/resolved.conf</code></li>
+<li><code>$ sudo cat /run/systemd/resolve/stub-resolv.conf</code></li>
+<li><code>$ sudo cat /var/run/NetworkManager/resolv.conf</code></li>
+<li><code>$ echo "blacklist conflicting_driver" | sudo tee -a /etc/modprobe.d/blacklist.conf</code></li>
+  </ul>
 
 <h5>Network Layer (5)</h5>
-<ul>
-  <li><code>$ ip address</code></li>
-  <li><code>$ ip route</code></li>
-  <li><code>$ nmcli device show</code></li>
-  <li><code>$ nmcli dev wifi</code></li>
-  <li><code>$ nmcli device show wlan0 | grep IP4.DNS</code></li>
-  <li><code>$ sudo journalctl -b | grep -i net</code></li>
-  <li><code>$ ping -c3 8.8.8.8</code></li>
-  <li><code>$ ping localhost</code></li>
-  <li><code>$ traceroute 8.8.8.8</code></li>
-  <li><code>$ traceroute localhost</code></li>
-  <li><code>$ sudo grep -c dnsmasq /var/log/*</code></li>
-  <li><code>$ sudo grep -c dnsmasq /var/log/syslog</code></li>
-  <li><code>$ sudo dnsmasq --no-daemon --log-queries=extra --log-dhcp --log-debug -C /etc/dnsmasq.conf</code></li>
-  <li><code>$ sudo dhclient -v</code></li>
-  <li><code>$ sudo apt install resolvconf</code></li>
-  <li><code>$ sudo resolvconf --list</code></li>
-  <li><code>$ sudo resolvconf --enable-updates</code></li>
-  <li><code>$ sudo resolvconf -u</code></li>
-  <li><code>$ sudo systemctl status resolvconf.service</code></li>
-  <li><code>$ sudo systemctl restart resolvconf.service</code></li>
-  <li><code>$ sudo apt install systemd-resolved</code></li>
-  <li><code>$ sudo systemctl status systemd-resolved.service</code></li>
-  <li><code>$ sudo systemctl restart systemd-resolved.service</code></li>
-</ul>
+  <ul>
+<li><code>$ ip address</code></li>
+<li><code>$ ip route</code></li>
+<li><code>$ nmcli device show</code></li>
+<li><code>$ nmcli dev wifi</code></li>
+<li><code>$ nmcli device show wlan0 | grep IP4.DNS</code></li>
+<li><code>$ sudo journalctl -b | grep -i net</code></li>
+<li><code>$ ping -c3 8.8.8.8</code></li>
+<li><code>$ ping localhost</code></li>
+<li><code>$ traceroute 8.8.8.8</code></li>
+<li><code>$ traceroute localhost</code></li>
+<li><code>$ sudo grep -c dnsmasq /var/log/*</code></li>
+<li><code>$ sudo grep -c dnsmasq /var/log/syslog</code></li>
+<li><code>$ sudo dnsmasq --no-daemon --log-queries=extra --log-dhcp --log-debug -C /etc/dnsmasq.conf</code></li>
+<li><code>$ sudo dhclient -v</code></li>
+<li><code>$ sudo apt install resolvconf</code></li>
+<li><code>$ sudo resolvconf --list</code></li>
+<li><code>$ sudo resolvconf --enable-updates</code></li>
+<li><code>$ sudo resolvconf -u</code></li>
+<li><code>$ sudo systemctl status resolvconf.service</code></li>
+<li><code>$ sudo systemctl restart resolvconf.service</code></li>
+<li><code>$ sudo apt install systemd-resolved</code></li>
+<li><code>$ sudo systemctl status systemd-resolved.service</code></li>
+<li><code>$ sudo systemctl restart systemd-resolved.service</code></li>
+  </ul>
 
 <h5>Data Link Layer (4)</h5>
-<ul>
-  <li><code>$ ip link</code></li>
-  <li><code>$ sudo iwconfig wlan0</code></li>
-  <li><code>$ sudo iwconfig eth0</code></li>
-  <li><code>$ sudo ifconfig wlan0</code></li>
-</ul>
+  <ul>
+<li><code>$ ip link</code></li>
+<li><code>$ sudo iwconfig wlan0</code></li>
+<li><code>$ sudo iwconfig eth0</code></li>
+<li><code>$ sudo ifconfig wlan0</code></li>
+  </ul>
 
 <h5>Physical Layer (3)</h5>
-<ul>
-  <li><code>$ sudo ifconfig wlan0 down</code></li>
-  <li><code>$ sudo ifconfig wlan0 up</code></li>
-  <li><code>$ sudo ifconfig eth0 down</code></li>
-  <li><code>$ sudo ifconfig eth0 up</code></li>
-  <li><code>$ sudo dmesg | grep iwl</code></li>
-  <li><code>$ sudo dmesg | grep rtw</code></li>
-  <li><code>$ sudo dmesg | grep ath</code></li>
-  <li><code>$ lsusb</code></li>
-  <li><code>$ ls /sys/bus/usb/devices</code></li>
-</ul>
+  <ul>
+<li><code>$ sudo ifconfig wlan0 down</code></li>
+<li><code>$ sudo ifconfig wlan0 up</code></li>
+<li><code>$ sudo ifconfig eth0 down</code></li>
+<li><code>$ sudo ifconfig eth0 up</code></li>
+<li><code>$ sudo dmesg | grep iwl</code></li>
+<li><code>$ sudo dmesg | grep rtw</code></li>
+<li><code>$ sudo dmesg | grep ath</code></li>
+<li><code>$ lsusb</code></li>
+<li><code>$ ls /sys/bus/usb/devices</code></li>
+  </ul>
 
 <h5>Data Link Layer (2)</h5>
-<ul>
-  <li><code>$ ip link</code></li>
-  <li><code>$ sudo iwconfig eth0</code></li>
-  <li><code>$ sudo iwconfig wlan0</code></li>
-  <li><code>$ sudo ifconfig wlan0</code></li>
-</ul>
+  <ul>
+<li><code>$ ip link</code></li>
+<li><code>$ sudo iwconfig eth0</code></li>
+<li><code>$ sudo iwconfig wlan0</code></li>
+<li><code>$ sudo ifconfig wlan0</code></li>
+  </ul>
 
 <h5>Physical Layer (1)</h5>
-<ul>
-  <li><code>$ sudo ifconfig wlan0 down</code></li>
-  <li><code>$ sudo ifconfig wlan0 up</code></li>
-  <li><code>$ sudo ifconfig eth0 down</code></li>
-  <li><code>$ sudo ifconfig eth0 up</code></li>
-  <li><code>$ sudo dmesg | grep iwl</code></li>
-  <li><code>$ sudo dmesg | grep rtw</code></li>
-  <li><code>$ sudo dmesg | grep ath</code></li>
-  <li><code>$ lsusb</code></li>
-  <li><code>$ ls /sys/bus/usb/devices</code></li>
-  <li><code>$ echo 'on' | sudo tee /sys/bus/usb/devices/1-4/power/control</code></li>
-  <li><code>$ sudo sudo modprobe -rv [WIFIMODULE] && sudo modprobe -v [WIFIMODULE]</code></li>
-</ul>
+  <ul>
+<li><code>$ sudo ifconfig wlan0 down</code></li>
+<li><code>$ sudo ifconfig wlan0 up</code></li>
+<li><code>$ sudo ifconfig eth0 down</code></li>
+<li><code>$ sudo ifconfig eth0 up</code></li>
+<li><code>$ sudo dmesg | grep iwl</code></li>
+<li><code>$ sudo dmesg | grep rtw</code></li>
+<li><code>$ sudo dmesg | grep ath</code></li>
+<li><code>$ lsusb</code></li>
+<li><code>$ ls /sys/bus/usb/devices</code></li>
+<li><code>$ echo 'on' | sudo tee /sys/bus/usb/devices/1-4/power/control</code></li>
+<li><code>$ sudo sudo modprobe -rv [WIFIMODULE] && sudo modprobe -v [WIFIMODULE]</code></li>
+  </ul>
 
 *SIOCSIFFLAGS<br>
 *RTNETLINK<br>
@@ -8100,50 +8067,44 @@ or
 
 <h5>∙ Getting help</h5>
 
-<ol>
-  <li><strong>Enable Debugging Features:</strong>
-    <ul>
-      <li>Depending on your Linux distribution, you may need to enable specific debug options. For example, you can enable debug logging for NetworkManager by editing its configuration file:</li>
-      <li><code>sudo nano /etc/NetworkManager/NetworkManager.conf</code></li>
-      <li>Add the following lines under the <code>[logging]</code> section:</li>
-      <li><pre><code>[logging]
+  <ol>
+<li><strong>Enable Debugging Features:</strong>
+  <ul>
+  <li>Depending on your Linux distribution, you may need to enable specific debug options. For example, you can enable debug logging for NetworkManager by editing its configuration file:</li>
+  <li><code>sudo nano /etc/NetworkManager/NetworkManager.conf</code></li>
+  <li>Add the following lines under the <code>[logging]</code> section:</li>
+  <li><pre><code>[logging]
 level=DEBUG</code></pre></li>
-      <li>Save the file and restart NetworkManager:</li>
-      <li><code>sudo systemctl restart NetworkManager</code></li>
-    </ul>
-  </li>
-  <li><strong>Send Kernel Logs with Debugging On:</strong>
-    <ul>
-      <li>After enabling debugging features, gather kernel logs and NetworkManager logs:</li>
-      <li><code>sudo dmesg | grep wifi > kernel_logs.txt</code></li>
-      <li><code>sudo journalctl -u NetworkManager > nm_logs.txt</code></li>
-    </ul>
-  </li>
-  <li><strong>Be Specific About Hardware and Software:</strong>
-    <ul>
-      <li>Mention the specific hardware details such as the Wi-Fi adapter model, firmware version, Linux distribution, and kernel version.</li>
-    </ul>
-  </li>
-  <li><strong>Describe What Doesn't Work and What You've Tried:</strong>
-    <ul>
-      <li>Clearly explain the issues you are facing with your Wi-Fi, such as connection drops, slow speeds, or inability to connect. Mention any troubleshooting steps you've already taken, such as restarting the router, checking network settings, or reinstalling drivers.</li>
-    </ul>
-  </li>
-  <li><strong>Include Wireless Captures:</strong>
-    <ul>
-      <li>Use tools like Wireshark to capture wireless traffic for further analysis.</li>
-      <li>Install Wireshark if not already installed:</li>
-      <li><code>sudo apt install wireshark</code></li>
-      <li>Capture Wi-Fi packets on your specific interface (e.g., wlan0):</li>
-      <li><code>sudo tshark -i wlan0 -w wifi_capture.pcap</code></li>
-    </ul>
-  </li>
-  <li><strong>Contacting Support or Forums:</strong>
-    <ul>
-      <li>Once you have gathered all the necessary information, consider reaching out to the official support channels of your Wi-Fi adapter's manufacturer, Linux distribution forums, or community support forums like Stack Exchange or Reddit. Provide all the details you've gathered to get more targeted assistance.</li>
-    </ul>
-  </li>
-</ol>
+  <li>Save the file and restart NetworkManager:</li>
+  <li><code>sudo systemctl restart NetworkManager</code></li>
+  </ul>
+<li><strong>Send Kernel Logs with Debugging On:</strong>
+  <ul>
+  <li>After enabling debugging features, gather kernel logs and NetworkManager logs:</li>
+  <li><code>sudo dmesg | grep wifi > kernel_logs.txt</code></li>
+  <li><code>sudo journalctl -u NetworkManager > nm_logs.txt</code></li>
+  </ul>
+<li><strong>Be Specific About Hardware and Software:</strong>
+  <ul>
+  <li>Mention the specific hardware details such as the Wi-Fi adapter model, firmware version, Linux distribution, and kernel version.</li>
+  </ul>
+<li><strong>Describe What Doesn't Work and What You've Tried:</strong>
+  <ul>
+  <li>Clearly explain the issues you are facing with your Wi-Fi, such as connection drops, slow speeds, or inability to connect. Mention any troubleshooting steps you've already taken, such as restarting the router, checking network settings, or reinstalling drivers.</li>
+  </ul>
+<li><strong>Include Wireless Captures:</strong>
+  <ul>
+  <li>Use tools like Wireshark to capture wireless traffic for further analysis.</li>
+  <li>Install Wireshark if not already installed:</li>
+  <li><code>sudo apt install wireshark</code></li>
+  <li>Capture Wi-Fi packets on your specific interface (e.g., wlan0):</li>
+  <li><code>sudo tshark -i wlan0 -w wifi_capture.pcap</code></li>
+  </ul>
+<li><strong>Contacting Support or Forums:</strong>
+  <ul>
+  <li>Once you have gathered all the necessary information, consider reaching out to the official support channels of your Wi-Fi adapter's manufacturer, Linux distribution forums, or community support forums like Stack Exchange or Reddit. Provide all the details you've gathered to get more targeted assistance.</li>
+  </ul>
+  </ol>
 
 
 <!-- ########## -->
@@ -9091,7 +9052,7 @@ $ sudo hdparm -I /dev/sda
 
 <h4>Links</h4>
 
-<ul>
+  <ul>
 <li><a href="https://fsf.org">Free Software Foundation</a></li>
 <li><a href="https://fsfe.org">Free Software Foundation Europe</a></li>
 <li><a href="https://gnu.org">GNU Project</a></li>
@@ -9111,54 +9072,54 @@ $ sudo hdparm -I /dev/sda
 <li><a href="https://opensource.com">https://opensource.com</a></li>
 <li><a href="https://opensource.org">https://opensource.org</a></li>
 <li><a href="https://todogroup.org">https://todogroup.org</a></li>
-</ul>
+  </ul>
 
 <h4>YouTube Links</h4>
 
 <h4>Digital Forensics and Incident Response:</h4>
-<ul>
-    <li><a href="https://youtube.com/@DFRWS">DFRWS</a></li>
-    <li><a href="https://youtube.com/@SANSForensics">SANSForensics</a></li>
-    <li><a href="https://youtube.com/@SANSOffensiveOperations">SANSOffensiveOperations</a></li>
-</ul>
+  <ul>
+<li><a href="https://youtube.com/@DFRWS">DFRWS</a></li>
+<li><a href="https://youtube.com/@SANSForensics">SANSForensics</a></li>
+<li><a href="https://youtube.com/@SANSOffensiveOperations">SANSOffensiveOperations</a></li>
+  </ul>
 
 <h4>Security Conferences:</h4>
-<ul>
-    <li><a href="https://youtube.com/@BlackHatOfficialYT">BlackHat Official YT</a></li>
-    <li><a href="https://youtube.com/@DEFCONConference">DEFCON Conference</a></li>
-    <li><a href="https://youtube.com/@EkopartyConference">Ekoparty Conference</a></li>
-    <li><a href="https://youtube.com/@reconmtl">reconmtl</a></li>
-    <li><a href="https://youtube.com/@TROOPERScon">TROOPERScon</a></li>
-    <li><a href="https://youtube.com/@OffensiveCon">OffensiveCon</a></li>
-    <li><a href="https://youtube.com/@hitbsecconf">hitbsecconf</a></li>
-</ul>
+  <ul>
+<li><a href="https://youtube.com/@BlackHatOfficialYT">BlackHat Official YT</a></li>
+<li><a href="https://youtube.com/@DEFCONConference">DEFCON Conference</a></li>
+<li><a href="https://youtube.com/@EkopartyConference">Ekoparty Conference</a></li>
+<li><a href="https://youtube.com/@reconmtl">reconmtl</a></li>
+<li><a href="https://youtube.com/@TROOPERScon">TROOPERScon</a></li>
+<li><a href="https://youtube.com/@OffensiveCon">OffensiveCon</a></li>
+<li><a href="https://youtube.com/@hitbsecconf">hitbsecconf</a></li>
+  </ul>
 
 <h4>General Tech Conferences:</h4>
-<ul>
-    <li><a href="https://youtube.com/@RSAConference">RSA Conference</a></li>
-    <li><a href="https://youtube.com/@UsenixOrg">UsenixOrg</a></li>
-    <li><a href="https://youtube.com/@USENIXEnigmaConference">USENIX Enigma Conference</a></li>
-    <li><a href="https://youtube.com/@MCH2022NL">MCH2022NL</a></li>
-</ul>
+  <ul>
+<li><a href="https://youtube.com/@RSAConference">RSA Conference</a></li>
+<li><a href="https://youtube.com/@UsenixOrg">UsenixOrg</a></li>
+<li><a href="https://youtube.com/@USENIXEnigmaConference">USENIX Enigma Conference</a></li>
+<li><a href="https://youtube.com/@MCH2022NL">MCH2022NL</a></li>
+  </ul>
 
 <h4>Miscellaneous Tech and Cybersecurity:</h4>
-<ul>
-    <li><a href="https://youtube.com/@mediacccde">mediacccde</a></li>
-    <li><a href="https://youtube.com/@secwestnet">secwestnet</a></li>
-    <li><a href="https://youtube.com/@DebConfVideos">DebConf Videos</a></li>
-    <li><a href="https://youtube.com/@44contv">44contv</a></li>
-    <li><a href="https://youtube.com/@mentalOutlaw">mentalOutlaw</a></li>
-    <li><a href="https://youtube.com/@Seytonic">Seytonic</a></li>
-    <li><a href="https://youtube.com/@DoingFedTime">DoingFedTime</a></li>
-    <li><a href="https://youtube.com/@Hak5">Hak5</a></li>
-    <li><a href="https://youtube.com/@The8BitGuy">The 8-Bit Guy</a></li>
-    <li><a href="https://youtube.com/@Computerphile">Computerphile</a></li>
-</ul>
+  <ul>
+<li><a href="https://youtube.com/@mediacccde">mediacccde</a></li>
+<li><a href="https://youtube.com/@secwestnet">secwestnet</a></li>
+<li><a href="https://youtube.com/@DebConfVideos">DebConf Videos</a></li>
+<li><a href="https://youtube.com/@44contv">44contv</a></li>
+<li><a href="https://youtube.com/@mentalOutlaw">mentalOutlaw</a></li>
+<li><a href="https://youtube.com/@Seytonic">Seytonic</a></li>
+<li><a href="https://youtube.com/@DoingFedTime">DoingFedTime</a></li>
+<li><a href="https://youtube.com/@Hak5">Hak5</a></li>
+<li><a href="https://youtube.com/@The8BitGuy">The 8-Bit Guy</a></li>
+<li><a href="https://youtube.com/@Computerphile">Computerphile</a></li>
+  </ul>
 
 
 <h4>Linux Blogs</h4>
 
-<ul>
+  <ul>
 <li><a href="https://0pointer.net/blog/">https://0pointer.net/blog/</a></li>
 <li><a href="https://blog.carsoncheng.ca">https://blog.carsoncheng.ca</a></li>
 <li><a href="https://dwarmstrong.org">https://dwarmstrong.org</a></li>
@@ -9178,11 +9139,11 @@ $ sudo hdparm -I /dev/sda
 <li><a href="https://techviewleo.com">https://techviewleo.com</a></li>
 <li><a href="https://tqdev.com">https://tqdev.com</a></li>
 <li><a href="https://vitux.com">https://vitux.com</a></li>
-</ul>
+  </ul>
 
 <h4>Shell e others</h4>
 
-<ul>
+  <ul>
 <li><a href="https://shellcheck.net">https://shellcheck.net</a></li>
 <li><a href="https://shellscript.sh">https://shellscript.sh</a></li>
 <li><a href="https://shellhacks.com">https://shellhacks.com</a></li>
@@ -9194,11 +9155,11 @@ $ sudo hdparm -I /dev/sda
 <li><a href="https://anarsec.guide">https://anarsec.guide</a></li>
 <li><a href="https://darkreading.com">https://darkreading.com</a></li>
 <li><a href="https://book.hacktricks.xyz">https://book.hacktricks.xyz</a></li>
-</ul>
+  </ul>
 
 <h4>Libraries</h4>
 
-<ul>
+  <ul>
 <li><A HREF="https://archive.org">Internet Archive<BR><PRE> https://archive.org</PRE></A></li>
 <li><A HREF="https://annas-archive.org">Anna's Archive<BR><PRE> https://annas-archive.org</PRE></A></li>
 <li><A HREF="https://t.me/zlibrary_official">Z-Library Official (Telegram)<BR><PRE> https://t.me/zlibrary_official</PRE></A></li>
@@ -9213,9 +9174,9 @@ $ sudo hdparm -I /dev/sda
 <li><A HREF="http://kx5thpx2olielkihfyo4jgjqfb7zx7wxr3sd4xzt26ochei4m6f7tayd.onion">Imperial Library (ONION)<BR><PRE> http://kx5thpx2olielkihfyo4jgjqfb7zx7wxr3sd4xzt26ochei4m6f7tayd.onion</PRE></A></li>
 <li><A HREF="http://libraryfyuybp7oyidyya3ah5xvwgyx6weauoini7zyz555litmmumad.onion">Just Another Library (ONION)<BR><PRE> http://libraryfyuybp7oyidyya3ah5xvwgyx6weauoini7zyz555litmmumad.onion</PRE></A></li>
 <li><A HREF="http://w27irt6ldaydjoacyovepuzlethuoypazhhbot6tljuywy52emetn7qd.onion">InfoCon (ONION)<BR><PRE> http://w27irt6ldaydjoacyovepuzlethuoypazhhbot6tljuywy52emetn7qd.onion</PRE></A></li>
-</ul>
+  </ul>
 
-<ul>
+  <ul>
 <li><a href="https://en.wikiversity.org/wiki/Open_Educational_Resources/Open_Courses">https://en.wikiversity.org/wiki/Open_Educational_Resources/Open_Courses</a></li>
 <li><a href="https://en.wikiversity.org/wiki/Open_Educational_Resources/Open_Textbooks">https://en.wikiversity.org/wiki/Open_Educational_Resources/Open_Textbooks</a></li>
 <li><a href="https://freecomputerbooks.com">https://freecomputerbooks.com</a></li>
@@ -9223,12 +9184,12 @@ $ sudo hdparm -I /dev/sda
 <li><a href="https://riptutorial.com/ebook">https://riptutorial.com/ebook</a></li>
 <li><a href="https://e-booksdirectory.com">https://e-booksdirectory.com</a></li>
 <li><a href="https://programmer-books.com">https://programmer-books.com</a></li>
-</ul>
+  </ul>
 
 
 <h4>Piracy</h4>
 
-<ul>
+  <ul>
 <li><a href="https://torrentfreak.com">https://torrentfreak.com</a></li>
 <li><a href="https://github.com/Igglybuff/awesome-piracy">https://github.com/Igglybuff/awesome-piracy</a></li>
 <li><a href="https://github.com/lkrjangid1/Awesome-Warez">https://github.com/lkrjangid1/Awesome-Warez</a></li>
@@ -9243,23 +9204,23 @@ $ sudo hdparm -I /dev/sda
 <li><a href="https://rentry.co/megathread">https://rentry.co/megathread</a></li>
 <li><a href="https://1337x.to">https://1337x.to</a></li>
 <li><a href="https://fitgirl-repacks.site">https://fitgirl-repacks.site</a></li>
-</ul>
+  </ul>
 
 <h4>Self-hosting</h4>
 
-<ul>
+  <ul>
 <li><a href="https://github.com/awesome-selfhosted/awesome-selfhosted">https://github.com/awesome-selfhosted/awesome-selfhosted</a></li>
 <li><a href="https://github.com/syncthing/syncthing">https://github.com/syncthing/syncthing</a></li>
 <li><a href="https://github.com/anonaddy/anonaddy">https://github.com/anonaddy/anonaddy</a></li>
 <li><a href="https://reddit.com/r/selfhosted">https://reddit.com/r/selfhosted</a></li>
-</ul>
+  </ul>
 
 <h4>Eletronics</h4>
 
-<ul>
+  <ul>
 <li><a href="https://ibiblio.org/kuphaldt/electricCircuits">https://ibiblio.org/kuphaldt/electricCircuits</a></li>
 <li><a href="https://electronics-tutorials.ws">https://electronics-tutorials.ws</a></li>
-</ul>
+  </ul>
 
 <br>
 </details>
