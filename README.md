@@ -12,7 +12,7 @@
 
 <blockquote><h3>"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately endpoint security is so terrifically weak that NSA can frequently find ways around it." (Edward Snowden)</h3></blockquote>
 
-<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/.data/the_key_to_the_fields_1936_-_rene_magritte_830px.png" title="The Key to the Fields (1936) - René Magritte"></p>
+<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/.data/the_key_to_the_fields_1936_-_rene_magritte_830px.png" alt="The Key to the Fields (1936) - René Magritte" title="The Key to the Fields (1936) - René Magritte"></p>
 
 </div>
 
@@ -677,7 +677,7 @@ KVM, Kernel-based Virtual Machine, is a hypervisor built into the Linux kernel. 
 The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a type 1 hypervisor, it is able to run on bare metal, while QEMU is a type 2 hypervisor, it runs on top of the operating system. QEMU will utilize KVM in order to utilize the machine’s physical resources for the virtual machines. In brief, QEMU uses emulation; KVM uses processor extensions (HVM) for virtualization.
 </pre>
 
-<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/06_SYSADMIN/04_Virtualization_and_Containers/01_QEMU-KVM.png" alt="QEMU-KVM Chart"></p>
+<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/06_SYSADMIN/04_Virtualization_and_Containers/01_QEMU-KVM.png" alt="QEMU-KVM Chart" title="QEMU-KVM Chart"/></p>
 
 <h5>Using QEMU/KVM - "Kernel-based Virtual Machine"</h5>
 https://wiki.debian.org/KVM<br>
@@ -716,7 +716,7 @@ https://github.com/linuxdabbler/debian-install-scripts<br>
 
 <h5>File system: EXT4, XFS, BTRFS AND ZFS</h5>
 
-<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/06_SYSADMIN/02_System_Admin/03_File_System.png" alt="File System"></p>
+<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/06_SYSADMIN/02_System_Admin/03_File_System.png" alt="File System" title="File System"></p>
 
 <br>
 </details>
@@ -3304,7 +3304,7 @@ $ sudo ufw allow proto tcp from any to 150.129.148.155 port 443
 <h4>• VPN Protocols</h4>
 
 <p align="left">
-<img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/03_NETWORK/06_Others_Resources.png" alt="VPN Protocols"></p>
+<img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/03_NETWORK/06_Others_Resources.png" alt="VPN Protocols" title="VPN Protocols"/></p>
 
 <br>
 </details>
