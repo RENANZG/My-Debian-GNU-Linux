@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<div id="header">
+<div>
 
 <h1>1. DEBIAN GNU/LINUX</h1>
 
@@ -1005,9 +1005,9 @@ https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
 <div class="references">
 <h6>References</h6>
 <ol class="reference-list">
-<li id="ref1">Debian Manual Page for <code>apt(8)</code>. Available at: <a href="https://manpages.debian.org/buster/apt/apt.8.en.html" target="_blank">https://manpages.debian.org/buster/apt/apt.8.en.html</a></li>
-<li id="ref2">Debian Reference - Package Management. Available at: <a href="https://debian.org/doc/manuals/debian-reference/ch02.en.html" target="_blank">https://debian.org/doc/manuals/debian-reference/ch02.en.html</a></li>
-<li id="ref3">APT User Manual. Available at: <a href="https://manpages.debian.org/buster/apt-get/apt-get.8.en.html" target="_blank">https://manpages.debian.org/buster/apt-get/apt-get.8.en.html</a></li>
+<li>Debian Manual Page for <code>apt(8)</code>. Available at: <a href="https://manpages.debian.org/buster/apt/apt.8.en.html" target="_blank">https://manpages.debian.org/buster/apt/apt.8.en.html</a></li>
+<li>Debian Reference - Package Management. Available at: <a href="https://debian.org/doc/manuals/debian-reference/ch02.en.html" target="_blank">https://debian.org/doc/manuals/debian-reference/ch02.en.html</a></li>
+<li>APT User Manual. Available at: <a href="https://manpages.debian.org/buster/apt-get/apt-get.8.en.html" target="_blank">https://manpages.debian.org/buster/apt-get/apt-get.8.en.html</a></li>
 </ol>
 </div>
 
@@ -9268,7 +9268,7 @@ $ sudo hdparm -I /dev/sda
 
 <!-- ############################################################-->
 
-<div id="footer">
+<div>
 
 <p align="right"><a href="https://github.com/RENANZG/My-Debian-GNU-Linux?tab=readme-ov-file#">Back to Top ⬆</a></p>
 
