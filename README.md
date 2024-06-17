@@ -4202,7 +4202,7 @@ $ sudo cat /sys/class/net/eth0/address
 
 
 <details>
-<summary>&nbsp; Office Suites</summary>
+<summary>Office Suites</summary>
 <br>
 
 <h4>Libre Office</h4>
@@ -4354,7 +4354,7 @@ Choose Tools - Options - Load/Save - General.</p>
 <!-- ############################## -->
 
 <details>
-<summary>&nbsp; Document Converter</summary>
+<summary>Document Converter</summary>
 <br>
 
 <h4>Libre Office (Headless)</h4>
@@ -4478,7 +4478,7 @@ $ pandoc document.html -t latex -o document.pdf
 <!-- ############################## -->
 
 <details>
-<summary>&nbsp; PDF Suites</summary>
+<summary>PDF Suites</summary>
 <br>
 
 <h4>PDF Reader</h4>
@@ -4637,7 +4637,7 @@ https://github.com/SiddharthPant/booky<br>
 <!-- ############################## -->
 
 <details>
-<summary>&nbsp; PDF OCR</summary>
+<summary>PDF OCR</summary>
 <br>
 
 <h4>• PDF OCR - Optical Character Recognition</h4>
@@ -4777,7 +4777,7 @@ $ ocrmypdf -v --rotate-pages-threshold {0.0-2.0} input.pdf output.pdf
 <!-- ############################## -->
 
 <details>
-<summary>&nbsp; PDF Optimizers</summary>
+<summary>PDF Optimizers</summary>
 <br>
 
 <h4>ImageMagick (GUI or CLI)</h4>
@@ -5008,7 +5008,7 @@ $ ps2pdf -dPDFSETTINGS=/ebook input.pdf output.pdf
 <!-- ############################## -->
 
 <details>
-<summary>&nbsp; Image Editors</summary>
+<summary>Image Editors</summary>
 <br>
 
 <h4>Basic Image Editors</h4>
@@ -5068,7 +5068,7 @@ https://imgflip.com/memegenerator<br>
 <!-- ############################## -->
 
 <details>
-<summary>&nbsp; Image Convert</summary>
+<summary>Image Convert</summary>
 <br>
 
 <h4>Image Converter</h4>
@@ -5175,7 +5175,7 @@ $ for x in `find . -name "*.webp"`; do dwebp {} -o ${x%.*}.png ; done
 <!-- ############################## -->
 
 <details>
-<summary>&nbsp; Office Utilities</summary>
+<summary>Office Utilities</summary>
 <br>
 
 <h4>Office Utilities</h4>
