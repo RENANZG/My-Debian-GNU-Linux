@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linux Permissions and Ownership Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        caption {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h3>Linux Permissions and Ownership Table</h3>
+
+<table>
+    <caption>Permissions Table</caption>
+    <tr>
+        <th>Permission string</th>
+        <th>Octal code</th>
+        <th>Meaning</th>
+    </tr>
+    <tr>
+        <td>rwxrwxrwx</td>
+        <td>777</td>
+        <td>Read, write, and execute permissions for all users.</td>
+    </tr>
+    <tr>
+        <td>rwxr-xr-x</td>
+        <td>755</td>
+        <td>Read and execute permission for all users. The file's owner also has write permission.</td>
+    </tr>
+    <tr>
+        <td>rwxr-x---</td>
+        <td>750</td>
+        <td>Read and execute permission for the owner and group. The file's owner also has write permission. Users who aren't the file's owner or members of the group have no access to the file.</td>
+    </tr>
+    <tr>
+        <td>rwx------</td>
+        <td>700</td>
+        <td>Read, write, and execute permissions for the file's owner only; all others have no access.</td>
+    </tr>
+    <tr>
+        <td>rw-rw-rw-</td>
+        <td>666</td>
+        <td>Read and write permissions for all users. No execute permissions for anybody.</td>
+    </tr>
+    <tr>
+        <td>rw-rw-r--</td>
+        <td>664</td>
+        <td>Read and write permissions for the owner and group. Read-only permission for all others.</td>
+    </tr>
+    <tr>
+        <td>rw-rw----</td>
+        <td>660</td>
+        <td>Read and write permissions for the owner and group. No world permissions.</td>
+    </tr>
+    <tr>
+        <td>rw-r--r--</td>
+        <td>644</td>
+        <td>Read and write permissions for the owner. Read-only permission for all others.</td>
+    </tr>
+    <tr>
+        <td>rw-r-----</td>
+        <td>640</td>
+        <td>Read and write permissions for the owner, and read-only permission for the group. No permission for others.</td>
+    </tr>
+    <tr>
+        <td>rw-------</td>
+        <td>600</td>
+        <td>Read and write permissions for the owner. No permission for anybody else.</td>
+    </tr>
+    <tr>
+        <td>r--------</td>
+        <td>400</td>
+        <td>Read permission for the owner. No permission for anybody else.</td>
+    </tr>
+</table>
+
+<table>
+    <caption>Ownership Table</caption>
+    <tr>
+        <th>Owner</th>
+        <th>Group</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>User</td>
+        <td>Group</td>
+        <td>The owner of the file, typically the user who created the file. They have the permissions granted by the user part of the permission string.</td>
+    </tr>
+    <tr>
+        <td>Group</td>
+        <td>Group</td>
+        <td>Users who are part of the group associated with the file. They have the permissions granted by the group part of the permission string.</td>
+    </tr>
+    <tr>
+        <td>Others</td>
+        <td>Others</td>
+        <td>All other users who are not the owner or part of the group associated with the file. They have the permissions granted by the others part of the permission string.</td>
+    </tr>
+</table>
+
+</body>
+</html>
