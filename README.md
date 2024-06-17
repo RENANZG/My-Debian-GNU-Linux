@@ -1002,9 +1002,9 @@ https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
 </tr>
 </table>
 
-<div class="references">
+<di>
 <h6>References</h6>
-<ol class="reference-list">
+<ol>
 <li>Debian Manual Page for <code>apt(8)</code>. Available at: <a href="https://manpages.debian.org/buster/apt/apt.8.en.html" target="_blank">https://manpages.debian.org/buster/apt/apt.8.en.html</a></li>
 <li>Debian Reference - Package Management. Available at: <a href="https://debian.org/doc/manuals/debian-reference/ch02.en.html" target="_blank">https://debian.org/doc/manuals/debian-reference/ch02.en.html</a></li>
 <li>APT User Manual. Available at: <a href="https://manpages.debian.org/buster/apt-get/apt-get.8.en.html" target="_blank">https://manpages.debian.org/buster/apt-get/apt-get.8.en.html</a></li>
