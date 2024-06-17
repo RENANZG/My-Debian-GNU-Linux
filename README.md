@@ -6555,7 +6555,7 @@ $ tree -d -L 2 .
 	<li>A good format for date designations is YYYYMMDD or YYMMDD. This format makes sure all of your files stay in chronological order, even over the span of many years.</li>
 	<li>Try not to make file names too long, since long file names do not work well with all types of software.</li>
 	<li>Special characters such as ~ ! @ # $ % ^ &amp; * ( ) ` ; &lt; &gt; ? , [ ] { } ' " and | should be avoided.</li>
-	<li>Illegal characters in Windows file names are: <pre><code> / \ ? * : | " < > </code></pre>.</li>
+	<li>Illegal characters in Windows file names.</li>
 	<li>When using a sequential numbering system, using leading zeros for clarity and to make sure files sort in sequential order. For example, use "001, 002, ...010, 011 ... 100, 101, etc." instead of "1, 2, ...10, 11 ... 100, 101, etc."</li>
 	<li>Do not use spaces. Some software will not recognize file names with spaces, and file names with spaces must be enclosed in quotes when using the command line. Other options include:
 	<ul>
@@ -6903,7 +6903,7 @@ $ rename 's/ /_/g' *
 
 • Rename files into directories according to metadata contained in.<br>
 • Exiftool Pseudo Tags - https://exiftool.org/filename.html<br>
-• Illegal characters in Windows file names are: <code>/ \ ? * : | " < > </code>
+• Illegal characters in Windows file names.<br>
 
 <!-- ##### -->
 
