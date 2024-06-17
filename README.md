@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<div>
+
 
 <h1>1. DEBIAN GNU/LINUX</h1>
 
@@ -14,7 +14,7 @@
 
 <p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/.data/the_key_to_the_fields_1936_-_rene_magritte_830px.png" alt="The Key to the Fields (1936) - René Magritte" title="The Key to the Fields (1936) - René Magritte"></p>
 
-</div>
+
 
 <hr>
 
@@ -1009,7 +1009,7 @@ https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
 <li>Debian Reference - Package Management. Available at: <a href="https://debian.org/doc/manuals/debian-reference/ch02.en.html" target="_blank">https://debian.org/doc/manuals/debian-reference/ch02.en.html</a></li>
 <li>APT User Manual. Available at: <a href="https://manpages.debian.org/buster/apt-get/apt-get.8.en.html" target="_blank">https://manpages.debian.org/buster/apt-get/apt-get.8.en.html</a></li>
 </ol>
-</div>
+
 
 <!-- ##### -->
 
@@ -9268,7 +9268,7 @@ $ sudo hdparm -I /dev/sda
 
 <!-- ############################################################-->
 
-<div>
+
 
 <p align="right"><a href="https://github.com/RENANZG/My-Debian-GNU-Linux?tab=readme-ov-file#">Back to Top ⬆</a></p>
 
@@ -9278,7 +9278,7 @@ $ sudo hdparm -I /dev/sda
 
 <p align="left"><a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px"src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" /></a></p>
 <p align="center">Made with ♥</p>
-</div>
+
 
 </body>
 </html>
