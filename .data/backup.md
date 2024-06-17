@@ -163,13 +163,13 @@ hr {
 </head>
 <body>
 
-<div id="header">
+<div>
 
 <h1>1. DEBIAN GNU/LINUX</h1>
 
 <blockquote><h3>"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately endpoint security is so terrifically weak that NSA can frequently find ways around it." (Edward Snowden)</h3></blockquote>
 
-<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/.data/the_key_to_the_fields_1936_-_rene_magritte_830px.png" title="The Key to the Fields (1936) - René Magritte"></p>
+<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/.data/the_key_to_the_fields_1936_-_rene_magritte_830px.png" alt="The Key to the Fields (1936) - René Magritte" title="The Key to the Fields (1936) - René Magritte"></p>
 
 </div>
 
@@ -282,7 +282,7 @@ hr {
 
 <p><small>Others: <a href="https://securityonionsolutions.com">Security Onion</a>, <a href="https://networksecuritytoolkit.org">NST</a>, <a href="https://android-x86.org/">Android-x86</a>, <a href="https://hardenedbsd.org">HardenedBSD</a>, <a href="https://live.osgeo.org/">OSGeoLive</a>, <a href="https://openwrt.org">OpenWRT</a>, <a href="https://wiki.libreelec.tv/">LibreELEC.tv</a>, <a href="https://store.steampowered.com/steamos">SteamOS</a>.</small></p>
 
-<!-- ################################## -->
+<!-- ############################################################-->
 
 <details>
 <summary><small>¹ Check hash with <a href="https://gtkhash.org">GtkHash (GUI)</a></small></summary>
@@ -834,7 +834,7 @@ KVM, Kernel-based Virtual Machine, is a hypervisor built into the Linux kernel. 
 The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a type 1 hypervisor, it is able to run on bare metal, while QEMU is a type 2 hypervisor, it runs on top of the operating system. QEMU will utilize KVM in order to utilize the machine’s physical resources for the virtual machines. In brief, QEMU uses emulation; KVM uses processor extensions (HVM) for virtualization.
 </pre>
 
-<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/06_SYSADMIN/04_Virtualization_and_Containers/01_QEMU-KVM.png" alt="QEMU-KVM Chart"></p>
+<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/06_SYSADMIN/04_Virtualization_and_Containers/01_QEMU-KVM.png" alt="QEMU-KVM Chart" title="QEMU-KVM Chart"/></p>
 
 <h5>Using QEMU/KVM - "Kernel-based Virtual Machine"</h5>
 https://wiki.debian.org/KVM<br>
@@ -873,7 +873,7 @@ https://github.com/linuxdabbler/debian-install-scripts<br>
 
 <h5>File system: EXT4, XFS, BTRFS AND ZFS</h5>
 
-<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/06_SYSADMIN/02_System_Admin/03_File_System.png" alt="File System"></p>
+<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/06_SYSADMIN/02_System_Admin/03_File_System.png" alt="File System" title="File System"></p>
 
 <br>
 </details>
@@ -1162,9 +1162,9 @@ https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
 <div class="references">
 <h6>References</h6>
 <ol class="reference-list">
-<li id="ref1">Debian Manual Page for <code>apt(8)</code>. Available at: <a href="https://manpages.debian.org/buster/apt/apt.8.en.html" target="_blank">https://manpages.debian.org/buster/apt/apt.8.en.html</a></li>
-<li id="ref2">Debian Reference - Package Management. Available at: <a href="https://debian.org/doc/manuals/debian-reference/ch02.en.html" target="_blank">https://debian.org/doc/manuals/debian-reference/ch02.en.html</a></li>
-<li id="ref3">APT User Manual. Available at: <a href="https://manpages.debian.org/buster/apt-get/apt-get.8.en.html" target="_blank">https://manpages.debian.org/buster/apt-get/apt-get.8.en.html</a></li>
+<li>Debian Manual Page for <code>apt(8)</code>. Available at: <a href="https://manpages.debian.org/buster/apt/apt.8.en.html" target="_blank">https://manpages.debian.org/buster/apt/apt.8.en.html</a></li>
+<li>Debian Reference - Package Management. Available at: <a href="https://debian.org/doc/manuals/debian-reference/ch02.en.html" target="_blank">https://debian.org/doc/manuals/debian-reference/ch02.en.html</a></li>
+<li>APT User Manual. Available at: <a href="https://manpages.debian.org/buster/apt-get/apt-get.8.en.html" target="_blank">https://manpages.debian.org/buster/apt-get/apt-get.8.en.html</a></li>
 </ol>
 </div>
 
@@ -3461,7 +3461,7 @@ $ sudo ufw allow proto tcp from any to 150.129.148.155 port 443
 <h4>• VPN Protocols</h4>
 
 <p align="left">
-<img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/03_NETWORK/06_Others_Resources.png" alt="VPN Protocols"></p>
+<img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/03_NETWORK/06_Others_Resources.png" alt="VPN Protocols" title="VPN Protocols"/></p>
 
 <br>
 </details>
@@ -4359,7 +4359,7 @@ $ sudo cat /sys/class/net/eth0/address
 
 
 <details>
-<summary>&nbsp; Office Suites</summary>
+<summary>Office Suites</summary>
 <br>
 
 <h4>Libre Office</h4>
@@ -4511,7 +4511,7 @@ Choose Tools - Options - Load/Save - General.</p>
 <!-- ############################## -->
 
 <details>
-<summary>&nbsp; Document Converter</summary>
+<summary>Document Converter</summary>
 <br>
 
 <h4>Libre Office (Headless)</h4>
@@ -4635,7 +4635,7 @@ $ pandoc document.html -t latex -o document.pdf
 <!-- ############################## -->
 
 <details>
-<summary>&nbsp; PDF Suites</summary>
+<summary>PDF Suites</summary>
 <br>
 
 <h4>PDF Reader</h4>
@@ -4794,7 +4794,7 @@ https://github.com/SiddharthPant/booky<br>
 <!-- ############################## -->
 
 <details>
-<summary>&nbsp; PDF OCR</summary>
+<summary>PDF OCR</summary>
 <br>
 
 <h4>• PDF OCR - Optical Character Recognition</h4>
@@ -4934,7 +4934,7 @@ $ ocrmypdf -v --rotate-pages-threshold {0.0-2.0} input.pdf output.pdf
 <!-- ############################## -->
 
 <details>
-<summary>&nbsp; PDF Optimizers</summary>
+<summary>PDF Optimizers</summary>
 <br>
 
 <h4>ImageMagick (GUI or CLI)</h4>
@@ -5165,7 +5165,7 @@ $ ps2pdf -dPDFSETTINGS=/ebook input.pdf output.pdf
 <!-- ############################## -->
 
 <details>
-<summary>&nbsp; Image Editors</summary>
+<summary>Image Editors</summary>
 <br>
 
 <h4>Basic Image Editors</h4>
@@ -5225,7 +5225,7 @@ https://imgflip.com/memegenerator<br>
 <!-- ############################## -->
 
 <details>
-<summary>&nbsp; Image Convert</summary>
+<summary>Image Convert</summary>
 <br>
 
 <h4>Image Converter</h4>
@@ -5332,7 +5332,7 @@ $ for x in `find . -name "*.webp"`; do dwebp {} -o ${x%.*}.png ; done
 <!-- ############################## -->
 
 <details>
-<summary>&nbsp; Office Utilities</summary>
+<summary>Office Utilities</summary>
 <br>
 
 <h4>Office Utilities</h4>
@@ -9425,11 +9425,9 @@ $ sudo hdparm -I /dev/sda
 
 <!-- ############################################################-->
 
+<div>
+
 <p align="right"><a href="https://github.com/RENANZG/My-Debian-GNU-Linux?tab=readme-ov-file#">Back to Top ⬆</a></p>
-
-<!-- ############################################################-->
-
-<div id="footer">
 
 <br>
 <br>

@@ -128,7 +128,7 @@
 <!-- ############################################################-->
 
 <details>
-<summary><small>¹ Check hash with <a href="https://gtkhash.org">GtkHash (GUI)</a></small></summary>
+<summary>¹ Check hash with <a href="https://gtkhash.org">GtkHash (GUI)</a></summary>
 <br>
 
 <p>Check hash with GtkHash (GUI) <a href="https://gtkhash.org">https://gtkhash.org</a></p>
@@ -141,7 +141,7 @@
 <!-- ############################## -->
 
 <details>
-<summary><small>² How to summarize iso file with <a href="https://gnu.org/software/coreutils/manual/html_node/Summarizing-files.html">GNU Coreutils (CLI)</a></small></summary>
+<summary>² How to summarize iso file with <a href="https://gnu.org/software/coreutils/manual/html_node/Summarizing-files.html">GNU Coreutils (CLI)</a></summary>
 <br>
 
 <p>Summarize iso file with GNU Coreutils (CLI)<a href="https://gnu.org/software/coreutils/manual/html_node/Summarizing-files.html">https://gnu.org/software/coreutils/manual/html_node/Summarizing-files.html</a></p>
@@ -152,7 +152,7 @@
 <!-- ############################## -->
 
 <details>
-<summary><small>³ Manual method with sha256sum</small></summary>
+<summary>³ Manual method with sha256sum</summary>
 <br>
 
 <p>The SHA-256 checksum hashes in a file called SHA256SUMS in the same directory listing as the download page.</p>
@@ -181,7 +181,7 @@
 <!-- ############################## -->
 
 <details>
-<summary><small>⁴ Semi-automatic method with sha256sum</small></summary>
+<summary>⁴ Semi-automatic method with sha256sum</summary>
 <br>
 
 <p>First download the SHA256SUMS and SHA256SUMS.gpg files to the same directory as the iso. Then run the following commands in a terminal.</p>
