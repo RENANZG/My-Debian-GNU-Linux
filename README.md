@@ -6555,7 +6555,7 @@ $ tree -d -L 2 .
 	<li>A good format for date designations is YYYYMMDD or YYMMDD. This format makes sure all of your files stay in chronological order, even over the span of many years.</li>
 	<li>Try not to make file names too long, since long file names do not work well with all types of software.</li>
 	<li>Special characters such as ~ ! @ # $ % ^ &amp; * ( ) ` ; &lt; &gt; ? , [ ] { } ' " and | should be avoided.</li>
-	<li>Illegal characters in Windows file names are: <code> / \ ? * : | " < > </code>.</li>
+	<li>Illegal characters in Windows file names are: <pre><code> / \ ? * : | " < > </code></pre>.</li>
 	<li>When using a sequential numbering system, using leading zeros for clarity and to make sure files sort in sequential order. For example, use "001, 002, ...010, 011 ... 100, 101, etc." instead of "1, 2, ...10, 11 ... 100, 101, etc."</li>
 	<li>Do not use spaces. Some software will not recognize file names with spaces, and file names with spaces must be enclosed in quotes when using the command line. Other options include:
 	<ul>
@@ -7092,7 +7092,7 @@ https://clonezilla.org//clonezilla-live-doc.php<br>
 
 <h5>Changing disk name</h5>
 
-<pre><code><span>$ </span>cnvt-ocs-dev -d /home/partimag 'image' 'sda3' 'sda2' </code></pre><button onclick="navigator.clipboard.writeText('cnvt-ocs-dev -d /home/partimag 'image' 'sda3' 'sda2' ')">Copy</button>
+<pre><code><span>$ </span>cnvt-ocs-dev -d /home/partimag 'image' 'sda3' 'sda2'</code></pre><button onclick="navigator.clipboard.writeText('cnvt-ocs-dev -d /home/partimag 'image' 'sda3' 'sda2'')">Copy</button>
 
 <!-- ########## -->
 
@@ -7381,13 +7381,13 @@ $ find . -size +1M  -printf "%p \t%k kb\n" | sort -k2n
 
 <h5>Find the largest packages</h5>
 
-<pre><code><span>$ dpkg-query --show --showformat='${Package;-50}\t${Installed-Size}\n' | sort -k 2 -n | grep -v deinstall | awk '{printf "%.3f MB \t %s\n", $2/(1024), $1}'</span></code></pre><button onclick="navigator.clipboard.writeText('dpkg-query --show --showformat='${Package;-50}\t${Installed-Size}\n' | sort -k 2 -n | grep -v deinstall | awk '{printf "%.3f MB \t %s\n", $2/(1024), $1}'')">Copy</button>
+<pre><code><span>$ </span>dpkg-query --show --showformat='${Package;-50}\t${Installed-Size}\n' | sort -k 2 -n | grep -v deinstall | awk '{printf "%.3f MB \t %s\n", $2/(1024), $1}'</code></pre><button onclick="navigator.clipboard.writeText('dpkg-query --show --showformat='${Package;-50}\t${Installed-Size}\n' | sort -k 2 -n | grep -v deinstall | awk '{printf "%.3f MB \t %s\n", $2/(1024), $1}'')">Copy</button>
 
 <!-- ########## -->
 
 <h4>Editig text with sed in terminal</h4>
 
-<p>Be cautious of using <code>-n</code>code> (quiet) with <code>-i</code> (in-place): the former disables aut in-place omatic printing of lines and the latter changes the file in-place without a backup. Make a backup before editing <code>-i.bak</code> .</p>
+<p>Be cautious of using <code>-n</code> (quiet) with <code>-i</code> (in-place): the former disables aut in-place omatic printing of lines and the latter changes the file in-place without a backup. Make a backup before editing <code>-i.bak</code> .</p>
 
 <pre><code><span>$ </span>sed --options [optional SCRIPT] [INPUT STREAM]</code></pre><button onclick="navigator.clipboard.writeText('sed --options [optional SCRIPT] [INPUT STREAM]')">Copy</button>
 
