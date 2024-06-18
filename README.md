@@ -1,8 +1,137 @@
 <!DOCTYPE html>
-  <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+ <head>
+<title>DEBIAN GNU/LINUX</title>
+<meta charset="utf-8">
+<!--
+<style>
+/* Global styles */
+body {
+    background-color: #EEEEEE;
+    border: 40px solid #EEEEEE;
+    margin: 0;
+    padding: 0 10px;
+    font-family: "Liberation Sans", "Myriad", "Bitstream Vera Sans", "Lucida Grande", "Luxi Sans", "Trebuchet MS", helvetica, verdana,  arial, sans-serif;
+    line-height: 1.2em;
+}
+/* Container styles */
+body > div.book, body > div.article, body > div.set, body > div.preface, body > div.chapter, body > div.section, body > div.appendix, body > div.part, div.sect1 {
+    margin-top: 0;
+    padding: 2em;
+    background-color: #FFFFFF;
+    margin: 40px auto 4em;
+    padding: 1px 40px 20px 30px;
+}
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: #C70036;
+}
+
+h1 {
+    line-height: 1.1em;
+}
+/* Links */
+a:link {
+    color: #0035C7;
+    text-decoration: none;
+}
+a:visited {
+    color: #00207A;
+    text-decoration: none;
+}
+a:hover {
+    color: #00207A;
+    text-decoration: underline;
+}
+/* Code and Preformatted Text */
+code {
+    font-family: "Liberation Mono", "Bitstream Vera Mono", "DejaVu Mono", monospace;
+    font-weight: bold;
+    word-wrap: break-word;
+}
+pre {
+    background-color: #F5F5F5;
+    border-radius: 0.5em;
+    color: #000000;
+    display: block;
+    font-family: "Liberation Mono", "Bitstream Vera Mono", "DejaVu Mono", monospace;
+    font-size: 0.9em;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+/* Tables */
+table {
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 0.2em 0.5em;
+}
+th {
+    background-color: #C70036;
+}
+th:hover {
+    color: white;
+}
+/* Lists */
+ul, ol {
+    padding-left: 1.5em;
+}
+li {
+    margin-bottom: 0.5em;
+}
+/* Blockquote */
+blockquote {
+    border-left: 4px solid #CCCCCC;
+    padding-left: 1em;
+    margin-left: 0;
+    color: #666666;
+}
+/* Horizontal Rule */
+hr {
+    border-top: 1px dotted #808080;
+    margin: 0;
+}
+/* Navigation */
+.navheader a, .navfooter a {
+    opacity: 0.50;
+    transition: opacity 0.15s ease-in-out;
+}
+.navheader a:hover, .navfooter a:hover {
+    opacity: 1;
+}
+/* Info blocks */
+.important {
+    border: 1px dashed red;
+}
+.caution {
+    border: 1px dashed #EFF500;
+}
+.note {
+    border: 1px dashed blue;
+}
+.important, .caution, .note, .tip {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+/* Reference blocks */
+.references {
+ 		margin-top: 10px;
+}
+.reference-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.reference-list li::before {
+    content: '[' counter(ref) '] ';
+    counter-increment: ref;
+    font-size: 0.2em;
+    font-weight: bold;
+}
+</style>
+-->
 </head>
 <body>
 
@@ -22,7 +151,7 @@
 
 <h3>1.01 System Hardening</h3>
 
-<table border="1">
+<table> 
 <tbody>
 <tr>
 <td> <a href="https://anonymousplanet.org/">Anonymous Planet - The Hitchhiker’s Guide</a><a href="https://anonymousplanet.org/export/guide.pdf"> (PDF)</a></td>
@@ -70,7 +199,7 @@
 
 <h3>1.02 Essential Tools</h3>
 
-<table border="1">
+<table> 
 <tbody>
   <tr>
     <td><a href="https://ventoy.net/en/download.html">1. Ventoy</a></td>
@@ -204,7 +333,7 @@
 
 <h2>2. SYSTEM INSTALLATION</h2>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 <details>
 <summary>2.01 Hardware</summary>
@@ -329,7 +458,7 @@ Terminal - https://github.com/onceupon/Bash-Oneliner#terminal-tricks<br>
 
 <h4>Overview of Terminal's Shortcuts</h4>
 
-<table border="1">
+<table> 
 <thead>
 <tr>
 <th>Shortcut</th>
@@ -414,7 +543,7 @@ Terminal - https://github.com/onceupon/Bash-Oneliner#terminal-tricks<br>
 
 <p>Basically we will use <kbd>CTRL+O</kbd> and <kbd>ENTER</kbd> to save the changes and then <kbd>CTRL+X</kbd> exit nano editor.</p>
 
-<table border="1">
+<table> 
 <thead>
   <tr>
     <th>Shortcut</th>
@@ -677,7 +806,7 @@ KVM, Kernel-based Virtual Machine, is a hypervisor built into the Linux kernel. 
 The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a type 1 hypervisor, it is able to run on bare metal, while QEMU is a type 2 hypervisor, it runs on top of the operating system. QEMU will utilize KVM in order to utilize the machine’s physical resources for the virtual machines. In brief, QEMU uses emulation; KVM uses processor extensions (HVM) for virtualization.
 </pre>
 
-<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/06_SYSADMIN/04_Virtualization_and_Containers/01_QEMU-KVM.png" alt="QEMU-KVM Chart" title="QEMU-KVM Chart"/></p>
+<p align="center"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/06_SYSADMIN/04_Virtualization_and_Containers/01_QEMU-KVM.png" alt="QEMU-KVM Chart" title="QEMU-KVM Chart" /></p>
 
 <h5>Using QEMU/KVM - "Kernel-based Virtual Machine"</h5>
 https://wiki.debian.org/KVM<br>
@@ -699,7 +828,7 @@ https://youtube.com/watch?v=cs8JW3zDDoI<br>
 
 <h4>2.2.3 Debootstrap</h4>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/01_INSTALLATION/03_Debootstrap">01_INSTALLATION/03_Debootstrap</a></h4>
 
@@ -797,7 +926,7 @@ UUID=447e4a14-69f3-11ee-8c99-0242ac120002 none swap sw 0 0
 <li>https://packages.debian.org/bullseye/libpam-google-authenticator</li>
   </ul>
 
-<table border="1">
+<table> 
 <tr>
   <th>Term</th>
   <th>Definition</th>
@@ -966,7 +1095,7 @@ https://itsfoss.com/apt-get-upgrade-vs-dist-upgrade<br>
 
 <h5>Notes about system update commands</h5>
 
-<table border="1">
+<table> 
 <tr>
 <th>Command</th>
 <th>Description</th>
@@ -1225,7 +1354,7 @@ https://keepassxc.org/docs/KeePassXC_UserGuide#_openssh_agent_on_linux<br>
 
 <h2>3. SECURE BOOT</h2>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 <details>
 <summary>3.01 Introduction</summary>
@@ -1637,14 +1766,14 @@ $ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-12-amd64
 <h4>Reset Secure Boot keys for Kernel or Modules</h4>
 
 Reset Key for Kernel
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 https://rodsbooks.com/efi-bootloaders/controlling-sb.html#setuputil<br>
 
 "The ASUS permits to you restore the default keys, so this isn't really vital if you're starting from the factory defaults with this model; but if yours doesn't offer such a reset-to-defaults option or if you've modified the keys, saving them may be prudent. As the name implies, this option also erases all your Secure Boot keys. (It does not erase your MOKs, though.)"<br>
 
 <b>Reset MOK Keys for Modules</b>
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 https://rodsbooks.com/efi-bootloaders/controlling-sb.html#key-revocation<br>
 
@@ -2204,7 +2333,7 @@ https://github.com/sandrokeil/yubikey-full-disk-encryption-secure-boot-uefi<br>
 
 <h2>4. SYSTEM SECURITY</h2>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 <details>
 <summary>4.01 Introduction</summary>
@@ -2685,7 +2814,7 @@ $ systemctl status "service"
 
 <h2>5. NETWORK</h2>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 <details>
 <summary>5.01 Router</summary>
@@ -3435,7 +3564,7 @@ $ sudo chmod 600 /home/user/auth
 
 <h4>OpenVPN Random Server Selection and Autologin</h4>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 https://openvpn.net/community-resources/how-to/#auth<br>
 
@@ -3661,7 +3790,7 @@ $ sudo openvpn --config /etc/openvpn/client.conf --daemon
 
 <h5>OpenVPN DNS Resolver</h5>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 https://wiki.archlinux.org/title/OpenVPN#DNS<br>
 https://github.com/jonathanio/update-systemd-resolved<br>
@@ -3687,7 +3816,7 @@ https://openvpn.net/vpn-server-resources/troubleshooting-dns-resolution-problems
 
 <h5>OpenVPN DNS</h5>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 <pre><code><span>$ </span>sudo apt install resolvconf</code></pre><button onclick="navigator.clipboard.writeText('sudo apt install resolvconf')">Copy</button>
 
@@ -3742,7 +3871,7 @@ pull-filter ignore "dhcp-option DNS6"
 
 <h5>Disabling NetworkManager's own dnsmasq</h5>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 <pre>
 $ sudo nano /etc/NetworkManager/NetworkManager.conf
@@ -3807,7 +3936,7 @@ $ curl ipinfo.io
 
 <h4>OpenVPN UFW kill switch</h4>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 <p>Set up a firewall to deny everything but the VPN handshake on the regular interfaces eth0 and wlan0 while placing no restrictions on tun0.</p>
 
@@ -3847,7 +3976,7 @@ $ curl --connect-timeout 5 ipinfo.io
 
 <h4>OpenVPN DNS</h4>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 <h5>resolv-conf</h5>
 
@@ -4131,7 +4260,7 @@ https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge<br>
 https://transmissionbt.com<br>
 https://comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-linux-with-ufw<br>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 <h4>Transmission remotely access</h4>
 
@@ -4181,12 +4310,34 @@ $ sudo cat /sys/class/net/eth0/address
 https://libreoffice.org<br>
 https://wiki.documentfoundation.org/Documentation/Install/Linux<br>
 
+<!-- ##### -->
+
 <h5>Libre Office - Extensions</h5>
 
 &nbsp; &nbsp;<a href="https://languagetool.org/insights/post/product-libreoffice/">Language Tool</a><br>
 &nbsp; &nbsp;<a href="https://zotero.org/">Zotero</a><br>
 
 <h5>Libre Office - <a href="https://help.libreoffice.org/latest/en-US/text/shared/05/new_help.html?&DbPAR=SHARED&System=UNIX#helpindx">Tips and Tricks</a></h5>
+
+<!-- ##### -->
+
+<h5>Word Completion for Text Documents</h5>
+
+<p>To Accept/Reject a Word Completion</p>
+
+<ul>
+<li>By default, you accept the word completion by pressing the Enter key.</li>
+<li>To reject the word completion, continue typing with any other key.</li>
+</ul>
+
+<p>To Switch off the Word Completion</p>
+
+<ul>
+<li>Choose Tools - AutoCorrect - AutoCorrect Options - Word Completion.</li>
+<li>Uncheck Enable word completion.</li>
+</ul>
+
+<!-- ##### -->
 
 <h5>Cursor Position</h5>
 
@@ -4195,6 +4346,8 @@ https://wiki.documentfoundation.org/Documentation/Install/Linux<br>
 <p>One exception appears when the author of a Writer text document saves and reopens a document: The cursor will be at the same position where it has been when the document was saved. This only works when the name of the author was entered in <code>Tools - Options - LibreOffice - User Data</code>.</p>
 
 <p>Press <code>Shift+F5</code> to set the cursor to the last saved position.</p>
+
+<!-- ##### -->
 
 <h5>Version Management</h5>
 
@@ -4224,6 +4377,8 @@ Choose Tools - Options - Load/Save - General.</p>
 
 <p>This command saves the information necessary to restore the current document in case of a crash. Additionally, in case of a crash LibreOffice tries automatically to save AutoRecovery information for all open documents, if possible.</p>
 
+<!-- ########## -->
+
 <h4>Zotero</h4>
 
 <p>Zotero - Your personal research assistant.</p>
@@ -4238,7 +4393,7 @@ Choose Tools - Options - Load/Save - General.</p>
 
 <a href="https://zotero.org/support/kb/item_types_and_fields#citing_fields_from_extra"> Zotero - Citing Fields from "Extra"</a><a href="https://retorque.re/zotero-better-bibtex/exporting/extra-fields/"> (Exporting - Extra fields)</a><br>
 
-<table border="1">
+<table> 
 <tr>
 <td> <b>Place</b> <br>
 (Publisher and Publisher Place)</td>
@@ -4255,7 +4410,7 @@ Choose Tools - Options - Load/Save - General.</p>
 </tr>
 </table>
 
-<table border="1">
+<table> 
 <tr>
 <td> <b>Original Title</b> </td>
 <td> <code>original-title: Original Title </code></td>
@@ -4273,7 +4428,7 @@ Choose Tools - Options - Load/Save - General.</p>
 </tr>
 </table>
 
-<table border="1">
+<table> 
 <tr>
 <td> <b>Issue Date, Date Decided or Enacted</b> </td>
 <td> <code>issued: Issue Date </code> </td>
@@ -5207,7 +5362,7 @@ https://cvedetails.com/vulnerability-list/vendor_id-1224/product_id-15031/Google
 <h5>Extensions</h5>
 
 
-<table border="1">
+<table> 
 <thead>
   <tr>
     <th align="center">Firefox</th>
@@ -5747,7 +5902,7 @@ https://efail.de<br>
 
 <p>Note 2: Create an expiration date for security reasons.</p>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 <p>Note 3: Create an .</p>
 
@@ -5795,7 +5950,7 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
 
 <h4>Encryption</h4>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/03_Cryptography_and_Passwords">03_Cryptography_and_Passwords</a></h4>
 
@@ -6555,7 +6710,7 @@ $ tree -d -L 2 .
 
 <h5>Special HTML codes</h5>
 
-<table border="1">
+<table> 
 <thead>
 <tr>
 <th>Char</th>
@@ -7276,7 +7431,116 @@ https://overte.org<br>
 <!-- ############################## -->
 
 <details>
-<summary>6.20 Tips and Tricks</summary>
+<summary>6.20 Artificial Intelligence</summary>
+<br>
+
+<h4>ChatGPT</h4>
+
+<pre><code><span>$ </span>sudo apt install chat-gpt</code></pre><button onclick="navigator.clipboard.writeText('sudo apt install chat-gpt')">Copy</button>
+
+<h4>Open-Source LLMs Locally</h4>
+
+<table>
+        <tr>
+            <th>Feature</th>
+            <th><a href="https://gpt4all.io" target="_blank">GPT4All</a></th>
+            <th><a href="https://github.com/imartinez/privateGPT" target="_blank">privateGPT</a></th>
+            <th><a href="https://github.com/PromtEngineer/localGPT" target="_blank">localGPT</a></th>
+        </tr>
+        <tr>
+            <td>Aboout</td>
+            <td>Privacy-oriented software for chatting with large language models that run on your own computer.</td>
+            <td>Interact with your documents using the power of GPT, 100% privately, no data leaks</td>
+            <td>Chat with your documents on your local device using GPT models. No data leaves your device and 100% private.</td>
+        </tr>
+        <tr>
+            <td>Resource Requirements</td>
+            <td>
+                - CPU: 4 cores recommended<br>
+                - RAM: 16 GB recommended<br>
+                - Disk: Varies by model size (10-50 GB)<br>
+                - GPU: Optional, improves performance
+            </td>
+            <td>
+                - CPU: 4 cores recommended<br>
+                - RAM: 16 GB recommended<br>
+                - Disk: 10-20 GB<br>
+                - GPU: Optional, improves performance
+            </td>
+            <td>
+                - CPU: 4 cores recommended<br>
+                - RAM: 16 GB recommended<br>
+                - Disk: Varies by model size (10-50 GB)<br>
+                - GPU: Recommended for large models
+            </td>
+        </tr>
+        <tr>
+            <td>Installation Complexity</td>
+            <td>Medium - Requires downloading models and setting up environment</td>
+            <td>Medium - Python environment setup and model downloading</td>
+            <td>Medium - Requires setting up Python environment and dependencies</td>
+        </tr>
+        <tr>
+            <td>Supported Models and Characteristics</td>
+            <td>
+                - GPT-3: 175B parameters, state-of-the-art performance, Apache 2.0<br>
+                - GPT-J: 6B parameters, open-source alternative to GPT-3, Apache 2.0<br>
+                - GPT-Neo: 2.7B, 1.3B parameters, lightweight models, MIT
+            </td>
+            <td>
+                - GPT-3: 175B parameters, high accuracy and versatility, Apache 2.0<br>
+                - LLaMA: Various sizes, efficient and scalable, custom licenses (research use only)
+            </td>
+            <td>
+                - GPT-3: 175B parameters, high accuracy and versatility, Apache 2.0<br>
+                - GPT-Neo: 2.7B, 1.3B parameters, lightweight models, MIT<br>
+                - BERT: Various sizes, strong at understanding context, Apache 2.0
+            </td>
+        <tr>
+            <td>Community Support</td>
+            <td>
+                - Support: Active - Forums, GitHub issues, community forums<br>
+                - Documentation: Comprehensive - Detailed setup and usage instructions available
+            </td>
+            <td>
+                - Support: Active - GitHub discussions, community contributions<br>
+                - Documentation: Good - Includes setup guide and usage examples
+            </td>
+            <td>
+                - Support: Active - GitHub issues and community support<br>
+                - Documentation: Good - Detailed README with setup and usage instructions
+            </td>
+        </tr>
+        <tr>
+            <td>License</td>
+            <td>
+                Apache 2.0<br>
+                - Allows commercial use<br>
+                - Permissive, widely used<br>
+                - Requires attribution and disclaimer
+            </td>
+            <td>
+                MIT<br>
+                - Highly permissive<br>
+                - Allows commercial use<br>
+                - No warranty or liability
+            </td>
+            <td>
+                MIT<br>
+                - Highly permissive<br>
+                - Allows commercial use<br>
+                - No warranty or liability
+            </td>
+        </tr>
+     </table>
+
+<br>
+</details>
+
+<!-- ############################## -->
+
+<details>
+<summary>6.21 Tips and Tricks</summary>
 <br>
 
 <h4>Visualize folder tree</h4>
@@ -7300,6 +7564,7 @@ $ tree -d -L 2 .
 $ sudo shutdown -h 23:59
 </pre>
 
+<!-- ##### -->
 
 <h5>Shutdown at specific date and time</h5>
 
@@ -7345,6 +7610,8 @@ $ find ~/Downloads -type f -size +3G -exec du -h {} + | sort -rh
 $ find /home/$USER/Downloads -xdev -type f -size +1G
 $ find . -size +1M  -printf "%p \t%k kb\n" | sort -k2n
 </pre>
+
+<!-- ##### -->
 
 <h5>Find the largest packages</h5>
 
@@ -7400,6 +7667,7 @@ $ sed -i 's/text//g' *.txt
 $ sed -i.bak 's/word//g' *.txt
 </pre>
 
+<!-- ##### -->
 
 <h5>• Convert Lowercase to Uppercase Characters</h5>
 <pre><code><span>$ </span>sed -i 's/.*/\U&/' text.txt</code></pre><button onclick="navigator.clipboard.writeText('sed -i 's/.*/\U&/' text.txt')">Copy</button>
@@ -7412,18 +7680,10 @@ $ sed -i.bak 's/word//g' *.txt
 <h5>• Remove all digits in a range</h5>
 <pre><code><span>$ </span>sed 's/[0-9]//g' text.txt</code></pre><button onclick="navigator.clipboard.writeText('sed 's/[0-9]//g' text.txt')">Copy</button>
 
-
 <pre>
 *Note, in terminal:
 Alt + u	Make uppercase from the cursor position to the end of the word.
 Alt + l	Make lowercase from the cursor position to the end of the word/text.
-</pre>
-
-<pre>
-• 
-$ 
-• 
-$ 
 </pre>
 
 <!-- ########## -->
@@ -7449,7 +7709,7 @@ $ wmctrl -lG
 
 <!-- ########## -->
 
-<h4>Change default editor for <code>visudo</code></h4>
+<h4>Changing default editor for <code>visudo</code></h4>
 
 <p>By default, Linux systems use the <code>$VISUAL</code> or <code>$EDITOR</code> environment variables (usually defined in your <code>~/.bashrc</code> file or <code>/etc/profile</code>) as the default editor the <a href="https://linux.die.net/man/8/visudo">visudo</a> command. If you&#39;d prefer to use a different editor, such as <a href="https://nano-editor.org/">nano</a>, you can use either of these methods.</p>
 
@@ -7539,7 +7799,7 @@ $
 
 <h2>7. DEV SETUP</h2>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 <details>
 <summary>7.01 System Tweaks</summary>
@@ -7584,12 +7844,16 @@ https://youtube.com/watch?v=RZ4p-saaQkc<br>
 https://github.com/rockerBOO/awesome-neovim<br>
 https://reddit.com/r/neovim<br>
 
+<!-- ##### -->
+
 <h5>∙ Setups</h5>
 https://github.com/nvim-lua/kickstart.nvim<br>
 https://github.com/LazyVim/LazyVim<br>
 https://github.com/LunarVim/LunarVim<br>
 https://github.com/NvChad/NvChad<br>
 https://spacevim.org/<br>
+
+<!-- ##### -->
 
 <h5>∙ Plugins</h5>
 https://siddharta.me/configuring-neovim-as-a-python-ide-2023.html<br>
@@ -7601,6 +7865,8 @@ https://thevaluable.dev/vim-php-ide/<br>
 
 https://github.com/VSCodium/vscodium<br>
 https://reddit.com/r/vscodium<br>
+
+<!-- ##### -->
 
 <h5>∙ Extensions</h5>
 
@@ -7673,7 +7939,7 @@ https://reddit.com/r/sublimetext<br>
 
 <h2>8. SYSADMIN</h2>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 <details>
 <summary>8.01 Sysadmin</summary>
@@ -7689,7 +7955,7 @@ https://reddit.com/r/sublimetext<br>
 
 <h2>9. TROUBLESHOOTING</h2>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 <details>
 <summary>9.01 Linux Community</summary>
@@ -7699,8 +7965,8 @@ https://reddit.com/r/sublimetext<br>
 
 https://forums.debian.net<br>
 https://unix.stackexchange.com<br>
-https://askubuntu.com<br>
 https://forum.linuxfoundation.org<br>
+https://askubuntu.com<br>
 https://docs.kernel.org<br>
 https://linuxquestions.org<br>
 https://superuser.com<br>
@@ -7749,6 +8015,8 @@ https://reddit.com/r/sysadmin<br>
 <pre><code><span>$ </span>head /home/$USER/file.txt</code></pre><button onclick="navigator.clipboard.writeText('head /home/$USER/file.txt')">Copy</button>
 <pre><code><span>$ </span>head -n20 /home/$USER/file.txt</code></pre><button onclick="navigator.clipboard.writeText('head -n20 /home/$USER/file.txt')">Copy</button>
 
+<!-- ########## -->
+
 <h4>Terminal output in English</h4>
 
 <p>To only run a single command in English, you can write the LANG=C directly in front of the command itself, e.g.</p>
@@ -7777,7 +8045,10 @@ https://wiki.debian.org/KernelHeaders<br>
 
 <p>The simplest way to display your Grub is to press and hold the <code>shift</code> button while booting.</p>
 
+<!-- ########## -->
+
 <h4>System Boot</h4>
+
 
 <h5>∙ Rescue Mode</h5>
 
@@ -7793,11 +8064,15 @@ https://rodsbooks.com/refind/getting.html<br>
 
 <pre><code><span>$ </span>sudo apt install grub-customizer</code></pre><button onclick="navigator.clipboard.writeText('sudo apt install grub-customizer')">Copy</button>
 
+<!-- ########## -->
+
 <h4>∙ Restoring grub</h4>
 
 <pre><code><span>$ </span>sudo cp /usr/share/grub/default/grub /etc/default/grub </code></pre><button onclick="navigator.clipboard.writeText('sudo cp /usr/share/grub/default/grub /etc/default/grub ')">Copy</button>
 <pre><code><span>$ </span>sudo update-grub</code></pre><button onclick="navigator.clipboard.writeText('sudo update-grub')">Copy</button>
 <pre><code><span>$ </span>sudo apt -f install</code></pre><button onclick="navigator.clipboard.writeText('sudo apt -f install')">Copy</button>
+
+<!-- ########## -->
 
 <h4>∙ Menuentries debug</h4>
 
@@ -7819,6 +8094,8 @@ https://rodsbooks.com/refind/getting.html<br>
 
 <pre><code><span>$ </span>sudo</code></pre><button onclick="navigator.clipboard.writeText('sudo')">Copy</button>
 
+<!-- ########## -->
+
 <h4>∙ Grub Issues</h4>
 
 <p>Removable Medium Boot</p>
@@ -7839,6 +8116,8 @@ GRUB_ENABLE_CRYPTODISK=y
 
 <pre><code><span>$ </span>sudo update-grub</code></pre><button onclick="navigator.clipboard.writeText('sudo update-grub')">Copy</button>
 
+<!-- ########## -->
+
 <h4>Remove Old Kernels</h4>
 
 <p>An easy way to remove old kernels is to use Synaptic Package Manager to search for "linux-image" and "linux-headers" and remove one except the version you are currently using.</p>
@@ -7846,7 +8125,7 @@ GRUB_ENABLE_CRYPTODISK=y
 <pre><code><span>$ </span>sudo apt remove linux-image-6.1.0-15-amd64</code></pre><button onclick="navigator.clipboard.writeText('sudo apt remove linux-image-6.1.0-15-amd64')">Copy</button>
 <pre><code><span>$ sudo apt-get purge linux-image-6.1.0-15-amd64</span></code></pre><button onclick="navigator.clipboard.writeText('sudo apt-get purge linux-image-6.1.0-15-amd64')">Copy</button>
 
-<h4>Not recommended</h4>
+<h5>Not recommended</h5>
 
 <pre><code><span>$ </span>dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d'</code></pre><button onclick="navigator.clipboard.writeText('dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d'')">Copy</button>
 <pre><code><span>$ </span>sudo dpkg -l | grep linux-image</code></pre><button onclick="navigator.clipboard.writeText('sudo dpkg -l | grep linux-image')">Copy</button>
@@ -7875,6 +8154,7 @@ https://wiki.archlinux.org/title/Display_manager<br>
 https://baeldung.com/linux/display-managers-install-uninstall<br>
 https://github.com/sddm/sddm/releases<br>
 
+<!-- ########## -->
 
 <h4>Brightness</h4>
 
@@ -7883,6 +8163,8 @@ https://github.com/sddm/sddm/releases<br>
 <pre><code><span>$ </span>brightnessctl s 70%</code></pre><button onclick="navigator.clipboard.writeText('brightnessctl s 70%')">Copy</button>
 <pre><code><span>$ </span>brightnessctl s 50%</code></pre><button onclick="navigator.clipboard.writeText('brightnessctl s 50%')">Copy</button>
 
+<!-- ########## -->
+
 <h4>Environment variables</h4>
 
 <p>Qt applications can be scaled with the following environment variables, note that many applications are hard-coding sizing and font and thus the result on such app may not be as expected.</p>
@@ -7890,6 +8172,8 @@ https://github.com/sddm/sddm/releases<br>
 <pre><code><span>$ </span>export QT_AUTO_SCREEN_SET_FACTOR=0</code></pre><button onclick="navigator.clipboard.writeText('export QT_AUTO_SCREEN_SET_FACTOR=0')">Copy</button>
 <pre><code><span>$ </span>export QT_SCALE_FACTOR=1</code></pre><button onclick="navigator.clipboard.writeText('export QT_SCALE_FACTOR=1')">Copy</button>
 <pre><code><span>$ </span>export QT_FONT_DPI=96</code></pre><button onclick="navigator.clipboard.writeText('export QT_FONT_DPI=96')">Copy</button>
+
+<!-- ########## -->
 
 <h4>Monitor and resolution</h4>
 
@@ -7916,6 +8200,8 @@ https://dpi.lv<br>
 <p>*Firefox and Thunderbird - Advanced Settings</p>
 
 <pre><code>layout.css.devPixelsPerPx	0.8</code></pre>
+
+<!-- ########## -->
 
 <h4>SSDM</h4>
 
@@ -7946,7 +8232,9 @@ https://docs.kernel.org/driver-api/usb/power-management.html<br>
 
 <h4>Troubleshooting a network using OSI model, starting from physical to application layer.</h4>
 
-<h4>First things first:</h4>
+<!-- ##### -->
+
+<h5>First things first:</h5>
 
 <pre><code><span>$ </span>sudo apt install firmware-realtek</code></pre><button onclick="navigator.clipboard.writeText('sudo apt install firmware-realtek')">Copy</button>
 or
@@ -7958,9 +8246,7 @@ or
 
 <h4>• Network</h4>
 
-<h5>∙ Debug WiFi</h5>
-
-<h4>Debug WiFi by OSI Layers</h4>
+<h5>Debug WiFi by OSI Layers</h5>
 
 <h5>Application Layer (7)</h5>
   <ul>
@@ -8060,8 +8346,8 @@ or
 <li><code>$ sudo sudo modprobe -rv [WIFIMODULE] && sudo modprobe -v [WIFIMODULE]</code></li>
   </ul>
 
-*SIOCSIFFLAGS<br>
-*RTNETLINK<br>
+<p><small>*SIOCSIFFLAGS</small></p>
+<p><small>*RTNETLINK</small></p>
 
 <!-- ########## -->
 
@@ -8228,7 +8514,7 @@ $ sudo dhclient -v
 
 <h5>Disabling NetworkManager's own dnsmasq</h5>
 
-👷🛠️UNDER CONSTRUCTION🚧🏗<br>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
 <pre>
 $ sudo nano /etc/NetworkManager/NetworkManager.conf

@@ -2,7 +2,8 @@
 
 ########################################################################
 # File Name    : rename_pdfs.sh
-# Description  : Batch rename PDF files based on title, author, and date *                metadata tags
+# Description  : Batch rename PDF files based on title, author, and date                 
+#                metadata tags
 # Dependencies : exiftool
 # Usage        : • Make the script executable with 
 #                  sudo chmod +x rename_pdfs.sh
