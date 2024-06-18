@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
+<!--
 <title>DEBIAN GNU/LINUX</title>
 <meta charset="utf-8">
-<!--
 <style>
 /* Global styles */
 body {
