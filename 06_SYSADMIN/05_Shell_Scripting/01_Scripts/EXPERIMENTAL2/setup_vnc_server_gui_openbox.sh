@@ -1,9 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ########################################################################
 # File Name    : setup_vnc_gui_openbox.sh
 # Description  : This script sets up VNC with Openbox
-# Dependencies : Debian-based Linux distribution, Openbox, TightVNCServer
+# Dependencies : Debian-based Linux distribution, Openbox, 
+#                TightVNCServer
 # Usage        : • Make the script executable with 
 #                  sudo chmod +x setup_vnc_gui_openbox.sh
 #                • Run the script without any arguments:   

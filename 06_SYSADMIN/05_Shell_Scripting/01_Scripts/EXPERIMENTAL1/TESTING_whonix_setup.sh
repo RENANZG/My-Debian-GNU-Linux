@@ -1,19 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-/************************************************************************
-* File Name    : whonix_kvm_setup.sh
-* Description  : This script sets up the Whonix KVM environment and can 
-*                securely clean up data.
-* Dependencies : curl, virsh, tar, gpg, shred
-* Usage        : • Make the script executable with 
-*                sudo chmod +x whonix_kvm_setup.sh
-*                • Run the script with no arguments to setup:   
-*                sudo ./whonix_kvm_setup.sh
-*                • Run the script with 'secure_wipe' to clean up:   
-*                sudo ./whonix_kvm_setup.sh clean
-* Author       : Me and the bois
-* License      : Free of charge, no warranty
-************************************************************************/
+########################################################################
+# File Name    : whonix_kvm_setup.sh
+# Description  : This script sets up the Whonix KVM environment and can 
+#                securely clean up data.
+# Dependencies : curl, virsh, tar, gpg, shred
+# Usage        : • Make the script executable with 
+#                sudo chmod +x whonix_kvm_setup.sh
+#                • Run the script with no arguments to setup:   
+#                sudo ./whonix_kvm_setup.sh
+#                • Run the script with 'secure_wipe' to clean up:   
+#                sudo ./whonix_kvm_setup.sh clean
+# Author       : Me and the bois
+# License      : Free of charge, no warranty
+########################################################################
 
 # Function to display usage information
 usage() {

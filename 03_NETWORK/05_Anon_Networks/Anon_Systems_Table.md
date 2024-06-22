@@ -1,3 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison of Tails, Whonix, and Qubes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
     <table>
         <thead>
             <tr>
@@ -16,7 +50,7 @@
             </tr>
             <tr>
                 <td>Base System</td>
-                <td>Debian</td>
+                <td>Debian-based</td>
                 <td>Debian-based</td>
                 <td>Fedora-based</td>
             </tr>
@@ -58,9 +92,11 @@
             </tr>
             <tr>
                 <td>Website</td>
-                <td><a href="https://tails.boum.org/">tails.boum.org</a></td>
+                <td><a href="https://tails.net">tails.net</a></td>
                 <td><a href="https://www.whonix.org/">whonix.org</a></td>
                 <td><a href="https://www.qubes-os.org/">qubes-os.org</a></td>
             </tr>
         </tbody>
     </table>
+</body>
+</html>

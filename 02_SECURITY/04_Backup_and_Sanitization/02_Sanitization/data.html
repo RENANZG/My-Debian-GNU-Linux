@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Data Wipe Methods Comparison</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Secure Data Wipe Methods Comparison</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+      <th>File Systems</th>
+      <th>Flash Memory Technologies</th>
+      <th>Interfaces</th>
+      <th>Features</th>
+      <th>Standards/Certifications</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Gutmann Method</td>
+      <td>35-pass overwrite method designed to securely erase data.</td>
+      <td>NTFS, FAT32, ext2/3/4, XFS, Btrfs, exFAT, ZFS</td>
+      <td>SLC, MLC, TLC, QLC, 3D NAND</td>
+      <td>HDD, SATA III, NVMe, SSD</td>
+      <td>Wear Leveling, TRIM</td>
+      <td>Gutmann</td>
+    </tr>
+    <tr>
+      <td>DoD 5220.22-M</td>
+      <td>3-pass overwrite method specified by the U.S. Department of Defense.</td>
+      <td>NTFS, FAT32, ext2/3/4, XFS, Btrfs, exFAT, ZFS</td>
+      <td>SLC, MLC, TLC, QLC, 3D NAND</td>
+      <td>HDD, SATA III, NVMe, SSD</td>
+      <td>Wear Leveling, TRIM</td>
+      <td>DoD 5220.22-M</td>
+    </tr>
+    <tr>
+      <td>Random Data Overwrite</td>
+      <td>Overwriting data with random patterns multiple times to prevent recovery.</td>
+      <td>NTFS, FAT32, ext2/3/4, XFS, Btrfs, exFAT, ZFS</td>
+      <td>SLC, MLC, TLC, QLC, 3D NAND</td>
+      <td>HDD, SATA III, NVMe, SSD</td>
+      <td>Wear Leveling, TRIM</td>
+      <td>NA</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Data Recovery Methods Comparison</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+      <th>File Systems</th>
+      <th>Flash Memory Technologies</th>
+      <th>Interfaces</th>
+      <th>Features</th>
+      <th>Tools/Software</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>File Carving</td>
+      <td>Extracting files from a disk image without knowledge of the file system.</td>
+      <td>NTFS, FAT32, ext2/3/4, XFS, Btrfs, exFAT, ZFS</td>
+      <td>SLC, MLC, TLC, QLC, 3D NAND</td>
+      <td>HDD, SATA III, NVMe, SSD</td>
+      <td>NA</td>
+      <td>PhotoRec, Scalpel</td>
+    </tr>
+    <tr>
+      <td>Metadata Analysis</td>
+      <td>Recovering deleted files by examining file system metadata.</td>
+      <td>NTFS, FAT32, ext2/3/4, XFS, Btrfs, exFAT, ZFS</td>
+      <td>SLC, MLC, TLC, QLC, 3D NAND</td>
+      <td>HDD, SATA III, NVMe, SSD</td>
+      <td>NA</td>
+      <td>EnCase, FTK, Autopsy</td>
+    </tr>
+    <tr>
+      <td>Physical Data Recovery</td>
+      <td>Recovering data from damaged storage media through physical repairs.</td>
+      <td>NTFS, FAT32, ext2/3/4, XFS, Btrfs, exFAT, ZFS</td>
+      <td>SLC, MLC, TLC, QLC, 3D NAND</td>
+      <td>HDD, SATA III, NVMe, SSD</td>
+      <td>NA</td>
+      <td>DriveSavers, Ontrack</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

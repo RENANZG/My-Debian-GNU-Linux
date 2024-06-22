@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ########################################################################
 # File Name    : remove_image_metadata.sh
@@ -8,7 +8,7 @@
 # Disclaimer   : Removing metadata can potentially damage image files. 
 #                Ensure you have backups before running the script, the 
 #                script will ask for a backup. About secure delete, if 
-#                you have sensitive data, consider additional measures to *                ensure the destruction of the image data. For SSDs, 
+#                you have sensitive data, consider additional measures  #                to ensure the destruction of the image data. For SSDs, 
 #                shred may not be as effective due to wear leveling and 
 #                the TRIM command. SSDs manage data differently,
 #                potentially leaving some blocks untouched by overwrite
@@ -20,7 +20,8 @@
 #                • Run the script with no arguments to remove metadata:   
 #                 bash remove_image_metadata.sh <file-or-directory>
 #                • To securely wipe backups after creating them:
-#                 bash remove_image_metadata.sh shred <file-or-directory>
+#                 bash remove_image_metadata.sh shred <file-or-
+#                 directory>
 # Author       : Me and the bois
 # License      : Free of charge, no warranty
 ########################################################################

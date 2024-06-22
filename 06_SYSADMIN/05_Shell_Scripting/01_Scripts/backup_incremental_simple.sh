@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ########################################################################
 # File Name     : backup_incremental_simple.sh

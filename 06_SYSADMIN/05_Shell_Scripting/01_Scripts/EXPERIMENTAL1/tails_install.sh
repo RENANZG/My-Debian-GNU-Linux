@@ -1,21 +1,21 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-/************************************************************************
-* File Name    : tails_install.sh
-* Description  : Script to download, verify, and install Tails on a USB
-*                
-* Based on     : https://tails.net/install/expert/index.en.html
-*                https://github.com/hellais/TAILS-OSX 
-*                
-* Dependencies : curl, gpg, dd, coreutils
-* Usage        : • Make the script executable with 
-*                sudo chmod +x tails_install.sh
-*                • Run the script with no arguments:   
-*                sudo bash tails_install.sh
-* Author       : Me and the bois
-* License      : Free of charge, no warranty
-* Last edited  : 2024-06-01 
-************************************************************************/
+########################################################################
+# File Name    : tails_install.sh
+# Description  : Script to download, verify, and install Tails on a USB
+#                
+# Based on     : https://tails.net/install/expert/index.en.html
+#                https://github.com/hellais/TAILS-OSX 
+#                
+# Dependencies : curl, gpg, dd, coreutils
+# Usage        : • Make the script executable with 
+#                sudo chmod +x tails_install.sh
+#                • Run the script with no arguments:   
+#                sudo bash tails_install.sh
+# Author       : Me and the bois
+# License      : Free of charge, no warranty
+# Last edited  : 2024-06-01 
+########################################################################
 
 #!/bin/bash
 

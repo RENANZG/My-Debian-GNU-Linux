@@ -2,102 +2,102 @@
 
 <h5>Application Layer (7)</h5>
 <ul>
-  <li><code><span>$</span> nmcli radio wifi off</code></li>
-  <li><code><span>$</span> nmcli radio wifi on</code></li>
-  <li><code><span>$</span> sudo ls /etc/NetworkManager/</code></li>
-  <li><code><span>$</span> sudo cat /etc/NetworkManager/NetworkManager.conf</code></li>
-  <li><code><span>$</span> sudo journalctl -u NetworkManager</code></li>
-  <li><code><span>$</span> sudo journalctl -xe NM_CONNECTION=123456 + NM_DEVICE=eth0</code></li>
-  <li><code><span>$</span> sudo systemctl status NetworkManager.service</code></li>
-  <li><code><span>$</span> sudo systemctl restart NetworkManager.service</code></li>
-  <li><code><span>$</span> sudo systemctl status resolvconf.service</code></li>
-  <li><code><span>$</span> sudo systemctl restart resolvconf.service</code></li>
-  <li><code><span>$</span> sudo systemctl status systemd-resolved.service</code></li>
-  <li><code><span>$</span> sudo systemctl restart systemd-resolved.service</code></li>
+  <li><pre><code><span>$ </span>nmcli radio wifi off</code></pre><button onclick="navigator.clipboard.writeText('nmcli radio wifi off')">Copy</button></li>
+  <li><pre><code><span>$ </span>nmcli radio wifi on</code></pre><button onclick="navigator.clipboard.writeText('nmcli radio wifi on')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo ls /etc/NetworkManager/</code></pre><button onclick="navigator.clipboard.writeText('sudo ls /etc/NetworkManager/')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo cat /etc/NetworkManager/NetworkManager.conf</code></pre><button onclick="navigator.clipboard.writeText('sudo cat /etc/NetworkManager/NetworkManager.conf')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo journalctl -u NetworkManager</code></pre><button onclick="navigator.clipboard.writeText('sudo journalctl -u NetworkManager')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo journalctl -xe NM_CONNECTION=123456 + NM_DEVICE=eth0</code></pre><button onclick="navigator.clipboard.writeText('sudo journalctl -xe NM_CONNECTION=123456 + NM_DEVICE=eth0')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo systemctl status NetworkManager.service</code></pre><button onclick="navigator.clipboard.writeText('sudo systemctl status NetworkManager.service')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo systemctl restart NetworkManager.service</code></pre><button onclick="navigator.clipboard.writeText('sudo systemctl restart NetworkManager.service')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo systemctl status resolvconf.service</code></pre><button onclick="navigator.clipboard.writeText('sudo systemctl status resolvconf.service')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo systemctl restart resolvconf.service</code></pre><button onclick="navigator.clipboard.writeText('sudo systemctl restart resolvconf.service')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo systemctl status systemd-resolved.service</code></pre><button onclick="navigator.clipboard.writeText('sudo systemctl status systemd-resolved.service')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo systemctl restart systemd-resolved.service</code></pre><button onclick="navigator.clipboard.writeText('sudo systemctl restart systemd-resolved.service')">Copy</button></li>
 </ul>
 
 <h5>Presentation Layer (6)</h5>
 <ul>
-  <li><code><span>$</span> sudo cat /etc/resolv.conf</code></li>
-  <li><code><span>$</span> sudo cat /run/resolvconf/resolv.conf</code></li>
-  <li><code><span>$</span> sudo cat /lib/systemd/resolv.conf</code></li>
-  <li><code><span>$</span> sudo cat /etc/systemd/resolved.conf</code></li>
-  <li><code><span>$</span> sudo cat /run/systemd/resolve/stub-resolv.conf</code></li>
-  <li><code><span>$</span> sudo cat /var/run/NetworkManager/resolv.conf</code></li>
-  <li><code><span>$</span> echo "blacklist conflicting_driver" | sudo tee -a /etc/modprobe.d/blacklist.conf</code></li>
+  <li><pre><code><span>$ </span>sudo cat /etc/resolv.conf</code></pre><button onclick="navigator.clipboard.writeText('sudo cat /etc/resolv.conf')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo cat /run/resolvconf/resolv.conf</code></pre><button onclick="navigator.clipboard.writeText('sudo cat /run/resolvconf/resolv.conf')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo cat /lib/systemd/resolv.conf</code></pre><button onclick="navigator.clipboard.writeText('sudo cat /lib/systemd/resolv.conf')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo cat /etc/systemd/resolved.conf</code></pre><button onclick="navigator.clipboard.writeText('sudo cat /etc/systemd/resolved.conf')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo cat /run/systemd/resolve/stub-resolv.conf</code></pre><button onclick="navigator.clipboard.writeText('sudo cat /run/systemd/resolve/stub-resolv.conf')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo cat /var/run/NetworkManager/resolv.conf</code></pre><button onclick="navigator.clipboard.writeText('sudo cat /var/run/NetworkManager/resolv.conf')">Copy</button></li>
+  <li><pre><code><span>$ </span>echo "blacklist conflicting_driver" | sudo tee -a /etc/modprobe.d/blacklist.conf</code></pre><button onclick="navigator.clipboard.writeText('echo "blacklist conflicting_driver" | sudo tee -a /etc/modprobe.d/blacklist.conf')">Copy</button></li>
 </ul>
 
 <h5>Network Layer (5)</h5>
 <ul>
-  <li><code><span>$</span> ip address</code></li>
-  <li><code><span>$</span> ip route</code></li>
-  <li><code><span>$</span> nmcli device show</code></li>
-  <li><code><span>$</span> nmcli dev wifi</code></li>
-  <li><code><span>$</span> nmcli device show wlan0 | grep IP4.DNS</code></li>
-  <li><code><span>$</span> sudo journalctl -b | grep -i net</code></li>
-  <li><code><span>$</span> ping -c3 8.8.8.8</code></li>
-  <li><code><span>$</span> ping localhost</code></li>
-  <li><code><span>$</span> traceroute 8.8.8.8</code></li>
-  <li><code><span>$</span> traceroute localhost</code></li>
-  <li><code><span>$</span> sudo grep -c dnsmasq /var/log/*</code></li>
-  <li><code><span>$</span> sudo grep -c dnsmasq /var/log/syslog</code></li>
-  <li><code><span>$</span> sudo dnsmasq --no-daemon --log-queries=extra --log-dhcp --log-debug -C /etc/dnsmasq.conf</code></li>
-  <li><code><span>$</span> sudo dhclient -v</code></li>
-  <li><code><span>$</span> sudo apt install resolvconf</code></li>
-  <li><code><span>$</span> sudo resolvconf --list</code></li>
-  <li><code><span>$</span> sudo resolvconf --enable-updates</code></li>
-  <li><code><span>$</span> sudo resolvconf -u</code></li>
-  <li><code><span>$</span> sudo systemctl status resolvconf.service</code></li>
-  <li><code><span>$</span> sudo systemctl restart resolvconf.service</code></li>
-  <li><code><span>$</span> sudo apt install systemd-resolved</code></li>
-  <li><code><span>$</span> sudo systemctl status systemd-resolved.service</code></li>
-  <li><code><span>$</span> sudo systemctl restart systemd-resolved.service</code></li>
+  <li><pre><code><span>$ </span>ip address</code></pre><button onclick="navigator.clipboard.writeText('ip address')">Copy</button></li>
+  <li><pre><code><span>$ </span>ip route</code></pre><button onclick="navigator.clipboard.writeText('ip route')">Copy</button></li>
+  <li><pre><code><span>$ </span>nmcli device show</code></pre><button onclick="navigator.clipboard.writeText('nmcli device show')">Copy</button></li>
+  <li><pre><code><span>$ </span>nmcli dev wifi</code></pre><button onclick="navigator.clipboard.writeText('nmcli dev wifi')">Copy</button></li>
+  <li><pre><code><span>$ </span>nmcli device show wlan0 | grep IP4.DNS</code></pre><button onclick="navigator.clipboard.writeText('nmcli device show wlan0 | grep IP4.DNS')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo journalctl -b | grep -i net</code></pre><button onclick="navigator.clipboard.writeText('sudo journalctl -b | grep -i net')">Copy</button></li>
+  <li><pre><code><span>$ </span>ping -c3 8.8.8.8</code></pre><button onclick="navigator.clipboard.writeText('ping -c3 8.8.8.8')">Copy</button></li>
+  <li><pre><code><span>$ </span>ping localhost</code></pre><button onclick="navigator.clipboard.writeText('ping localhost')">Copy</button></li>
+  <li><pre><code><span>$ </span>traceroute 8.8.8.8</code></pre><button onclick="navigator.clipboard.writeText('traceroute 8.8.8.8')">Copy</button></li>
+  <li><pre><code><span>$ </span>traceroute localhost</code></pre><button onclick="navigator.clipboard.writeText('traceroute localhost')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo grep -c dnsmasq /var/log/*</code></pre><button onclick="navigator.clipboard.writeText('sudo grep -c dnsmasq /var/log/*')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo grep -c dnsmasq /var/log/syslog</code></pre><button onclick="navigator.clipboard.writeText('sudo grep -c dnsmasq /var/log/syslog')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo dnsmasq --no-daemon --log-queries=extra --log-dhcp --log-debug -C /etc/dnsmasq.conf</code></pre><button onclick="navigator.clipboard.writeText('sudo dnsmasq --no-daemon --log-queries=extra --log-dhcp --log-debug -C /etc/dnsmasq.conf')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo dhclient -v</code></pre><button onclick="navigator.clipboard.writeText('sudo dhclient -v')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo apt install resolvconf</code></pre><button onclick="navigator.clipboard.writeText('sudo apt install resolvconf')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo resolvconf --list</code></pre><button onclick="navigator.clipboard.writeText('sudo resolvconf --list')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo resolvconf --enable-updates</code></pre><button onclick="navigator.clipboard.writeText('sudo resolvconf --enable-updates')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo resolvconf -u</code></pre><button onclick="navigator.clipboard.writeText('sudo resolvconf -u')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo systemctl status resolvconf.service</code></pre><button onclick="navigator.clipboard.writeText('sudo systemctl status resolvconf.service')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo systemctl restart resolvconf.service</code></pre><button onclick="navigator.clipboard.writeText('sudo systemctl restart resolvconf.service')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo apt install systemd-resolved</code></pre><button onclick="navigator.clipboard.writeText('sudo apt install systemd-resolved')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo systemctl status systemd-resolved.service</code></pre><button onclick="navigator.clipboard.writeText('sudo systemctl status systemd-resolved.service')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo systemctl restart systemd-resolved.service</code></pre><button onclick="navigator.clipboard.writeText('sudo systemctl restart systemd-resolved.service')">Copy</button></li>
 </ul>
 
 <h5>Data Link Layer (4)</h5>
 <ul>
-  <li><code><span>$</span> ip link</code></li>
-  <li><code><span>$</span> sudo iwconfig wlan0</code></li>
-  <li><code><span>$</span> sudo iwconfig eth0</code></li>
-  <li><code><span>$</span> sudo ifconfig wlan0</code></li>
+  <li><pre><code><span>$ </span>ip link</code></pre><button onclick="navigator.clipboard.writeText('ip link')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo iwconfig wlan0</code></pre><button onclick="navigator.clipboard.writeText('sudo iwconfig wlan0')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo iwconfig eth0</code></pre><button onclick="navigator.clipboard.writeText('sudo iwconfig eth0')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo ifconfig wlan0</code></pre><button onclick="navigator.clipboard.writeText('sudo ifconfig wlan0')">Copy</button></li>
 </ul>
 
 <h5>Physical Layer (3)</h5>
 <ul>
-  <li><code><span>$</span> sudo ifconfig wlan0 down</code></li>
-  <li><code><span>$</span> sudo ifconfig wlan0 up</code></li>
-  <li><code><span>$</span> sudo ifconfig eth0 down</code></li>
-  <li><code><span>$</span> sudo ifconfig eth0 up</code></li>
-  <li><code><span>$</span> sudo dmesg | grep iwl</code></li>
-  <li><code><span>$</span> sudo dmesg | grep rtw</code></li>
-  <li><code><span>$</span> sudo dmesg | grep ath</code></li>
-  <li><code><span>$</span> lsusb</code></li>
-  <li><code><span>$</span> ls /sys/bus/usb/devices</code></li>
+  <li><pre><code><span>$ </span>sudo ifconfig wlan0 down</code></pre><button onclick="navigator.clipboard.writeText('sudo ifconfig wlan0 down')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo ifconfig wlan0 up</code></pre><button onclick="navigator.clipboard.writeText('sudo ifconfig wlan0 up')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo ifconfig eth0 down</code></pre><button onclick="navigator.clipboard.writeText('sudo ifconfig eth0 down')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo ifconfig eth0 up</code></pre><button onclick="navigator.clipboard.writeText('sudo ifconfig eth0 up')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo dmesg | grep iwl</code></pre><button onclick="navigator.clipboard.writeText('sudo dmesg | grep iwl')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo dmesg | grep rtw</code></pre><button onclick="navigator.clipboard.writeText('sudo dmesg | grep rtw')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo dmesg | grep ath</code></pre><button onclick="navigator.clipboard.writeText('sudo dmesg | grep ath')">Copy</button></li>
+  <li><pre><code><span>$ </span>lsusb</code></pre><button onclick="navigator.clipboard.writeText('lsusb')">Copy</button></li>
+  <li><pre><code><span>$ </span>ls /sys/bus/usb/devices</code></pre><button onclick="navigator.clipboard.writeText('ls /sys/bus/usb/devices')">Copy</button></li>
 </ul>
 
 <h5>Data Link Layer (2)</h5>
 <ul>
-  <li><code><span>$</span> ip link</code></li>
-  <li><code><span>$</span> sudo iwconfig eth0</code></li>
-  <li><code><span>$</span> sudo iwconfig wlan0</code></li>
-  <li><code><span>$</span> sudo ifconfig wlan0</code></li>
+  <li><pre><code><span>$ </span>ip link</code></pre><button onclick="navigator.clipboard.writeText('ip link')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo iwconfig eth0</code></pre><button onclick="navigator.clipboard.writeText('sudo iwconfig eth0')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo iwconfig wlan0</code></pre><button onclick="navigator.clipboard.writeText('sudo iwconfig wlan0')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo ifconfig wlan0</code></pre><button onclick="navigator.clipboard.writeText('sudo ifconfig wlan0')">Copy</button></li>
 </ul>
 
 <h5>Physical Layer (1)</h5>
 <ul>
-  <li><code><span>$</span> sudo ifconfig wlan0 down</code></li>
-  <li><code><span>$</span> sudo ifconfig wlan0 up</code></li>
-  <li><code><span>$</span> sudo ifconfig eth0 down</code></li>
-  <li><code><span>$</span> sudo ifconfig eth0 up</code></li>
-  <li><code><span>$</span> sudo dmesg | grep iwl</code></li>
-  <li><code><span>$</span> sudo dmesg | grep rtw</code></li>
-  <li><code><span>$</span> sudo dmesg | grep ath</code></li>
-  <li><code><span>$</span> lsusb</code></li>
-  <li><code><span>$</span> ls /sys/bus/usb/devices</code></li>
-  <li><code><span>$</span> grep . /sys/bus/usb/devices/*/power/autosuspend</code></li>
-  <li><code><span>$</span> grep . /sys/bus/usb/devices/*/power/control</code></li>
-  <li><code><span>$</span> grep . /sys/bus/usb/devices/*/power/wakeup</code></li>
-  <li><code><span>$</span> sudo modprobe -rv [WIFIMODULE] && sudo modprobe -v [WIFIMODULE]</code></li>
+  <li><pre><code><span>$ </span>sudo ifconfig wlan0 down</code></pre><button onclick="navigator.clipboard.writeText('sudo ifconfig wlan0 down')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo ifconfig wlan0 up</code></pre><button onclick="navigator.clipboard.writeText('sudo ifconfig wlan0 up')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo ifconfig eth0 down</code></pre><button onclick="navigator.clipboard.writeText('sudo ifconfig eth0 down')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo ifconfig eth0 up</code></pre><button onclick="navigator.clipboard.writeText('sudo ifconfig eth0 up')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo dmesg | grep iwl</code></pre><button onclick="navigator.clipboard.writeText('sudo dmesg | grep iwl')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo dmesg | grep rtw</code></pre><button onclick="navigator.clipboard.writeText('sudo dmesg | grep rtw')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo dmesg | grep ath</code></pre><button onclick="navigator.clipboard.writeText('sudo dmesg | grep ath')">Copy</button></li>
+  <li><pre><code><span>$ </span>lsusb</code></pre><button onclick="navigator.clipboard.writeText('lsusb')">Copy</button></li>
+  <li><pre><code><span>$ </span>ls /sys/bus/usb/devices</code></pre><button onclick="navigator.clipboard.writeText('ls /sys/bus/usb/devices')">Copy</button></li>
+  <li><pre><code><span>$ </span>grep . /sys/bus/usb/devices/*/power/autosuspend</code></pre><button onclick="navigator.clipboard.writeText('grep . /sys/bus/usb/devices/*/power/autosuspend')">Copy</button></li>
+  <li><pre><code><span>$ </span>grep . /sys/bus/usb/devices/*/power/control</code></pre><button onclick="navigator.clipboard.writeText('grep . /sys/bus/usb/devices/*/power/control')">Copy</button></li>
+  <li><pre><code><span>$ </span>grep . /sys/bus/usb/devices/*/power/wakeup</code></pre><button onclick="navigator.clipboard.writeText('grep . /sys/bus/usb/devices/*/power/wakeup')">Copy</button></li>
+  <li><pre><code><span>$ </span>sudo modprobe -rv [WIFIMODULE] && sudo modprobe -v [WIFIMODULE]</code></pre><button onclick="navigator.clipboard.writeText('sudo modprobe -rv [WIFIMODULE] && sudo modprobe -v [WIFIMODULE]')">Copy</button></li>
 </ul>
 
 *SIOCSIFFLAGS<br>

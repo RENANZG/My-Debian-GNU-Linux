@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ########################################################################
 # File Name   : secure_7z_encrypt.sh
@@ -11,10 +11,10 @@
 #               functionality to securely wipe the original files after 
 #               encryption using 'shred' if requested by the user.
 # Dependencies: 7z, shred
-# Disclaimer  : Use a strong password with at least 20 characters. If you 
-#               handle sensitive data, consider additional measures for 
-#               data destruction. Note that 'shred' on SSDs may not be as 
-#               effective due to wear leveling and TRIM commands.
+# Disclaimer  : Use a strong password with at least 20 characters. If 
+#               you handle sensitive data, consider additional measures 
+#               for data destruction. Note that 'shred' on SSDs may not
+#               be as effective due to wear leveling and TRIM commands.
 # Usage       : • Make the script executable with 
 #                 sudo chmod +x secure_7z_encrypt.sh
 #               • Encrypt files or directories:
@@ -22,11 +22,11 @@
 #                 /output/archive.7z
 #               • Securely wipe a file:
 #                 sudo bash /secure_7z_encrypt.sh shred <path_or_file>
+# Author      : Me and the bois
+# License     : Free of charge, no warranty
 # References  : https://7-zip.org
 #               https://www.cvedetails.com/vendor/9220/7-zip.html
 #               https://www.gnu.org/software/coreutils
-# Author      : Me and the bois
-# License     : Free of charge, no warranty
 ########################################################################
 
 # Function to display usage information

@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ########################################################################
 # File Name   : configure_client_ssh.sh
-# Description : Use on the client side with a Debian system to access the 
-#              	server using Secure Shell (SSH).
-# Usage       : • Replace Placeholders with your-username, your-server-ip 
-#               and your server SSH port if its different from the 
+# Description : Use on the client side with a Debian system to access 
+#               the server using Secure Shell (SSH).
+# Usage       : • Replace Placeholders with your-username, your-server-
+#               ip and your server SSH port if its different from the 
 #               default port 22.
 #               • Make the script executable with 
 #                 chmod +x configure_client_ssh.sh

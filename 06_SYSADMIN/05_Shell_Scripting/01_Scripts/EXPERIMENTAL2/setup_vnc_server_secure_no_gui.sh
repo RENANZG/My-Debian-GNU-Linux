@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ########################################################################
 # File Name    : setup_vnc_secure_no_gui.sh

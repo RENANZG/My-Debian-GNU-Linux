@@ -1,33 +1,34 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-/************************************************************************
-* File Name    : install_qemu_kvm.sh
-* Description  : Script to install or uninstall QEMU/KVM and securely 
-*                wipe images on Debian GNU/Linux.
-* Disclaimer   : If you have sensitive data, consider additional measures 
-*                to ensure the destruction of the image data. For SSDs, 
-*                shred may not be as effective due to wear leveling and 
-*                the TRIM command. SSDs manage data differently, 
-*                potentially leaving some blocks untouched by overwrite 
-*                operations.
-* Usage        : • Make the script executable with
-*                sudo chmod +x install_qemu_kvm.sh
-*                • Run the script with arguments:
-*                 - To install: sudo bash install_qemu_kvm.sh
-*                 - To uninstall: sudo bash install_qemu_kvm.sh remove
-*                 - To securely wipe a file: 
-*                   sudo bash install_qemu_kvm.sh shred 
-*                   <path_to_file>
-*                 - How to locate the folder
-*                   sudo virsh list --all
-*                   sudo virsh domstats name | grep path
-*                 - Example: /var/lib/libvirt/images/name.qcow2
-* References   : https://www.linux-kvm.org
-*                https://www.qemu.org
-*                https://wiki.qemu.org/Category:User_documentation
-* Author       : Me and the bois
-* License      : Free of charge, no warranty
-************************************************************************/
+########################################################################
+# File Name    : install_qemu_kvm.sh
+# Description  : Script to install or uninstall QEMU/KVM and securely 
+#                wipe images on Debian GNU/Linux.
+# Disclaimer   : If you have sensitive data, consider additional 
+#                measures 
+#                to ensure the destruction of the image data. For SSDs, 
+#                shred may not be as effective due to wear leveling and 
+#                the TRIM command. SSDs manage data differently, 
+#                potentially leaving some blocks untouched by overwrite 
+#                operations.
+# Usage        : • Make the script executable with
+#                sudo chmod +x install_qemu_kvm.sh
+#                • Run the script with arguments:
+#                 - To install: sudo bash install_qemu_kvm.sh
+#                 - To uninstall: sudo bash install_qemu_kvm.sh remove
+#                 - To securely wipe a file: 
+#                  sudo bash install_qemu_kvm.sh shred 
+#                  <path_to_file>
+#                 - How to locate the folder
+#                  sudo virsh list --all
+#                  sudo virsh domstats name | grep path
+#                 - Example: /var/lib/libvirt/images/name.qcow2
+# References   : https://www.linux-kvm.org
+#                https://www.qemu.org
+#                https://wiki.qemu.org/Category:User_documentation
+# Author       : Me and the bois
+# License      : Free of charge, no warranty
+########################################################################
 
 # Function to display usage information
 usage() {

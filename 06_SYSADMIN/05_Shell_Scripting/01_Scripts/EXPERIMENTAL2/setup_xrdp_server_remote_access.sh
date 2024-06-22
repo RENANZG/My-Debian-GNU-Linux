@@ -1,13 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ########################################################################
 # File Name    : setup_xrdp_remote_access_debian.sh
 # Description  : This script configures remote access on a Debian system *                using XRDP (Remote Desktop Protocol). It installs XRDP 
 #                from the Debian repositories, confirms XRDP service 
-#                status, adds the xrdp user to the ssl-cert group for SSL 
-#                authentication, enables the XRDP service to start on 
-#                boot, adds a Policy Kit rule for XRDP, and restarts the 
-#                XRDP service to apply changes.
+#                status, adds the xrdp user to the ssl-cert group for 
+#                SSL authentication, enables the XRDP service to start 
+#                on boot, adds a Policy Kit rule for XRDP, and restarts 
+#                the XRDP service to apply changes.
 # Dependencies : XRDP, dbus-x11, SSH (for connection)
 # Usage        : • Make the script executable with 
 #                  sudo chmod +x setup_xrdp_remote_access_debian.sh

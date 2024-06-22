@@ -1,21 +1,21 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ########################################################################
 # File Name    : configure_server_ssh.sh
 # Description  : This script automates the configuration of Secure Shell 
 #                (SSH) on the server side, specifically targeting the 
 #                initrd (initial RAM disk) phase for added security 
-#                during boot. It sets up both OpenSSH server and Dropbear 
-#                in the initramfs environment. To run such a script on a *                VPS (Virtual Privite Server), you would first need 
-#                access to the VPS, usually through SSH. You can SSH into 
-#                your VPS and execute the script directly on the server 
-#                that allow remote execution.
-# References   : https://www.openssh.com
-#                https://matt.ucc.asn.au/dropbear/dropbear.html
-# Dependencies : This script requires sudo privileges to install packages 
-#                and configure system settings. It assumes access to a 
-#                KVM virtualization environment with serial console 
-#                access and interaction through a VNC server during boot.
+#                during boot. It sets up both OpenSSH server and 
+#                Dropbear in the initramfs environment. To run such a 
+#                script on a VPS (Virtual Privite Server), you would 
+#                first need access to the VPS, usually through SSH. You 
+#                can SSH into your VPS and execute the script directly 
+#                on the server that allow remote execution.
+# Dependencies : This script requires sudo privileges to install 
+#                packages and configure system settings. It assumes 
+#                access to a KVM virtualization environment with serial 
+#                console access and interaction through a VNC server 
+#                during boot.
 # Usage        : • Before running the script on your VPS, make any 
 #                  necessary modifications such as updating placeholder 
 #                  values like SSH keys or server IP addresses to match 
@@ -26,6 +26,8 @@
 #                  bash configure_server_ssh.sh
 # Author       : Me and the bois
 # License      : Free of charge, no warranty
+# References   : https://www.openssh.com
+#                https://matt.ucc.asn.au/dropbear/dropbear.html
 ########################################################################
 
 # Exit immediately if a command exits with a non-zero status

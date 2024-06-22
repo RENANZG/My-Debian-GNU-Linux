@@ -1,31 +1,29 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-/************************************************************************
-* File Name    : qubes_usb_install.sh
-* Description  : 		
-*                		Script to download, verify, and write Qubes OS on a 
-*                USB drive, this script prepares the USB drive as a Qubes 
-*                OS installer, not as a bootable live Qubes OS
-*                environment. The size of the ISO is around 6 GB.
-*                		Qubes OS is designed to be installed on internal
-*                storage devices rather than USB drives due to its
-*                complex architecture and resource requirements. 
-*                		Running Qubes OS from a USB drive is generally not 
-*                recommended because of performance, stability, and 
-*                security reasons. Qubes OS, by default, blocks direct 
-*                access to USB devices for security reasons, because of
-*                assigns USB devices to a dedicated USB qube.
-*                
-* Dependencies : curl, gpg, dd, coreutils
-* Usage        : • Make the script executable with 
-*                sudo chmod +x qubes_usb_install.sh
-*                • Run the script with no arguments:   
-*                sudo bash qubes_usb_install.sh
-*                • To clean up the qubes_data directory:   
-*                sudo bash qubes_usb_install.sh clean
-* Author       : Me and the bois
-* License      : Free of charge, no warranty
-************************************************************************/
+########################################################################
+# File Name    : qubes_usb_install.sh
+# Description  : 		Script to download, verify, and write Qubes OS on a 
+#                USB drive, this script prepares the USB drive as a 
+#                Qubes OS installer, not as a bootable live Qubes OS
+#                environment. The size of the ISO is around 6 GB.
+#                		Qubes OS is designed to be installed on internal
+#                storage devices rather than USB drives due to its
+#                complex architecture and resource requirements. 
+#                		Running Qubes OS from a USB drive is generally not 
+#                recommended because of performance, stability, and 
+#                security reasons. Qubes OS, by default, blocks direct 
+#                access to USB devices for security reasons, because of
+#                assigns USB devices to a dedicated USB qube.
+# Dependencies : curl, gpg, dd, coreutils
+# Usage        : • Make the script executable with 
+#                sudo chmod +x qubes_usb_install.sh
+#                • Run the script with no arguments:   
+#                sudo bash qubes_usb_install.sh
+#                • To clean up the qubes_data directory:   
+#                sudo bash qubes_usb_install.sh clean
+# Author       : Me and the bois
+# License      : Free of charge, no warranty
+########################################################################
 
 # Function to clean up the qubes_data directory
 clean_up() {
