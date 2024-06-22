@@ -4421,13 +4421,11 @@ $ rename 's/ /_/g' *
       <h5>Full backup</h5>
       <h6>Basic command</h6>
     <pre><code><span>$ </span>cp ~/.config/example/ /media/backup</code></pre>
-      <button onclick="navigator.clipboard.writeText('cp ~/.config/example/ /media/backup')">Copy</button>
       <!-- ##### --> 
       <h5>Incremental backup</h5>
       <h6>Basic command</h6>
     <pre><code><span>$ </span>cp -vur ~/.config/example/ /media/backup</code></pre>
-      <button onclick="navigator.clipboard.writeText('cp -vur ~/.config/example/ /media/backup')">Copy</button> 
-    <p><small>*This will preserve the files permissions/ownership.</small></p>
+     <p><small>*This will preserve the files permissions/ownership.</small></p>
       <h6>∙ To get the progress information</h6>
     <pre><code><span>$</span>$ cp -a ~/.config/example/ /media/backup</code></pre>
       <!-- ########## --> 
@@ -4454,10 +4452,7 @@ $ rsync -ravzP --remove-sent-files ~/source /backup/destination
 • Copy a File or Directory from Local to Remote Machine 
 $ rsync -ravP Directory/ server@192.168.1.56:/home/server
 </code></pre>
-      
-      <button onclick="navigator.clipboard.writeText('')">Copy</button>
-      
-    <p><small>*This will preserve the files permissions and ownership.</small></p>
+      <p><small>*This will preserve the files permissions and ownership.</small></p>
       <!-- ##### --> 
       <h5>DD</h5>
       <ol>
@@ -4637,7 +4632,8 @@ $ rsync -ravP Directory/ server@192.168.1.56:/home/server
     <summary>6.18 Tips and Tricks</summary>
     <br>
     <h4>Visualize folder tree</h4> <pre><code><span>$ </span>sudo apt install tree</code></pre>
-    <button onclick="navigator.clipboard.writeText('sudo apt install tree')">Copy</button> <pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install tree')">Copy</button> 
+     <pre>
 • List directories only 
 $ tree -d • Control the depth of the tree 
 $ tree -d -L 2 .
@@ -4669,7 +4665,6 @@ $ find . -size +1M -printf "%p \t%k kb\n" | sort -k2n
     <h4>Editig text with sed in terminal</h4>
     <p>Be cautious of using <code>-n</code> (quiet) with <code>-i</code> (in-place): the former disables aut in-place omatic printing of lines and the latter changes the file in-place without a backup. Make a backup before editing <code>-i.bak</code> .</p>
   <pre><code><span>$ </span>sed --options [optional SCRIPT] [INPUT STREAM]</code></pre>
-    <button onclick="navigator.clipboard.writeText('sed --options [optional SCRIPT] [INPUT STREAM]')">Copy</button>
     <pre>
 • Append line after match 
 $ sed '/option/a Hello World' *.txt • Insert line before match 
