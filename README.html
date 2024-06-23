@@ -5410,13 +5410,13 @@ $ man find | grep -e '-size'
     <h4>Linux distribution that transforms devices in consoles</h4> <a href="https://batocera.org">Batocera</a>
     <br>
   <br> 
-</details>
-</div>  
+  </details>
+</div>
   <hr>
   <!-- ############################################################-->
   <h2>7. DEV SETUP</h2>
-<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
-<details>
+  <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
+  <details>
   <summary>7.01 System Tweaks</summary>
     <br>
     <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/05_DEVELOPMENT">05_DEVELOPMENT</a></h4>
@@ -6871,8 +6871,8 @@ http://w27irt6ldaydjoacyovepuzlethuoypazhhbot6tljuywy52emetn7qd.onion
     <li><a href="https://ibiblio.org/kuphaldt/electricCircuits">https://ibiblio.org/kuphaldt/electricCircuits</a></li>
     <li><a href="https://electronics-tutorials.ws">https://electronics-tutorials.ws</a></li>
   </ul>
-<br> 
-</details>
+ <br> 
+ </details>
   <br>
   <!-- ############################################################-->
   <div>
