@@ -192,7 +192,9 @@
       </tr>
     </tbody>
   </table>
-<p><small>&nbsp; &nbsp; &nbsp; &nbsp;*Kernel Hacking Guides - https://docs.kernel.org/kernel-hacking/index.html</small></p>
+<p><small>
+ 
+*Kernel Hacking Guides - https://docs.kernel.org/kernel-hacking/index.html</small></p>
   <hr>
   <!-- ############################################################-->
   <h3>1.02 Essential Tools</h3>
@@ -1142,9 +1144,12 @@
     </li>
   </ul>
 
-  <p><small>*Note: logoff to take effect.</small></p>
-  <p><small>*Note: It is worthless if full disk encryption with a strong password is not implemented.</small></p>
-  <p><small>*Note: to avoid having your password stored in the bash history or typed directly into the command line:</small></p>
+  <p><small>
+  *Note: logoff to take effect.</small></p>
+  <p><small>
+  *Note: It is worthless if full disk encryption with a strong password is not implemented.</small></p>
+  <p><small>
+  *Note: to avoid having your password stored in the bash history or typed directly into the command line:</small></p>
   <pre><code><span>$ </span>read -s -p "Enter your sudo password:" password; echo "$password" | sudo -S su -c "/etc/init.d/iptables -L -vn"; unset password</code></pre>
   <button onclick="navigator.clipboard.writeText('read -s -p &quot;Enter your sudo password:&quot; password; echo &quot;$password&quot; | sudo -S su -c &quot;/etc/init.d/iptables -L -vn&quot;; unset password')">Copy</button>
   <br>
@@ -1289,7 +1294,8 @@ deb-src http://deb.debian.org/debian bookworm-backports main contrib non-free
   <p>Verify</p>
   <pre><code><span>$ </span>sudo cat /proc/sys/vm/swappiness</code></pre>
   <button onclick="navigator.clipboard.writeText('sudo cat /proc/sys/vm/swappiness')">Copy</button>
-  <p><small>*Note: for sercurity reasons, encrypt your swap partiton.</small></p>
+  <p><small>
+  *Note: for sercurity reasons, encrypt your swap partiton.</small></p>
   <h5>10. TLP</h5>
   <p>Do not install TLP (Optimize Linux Laptop Battery Life, <a href="https://github.com/linrunner/TLP">Link</a> ), avoid problems.</p>
   <br>
@@ -1403,7 +1409,7 @@ deb-src http://deb.debian.org/debian bookworm-backports main contrib non-free
 </pre>
     <br>
     </details>  
-    <!-- ############################## -->
+  <!-- ############################## -->
 <details>
   <summary>3.02 Secure Boot References</summary>
   <br>
@@ -1511,7 +1517,8 @@ $ sudo mkdir -p /etc/mok_key/</code></pre> <b>3.Generating a new key</b>
 $ cd /var/lib/shim-signed/mok/ 
 $ sudo openssl req -config 
 $(openssl version -d) -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -days 36500 -subj &quot;/CN=ShimSigned/&quot;
-</code></pre> <pre><code>
+</code></pre> 
+<pre><code>
 $ sudo openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem 
 $ ls -l total 12 -rw-r--r-- 1 root root787MOK.der -rw-r--r-- 1 root root 1123MOK.pem -rw------- 1 root root 1854MOK.priv 
 $ sudo chmod 600 /var/lib/shim-signed/mok/*
@@ -1607,12 +1614,14 @@ $ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-12-amd64
 <p><b>Reset MOK Keys for Modules</b></p>
 <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p> <a href="https://rodsbooks.com/efi-bootloaders/controlling-sb.html#key-revocation">https://rodsbooks.com/efi-bootloaders/controlling-sb.html#key-revocation</a>
   <br> <pre><code>
-    $ sudo mokuitil --sb-state SecureBoot disabled</code></pre> <pre><code>
+    $ sudo mokuitil --sb-state SecureBoot disabled</code></pre> 
+    <pre><code>
     $ sudo mokutil --disable-validation</code></pre>
 <p>Backup. Exports to list (ideally store it on an encrypted external storage medium).</p> <code>$ sudo mokutil --export</code>
 <p>To remove all (MOKs being a list and not just a single MOK, you can make the shim trust keys from several different vendors, allowing dual and multi-boot)</p>
 <pre><code>
-$ sudo mokutil --reset --mok</code></pre> <pre><code>
+$ sudo mokutil --reset --mok</code></pre> 
+<pre><code>
 $ sudo mokutil --reset</code></pre>
 <p>To remove one key, first show all keys.</p>
 <pre><code>
@@ -1753,8 +1762,7 @@ $ sudo dpkg-reconfigure broadcom-sta-dkms
 3- Generate a private and public keys
 5- Import
 6- Reboot and Enroll
-4- Sign the module with sign-file</pre
-  >
+4- Sign the module with sign-file</pre>
   <h5>1. Check if secure boot is enabled.</h5>
   <p>
     When Secure Boot is disabled, the shimx64.efi will just directly load the
@@ -2538,8 +2546,10 @@ $ sudo nano /etc/sudoers.d/timeout</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo systemctl start clamav-freshclam')">Copy</button> 
     <pre><code><span>$ </span>sudo freshclam</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo freshclam')">Copy</button>
-  <p><small>*Note that Clamscan doesn't require the daemon to be running.</small></p>
-  <p><small>*Note that the "clamd" process (clamav-daemon.service) uses about 1GB of memory (doubles to 2GB when a new database is loaded); it loads the complete database of virus definitions into memory. However, this makes it super fast. You can optimize this:</small></p>
+  <p><small>
+  *Note that Clamscan doesn't require the daemon to be running.</small></p>
+  <p><small>
+  *Note that the "clamd" process (clamav-daemon.service) uses about 1GB of memory (doubles to 2GB when a new database is loaded); it loads the complete database of virus definitions into memory. However, this makes it super fast. You can optimize this:</small></p>
   <p><small>$ sudo nano /etc/clamav/clamd.conf <br> 
         ConcurrentDatabaseReload no <br> 
         ReadTimeout 10 <br> 
@@ -2682,14 +2692,14 @@ $ systemctl status "service"
     <br>
     <h4>Network Managers</h4>
     <h4>NetworkManager (GUI)</h4> <code>$ sudo apt install network-manager-gnome</code>
-    <!-- ########## -->
-    <h4>NetworkManager (CLI)</h4> <code>$ sudo apt install network-manager</code> <pre>&nbsp; Commands • Connecting WiFi manualy with nmcli $ nmcli dev status $ nmcli radio wifi on • List wifi $ nmcli dev wifi list • Connect $ sudo mcli dev wifi connect SSID(TAB) $ sudo nmcli --ask dev wifi connect SSID(TAB) • Disconnecting $ nmcli con down NAME • Saved ones $ ls /etc/NetworkManager/system-connections/</pre> <pre>&nbsp; Commands • Editing $ nmcli connection edit $ nmcli connection edit type wifi $ nmcli c edit type vpn $ nmcli c up wificonnectionname $ nmcli c show wificonnectionname $ nmcli connection show $ nmcli connection reload • Avtivating MAC randomization $ nmcli connection modify NAME 802-11-wireless.mac-address-randomization always</pre> <pre>&nbsp; Config files $ sudo ls /etc/NetworkManager/ $ sudo ls /etc/NetworkManager/system-connections/ $ sudo nano /etc/NetworkManager/NetworkManager.conf/mywifiname $ sudo nano /etc/NetworkManager/NetworkManager.conf</pre>
-    <!-- ########## -->
+  <!-- ########## -->
+    <h4>NetworkManager (CLI)</h4> <code>$ sudo apt install network-manager</code> <pre>Commands • Connecting WiFi manualy with nmcli $ nmcli dev status $ nmcli radio wifi on • List wifi $ nmcli dev wifi list • Connect $ sudo mcli dev wifi connect SSID(TAB) $ sudo nmcli --ask dev wifi connect SSID(TAB) • Disconnecting $ nmcli con down NAME • Saved ones $ ls /etc/NetworkManager/system-connections/</pre> <pre>Commands • Editing $ nmcli connection edit $ nmcli connection edit type wifi $ nmcli c edit type vpn $ nmcli c up wificonnectionname $ nmcli c show wificonnectionname $ nmcli connection show $ nmcli connection reload • Avtivating MAC randomization $ nmcli connection modify NAME 802-11-wireless.mac-address-randomization always</pre> <pre>&nbsp; Config files $ sudo ls /etc/NetworkManager/ $ sudo ls /etc/NetworkManager/system-connections/ $ sudo nano /etc/NetworkManager/NetworkManager.conf/mywifiname $ sudo nano /etc/NetworkManager/NetworkManager.conf</pre>
+  <!-- ########## -->
     <h4>Connman</h4>
     <h5>Connman (GUI)</h5> <code>$ sudo apt install connman-ui</code>
-    <!-- ########## -->
-    <h5>Connman (CLI)</h5> <code>$ sudo apt install connman</code> <pre>&nbsp; Commands $ $ $ $ $</pre>
-    <!-- ########## -->
+  <!-- ########## -->
+    <h5>Connman (CLI)</h5> <code>$ sudo apt install connman</code> <pre>Commands $ $ $ $ $</pre>
+  <!-- ########## -->
     <h4>Setting up networking without a network manager</h4> https://unix.stackexchange.com/questions/253030/how-to-setup-network-without-wicd-or-networkmanager
     <br>
   <p>Set up static networking. Configured only wlan0 because of wireless, you just need to skip the wireless related things in it.</p>
@@ -2707,9 +2717,12 @@ $ systemctl status "service"
   <p>Basically, we’re just adding DHCP entries for our interfaces. Above you’ll see a route to another network that appears when I get a DHCP lease on my Ethernet port. Next, add this:</p>
   <pre><code>auto lo iface lo inet loopback auto eth0 iface eth0 inet dhcp auto wlan0 iface wlan0 inet dhcp</code></pre>
   <p>Next, enable and start the networking service:</p>
-  <pre><code>sudo update-rc.d networking enable</code></pre> <pre><code>sudo /etc/init.d/networking start</code></pre>
+  <pre><code>sudo update-rc.d networking enable</code></pre> 
+  <pre><code>sudo /etc/init.d/networking start</code></pre>
   <p>Let’s make sure this works, by resetting the port with these commands:</p>
-  <pre><code>sudo ifdown eth0</code></pre> <pre><code>sudo ip a flush eth0</code></pre> <pre><code>sudo ifup eth0</code></pre>
+  <pre><code>sudo ifdown eth0</code></pre> 
+  <pre><code>sudo ip a flush eth0</code></pre> 
+  <pre><code>sudo ifup eth0</code></pre>
   <p>This downs the interface, flushes the address assignment to it, and then brings it up. Test it out by pinging your gateway IP: ping 192.168.0.1. If you don’t get a response, your interface is not connected or your made a typo.</p>
   <p>Let’s “do some WiFi” next! We want to make an /etc/wpa_supplicant.conf file. Consider mine:</p>
   <pre><code>etwork={ ssid="CenturyLink7851" scan_ssid=1 key_mgmt=WPA-PSK psk="4f-------------ac" }</code></pre>
@@ -2718,7 +2731,7 @@ $ systemctl status "service"
   <p>That should do it. Use a ping to find out, and do it explicitly from wlan0, so it gets it’s address first:</p>
   <pre><code>ip a show wlan0 | grep "inet" Presumably dhclient updated your /etc/resolv.conf, so you can also do a: ping -I 192.168.0.45 www.yahoo.com</code></pre>
   <p>You’re now running without NetworkManager!</p>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>How to reset Network Manager to default?</h4> https://askubuntu.com/questions/637637/how-to-reset-network-manager-to-default
     <br>
   <br> 
@@ -2796,23 +2809,74 @@ $ systemctl status "service"
     <br> https://pypi.org/project/openpyn
     <br> <pre><code><span>$ </span>sudo apt install ufw</code></pre>
     <h5>∙ Generic UFW configuration (without VPN)</h5> 
-    <pre>&nbsp; Commands, basic to install UFW $ sudo apt install ufw $ sudo ufw enable $ sudo ufw status $ sudo nano /etc/default/ufw &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; IPV6=no &nbsp; &nbsp; &nbsp; $ sudo nano /etc/sysctl.conf &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; net.ipv6.conf.all.disable_ipv6 = 1 &nbsp; &nbsp; &nbsp; net.ipv6.conf.default.disable_ipv6 = 1 &nbsp; &nbsp; &nbsp; net.ipv6.conf.lo.disable_ipv6 = 1 &nbsp; &nbsp; &nbsp; net.ipv6.conf.tun0.disable_ipv6 = 1 &nbsp; &nbsp; &nbsp; $ sudo ufw default deny incoming $ sudo ufw default allow outgoing $ sudo ufw status numbered $ sudo iptables -L --line-numbers $ sudo ufw delete 123 $ sudo ufw reload $ sudo reboot</pre>
+    <pre>Commands, basic to install UFW $ sudo apt install ufw $ sudo ufw enable $ sudo ufw status $ sudo nano /etc/default/ufw 
+     
+     
+     IPV6=no 
+     &nbsp; $ sudo nano /etc/sysctl.conf 
+     
+     
+     net.ipv6.conf.all.disable_ipv6 = 1 
+     &nbsp; net.ipv6.conf.default.disable_ipv6 = 1 
+     &nbsp; net.ipv6.conf.lo.disable_ipv6 = 1 
+     &nbsp; net.ipv6.conf.tun0.disable_ipv6 = 1 
+     &nbsp; $ sudo ufw default deny incoming $ sudo ufw default allow outgoing $ sudo ufw status numbered $ sudo iptables -L --line-numbers $ sudo ufw delete 123 $ sudo ufw reload $ sudo reboot</pre>
   <!-- ############################## -->
     <h5>∙ Advanced</h5> • R-fx Networks Projects - https://rfxn.com
     <br> • Vuurmuur Firewall - https://vuurmuur.org
     <br> • Port Checker - https://portchecker.co
     <br>
   <p>Note: an AppArmor rule could prevent port use by an individual program.</p> 
-  <pre>&nbsp; Commands, some advanced commands • Show which ports are listening for connections $ ss -tlnp • Check for open ports with nmap $ sudo apt install nmap $ sudo nmap localhost • Find the name and IP address of your tunnel $ ip -o addr | cut -d'\' -f 1 • Handling DNS queries $ apt install tcpdump $ sudo tcpdump -eni any port 53 $ sudo tcpdump -eni any port 53 and host 172.27.10.22 $ sudo tcpdump -n -i tun0 udp port 53 • Show Iptables rules $ sudo iptables -L --line-numbers • Open TCP SSH PORT for VPN IP only $ sudo ufw allow from 1.2.3.4 to any port 22 proto tcp comment 'Open TCP SSH PORT for VPN IP only' • Open TCP Torrent PORT for VPN IP only $ sudo ufw allow in on tun0 from 10.8.0.0/16 to any port 60000 proto tcp comment 'Open TCP Torrent PORT for VPN IP only' • Port Forwarding to router $ sudo iptables -A INPUT -m state --state RELATED,ESTABLISHED -p udp --dport 51413 -j ACCEPT • For uploading torrent $ sudo iptables -A OUTPUT -p udp --sport 51413 -j ACCEPT $ sudo ufw allow 51413/udp $ sudo iptables -L --line-numbers • Reset UFW $ sudo ufw reset • Troubles $ sudo apt purge iptables-persistent</pre>
+  <pre>Commands, some advanced commands • Show which ports are listening for connections $ ss -tlnp • Check for open ports with nmap $ sudo apt install nmap $ sudo nmap localhost • Find the name and IP address of your tunnel $ ip -o addr | cut -d'\' -f 1 • Handling DNS queries $ apt install tcpdump $ sudo tcpdump -eni any port 53 $ sudo tcpdump -eni any port 53 and host 172.27.10.22 $ sudo tcpdump -n -i tun0 udp port 53 • Show Iptables rules $ sudo iptables -L --line-numbers • Open TCP SSH PORT for VPN IP only $ sudo ufw allow from 1.2.3.4 to any port 22 proto tcp comment 'Open TCP SSH PORT for VPN IP only' • Open TCP Torrent PORT for VPN IP only $ sudo ufw allow in on tun0 from 10.8.0.0/16 to any port 60000 proto tcp comment 'Open TCP Torrent PORT for VPN IP only' • Port Forwarding to router $ sudo iptables -A INPUT -m state --state RELATED,ESTABLISHED -p udp --dport 51413 -j ACCEPT • For uploading torrent $ sudo iptables -A OUTPUT -p udp --sport 51413 -j ACCEPT $ sudo ufw allow 51413/udp $ sudo iptables -L --line-numbers • Reset UFW $ sudo ufw reset • Troubles $ sudo apt purge iptables-persistent</pre>
   <!-- ############################## -->
     <h5>∙ Custom application profile</h5> 
-    <pre>&nbsp; Commands $ sudo ls /etc/ufw/applications.d/ $ sudo touch /etc/ufw/applications.d/ufw-custom $ sudo nano /etc/ufw/applications.d/ufw-custom &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [CustomApp 1 Full] &nbsp; &nbsp; &nbsp; title=The first Custom Application &nbsp; &nbsp; &nbsp; description=Custom Application Description &nbsp; &nbsp; &nbsp; ports=36892|23976|19827 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [CustomApp 1 TCP] &nbsp; &nbsp; &nbsp; title=The first Custom Application - TPC only &nbsp; &nbsp; &nbsp; description=Custom Application Description &nbsp; &nbsp; &nbsp; ports=36892,23976,19827/tcp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [CustomApp 1 UDP] &nbsp; &nbsp; &nbsp; title=The first Custom Application - UDP only &nbsp; &nbsp; &nbsp; description=Custom Application Description &nbsp; &nbsp; &nbsp; ports=36892,23976,19827/udp &nbsp; &nbsp; • Check if the syntax is correct $ sudo ufw app info "CustomApp 1 Full" • Create new rule based on this profile $ sudo ufw allow in on tun0 to any app "CustomApp 1 Full" • Check $ sudo ufw status numbered | grep CustomApp</pre>
+    <pre>Commands $ sudo ls /etc/ufw/applications.d/ $ sudo touch /etc/ufw/applications.d/ufw-custom $ sudo nano /etc/ufw/applications.d/ufw-custom 
+     
+     &nbsp; [CustomApp 1 Full] 
+     &nbsp; title=The first Custom Application 
+     &nbsp; description=Custom Application Description 
+     &nbsp; ports=36892|23976|19827 
+     
+     
+     [CustomApp 1 TCP] 
+     &nbsp; title=The first Custom Application - TPC only 
+     &nbsp; description=Custom Application Description 
+     &nbsp; ports=36892,23976,19827/tcp 
+     
+     
+     [CustomApp 1 UDP] 
+     &nbsp; title=The first Custom Application - UDP only 
+     &nbsp; description=Custom Application Description 
+     &nbsp; ports=36892,23976,19827/udp 
+     • Check if the syntax is correct $ sudo ufw app info "CustomApp 1 Full" • Create new rule based on this profile $ sudo ufw allow in on tun0 to any app "CustomApp 1 Full" • Check $ sudo ufw status numbered | grep CustomApp</pre>
   <!-- ############################## -->
     <h5>∙ Configure NAT with UFW</h5> 
-    <pre>&nbsp; Commands $ sudo nano /etc/default/ufw &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DEFAULT_FORWARD_POLICY="ACCEPT" &nbsp; &nbsp; $ sudo nano /etc/ufw/sysctl.conf &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; net/ipv4/ip_forward=1 &nbsp; &nbsp; $ sudo nano /etc/ufw/before.rules &nbsp; &nbsp; &nbsp; # NAT table rules &nbsp; &nbsp; &nbsp; *nat &nbsp; &nbsp; &nbsp; :POSTROUTING ACCEPT [0:0] &nbsp; &nbsp; &nbsp; &nbsp; # Forward traffic through eth0 - Change to match you out-interface &nbsp; &nbsp; &nbsp; -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE &nbsp; &nbsp; &nbsp; &nbsp; # don't delete the 'COMMIT' line or these nat table rules won't be processed &nbsp; &nbsp; &nbsp; COMMIT &nbsp; &nbsp; $ sudo ufw disable $ sudo ufw enable</pre>
+    <pre>Commands $ sudo nano /etc/default/ufw 
+     
+     &nbsp; DEFAULT_FORWARD_POLICY="ACCEPT" 
+     $ sudo nano /etc/ufw/sysctl.conf 
+     
+     &nbsp; net/ipv4/ip_forward=1 
+     $ sudo nano /etc/ufw/before.rules 
+     &nbsp; # NAT table rules 
+     &nbsp; *nat 
+     &nbsp; :POSTROUTING ACCEPT [0:0] 
+     
+     # Forward traffic through eth0 - Change to match you out-interface 
+     &nbsp; -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE 
+     
+     # don't delete the 'COMMIT' line or these nat table rules won't be processed 
+     &nbsp; COMMIT 
+     $ sudo ufw disable $ sudo ufw enable</pre>
   <!-- ############################## -->
     <h5>∙ Configure Port Forwarding with UFW</h5> 
-    <pre>&nbsp; Commands $ sudo nano /etc/default/before.rules &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :PREROUTING ACCEPT [0:0] &nbsp; &nbsp; &nbsp; -A PREROUTING -i eth0 -d 150.129.148.155 -p tcp --dport 80 -j DNAT --to-destination 192.168.1.120:80 &nbsp; &nbsp; &nbsp; -A PREROUTING -i eth0 -d 150.129.148.155 -p tcp --dport 443 -j DNAT --to-destination 192.168.1.120:443 &nbsp; &nbsp; &nbsp; -A POSTROUTING -s 192.168.1.0/24-d 192.168.1.0/24 -j MASQUERADE &nbsp; &nbsp; $ sudo ufw disable $ sudo ufw enable $ sudo ufw allow proto tcp from any to 150.129.148.155 port 80 $ sudo ufw allow proto tcp from any to 150.129.148.155 port 443</pre>
+    <pre>Commands $ sudo nano /etc/default/before.rules 
+     
+     &nbsp; :PREROUTING ACCEPT [0:0] 
+     &nbsp; -A PREROUTING -i eth0 -d 150.129.148.155 -p tcp --dport 80 -j DNAT --to-destination 192.168.1.120:80 
+     &nbsp; -A PREROUTING -i eth0 -d 150.129.148.155 -p tcp --dport 443 -j DNAT --to-destination 192.168.1.120:443 
+     &nbsp; -A POSTROUTING -s 192.168.1.0/24-d 192.168.1.0/24 -j MASQUERADE 
+     $ sudo ufw disable $ sudo ufw enable $ sudo ufw allow proto tcp from any to 150.129.148.155 port 80 $ sudo ufw allow proto tcp from any to 150.129.148.155 port 443</pre>
   <br> 
 </details>  
 <!-- ############################## -->
@@ -2869,23 +2933,36 @@ $ systemctl status "service"
   <!-- ############################## -->
     <h4>Installing OpenVPN with NetworkManager (GUI)</h4>
   <p>You may use graphical VPN tool network-manager UI by providing the key and certificates</p> 
-  <pre>&nbsp; Commands GUI $ sudo apt install network-manager-openvpn-gnome $ m-connection-editor</pre>
+  <pre>Commands GUI $ sudo apt install network-manager-openvpn-gnome $ m-connection-editor</pre>
   <p>"Find a network connection, open its settings, then under General, enable Automatically connect to VPN. After saving, a secondaries= line is added in that network's configuration file in the [connection] section. It will contain a list of secondary connection UUIDs to be activated. The configuration file is usually <code>/etc/NetworkManager/system-connections/</code> ."</p>
   <p>Import OVPN to NetworkManager in terminal</p> 
-  <pre>Copy the OpenVPN configuration from your VPN provider into /etc/openvpn &nbsp; Commands nmcli, to easy import $ sudo nmcli connection import type openvpn file /etc/openvpn/client/cc00-myvpn.com_tcp.ovpn $ nmcli connection show $ nmcli connection up myopvnname $ nmcli connection show $ ip route $ nmcli connection edit type wifi $ nmcli c edit type vpn $ nmcli c up wificonnectionname $ nmcli c show wificonnectionname $ nmcli connection show $ nmcli connection reload $ sudo service openvpn restart $ sudo systemctl status NetworkManager.service $ sudo systemctl restart NetworkManager.service</pre>
+  <pre>Copy the OpenVPN configuration from your VPN provider into /etc/openvpn Commands nmcli, to easy import $ sudo nmcli connection import type openvpn file /etc/openvpn/client/cc00-myvpn.com_tcp.ovpn $ nmcli connection show $ nmcli connection up myopvnname $ nmcli connection show $ ip route $ nmcli connection edit type wifi $ nmcli c edit type vpn $ nmcli c up wificonnectionname $ nmcli c show wificonnectionname $ nmcli connection show $ nmcli connection reload $ sudo service openvpn restart $ sudo systemctl status NetworkManager.service $ sudo systemctl restart NetworkManager.service</pre>
   <p>Editing OVPN with NetworkManager in terminal</p> 
   <pre>&nbsp; Config files $ sudo ls /etc/NetworkManager/ $ sudo ls /etc/NetworkManager/system-connections/ $ sudo nano /etc/NetworkManager/NetworkManager.conf/mywifiname <br> 
 $ sudo nano /etc/NetworkManager/NetworkManager.conf <br></pre>
   <!-- ############################## -->
     <h4>Installing OpenVPN (CLI)</h4> 
-    <pre>&nbsp; Commands $ sudo apt install resolvconf $ sudo systemctl enable --now resolvconf.service $ sudo apt install openvpn • Copy the OpenVPN configuration from your VPN provider into /etc/openvpn $ sudo wget https://vpnprovider.com/openvpn.zip $ sudo unzip openvpn.zip $ sudo rm openvpn.zip $ cd /etc/openvpn • Instead of .ovpn extension, OpenVPN on Linux uses .conf &nbsp; &nbsp; for config files. Rename them accordingly, you could simply &nbsp; &nbsp; substitute it in the appropriate file name with copy $ sudo cp cc00-myvpn_tcp.ovpn /etc/openvpn/client/client.conf • Alternatively, rename and copy in batch $ sudo rename 's/ovpn/conf/' openvpn/*.ovpn $ sudo cp openvpn/* /etc/openvpn</pre>
+    <pre>Commands $ sudo apt install resolvconf $ sudo systemctl enable --now resolvconf.service $ sudo apt install openvpn • Copy the OpenVPN configuration from your VPN provider into /etc/openvpn $ sudo wget https://vpnprovider.com/openvpn.zip $ sudo unzip openvpn.zip $ sudo rm openvpn.zip $ cd /etc/openvpn • Instead of .ovpn extension, OpenVPN on Linux uses .conf 
+     for config files. Rename them accordingly, you could simply 
+     substitute it in the appropriate file name with copy $ sudo cp cc00-myvpn_tcp.ovpn /etc/openvpn/client/client.conf • Alternatively, rename and copy in batch $ sudo rename 's/ovpn/conf/' openvpn/*.ovpn $ sudo cp openvpn/* /etc/openvpn</pre>
   <p>*resolvconf vs. systemd-resolved</p>
   <p>*resolvconf vs. openresolv</p>
   <!-- ############################## -->
     <h4>Basic OpenVPN Connection (Manual connection for test)</h4> 
-    <pre>• Basic connection, OpenVPN will ask for a username and &nbsp; &nbsp; password each time you want to connect, and that's &nbsp; &nbsp; not a good headless setup. $ sudo openvpn cc00-myvpn.com_tcp.ovpn &nbsp; &nbsp; Enter Auth Username: &nbsp; &nbsp; Enter Auth Password: (press TAB for o echo) • You can autoconnect with saved username and password, &nbsp; &nbsp; create another file in the OpenVPN folder called, auth.txt . &nbsp; &nbsp; Inside that file, put your VPN username on the first &nbsp; &nbsp; line and your password on the second one. $ sudo touch /etc/openvpn/auth.txt $ sudo nano /etc/openvpn/auth.txt &nbsp; &nbsp; user &nbsp; &nbsp; password $ sudo chmod 600 /etc/openvpn/auth.txt • You can autoconnect with saved login $ sudo openvpn --config cc00-myvpn.com_tcp.ovpn --auth-user-pass /etc/openvpn/auth.txt &nbsp; &nbsp; (...) &nbsp; &nbsp; Initialization Sequence Completed</pre>
+    <pre>• Basic connection, OpenVPN will ask for a username and 
+     password each time you want to connect, and that's 
+     not a good headless setup. $ sudo openvpn cc00-myvpn.com_tcp.ovpn 
+     Enter Auth Username: 
+     Enter Auth Password: (press TAB for o echo) • You can autoconnect with saved username and password, 
+     create another file in the OpenVPN folder called, auth.txt . 
+     Inside that file, put your VPN username on the first 
+     line and your password on the second one. $ sudo touch /etc/openvpn/auth.txt $ sudo nano /etc/openvpn/auth.txt 
+     user 
+     password $ sudo chmod 600 /etc/openvpn/auth.txt • You can autoconnect with saved login $ sudo openvpn --config cc00-myvpn.com_tcp.ovpn --auth-user-pass /etc/openvpn/auth.txt 
+     (...) 
+     Initialization Sequence Completed</pre>
   <p>Basic connection with autoconnect and DNS resolver, make OpenVPN update its nameservers when it starts and exits.</p> 
-  <pre>&nbsp; Commands $ openvpn --script-security 2 --config cc00-myvpn.com_tcp.ovpn • Or $ sudo openvpn --config cc00-myvpn.com_tcp.ovpn --up /etc/openvpn/update-resolv-conf --down /etc/openvpn/update-resolv-conf --script-security 2 --auth-user-pass /home/user/auth</pre>
+  <pre>Commands $ openvpn --script-security 2 --config cc00-myvpn.com_tcp.ovpn • Or $ sudo openvpn --config cc00-myvpn.com_tcp.ovpn --up /etc/openvpn/update-resolv-conf --down /etc/openvpn/update-resolv-conf --script-security 2 --auth-user-pass /home/user/auth</pre>
   <p>Creating a autologin file</p> 
   <pre>• Configuring auth manually $ sudo touch /home/user/auth $ sudo nano /home/user/auth user password • A little protection $ sudo chmod 600 /home/user/auth</pre>
   <!-- ############################## -->
@@ -2896,15 +2973,18 @@ $ sudo nano /etc/NetworkManager/NetworkManager.conf <br></pre>
   <pre>• Configuring client.conf manually $ sudo nano /etc/openvpn/client/client.conf client dev tun #It's TCP or UDP server? proto tcp remote my-server-1.com 1194 remote my-server-2.com 1194 remote my-server-3.com 1194 remote my-server-4.com 1194 remote my-server-5.com 1194 remote my-server-6.com 1194 remote my-server-7.com 1194 remote my-server-8.com 1194 remote my-server-9.com 1194 remote my-server-10.com 1194 remote-random #It choose a random config server resolv-retry infinite obind tun-mtu 1500 tun-mtu-extra 32 mssfix 1450 persist-key persist-tun ping 15 ping-restart 0 ping-timer-rem reneg-sec 0 comp-lzo no #Enable it if enabled in the server verify-x509-name CN=my.vpn-1.com #Protect against MITM see http://openvpn.net/howto.html#mitm remote-cert-tls server #Your autologin config auth-user-pass /etc/openvpn/client/auth #OpenVPN DNS Resolver script-security 2 up /etc/openvpn/update-resolv-conf down /etc/openvpn/update-resolv-conf #Others keepalive 10 60 log-append /var/log/openvpn.log verb 3 pull fast-io cipher AES-256-CBC auth SHA512 # Note SSL/TLS parms.See the server config # file for more description. # It's best # to use # a separate .crt/.key file pair # for each client. A single ca file can # be used for all clients. &lt;ca&gt; -----BEGIN CERTIFICATE----- -----END CERTIFICATE----- &lt;/ca&gt; key-direction 1 &lt;tls-auth&gt; # 2048 bit OpenVPN static key -----BEGIN OpenVPN Static key V1----- -----END OpenVPN Static key V1----- &lt;/tls-auth&gt;</pre> <pre>• Configuring client.conf automatically $ sudo cd /etc/openvpn/client/ $ sudo cat &lt; &lt; EOF &gt; client.conf client dev tun #It's TCP or UDP server? proto tcp remote my-server-1.com 1194 remote my-server-2.com 1194 remote my-server-3.com 1194 remote my-server-4.com 1194 remote my-server-5.com 1194 remote my-server-6.com 1194 remote my-server-7.com 1194 remote my-server-8.com 1194 remote my-server-9.com 1194 remote my-server-10.com 1194 remote-random #It choose a random config server resolv-retry infinite nobind tun-mtu 1500 tun-mtu-extra 32 mssfix 1450 persist-key persist-tun ping 15 ping-restart 0 ping-timer-rem reneg-sec 0 comp-lzo no #Enable it if enabled in the server verify-x509-name CN=my.vpn-1.com #Protect against MITM see http://openvpn.net/howto.html#mitm remote-cert-tls server #Your autologin config auth-user-pass /etc/openvpn/client/auth #OpenVPN DNS Resolver script-security 2 up /etc/openvpn/update-resolv-conf down /etc/openvpn/update-resolv-conf #Others keepalive 10 60 log-append /var/log/openvpn.log verb 3 pull fast-io cipher AES-256-CBC auth SHA512 # Note SSL/TLS parms.See the server config # file for more description. # It's best # to use # a separate .crt/.key file pair # for each client. A single ca file can # be used for all clients. &lt;ca&gt; -----BEGIN CERTIFICATE----- -----END CERTIFICATE----- &lt;/ca&gt; key-direction 1 &lt;tls-auth&gt; # 2048 bit OpenVPN static key -----BEGIN OpenVPN Static key V1----- -----END OpenVPN Static key V1----- &lt;/tls-auth&gt;</pre> <pre>• Configuring client.conf automatically in batch $ echo 'auth-user-pass /etc/openvpn/client/auth keepalive 10 60 log-append /var/log/openvpn.log script-security 2 up /etc/openvpn/update-resolv-conf down /etc/openvpn/update-resolv-conf' | tee -a openvpn/*.conf</pre>
   <!-- ############################## -->
     <h5>Create a autologin file</h5> 
-    <pre>• Configuring auth manually $ sudo touch /etc/openvpn/client/auth $ sudo ano /etc/openvpn/client/auth user password</pre> <pre>• Configuring auth automatically • If you are not going to copy the example, to create a &nbsp; &nbsp; newline (press ENTER) after you type the \
-     to tell the &nbsp; &nbsp; shell you want to enter more parameters but on a &nbsp; &nbsp; separate line. $ cd /etc/openvpn/client/auth $ sudo echo 'user password' > openvpn/auth • A little protection # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre> <pre>• Alternatively $ sudo chmod 600 /etc/openvpn/client/auth $ echo "USERNAME" | sudo tee -a /etc/openvpn/client/auth $ echo "PASSWORD" | sudo tee -a /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre> <pre>• Alternatively $ sudo su # echo 'myuser' | sudo tee -a /etc/openvpn/client/auth # echo 'mypassword' | sudo tee -a /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre> <pre>• Alternatively $ sudo su # echo 'myuser' | tee --append /etc/openvpn/client/auth # echo 'mypassword' | tee --append /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre>
+    <pre>• Configuring auth manually $ sudo touch /etc/openvpn/client/auth $ sudo ano /etc/openvpn/client/auth user password</pre> <pre>• Configuring auth automatically • If you are not going to copy the example, to create a 
+     newline (press ENTER) after you type the \
+     to tell the 
+      shell you want to enter more parameters but on a 
+      separate line. $ cd /etc/openvpn/client/auth $ sudo echo 'user password' > openvpn/auth • A little protection # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre> <pre>• Alternatively $ sudo chmod 600 /etc/openvpn/client/auth $ echo "USERNAME" | sudo tee -a /etc/openvpn/client/auth $ echo "PASSWORD" | sudo tee -a /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre> <pre>• Alternatively $ sudo su # echo 'myuser' | sudo tee -a /etc/openvpn/client/auth # echo 'mypassword' | sudo tee -a /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre> <pre>• Alternatively $ sudo su # echo 'myuser' | tee --append /etc/openvpn/client/auth # echo 'mypassword' | tee --append /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre>
   <!-- ############################## -->
     <h5>OpenVPN DNS Resolver</h5>
   <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p> https://wiki.archlinux.org/title/OpenVPN#DNS
     <br> https://github.com/jonathanio/update-systemd-resolved
     <br>
   <p>"By default, all configured VPNs in <code>/etc/openvpn/</code> are started during system boot. Edit <code>/etc/default/openvpn</code> to start specific VPNs or to disable this behavior. You need to run <code>systemctl daemon-reload</code> once to enable new VPNs."</p> 
-  <pre>&nbsp; Commands $ sudo su # cd /etc/openvpn/client # echo "script-security 2" | sudo tee -a /etc/openvpn/client/openvpn.conf # echo "up /etc/openvpn/update-resolv-conf" | sudo tee -a /etc/openvpn/client/openvpn.conf # echo "down /etc/openvpn/update-resolv-conf" | sudo tee -a /etc/openvpn/client/openvpn.conf</pre>
+  <pre>Commands $ sudo su # cd /etc/openvpn/client # echo "script-security 2" | sudo tee -a /etc/openvpn/client/openvpn.conf # echo "up /etc/openvpn/update-resolv-conf" | sudo tee -a /etc/openvpn/client/openvpn.conf # echo "down /etc/openvpn/update-resolv-conf" | sudo tee -a /etc/openvpn/client/openvpn.conf</pre>
   <!-- ############################## -->
     <h4>Solving DNS problems with OpenVPN</h4> https://openvpn.net/vpn-server-resources/troubleshooting-dns-resolution-problems
     <br>
@@ -2923,7 +3003,8 @@ $ sudo nano /etc/NetworkManager/NetworkManager.conf <br></pre>
     <h5>Disabling OpenVPN's client DNS</h5> 
     <pre><code><span>$ </span>sudo nano /etc/openvpn/client/client.conf</code></pre> <pre>#Actual DNS name dhcp-option DNS 10.10.10.10</pre>
   <p>Take care with DNS leaks</p>
-  <pre><code>curl ipleak.net/json/</code></pre> <pre><code>curl ipinfo.io</code></pre> <pre>#IPV4 pull-filter ignore "dhcp-option DNS" #IPV6 pull-filter ignore "dhcp-option DNS6"</pre>
+  <pre><code>curl ipleak.net/json/</code></pre> 
+  <pre><code>curl ipinfo.io</code></pre> <pre>#IPV4 pull-filter ignore "dhcp-option DNS" #IPV6 pull-filter ignore "dhcp-option DNS6"</pre>
   <!-- ############################## -->
     <h5>Disabling NetworkManager's own dnsmasq</h5>
   <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p> 
@@ -2936,7 +3017,7 @@ $ sudo nano /etc/NetworkManager/NetworkManager.conf <br></pre>
   <!-- ############################## -->
     <h5>Enable OpenVPN as service at boot</h5>
   <p>To make OpenVPN automatically connect with a certain configuration, set the AUTOSTART directive in <code>/etc/default/openvpn</code> to the configuration filename without the extension.</p> 
-  <pre>&nbsp; Commands • At boot, by default client.conf is enabled $ sudo ls /etc/openvpn/client • Set the audoestart directive $ sudo nano in /etc/default/openvpn AUTOSTART="nameofopvnconfigfile" • Save or edit your configuration with $ sudo nano /etc/openvpn/client/[country].conf • Alternatively $ sudo echo 'AUTOSTART="nameofopvnconfigfile"' | sudo tee -a /etc/default/openvpn • Enable the service by calling $ sudo systemctl start openvpn-client@nameofopvnconfigfile $ sudo systemctl enable openvpn-client@nameofopvnconfigfile • Verify $ sudo cat /etc/default/openvpn • Load OpenVPN and connect $ sudo systemctl daemon-reload $ sudo systemctl restart openvpn</pre>
+  <pre>Commands • At boot, by default client.conf is enabled $ sudo ls /etc/openvpn/client • Set the audoestart directive $ sudo nano in /etc/default/openvpn AUTOSTART="nameofopvnconfigfile" • Save or edit your configuration with $ sudo nano /etc/openvpn/client/[country].conf • Alternatively $ sudo echo 'AUTOSTART="nameofopvnconfigfile"' | sudo tee -a /etc/default/openvpn • Enable the service by calling $ sudo systemctl start openvpn-client@nameofopvnconfigfile $ sudo systemctl enable openvpn-client@nameofopvnconfigfile • Verify $ sudo cat /etc/default/openvpn • Load OpenVPN and connect $ sudo systemctl daemon-reload $ sudo systemctl restart openvpn</pre>
     <h5>Test if the killswitch is working</h5> 
     <pre>$ sudo systemctl start openvpn-client@[country] $ sudo systemctl stop openvpn-client@[country] $ sudo systemctl status openvpn-client@[country] $ curl ipleak.net/json/ $ curl ipinfo.io</pre>
   <!-- ############################## -->
@@ -2995,14 +3076,16 @@ $ sudo nano /etc/NetworkManager/NetworkManager.conf <br></pre>
 $ sudo nano /etc/ipsec.secrets​ Username : EAP "Password" 
 • Configure 
 $ sudo su Password 
-</code></pre> <pre><code>
+</code></pre> 
+<pre><code>
       sudo printf '%s\n\t' 'conn MyVPN' \
       'keyexchange=ikev2' 'dpdaction=clear' 'dpddelay=300s' \
       'eap_identity="USERNAME"' 'leftauth=eap-mschapv2' 'left=%defaultroute' \
       'leftsourceip=%config' 'right=SERVER_IP' 'rightauth=pubkey' \
       'rightsubnet=0.0.0.0/0' 'rightid=%SERVER_HOSTNAME' \
       'rightca=/etc/ipsec.d/cacerts/VPN.pem' 'type=tunnel' 'auto=add' > /etc/ipsec.conf
-</code></pre> <pre><code>
+</code></pre> 
+<pre><code>
 • Inside the file change load = yes to load = no. 
 $ sudo nano /etc/strongswan.d/charon/constraints.conf 
 • Download the VPN certificate. 
@@ -3022,7 +3105,9 @@ $ sudo ls /etc/strongswan.d/charon/
   <summary>5.09 Firewall + VPN</summary>
     <br>
     <h4>∙ Firewall (UFW) + VPN (OpenVPN)</h4> 
-    <pre>&nbsp; Commands to setup UFW + OpenVPN • You could add specifically rules for each port separately on tun0 (VPN tunnel interface) $ sudo ufw allow in on tun0 to any port 60000 proto tcp $ sudo ufw allow in on tun0 to any port 60000 proto udp • You could test to connect in and out to anywhere on tun0 $ sudo ufw allow in on tun0 $ sudo ufw allow out on tun0 • To allow access only from a specific address you could use $ sudo ufw allow in on tun0 from 192.168.0.1 to any port 60000 proto tcp • Allow OpenVPN to connect to the regular network interface (e.g. eth0, wlan0...) &nbsp; &nbsp; through the ports present in the .opvn file (e.g.DNS resolution on &nbsp; &nbsp; port 53 and VPN server on 1198...) $ sudo ufw allow out on eth0 from any to any port 53,1198 • Consider this tcp or udp rules $ sudo ufw allow out on eth0 to any port 53,1197 proto tcp $ sudo ufw allow out on eth0 to any port 53,1197 proto udp • For a hard policy, working only with tun0, you could block the rest and enable the firewall $ sudo ufw deny in on eth0 $ sudo ufw deny out on eth0 • For a hard policy, you could block the rest and enable the firewall $ sudo ufw status numbered $ sudo ufw enable $ sudo ufw reload $ sudo reboot</pre> <pre>&nbsp; Commands to secure the server with iptables • Allow everything from within your VPN $ sudo iptables -I INPUT -i tun0 -j ACCEPT • Explicitly allow what can be accessed within the VPN, for example, allow DNS and HTTP $ sudo iptables -A INPUT -i tun0 -p tcp --destination-port 53 -j ACCEPT $ sudo iptables -A INPUT -i tun0 -p udp --destination-port 53 -j ACCEPT $ sudo iptables -A INPUT -i tun0 -p tcp --destination-port 80 -j ACCEPT • To enable SSH and VPN access from anywhere. $ sudo iptables -A INPUT -p tcp --destination-port 22 -j ACCEPT $ sudo iptables -A INPUT -p tcp --destination-port 1194 -j ACCEPT $ sudo iptables -A INPUT -p udp --destination-port 1194 -j ACCEPT • To explicitly allow TCP/IP to do "three-way handshakes" $ sudo iptables -I INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT • To allow any loopback traffic, the server is allowed to talk to itself $ sudo iptables -I INPUT -i lo -j ACCEPT • To reject access from anywhere else $ sudo iptables -P INPUT DROP • To list rules $ sudo iptables -L --line-numbers</pre>
+    <pre>Commands to setup UFW + OpenVPN • You could add specifically rules for each port separately on tun0 (VPN tunnel interface) $ sudo ufw allow in on tun0 to any port 60000 proto tcp $ sudo ufw allow in on tun0 to any port 60000 proto udp • You could test to connect in and out to anywhere on tun0 $ sudo ufw allow in on tun0 $ sudo ufw allow out on tun0 • To allow access only from a specific address you could use $ sudo ufw allow in on tun0 from 192.168.0.1 to any port 60000 proto tcp • Allow OpenVPN to connect to the regular network interface (e.g. eth0, wlan0...) 
+     through the ports present in the .opvn file (e.g.DNS resolution on 
+     port 53 and VPN server on 1198...) $ sudo ufw allow out on eth0 from any to any port 53,1198 • Consider this tcp or udp rules $ sudo ufw allow out on eth0 to any port 53,1197 proto tcp $ sudo ufw allow out on eth0 to any port 53,1197 proto udp • For a hard policy, working only with tun0, you could block the rest and enable the firewall $ sudo ufw deny in on eth0 $ sudo ufw deny out on eth0 • For a hard policy, you could block the rest and enable the firewall $ sudo ufw status numbered $ sudo ufw enable $ sudo ufw reload $ sudo reboot</pre> <pre>Commands to secure the server with iptables • Allow everything from within your VPN $ sudo iptables -I INPUT -i tun0 -j ACCEPT • Explicitly allow what can be accessed within the VPN, for example, allow DNS and HTTP $ sudo iptables -A INPUT -i tun0 -p tcp --destination-port 53 -j ACCEPT $ sudo iptables -A INPUT -i tun0 -p udp --destination-port 53 -j ACCEPT $ sudo iptables -A INPUT -i tun0 -p tcp --destination-port 80 -j ACCEPT • To enable SSH and VPN access from anywhere. $ sudo iptables -A INPUT -p tcp --destination-port 22 -j ACCEPT $ sudo iptables -A INPUT -p tcp --destination-port 1194 -j ACCEPT $ sudo iptables -A INPUT -p udp --destination-port 1194 -j ACCEPT • To explicitly allow TCP/IP to do "three-way handshakes" $ sudo iptables -I INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT • To allow any loopback traffic, the server is allowed to talk to itself $ sudo iptables -I INPUT -i lo -j ACCEPT • To reject access from anywhere else $ sudo iptables -P INPUT DROP • To list rules $ sudo iptables -L --line-numbers</pre>
   <p>(*ip6tables)</p>
   <p>Troubleshooting iptables</p> 
   <pre>$ sudo systemctl restart servicedaemon.service $ sudo systemctl restart service.service $ sudo iptables -S $ ping duckduckgo.com</pre>
@@ -3060,7 +3145,7 @@ $ sudo ls /etc/strongswan.d/charon/
     <br> https://github.com/0xsirus/tirdad
     <br>
     <h4>• Address Spoof</h4> 
-    <pre>&nbsp; Commands for a random MAC address $ ip link $ sudo ifconfig wlan0 down $ sudo macchanger -r wlan0 • Shows specified MAC Address of NIC $ sudo macchanger -s wlan0 $ sudo ifconfig wlan0 up</pre>
+    <pre>Commands for a random MAC address $ ip link $ sudo ifconfig wlan0 down $ sudo macchanger -r wlan0 • Shows specified MAC Address of NIC $ sudo macchanger -s wlan0 $ sudo ifconfig wlan0 up</pre>
     <h4>• Opt-Out WLAN-SSID</h4>
     <h5>∙ To opt-out of <b>global maps</b> (https://wigle.net), rename your network WiFi SSID to</h5> 
     <pre>&lt;SSID&gt;_optout_nomap</pre>
@@ -3083,7 +3168,13 @@ $ sudo ls /etc/strongswan.d/charon/
     <br>
   <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
     <h4>Transmission remotely access</h4> 
-    <pre>&nbsp; Commands for remote Transmission $ sudo apt-get install transmission-cli $ sudo apt-get install transmission-common $ sudo apt-get install transmission-daemon $ sudo service transmission-daemon stop • To $ sudo nano /etc/transmission-daemon/settings.json &nbsp; &nbsp; > “rpc-whitelist”: “127.0.0.1,192.168.*.*”, &nbsp; &nbsp; > “rpc-whitelist-enabled”: true, • To change the download directory &nbsp; &nbsp; > "download-dir": /home/user/Downloads $ sudo service transmission-daemon start • To find local IP address $ hostname -I • To find local MAC address $ sudo cat /sys/class/net/eth0/address • In your browser &nbsp; &nbsp; > http://192.168.0.15:9091 &nbsp; &nbsp; > Login: transmission &nbsp; &nbsp; > Password: transmission</pre>
+    <pre>Commands for remote Transmission $ sudo apt-get install transmission-cli $ sudo apt-get install transmission-common $ sudo apt-get install transmission-daemon $ sudo service transmission-daemon stop • To $ sudo nano /etc/transmission-daemon/settings.json 
+     > “rpc-whitelist”: “127.0.0.1,192.168.*.*”, 
+     > “rpc-whitelist-enabled”: true, • To change the download directory 
+     > "download-dir": /home/user/Downloads $ sudo service transmission-daemon start • To find local IP address $ hostname -I • To find local MAC address $ sudo cat /sys/class/net/eth0/address • In your browser 
+     > http://192.168.0.15:9091 
+     > Login: transmission 
+     > Password: transmission</pre>
   <br> 
 </details>
   <hr>
@@ -3099,12 +3190,12 @@ $ sudo ls /etc/strongswan.d/charon/
       <h4>Libre Office</h4> https://libreoffice.org
       <br> https://wiki.documentfoundation.org/Documentation/Install/Linux
       <br>
-      <!-- ##### -->
+    <!-- ##### -->
       <h5>Libre Office - Extensions</h5> <a href="https://languagetool.org/insights/post/product-libreoffice/">Language Tool</a>
       <br><a href="https://zotero.org/">Zotero</a>
       <br>
       <h5>Libre Office</h5> <a href="https://help.libreoffice.org/latest/en-US/text/shared/05/new_help.html?&DbPAR=SHARED&System=UNIX#helpindx">Tips and Tricks</a>
-      <!-- ##### -->
+    <!-- ##### -->
       <h5>Word Completion for Text Documents</h5>
     <p>To Accept/Reject a Word Completion</p>
     <ul>
@@ -3116,12 +3207,12 @@ $ sudo ls /etc/strongswan.d/charon/
       <li>Choose Tools - AutoCorrect - AutoCorrect Options - Word Completion.</li>
       <li>Uncheck Enable word completion.</li>
     </ul>
-      <!-- ##### -->
+    <!-- ##### -->
       <h5>Cursor Position</h5>
     <p>In general, all documents open with the cursor at the start of the document.</p>
     <p>One exception appears when the author of a Writer text document saves and reopens a document: The cursor will be at the same position where it has been when the document was saved. This only works when the name of the author was entered in <code>Tools - Options - LibreOffice - User Data</code> .</p>
     <p>Press <code>Shift+F5</code> to set the cursor to the last saved position.</p>
-      <!-- ##### -->
+    <!-- ##### -->
       <h5>Version Management</h5>
     <p>The File menu contains a Versions command that enables you to save multiple versions of a document in the same file.</p>
     <p>You can choose to view individual versions of a document, or you can display the differences between versions with color markings.</p>
@@ -3135,7 +3226,7 @@ $ sudo ls /etc/strongswan.d/charon/
     <p>To save recovery information automatically every n minutes Choose Tools - Options - Load/Save - General.</p>
     <p>Mark Save AutoRecovery information every and select the time interval.</p>
     <p>This command saves the information necessary to restore the current document in case of a crash. Additionally, in case of a crash LibreOffice tries automatically to save AutoRecovery information for all open documents, if possible.</p>
-      <!-- ########## -->
+    <!-- ########## -->
       <h4>Zotero</h4>
     <p>Zotero - Your personal research assistant.</p> <a href="https://zotero.org">Zotero</a>
       <br><a href="https://zotero.org/support">Zotero - Support</a>
@@ -3147,7 +3238,8 @@ $ sudo ls /etc/strongswan.d/charon/
         <tr>
           <td><b>Place</b>
             <br> (Publisher and Publisher Place)</td>
-          <td> <pre><code>publisher: Publisher</code></pre> <pre><code>publisher-place: Publisher Place</code></pre> </td>
+          <td> <pre><code>publisher: Publisher</code></pre> 
+          <pre><code>publisher-place: Publisher Place</code></pre> </td>
           <td>For Presentations, the place where the meeting was held or the presentation was made. For Conference Papers (published in a conference proceedings), use this field for the place where the proceedings was published. If separate locations are needed for the publication place and the location of the conference, leave this field blank and add Event Place and Publisher Place fields to Extra</td>
         </tr>
         <tr>
@@ -3216,7 +3308,7 @@ $ sudo ls /etc/strongswan.d/charon/
     <summary>Document Converter</summary>
       <br>
       <h4>Libre Office (Headless)</h4> https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html
-      <br> <pre><code><span>$ </span>sudo sudo apt install -y libreoffice</code></pre> <pre>&nbsp; Commands for libreoffice headless • Syntax $ soffice --convert-to OutputFileExtension[:OutputFilterName[:OutputFilterParams[,param]]] [--outdir output_dir] • To convert a DOCX file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.docx $ soffice --headless --convert-to pdf:writer_pdf_Export:ExportNotesPages=True --outdir /home/user *.docx • To convert a ODT file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.odt • To convert a ODT file to DOCX $ soffice –-headless --convert-to pdf:writer_odt_Export --outdir /home/user *.docx • To convert a PPTX file to PDF $ soffice --headless --convert-to pdf:impress_pdf_Export --outdir /home/user *.pptx $ soffice --headless --convert-to pdf:impress_pdf_Export:ExportNotesPages=True --outdir /home/user *.pptx • To convert a XLSX file to PDF $ soffice --headless --convert-to pdf:calc_pdf_Export --outdir /home/user *.xlsx • To convert a ODT file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.odt • To convert a HTML file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.html</pre>
+      <br> <pre><code><span>$ </span>sudo sudo apt install -y libreoffice</code></pre> <pre>Commands for libreoffice headless • Syntax $ soffice --convert-to OutputFileExtension[:OutputFilterName[:OutputFilterParams[,param]]] [--outdir output_dir] • To convert a DOCX file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.docx $ soffice --headless --convert-to pdf:writer_pdf_Export:ExportNotesPages=True --outdir /home/user *.docx • To convert a ODT file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.odt • To convert a ODT file to DOCX $ soffice –-headless --convert-to pdf:writer_odt_Export --outdir /home/user *.docx • To convert a PPTX file to PDF $ soffice --headless --convert-to pdf:impress_pdf_Export --outdir /home/user *.pptx $ soffice --headless --convert-to pdf:impress_pdf_Export:ExportNotesPages=True --outdir /home/user *.pptx • To convert a XLSX file to PDF $ soffice --headless --convert-to pdf:calc_pdf_Export --outdir /home/user *.xlsx • To convert a ODT file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.odt • To convert a HTML file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.html</pre>
     <p>Output as PDF</p>
     <p>To control, which LibreOffice component generates PDF output, you can use these variants:</p> 
     <pre>--convert-to pdf:writer_pdf_Export --convert-to pdf:calc_pdf_Export --convert-to pdf:draw_pdf_Export --convert-to pdf:impress_pdf_Export --convert-to pdf:writer_web_pdf_Export</pre>
@@ -3229,7 +3321,8 @@ $ sudo ls /etc/strongswan.d/charon/
     <p>Headless vs. Invisible</p> 
     <pre>--invisible Starts in invisible mode. Neither the start-up logo nor the initial program window will be visible. Application can be controlled, and documents and dialogs can be controlled and opened via the API. Using the parameter, the process can only be ended using the taskmanager (Windows) or the kill command (UNIX-like systems). It cannot be used in conjunction with --quickstart. --headless Starts in "headless mode" which allows using the application without GUI. This special mode can be used when the application is controlled by external clients via the API.</pre>
       <h4>Pandoc</h4> 
-      <pre><code><span>$ </span>sudo sudo apt install -y pandoc</code></pre> <pre>&nbsp; Commands for pandoc • Convert ODT to DOCX $ pandoc -o document.odt document.docx • Convert DOCX to PDF $ pandoc -s document.docx -o document.pdf • Convert ODT to PDF $ pandoc -s document.odt -o document.pdf • Convert HTML to PDF $ pandoc document.html -t latex -o document.pdf</pre>
+      <pre><code><span>$ </span>sudo sudo apt install -y pandoc</code></pre>
+      <pre>Commands for pandoc • Convert ODT to DOCX $ pandoc -o document.odt document.docx • Convert DOCX to PDF $ pandoc -s document.docx -o document.pdf • Convert ODT to PDF $ pandoc -s document.odt -o document.pdf • Convert HTML to PDF $ pandoc document.html -t latex -o document.pdf</pre>
       <br> 
     </details>
   <!-- ############################## -->
@@ -3239,23 +3332,25 @@ $ sudo ls /etc/strongswan.d/charon/
       <h4>PDF Reader</h4> 
       <pre><code><span>$ </span>sudo apt install -y okular</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install -y okular')">Copy</button> 
-      <pre><code><span>$ </span>sudo apt install -y okular-extra-backends</code></pre>
+<pre><code><span>$ </span>sudo apt install -y okular-extra-backends</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install -y okular-extra-backends')">Copy</button>
-    <!-- ############################## -->
+  <!-- ############################## -->
       <h4>PDF Editor</h4>
     <p>PDF Arranger (GUI)</p> https://github.com/pdfarranger/pdfarranger
       <br> <pre><code><span>$ </span>sudo apt install -y pdfarranger</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install -y pdfarranger')">Copy</button>
     <p>Manually Crop or Remove Pages: This tool is more for rearranging and cropping pages, but it can also be useful for removing unwanted sections.</p>
-    <!-- ############################## -->
+  <!-- ############################## -->
       <h4>How to combine PDFs in CLI</h4> 
       <pre><code><span>$ </span>sudo apt install -y ghostscript</code></pre> <pre>• Command to combine $ gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=combined.pdf file1.pdf file2.pdf • Output in low resolution $ gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=merged.pdf mine1.pdf mine2.pdf</pre>
-    <!-- ############################## -->
+  <!-- ############################## -->
       <h4>PDF Crop and Split</h4> 
+  
   <pre>
-        +-------------+ +-------------+ | | | | | Content | | Content | | | | | | | | | | | | | |Watermark.com| +-------------+ +-------------+
-</pre> <pre>
-        singlepage001.pgm singlepage002.pgm _____|_____ _____|_____ | | | | v v v v +---------+ +---------+ +---------+ +---------+ | | | | | | | | |output001.pgm|output002.pgm|output003.pgm|output004.pgm | | | | | | | | +---------+ +---------+ +---------+ +---------+
++-------------+ +-------------+ | | | | | Content | | Content | | | | | | | | | | | | | |Watermark.com| +-------------+ +-------------+
+</pre> 
+<pre>
+singlepage001.pgm singlepage002.pgm _____|_____ _____|_____ | | | | v v v v +---------+ +---------+ +---------+ +---------+ | | | | | | | | |output001.pgm|output002.pgm|output003.pgm|output004.pgm | | | | | | | | +---------+ +---------+ +---------+ +---------+
 </pre>
       <h5>Krop (GUI)</h5> 
       https://arminstraub.com/software/krop
@@ -3267,40 +3362,41 @@ $ sudo ls /etc/strongswan.d/charon/
 • To automatically undo 4 pages print onto a single page: $ krop --go --grid=2x2 input.pdf • To trim each of these pages: $ krop --go --grid=2x2 --trim --trim-use=all input.pdf • Others krop --grid=2x1 --initialpage=3 --exceptions=1 --trim-use=all --trim ~/input.pdf
 </pre>
     <p><small>--trim: Trims whitespace around the content. --trim-use=all: Uses all pages to determine the trim area, ensuring a consistent crop.</small></p>
-      <!-- ##### -->
+    <!-- ##### -->
       <h5>pdfcrop (texlive-extra-utils)</h5> 
       <pre><code><span>$ </span>sudo apt install -y texlive-extra-utils</code></pre>
     <p>Adjust the margins, effectively trimming the PDF. pdfcrop is a tool that uses Ghostscript to crop whitespace or specified margins from a PDF.</p> 
 <pre>
 • Command $ pdfcrop --margins '-10 -10 -10 -10' input.pdf output.pdf $ pdfcrop --margins '0 0 0 -50' input.pdf output.pdf
 </pre>
-      <!-- ##### -->
+    <!-- ##### -->
       <h5>pdftk</h5> 
       <pre><code><span>$ </span>sudo apt install -y pdftk</code></pre> <pre>• Command to remove page 4 $ pdftk input.pdf cat 1-3 5-end output output.pdf</pre>
-      <!-- ########## -->
+    <!-- ########## -->
       <h4>Remove PDF annotations</h4>
       <h5>Removing annotations at once in Okular</h5>
     <p>View a page that has an annotation, find them in the annotation side pane. Right-click on the annotation icon in the document, and click Remove Annotation. Then save the changes to a new document by clicking the menu button in the top right, followed by Save As….</p> 
 <pre>
-        &nbsp; Commands for pdftocairo $ pdftocairo -pdf "input.pdf" "output-with-flatten-annotations.pdf"
-</pre> <pre>
-        &nbsp; Commands for qpdf $ qpdf --flatten-annotations=all input.pdf output.pdf
+        Commands for pdftocairo $ pdftocairo -pdf "input.pdf" "output-with-flatten-annotations.pdf"
+</pre> 
+<pre>
+Commands for qpdf $ qpdf --flatten-annotations=all input.pdf output.pdf
 </pre>
     <p>*May apply some differences.</p>
     <p>*May result in larger PDF.</p>
-      <!-- ########## -->
+    <!-- ########## -->
       <h4>PDF Bookmarks Creation</h4> https://github.com/SiddharthPant/booky
       <br>
-      <!-- ########## -->
+    <!-- ########## -->
       <h4>PDF Metadata</h4> 
       <pre><code><span>$ </span>sudo apt-get install poppler-utils</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt-get install poppler-utils')">Copy</button>
     <p>Poppler-utils package contains pdfinfo.</p>
     <pre><code><span>$ </span>pdfinfo input.pdf</code></pre>
       <button onclick="navigator.clipboard.writeText('pdfinfo input.pdf')">Copy</button> 
-      <pre><code><span>$ </span>pdfinfo -meta input.pdf</code></pre>
+<pre><code><span>$ </span>pdfinfo -meta input.pdf</code></pre>
       <button onclick="navigator.clipboard.writeText('pdfinfo -meta input.pdf')">Copy</button> 
-      <pre><code><span>$ </span>pdfinfo -js filename.pdf</code></pre>
+<pre><code><span>$ </span>pdfinfo -js filename.pdf</code></pre>
       <button onclick="navigator.clipboard.writeText('pdfinfo -js filename.pdf')">Copy</button>
       <br> 
     </details>
@@ -3319,23 +3415,24 @@ $ sudo ls /etc/strongswan.d/charon/
     <p>Also install the Tesseract OCR plugins for your desired language</p>
     <pre><code><span>$ </span>sudo apt install -y tesseract-ocr-eng</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install -y tesseract-ocr-eng')">Copy</button> 
-      <pre><code><span>$ </span>sudo apt install -y tesseract-ocr-deu</code></pre>
+<pre><code><span>$ </span>sudo apt install -y tesseract-ocr-deu</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install -y tesseract-ocr-deu')">Copy</button> 
-      <pre><code><span>$ </span>sudo apt install -y tesseract-ocr-fra</code></pre>
+<pre><code><span>$ </span>sudo apt install -y tesseract-ocr-fra</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install -y tesseract-ocr-fra')">Copy</button> 
-      <pre><code><span>$ </span>sudo apt install -y tesseract-ocr-spa</code></pre>
+<pre><code><span>$ </span>sudo apt install -y tesseract-ocr-spa</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install -y tesseract-ocr-spa')">Copy</button> 
-      <pre><code><span>$ </span>sudo apt install -y tesseract-ocr-por</code></pre>
+<pre><code><span>$ </span>sudo apt install -y tesseract-ocr-por</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install -y tesseract-ocr-por')">Copy</button> 
-      <pre><code><span>$ </span>sudo apt install -y tesseract-ocr-rus</code></pre>
+<pre><code><span>$ </span>sudo apt install -y tesseract-ocr-rus</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install -y tesseract-ocr-rus')">Copy</button> 
-      <pre><code><span>$ </span>sudo apt install -y tesseract-ocr-ara</code></pre>
+<pre><code><span>$ </span>sudo apt install -y tesseract-ocr-ara</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install -y tesseract-ocr-ara')">Copy</button> 
-      <pre><code><span>$ </span>sudo apt install -y tesseract-ocr-chi-sim</code></pre>
+<pre><code><span>$ </span>sudo apt install -y tesseract-ocr-chi-sim</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install -y tesseract-ocr-chi-sim')">Copy</button> 
-      <pre><code><span>$ </span>sudo apt install -y tesseract-ocr-chi-tra</code></pre>
-      <button onclick="navigator.clipboard.writeText('sudo apt install -y tesseract-ocr-chi-tra')">Copy</button> <pre>
-        Basic commands 
+<pre><code><span>$ </span>sudo apt install -y tesseract-ocr-chi-tra</code></pre>
+      <button onclick="navigator.clipboard.writeText('sudo apt install -y tesseract-ocr-chi-tra')">Copy</button> 
+<pre>
+Basic commands 
 • How to OCR a PDF 
 $ ocrmypdf -v input.pdf output.pdf $ ocrmypdf -v --language eng input.pdf output.pdf $ ocrmypdf -v --language eng+deu input.pdf output.pdf $ ocrmypdf -v --language eng+spa input.pdf output.pdf $ ocrmypdf -v --language por+deu input.pdf output.pdf • To modify a file in the same place $ ocrmypdf -v ~/input.pdf ~/input.pdf • To skip text $ ocrmypdf -v --skip-text input.pdf output.pdf • To redo OCR $ ocrmypdf -v --redo-ocr input.pdf output.pdf
 </pre> <pre>• Compression settings 
@@ -3384,7 +3481,9 @@ $ ocrmypdf -v --pdfa-image-compression=jpeg --language=por+deu input.pdf output.
       <br> https://cvedetails.com/vendor/1749/Imagemagick.html
       <br> <pre><code><span>$ </span>sudo apt install imagemagick</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install imagemagick')">Copy</button>
-    <p><small>*Note that <code>mogrify</code> is part of ImageMagick package. The command <code>convert</code> or <code>magick convert</code> is an old "legacy" program, provided for compatabilty only, don't use it for new work. Instead, use just <code>magick mogrify</code> or just <code>mogrify</code> .</small></p>
+    <p><small>
+    *Note that <code>mogrify</code> is part of ImageMagick package. The command <code>convert</code> or <code>magick convert</code> is an old "legacy" program, provided for compatabilty only, don't use it for new work. Instead, use just <code>magick mogrify</code> or just <code>mogrify</code> .
+    </small></p>
       <h5>• Commands to crop .pdf</h5> 
       <pre><code>
 $ mogrify -monitor 'ls input-*.png' -crop 3704x1852+160+20 output.png $ mogrify -monitor -crop 1000x1350+20+145 +repage -path cropped *.png</code></pre>
@@ -3429,7 +3528,8 @@ $ mogrify -monitor 'ls input-*.png' -crop 3704x1852+160+20 output.png $ mogrify 
        -sOutputFile=output.pdf \
        input.pdf</pre>
       <h5>Convert PDF - Reduce size of Acrobat PDF</h5>
-    <p><small>*Test results with comp. 1.3 and 1.4 .</small></p> 
+    <p><small>
+    *Test results with comp. 1.3 and 1.4 .</small></p> 
 <pre>
 $ gs -dNOPAUSE -dBATCH -dSAFER \
  -sDEVICE=pdfwrite \
@@ -3477,8 +3577,9 @@ $ find . -name '*.pdf' -exec sh -c ' for pdf; do output="${pdf%.pdf}-processed.p
     <p><small>
 • References -dPDFSETTINGS=/screen - Low quality and small size at 72dpi. -dPDFSETTINGS=/ebook - Slightly better quality but also a larger file size at 150dpi. -dPDFSETTINGS=/prepress - High quality and large size at 300 dpi. -dPDFSETTINGS=/default - System chooses the best output, which can create larger PDF files.
         </small></p> 
+    
     <pre>
-        Commands for ebook-convert • How to convert .epub to .pdf $ sudo apt install calibre $ ebook-convert input.epub output.pdf $ ebook-convert input.epub output.pdf --enable-heuristics $ find ./ -iname "*pdf" -type f | while read f; do echo -e "\e[1mConverting file $f \e[0m" ; ebook-convert "$f" "${f%.pdf}.epub" --enable-heuristics ; done
+Commands for ebook-convert • How to convert .epub to .pdf $ sudo apt install calibre $ ebook-convert input.epub output.pdf $ ebook-convert input.epub output.pdf --enable-heuristics $ find ./ -iname "*pdf" -type f | while read f; do echo -e "\e[1mConverting file $f \e[0m" ; ebook-convert "$f" "${f%.pdf}.epub" --enable-heuristics ; done
 </pre>
     <p>*Ref.: https://manpages.debian.org/bookworm/calibre/ebook-convert.1.en.html</p>
     <p>*Utility.: https://convertfiles.com</p> 
@@ -3538,7 +3639,9 @@ $ find . -name '*.pdf' -exec sh -c ' for pdf; do output="${pdf%.pdf}-processed.p
       <br> https://cvedetails.com/vendor/1749/Imagemagick.html
       <br> <pre><code><span>$ </span>sudo apt install imagemagick</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install imagemagick')">Copy</button>
-    <p><small>*Note that <code>mogrify</code> is part of ImageMagick package. The command <code>convert</code> or <code>magick convert</code> is an old "legacy" program, provided for compatabilty only, don't use it for new work. Instead, use just <code>magick mogrify</code> or just <code>mogrify</code> .</small></p> 
+    <p><small>
+    *Note that <code>mogrify</code> is part of ImageMagick package. The command <code>convert</code> or <code>magick convert</code> is an old "legacy" program, provided for compatabilty only, don't use it for new work. Instead, use just <code>magick mogrify</code> or just <code>mogrify</code> .
+    </small></p> 
     <pre>• One-liner commands $ mogrify -format png *.jpg $ mogrify -format png *.jpeg $ mogrify -format png *.webp $ mogrify -format png *.svg $ mogrify -format png *.avif $ mogrify -format png *.gif • Batch processing commands $ cd ~/Donwloads $ find . -name "*.jpg" -exec mogrify -monitor -format png {} \; $ find . -name "*.jpeg" -exec mogrify -monitor -format png {} ; $ find . -name "*.webp" -exec mogrify -monitor -format png {} \; $ find . -name "*.svg" -exec mogrify -monitor -format png {} \; $ find . -name "*.avif" -exec mogrify -monitor -format png {} \; $ find . -name "*.gif" -exec mogrify -monitor -format png {} \;</pre>
       <h5>Rotate image with ImageMagick</h5> 
       <pre><code><span>$ </span>sudo apt install imagemagick</code></pre>
@@ -3554,11 +3657,11 @@ $ find . -name '*.pdf' -exec sh -c ' for pdf; do output="${pdf%.pdf}-processed.p
       <br> https://ocrmypdf.readthedocs.io/en/latest/cookbook.html
       <br> <pre><code><span>$ </span>sudo apt install -y ocrmypdf</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install -y ocrmypdf')">Copy</button> 
-      <pre><code><span>$ </span>ocrmypdf --clean</code></pre>
+<pre><code><span>$ </span>ocrmypdf --clean</code></pre>
       <button onclick="navigator.clipboard.writeText('ocrmypdf --clean')">Copy</button> 
-      <pre><code><span>$ </span>ocrmypdf --clean-final</code></pre>
+<pre><code><span>$ </span>ocrmypdf --clean-final</code></pre>
       <button onclick="navigator.clipboard.writeText('ocrmypdf --clean-final')">Copy</button> 
-      <pre><code><span>$ </span>ocrmypdf --remove-background</code></pre>
+<pre><code><span>$ </span>ocrmypdf --remove-background</code></pre>
       <button onclick="navigator.clipboard.writeText('ocrmypdf --remove-background')">Copy</button>
     <p>Note that <code>--clean-final</code> and <code>--remove-background</code> may leave undesirable visual artifacts in some images where their algorithms have shortcomings. Files should be visually reviewed after using these options.</p>
     <p><code>--remove-background</code> attempts to detect and remove a noisy background from grayscale or color images. Monochrome images are ignored. This should not be used on documents that contain color photos as it may remove them.</p>
@@ -3567,11 +3670,15 @@ $ find . -name '*.pdf' -exec sh -c ' for pdf; do output="${pdf%.pdf}-processed.p
     <p>--clean uses <code>unpaper</code> to clean up pages before OCR, but does not alter the final output. This makes it less likely that OCR will try to find text in background noise.</p>
       <h5>Convert with webp (dwebp)</h5> 
       <pre><code><span>$ </span>sudo apt install webp</code></pre>
-      <button onclick="navigator.clipboard.writeText('sudo apt install webp')">Copy</button> <pre>
-        &nbsp; Commands for webp files 
-• How to convert .webp to .png #It's a command-line interface $ dwebp -v input.webp -o ~/output.png $ dwebp -v -resize width x height input.webp -o ~/output.png &nbsp; &nbsp; *If either (but not both) of the width or height parameters is 0, &nbsp; &nbsp;the value will be calculated preserving the aspect-ratio.
-</pre> <pre>
-        &nbsp; Commands for webp files in batch 
+      <button onclick="navigator.clipboard.writeText('sudo apt install webp')">Copy</button> 
+<pre>
+Commands for webp files 
+• How to convert .webp to .png #It's a command-line interface $ dwebp -v input.webp -o ~/output.png $ dwebp -v -resize width x height input.webp -o ~/output.png 
+ *If either (but not both) of the width or height parameters is 0, 
+the value will be calculated preserving the aspect-ratio.
+</pre> 
+<pre>
+Commands for webp files in batch 
 $ for file in *.webp ; do dwebp "$file" -o "${file%.*}.png" ; done 
 • Testing alternatives 
 $ find . -name "*.webp" -exec dwebp {} -o "${file%.*}.png" \; 
@@ -3590,7 +3697,7 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
       <h4>Office Utilities</h4> 
       <pre><code><span>$ </span>sudo apt install xpad</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install xpad')">Copy</button> 
-      <pre><code><span>$ </span>sudo apt install kcalc</code></pre>
+<pre><code><span>$ </span>sudo apt install kcalc</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install kcalc')">Copy</button>
       <br> 
     </details>
@@ -3850,7 +3957,8 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <button onclick="navigator.clipboard.writeText('gzip -d ~/.config/mpv/input.conf.gz')">Copy</button> 
     <pre><code><span>$ </span>ano ~/.config/mpv/input.conf</code></pre>
     <button onclick="navigator.clipboard.writeText('nano ~/.config/mpv/input.conf')">Copy</button>
-  <p><small>*It's recommended to use mplayer-input.conf as reference-only. To use it save as input.conf .</small></p>
+  <p><small>
+  *It's recommended to use mplayer-input.conf as reference-only. To use it save as input.conf .</small></p>
     <h5>VLC</h5> 
     <pre><code><span>$ </span>sudo apt install vlc</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install vlc')">Copy</button>
@@ -3876,16 +3984,16 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <li>https://dvdfab.at/resource/blu-ray/free-blu-ray-to-mp4-converter</li>
     <li></li>
   </ul>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>OBS Studio</h5> 
     <pre><code><span>$ </span>sudo apt install</code></pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>YT-DLP - A feature-rich command-line audio/video downloader</h5> 
     https://github.com/yt-dlp/yt-dlp
     <br> <pre><code><span>$ </span>sudo apt install yt-dlp</code></pre>
   <p>Download YouTube videos</p>
   <pre><code>• Commands • Download a video or playlist $ yt-dlp [URL] $ yt-dlp -F [URL] $ yt-dlp -f 247 [URL] $ yt-dlp -f "best[height &lt;=480] " [URL] $ yt-dlp -f "best[height&lt;=480] " [URL] $ yt-dlp -f worstvideo [URL] $ yt-dlp -o 'qwerty' [URL] • Download with metadata $ yt-dlp -o '%(title)s by %(uploader)s on %(upload_date)s in %(playlist)s.%(ext)s' [URL] $ yt-dlp --write-description --write-info-json --write-annotations --write-sub --write-thumbnail [URL] • Download audio-only $ yt-dlp -x --audio-format mp3 [URL]</code></pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>FFmpeg editor</h4> <a href="https://trac.ffmpeg.org/wiki/Encode/H.264 ">https://trac.ffmpeg.org/wiki/Encode/H.264</a>
     <h5>• Compressing videos</h5> 
     <pre><code><span>$ </span>ffmpeg -i input.ext output.mp4</code></pre> <pre>
@@ -3916,7 +4024,7 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <code><span>$ </span>ffmpeg -i input.mp4 scale=1080:1920,format=yuv420p -c:v libx265 -preset veryfast -tag:v hvc1 -b:v 800k -bufsize 1200k -vf -b:a 128k output.mp4</code></pre> <pre>
     <code><span>$ </span>ffmpeg -i input.mp4 -c:v libx265 -preset veryfast -tag:v hvc1 -vf format=yuv420p -c:a copy output.mp4</code></pre> <pre>
     <code><span>$ </span>ffmpeg -i input.mp4 -c:v libx265 -preset veryfast -tag:v hvc1 -b:v new_bitrate -vf scale=new_width:new_height,format=yuv420p -c:a copy output.mp4</code></pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>In batch compress MP4</h5>
   <p>In batch compress MP4 with ffmpeg</p> 
   <pre>• One-line convert script $ for file in *.mp4; do ffmpeg -i "$file " -vf "scale=-2:240 " "Output-${file%.*}.mp4 "; done</pre>
@@ -3954,7 +4062,13 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
   <p>Note 2: Create an expiration date for security reasons.</p>
   <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
   <p>Note 3: Create an .</p> 
-  <pre>&nbsp; Commands for gnupg (GnuPG - GNU Privacy Guard) • How to export and import GPG key: $ gpg --export ${ID} > public.key $ gpg --export-secret-key ${ID} > private.key $ gpg --import --batch public.key $ gpg --import --batch backup_dir/.gnupg/pubring.gpg $ gpg --import --batch backup_dir/.gnupg/secring.gpg $ gpg --edit-key ${KEY} trust quit $ gpg --list-keys $ gpg --list-secret-keys</pre> <pre>&nbsp; Commands for gnupg (GnuPG - GNU Privacy Guard) • How to extend the expiration date of an already expired GPG key: $ gpg --list-keys $ gpg --edit-key (key id) • GPG console will open in the primary key, select a sub-key: &nbsp; &nbsp; gpg> &nbsp; &nbsp; gpg> list &nbsp; &nbsp; gpg> key 1 • Set the expiration for the selected key &nbsp; &nbsp; gpg> expire &nbsp; &nbsp; gpg> save • After update, you can send it out &nbsp; &nbsp; gpg --keyserver site.com --send-keys (key id)</pre> <pre>gpg --list-secret-keys --verbose --with-subkey-fingerprints</pre>
+  <pre>Commands for gnupg (GnuPG - GNU Privacy Guard) • How to export and import GPG key: $ gpg --export ${ID} > public.key $ gpg --export-secret-key ${ID} > private.key $ gpg --import --batch public.key $ gpg --import --batch backup_dir/.gnupg/pubring.gpg $ gpg --import --batch backup_dir/.gnupg/secring.gpg $ gpg --edit-key ${KEY} trust quit $ gpg --list-keys $ gpg --list-secret-keys</pre> <pre>Commands for gnupg (GnuPG - GNU Privacy Guard) • How to extend the expiration date of an already expired GPG key: $ gpg --list-keys $ gpg --edit-key (key id) • GPG console will open in the primary key, select a sub-key: 
+   gpg> 
+   gpg> list 
+   gpg> key 1 • Set the expiration for the selected key 
+   gpg> expire 
+   gpg> save • After update, you can send it out 
+   gpg --keyserver site.com --send-keys (key id)</pre> <pre>gpg --list-secret-keys --verbose --with-subkey-fingerprints</pre>
   <br> 
 </details>  
 <!-- ############################## -->
@@ -4003,7 +4117,7 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
   <p>Close and open again</p>
     <h4>• Archive Encryption</h4>
     <h5>∙ GnuPG - GNU Privacy Guard</h5> 
-    <pre>&nbsp; Commands for gnupg • How to encrypt file $ gpg -c backup.tar.gz • How to decrypt file $ gpg backup.tar.gz.gpg</pre>
+    <pre>Commands for gnupg • How to encrypt file $ gpg -c backup.tar.gz • How to decrypt file $ gpg backup.tar.gz.gpg</pre>
     <h4>• Cloud Encryption</h4>
     <h5>∙ Cryptomator (GUI)</h5> 
     https://cryptomator.org
@@ -4046,21 +4160,21 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
   <pre><code><span>$ </span>extract example.tar.gz</code></pre>
     <button onclick="navigator.clipboard.writeText( 'extract example.tar.gz') ">Copy</button>
     <h4>• TAR (.gz , .tar and .tar.gz)</h4> 
-    <pre>&nbsp; Commands for .tar archives • How to create an .tar file with gzip archiver: $ tar –cvf outarchive.tar ~/Documents • How to decompress a .tar file with with gzip: $ tar -xvf archive.tar</pre> <pre>&nbsp; Commands for .tar.gz archives • How to create an .tar.gz file $ tar –cvzf outarchive.tar.gz ~/Documents • To list the contents of a .tar.gz file: $ tar –tzf archive.tar.gz • How to decompress a .tar.gz file $ tar –xvzf archive.tar.gz $ tar –xvzf archive.tar.gz –C /home/user/Downloads</pre>
+    <pre>Commands for .tar archives • How to create an .tar file with gzip archiver: $ tar –cvf outarchive.tar ~/Documents • How to decompress a .tar file with with gzip: $ tar -xvf archive.tar</pre> <pre>Commands for .tar.gz archives • How to create an .tar.gz file $ tar –cvzf outarchive.tar.gz ~/Documents • To list the contents of a .tar.gz file: $ tar –tzf archive.tar.gz • How to decompress a .tar.gz file $ tar –xvzf archive.tar.gz $ tar –xvzf archive.tar.gz –C /home/user/Downloads</pre>
     <h4>• GZIP (.gz , .tar and .tar.gz)</h4> 
     <pre><code><span>$ </span>sudo apt install gzip</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'sudo apt install gzip') ">Copy</button> <pre>&nbsp; Commands for .gz archives • How to create an .gz file $ gzip outarchive.gz indoc1.pdf • How to decompress a .gz file $ gunzip archive.gz</pre>
+    <button onclick="navigator.clipboard.writeText( 'sudo apt install gzip') ">Copy</button> <pre>Commands for .gz archives • How to create an .gz file $ gzip outarchive.gz indoc1.pdf • How to decompress a .gz file $ gunzip archive.gz</pre>
     <h4>• 7Z (.7z and .zip)</h4> https://7-zip.org
     <br> https://cvedetails.com/vendor/9220/7-zip.html
     <br> <pre><code><span>$ </span>sudo apt install p7zip-full</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'sudo apt install p7zip-full') ">Copy</button> <pre>&nbsp; Commands for .7z archives • How to create an .7z file $ 7z a outarchive.7z indoc1.pdf • How to decompress a .7z file $ 7z x archive.7z</pre> <pre>&nbsp; Commands for .zip archives • How to create an zip file $ 7z a outarchive.zip indoc1.pdf • How to decompress a zip file $ 7z x archive.zip</pre> <pre>&nbsp; Commands for encrypted .7z and .zip archives • How to create an encrypted .zip file $ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory $ 7z a -p -tzip -scrc=AES256 outarchive.zip indoc1.pdf inpdoc2.pdf $ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory • How to create an encrypted header .7z file (only) $ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir $ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory • How to decompress a .7z and .zip file that is encrypted $ 7z x archive.zip</pre>
+    <button onclick="navigator.clipboard.writeText( 'sudo apt install p7zip-full') ">Copy</button> <pre>Commands for .7z archives • How to create an .7z file $ 7z a outarchive.7z indoc1.pdf • How to decompress a .7z file $ 7z x archive.7z</pre> <pre>Commands for .zip archives • How to create an zip file $ 7z a outarchive.zip indoc1.pdf • How to decompress a zip file $ 7z x archive.zip</pre> <pre>Commands for encrypted .7z and .zip archives • How to create an encrypted .zip file $ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory $ 7z a -p -tzip -scrc=AES256 outarchive.zip indoc1.pdf inpdoc2.pdf $ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory • How to create an encrypted header .7z file (only) $ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir $ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory • How to decompress a .7z and .zip file that is encrypted $ 7z x archive.zip</pre>
   <p>*Encrypted header: no file list contents visible without the password</p>
     <h4>• RAR (.rar)</h4> 
     <pre><code><span>$ </span>sudo apt install unrar-free</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'sudo apt install unrar-free') ">Copy</button> <pre>&nbsp; Commands for .rar archives (*proprietary: extract only) • How to decompress a rar file $ unrar e ~/Downloads/filename.rar ~/Downloads/ • How to decompress a rar file encrypted $ unrar-free -x ~/Downloads/filename.rar ~/Downloads/ • How to decompress a rar file encrypted parts, only unrar the first part01.rar and it goes itself for the rest. Navigate to the directory containing the file: $ cd /path/to/directory/ $ unrar-free -xp /part01.rar ~/Downloads/</pre>
+    <button onclick="navigator.clipboard.writeText( 'sudo apt install unrar-free') ">Copy</button> <pre>Commands for .rar archives (*proprietary: extract only) • How to decompress a rar file $ unrar e ~/Downloads/filename.rar ~/Downloads/ • How to decompress a rar file encrypted $ unrar-free -x ~/Downloads/filename.rar ~/Downloads/ • How to decompress a rar file encrypted parts, only unrar the first part01.rar and it goes itself for the rest. Navigate to the directory containing the file: $ cd /path/to/directory/ $ unrar-free -xp /part01.rar ~/Downloads/</pre>
     <h4>• ZIP (.zip)</h4> https://infozip.sourceforge.net
     <br> <pre><code><span>$ </span>sudo apt install zip unzip</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'sudo apt install zip unzip') ">Copy</button> <pre>&nbsp; Commands for .zip archives • Add file.txt to z.zip (create z if needed) $ zip z file.txt • Zip all files in current dir: $ zip z * • Zip files in current dir and subdirs also: $ zip -r z . • How to decompress a .zip file: $ unzip ~/Downloads/filename.zip • How to unzip multiple .zip files: $ unzip '*.zip' • How to decompress a .zip file to directory: $ unzip filename.zip -d /path/to/directory $ unzip -d file file.zip • Unzip Multiple Files (using single quote or backslash) $ unzip '*.zip' $ unzip \*.zip • Locale encoding name error $ unzip -I (encoding) (FILE_PATH) -d (Destination) $ unzip -I UTF-8 Desktop.zip</pre> <pre>&nbsp; Commands for encrypted .zip archives • How to create an encrypted .zip file $ zip -e filename.zip ~/Downloads/ • How to decompress a encrypted .zip file $ unzip ~/Downloads/filename.zip • How to decompress a encrypted .zip file to directory $ unzip ~/Downloads/filename.zip -d ~/Downloads/</pre>
+    <button onclick="navigator.clipboard.writeText( 'sudo apt install zip unzip') ">Copy</button> <pre>Commands for .zip archives • Add file.txt to z.zip (create z if needed) $ zip z file.txt • Zip all files in current dir: $ zip z * • Zip files in current dir and subdirs also: $ zip -r z . • How to decompress a .zip file: $ unzip ~/Downloads/filename.zip • How to unzip multiple .zip files: $ unzip '*.zip' • How to decompress a .zip file to directory: $ unzip filename.zip -d /path/to/directory $ unzip -d file file.zip • Unzip Multiple Files (using single quote or backslash) $ unzip '*.zip' $ unzip \*.zip • Locale encoding name error $ unzip -I (encoding) (FILE_PATH) -d (Destination) $ unzip -I UTF-8 Desktop.zip</pre> <pre>Commands for encrypted .zip archives • How to create an encrypted .zip file $ zip -e filename.zip ~/Downloads/ • How to decompress a encrypted .zip file $ unzip ~/Downloads/filename.zip • How to decompress a encrypted .zip file to directory $ unzip ~/Downloads/filename.zip -d ~/Downloads/</pre>
   <br> 
 </details>  
 <!-- ############################## -->
@@ -4081,10 +4195,10 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <br> • Metacam - https://packages.debian.org/unstable/graphics/metacam
     <br>
   <p>*Exiftool PDF Tags: "All metadata edits are reversible. While this would normally be considered an advantage, it is a potential security problem because old information is never actually deleted from the file. (However, after running ExifTool the old information may be removed permanently using the "qpdf" utility with this command: "qpdf --linearize in.pdf out.pdf".) "</p>
-    <!-- ##### -->
+  <!-- ##### -->
     <h5>∙ Exiftool</h5>
 <pre>
-    &nbsp; Commands for exiftool basic commands 
+    Commands for exiftool basic commands 
     • Remove all metadata from all files possible inside a folder and all its subfolders without backup (take care, might affect the colors) 
     $ exiftool -v -all:all= -overwrite_original -r /path 
     • Shows metadata: 
@@ -4103,7 +4217,7 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <br> 
     *To not creat a backup in ExifToolGUI, there's menu "Options ">"Don 't backup files when modifying".
     <br>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>PDF Metadata</h4> 
     <pre><code><span>$ </span>sudo apt-get install poppler-utils</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt-get install poppler-utils')">Copy</button>
@@ -4114,22 +4228,22 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <button onclick="navigator.clipboard.writeText('pdfinfo -meta input.pdf')">Copy</button> 
     <pre><code><span>$ </span>pdfinfo -js filename.pdf</code></pre>
     <button onclick="navigator.clipboard.writeText('pdfinfo -js filename.pdf')">Copy</button>
-    <!-- ##### -->
+  <!-- ##### -->
     <h5>∙ Metadata Cleaner</h5> 
-    <pre>&nbsp; Commands $ metadata-cleaner /path/to/file.png</pre>
-    <!-- ########## -->
+    <pre>Commands $ metadata-cleaner /path/to/file.png</pre>
+  <!-- ########## -->
     <h4>Remove Text Watermark</h4>
     <h5>pdftoppm</h5>
   <p>If the watermark is at a fixed position on each page, you can use pdftoppm command (part of Poppler utilities package) and convert command (from ImageMagick package) to remove the watermark by cropping the pages.</p>
   <pre><code><span>$ </span>pdftoppm -png -cropbox input.pdf output</code></pre>
     <button onclick="navigator.clipboard.writeText('pdftoppm -png -cropbox input.pdf output')">Copy</button>
-    <!-- ##### -->
+  <!-- ##### -->
     <h5>Ghostscript</h5> 
     <pre><code>gs -o output.pdf -sDEVICE=pdfwrite \
      -c "[/Page 1 /View [/CropBox [0 0 612 792]] /Rect [0 0 612 792] /Action &lt;&lt; /Subtype /Hide /O 0&gt;&gt; /Subtype /Link /ANN pdfmark" \
      -f input.pdf</code></pre>
   <p><small>This command tries to create a link annotation that hides content on the first page. Adjust /Page 1 and coordinates [0 0 612 792] as necessary to target specific areas or pages.</small></p>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>System Sanitation</h4>
     <h5>∙ Bleachbit</h5> 
     <pre><code><span>$ </span>sudo apt install bleachbit</code></pre>
@@ -4139,7 +4253,7 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <p>Freeze Bug - Free space erase option</p> 
     <p>Take care with free space erase in root mode, this has several problems. This can block the system from starting because the disk is full of randomized files.</p>
   <p>Commands to debug if your are freeze</p>
-    <!-- ##### -->
+  <!-- ##### -->
     <h5>• Acess tty (teletype)</h5> CTRL + ALT + {2,3,4,5,6}
     <h5>• Delete tmp files in root</h5> <span>User:</span><span>Password:</span> <pre><code><span>$ </span>sudo su</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo su')">Copy</button> 
@@ -4149,7 +4263,7 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <button onclick="navigator.clipboard.writeText('rm -R tmp*')">Copy</button> 
     <pre><code><span># </span>reboot</code></pre>
     <button onclick="navigator.clipboard.writeText('reboot')">Copy</button>
-    <!-- ##### -->
+  <!-- ##### -->
     <h5>• To find the large files in other folders</h5> 
     <pre><code><span>$ </span>df -h</code></pre>
     <button onclick="navigator.clipboard.writeText('df -h')">Copy</button> 
@@ -4165,7 +4279,7 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <button onclick="navigator.clipboard.writeText('rm ~/.cache/tmp*')">Copy</button> 
     <pre><code><span>$ </span>sudo rm /root/tmp*</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo rm /root/tmp*')">Copy</button>
-    <!-- ##### -->
+  <!-- ##### -->
     <h5>∙ Free space erase from CLI</h5> 
     <pre>• List system targets $ sudo bleachbit -l • Erase space $ sudo bleachbit --clean system.cache \
      system.clipboard \
@@ -4179,7 +4293,7 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
      system.tmp \
      system.trash</pre>
   <p>* cron</p>
-    <!-- ##### -->
+  <!-- ##### -->
     <h5>∙ Locale Purge</h5> 
     https://wiki.debian.org/ReduceDebian
     <br>
@@ -4189,14 +4303,14 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <pre><code><span>$ </span>sudo localepurge</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo localepurge')">Copy</button>
   <p>In Bleachbit as Administrator, go to Options -> Preferences -> Languages Tab and mark your preferred language besides en-US.Start cleaning, this may take some time.</p>
-    <!-- ##### -->
+  <!-- ##### -->
     <h4>Full Disk Sanitation</h4> https://wiki.debian.org/SSDOptimization
     <br> https://wiki.archlinux.org/title/Solid_state_drive
     <br> *Not all SSD support sanitize. To properly way to erase a SSD is using the SSDs manufacturer's software. Other methods might not work, due to wear leveling and over-provisioning.
     <br> *If you use SSDs, enable TRIM in your BIOS. Confirm you are using SSD in the BIOS options.
     <br> *Consider hardware flaws.
     <br>
-    <!-- ##### -->
+  <!-- ##### -->
     <h4>Manufacturers that supply software to update firmware and perform tasks like secure erase</h4>
   <ul>
     <li><a href="https://forum.corsair.com/blog/storage/the-corsair-ssd-toolbox/">Corsair SSD Toolbox</a></li>
@@ -4213,16 +4327,16 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <li><a href="https://micron.com/products/ssd/storage-executive-software">Micron SSD Management</a></li>
     <li><a href="https://intel.com/content/www/us/en/download/19543/intel-memory-and-storage-tool-gui.html?v=t">Intel Memory and Storage Tool</a></li>
   </ul>
-    <!-- ##### -->
+  <!-- ##### -->
     <h5>∙ ShredOS</h5> 
     https://github.com/PartialVolume/shredos.x86_64
     <br>
-    <!-- ##### -->
+  <!-- ##### -->
     <h5>∙ Nwipe</h5> 
     https://github.com/martijnvanbrummelen/nwipe
     <br> <pre><code><span>$ </span>sudo apt install -y nwipe</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install -y nwipe')">Copy</button>
-    <!-- ##### -->
+  <!-- ##### -->
     <h5>∙ Hdparm</h5> 
     <pre><code><span>$ </span>sudo apt install -y hdparm</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install -y hdparm')">Copy</button> <pre>• Commands $</pre>
@@ -4261,7 +4375,7 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <br>
     <h4>Synchronize files and folders</h4> 
     <pre><code><span>$ </span>sudo apt install grsync</code></pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Duplicated files</h4> (*by name, size, hash)
     <h5>dupeGuru</h5> 
     <pre><code><span>$ </span>sudo apt install dupeguru</code></pre>
@@ -4276,7 +4390,7 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <pre>find . -type f -size {}c -print0 | xargs -0 md5sum | sort | uniq -w32 --all-repeated=separate</pre>
   <p>*Note: Replace "{}" with the desired file size in bytes.</p>
     <h2>For large files based on size first and then hash:</h2> <pre>find . -not -empty -type f -printf "%s\n" | sort -rn | uniq -d | xargs -I{} -n1 find . -type f -size {}c -print0 | xargs -0 md5sum | sort | uniq -w32 --all-repeated=separate</pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Visualize folder tree</h4>
     <pre><code><span>$ </span>sudo apt install tree</code></pre>
 <pre>
@@ -4296,7 +4410,7 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <br> • Tools4noobs - https://tools4noobs.com
     <br> • Regex101 - https://regex101.com
     <br>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>File Naming Best Practices</h5>
   <p>You might consider including some of the following information in your file names, but you can include any information that will allow you to distinguish your files from one another.</p>
   <ul>
@@ -4346,7 +4460,7 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
   </li>
 </ul>
 
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>Special Symbols</h5> 
     <pre>&#92;n is a symbol for new line &#92;t is a symbol for tab &#92;r is for 'return'</pre>
   <p>Note: \n or \t or \r are interpreted inside of &lt;pre&gt; text &lt;&#47;pre&gt;</p>
@@ -4389,16 +4503,16 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
         </tr>
       </tbody>
     </table>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>KRename</h5> 
     <pre><code><span>$ </span>sudo apt install krename</code></pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>GPRename</h5> 
     <pre><code><span>$ </span>sudo apt install gprename</code></pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>Case Styles</h5> 
     <pre>Camel case: camelCase</pre> <pre>Pascal case: PascalCase</pre> <pre>Kebab case: kebab-case</pre> <pre>Snake case: snake_case</pre> <pre>Dot case: dot.case</pre> <pre>Title case: Title Case</pre> <pre>Sentence case: Sentence case</pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Bash's built-in commands to rename (Debian/GNU Linux)</h4>
     <h5>Safety check before irreversible batch processing rename</h5> 
     <pre><code>
@@ -4409,10 +4523,10 @@ $ for f in *; do echo mv "$f" "$(echo "$f" | tr 'A-Z' 'a-z')"; done
 $ for f in *; do echo mv "$f" "$(echo "$f" | sed -e 's/\([A-Z]\)/-\L\1/g' | sed -e 's/^-//')"; done
 </code></pre>
     <button onclick="navigator.clipboard.writeText('')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>Note about uppercase and lowercase with one-liner command in Linux</h5>
   <p>Its impossible to rename a file in the same directory from uppercase to lowercase with one-liner command due to the way Unix-like systems handle file names. File systems on Unix-like systems (such as ext4, NTFS, etc.) are typically case-sensitive. This means that FILENAME.txt and filename.txt are treated as distinct files. However, you can achieve this by using a temporary directory or by copying the file to a new name and then deleting the original.</p>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>Working with files instead of folders in one-liner command.</h5>
   <p>For example, if you have a file named CamelCase_Example.txt, running the command will rename it to camel-case-example.txt.</p>
   <p>Make sure to replace $1 with the actual filename if you're not passing it as an argument to a script or command, and ensure you run the command in the directory where the file is located.</p>
@@ -4424,7 +4538,7 @@ $ mv "$1" "$(echo "$1" | sed 's/\([a-z0-9]\)\([A-Z]\)/\1-\2/g' | tr '[:upper:]' 
 $ mv "/dir/CamelCase_Example.txt" "$(echo "/dir/CamelCase_Example.txt" | sed 's/\([a-z0-9]\)\([A-Z]\)/\1-\2/g' | tr '[:upper:]' '[:lower:]' | sed 's/_/-/g')"
 </code></pre>
     <button onclick="navigator.clipboard.writeText('')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>One-liner built-in commands to rename</h4>
   <p>Usage: $ command</p>
     <h5>• One-liner commands - CamelCase to kebab-case</h5> 
@@ -4437,7 +4551,7 @@ $ echo "MyDirectoryFileLine" | sed -e 's/[A-Z]/-\L&/g' -e 's/^-//'
 $ echo "MyDirectoryFileLine" | sed -e 's/[A-Z]/-\l&/g;s/.//' 
 $ echo "SomeACRONYMInCamelCaseString" | sed -e 's/\([a-z]\)\([A-Z]\)/\1-\L\2/' | sed -e 's/\(.*\)/\L\1/')
 </code></pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>Batch processing built-in commands to rename</h5>
   <p>Usage: "$ cd /folder" and "$ command"</p>
   <pre><code>
@@ -4518,22 +4632,26 @@ $ find . -maxdepth 1 -type f -name '*[A-Z]*' -exec bash -c 'mv "$0" "$(echo "$0"
 <button onclick="navigator.clipboard.writeText('source ~/.bash_profile')">Copy</button>
 <p>You can use it in any directory to convert CamelCase filenames to Title Case. For example:</p>
 <pre><code><span>$ </span>camel_to_kebab /file/dir</code></pre>
-<button onclick="navigator.clipboard.writeText('camel_to_kebab /file/dir')">Copy</button>  <!-- ##### -->
+<button onclick="navigator.clipboard.writeText('camel_to_kebab /file/dir')">Copy</button>
+<!-- ##### -->
 <h5>Camel to kebab</h5>
 <pre><code>
 camel_to_kebab() { for f in *; do new_name="$(echo "$f" | sed -e 's/\([A-Z]\)/-\L\1/g' | sed -e 's/^-//')" if [ "$f" != "$new_name" ]; then mv "$f" "$new_name" fi done }
-</code></pre>  <!-- ##### -->
+</code></pre>
+<!-- ##### -->
 <h5>Kebab to title case</h5> 
 <pre><code>
 find . -maxdepth 1 -type f -name '*-*' -exec bash -c ' kebab_to_title() { echo "$1" | sed -E "s/-/_/g" | awk '\''{ for (i = 1; i &lt;= NF; i++) { if (tolower($i) ~ /^(in|on|at|of|and|or|but|to|the|a|an)$/) { $i = tolower($i) } else { $i = toupper(substr($i, 1, 1)) tolower(substr($i, 2)) } } print $0 }'\'' FS="_" OFS="_" } for file in "$@"; do base="${file%.*}" ext="${file##*.}" ew_name=$(kebab_to_title "$base") if [ "$base" != "$new_name" ]; then mv -v "$file" "${new_name}.${ext}" fi done ' _ {} +
-</code></pre>  <!-- ##### -->
+</code></pre>
+<!-- ##### -->
 <h5>Camel to title case</h5>
 <pre><code>
  camel_to_title() { convert_to_title() { echo "$1" | sed -E 's/([a-z])([A-Z])/\1 2/g' | awk '{ for (i = 1; i &lt;= NF; i++) { if (tolower($i) ~ /^(in|on|at|of|and|or|but|to|the|a|an)$/ && i != 1) { $i = tolower($i) } else { $i = toupper(substr($i, 1, 1)) tolower(substr($i, 2)) } } print $0 }' OFS=" " } for file in *; do if [[ -f "$file" ]]; then base="${file%.*}" ext="${file##*.}" new_name=$(convert_to_title "$base") if [ "$base" != "$new_name" ]; then mv -v "$file" "$new_name.${ext}" fi fi done }
-</code></pre>  <!-- ##### -->
+</code></pre>
+<!-- ##### -->
 <h5>Rename</h5> 
 <pre><code><span>$ </span>sudo apt install rename</code></pre>
-<pre>
+<pre><code>
 • Commands for rename 
 • Syntax 
 $ rename [options] 's/[pattern]/[replacement]/' [file name] 
@@ -4558,8 +4676,8 @@ $ find my_dir -type f -execdir rename 'y/A-Z/a-z/' {} \;
 $ rename -v 'y/[a-z]/[A-Z]/' *.pdf 
 • Convert to Camel case 
 $ rename 's/ /_/g' *
-</pre>
-    <!-- ########## -->
+</code></pre>
+  <!-- ########## -->
     <h4>Metadata Renamer</h4>• Rename files into directories according to metadata contained in.<br>
     • Exiftool Pseudo Tags - https://exiftool.org/filename.html<br>
     • Illegal characters in Windows file names.<br>
@@ -4599,32 +4717,33 @@ $ rename 's/ /_/g' *
       https://github.com/restic/restic<br>
       
       <h4>Recover plan</h4>
-      <!-- ########## --> 
+    <!-- ########## --> 
       <h4>Backup</h4>
-      <!-- ##### --> 
+    <!-- ##### --> 
       <h5>Folders and Files Backup</h5>
-      <!-- ########## --> 
+    <!-- ########## --> 
       <h4>GRSYNC (GUI)</h4>
     <pre><code><span>$ </span>sudo apt install grsync</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install grsync')">Copy</button> 
     <p>GRSYNC is a graphical interface for the rsync command line program. It can be used for local directory synchronization.</p>
-      <!-- ########## -->
+    <!-- ########## -->
       <h4>Copy files and directories in CLI</h4> 
       <h5>Full backup</h5>
       <h6>Basic command</h6>
     <pre><code><span>$ </span>cp ~/.config/example/ /media/backup</code></pre>
       <button onclick="navigator.clipboard.writeText('cp ~/.config/example/ /media/backup')">Copy</button>
-      <!-- ##### --> 
+    <!-- ##### --> 
       <h5>Incremental backup</h5>
       <h6>Basic command</h6>
     <pre><code><span>$ </span>cp -vur ~/.config/example/ /media/backup</code></pre>
       <button onclick="navigator.clipboard.writeText('cp -vur ~/.config/example/ /media/backup')">Copy</button> 
-    <p><small>*This will preserve the files permissions/ownership.</small></p>
+    <p><small>
+    *This will preserve the files permissions/ownership.</small></p>
       <h6>∙ To get the progress information</h6>
     <pre><code><span>$</span>$ cp -a ~/.config/example/ /media/backup</code></pre>
-      <!-- ########## --> 
+    <!-- ########## --> 
       <h4>Transfer progress and speed when copying files in CLI</h4>
-      <!-- ##### --> 
+    <!-- ##### --> 
       <h5>RSYNC</h5>
       https://wiki.archlinux.org/title/Rsync<br> 
     <pre><code><span>$ </span>sudo apt install rsync</code></pre>
@@ -4649,8 +4768,9 @@ $ rsync -ravP Directory/ server@192.168.1.56:/home/server
       
       <button onclick="navigator.clipboard.writeText('')">Copy</button>
       
-    <p><small>*This will preserve the files permissions and ownership.</small></p>
-      <!-- ##### --> 
+    <p><small>
+    *This will preserve the files permissions and ownership.</small></p>
+    <!-- ##### --> 
       <h5>DD</h5>
       <ol>
       <li><code>dd</code> is a command-line utility for copying and converting files and block-level data.</li>
@@ -4658,8 +4778,9 @@ $ rsync -ravP Directory/ server@192.168.1.56:/home/server
       <li><code>status=progress</code> option shows the progress of data transfer.</li>
       </ol>
       <pre>$ dd if=~/source of=/backup/destination status=progress</pre>
-    <p><small>*This will preserve the files permissions and ownership.</small></p>
-      <!-- ##### --> 
+    <p><small>
+    *This will preserve the files permissions and ownership.</small></p>
+    <!-- ##### --> 
       <h5>PV</h5>
     <pre><code><span>$ </span>sudo apt install pv</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install pv')">Copy</button> 
@@ -4667,8 +4788,9 @@ $ rsync -ravP Directory/ server@192.168.1.56:/home/server
       <li><code>pv</code> is a command-line tool to monitor the progress of data through a pipeline</li>
       <li><code>pv ~/source > /backup/destination</code> copies the content of ~/source to /backup/destination but doesn't preserve file permissions and ownership.</li>
       </ol> <pre>$ pv ~/source > /backup/destination</pre>
-    <p><small>*This won't preserve the files permissions and ownership.</small></p>
-      <!-- ##### -->
+    <p><small>
+    *This won't preserve the files permissions and ownership.</small></p>
+    <!-- ##### -->
       <h5>CURL</h5> 
       <pre><code><span>$ </span>sudo apt install curl</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install curl')">Copy</button>
@@ -4676,20 +4798,21 @@ $ rsync -ravP Directory/ server@192.168.1.56:/home/server
       <li><code>curl</code> is mainly used for transferring data over various protocols.</li>
       <li><code>curl -o destination FILE://source</code> downloads a file from a URL (FILE://source) to a destination but doesn't preserve permissions and ownership.</li>
       </ol> <pre>$ curl -o destination FILE://source</pre>
-    <p><small>*This won't preserve the files permissions and ownership.</small></p>
-      <!-- ########## -->
+    <p><small>
+    *This won't preserve the files permissions and ownership.</small></p>
+    <!-- ########## -->
       <h4>Disk Imaging and Cloning</h4>
       <h5>Clonezilla</h5>
     <p>The Free and Open Source Software for Disk Imaging and Cloning</p> https://clonezilla.org//clonezilla-live-doc.php
       <br>
       <h5>Changing disk name</h5> 
       <pre><code><span>$ </span>cnvt-ocs-dev -d /home/partimag 'image' 'sda3' 'sda2'</code></pre>
-      <!-- ########## -->
+    <!-- ########## -->
       <h4>Data Integrity</h4> https://debian.org/doc/manuals/securing-debian-manual/ch04s17.en.html#check-integ
       <br>
       <br> 
     </details>  
-    <!-- ############################## -->
+  <!-- ############################## -->
 <details>
   <summary>6.17 Online Utilities</summary>
     <br>
@@ -4836,23 +4959,23 @@ $ rsync -ravP Directory/ server@192.168.1.56:/home/server
 $ tree -d • Control the depth of the tree 
 $ tree -d -L 2 .
 </pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Schedule a Shutdown in Command Line</h4>
     <h5>Shutdown at specific time</h5> 
     <pre>$ sudo shutdown -h 23:59</pre>
-    <!-- ##### -->
+  <!-- ##### -->
     <h5>Shutdown at specific date and time</h5>
   <p>Since 24 hours (24×60=1440 minutes), you could adapt.</p> 
   <pre>$ sudo shutdown +1440</pre>
   <p>Execute shutdown +60 at a specific time and day:</p> 
   <pre>$ sudo apt install at $ sudo echo "shutdown +767" | at 08:46am 2024-09-11</pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Set an Alarm from the Terminal</h4> 
     <pre>$ sleep 5m && mpv alarm.mp3</pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Use Terminal as a Stopwatch</h4> 
     <pre>$ time cat CTRL + C</pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Commands for you to find large files</h4> 
 <pre>
 $ df -h 
@@ -4862,10 +4985,10 @@ $ find ~/Downloads -type f -size +3G -exec du -h {} + | sort -rh
 $ find /home/$USER/Downloads -xdev -type f -size +1G 
 $ find . -size +1M -printf "%p \t%k kb\n" | sort -k2n
 </pre>
-    <!-- ##### -->
+  <!-- ##### -->
     <h5>Find the largest packages</h5> 
     <pre><code><span>$ </span>dpkg-query --show --showformat='${Package;-50}\t${Installed-Size}\n' | sort -k 2 -n | grep -v deinstall | awk '{printf "%.3f MB \t %s\n", $2/(1024), $1}'</code></pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Editig text with sed in terminal</h4>
     <p>Be cautious of using <code>-n</code> (quiet) with <code>-i</code> (in-place): the former disables aut in-place omatic printing of lines and the latter changes the file in-place without a backup. Make a backup before editing <code>-i.bak</code> .</p>
   <pre><code><span>$ </span>sed --options [optional SCRIPT] [INPUT STREAM]</code></pre>
@@ -4900,7 +5023,7 @@ $ sed 's/hello/world/g' input.txt > output.txt
 $ sed -i 's/text//g' *.txt • Batch making a backup before editing the file, by specifying a suffix when using –i 
 $ sed -i.bak 's/word//g' *.txt
     </pre>
-    <!-- ##### -->
+  <!-- ##### -->
     <h5>• Convert Lowercase to Uppercase Characters</h5>     
     <pre><code><span>$ </span>sed -i 's/.*/\U&/' text.txt</code></pre>
     <pre><code><span>$ </span>sed 's/[a-z]/\U&/g' &lt; ./myfile.txt</code></pre> 
@@ -4912,14 +5035,14 @@ $ sed -i.bak 's/word//g' *.txt
     <h5>• Remove all digits in a range</h5> 
     <pre><code><span>$ </span>sed 's/[0-9]//g' text.txt</code></pre>
     <pre>*Note, in terminal: Alt + u Make uppercase from the cursor position to the end of the word. Alt + l Make lowercase from the cursor position to the end of the word/text.</pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Reopen with maximized browser</h4>
   <p>To open browser with maximized window use "--start-maximized" as a parameter.</p> 
   <pre>$ nano /home/user/Desktop/browser.desktop [Desktop Entry] Exec=/usr/bin/browser --start-maximized %U</pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Geting windows sizes in shell</h4> 
     <pre>$ wmctrl -lG</pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Changing default editor for <code>visudo</code></h4>
   <p>By default, Linux systems use the <code>$VISUAL</code> or <code>$EDITOR</code> environment variables (usually defined in your <code>~/.bashrc</code> file or <code>/etc/profile</code> ) as the default editor the <a href="https://linux.die.net/man/8/visudo">visudo</a> command. If you&#39;d prefer to use a different editor, such as <a href="https://nano-editor.org/">ano</a> , you can use either of these methods.</p>
     <ol>
@@ -4927,7 +5050,7 @@ $ sed -i.bak 's/word//g' *.txt
     <li> To permanently change the default editor, edit the <code>/etc/sudoers</code> file (you can use the temporary method above!) and add the following line to the file near the top, but after <code>Defaults env_reset</code> : <pre><code>Defaults <span> editor=/path/to/editor </span></code></pre> </li>
     </ol>
   <p><a href="https://unix.stackexchange.com/questions/4408/how-to-set-visudo-to-use-a-different-editor-than-the-default-on-fedora">Reference: https://unix.stackexchange.com/questions/4408/how-to-set-visudo-to-use-a-different-editor-than-the-default-on-fedora</a></p>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Test if a bash shell built-in command or external program package</h4> http://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html https://gnu.org/software/bash/manual/html_node/Shell-Builtin-Commands.html
     <br> http://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html#tag_02_04
     <br> https://en.wikipedia.org/wiki/POSIX
@@ -4954,7 +5077,7 @@ $ builtin for
 $ enable -a
 </pre>
   <p>Why use the built-in command? It does not depend on granting permissions to install packages, work on reduced sets like linux embedded hardwares (IoTs), reduces the attack surface and has better performance.</p>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Changing terminal command output language</h4> 
     
 <pre>
@@ -4962,7 +5085,7 @@ $ enable -a
 $ LC_ALL=C man ls 
 $ LC_ALL=C sudo apt update
 </pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Grep - Global regular expression search</h4> 
     
 <pre>
@@ -5061,7 +5184,7 @@ $ man find | grep -e '-size'
     <br>
     <a href="https://youtube.com/watch?v=4ZPz4rvMEwk"><img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D4ZPz4rvMEwk" alt="An introduction to Vircadia - an Open Source desktop and VR metaverse" title="An introduction to Vircadia - an Open Source desktop and VR metaverse"></a>
     <br>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Overte - Open source virtual worlds and social VR</h4> https://overte.org
     <br>
     <a href="https://youtube.com/watch?v=-1tU6H2A7pQ"><img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D-1tU6H2A7pQ" alt="Introduction to the Overte project" title="Introduction to the Overte project"></a>
@@ -5074,18 +5197,19 @@ $ man find | grep -e '-size'
     <br>
     <h4>Steam OS</h4> <a href="https://store.steampowered.com/steamos">Steam OS</a>
     <br>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Kodi.tv</h4> <a href="https://kodi.tv">Kodi.tv</a>
     <br>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>LibreELEC.tv</h4> <a href="https://wiki.libreelec.tv/">LibreELEC.tv</a>
     <br><a href="https://kodi.wiki/view/HOW-TO:Install_Kodi_on_Raspberry_Pi">HOW-TO:Install Kodi on Raspberry Pi</a>
     <br>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Linux distribution that transforms devices in consoles</h4> <a href="https://batocera.org">Batocera</a>
     <br>
   <br> 
 </details>
+</div>  
   <hr>
   <!-- ############################################################-->
   <h2>7. DEV SETUP</h2>
@@ -5108,7 +5232,7 @@ $ man find | grep -e '-size'
   <summary>7.02 IDEs</summary>
     <br>
     <h3>IDEs</h3>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>• NeoVim</h4> https://neovim.io
     <br> https://neovim.io/doc/user/starting.html
     <br> https://neovim.io/doc/user/usr_01.html#vimtutor
@@ -5117,7 +5241,7 @@ $ man find | grep -e '-size'
     <br> https://github.com/rockerBOO/awesome-neovim
     <br> https://reddit.com/r/neovim
     <br>
-    <!-- ##### -->
+  <!-- ##### -->
     <h5>∙ Setups</h5> 
     https://github.com/nvim-lua/kickstart.nvim
     <br> https://github.com/LazyVim/LazyVim
@@ -5125,18 +5249,18 @@ $ man find | grep -e '-size'
     <br> https://github.com/NvChad/NvChad
     <br> https://spacevim.org/
     <br>
-    <!-- ##### -->
+  <!-- ##### -->
     <h5>∙ Plugins</h5> 
     https://siddharta.me/configuring-neovim-as-a-python-ide-2023.html
     <br> https://thevaluable.dev/vim-php-ide/
     <br>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>• VSCodium</h4> https://github.com/VSCodium/vscodium
     <br> https://reddit.com/r/vscodium
     <br>
-    <!-- ##### -->
+  <!-- ##### -->
     <h5>∙ Extensions</h5>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>• Sublime-text®</h4> https://sublimetext.com/docs/linux_repositories.html
     <br> https://reddit.com/r/sublimetext
     <br>
@@ -5257,7 +5381,7 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('head /home/$USER/file.txt')">Copy</button> 
     <pre><code><span>$ </span>head -n20 /home/$USER/file.txt</code></pre>
     <button onclick="navigator.clipboard.writeText('head -n20 /home/$USER/file.txt')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Terminal output in English</h4>
   <p>To only run a single command in English, you can write the LANG=C directly in front of the command itself, e.g.</p>
   <pre><code>LANG=C sudo apt-get update</code></pre>
@@ -5273,7 +5397,7 @@ $ man find | grep -e '-size'
     <br>
     <h4>Grub</h4>
   <p>The simplest way to display your Grub is to press and hold the <code>shift</code> button while booting.</p>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>System Boot</h4>
     <h5>∙ Rescue Mode</h5>
   <p>Debian Live in Rescue Mode</p>
@@ -5283,7 +5407,7 @@ $ man find | grep -e '-size'
     <h5>∙ Grub customizer (GUI)</h5> 
     <pre><code><span>$ </span>sudo apt install grub-customizer</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install grub-customizer')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>∙ Restoring grub</h4> 
     <pre><code><span>$ </span>sudo cp /usr/share/grub/default/grub /etc/default/grub</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo cp /usr/share/grub/default/grub /etc/default/grub')">Copy</button> 
@@ -5291,7 +5415,7 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('sudo update-grub')">Copy</button> 
     <pre><code><span>$ </span>sudo apt -f install</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt -f install')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>∙ Menuentries debug</h4> 
     <pre><code><span>$ </span>sudo ls /boot</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo ls /boot')">Copy</button> 
@@ -5322,7 +5446,7 @@ $ man find | grep -e '-size'
     <h5>∙ Chroot</h5> 
     <pre><code><span>$ </span>sudo</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>∙ Grub Issues</h4>
   <p>Removable Medium Boot</p>
   <pre><code><span>$ </span>sudo grub-install /dev/sdX -v --force-extra-removable</code></pre>
@@ -5331,7 +5455,7 @@ $ man find | grep -e '-size'
   <pre><code><span>$ </span>sudo nano /boot/grub/grub.cfg</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo nano /boot/grub/grub.cfg')">Copy</button> <pre>GRUB_DISABLE_OS_PROBER=false</pre> <pre>GRUB_ENABLE_CRYPTODISK=y</pre> <pre><code><span>$ </span>sudo update-grub</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo update-grub')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Remove Old Kernels</h4>
   <p>An easy way to remove old kernels is to use Synaptic Package Manager to search for "linux-image" and "linux-headers" and remove one except the version you are currently using.</p>
   <pre><code><span>$ </span>sudo apt remove linux-image-6.1.0-15-amd64</code></pre>
@@ -5370,7 +5494,7 @@ $ man find | grep -e '-size'
     <br> https://baeldung.com/linux/display-managers-install-uninstall
     <br> https://github.com/sddm/sddm/releases
     <br>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Brightness</h4> 
     <pre><code><span>$ </span>sudo apt install -y brightnessctl</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install -y brightnessctl')">Copy</button> 
@@ -5380,7 +5504,7 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('brightnessctl s 70%')">Copy</button> 
     <pre><code><span>$ </span>brightnessctl s 50%</code></pre>
     <button onclick="navigator.clipboard.writeText('brightnessctl s 50%')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Environment variables</h4>
   <p>Qt applications can be scaled with the following environment variables, ote that many applications are hard-coding sizing and font and thus the result on such app may not be as expected.</p>
   <pre><code><span>$ </span>export QT_AUTO_SCREEN_SET_FACTOR=0</code></pre>
@@ -5389,7 +5513,7 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('export QT_SCALE_FACTOR=1')">Copy</button> 
     <pre><code><span>$ </span>export QT_FONT_DPI=96</code></pre>
     <button onclick="navigator.clipboard.writeText('export QT_FONT_DPI=96')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Monitor and resolution</h4> https://dpi.lv
     <br> <pre><code><span>$ </span>sudo apt install arandr</code></pre> <pre>
     <code><span>$ </span>sudo apt install xserver-xorg-input-all</code></pre>
@@ -5414,7 +5538,7 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('/usr/bin/xrandr --output LVDS1 --panning 1920x1080 --scale 1.406x1.406')">Copy</button>
   <p>*Firefox and Thunderbird - Advanced Settings</p>
   <pre><code>layout.css.devPixelsPerPx 0.8</code></pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>SSDM</h4>
   <p>Debug commands</p>
   <pre><code><span>$ </span>sudo systemctl status default.target</code></pre>
@@ -5442,13 +5566,13 @@ $ man find | grep -e '-size'
     <br> https://docs.kernel.org/driver-api/usb/power-management.html
     <br>
     <h4>Troubleshooting a network using OSI model, starting from physical to application layer.</h4>
-    <!-- ##### -->
+  <!-- ##### -->
     <h5>First things first:</h5> 
     <pre><code><span>$ </span>sudo apt install firmware-realtek</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install firmware-realtek')">Copy</button> or <pre><code><span>$ </span>sudo apt install firmware-iwlwifi</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install firmware-iwlwifi')">Copy</button> or <pre><code><span>$ </span>sudo apt install firmware-atheros</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install firmware-atheros')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>• Network</h4>
     <h5>Debug WiFi by OSI Layers</h5>
     <h5>Application Layer (7)</h5>
@@ -5542,9 +5666,11 @@ $ man find | grep -e '-size'
     <li><code>$ echo 'on' | sudo tee /sys/bus/usb/devices/1-4/power/control</code></li>
     <li><code>$ sudo sudo modprobe -rv [WIFIMODULE] && sudo modprobe -v [WIFIMODULE]</code></li>
   </ul>
-  <p><small>*SIOCSIFFLAGS</small></p>
-  <p><small>*RTNETLINK</small></p>
-    <!-- ########## -->
+  <p><small>
+  *SIOCSIFFLAGS</small></p>
+  <p><small>
+  *RTNETLINK</small></p>
+  <!-- ########## -->
     <h5>∙ Getting help</h5>
     <ol>
     <li> Enable Debugging Features:
@@ -5586,7 +5712,7 @@ $ man find | grep -e '-size'
                   <li>Once you have gathered all the necessary information, consider reaching out to the official support channels of your Wi-Fi adapter's manufacturer, Linux distribution forums, or community support forums like Stack Exchange or Reddit. Provide all the details you've gathered to get more targeted assistance.</li>
                 </ul>
     </ol>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>∙ Debug Hardware</h5> 
     <pre><code><span>$ </span>sudo lspci</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo lspci')">Copy</button> 
@@ -5619,7 +5745,7 @@ $ man find | grep -e '-size'
   <p>Module info</p>
   <pre><code><span>$ </span>sudo modinfo rtw_8723d</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo modinfo rtw_8723d')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Rfkill</h4> 
     <pre><code><span>$ </span>sudo apt install rfkill</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install rfkill')">Copy</button>
@@ -5630,7 +5756,7 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('sudo rfkill unblock wifi')">Copy</button> 
     <pre><code><span>$ </span>sudo rfkill unblock all</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo rfkill unblock all')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>∙ Deactivating and Activating WiFi Firmware</h5>
   <p>Deactivating module</p>
   <pre><code><span>$ </span>sudo modprobe -vr rtw_8723d</code></pre>
@@ -5642,7 +5768,7 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('sudo modprobe -v rtw_core')">Copy</button> 
     <pre><code><span>$ </span>sudo modprobe -v rtw_8723d</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo modprobe -v rtw_8723d')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>∙ Power and suspend control</h5> 
     <pre><code><span>$ </span>sudo ls /etc/NetworkManager/conf.d</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo ls /etc/NetworkManager/conf.d')">Copy</button> 
@@ -5657,7 +5783,7 @@ $ man find | grep -e '-size'
     <br> pcie_aspm.policy=performance
     <br> usbcore
     <br>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>∙ Wifi stops workin after resume</h5> 
     <pre><code><span>$ </span>sudo touch /etc/modprobe.d/50-rtw-core.conf</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo touch /etc/modprobe.d/50-rtw-core.conf')">Copy</button> 
@@ -5693,22 +5819,22 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('sudo ss -nlup')">Copy</button> 
     <pre><code><span>$ </span>sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf')">Copy</button> <pre>• Syntax checks $ sudo dnsmasq --test • Print errors $ sudo grep -c dnsmasq /var/log/* $ sudo grep -c dnsmasq /var/log/syslog $ sudo dnsmasq --no-daemon --log-queries=extra --log-dhcp --log-debug -C /etc/dnsmasq.conf $ sudo dhclient -v</pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>Disabling NetworkManager's own dnsmasq</h5>
   <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p> 
   <pre>$ sudo nano /etc/NetworkManager/NetworkManager.conf #dns=dnsmasq $ sudo restart network-manager</pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>Disabling NetworkManager's IPV6</h5> 
     <pre><code><span>$ </span>sudo</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo')">Copy</button> 
     <pre><code><span>$ </span>sudo</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>NetworkManager dnsmasq (CLI)</h5>
   <p>DNS requests are directed to VPN-supplied DNS servers without any manipulations with dnsmasq, up/down/dispatch helper scripts.</p> 
   <pre>mcli -p connection modify MY_VPN_CONNECTION ipv4.never-default no nmcli -p connection modify MY_VPN_CONNECTION ipv4.ignore-auto-dns no nmcli -p connection modify MY_VPN_CONNECTION ipv4.dns-priority -42</pre>
   <p>*Using OpenVPN through NetworkManager (GUI) allows users to disable the connection.</p>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>∙ DHCP Issues</h5> 
     <pre><code><span>$ </span>sudo apt install tcpdump</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install tcpdump')">Copy</button> 
@@ -5805,7 +5931,8 @@ $ man find | grep -e '-size'
   </code></pre>
   <p>You are affected if you get back a "2". To disable it, simply write a -1 to that file as root:</p>
   <pre><code>
-    $ sudo su</code></pre> <pre><code># echo -1 > /sys/module/usbcore/parameters/autosuspend</code></pre>
+    $ sudo su</code></pre> 
+    <pre><code># echo -1 > /sys/module/usbcore/parameters/autosuspend</code></pre>
   <p>To make the change permanent, edit the GRUB configuration:</p>
   <pre><code>
     $ sudo nano /etc/default/grub</code></pre>
@@ -5867,13 +5994,13 @@ $ man find | grep -e '-size'
     <br> https://wiki.debian.org/Bluetooth/Alsa
     <br> https://github.com/Arkq/bluez-alsa
     <br>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>First things first:</h5> 
     <pre><code><span>$ </span>sudo apt install firmware-realtek</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install firmware-realtek')">Copy</button> or <pre><code><span>$ </span>sudo apt install firmware-iwlwifi</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install firmware-iwlwifi')">Copy</button> or <pre><code><span>$ </span>sudo apt install firmware-atheros</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install firmware-atheros')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>Audio compatibility</h5> 
     <pre><code><span>$ </span>sudo apt install pulseaudio-module-bluetooth</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install pulseaudio-module-bluetooth')">Copy</button> or <pre><code><span>$ </span>sudo apt install bluez-alsa-utils</code></pre>
@@ -5893,18 +6020,24 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('sudo dmesg | grep rtl')">Copy</button> 
     <pre><code><span>$ </span>sudo dmesg | grep ath</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo dmesg | grep ath')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>Connecting Bluetooth</h5> 
-    <pre>&nbsp; Commands • Connecting bluetooth manualy with Bluez $ bluetoothctl &nbsp; &nbsp; [bluetooth]# scan on &nbsp; &nbsp; [bluetooth]# pair xx:xx:xx &nbsp; &nbsp; [bluetooth]# connect xx:xx:xx &nbsp; &nbsp; [bluetooth]# trust xx:xx:xx &nbsp; &nbsp; [bluetooth]# block yy:yy:yy</pre>
-    <!-- ########## -->
+    <pre>Commands • Connecting bluetooth manualy with Bluez $ bluetoothctl 
+     [bluetooth]# scan on 
+     [bluetooth]# pair xx:xx:xx 
+     [bluetooth]# connect xx:xx:xx 
+     [bluetooth]# trust xx:xx:xx 
+     [bluetooth]# block yy:yy:yy</pre>
+  <!-- ########## -->
     <h5>Bluetooth Managment</h5> 
-    <pre>&nbsp; Commands • Bluetooth managment $ btmgmt &nbsp; &nbsp; [btmgmt]# info</pre>
-    <!-- ########## -->
+    <pre>Commands • Bluetooth managment $ btmgmt 
+     [btmgmt]# info</pre>
+  <!-- ########## -->
     <h5>Bluetooth Audio ALSA Backend (bluealsa)</h5> 
     https://github.com/arkq/bluez-alsa/wiki/Bluetooth-Pairing-And-Connecting
     <br> <pre><code><span>$ </span>sudo apt install bluez-alsa-utils</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install bluez-alsa-utils')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>Mouse</h5> 
     https://github.com/sriemer/fix-linux-mouse
     <br>
@@ -5923,13 +6056,13 @@ $ man find | grep -e '-size'
     <br> https://github.com/thesofproject/sof/issues
     <br> https://github.com/thesofproject
     <br>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>First things first:</h4> 
     <pre><code><span>$ </span>sudo apt install firmware-sof-signed</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install firmware-sof-signed')">Copy</button> 
     <pre><code><span>$ </span>sudo apt install firmware-intel-sound</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install firmware-intel-sound')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Debug commands</h4>
   <p>List of PLAYBACK Hardware Devices</p>
   <pre><code><span>$ </span>aplay -l</code></pre>
@@ -5943,7 +6076,7 @@ $ man find | grep -e '-size'
   <p>List of CAPTURE Hardware Devices</p>
   <pre><code><span>$ </span>arecord -l</code></pre>
     <button onclick="navigator.clipboard.writeText('arecord -l')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Testing</h4> 
     <pre><code><span>$ </span>speaker-test</code></pre>
     <button onclick="navigator.clipboard.writeText('speaker-test')">Copy</button>
@@ -5968,7 +6101,7 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('sudo dpkg-reconfigure linux-sound-base')">Copy</button> 
     <pre><code><span>$ </span>sudo alsa-info</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo alsa-info')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>ALSA</h4>
   <p>The "Advanced Linux Sound Architecture" (ALSA) is a part of the Linux kernel. PulseAudio is a sound server that sits between ALSA and user applications, aiming to provide easy automatic sound configuration for users. PulseAudio controls underlying ALSA-level volume controls.</p>
   <pre><code><span>$ </span>sudo apt install alsa-utils</code></pre>
@@ -5987,12 +6120,12 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('amixer -c 0 set Mic unmute')">Copy</button> 
     <pre><code><span>$ </span>sudo nano /etc/pulse/default.pa</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo nano /etc/pulse/default.pa')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>PulseAudio Volume Control</h4>
   <p>Allows you to control both the volume of hardware devices and of each playback stream separately. It also allows you to redirect a playback stream to another output device.</p>
   <pre><code><span>$ </span>sudo apt install pavucontrol</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install pavucontrol')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Advanced solution</h4>
   <p>Install the SOF firmware binaries from the source: https://github.com/thesofproject/sof-bin</p>
   <p>Clone the repository:</p>
@@ -6029,19 +6162,19 @@ $ man find | grep -e '-size'
     <h4>Printers</h4> https://wiki.debian.org/SystemPrinting
     <br> https://wiki.ubuntu.com/DebuggingPrintingProblems
     <br>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>∙ HP</h5> 
     https://developers.hp.com/hp-linux-imaging-and-printing/install/manual/distros/debian
     <br> https://wiki.debian.org/InstallingDebianOn/HP
     <br> https://developers.hp.com/hp-linux-imaging-and-printing
     <br> <pre><code><span>$ </span>sudo apt install hplip</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install hplip')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>∙ EPSON</h5> 
     https://epson.com/Support/wa00821
     <br> <pre><code><span>$ </span>sudo apt install</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>∙ Wireless Firewall Ports</h5> 
     <pre><code><span>$ </span></code></pre>
     <button onclick="navigator.clipboard.writeText('')">Copy</button>
@@ -6058,7 +6191,7 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('locale')">Copy</button> 
     <pre><code><span>$ </span>locale -a</code></pre>
     <button onclick="navigator.clipboard.writeText('locale -a')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Reset Layout</h4> 
     <pre><code><span>$ </span>sudo dpkg-reconfigure keyboard-configuration</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo dpkg-reconfigure keyboard-configuration')">Copy</button> 
@@ -6066,17 +6199,17 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('sudo service keyboard-setup restart')">Copy</button> 
     <pre><code><span>$ </span>sudo update-initramfs -u</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo update-initramfs -u')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Accents not working</h4>
   <p>Can't type accented letters in certain programs.</p>
   <pre><code><span>$ </span></code></pre>
     <button onclick="navigator.clipboard.writeText('')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Assign Home and End to Fn + Arrows</h4> https://superuser.com/questions/428945/defining-keyboard-shortcuts-involving-the-fn-key
     <br> https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows
     <br> <pre><code><span>$ </span></code></pre>
     <button onclick="navigator.clipboard.writeText('')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Remap Apple Magic Keyboard</h4> https://github.com/dongjinleekr/hid-apple-numberless-ko
     <br> https://github.com/isakhauge/nor-apple-keyboard-xmodmap
     <br>
@@ -6100,7 +6233,7 @@ $ man find | grep -e '-size'
     <pre><code><span>$ </span>sudo dpkg-reconfigure locales</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo dpkg-reconfigure locales')">Copy</button> 
     <pre><code>*Logoff</code></pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>If locale-gen had not results</h4> 
     <pre><code><span>$ </span>locale</code></pre>
     <button onclick="navigator.clipboard.writeText('locale')">Copy</button> 
@@ -6118,33 +6251,33 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('sudo dpkg-reconfigure locales')">Copy</button>
   <p>Even no results</p>
   <pre><code>In /etc/locale.gen, uncommenting the line: en_US.UTF-8 UTF-8 then running: locale-gen</code></pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Switch terminal command output</h4> UNDER TEST! NOT FULL TESTED! http://manpages.ubuntu.com/manpages/trusty/man7/locale.7.html
     <br> <pre><code>• Defitenelly change output language from native language to english $ env $ env | egrep -e 'LC_ALL|LANG' $ cat ~/.bashrc $ cat ~/.bash_profile $ LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LANGUAGE=en_US.UTF-8 $SHELL</code></pre>
   <p>Bash function for terminal</p>
   <p>Switching between DE and EN locales. Put it in your ~/.bashrc (or ~/.bash_profile).</p>
   <p>Call it with <code>_configure_locale</code> EN to switch to English.</p> 
   <pre>function _configure_locale() { # [profile] local profile=${1:-EN} case ${profile} in DE|DE_DE|de_DE) LC_ALL="de_DE.UTF-8" LANG="de_DE.UTF-8" LANGUAGE="de_DE:de:en_US:en" ;; EN|EN_US|en|en_US) LC_ALL="en_US.UTF-8" LANG="en_US.UTF-8" LANGUAGE="en_US:en" ;; *) echo "ALERT" "${FUNCNAME}: unknown profile '${profile}'" ;; esac LC_PAPER="de_DE.UTF-8"; # independent from locale LESSCHARSET="utf-8"; # independent from locale MM_CHARSET="utf-8" # independent from locale echo "locale settings" "${LANG}"; export LC_ALL LANG LANGUAGE LC_PAPER LESSCHARSET MM_CHARSET }</pre>
-    <!-- ########## -->
+  <!-- ########## -->
     <h3>Time and Date</h3>
     <h4>Control the system time and date</h4> 
     <pre><code><span>$ </span>timedatectl</code></pre>
     <button onclick="navigator.clipboard.writeText('timedatectl')">Copy</button> 
     <pre><code><span>$ </span>tzselect</code></pre>
     <button onclick="navigator.clipboard.writeText('tzselect')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>How Reconfigure time and date</h4> 
     <pre><code><span>$ </span>sudo dpkg-reconfigure tzdata</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo dpkg-reconfigure tzdata')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>NTP</h4> 
     <pre><code><span>$ </span>sudo apt install ntpdate && ntpdate in.pool.ntp.org && dpkg-reconfigure tzdata</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install ntpdate && ntpdate in.pool.ntp.org && dpkg-reconfigure tzdata')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>∙ Coordinated Universal Time - UTC-00:00</h5> 
     <pre><code><span>$ </span></code></pre>
     <button onclick="navigator.clipboard.writeText('')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>∙ Greenwich Mean Time - GMT</h5> 
     <pre><code><span>$ </span></code></pre>
     <button onclick="navigator.clipboard.writeText('')">Copy</button>
@@ -6166,7 +6299,8 @@ $ man find | grep -e '-size'
   <p>For your ISP throttle, try your VPN Obfuscated Servers or P2P Servers.</p>
   <p>Do a Leak Test</p> <a href="https://dnsleaktest.com/">∙ DNSLeakTest.com</a> (run the "Extended test")
     <br><a href="https://ipleak.net/">∙ IPLeak.net</a>
-    <br> <pre><code>curl ipleak.net/json/</code></pre> <pre><code>curl ipinfo.io</code></pre>
+    <br> <pre><code>curl ipleak.net/json/</code></pre> 
+    <pre><code>curl ipinfo.io</code></pre>
   <p>Alternativelly, begin to VPN+Torrent on PC, wait until throttling begins. Try to play back a 1080p video on your smartphone, try to choose one where you can see the quality difference (for example one with many text elements such as computer hardware benchmarks). A 1080p video nneeds about 1-2Mbps (250KB/s) bandwidth.</p>
   <p>Instead you can try to download something on the phone. This is to find out if it's an issue VPN server/software or with your ISP line as a whole. It's possible for your ISP to only throttle the connection to the VPN server and leave the rest alone.</p>
     <h4>Problem 2</h4> 
@@ -6185,29 +6319,29 @@ $ man find | grep -e '-size'
     <h5>GParted</h5> 
     <pre><code><span>$ </span>sudo apt install gparted</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install gparted')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h5>Gnome Disk - "Disks"</h5> 
     <pre><code><span>$ </span>sudo apt install gnome-disk-utility</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install gnome-disk-utility')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Disk manager with LVM support</h4>
     <h5>KDE Partition Manager</h5> 
     <pre><code><span>$ </span>sudo apt install partitionmanager</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install partitionmanager')">Copy</button>
-    <!-- ########## -->
+  <!-- ########## -->
     <h4>Disk debug</h4> 
-    <pre>$ dmesg -T | grep xhci $ lsusb -tv</pre> <pre>&nbsp; Commands for fdisk • EXT - Badblock: $ sudo fdisk -l /dev/sdb • *NTFS - Badblock: $ sudo e2fsck -p /dev/sde1 $ sudo e2fsck -c $ sudo e2fsck -l /dev/sdb1 /badblock/file</pre>
-    <!-- ########## -->
+    <pre>$ dmesg -T | grep xhci $ lsusb -tv</pre> <pre>Commands for fdisk • EXT - Badblock: $ sudo fdisk -l /dev/sdb • *NTFS - Badblock: $ sudo e2fsck -p /dev/sde1 $ sudo e2fsck -c $ sudo e2fsck -l /dev/sdb1 /badblock/file</pre>
+  <!-- ########## -->
     <h4>Disk Utilities</h4>
     <h5>TESTDISK</h5> 
     https://cgsecurity.org/wiki/TestDisk
     <br>
     <h5>SMARTMONTOOLS</h5> 
     <pre><code><span>$ </span>sudo apt install smartmontools</code></pre>
-    <button onclick="navigator.clipboard.writeText('sudo apt install smartmontools')">Copy</button> <pre>&nbsp; Commands for smartmontools • How to : $ sudo smartctl -a /dev/sda</pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install smartmontools')">Copy</button> <pre>Commands for smartmontools • How to : $ sudo smartctl -a /dev/sda</pre>
     <h5>HDPARM</h5> 
     <pre><code><span>$ </span>sudo apt install hdparm</code></pre>
-    <button onclick="navigator.clipboard.writeText('sudo apt install hdparm')">Copy</button> <pre>&nbsp; Commands for hdparm • How to : $ sudo hdparm -I /dev/sda</pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install hdparm')">Copy</button> <pre>Commands for hdparm • How to : $ sudo hdparm -I /dev/sda</pre>
     <h5>KDISKMARK</h5> 
     <pre><code><span>$ </span>sudo apt install -y kdiskmark</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install -y kdiskmark')">Copy</button>
@@ -6340,8 +6474,9 @@ $ man find | grep -e '-size'
     <A HREF="https://archive.org">
       Internet Archive
       <BR>
+  
   <PRE>
-        https://archive.org
+https://archive.org
       </PRE>
     </a>
   </li>
@@ -6349,8 +6484,9 @@ $ man find | grep -e '-size'
     <A HREF="https://annas-archive.org">
       Anna's Archive
       <BR>
+  
   <PRE>
-        https://annas-archive.org
+https://annas-archive.org
       </PRE>
     </a>
   </li>
@@ -6358,8 +6494,9 @@ $ man find | grep -e '-size'
     <A HREF="https://t.me/zlibrary_official">
       Z-Library Official (Telegram)
       <BR>
+  
   <PRE>
-        https://t.me/zlibrary_official
+https://t.me/zlibrary_official
       </PRE>
     </a>
   </li>
@@ -6367,8 +6504,9 @@ $ man find | grep -e '-size'
     <A HREF="https://go-to-zlibrary.se/#desktop_app_tab">
       Z-Library (APP)
       <BR>
+  
   <PRE>
-        https://go-to-zlibrary.se/#desktop_app_tab
+https://go-to-zlibrary.se/#desktop_app_tab
       </PRE>
     </a>
   </li>
@@ -6376,8 +6514,9 @@ $ man find | grep -e '-size'
     <A HREF="https://singlelogin.se">
       Z-Library (WEB)
       <BR>
+  
   <PRE>
-        https://singlelogin.se
+https://singlelogin.se
       </PRE>
     </a>
   </li>
@@ -6385,8 +6524,9 @@ $ man find | grep -e '-size'
     <A HREF="http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion">
       Z-Library (ONION)
       <BR>
+  
   <PRE>
-        http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion
+http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion
       </PRE>
     </a>
   </li>
@@ -6394,8 +6534,9 @@ $ man find | grep -e '-size'
     <A HREF="https://libgen.rs">
       Library Genesis (.rs alias domain)
       <BR>
+  
   <PRE>
-        https://libgen.rs
+https://libgen.rs
       </PRE>
     </a>
   </li>
@@ -6403,8 +6544,9 @@ $ man find | grep -e '-size'
     <A HREF="https://libgen.is">
       Library Genesis (.is alias domain)
       <BR>
+  
   <PRE>
-        https://libgen.is
+https://libgen.is
       </PRE>
     </a>
   </li>
@@ -6412,8 +6554,9 @@ $ man find | grep -e '-size'
     <A HREF="https://libgen.st">
       Library Genesis (.st alias domain)
       <BR>
+  
   <PRE>
-        https://libgen.st
+https://libgen.st
       </PRE>
     </a>
   </li>
@@ -6421,8 +6564,9 @@ $ man find | grep -e '-size'
     <A HREF="https://wiki.mhut.org/software:libgen_desktop">
       Library Genesis (APP)
       <BR>
+  
   <PRE>
-        https://wiki.mhut.org/software:libgen_desktop
+https://wiki.mhut.org/software:libgen_desktop
       </PRE>
     </a>
   </li>
@@ -6430,8 +6574,9 @@ $ man find | grep -e '-size'
     <A HREF="http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion">
       Library Genesis (ONION)
       <BR>
+  
   <PRE>
-        http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion
+http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion
       </PRE>
     </a>
   </li>
@@ -6439,8 +6584,9 @@ $ man find | grep -e '-size'
     <A HREF="http://kx5thpx2olielkihfyo4jgjqfb7zx7wxr3sd4xzt26ochei4m6f7tayd.onion">
       Imperial Library (ONION)
       <BR>
+  
   <PRE>
-        http://kx5thpx2olielkihfyo4jgjqfb7zx7wxr3sd4xzt26ochei4m6f7tayd.onion
+http://kx5thpx2olielkihfyo4jgjqfb7zx7wxr3sd4xzt26ochei4m6f7tayd.onion
       </PRE>
     </a>
   </li>
@@ -6448,8 +6594,9 @@ $ man find | grep -e '-size'
     <A HREF="http://libraryfyuybp7oyidyya3ah5xvwgyx6weauoini7zyz555litmmumad.onion">
       Just Another Library (ONION)
       <BR>
+  
   <PRE>
-        http://libraryfyuybp7oyidyya3ah5xvwgyx6weauoini7zyz555litmmumad.onion
+http://libraryfyuybp7oyidyya3ah5xvwgyx6weauoini7zyz555litmmumad.onion
       </PRE>
     </a>
   </li>
@@ -6457,8 +6604,9 @@ $ man find | grep -e '-size'
     <A HREF="http://w27irt6ldaydjoacyovepuzlethuoypazhhbot6tljuywy52emetn7qd.onion">
       InfoCon (ONION)
       <BR>
+  
   <PRE>
-        http://w27irt6ldaydjoacyovepuzlethuoypazhhbot6tljuywy52emetn7qd.onion
+http://w27irt6ldaydjoacyovepuzlethuoypazhhbot6tljuywy52emetn7qd.onion
       </PRE>
     </a>
   </li>

@@ -4632,22 +4632,26 @@ $ find . -maxdepth 1 -type f -name '*[A-Z]*' -exec bash -c 'mv "$0" "$(echo "$0"
 <button onclick="navigator.clipboard.writeText('source ~/.bash_profile')">Copy</button>
 <p>You can use it in any directory to convert CamelCase filenames to Title Case. For example:</p>
 <pre><code><span>$ </span>camel_to_kebab /file/dir</code></pre>
-<button onclick="navigator.clipboard.writeText('camel_to_kebab /file/dir')">Copy</button>  <!-- ##### -->
+<button onclick="navigator.clipboard.writeText('camel_to_kebab /file/dir')">Copy</button>
+<!-- ##### -->
 <h5>Camel to kebab</h5>
 <pre><code>
 camel_to_kebab() { for f in *; do new_name="$(echo "$f" | sed -e 's/\([A-Z]\)/-\L\1/g' | sed -e 's/^-//')" if [ "$f" != "$new_name" ]; then mv "$f" "$new_name" fi done }
-</code></pre>  <!-- ##### -->
+</code></pre>
+<!-- ##### -->
 <h5>Kebab to title case</h5> 
 <pre><code>
 find . -maxdepth 1 -type f -name '*-*' -exec bash -c ' kebab_to_title() { echo "$1" | sed -E "s/-/_/g" | awk '\''{ for (i = 1; i &lt;= NF; i++) { if (tolower($i) ~ /^(in|on|at|of|and|or|but|to|the|a|an)$/) { $i = tolower($i) } else { $i = toupper(substr($i, 1, 1)) tolower(substr($i, 2)) } } print $0 }'\'' FS="_" OFS="_" } for file in "$@"; do base="${file%.*}" ext="${file##*.}" ew_name=$(kebab_to_title "$base") if [ "$base" != "$new_name" ]; then mv -v "$file" "${new_name}.${ext}" fi done ' _ {} +
-</code></pre>  <!-- ##### -->
+</code></pre>
+<!-- ##### -->
 <h5>Camel to title case</h5>
 <pre><code>
  camel_to_title() { convert_to_title() { echo "$1" | sed -E 's/([a-z])([A-Z])/\1 2/g' | awk '{ for (i = 1; i &lt;= NF; i++) { if (tolower($i) ~ /^(in|on|at|of|and|or|but|to|the|a|an)$/ && i != 1) { $i = tolower($i) } else { $i = toupper(substr($i, 1, 1)) tolower(substr($i, 2)) } } print $0 }' OFS=" " } for file in *; do if [[ -f "$file" ]]; then base="${file%.*}" ext="${file##*.}" new_name=$(convert_to_title "$base") if [ "$base" != "$new_name" ]; then mv -v "$file" "$new_name.${ext}" fi fi done }
-</code></pre>  <!-- ##### -->
+</code></pre>
+<!-- ##### -->
 <h5>Rename</h5> 
 <pre><code><span>$ </span>sudo apt install rename</code></pre>
-<pre>
+<pre><code>
 • Commands for rename 
 • Syntax 
 $ rename [options] 's/[pattern]/[replacement]/' [file name] 
@@ -4672,7 +4676,7 @@ $ find my_dir -type f -execdir rename 'y/A-Z/a-z/' {} \;
 $ rename -v 'y/[a-z]/[A-Z]/' *.pdf 
 • Convert to Camel case 
 $ rename 's/ /_/g' *
-</pre>
+</code></pre>
   <!-- ########## -->
     <h4>Metadata Renamer</h4>• Rename files into directories according to metadata contained in.<br>
     • Exiftool Pseudo Tags - https://exiftool.org/filename.html<br>
