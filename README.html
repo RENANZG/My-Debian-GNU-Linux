@@ -4585,7 +4585,10 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
     <h4>Visualize folder tree</h4>
     <pre><code><span>$ </span>sudo apt install tree</code></pre>
 <pre>
-    • List directories only $ tree -d • Control the depth of the tree $ tree -d -L 2 .
+    • List directories only 
+    $ tree -d 
+    • Control the depth of the tree 
+    $ tree -d -L 2 .
     </pre> 
   </details>  
   <!-- ############################## -->
@@ -4595,6 +4598,2294 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
     <h4>Renamers</h4>
     <h5>Online regex tools</h5>
     • Dencode - https://dencode.com
+    <br> • Commonly Used Software Development Tools - https://ctool.dev
+    <br> • Text Fixer - https://textfixer.com
+    <br> • SS64 Syntax Utils - https://ss64.com
+    <br> • Tools4noobs - https://tools4noobs.com
+    <br> • Regex101 - https://regex101.com
+    <br>
+  <!-- ########## -->
+    <h5>File Naming Best Practices</h5>
+  <p>You might consider including some of the following information in your file names, but you can include any information that will allow you to distinguish your files from one another.</p>
+  <ul>
+    <li>Project or experiment name or acronym</li>
+    <li>Location/spatial coordinates</li>
+    <li>Researcher name/initials</li>
+    <li>Date or date range of experiment</li>
+    <li>Type of data</li>
+    <li>Conditions</li>
+    <li>Version number of file</li>
+    <li>Three-letter file extension for application-specific files</li>
+  </ul>
+  <p><small>Another good idea is to include in the directory a readme.txt file that explains your naming format along with any abbreviations or codes you have used.</small></p>
+  <p>Machine readable</p>
+    
+  <ul>
+  <li>Regular expression and globbing friendly
+  <ul>
+    <li>Avoid spaces, punctuation, accented characters, case sensitivity</li>
+    <li>Easy to compute on</li>
+  </ul>
+  </li>
+  <li>Deliberate use of delimiters</li>
+</ul>
+<p>Consider these additional tips as you develop a file naming scheme:</p>
+<ul>
+  <li>A good format for date designations is YYYYMMDD or YYMMDD. This format makes sure all of your files stay in chronological order, even over the span of many years.</li>
+  <li>Try not to make file names too long, since long file names do not work well with all types of software.</li>
+  <li>Special characters such as <code>&#126; &#64; &#35; &#36; &#37; &#94; &amp; &#42; &#40; &#41; &#96; &#59; &lt; &gt; &#63; &#44; &#91; &#93; &#123; &#125; &#39; &quot; and &#124;
+</code> should be avoided.</li>
+  <li>Illegal characters in Windows file names.</li>
+  <li>When using a sequential numbering system, using leading zeros for clarity and to make sure files sort in sequential order. For example, use "001, 002, ...010, 011 ... 100, 101, etc." instead of "1, 2, ...10, 11 ... 100, 101, etc."</li>
+  <li>Do not use spaces. Some software will not recognize file names with spaces, and file names with spaces must be enclosed in quotes when using the command line. Other options include:
+  <ul>
+    <li>Underscores, e.g. file_name.xxx</li>
+    <li>Dashes, e.g. file-name.xxx</li>
+    <li>No separation, e.g. filename.xxx</li>
+    <li>Camel case, where the first letter of each section of text is capitalized, e.g. FileName.xxx</li>
+  </ul>
+  </li>
+  <li>Periods can be used in file names&nbsp;but consider these points before doing so and proceed cautiously:
+  <ul>
+    <li>Periods are used in regular expressions.</li>
+    <li>Periods at the start of a file name are used to indicate configuration and/or hidden files in a file directory.</li>
+    <li>Periods are used to separate file names from file extensions.</li>
+  </ul>
+  </li>
+</ul>
+
+  <!-- ########## -->
+    <h5>Special Symbols</h5> 
+    <pre>&#92;n is a symbol for new line &#92;t is a symbol for tab &#92;r is for 'return'</pre>
+  <p>Note: \n or \t or \r are interpreted inside of &lt;pre&gt; text &lt;&#47;pre&gt;</p>
+    <h5>Special HTML codes</h5>
+    <table>
+      <thead>
+        <tr>
+          <th>Char</th>
+          <th>Numeric
+            <br> code</th>
+          <th>Named
+            <br> code</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&amp;#09;</td>
+          <td>&nbsp;</td>
+          <td>horizontal tab</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&amp;#10;</td>
+          <td>&nbsp;</td>
+          <td>line feed</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&amp;#13;</td>
+          <td>&nbsp;</td>
+          <td>carriage return / enter</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&amp;#160;</td>
+          <td>&amp;nbsp;</td>
+          <td>on-breaking space</td>
+        </tr>
+      </tbody>
+    </table>
+  <!-- ########## -->
+    <h5>KRename</h5> 
+    <pre><code><span>$ </span>sudo apt install krename</code></pre>
+  <!-- ########## -->
+    <h5>GPRename</h5> 
+    <pre><code><span>$ </span>sudo apt install gprename</code></pre>
+  <!-- ########## -->
+    <h5>Case Styles</h5> 
+    <pre>Camel case: camelCase</pre>
+    <pre>Pascal case: PascalCase</pre>
+    <pre>Kebab case: kebab-case</pre>
+    <pre>Snake case: snake_case</pre>
+    <pre>Dot case: dot.case</pre>
+    <pre>Title case: Title Case</pre>
+    <pre>Sentence case: Sentence case</pre>
+  <!-- ########## -->
+    <h4>Bash's built-in commands to rename (Debian/GNU Linux)</h4>
+    <h5>Safety check before irreversible batch processing rename</h5> 
+    <pre><code>
+$ for f in *; do echo mv "$f" "$(echo "$f" | tr 'A-Z' 'a-z')"; done
+</code></pre>
+    <button onclick="navigator.clipboard.writeText('for f in *; do echo mv &quot;$f&quot; &quot;$(echo &quot;$f&quot; | tr &#39;A-Z&#39; &#39;a-z&#39;)&quot;; done')">Copy</button> 
+    <pre><code>
+$ for f in *; do echo mv "$f" "$(echo "$f" | sed -e 's/\([A-Z]\)/-\L\1/g' | sed -e 's/^-//')"; done
+</code></pre>
+    <button onclick="navigator.clipboard.writeText('for f in *; do echo mv &amp;quot;$f&amp;quot; &amp;quot;$(echo &amp;quot;$f&amp;quot; | tr &amp;#39;A-Z&amp;#39; &amp;#39;a-z&amp;#39;)&amp;quot;; done')">Copy</button>
+  <!-- ########## -->
+    <h5>Note about uppercase and lowercase with one-liner command in Linux</h5>
+  <p>Its impossible to rename a file in the same directory from uppercase to lowercase with one-liner command due to the way Unix-like systems handle file names. File systems on Unix-like systems (such as ext4, NTFS, etc.) are typically case-sensitive. This means that FILENAME.txt and filename.txt are treated as distinct files. However, you can achieve this by using a temporary directory or by copying the file to a new name and then deleting the original.</p>
+  <!-- ########## -->
+    <h5>Working with files instead of folders in one-liner command.</h5>
+  <p>For example, if you have a file named CamelCase_Example.txt, running the command will rename it to camel-case-example.txt.</p>
+  <p>Make sure to replace $1 with the actual filename if you're not passing it as an argument to a script or command, and ensure you run the command in the directory where the file is located.</p>
+<pre><code>
+$ mv "$1" "$(echo "$1" | sed 's/\([a-z0-9]\)\([A-Z]\)/\1-\2/g' | tr '[:upper:]' '[:lower:]' | sed 's/_/-/g')"
+</code></pre>
+   <button onclick="navigator.clipboard.writeText('mv &quot;$1&quot; &quot;$(echo &quot;$1&quot; | sed &#39;s/\([a-z0-9]\)\([A-Z]\)/\1-\2/g&#39; | tr &#39;[:upper:]&#39; &#39;[:lower:]&#39; | sed &#39;s/_/-/g&#39;)&quot;')">Copy</button> 
+<pre><code>
+$ mv "/dir/CamelCase_Example.txt" "$(echo "/dir/CamelCase_Example.txt" | sed 's/\([a-z0-9]\)\([A-Z]\)/\1-\2/g' | tr '[:upper:]' '[:lower:]' | sed 's/_/-/g')"
+</code></pre>
+    <button onclick="navigator.clipboard.writeText('mv &quot;/dir/CamelCase_Example.txt&quot; &quot;$(echo &quot;/dir/CamelCase_Example.txt&quot; | sed &#39;s/\([a-z0-9]\)\([A-Z]\)/\1-\2/g&#39; | tr &#39;[:upper:]&#39; &#39;[:lower:]&#39; | sed &#39;s/_/-/g&#39;)&quot;')">Copy</button>
+  <!-- ########## -->
+    <h4>One-liner built-in commands to rename</h4>
+  <p>Usage: $ command</p>
+    <h5>• One-liner commands - CamelCase to kebab-case</h5> 
+    <pre><code>
+$ mv "CamelCaseExample.txt" "$(echo "CamelCaseExample.txt" | sed -e 's/\([A-Z]\)/-\L\1/g' | sed -e 's/^-//')" 
+$ echo "MyDirectoryFileLine" | sed -e 's/\([A-Z]\)/-\L\1/g' 
+$ echo "MyDirectoryFileLine" | sed -e 's/\([A-Z]\)/-\L\1/g' -e 's/^-//' 
+$ echo "MyDirectoryFileLine" | sed -e 's/\([A-Z]\)/-\1/g' -e 's/^-//' 
+$ echo "MyDirectoryFileLine" | sed -e 's/[A-Z]/-\L&/g' -e 's/^-//' 
+$ echo "MyDirectoryFileLine" | sed -e 's/[A-Z]/-\l&/g;s/.//' 
+$ echo "SomeACRONYMInCamelCaseString" | sed -e 's/\([a-z]\)\([A-Z]\)/\1-\L\2/' | sed -e 's/\(.*\)/\L\1/')
+</code></pre>
+  <!-- ########## -->
+    <h5>Batch processing built-in commands to rename</h5>
+  <p>Usage: "$ cd /folder" and "$ command"</p>
+  <pre><code>
+• Batch Processing - Rename by replacing
+$ for f in *.jpg; do mv "$f" "$(echo "$f" | sed s/IMG/VACATION/)"; done 
+• Batch Processing - Spaces to Dashes 
+$ for f in *; do mv "$f" "$(echo "$f" | tr ' ' '-')"; done 
+• Batch Processing - Uppercase to Lowercase 
+$ for f in *; do mv "$f" "$(echo "$f" | tr 'A-Z' 'a-z')"; done 
+• Batch Processing - Lowercase to Uppercase 
+$ for f in *; do mv "$f" "$(echo "$f" | tr 'a-z' 'A-Z')"; done 
+• Batch Processing - CamelCase to snake_case 
+$ for f in *; do mv "$f" "$(echo "$f" | sed -E 's/([A-Z])/_\1/g' | tr 'A-Z' 'a-z')"; done 
+• Batch Processing - snake_case to CamelCase 
+$ for f in *; do mv "$f" "$(echo "$f" | sed -r 's/(^|_)([a-z])/\U\2/g')"; done 
+• Batch Processing - Title Case (First letter of each word capitalized) 
+$ for f in *; do mv "$f" "$(echo "$f" | sed -E 's/(^|_)([a-z])/\U\2/g' | sed -E 's/_/ /g')"; done 
+• Batch Processing - Title Case with Spaces to snake_case 
+$ for f in *; do mv "$f" "$(echo "$f" | tr ' ' '_' | tr 'A-Z' 'a-z')"; done
+</code></pre>
+  <!-- ########## -->
+<h5>Others</h5>
+<p>Convert Camel case to kebab-case</p>
+<pre><code>
+• Simple command 
+$ echo "MyDirectoryFileLine" | sed -e 's/\([A-Z]\)/-\L\1/g' -e 's/^-//' 
+</code></pre>
+<button onclick="navigator.clipboard.writeText('')">Copy</button>
+• Batch command 
+<pre><code>
+$ find . -maxdepth 1 -type f -name '*[A-Z]*' -exec bash -c 'mv "$0" "$(echo "$0" | sed -e "s/\([A-Z]\)/-\L\1/g" -e "s/^-//")"' {} \;
+</code></pre>
+<button onclick="navigator.clipboard.writeText('')">Copy</button>
+<p>Kebab-case to CamelCase</p> 
+• One-liner command
+<pre><code>
+$ echo "my-directory-file-line" | sed -r 's/-(.)/\U\1/g' 
+</code></pre>
+<button onclick="navigator.clipboard.writeText('')">Copy</button>
+• Batch command 
+<pre><code>
+$ find . -maxdepth 1 -type f -name '*-*' -exec bash -c 'mv "$0" "$(echo "$0" | sed -r "s/-(.)/\U\1/g")"' {} \;
+</code></pre>
+<button onclick="navigator.clipboard.writeText('')">Copy</button>
+<p>Kebab-case to snake_case</p>
+<p>• One-liner command</p>
+<pre><code>
+$ echo "my-directory-file-line" | sed 's/-/_/g' 
+</code></pre>
+<button onclick="navigator.clipboard.writeText('')">Copy</button>
+<p>• Batch processing command</p>
+<pre><code>
+$ find . -maxdepth 1 -type f -name '*-*' -exec bash -c 'mv "$0" "$(echo "$0" | sed "s/-/_/g")"' {} \;
+</code></pre>
+<button onclick="navigator.clipboard.writeText('')">Copy</button>
+<p>PascalCase to snake_case</p>
+<p>• One-liner command</p>
+<pre><code>
+$ echo "MyDirectoryFileLine" | sed -r 's/([A-Z])/_\L\1/g' | sed 's/^_//' 
+</code></pre>
+<button onclick="navigator.clipboard.writeText('')">Copy</button>
+<p>• Batch processing command</p>
+<pre><code>
+$ find . -maxdepth 1 -type f -name '*[A-Z]*' -exec bash -c 'mv "$0" "$(echo "$0" | sed -r "s/([A-Z])/_\L\1/g" | sed "s/^_//")"' {} \;
+</code></pre>
+<button onclick="navigator.clipboard.writeText('')">Copy</button>  <!-- ########## -->
+<h4>Renamers in shell functions</h4>
+<p>To incorporate the script into your .bashrc or .bash_profile configuration file, follow these steps:</p>
+<p>Open your .bashrc or .bash_profile file using a text editor. For example, you can use nano:</p>
+<pre><code><span>$ </span>ano ~/.bashrc</code></pre>
+<button onclick="navigator.clipboard.writeText('nano ~/.bashrc')">Copy</button>
+<p>Add the script function camel_to_kebab() along with the necessary helper function is_encrypted() to the file. You can copy the entire camel_to_kebab() function along.</p>
+<p>Save and exit the text editor. In Nano, you can do this by pressing Ctrl + O to write the changes and Ctrl + X to exit.</p>
+<p>Source your updated configuration file to apply the changes immediately:</p>
+<pre><code><span>$ </span>source ~/.bashrc</code></pre>
+<button onclick="navigator.clipboard.writeText('source ~/.bashrc')">Copy</button>
+<p>or</p>
+<pre><code><span>$ </span>source ~/.bash_profile</code></pre>
+<button onclick="navigator.clipboard.writeText('source ~/.bash_profile')">Copy</button>
+<p>You can use it in any directory to convert CamelCase filenames to Title Case. For example:</p>
+<pre><code><span>$ </span>camel_to_kebab /file/dir</code></pre>
+<button onclick="navigator.clipboard.writeText('camel_to_kebab /file/dir')">Copy</button>
+<!-- ##### -->
+<h5>Camel to kebab</h5>
+<pre><code>
+camel_to_kebab() { for f in *; do new_name="$(echo "$f" | sed -e 's/\([A-Z]\)/-\L\1/g' | sed -e 's/^-//')" if [ "$f" != "$new_name" ]; then mv "$f" "$new_name" fi done }
+</code></pre>
+<!-- ##### -->
+<h5>Kebab to title case</h5> 
+<pre><code>
+find . -maxdepth 1 -type f -name '*-*' -exec bash -c ' kebab_to_title() { echo "$1" | sed -E "s/-/_/g" | awk '\''{ for (i = 1; i &lt;= NF; i++) { if (tolower($i) ~ /^(in|on|at|of|and|or|but|to|the|a|an)$/) { $i = tolower($i) } else { $i = toupper(substr($i, 1, 1)) tolower(substr($i, 2)) } } print $0 }'\'' FS="_" OFS="_" } for file in "$@"; do base="${file%.*}" ext="${file##*.}" ew_name=$(kebab_to_title "$base") if [ "$base" != "$new_name" ]; then mv -v "$file" "${new_name}.${ext}" fi done ' _ {} +
+</code></pre>
+<!-- ##### -->
+<h5>Camel to title case</h5>
+<pre><code>
+ camel_to_title() { convert_to_title() { echo "$1" | sed -E 's/([a-z])([A-Z])/\1 2/g' | awk '{ for (i = 1; i &lt;= NF; i++) { if (tolower($i) ~ /^(in|on|at|of|and|or|but|to|the|a|an)$/ && i != 1) { $i = tolower($i) } else { $i = toupper(substr($i, 1, 1)) tolower(substr($i, 2)) } } print $0 }' OFS=" " } for file in *; do if [[ -f "$file" ]]; then base="${file%.*}" ext="${file##*.}" new_name=$(convert_to_title "$base") if [ "$base" != "$new_name" ]; then mv -v "$file" "$new_name.${ext}" fi fi done }
+</code></pre>
+<!-- ##### -->
+<h5>Rename</h5> 
+<pre><code><span>$ </span>sudo apt install rename</code></pre>
+<pre><code>
+• Commands for rename 
+• Syntax 
+$ rename [options] 's/[pattern]/[replacement]/' [file name] 
+• Replacing the blank space with an underscore (_) 
+$ rename -v 'y/ /\_/' *.pdf 
+$ rename -v 'y/ /\_/' ~/Downloads/* 
+$ rename -v 'y/ /\_/' ~/Downloads/*.pdf 
+$ rename -v 'y/\n/\_/' ~/Downloads/*.pdf 
+$ rename -v 'y/\-/\_/' ~/Downloads/*.pdf 
+• Commands to rename to numbered order 
+$ cd /Files 
+• Test the output before (* -n) 
+$ rename -n 's/.+/our $i; sprintf("input%03d.png", 1+$i++)/e' * 
+• Apply the change 
+$ rename 's/.+/our $i; sprintf("input%03d.png", 1+$i++)/e' * 
+• Delete a Part of a Filename 
+$ rename -v 's/example//' *.pdf 
+• Convert Uppercase to Lowercase Characters #FAIL 
+$ rename -v 'y/[A-Z]/[a-z]/' *.PDF 
+$ find my_dir -type f -execdir rename 'y/A-Z/a-z/' {} \; 
+• Convert Lowercase to Uppercase Characters #FAIL 
+$ rename -v 'y/[a-z]/[A-Z]/' *.pdf 
+• Convert to Camel case 
+$ rename 's/ /_/g' *
+</code></pre>
+  <!-- ########## -->
+    <h4>Metadata Renamer</h4>
+    • Rename files into directories according to metadata contained in.<br>
+    • Exiftool Pseudo Tags - https://exiftool.org/filename.html<br>
+    • Illegal characters in Windows file names.<br>
+    <h5>• Basic of metadata</h5>
+    <pre><code><span>$ </span>exiftool -a input.pdf</code></pre>
+    <pre><code><span>$ </span>exiftool -a -s input.pdf</code></pre>
+    <pre><code><span>$ </span>exiftool -a -G1 input.pdf</code></pre>
+    <pre><code><span>$ </span>exiftool -G1 -s 'input.pdf' | grep '\[PDF\]'</code></pre>
+    <pre><code><span>$ </span>pdfinfo input.pdf</code></pre>
+    <pre><code><span>$ </span>pdfinfo -meta input.pdf</code></pre>
+    <p><small>-a shows all metadata tags across all groups (EXIF, IPTC, XMP, etc.).<br>
+    -s shows metadata tags in a short format, without grouping by metadata type.<br>
+    -a -G1 shows all tags, including those not normally extracted, and groups them by family 1 (e.g., PDF tags grouped under [PDF]).</small></p>
+    <h6>• Rename by creation date and time tags [20060327_1058-2.jpg]</h6>
+    <pre><code><span>$ </span>exiftool -d %Y%m%d_%H%M%%-c.%%e "-filename&lt;CreateDate" /file.jpg</code></pre>
+    <h6>• Rename by title tag [title.pdf]</h6>
+    <pre><code><span>$ </span>exiftool '-filename&lt;Title ' /input.pdf</code></pre>
+    <h6>• Rename by title and author tags [Title - Author .pdf]</h6>
+    <pre><code><span>$ </span>exiftool '-filename&lt;$Title ${Author}.%e ' /input.pdf</code></pre>
+    <h6>• Rename by title, author and date tags [Title - Author (Year).pdf]</h6>
+    <pre><code><span>$ </span>exiftool '-filename&lt;$Title - ${Author} (${Date#;DateFmt( "%Y")}).%e ' /input.pdf</code></pre>
+    <pre><code><span>$ </span>exiftool '-filename&lt;$Title - ${Author} (${CreationDate#;DateFmt( "%Y")}).%e ' /input.pdf</code></pre>
+    <h6>• Recursively</h6>
+    <pre><code><span>$ </span>exiftool -r '-filename&lt;${Title} - ${Author}.%e ' /DIR -ext pdf</code></pre>
+    <pre><code><span>$ </span>exiftool -r '-filename&lt;${Title} - ${Author} (${CreationDate#;DateFmt( "%Y")}).%e ' /DIR -ext pdf</code></pre>
+    <h6>• Rename by title, author and date tags [Title - Author (Year).pdf] and insert snake case format</h6>
+    <pre><code><span>$ </span>exiftool -r '-filename&lt;${Title;s/ /_/g}_-_${Author;s/ /_/g}_(${CreationDate#;DateFmt( "%Y")}).%e ' /DIR -ext pdf</code></pre>
+    <br>
+    </details>
+  <!-- ############################## --> 
+  <details>
+    <summary>6.16 Backup</summary>
+      <br>
+      
+      https://github.com/bit-team/backintime<br>
+      https://github.com/teejee2008/timeshift<br>
+      https://github.com/restic/restic<br>
+      
+      <h4>Recover plan</h4>
+    <!-- ########## --> 
+      <h4>Backup</h4>
+    <!-- ##### --> 
+      <h5>Folders and Files Backup</h5>
+    <!-- ########## --> 
+      <h4>GRSYNC (GUI)</h4>
+    <pre><code><span>$ </span>sudo apt install grsync</code></pre>
+      <button onclick="navigator.clipboard.writeText('sudo apt install grsync')">Copy</button> 
+    <p>GRSYNC is a graphical interface for the rsync command line program. It can be used for local directory synchronization.</p>
+    <!-- ########## -->
+      <h4>Copy files and directories in CLI</h4> 
+      <h5>Full backup</h5>
+      <h6>Basic command</h6>
+    <pre><code><span>$ </span>cp ~/.config/example/ /media/backup</code></pre>
+      <button onclick="navigator.clipboard.writeText('cp ~/.config/example/ /media/backup')">Copy</button>
+    <!-- ##### --> 
+      <h5>Incremental backup</h5>
+      <h6>Basic command</h6>
+    <pre><code><span>$ </span>cp -vur ~/.config/example/ /media/backup</code></pre>
+      <button onclick="navigator.clipboard.writeText('cp -vur ~/.config/example/ /media/backup')">Copy</button> 
+    <p><small>
+    *This will preserve the files permissions/ownership.</small></p>
+      <h6>∙ To get the progress information</h6>
+    <pre><code><span>$</span>$ cp -a ~/.config/example/ /media/backup</code></pre>
+    <!-- ########## --> 
+      <h4>Transfer progress and speed when copying files in CLI</h4>
+    <!-- ##### --> 
+      <h5>RSYNC</h5>
+      https://wiki.archlinux.org/title/Rsync<br> 
+    <pre><code><span>$ </span>sudo apt install rsync</code></pre>
+      <button onclick="navigator.clipboard.writeText('sudo apt install rsync')">Copy</button> 
+      <ol>
+      <li><code>rsync</code> is a powerful tool for copying and syncing files locally or remotely.</li>
+      <li><code>-ah</code> options preserve permissions and ownership (-a for archive mode, -h for human-readable output).</li>
+      <li><code>--progress</code> shows the transfer progress and speed.</li>
+      <li><code>--info=progress2</code> provides detailed progress information.</li>
+      <li><code>--remove-sent-files</code> is useful for moving files after successful transfer.</li>
+      </ol>
+    <pre><code>
+• Copying 
+$ rsync -ah --progress ~/source /backup/destination 
+$ rsync -ah --info=progress2 ~/source /backup/destination 
+$ rsync -rah --info=progress2 ~/source /backup/destination 
+• Moving 
+$ rsync -ravzP --remove-sent-files ~/source /backup/destination 
+• Copy a File or Directory from Local to Remote Machine 
+$ rsync -ravP Directory/ server@192.168.1.56:/home/server
+</code></pre>
+      
+      <button onclick="navigator.clipboard.writeText('')">Copy</button>
+      
+    <p><small>
+    *This will preserve the files permissions and ownership.</small></p>
+    <!-- ##### --> 
+      <h5>DD</h5>
+      <ol>
+      <li><code>dd</code> is a command-line utility for copying and converting files and block-level data.</li>
+      <li>It preserves file permissions and ownership by default.</li>
+      <li><code>status=progress</code> option shows the progress of data transfer.</li>
+      </ol>
+      <pre>$ dd if=~/source of=/backup/destination status=progress</pre>
+    <p><small>
+    *This will preserve the files permissions and ownership.</small></p>
+    <!-- ##### --> 
+      <h5>PV</h5>
+    <pre><code><span>$ </span>sudo apt install pv</code></pre>
+      <button onclick="navigator.clipboard.writeText('sudo apt install pv')">Copy</button> 
+      <ol>
+      <li><code>pv</code> is a command-line tool to monitor the progress of data through a pipeline</li>
+      <li><code>pv ~/source &gt; /backup/destination</code> copies the content of ~/source to /backup/destination but doesn't preserve file permissions and ownership.</li>
+      </ol> <pre>$ pv ~/source &gt; /backup/destination</pre>
+    <p><small>
+    *This won't preserve the files permissions and ownership.</small></p>
+    <!-- ##### -->
+      <h5>CURL</h5> 
+      <pre><code><span>$ </span>sudo apt install curl</code></pre>
+      <button onclick="navigator.clipboard.writeText('sudo apt install curl')">Copy</button>
+      <ol>
+      <li><code>curl</code> is mainly used for transferring data over various protocols.</li>
+      <li><code>curl -o destination FILE://source</code> downloads a file from a URL (FILE://source) to a destination but doesn't preserve permissions and ownership.</li>
+      </ol> <pre>$ curl -o destination FILE://source</pre>
+    <p><small>
+    *This won't preserve the files permissions and ownership.</small></p>
+    <!-- ########## -->
+      <h4>Disk Imaging and Cloning</h4>
+      <h5>Clonezilla</h5>
+    <p>The Free and Open Source Software for Disk Imaging and Cloning</p> https://clonezilla.org//clonezilla-live-doc.php
+      <br>
+      <h5>Changing disk name</h5> 
+      <pre><code><span>$ </span>cnvt-ocs-dev -d /home/partimag 'image' 'sda3' 'sda2'</code></pre>
+    <!-- ########## -->
+      <h4>Data Integrity</h4> 
+      https://debian.org/doc/manuals/securing-debian-manual/ch04s17.en.html#check-integ
+      <br>
+      <br> 
+    </details>  
+  <!-- ############################## -->
+<details>
+  <summary>6.17 Online Utilities</summary>
+    <br>
+    <h4>Utilities</h4>
+    <h5>Message Header Analysis</h5>
+  <ul>
+    <li><a href="https://mha.azurewebsites.net">Message Header Analyzer (Azure)</a></li>
+    <li><a href="https://github.com/microsoft/MHA">Message Header Analyzer (GitHub)</a></li>
+  </ul>
+    <h5>Phishing and Email Reputation</h5>
+  <ul>
+    <li><a href="https://phishtank.org">PhishTank</a></li>
+    <li><a href="https://emailrep.io">Simple Email Reputation</a></li>
+    <li><a href="https://mxtoolbox.com/blacklists.aspx">Email Blacklist Check</a></li>
+  </ul>
+    <h5>Whois and DNS Lookup</h5>
+  <ul>
+    <li><a href="https://iana.org/whois">Whois</a></li>
+    <li><a href="https://viewdns.info">ViewDNS</a></li>
+    <li><a href="https://whoismydns.com">WhoisMyDNS</a></li>
+    <li><a href="https://nslookup.io">NSLookup</a></li>
+    <li><a href="https://my-addr.com">My-Addr</a></li>
+    <li><a href="https://mxtoolbox.com">MXToolbox</a></li>
+    <li><a href="https://dnsstuff.com">DNSstuff</a></li>
+  </ul>
+    <h5>Malware and Vulnerability Databases</h5>
+  <ul>
+    <li><a href="https://malpedia.caad.fkie.fraunhofer.de">Malpedia</a></li>
+    <li><a href="https://cvedetails.com">CVE Details</a></li>
+    <li><a href="https://exploit-db.com">Exploit Database</a></li>
+    <li><a href="https://fileinfo.co">FileInfo</a></li>
+    <li><a href="https://strontic.github.io/xcyclopedia">xCyclopedia</a></li>
+    <li><a href="https://winbindex.m417z.com">The Windows Binary Index</a></li>
+    <li><a href="https://applipedia.paloaltonetworks.com">Palo Alto Applipedia</a></li>
+    <li><a href="https://ultimatewindowssecurity.com/securitylog/encyclopedia">Windows Security Logs</a></li>
+    <li><a href="https://nvd.nist.gov">National Vulnerability Database (NVD)</a></li>
+  </ul>
+    <h5>Archiving Tools</h5>
+  <ul>
+    <li><a href="https://web.archive.org">Internet Archive (WayBackMachine)</a></li>
+    <li><a href="https://archive.ph">Archive Web Content</a></li>
+    <li><a href="https://archive.org">Internet Archive</a></li>
+    <li><a href="https://httrack.com">HTTrack</a></li>
+    <li><a href="https://perma.cc">Perma.cc</a></li>
+  </ul>
+    <h5>IP and MAC Address Tools</h5>
+  <ul>
+    <li><a href="https://ipvoid.com">IPVOID</a></li>
+    <li><a href="https://abuseipdb.com">AbuseIPDB</a></li>
+    <li><a href="https://grabify.link/">Grabify IP Logger</a></li>
+    <li><a href="https://iplogger.org">IP Logger</a></li>
+    <li><a href="https://iplogger.org/ip-tracker">IP Tracker</a></li>
+    <li><a href="https://iplogger.org/location-tracker">IP Location Tracker</a></li>
+    <li><a href="https://iplocation.net">IP Location</a></li>
+    <li><a href="https://iplogger.org/url_checker">URL Checker</a></li>
+    <li><a href="https://iplogger.org/mac-checker">MAC Address Lookup</a></li>
+    <li><a href="https://macvendors.com">MAC Vendor</a></li>
+    <li><a href="https://ip-api.com">Ip-api</a></li>
+    <li><a href="https://ipify.org">Ipify</a></li>
+    <li><a href="https://ipapi.co">Ipapi</a></li>
+    <li><a href="https://vpnapi.io">Vpnapi</a></li>
+    <li><a href="https://ipapi.com">Ipapi</a></li>
+    <li><a href="https://zmap.io">The ZMap Project</a></li>
+    <li><a href="https://wigle.net">WiGLE</a></li>
+    <li><a href="https://shodan.io">Shodan</a></li>
+    <li><a href="https://censys.io">Censys</a></li>
+  </ul>
+    <h5>URL and Virus Scanning</h5>
+  <ul>
+    <li><a href="https://urlscan.io">urlscan.io</a></li>
+    <li><a href="https://virustotal.com">Virus Total</a></li>
+    <li><a href="https://hybrid-analysis.com">Hybrid Analysis</a></li>
+    <li><a href="https://cuckoo.cert.ee">Cuckoo Sandbox</a></li>
+    <li><a href="https://otx.alienvault.com">AlienVault OTX</a></li>
+    <li><a href="https://exchange.xforce.ibmcloud.com">IBM X-Force Exchange</a></li>
+    <li><a href="https://talosintelligence.com/reputation_center">Cisco Talos</a></li>
+    <li><a href="https://maltiverse.com/collection">Maltiverse</a></li>
+    <li><a href="https://greynoise.io">GreyNoise</a></li>
+    <li><a href="https://isc.sans.edu">SANS Internet Storm Center</a></li>
+    <li><a href="https://intelx.io">Intelligence X</a></li>
+    <li><a href="https://metadefender.opswat.com">MetaDefender Cloud</a></li>
+    <li><a href="https://community.riskiq.com/home">RiskIQ Community Edition</a></li>
+    <li><a href="https://pulsedive.com">Pulsedive</a></li>
+    <li><a href="https://valhalla.nextron-systems.com">Valhalla YARA Rules</a></li>
+    <li><a href="https://any.run">ANY.RUN</a></li>
+    <li><a href="https://binvis.io">Binvis</a></li>
+    <li><a href="https://joesandbox.com">JoeSandbox</a></li>
+  </ul>
+    <h5>File Analysis and Reverse Engineering</h5>
+  <ul>
+    <li><a href="https://verexif.com/en/">Verexif</a></li>
+    <li><a href="https://revshells.com">Reverse Shell Generator</a></li>
+    <li><a href="https://hashes.com/en/decrypt/hash">Rainbow Tables (Hashes)</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Magic_number_(programming)">File Signatures ("Magic Numbers")</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/List_of_file_signatures">List of File Signatures</a></li>
+    <li><a href="https://gchq.github.io/CyberChef">CyberChef</a></li>
+    <li><a href="https://explainshell.com">explainshell</a></li>
+    <li><a href="https://virusshare.com">VirusShare</a></li>
+    <li><a href="https://reverse.it">Reverse.IT</a></li>
+  </ul>
+    <h5>Utilities and Development Tools</h5>
+  <ul>
+    <li><a href="https://epochconverter.com">Epoch Converter</a></li>
+    <li><a href="https://regex-generator.olafneumann.org">Regex Generator</a></li>
+    <li><a href="https://dehashed.com">DeHashed</a></li>
+    <li><a href="https://dencode.com">Dencode</a></li>
+    <li><a href="https://ctool.dev">Commonly Used Software Development Tools</a></li>
+    <li><a href="https://textfixer.com">Text Fixer</a></li>
+    <li><a href="https://ss64.com">SS64 Syntax Utils</a>
+    <li><a href="https://tools4noobs.com">Tools4noobs</a></li>
+    <li><a href="https://patorjk.com/software/taag">Text to ASCII Art Generator</a></li>
+    <li><a href="https://regex101.com">Regex101</a></li>
+    <li><a href="https://crontab.guru">Cron Expression Generator</a></li>
+  </ul>
+    <h5>OSINT and Breach Checking</h5>
+  <ul>
+    <li><a href="https://haveibeenpwned.com">Have I Been Pwned</a></li>
+    <li><a href="https://namechk.com">Name OSINT</a></li>
+    <li><a href="https://breachdirectory.org">Breach Directory</a></li>
+    <li><a href="https://hunter.io">Hunter.io</a></li>
+    <li><a href="https://inteltechniques.com">Intel Techniques</a></li>
+  </ul>
+    <h5>Translation and Others Tools</h5>
+  <ul>
+    <li><a href="https://deepl.com/translator">DeepL</a></li>
+    <li><a href="https://markdowntoolbox.com">Markdown Toolbox</a></li>
+    <li><a href="https://mermaid.live">Mermaid</a></li>
+    <li><a href="https://tableconvert.com">Table Convert</a></li>
+    <li><a href="https://tablesgenerator.com">Tables Generator</a></li>
+    <li><a href="https://kutt.it">Kutt your links shorter</a></li>
+    <li><a href="https://grammarly.com">Grammarly</a></li>
+  </ul>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>6.18 Tips and Tricks</summary>
+    <br>
+    <h4>Visualize folder tree</h4> 
+    <pre><code><span>$ </span>sudo apt install tree</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install tree')">Copy</button> 
+<pre>
+• List directories only 
+$ tree -d • Control the depth of the tree 
+$ tree -d -L 2 .
+</pre>
+  <!-- ########## -->
+    <h4>Schedule a Shutdown in Command Line</h4>
+    <h5>Shutdown at specific time</h5> 
+    <pre>$ sudo shutdown -h 23:59</pre>
+  <!-- ##### -->
+    <h5>Shutdown at specific date and time</h5>
+  <p>Since 24 hours (24×60=1440 minutes), you could adapt.</p> 
+  <pre>$ sudo shutdown +1440</pre>
+  <p>Execute shutdown +60 at a specific time and day:</p> 
+  <pre>$ sudo apt install at $ sudo echo "shutdown +767" | at 08:46am 2024-09-11</pre>
+  <!-- ########## -->
+    <h4>Set an Alarm from the Terminal</h4> 
+    <pre>$ sleep 5m && mpv alarm.mp3</pre>
+  <!-- ########## -->
+    <h4>Use Terminal as a Stopwatch</h4> 
+    <pre>$ time cat CTRL + C</pre>
+  <!-- ########## -->
+    <h4>Commands for you to find large files</h4> 
+<pre>
+$ df -h 
+$ df -h /home/$USER/Downloads 
+$ du -h ~/Downloads | sort -rh | head -n 10 
+$ find ~/Downloads -type f -size +3G -exec du -h {} + | sort -rh 
+$ find /home/$USER/Downloads -xdev -type f -size +1G 
+$ find . -size +1M -printf "%p \t%k kb\n" | sort -k2n
+</pre>
+  <!-- ##### -->
+    <h5>Find the largest packages</h5> 
+    <pre><code><span>$ </span>dpkg-query --show --showformat='${Package;-50}\t${Installed-Size}\n' | sort -k 2 -n | grep -v deinstall | awk '{printf "%.3f MB \t %s\n", $2/(1024), $1}'</code></pre>
+  <!-- ########## -->
+    <h4>Editig text with sed in terminal</h4>
+    <p>Be cautious of using <code>-n</code> (quiet) with <code>-i</code> (in-place): the former disables aut in-place omatic printing of lines and the latter changes the file in-place without a backup. Make a backup before editing <code>-i.bak</code> .</p>
+  <pre><code><span>$ </span>sed --options [optional SCRIPT] [INPUT STREAM]</code></pre>
+    <button onclick="navigator.clipboard.writeText('sed --options [optional SCRIPT] [INPUT STREAM]')">Copy</button>
+    
+<pre>
+• Append line after match 
+$ sed '/option/a Hello World' *.txt • Insert line before match 
+$ sed '/option\/i Hello World' *.txt • Append text after a line for the specific match only 
+$ sed '0,/option\/a Hello World' *.txt • Append text before a line for the specific match only 
+$ sed '0,/option\/i Hello World' *.txt • Inserting a text file. Content of text1 after the first line of text2.txt 
+$ sed -i -e '1r text1' text2.txt
+    </pre>
+    
+<pre>
+• Append string in a multiline text 
+$ sed -i '/pattern/ r snippet.txt' filename • Batch inserting specific text after pattern in .txt files 
+$ sed -i '/SearchPattern/a New Text' *.txt 
+$ find . -name '*.txt' -exec sed -i -e 's/textp1/textp2 text.txt/g' {} \;
+    </pre>
+    
+<pre>
+• Replacement syntax 
+$ sed s/regexp/replacement/[flags] • Replace closed with open on lines containing code 
+$ sed '/code/ s/closed/open/' text.txt • Replace all closed with open on lines containing code 
+$ sed '/code/ s/closed/open/g' text.txt • Replace all occurrences of ‘hello’ to ‘world’ in the file input.txt: 
+$ sed 's/hello/world/g' input.txt &gt; output.txt
+</pre>
+    
+<pre>
+• Batch removing specific text in .txt files, the –i option tells to sed make the change in place, inside the file itself 
+$ sed -i 's/text//g' *.txt • Batch making a backup before editing the file, by specifying a suffix when using –i 
+$ sed -i.bak 's/word//g' *.txt
+    </pre>
+  <!-- ##### -->
+    <h5>• Convert Lowercase to Uppercase Characters</h5>     
+    <pre><code><span>$ </span>sed -i 's/.*/\U&/' text.txt</code></pre>
+    <pre><code><span>$ </span>sed 's/[a-z]/\U&/g' &lt; ./myfile.txt</code></pre> 
+    <pre><code><span>$ </span>echo "HELLO WORLD " | sed 's/[A-Z]/\L&/g'</code></pre>
+    <h5>• Convert Uppercase to Lowercase Characters</h5> 
+    <pre><code><span>$ </span>echo "hello world" | sed 's/[a-z]/\U&/g'</code></pre>
+    <h5>• Remove leading spaces and tabs from line</h5> 
+    <pre><code><span>$ </span>sed 's/^[ \t]*//' text.txt</code></pre>
+    <h5>• Remove all digits in a range</h5> 
+    <pre><code><span>$ </span>sed 's/[0-9]//g' text.txt</code></pre>
+    <pre>*Note, in terminal: Alt + u Make uppercase from the cursor position to the end of the word. Alt + l Make lowercase from the cursor position to the end of the word/text.</pre>
+  <!-- ########## -->
+    <h4>Reopen with maximized browser</h4>
+  <p>To open browser with maximized window use "--start-maximized" as a parameter.</p> 
+  <pre>$ nano /home/user/Desktop/browser.desktop [Desktop Entry] Exec=/usr/bin/browser --start-maximized %U</pre>
+  <!-- ########## -->
+    <h4>Geting windows sizes in shell</h4> 
+    <pre>$ wmctrl -lG</pre>
+  <!-- ########## -->
+    <h4>Changing default editor for <code>visudo</code></h4>
+  <p>By default, Linux systems use the <code>$VISUAL</code> or <code>$EDITOR</code> environment variables (usually defined in your <code>~/.bashrc</code> file or <code>/etc/profile</code> ) as the default editor the <a href="https://linux.die.net/man/8/visudo">visudo</a> command. If you&#39;d prefer to use a different editor, such as <a href="https://nano-editor.org/">ano</a> , you can use either of these methods.</p>
+    <ol>
+    <li> To temporarily use a different editor, run: <pre><code><span>$ </span>sudo EDITOR=/path/to/editor visudo</code></pre> For example, to use <code>ano</code> , you would run: <pre><code><span>$ </span>sudo EDITOR=nano visudo</code></pre> </li>
+    <li> To permanently change the default editor, edit the <code>/etc/sudoers</code> file (you can use the temporary method above!) and add the following line to the file near the top, but after <code>Defaults env_reset</code> : <pre><code>Defaults <span> editor=/path/to/editor </span></code></pre> </li>
+    </ol>
+  <p><a href="https://unix.stackexchange.com/questions/4408/how-to-set-visudo-to-use-a-different-editor-than-the-default-on-fedora">Reference: https://unix.stackexchange.com/questions/4408/how-to-set-visudo-to-use-a-different-editor-than-the-default-on-fedora</a></p>
+  <!-- ########## -->
+    <h4>Test if a bash shell built-in command or external program package</h4> http://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html https://gnu.org/software/bash/manual/html_node/Shell-Builtin-Commands.html
+    <br> http://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html#tag_02_04
+    <br> https://en.wikipedia.org/wiki/POSIX
+    <br> https://packages.debian.org/stable
+    <br><a href="http://www.gsp.com/cgi-bin/man.cgi?section=1&topic=zshbuiltins">http://www.gsp.com/cgi-bin/man.cgi?section=1&topic=zshbuiltins</a> 
+<pre>
+• Use type command 
+$ type -t cd 
+$ type -t ls 
+$ type -t test 
+$ type -t echo 
+$ type -t apt 
+$ type -t grep 
+$ type -t for 
+• Use builtin command 
+$ builtin cd 
+$ builtin ls 
+$ builtin test 
+$ builtin echo 
+$ builtin apt 
+$ builtin grep 
+$ builtin for 
+• You can use the builtin command enable to show the list of builtin commands and their activation state 
+$ enable -a
+</pre>
+  <p>Why use the built-in command? It does not depend on granting permissions to install packages, work on reduced sets like linux embedded hardwares (IoTs), reduces the attack surface and has better performance.</p>
+  <!-- ########## -->
+    <h4>Changing terminal command output language</h4> 
+    
+<pre>
+• For just a single command, from native language to english 
+$ LC_ALL=C man ls 
+$ LC_ALL=C sudo apt update
+</pre>
+  <!-- ########## -->
+    <h4>Grep - Global regular expression search</h4> 
+    
+<pre>
+• Commands
+$ man find | grep -A 4 -- '-size' 
+• 
+$ man find | grep -e '-size' 
+</pre>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+   <summary>6.19 Artificial Intelligence</summary>
+   <br>
+   <h4>ChatGPT</h4>
+    
+   <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/04_SOFTWARE/06_Artificial_Intelligence">04_SOFTWARE/06_Artificial_Intelligence</a></h4>
+    
+   <h4>Open-Source LLMs Locally</h4>
+    <table>
+      <tr>
+        <th>Feature</th>
+        <th><a href="https://gpt4all.io" target="_blank">GPT4All</a></th>
+        <th><a href="https://github.com/imartinez/privateGPT" target="_blank">privateGPT</a></th>
+        <th><a href="https://github.com/PromtEngineer/localGPT" target="_blank">localGPT</a></th>
+      </tr>
+      <tr>
+        <td>Aboout</td>
+        <td>Privacy-oriented software for chatting with large language models that run on your own computer.</td>
+        <td>Interact with your documents using the power of GPT, 100% privately, no data leaks</td>
+        <td>Chat with your documents on your local device using GPT models. No data leaves your device and 100% private.</td>
+      </tr>
+      <tr>
+        <td>Resource Requirements</td>
+        <td> - CPU: 4 cores recommended
+          <br> - RAM: 16 GB recommended
+          <br> - Disk: Varies by model size (10-50 GB)
+          <br> - GPU: Optional, improves performance </td>
+        <td> - CPU: 4 cores recommended
+          <br> - RAM: 16 GB recommended
+          <br> - Disk: 10-20 GB
+          <br> - GPU: Optional, improves performance </td>
+        <td> - CPU: 4 cores recommended
+          <br> - RAM: 16 GB recommended
+          <br> - Disk: Varies by model size (10-50 GB)
+          <br> - GPU: Recommended for large models </td>
+      </tr>
+      <tr>
+        <td>Installation Complexity</td>
+        <td>Medium - Requires downloading models and setting up environment</td>
+        <td>Medium - Python environment setup and model downloading</td>
+        <td>Medium - Requires setting up Python environment and dependencies</td>
+      </tr>
+      <tr>
+        <td>Supported Models and Characteristics</td>
+        <td>- GPT-3: 175B parameters, state-of-the-art performance, Apache 2.0
+          <br> - GPT-J: 6B parameters, open-source alternative to GPT-3, Apache 2.0
+          <br> - GPT-Neo: 2.7B, 1.3B parameters, lightweight models, MIT</td>
+        <td>- GPT-3: 175B parameters, high accuracy and versatility, Apache 2.0
+          <br> - LLaMA: Various sizes, efficient and scalable, custom licenses (research use only)</td>
+        <td>- GPT-3: 175B parameters, high accuracy and versatility, Apache 2.0
+          <br> - GPT-Neo: 2.7B, 1.3B parameters, lightweight models, MIT
+          <br> - BERT: Various sizes, strong at understanding context, Apache 2.0</td>
+        <tr>
+          <td>Community Support</td>
+          <td>- Support: Active - Forums, GitHub issues, community forums
+            <br> - Documentation: Comprehensive - Detailed setup and usage instructions available</td>
+          <td>- Support: Active - GitHub discussions, community contributions
+            <br> - Documentation: Good - Includes setup guide and usage examples</td>
+          <td>- Support: Active - GitHub issues and community support
+            <br> - Documentation: Good - Detailed README with setup and usage instructions</td>
+        </tr>
+        <tr>
+          <td>License</td>
+          <td>Apache 2.0
+            <br> - Allows commercial use
+            <br> - Permissive, widely used
+            <br> - Requires attribution and disclaimer</td>
+          <td>MIT
+            <br> - Highly permissive
+            <br> - Allows commercial use
+            <br> - No warranty or liability</td>
+          <td>MIT
+            <br> - Highly permissive
+            <br> - Allows commercial use
+            <br> - No warranty or liability</td>
+        </tr>
+    </table>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>6.20 Metaverse</summary>
+    <br>
+    <h4>Vircadia - Open Source Metaverse Platform</h4> 
+    https://vircadia.com
+    <br>
+    <a href="https://youtube.com/watch?v=4ZPz4rvMEwk"><img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D4ZPz4rvMEwk" alt="An introduction to Vircadia - an Open Source desktop and VR metaverse" title="An introduction to Vircadia - an Open Source desktop and VR metaverse"></a>
+    <br>
+  <!-- ########## -->
+    <h4>Overte - Open source virtual worlds and social VR</h4> 
+    https://overte.org
+    <br>
+    <a href="https://youtube.com/watch?v=-1tU6H2A7pQ"><img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D-1tU6H2A7pQ" alt="Introduction to the Overte project" title="Introduction to the Overte project"></a>
+    <br>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>6.21 Fun</summary>
+    <br>
+    <h4>Steam OS</h4> <a href="https://store.steampowered.com/steamos">Steam OS</a>
+    <br>
+  <!-- ########## -->
+    <h4>Kodi.tv</h4> <a href="https://kodi.tv">Kodi.tv</a>
+    <br>
+  <!-- ########## -->
+    <h4>LibreELEC.tv</h4> <a href="https://wiki.libreelec.tv/">LibreELEC.tv</a>
+    <br><a href="https://kodi.wiki/view/HOW-TO:Install_Kodi_on_Raspberry_Pi">HOW-TO:Install Kodi on Raspberry Pi</a>
+    <br>
+  <!-- ########## -->
+    <h4>Linux distribution that transforms devices in consoles</h4> <a href="https://batocera.org">Batocera</a>
+    <br>
+  <br> 
+  </details>
+</div>
+  <hr>
+  <!-- ############################################################-->
+  <h2>7. DEV SETUP</h2>
+  <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
+  <details>
+  <summary>7.01 System Tweaks</summary>
+    <br>
+    <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/05_DEVELOPMENT">05_DEVELOPMENT</a></h4>
+    <h3>Sytem Tweaks</h3>
+    <h5>∙ Terminal</h5>
+    <h5>∙ Window Shortcuts</h5>
+    <h5>∙ Passwords</h5>
+    <h5>Mananger</h5>
+    <h5>SSH</h5>
+    <h5>∙ Interface</h5>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>7.02 IDEs</summary>
+    <br>
+    <h3>IDEs</h3>
+  <!-- ########## -->
+    <h4>• NeoVim</h4> 
+    https://neovim.io
+    <br> https://neovim.io/doc/user/starting.html
+    <br> https://neovim.io/doc/user/usr_01.html#vimtutor
+    <br> https://github.com/neovim/nvim-lspconfig#suggested-configuration
+    <br> https://youtube.com/watch?v=RZ4p-saaQkc
+    <br> https://github.com/rockerBOO/awesome-neovim
+    <br> https://reddit.com/r/neovim
+    <br>
+  <!-- ##### -->
+    <h5>∙ Setups</h5> 
+    https://github.com/nvim-lua/kickstart.nvim
+    <br> https://github.com/LazyVim/LazyVim
+    <br> https://github.com/LunarVim/LunarVim
+    <br> https://github.com/NvChad/NvChad
+    <br> https://spacevim.org/
+    <br>
+  <!-- ##### -->
+    <h5>∙ Plugins</h5> 
+    https://siddharta.me/configuring-neovim-as-a-python-ide-2023.html
+    <br> https://thevaluable.dev/vim-php-ide/
+    <br>
+  <!-- ########## -->
+    <h4>• VSCodium</h4> 
+    https://github.com/VSCodium/vscodium
+    <br> https://reddit.com/r/vscodium
+    <br>
+  <!-- ##### -->
+    <h5>∙ Extensions</h5>
+  <!-- ########## -->
+    <h4>• Sublime-text®</h4> 
+    https://sublimetext.com/docs/linux_repositories.html
+    <br> https://reddit.com/r/sublimetext
+    <br>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>7.03 Git & GitHub</summary>
+    <br>
+    <h3>Git & GitHub</h3>
+    <h4>•</h4>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>7.04 Languages</summary>
+    <br>
+    <h3>Languages</h3>
+    <h4>• C, C++, C#</h4>
+    <h4>• Python</h4>
+    <h4>• Rust</h4>
+    <h4>• PHP</h4>
+    <h4>• Ruby</h4>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>7.05 Others</summary>
+    <br>
+    <h3>Others</h3>
+    <h4>• Deploy</h4>
+    <h4>• Database</h4>
+    <h4>• Projects Folder</h4>
+    <h4>• Team</h4>
+  <br> 
+</details>
+  <hr>
+  <!-- ############################################################-->
+  <h2>8. SYSADMIN</h2>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
+<details>
+  <summary>8.01 Sysadmin</summary>
+    <br>
+    <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/06_SYSADMIN">06_SYSADMIN</a></h4>
+  <br> 
+</details>
+  <hr>
+  <!-- ############################################################-->
+  <h2>9. TROUBLESHOOTING</h2>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
+<details>
+  <summary>9.01 Linux Community</summary>
+    <br>
+    <h4>Linux Community</h4>
+    https://forums.debian.net
+    <br> https://unix.stackexchange.com
+    <br> https://forum.linuxfoundation.org
+    <br> https://askubuntu.com
+    <br> https://docs.kernel.org
+    <br> https://linuxquestions.org
+    <br> https://superuser.com
+    <br> https://stackoverflow.com
+    <br> https://howtoforge.com
+    <br> https://security.stackexchange.com
+    <br> https://data.stackexchange.com
+    <br> https://elinux.org
+    <br> https://hardforum.com
+    <br> https://snbforums.com
+    <br> https://reddit.com/r/debian
+    <br> https://reddit.com/r/linuxquestions
+    <br> https://reddit.com/r/sysadmin
+    <br>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>9.02 Audit Logs</summary>
+    <br>
+    <h4>Audit Logs</h4> 
+    <pre><code><span>$ </span>sudo dmesg --since -5m</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dmesg --since -5m')">Copy</button> 
+    <pre><code><span>$ </span>sudo dmesg -w</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dmesg -w')">Copy</button> 
+    <pre><code><span>$ </span>sudo dmesg | grep iwl</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dmesg | grep iwl')">Copy</button> 
+    <pre><code><span>$ </span>sudo dmesg | grep rtw</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dmesg | grep rtw')">Copy</button> 
+    <pre><code><span>$ </span>sudo dmesg | grep ath</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dmesg | grep ath')">Copy</button> 
+    <pre><code><span>$ </span>sudo dmesg -w</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dmesg -w')">Copy</button> 
+    <pre><code><span>$ </span>sudo dmesg -T | grep xhci</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dmesg -T | grep xhci')">Copy</button> 
+    <pre><code><span>$ </span>sudo dmesg -T | grep xhci</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dmesg -T | grep xhci')">Copy</button> 
+    <pre><code><span>$ </span>sudo journalctl -k -b -1</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo journalctl -k -b -1')">Copy</button> 
+    <pre><code><span>$ </span>sudo journalctl -p 3 -xb</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo journalctl -p 3 -xb')">Copy</button> 
+    <pre><code><span>$ </span>sudo journalctl -b | grep -i net</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo journalctl -b | grep -i net')">Copy</button> 
+    <pre><code><span>$ </span>sudo journalctl -S -1h00m</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo journalctl -S -1h00m')">Copy</button> 
+    <pre><code><span>$ </span>sudo journalctl -S today</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo journalctl -S today')">Copy</button> 
+    <pre><code><span>$ </span>sudo journalctl -S today -u name.service</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo journalctl -S today -u name.service')">Copy</button> 
+    <pre><code><span>$ </span>sudo journalctl -S "2024-01-01 00:00:00"</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo journalctl -S &quot;2024-01-01 00:00:00&quot;')">Copy</button>
+    <pre><code><span>$ </span>sudo journalctl -S "2024-01-01 00:00:00" > ~/journal.txt</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo journalctl -S &quot;2024-01-01 00:00:00&quot; &gt; ~/journal.txt')">Copy</button>
+    <pre><code><span>$ </span>grep " install" /var/log/dpkg.log</code></pre>
+    <button onclick="navigator.clipboard.writeText('grep &quot; install&quot; /var/log/dpkg.log')">Copy</button>
+    <pre><code><span>$ </span>sudo tail /var/log/syslog</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo tail /var/log/syslog')">Copy</button> 
+    <pre><code><span>$ </span>sudo tail -n20 /var/log/syslog</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo tail -n20 /var/log/syslog')">Copy</button> 
+    <pre><code><span>$ </span>sudo tail -f /var/log/syslog</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo tail -f /var/log/syslog')">Copy</button> 
+    <pre><code><span>$ </span>head /home/$USER/file.txt</code></pre>
+    <button onclick="navigator.clipboard.writeText('head /home/$USER/file.txt')">Copy</button> 
+    <pre><code><span>$ </span>head -n20 /home/$USER/file.txt</code></pre>
+    <button onclick="navigator.clipboard.writeText('head -n20 /home/$USER/file.txt')">Copy</button>
+  <!-- ########## -->
+    <h4>Terminal output in English</h4>
+  <p>To only run a single command in English, you can write the LANG=C directly in front of the command itself, e.g.</p>
+  <pre><code>LANG=C sudo apt-get update</code></pre>
+  <p>All program output will be in English. You can add a line</p>
+  <pre><code>export LANG=C</code></pre>
+  <p>to the end of your ~/.bashrc file and restart the terminal.</p>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>9.03 System Boot</summary>
+    <br> https://wiki.debian.org/KernelHeaders
+    <br>
+    <h4>Grub</h4>
+  <p>The simplest way to display your Grub is to press and hold the <code>shift</code> button while booting.</p>
+  <!-- ########## -->
+    <h4>System Boot</h4>
+    <h5>∙ Rescue Mode</h5>
+  <p>Debian Live in Rescue Mode</p>
+    <h5>∙ rEFInd (GUI)</h5>
+  <p>Download rEFInd rescue media</p> https://rodsbooks.com/refind/getting.html
+    <br>
+    <h5>∙ Grub customizer (GUI)</h5> 
+    <pre><code><span>$ </span>sudo apt install grub-customizer</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install grub-customizer')">Copy</button>
+  <!-- ########## -->
+    <h4>∙ Restoring grub</h4> 
+    <pre><code><span>$ </span>sudo cp /usr/share/grub/default/grub /etc/default/grub</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo cp /usr/share/grub/default/grub /etc/default/grub')">Copy</button> 
+    <pre><code><span>$ </span>sudo update-grub</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo update-grub')">Copy</button> 
+    <pre><code><span>$ </span>sudo apt -f install</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt -f install')">Copy</button>
+  <!-- ########## -->
+    <h4>∙ Menuentries debug</h4> 
+    <pre><code><span>$ </span>sudo ls /boot</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo ls /boot')">Copy</button> 
+    <pre><code><span>$ </span>sudo ls -l /vmlinuz</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo ls -l /vmlinuz')">Copy</button> 
+    <pre><code><span>$ </span>sudo ls /boot | grep vmlinuz</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo ls /boot | grep vmlinuz')">Copy</button> 
+    <pre><code><span>$ </span>sudo dpkg -l | grep grub</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dpkg -l | grep grub')">Copy</button> 
+    <pre><code><span>$ </span>sudo dpkg -l | grep linux-image</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dpkg -l | grep linux-image')">Copy</button> 
+    <pre><code><span>$ </span>sudo dpkg -l | grep linux-headers</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dpkg -l | grep linux-headers')">Copy</button> 
+    <pre><code><span>$ </span>sudo ls /sys/firmware</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo ls /sys/firmware')">Copy</button> 
+    <pre><code><span>$ </span>sudo cat /etc/default/grub</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo cat /etc/default/grub')">Copy</button> 
+    <pre><code><span>$ </span>sudo cat /boot/grub/grub.cfg</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo cat /boot/grub/grub.cfg')">Copy</button> 
+    <pre><code><span>$ </span>sudo cat /boot/grub/grub.cfg | grep menuentry</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo cat /boot/grub/grub.cfg | grep menuentry')">Copy</button> 
+    <pre><code><span>$ </span>sudo cat /boot/grub/grub.cfg | grep submenu</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo cat /boot/grub/grub.cfg | grep submenu')">Copy</button> 
+    <pre><code><span>$ </span>sudo cat /etc/grub.d</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo cat /etc/grub.d')">Copy</button> 
+    <pre><code><span>$ </span>sudo cat /etc/grub.d/40_custom</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo cat /etc/grub.d/40_custom')">Copy</button>
+    <h5>∙ Chroot</h5> 
+    <pre><code><span>$ </span>sudo</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo')">Copy</button>
+  <!-- ########## -->
+    <h4>∙ Grub Issues</h4>
+  <p>Removable Medium Boot</p>
+  <pre><code><span>$ </span>sudo grub-install /dev/sdX -v --force-extra-removable</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo grub-install /dev/sdX -v --force-extra-removable')">Copy</button>
+  <p>Cryptab</p>
+  <pre><code><span>$ </span>sudo nano /boot/grub/grub.cfg</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo nano /boot/grub/grub.cfg')">Copy</button> <pre>GRUB_DISABLE_OS_PROBER=false</pre>
+    <pre>GRUB_ENABLE_CRYPTODISK=y</pre>
+    <pre><code><span>$ </span>sudo update-grub</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo update-grub')">Copy</button>
+  <!-- ########## -->
+    <h4>Remove Old Kernels</h4>
+  <p>An easy way to remove old kernels is to use Synaptic Package Manager to search for "linux-image" and "linux-headers" and remove one except the version you are currently using.</p>
+  <pre><code><span>$ </span>sudo apt remove linux-image-6.1.0-15-amd64</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt remove linux-image-6.1.0-15-amd64')">Copy</button> 
+    <pre><code><span>$ sudo apt-get purge linux-image-6.1.0-15-amd64 </span></code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt-get purge linux-image-6.1.0-15-amd64')">Copy</button>
+    <h5>Not recommended</h5> 
+    <pre><code><span>$ </span>dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d'</code></pre>
+    <pre><code><span>$ </span>sudo dpkg -l | grep linux-image</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dpkg -l | grep linux-image')">Copy</button> 
+    <pre><code><span>$ </span>sudo dpkg -l | grep linux-headers</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dpkg -l | grep linux-headers')">Copy</button> 
+    <pre><code><span>$ </span>sudo ls /boot</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo ls /boot')">Copy</button> 
+    <pre><code><span>$ </span>sudo ls /lib/modules</code></pre>
+    <button onclick="navigator.clipboard.writeText('/lib/modules')">Copy</button> 
+    <pre><code><span>$ </span>sudo rm /boot/*-4.18.0-{15,17}-*</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo rm /boot/*-4.18.0-{15,17}-*')">Copy</button> 
+    <pre><code><span>$ </span>sudo dpkg --configure -a</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dpkg --configure -a')">Copy</button> 
+    <pre><code><span>$ </span>sudo apt install -f</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install -f')">Copy</button> 
+    <pre><code><span>$ </span>sudo update-grub</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo update-grub')">Copy</button> 
+    <pre><code><span>$ </span>sudo apt autoremove</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt autoremove')">Copy</button> 
+    <pre><code><span>$ </span>sudo apt upgrade</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt upgrade')">Copy</button>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>9.04 Display Manager and Monitors</summary>
+    <br>
+    <h4>Display Manager and Monitors</h4> 
+    https://wiki.archlinux.org/title/Display_manager
+    <br> https://baeldung.com/linux/display-managers-install-uninstall
+    <br> https://github.com/sddm/sddm/releases
+    <br>
+  <!-- ########## -->
+    <h4>Brightness</h4> 
+    <pre><code><span>$ </span>sudo apt install -y brightnessctl</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install -y brightnessctl')">Copy</button> 
+    <pre><code><span>$ </span>brightnessctl s 100%</code></pre>
+    <button onclick="navigator.clipboard.writeText('brightnessctl s 100%')">Copy</button> 
+    <pre><code><span>$ </span>brightnessctl s 70%</code></pre>
+    <button onclick="navigator.clipboard.writeText('brightnessctl s 70%')">Copy</button> 
+    <pre><code><span>$ </span>brightnessctl s 50%</code></pre>
+    <button onclick="navigator.clipboard.writeText('brightnessctl s 50%')">Copy</button>
+  <!-- ########## -->
+    <h4>Environment variables</h4>
+  <p>Qt applications can be scaled with the following environment variables, ote that many applications are hard-coding sizing and font and thus the result on such app may not be as expected.</p>
+  <pre><code><span>$ </span>export QT_AUTO_SCREEN_SET_FACTOR=0</code></pre>
+    <button onclick="navigator.clipboard.writeText('export QT_AUTO_SCREEN_SET_FACTOR=0')">Copy</button> 
+    <pre><code><span>$ </span>export QT_SCALE_FACTOR=1</code></pre>
+    <button onclick="navigator.clipboard.writeText('export QT_SCALE_FACTOR=1')">Copy</button> 
+    <pre><code><span>$ </span>export QT_FONT_DPI=96</code></pre>
+    <button onclick="navigator.clipboard.writeText('export QT_FONT_DPI=96')">Copy</button>
+  <!-- ########## -->
+    <h4>Monitor and resolution</h4> 
+    https://dpi.lv
+    <br> <pre><code><span>$ </span>sudo apt install arandr</code></pre>
+    <pre>
+    <code><span>$ </span>sudo apt install xserver-xorg-input-all</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install xserver-xorg-input-all')">Copy</button>
+  <p>Debug commands</p>
+  <pre><code><span>$ </span>sudo apt install inxi</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install inxi')">Copy</button> 
+    <pre><code><span>$ </span>sudo inxi -G</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo inxi -G')">Copy</button> 
+    <pre><code><span>$ </span>sudo inxi -Fxxrzc0</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo inxi -Fxxrzc0')">Copy</button> 
+    <pre><code><span>$ </span>sudo xrandr --output eDP-1 --primary</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo xrandr --output eDP-1 --primary')">Copy</button> 
+    <pre><code><span>$ </span>sudo xrandr --output DP2 --auto --left-to DP1</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo xrandr --output DP2 --auto --left-to DP1')">Copy</button> 
+    <pre><code><span>$ </span>sudo xrandr --output LVDS1 --panning 1920x1080 --scale 1.406x1.406</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo xrandr --output LVDS1 --panning 1920x1080 --scale 1.406x1.406')">Copy</button> 
+    <pre><code><span>$ </span>sudo xrandr --output LVDS1 --panning 1366x768 --scale 1x1</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo xrandr --output LVDS1 --panning 1366x768 --scale 1x1')">Copy</button>
+  <p>You can make this change permanent for a specific user by adding this to the startup applications:</p>
+  <pre><code><span>$ </span>/usr/bin/xrandr --output LVDS1 --panning 1920x1080 --scale 1.406x1.406</code></pre>
+    <button onclick="navigator.clipboard.writeText('/usr/bin/xrandr --output LVDS1 --panning 1920x1080 --scale 1.406x1.406')">Copy</button>
+  <p>*Firefox and Thunderbird - Advanced Settings</p>
+  <pre><code>layout.css.devPixelsPerPx 0.8</code></pre>
+  <!-- ########## -->
+    <h4>SSDM</h4>
+  <p>Debug commands</p>
+  <pre><code><span>$ </span>sudo systemctl status default.target</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo systemctl status default.target')">Copy</button> 
+    <pre><code><span>$ </span>sudo systemctl status sddm.service</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo systemctl status sddm.service')">Copy</button> 
+    <pre><code><span>$ </span>sudo systemctl list-unit-files | grep sddm</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo systemctl list-unit-files | grep sddm')">Copy</button> 
+    <pre><code><span>$ </span>sudo ls -la /etc/systemd/system/display-manager.service</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo ls -la /etc/systemd/system/display-manager.service')">Copy</button> 
+    <pre><code><span>$ </span>cat /proc/cmdline</code></pre>
+    <button onclick="navigator.clipboard.writeText('cat /proc/cmdline')">Copy</button> 
+    <pre><code><span>$ </span>sudo dpkg-reconfigure sddm</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dpkg-reconfigure sddm')">Copy</button>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>9.05 Network</summary>
+    <br> https://wiki.ubuntu.com/X/Debugging/WirelessWithoutX
+    <br> https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi
+    <br> https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/intel
+    <br> https://intel.com/content/www/us/en/support/articles/000005511/network-and-io/wireless.html
+    <br> https://wiki.archlinux.org/title/Power_management#USB_autosuspend
+    <br> https://docs.kernel.org/driver-api/usb/power-management.html
+    <br>
+    <h4>Troubleshooting a network using OSI model, starting from physical to application layer.</h4>
+  <!-- ##### -->
+    <h5>First things first:</h5> 
+    <pre><code><span>$ </span>sudo apt install firmware-realtek</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install firmware-realtek')">Copy</button> or <pre><code><span>$ </span>sudo apt install firmware-iwlwifi</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install firmware-iwlwifi')">Copy</button> or <pre><code><span>$ </span>sudo apt install firmware-atheros</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install firmware-atheros')">Copy</button>
+  <!-- ########## -->
+    <h4>• Network</h4>
+    <h5>Debug WiFi by OSI Layers</h5>
+    <h5>Application Layer (7)</h5>
+  <ul>
+    <li><code>$ nmcli radio wifi off</code></li>
+    <li><code>$ nmcli radio wifi on</code></li>
+    <li><code>$ sudo ls /etc/NetworkManager/</code></li>
+    <li><code>$ sudo cat /etc/NetworkManager/NetworkManager.conf</code></li>
+    <li><code>$ sudo journalctl -u NetworkManager</code></li>
+    <li><code>$ sudo journalctl -xe NM_CONNECTION=123456 + NM_DEVICE=eth0</code></li>
+    <li><code>$ sudo systemctl status NetworkManager.service</code></li>
+    <li><code>$ sudo systemctl restart NetworkManager.service</code></li>
+    <li><code>$ sudo systemctl status resolvconf.service</code></li>
+    <li><code>$ sudo systemctl restart resolvconf.service</code></li>
+    <li><code>$ sudo systemctl status systemd-resolved.service</code></li>
+    <li><code>$ sudo systemctl restart systemd-resolved.service</code></li>
+  </ul>
+    <h5>Presentation Layer (6)</h5>
+  <ul>
+    <li><code>$ sudo cat /etc/resolv.conf</code></li>
+    <li><code>$ sudo cat /run/resolvconf/resolv.conf</code></li>
+    <li><code>$ sudo cat /lib/systemd/resolv.conf</code></li>
+    <li><code>$ sudo cat /etc/systemd/resolved.conf</code></li>
+    <li><code>$ sudo cat /run/systemd/resolve/stub-resolv.conf</code></li>
+    <li><code>$ sudo cat /var/run/NetworkManager/resolv.conf</code></li>
+    <li><code>$ echo "blacklist conflicting_driver" | sudo tee -a /etc/modprobe.d/blacklist.conf</code></li>
+  </ul>
+    <h5>Network Layer (5)</h5>
+  <ul>
+    <li><code>$ ip address</code></li>
+    <li><code>$ ip route</code></li>
+    <li><code>$ nmcli device show</code></li>
+    <li><code>$ nmcli dev wifi</code></li>
+    <li><code>$ nmcli device show wlan0 | grep IP4.DNS</code></li>
+    <li><code>$ sudo journalctl -b | grep -i net</code></li>
+    <li><code>$ ping -c3 8.8.8.8</code></li>
+    <li><code>$ ping localhost</code></li>
+    <li><code>$ traceroute 8.8.8.8</code></li>
+    <li><code>$ traceroute localhost</code></li>
+    <li><code>$ sudo grep -c dnsmasq /var/log/*</code></li>
+    <li><code>$ sudo grep -c dnsmasq /var/log/syslog</code></li>
+    <li><code>$ sudo dnsmasq --no-daemon --log-queries=extra --log-dhcp --log-debug -C /etc/dnsmasq.conf</code></li>
+    <li><code>$ sudo dhclient -v</code></li>
+    <li><code>$ sudo apt install resolvconf</code></li>
+    <li><code>$ sudo resolvconf --list</code></li>
+    <li><code>$ sudo resolvconf --enable-updates</code></li>
+    <li><code>$ sudo resolvconf -u</code></li>
+    <li><code>$ sudo systemctl status resolvconf.service</code></li>
+    <li><code>$ sudo systemctl restart resolvconf.service</code></li>
+    <li><code>$ sudo apt install systemd-resolved</code></li>
+    <li><code>$ sudo systemctl status systemd-resolved.service</code></li>
+    <li><code>$ sudo systemctl restart systemd-resolved.service</code></li>
+  </ul>
+    <h5>Data Link Layer (4)</h5>
+  <ul>
+    <li><code>$ ip link</code></li>
+    <li><code>$ sudo iwconfig wlan0</code></li>
+    <li><code>$ sudo iwconfig eth0</code></li>
+    <li><code>$ sudo ifconfig wlan0</code></li>
+  </ul>
+    <h5>Physical Layer (3)</h5>
+  <ul>
+    <li><code>$ sudo ifconfig wlan0 down</code></li>
+    <li><code>$ sudo ifconfig wlan0 up</code></li>
+    <li><code>$ sudo ifconfig eth0 down</code></li>
+    <li><code>$ sudo ifconfig eth0 up</code></li>
+    <li><code>$ sudo dmesg | grep iwl</code></li>
+    <li><code>$ sudo dmesg | grep rtw</code></li>
+    <li><code>$ sudo dmesg | grep ath</code></li>
+    <li><code>$ lsusb</code></li>
+    <li><code>$ ls /sys/bus/usb/devices</code></li>
+  </ul>
+    <h5>Data Link Layer (2)</h5>
+  <ul>
+    <li><code>$ ip link</code></li>
+    <li><code>$ sudo iwconfig eth0</code></li>
+    <li><code>$ sudo iwconfig wlan0</code></li>
+    <li><code>$ sudo ifconfig wlan0</code></li>
+  </ul>
+    <h5>Physical Layer (1)</h5>
+  <ul>
+    <li><code>$ sudo ifconfig wlan0 down</code></li>
+    <li><code>$ sudo ifconfig wlan0 up</code></li>
+    <li><code>$ sudo ifconfig eth0 down</code></li>
+    <li><code>$ sudo ifconfig eth0 up</code></li>
+    <li><code>$ sudo dmesg | grep iwl</code></li>
+    <li><code>$ sudo dmesg | grep rtw</code></li>
+    <li><code>$ sudo dmesg | grep ath</code></li>
+    <li><code>$ lsusb</code></li>
+    <li><code>$ ls /sys/bus/usb/devices</code></li>
+    <li><code>$ echo 'on' | sudo tee /sys/bus/usb/devices/1-4/power/control</code></li>
+    <li><code>$ sudo sudo modprobe -rv [WIFIMODULE] && sudo modprobe -v [WIFIMODULE]</code></li>
+  </ul>
+  <p><small>
+  *SIOCSIFFLAGS</small></p>
+  <p><small>
+  *RTNETLINK</small></p>
+  <!-- ########## -->
+    <h5>∙ Getting help</h5>
+    <ol>
+    <li> Enable Debugging Features:
+      <ul>
+        <li>Depending on your Linux distribution, you may need to enable specific debug options. For example, you can enable debug logging for NetworkManager by editing its configuration file:</li>
+        <li><code>sudo nano /etc/NetworkManager/NetworkManager.conf</code></li>
+        <li>Add the following lines under the <code>[logging]</code> section:</li>
+        <li> <pre><code>
+              [logging]
+              level=DEBUG
+    </code></pre> </li>
+        <li>Save the file and restart NetworkManager:</li>
+        <li><code>sudo systemctl restart NetworkManager</code></li>
+      </ul>
+      <li> Send Kernel Logs with Debugging On:
+        <ul>
+          <li>After enabling debugging features, gather kernel logs and NetworkManager logs:</li>
+          <li><code>sudo dmesg | grep wifi > kernel_logs.txt</code></li>
+          <li><code>sudo journalctl -u NetworkManager > nm_logs.txt</code></li>
+        </ul>
+        <li> Be Specific About Hardware and Software:
+          <ul>
+            <li>Mention the specific hardware details such as the Wi-Fi adapter model, firmware version, Linux distribution, and kernel version.</li>
+          </ul>
+          <li> Describe What Doesn't Work and What You've Tried:
+            <ul>
+              <li>Clearly explain the issues you are facing with your Wi-Fi, such as connection drops, slow spneeds, or inability to connect. Mention any troubleshooting steps you've already taken, such as restarting the router, checking network settings, or reinstalling drivers.</li>
+            </ul>
+            <li> Include Wireless Captures:
+              <ul>
+                <li>Use tools like Wireshark to capture wireless traffic for further analysis.</li>
+                <li>Install Wireshark if not already installed:</li>
+                <li><code>sudo apt install wireshark</code></li>
+                <li>Capture Wi-Fi packets on your specific interface (e.g., wlan0):</li>
+                <li><code>sudo tshark -i wlan0 -w wifi_capture.pcap</code></li>
+              </ul>
+              <li> Contacting Support or Forums:
+                <ul>
+                  <li>Once you have gathered all the necessary information, consider reaching out to the official support channels of your Wi-Fi adapter's manufacturer, Linux distribution forums, or community support forums like Stack Exchange or Reddit. Provide all the details you've gathered to get more targeted assistance.</li>
+                </ul>
+    </ol>
+  <!-- ########## -->
+    <h5>∙ Debug Hardware</h5> 
+    <pre><code><span>$ </span>sudo lspci</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo lspci')">Copy</button> 
+    <pre><code><span>$ </span>sudo lspci -v -k</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo lspci -v -k')">Copy</button> 
+    <pre><code><span>$ </span>sudo lspci -v | grep Ethernet</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo lspci -v | grep Ethernet')">Copy</button> 
+    <pre><code><span>$ </span>sudo lspci -Knn | grep Net -A2</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo lspci -Knn | grep Net -A2')">Copy</button> 
+    <pre><code><span>$ </span>sudo lsusb</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo lsusb')">Copy</button> 
+    <pre><code><span>$ </span>sudo apt install lshw</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install lshw')">Copy</button> 
+    <pre><code><span>$ </span>sudo lshw -C network</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo lshw -C network')">Copy</button> 
+    <pre><code><span>$ </span>sudo apt install inxi</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install inxi')">Copy</button> 
+    <pre><code><span>$ </span>sudo inxi -Fxxz</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo inxi -Fxxz')">Copy</button>
+  <p>*PCI vs USB - Kernel - Integrated chip - Need to investigate</p>
+  <p>Listing modules</p>
+  <pre><code><span>$ </span>sudo lsmod</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo lsmod')">Copy</button> 
+    <pre><code><span>$ </span>sudo lsmod | grep iwl</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo lsmod | grep iwl')">Copy</button> 
+    <pre><code><span>$ </span>sudo lsmod | grep rtw</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo lsmod | grep rtw')">Copy</button> 
+    <pre><code><span>$ </span>sudo lsmod | grep ath</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo lsmod | grep ath')">Copy</button>
+  <p>Module info</p>
+  <pre><code><span>$ </span>sudo modinfo rtw_8723d</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modinfo rtw_8723d')">Copy</button>
+  <!-- ########## -->
+    <h4>Rfkill</h4> 
+    <pre><code><span>$ </span>sudo apt install rfkill</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install rfkill')">Copy</button>
+    <h5>Commands</h5> 
+    <pre><code><span>$ </span>sudo rfkill list</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo rfkill list')">Copy</button> 
+    <pre><code><span>$ </span>sudo rfkill unblock wifi</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo rfkill unblock wifi')">Copy</button> 
+    <pre><code><span>$ </span>sudo rfkill unblock all</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo rfkill unblock all')">Copy</button>
+  <!-- ########## -->
+    <h5>∙ Deactivating and Activating WiFi Firmware</h5>
+  <p>Deactivating module</p>
+  <pre><code><span>$ </span>sudo modprobe -vr rtw_8723d</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modprobe -vr rtw_8723d')">Copy</button> 
+    <pre><code><span>$ </span>sudo modprobe -vr rtw_core</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modprobe -vr rtw_core')">Copy</button>
+  <p>Activating module</p>
+  <pre><code><span>$ </span>sudo modprobe -v rtw_core</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modprobe -v rtw_core')">Copy</button> 
+    <pre><code><span>$ </span>sudo modprobe -v rtw_8723d</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modprobe -v rtw_8723d')">Copy</button>
+  <!-- ########## -->
+    <h5>∙ Power and suspend control</h5> 
+    <pre><code><span>$ </span>sudo ls /etc/NetworkManager/conf.d</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo ls /etc/NetworkManager/conf.d')">Copy</button> 
+    <pre><code><span>$ </span>sudo touch /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo touch /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf')">Copy</button> 
+    <pre><code><span>$ </span>sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf')">Copy</button> 
+    <pre><code><span>$ </span>wifi.powersave = 2</code></pre>
+    <button onclick="navigator.clipboard.writeText('wifi.powersave = 2')">Copy</button> or simply
+    <br> <pre><code><span>$ </span>sudo sed -i 's/3/2/' /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf</code></pre>
+    <br> pcie_aspm.policy=powersasave
+    <br> pcie_aspm.policy=performance
+    <br> usbcore
+    <br>
+  <!-- ########## -->
+    <h5>∙ Wifi stops workin after resume</h5> 
+    <pre><code><span>$ </span>sudo touch /etc/modprobe.d/50-rtw-core.conf</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo touch /etc/modprobe.d/50-rtw-core.conf')">Copy</button> 
+    <pre><code><span>$ </span>sudo nano /etc/modprobe.d/50-rtw-core.conf</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo nano /etc/modprobe.d/50-rtw-core.conf')">Copy</button> 
+    <pre><code>options rtw_core</code></pre>
+    <pre>
+    <code><span>$ </span>sudo sudo modprobe -rv [WIFIMODULE] && sudo modprobe -v [WIFIMODULE]</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo sudo modprobe -rv [WIFIMODULE] && sudo modprobe -v [WIFIMODULE]')">Copy</button> 
+    <h5>∙ DNS Issues</h5>
+    <p>Resolvectl: "resolvectl is a multi-call binary. When invoked as "resolvconf" (generally achieved by means of a symbolic link of this
+     name to the resolvectl binary) it is run in a limited resolvconf(8) compatibility mode. It accepts mostly the same arguments and pushes
+     all data into systemd-resolved.service(8), similar to how dns and domain commands operate. Note that systemd-resolved.service is the only
+     supported backend, which is different from other implementations of this command.</p>
+    <p>Systemd-resolved: "the DNS servers contacted are determined from the global settings in /etc/systemd/resolved.conf, the per-link static
+     settings in /etc/systemd/network/*.network files (in case systemd-networkd.service(8) is used), the per-link dynamic settings received over
+     DHCP, information provided via resolvectl(1), and any DNS server information made available by other system services. See resolved.conf(5)
+     and systemd.network(5) for details about systemd's own configuration files for DNS servers. To improve compatibility, /etc/resolv.conf is
+     read in order to discover configured system DNS servers, but only if it is not a symlink to /run/systemd/resolve/stub-resolv.conf,
+     /usr/lib/systemd/resolv.conf or /run/systemd/resolve/resolv.conf.</p>
+    <p>/etc/resolv.conf will only be updated with servers added with this command when /etc/resolv.conf is a symlink to 
+     /run/systemd/resolve/resolv.conf, and not a static file.</p>
+    <h5>Add a custom DNS</h5> 
+    <pre><code><span>$ </span>sudo nano /etc/systemd/resolved.conf</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo nano /etc/systemd/resolved.conf')">Copy</button> 
+    <pre><code>[Resolve] DNS=8.8.8.8 1.1.1.1</code></pre>
+    <pre>
+    <code><span>$ </span>sudo systemctl restart systemd-resolved.service</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo systemctl restart systemd-resolved.service')">Copy</button> 
+    <pre><code><span>$ </span>sudo systemctl status systemd-resolved.service</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo systemctl status systemd-resolved.service')">Copy</button> 
+    <pre><code><span>$ </span>sudo apt install iproute2</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install iproute2')">Copy</button> 
+    <pre><code><span>$ </span>sudo ss -nlup</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo ss -nlup')">Copy</button> 
+    <pre><code><span>$ </span>sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf')">Copy</button> <pre>• Syntax checks $ sudo dnsmasq --test • Print errors $ sudo grep -c dnsmasq /var/log/* $ sudo grep -c dnsmasq /var/log/syslog $ sudo dnsmasq --no-daemon --log-queries=extra --log-dhcp --log-debug -C /etc/dnsmasq.conf $ sudo dhclient -v</pre>
+  <!-- ########## -->
+    <h5>Disabling NetworkManager's own dnsmasq</h5>
+  <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p> 
+  <pre>$ sudo nano /etc/NetworkManager/NetworkManager.conf #dns=dnsmasq $ sudo restart network-manager</pre>
+  <!-- ########## -->
+    <h5>Disabling NetworkManager's IPV6</h5> 
+    <pre><code><span>$ </span>sudo</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo')">Copy</button> 
+    <pre><code><span>$ </span>sudo</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo')">Copy</button>
+  <!-- ########## -->
+    <h5>NetworkManager dnsmasq (CLI)</h5>
+  <p>DNS requests are directed to VPN-supplied DNS servers without any manipulations with dnsmasq, up/down/dispatch helper scripts.</p> 
+  <pre>mcli -p connection modify MY_VPN_CONNECTION ipv4.never-default no nmcli -p connection modify MY_VPN_CONNECTION ipv4.ignore-auto-dns no nmcli -p connection modify MY_VPN_CONNECTION ipv4.dns-priority -42</pre>
+  <p>*Using OpenVPN through NetworkManager (GUI) allows users to disable the connection.</p>
+  <!-- ########## -->
+    <h5>∙ DHCP Issues</h5> 
+    <pre><code><span>$ </span>sudo apt install tcpdump</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install tcpdump')">Copy</button> 
+    <pre><code><span>$ </span>sudo apt install nmap</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install nmap')">Copy</button> 
+    <pre><code><span>$ </span>sudo apt install wireshark</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install wireshark')">Copy</button>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>9.06 USB Devices</summary>
+  <ul>
+    <li>https://wiki.ubuntu.com/Kernel/Debugging/USB</li>
+    <li>https://wiki.archlinux.org/title/Power_management#USB_autosuspend</li>
+    <li>https://docs.kernel.org/driver-api/usb/power-management.html</li>
+    <li>https://wiki.debian.org/HowToIdentifyADevice/USB</li>
+    <li>https://wiki.debian.org/HowToIdentifyADevice/PCI</li>
+    <li>https://kernel.org/doc/html/latest/usb/index.html</li>
+    <li>https://kernel.org/doc/html/v4.16/driver-api/usb/power-management.html</li>
+    <li>UAS Issues - https://forums.raspberrypi.com/viewtopic.php?t=245931</li>
+    <li>Bug - xhci_hcd WARN Set TR Deq Ptr cmd failed due to incorrect slot or ep state - https://bugzilla.kernel.org/show_bug.cgi?id=202541</li>
+    <li>Bug - CPU hard lockup related to xhci/dma - https://bugzilla.kernel.org/show_bug.cgi?id=217242</li>
+    <li>Bug - Debootstrap is very slow. Please use eatmydata to fix this. - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=700633</li>
+  </ul>
+    <p>Tip: If you are transferring large amounts of data via a problematic USB, use <code>grsync</code> as a manager.</p>
+    <h4>USB debug</h4> 
+    <pre><code><span>$ </span>lsusb -t</code></pre>
+    <button onclick="navigator.clipboard.writeText('lsusb -t')">Copy</button> 
+    <pre><code><span>$ </span>lsusb -v</code></pre>
+    <button onclick="navigator.clipboard.writeText('lsusb -v')">Copy</button> 
+    <pre><code><span>$ </span>lsusb -v | grep 1111</code></pre>
+    <button onclick="navigator.clipboard.writeText('lsusb -v | grep 1111')">Copy</button> 
+    <pre><code><span>$ </span>usb-devices</code></pre>
+    <button onclick="navigator.clipboard.writeText('usb-devices')">Copy</button> 
+    <pre><code><span>$ </span>sudo dmesg -w</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dmesg -w')">Copy</button> 
+    <pre><code><span>$ </span>sudo dmesg -T | grep xhci</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dmesg -T | grep xhci')">Copy</button> 
+    <pre><code><span>$ </span>sudo lspci -v | grep xhci</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo lspci -v | grep xhci')">Copy</button> 
+    <pre><code><span>$ </span>sudo grep -i xhci /boot/config-$(uname -r)</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo grep -i xhci /boot/config-$(uname -r)')">Copy</button>
+  <p>See usb device getting plugged in</p>
+  <pre><code><span>$ </span>sudo dmesg -wH</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dmesg -wH')">Copy</button>
+  <p>Firmware</p>
+  <pre><code><span>$ </span>sudo modinfo xhci_hcd</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modinfo xhci_hcd')">Copy</button> 
+    <pre><code><span>$ </span>sudo modinfo ehci_hcd</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modinfo ehci_hcd')">Copy</button> 
+    <pre><code><span>$ </span>sudo modinfo btusb</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modinfo btusb')">Copy</button> 
+    <pre><code><span>$ </span>sudo modprobe -v ohci-pci</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modprobe -v ohci-pci')">Copy</button> 
+    <pre><code><span>$ </span>sudo modprobe -v ehci-hcd</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modprobe -v ehci-hcd')">Copy</button> 
+    <pre><code><span>$ </span>sudo modprobe -v xhci-hcd</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modprobe -v xhci-hcd')">Copy</button> 
+    <pre><code><span>$ </span>sudo modprobe -v xhci-pci</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modprobe -v xhci-pci')">Copy</button>
+  <p>You may try to force your system to use USB 2.0 insted of USB 1.1:</p>
+  <pre><code><span>$ </span>sudo modprobe -vr ohci-pci</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modprobe -vr ohci-pci')">Copy</button> 
+    <pre><code><span>$ </span>sudo modprobe -v ehci-hcd</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modprobe -v ehci-hcd')">Copy</button>
+  <p>Deactivate</p>
+  <pre><code><span>$ </span>sudo modprobe -vr xhci-hcd</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modprobe -vr xhci-hcd')">Copy</button> 
+    <pre><code><span>$ </span>sudo modprobe -vr xhci-pci</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modprobe -vr xhci-pci')">Copy</button>
+  <p>Activate</p>
+  <pre><code><span>$ </span>sudo modprobe -v xhci-hcd</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modprobe -v xhci-hcd')">Copy</button> 
+    <pre><code><span>$ </span>sudo modprobe -v xhci-pci</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo modprobe -v xhci-pci')">Copy</button>
+  <p>Power and suspend control</p>
+  <pre><code><span>$ </span>lsusb</code></pre>
+    <button onclick="navigator.clipboard.writeText('lsusb')">Copy</button> 
+    <pre><code><span>$ </span>ls /sys/bus/usb/devices</code></pre>
+    <button onclick="navigator.clipboard.writeText('ls /sys/bus/usb/devices')">Copy</button> 
+    <pre><code><span>$ </span>echo 'on' | sudo tee /sys/bus/usb/devices/1-4/power/control</code></pre>
+    <pre><code><span>$ </span>sudo cat /etc/tlp.conf</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo cat /etc/tlp.conf')">Copy</button> 
+    <pre><code><span>$ </span>grep . /sys/bus/usb/devices/*/power/autosuspend</code></pre>
+    <pre><code><span>$ </span>grep . /sys/bus/usb/devices/*/power/autosuspend | awk -F: '{print $1}' | xargs -I{} sudo sh -c 'echo "-1" > {}'</code></pre>
+    <pre><code><span>$ </span>grep . /sys/bus/usb/devices/*/power/control</code></pre>
+    <pre><code><span>$ </span>grep . /sys/bus/usb/devices/*/power/control | awk -F: '{print $1}' | xargs -I{} sudo sh -c 'echo "on" > {}'</code></pre>
+    <pre><code><span>$ </span>grep . /sys/bus/usb/devices/*/power/wakeup</code></pre>
+    <pre><code><span>$ </span>grep . /sys/bus/usb/devices/*/power/wakeup | awk -F: '{print $1}' | xargs -I{} sudo sh -c 'echo "disabled" > {}'</code></pre>
+   <h4>If your keyboard, mouse, or other devices stop working sometimes, power management might be affecting you. Execute this command to check:</h4>
+  <pre><code>
+  $ cat /sys/module/usbcore/parameters/autosuspend
+  </code></pre>
+  <p>You are affected if you get back a "2". To disable it, simply write a -1 to that file as root:</p>
+  <pre><code>
+    $ sudo su</code></pre> 
+    <pre><code># echo -1 > /sys/module/usbcore/parameters/autosuspend</code></pre>
+  <p>To make the change permanent, edit the GRUB configuration:</p>
+  <pre><code>
+    $ sudo nano /etc/default/grub</code></pre>
+  <p>Add <code>usbcore.autosuspend=-1</code> to the end of the command in <code>GRUB_CMDLINE_LINUX_DEFAULT</code> :</p>
+  <pre><code>GRUB_CMDLINE_LINUX_DEFAULT="quiet splash usbcore.autosuspend=-1"</code></pre>
+  <p>Then update GRUB:</p>
+  <pre><code>
+    $ sudo update-grub</code></pre>
+  <p>Alternatively, you can use this one-line command to modify the configurations:</p>
+  <pre><code>
+    $ sudo sudo sed -i.bak '/^GRUB_CMDLINE_LINUX_DEFAULT/ s/"$ usbcore.autosuspend=-1"/' /etc/default/grub && sudo update-grub</code></pre>
+  <p>Verify:</p>
+  <pre><code>
+    $ sudo cat /etc/default/grub</code></pre>
+    <h5>UAS Issues</h5> 
+    https://forums.raspberrypi.com/viewtopic.php?t=245931
+    <br>
+  <p>Symptoms of a misbehaving UAS device</p> • Slow transference
+    <br> • Frequent disconnects-reconnects
+    <br> • Dmesg reports errors relating to a UAS device.
+    <br>
+  <p>Solving</p>
+  <p>Plug in the USB device(s) and run the command dmesg</p>
+  <pre><code><span>$ </span>sudo dmesg --since -2m</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dmesg --since -2m')">Copy</button>
+  <p>Take note of the VID (idVendor) and PID (idProduct) of your USB device(s)</p> 
+  <pre>(...) [ 4906.696463] usb 2-1: New USB device found, idVendor=1111, idProduct=2222, bcdDevice=c3.33 (...)</pre>
+  <p>Add the quirks to /boot/cmdline.txt</p>
+  <pre><code><span>$ </span>sudo nano /boot/cmdline.txt</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo nano /boot/cmdline.txt')">Copy</button>
+  <p>Add the text with your idVendor and idProduct, respectively.</p> 
+  <pre>usb-storage.quirks=1111:2222:u</pre>
+  <pre>usb-storage.quirks=4444:5555:u,6666:7777:u.,8888:9999:u</pre>
+  <p>Reboot</p>
+  <pre><code><span>$ </span>sudo reboot</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo reboot')">Copy</button>
+  <p>Check</p>
+  <pre><code><span>$ </span>sudo dmesg | grep usb-storage</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dmesg | grep usb-storage')">Copy</button>
+    <h5>udisks2.service</h5> 
+    <pre><code><span>$ </span>sudo systemctl status udisks2.service</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo systemctl status udisks2.service')">Copy</button> 
+    <pre><code><span>$ </span>sudo apt install libblockdev-crypto2 libblockdev-mdraid2 --no-install-recommends</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install libblockdev-crypto2 libblockdev-mdraid2 --no-install-recommends')">Copy</button>
+    <h5>intel_iommu=off</h5>
+    <h5>legacy USB</h5>
+  <p>Into bios, have usb 3.0 turned on, an any other options turned on, but turn off legacy usb option.But think that after legacy USB disabling, in some cases, you could lost ability to enter your BIOS, if you have USB keyboard, because your keyboard will not work at the moment when you need to press DEL or F2 or whatever.</p>
+    <h5>Mouse</h5> 
+    https://github.com/sriemer/fix-linux-mouse
+    <br>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>9.07 Bluetooth</summary>
+    <br>
+    <h4>Bluetooth</h4> 
+    https://wiki.archlinux.org/title/Bluetooth
+    <br> https://wiki.archlinux.org/title/Bluetooth#Troubleshooting
+    <br> https://wiki.debian.org/BluetoothUser
+    <br> https://wiki.debian.org/Bluetooth/Alsa
+    <br> https://github.com/Arkq/bluez-alsa
+    <br>
+  <!-- ########## -->
+    <h5>First things first:</h5> 
+    <pre><code><span>$ </span>sudo apt install firmware-realtek</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install firmware-realtek')">Copy</button> or <pre><code><span>$ </span>sudo apt install firmware-iwlwifi</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install firmware-iwlwifi')">Copy</button> or <pre><code><span>$ </span>sudo apt install firmware-atheros</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install firmware-atheros')">Copy</button>
+  <!-- ########## -->
+    <h5>Audio compatibility</h5> 
+    <pre><code><span>$ </span>sudo apt install pulseaudio-module-bluetooth</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install pulseaudio-module-bluetooth')">Copy</button> or <pre><code><span>$ </span>sudo apt install bluez-alsa-utils</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install bluez-alsa-utils')">Copy</button>
+  <p>Debug</p>
+  <pre><code><span>$ </span>sudo service bluetooth status</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo service bluetooth status')">Copy</button> 
+    <pre><code><span>$ </span>hciconfig -a</code></pre>
+    <button onclick="navigator.clipboard.writeText('hciconfig -a')">Copy</button> 
+    <pre><code><span>$ </span>hciconfig hci0</code></pre>
+    <button onclick="navigator.clipboard.writeText('hciconfig hci0')">Copy</button> 
+    <pre><code><span>$ </span>sudo dmesg | grep Bluetooth</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dmesg | grep Bluetooth')">Copy</button> 
+    <pre><code><span>$ </span>sudo dmesg | grep iwl</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dmesg | grep iwl')">Copy</button> 
+    <pre><code><span>$ </span>sudo dmesg | grep rtl</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dmesg | grep rtl')">Copy</button> 
+    <pre><code><span>$ </span>sudo dmesg | grep ath</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dmesg | grep ath')">Copy</button>
+  <!-- ########## -->
+    <h5>Connecting Bluetooth</h5> 
+    <pre>Commands • Connecting bluetooth manualy with Bluez $ bluetoothctl 
+     [bluetooth]# scan on 
+     [bluetooth]# pair xx:xx:xx 
+     [bluetooth]# connect xx:xx:xx 
+     [bluetooth]# trust xx:xx:xx 
+     [bluetooth]# block yy:yy:yy</pre>
+  <!-- ########## -->
+    <h5>Bluetooth Managment</h5> 
+    <pre>Commands • Bluetooth managment $ btmgmt 
+     [btmgmt]# info</pre>
+  <!-- ########## -->
+    <h5>Bluetooth Audio ALSA Backend (bluealsa)</h5> 
+    https://github.com/arkq/bluez-alsa/wiki/Bluetooth-Pairing-And-Connecting
+    <br> <pre><code><span>$ </span>sudo apt install bluez-alsa-utils</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install bluez-alsa-utils')">Copy</button>
+  <!-- ########## -->
+    <h5>Mouse</h5> 
+    https://github.com/sriemer/fix-linux-mouse
+    <br>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>9.08 Sound</summary>
+    <br> https://wiki.ubuntu.com/DebuggingSoundProblems
+    <br> https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture
+    <br> https://wiki.archlinux.org/title/PulseAudio/Troubleshooting
+    <br> https://thesofproject.github.io/latest/getting_started/intel_debug/suggestions.html
+    <br> https://wiki.debian.org/Sound
+    <br> https://wiki.debian.org/SoundConfiguration
+    <br> https://alsa-project.org
+    <br> https://github.com/thesofproject/sof/issues
+    <br> https://github.com/thesofproject
+    <br>
+  <!-- ########## -->
+    <h4>First things first:</h4> 
+    <pre><code><span>$ </span>sudo apt install firmware-sof-signed</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install firmware-sof-signed')">Copy</button> 
+    <pre><code><span>$ </span>sudo apt install firmware-intel-sound</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install firmware-intel-sound')">Copy</button>
+  <!-- ########## -->
+    <h4>Debug commands</h4>
+  <p>List of PLAYBACK Hardware Devices</p>
+  <pre><code><span>$ </span>aplay -l</code></pre>
+    <button onclick="navigator.clipboard.writeText('aplay -l')">Copy</button> 
+    <pre><code><span>$ </span>lspci |grep -i audio</code></pre>
+    <button onclick="navigator.clipboard.writeText('lspci |grep -i audio')">Copy</button> 
+    <pre><code><span>$ </span>cat /proc/asound/cards</code></pre>
+    <button onclick="navigator.clipboard.writeText('cat /proc/asound/cards')">Copy</button> 
+    <pre><code><span>$ </span>cat /proc/asound/card*/id</code></pre>
+    <button onclick="navigator.clipboard.writeText('cat /proc/asound/card*/id')">Copy</button>
+  <p>List of CAPTURE Hardware Devices</p>
+  <pre><code><span>$ </span>arecord -l</code></pre>
+    <button onclick="navigator.clipboard.writeText('arecord -l')">Copy</button>
+  <!-- ########## -->
+    <h4>Testing</h4> 
+    <pre><code><span>$ </span>speaker-test</code></pre>
+    <button onclick="navigator.clipboard.writeText('speaker-test')">Copy</button>
+    <h4>Other debug commands</h4> 
+    <pre><code><span>$ </span>cat /proc/asound/cards</code></pre>
+    <button onclick="navigator.clipboard.writeText('cat /proc/asound/cards')">Copy</button> 
+    <pre><code><span>$ </span>cat /proc/asound/modules</code></pre>
+    <button onclick="navigator.clipboard.writeText('cat /proc/asound/modules')">Copy</button> 
+    <pre><code><span>$ </span>lspci -v | grep Audio</code></pre>
+    <button onclick="navigator.clipboard.writeText('lspci -v | grep Audio')">Copy</button> 
+    <pre><code><span>$ </span>lsusb</code></pre>
+    <button onclick="navigator.clipboard.writeText('lsusb')">Copy</button> 
+    <pre><code><span>$ </span>lsmod | grep snd</code></pre>
+    <button onclick="navigator.clipboard.writeText('lsmod | grep snd')">Copy</button> 
+    <pre><code><span>$ </span>aplay -lL</code></pre>
+    <button onclick="navigator.clipboard.writeText('aplay -lL')">Copy</button> 
+    <pre><code><span>$ </span>amixer</code></pre>
+    <button onclick="navigator.clipboard.writeText('amixer')">Copy</button> 
+    <pre><code><span>$ </span>amixer -c0</code></pre>
+    <button onclick="navigator.clipboard.writeText('amixer -c0')">Copy</button> 
+    <pre><code><span>$ </span>sudo dpkg-reconfigure linux-sound-base</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dpkg-reconfigure linux-sound-base')">Copy</button> 
+    <pre><code><span>$ </span>sudo alsa-info</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo alsa-info')">Copy</button>
+  <!-- ########## -->
+    <h4>ALSA</h4>
+  <p>The "Advanced Linux Sound Architecture" (ALSA) is a part of the Linux kernel. PulseAudio is a sound server that sits between ALSA and user applications, aiming to provide easy automatic sound configuration for users. PulseAudio controls underlying ALSA-level volume controls.</p>
+  <pre><code><span>$ </span>sudo apt install alsa-utils</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install alsa-utils')">Copy</button> 
+    <pre><code><span>$ </span>alsamixer</code></pre>
+    <button onclick="navigator.clipboard.writeText('alsamixer')">Copy</button> 
+    <pre><code><span>$ </span>amixer -c 0 set Master 100%</code></pre>
+    <button onclick="navigator.clipboard.writeText('amixer -c 0 set Master 100%')">Copy</button> 
+    <pre><code><span>$ </span>amixer -c 1 set Speaker 50%</code></pre>
+    <button onclick="navigator.clipboard.writeText('amixer -c 1 set Speaker 50%')">Copy</button> 
+    <pre><code><span>$ </span>amixer -c 1 set Speaker 3db</code></pre>
+    <button onclick="navigator.clipboard.writeText('amixer -c 1 set Speaker 3db')">Copy</button> 
+    <pre><code><span>$ </span>amixer -c 1 set Speaker 2db+</code></pre>
+    <button onclick="navigator.clipboard.writeText('amixer -c 1 set Speaker 2db+')">Copy</button> 
+    <pre><code><span>$ </span>amixer -c 0 set Mic unmute</code></pre>
+    <button onclick="navigator.clipboard.writeText('amixer -c 0 set Mic unmute')">Copy</button> 
+    <pre><code><span>$ </span>sudo nano /etc/pulse/default.pa</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo nano /etc/pulse/default.pa')">Copy</button>
+  <!-- ########## -->
+    <h4>PulseAudio Volume Control</h4>
+  <p>Allows you to control both the volume of hardware devices and of each playback stream separately. It also allows you to redirect a playback stream to another output device.</p>
+  <pre><code><span>$ </span>sudo apt install pavucontrol</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install pavucontrol')">Copy</button>
+  <!-- ########## -->
+    <h4>Advanced solution</h4>
+  <p>Install the SOF firmware binaries from the source: https://github.com/thesofproject/sof-bin</p>
+  <p>Clone the repository:</p>
+  <pre><code><span>$ </span>git clone https://github.com/thesofproject/sof-bin.git</code></pre>
+    <button onclick="navigator.clipboard.writeText('git clone https://github.com/thesofproject/sof-bin.git')">Copy</button>
+  <p>Change to directory:</p>
+  <pre><code><span>$ </span>cd sof-bin</code></pre>
+    <button onclick="navigator.clipboard.writeText('cd sof-bin')">Copy</button>
+  <p>Follow: https://github.com/thesofproject/sof-bin#install-process-with-installsh</p>
+  <pre><code><span>$ </span>sudo mv /lib/firmware/intel/sof* some_backup_location/</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo mv /lib/firmware/intel/sof* some_backup_location/')">Copy</button> 
+    <pre><code><span>$ </span>sudo mv /usr/local/bin/sof-* some_backup_location/ # optional</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo mv /usr/local/bin/sof-* some_backup_location/ # optional')">Copy</button> 
+    <pre><code><span>$ </span>sudo ./install.sh v2.2.x/v2.2</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo ./install.sh v2.2.x/v2.2')">Copy</button>
+  <p>Reboot</p>
+  <pre><code><span>$ </span>sudo reboot</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo reboot')">Copy</button>
+    <h4>"Apollo Lake" platform</h4> 
+    https://thesofproject.github.io/latest/getting_started/intel_debug/suggestions.html#es8336-support
+    <br>
+  <p>Check your kernel configuration, typically available as a /boot/config-*. These options below will allow you to use Sound Open Firmware, start with:</p>
+  <pre><code><span>$ </span>grep SND_SOC_INTEL_APL /boot/config-*</code></pre>
+    <button onclick="navigator.clipboard.writeText('grep SND_SOC_INTEL_APL /boot/config-*')">Copy</button>
+  <p>For your system you could select:</p> 
+  <pre>ALSA for SoC audio support (CONFIG_SND_SOC=m) Intel ASoC SST drivers (CONFIG_SND_SOC_INTEL_SST_TOPLEVEL=y) and the appropriate platform option, which in your case would be "Broxton/ApolloLake platforms" (CONFIG_SND_SOC_INTEL_APL=m)</pre>
+  <p>Others options:</p> 
+  <pre>Sound Open Firmware support (CONFIG_SND_SOC_SOF_TOPLEVEL=y) SOF support for Intel Audio DSPs (CONFIG_SND_SOC_SOF_INTEL_TOPLEVEL=y) SOF PCI enumeration support (CONFIG_SND_SOC_SOF_PCI=m) SOF support for Apollolake (CONFIG_SND_SOC_SOF_APOLLOLAKE_SUPPORT=m) SOF support for HDA Links (HDA/HDMI) (CONFIG_SND_SOC_SOF_HDA_LINK=y) SOF support for HDAudio codecs (CONFIG_SND_SOC_SOF_HDA_AUDIO_CODEC=y)</pre>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>9.09 Printers</summary>
+    <br>
+    <h4>Printers</h4> 
+    https://wiki.debian.org/SystemPrinting
+    <br> https://wiki.ubuntu.com/DebuggingPrintingProblems
+    <br>
+  <!-- ########## -->
+    <h5>∙ HP</h5> 
+    https://developers.hp.com/hp-linux-imaging-and-printing/install/manual/distros/debian
+    <br> https://wiki.debian.org/InstallingDebianOn/HP
+    <br> https://developers.hp.com/hp-linux-imaging-and-printing
+    <br> <pre><code><span>$ </span>sudo apt install hplip</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install hplip')">Copy</button>
+  <!-- ########## -->
+    <h5>∙ EPSON</h5> 
+    https://epson.com/Support/wa00821
+    <br> <pre><code><span>$ </span>sudo apt install</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install')">Copy</button>
+  <!-- ########## -->
+    <h5>∙ Wireless Firewall Ports</h5> 
+    <pre><code><span>$ </span></code></pre>
+    <button onclick="navigator.clipboard.writeText('')">Copy</button>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>9.10 Keyboard</summary>
+    <br> https://debian.org/doc/manuals/debian-reference/ch08.en.html#_the_keyboard_input
+    <br> https://pubs.opengroup.org/onlinepubs/7908799/xbd/envvar.html#tag_002_002
+    <br>
+    <h4>Keyboard debug</h4> 
+    <pre><code><span>$ </span>locale</code></pre>
+    <button onclick="navigator.clipboard.writeText('locale')">Copy</button> 
+    <pre><code><span>$ </span>locale -a</code></pre>
+    <button onclick="navigator.clipboard.writeText('locale -a')">Copy</button>
+  <!-- ########## -->
+    <h4>Reset Layout</h4> 
+    <pre><code><span>$ </span>sudo dpkg-reconfigure keyboard-configuration</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dpkg-reconfigure keyboard-configuration')">Copy</button> 
+    <pre><code><span>$ </span>sudo service keyboard-setup restart</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo service keyboard-setup restart')">Copy</button> 
+    <pre><code><span>$ </span>sudo update-initramfs -u</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo update-initramfs -u')">Copy</button>
+  <!-- ########## -->
+    <h4>Accents not working</h4>
+  <p>Can't type accented letters in certain programs.</p>
+  <pre><code><span>$ </span></code></pre>
+    <button onclick="navigator.clipboard.writeText('')">Copy</button>
+  <!-- ########## -->
+    <h4>Assign Home and End to Fn + Arrows</h4> 
+    https://superuser.com/questions/428945/defining-keyboard-shortcuts-involving-the-fn-key
+    <br> https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows
+    <br> <pre><code><span>$ </span></code></pre>
+    <button onclick="navigator.clipboard.writeText('')">Copy</button>
+  <!-- ########## -->
+    <h4>Remap Apple Magic Keyboard</h4> 
+    https://github.com/dongjinleekr/hid-apple-numberless-ko
+    <br> https://github.com/isakhauge/nor-apple-keyboard-xmodmap
+    <br>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>9.11 Locales and Time/Date</summary>
+    <br> https://man7.org/linux/man-pages/man1/locale.1.html
+    <br> https://linuxfromscratch.org/lfs/view/stable-systemd/chapter09/locale.html
+    <br> https://pubs.opengroup.org/onlinepubs/7908799/xbd/envvar.html#tag_002_002
+    <br>
+    <h3>Locales</h3> <pre><code><span>$ </span>locale</code></pre>
+    <button onclick="navigator.clipboard.writeText('locale')">Copy</button> 
+    <pre><code><span>$ </span>sudo apt reinstall locales</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt reinstall locales')">Copy</button> 
+    <pre><code><span>$ </span>sudo locale-gen</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo locale-gen')">Copy</button> 
+    <pre><code><span>$ </span>sudo locale-gen en_US.UTF-8</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo locale-gen en_US.UTF-8')">Copy</button> 
+    <pre><code><span>$ </span>sudo dpkg-reconfigure locales</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dpkg-reconfigure locales')">Copy</button> 
+    <pre><code>*Logoff</code></pre>
+  <!-- ########## -->
+    <h4>If locale-gen had not results</h4> 
+    <pre><code><span>$ </span>locale</code></pre>
+    <button onclick="navigator.clipboard.writeText('locale')">Copy</button> 
+    <pre><code><span>$ </span>export LANGUAGE=en_US.UTF-8</code></pre>
+    <button onclick="navigator.clipboard.writeText('export LANGUAGE=en_US.UTF-8')">Copy</button> 
+    <pre><code><span>$ </span>export LC_ALL=en_US.UTF-8</code></pre>
+    <button onclick="navigator.clipboard.writeText('export LC_ALL=en_US.UTF-8')">Copy</button> 
+    <pre><code><span>$ </span>export LANG=en_US.UTF-8</code></pre>
+    <button onclick="navigator.clipboard.writeText('export LANG=en_US.UTF-8')">Copy</button> 
+    <pre><code><span>$ </span>export LC_CTYPE=en_US.UTF-8</code></pre>
+    <button onclick="navigator.clipboard.writeText('export LC_CTYPE=en_US.UTF-8')">Copy</button>
+  <p>Even no results</p>
+  <pre><code><span>$ </span>export LC_ALL="C.UTF-8"</code></pre>
+  <pre><code><span>$ </span>sudo dpkg-reconfigure locales</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dpkg-reconfigure locales')">Copy</button>
+  <p>Even no results</p>
+  <pre><code>In /etc/locale.gen, uncommenting the line: en_US.UTF-8 UTF-8 then running: locale-gen</code></pre>
+  <!-- ########## -->
+    <h4>Switch terminal command output</h4> UNDER TEST! NOT FULL TESTED! http://manpages.ubuntu.com/manpages/trusty/man7/locale.7.html
+    <br> <pre><code>• Defitenelly change output language from native language to english $ env $ env | egrep -e 'LC_ALL|LANG' $ cat ~/.bashrc $ cat ~/.bash_profile $ LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LANGUAGE=en_US.UTF-8 $SHELL</code></pre>
+  <p>Bash function for terminal</p>
+  <p>Switching between DE and EN locales. Put it in your ~/.bashrc (or ~/.bash_profile).</p>
+  <p>Call it with <code>_configure_locale</code> EN to switch to English.</p> 
+  <pre>function _configure_locale() { # [profile] local profile=${1:-EN} case ${profile} in DE|DE_DE|de_DE) LC_ALL="de_DE.UTF-8" LANG="de_DE.UTF-8" LANGUAGE="de_DE:de:en_US:en" ;; EN|EN_US|en|en_US) LC_ALL="en_US.UTF-8" LANG="en_US.UTF-8" LANGUAGE="en_US:en" ;; *) echo "ALERT" "${FUNCNAME}: unknown profile '${profile}'" ;; esac LC_PAPER="de_DE.UTF-8"; # independent from locale LESSCHARSET="utf-8"; # independent from locale MM_CHARSET="utf-8" # independent from locale echo "locale settings" "${LANG}"; export LC_ALL LANG LANGUAGE LC_PAPER LESSCHARSET MM_CHARSET }</pre>
+  <!-- ########## -->
+    <h3>Time and Date</h3>
+    <h4>Control the system time and date</h4> 
+    <pre><code><span>$ </span>timedatectl</code></pre>
+    <button onclick="navigator.clipboard.writeText('timedatectl')">Copy</button> 
+    <pre><code><span>$ </span>tzselect</code></pre>
+    <button onclick="navigator.clipboard.writeText('tzselect')">Copy</button>
+  <!-- ########## -->
+    <h4>How Reconfigure time and date</h4> 
+    <pre><code><span>$ </span>sudo dpkg-reconfigure tzdata</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo dpkg-reconfigure tzdata')">Copy</button>
+  <!-- ########## -->
+    <h4>NTP</h4> 
+    <pre><code><span>$ </span>sudo apt install ntpdate && ntpdate in.pool.ntp.org && dpkg-reconfigure tzdata</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install ntpdate && ntpdate in.pool.ntp.org && dpkg-reconfigure tzdata')">Copy</button>
+  <!-- ########## -->
+    <h5>∙ Coordinated Universal Time - UTC-00:00</h5> 
+    <pre><code><span>$ </span></code></pre>
+    <button onclick="navigator.clipboard.writeText('')">Copy</button>
+  <!-- ########## -->
+    <h5>∙ Greenwich Mean Time - GMT</h5> 
+    <pre><code><span>$ </span></code></pre>
+    <button onclick="navigator.clipboard.writeText('')">Copy</button>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>9.12 Torrenting</summary>
+    <br>
+    <h4>General debug</h4> 
+    <pre>1. Resetting qBittorrent / trying another torrent client 2. Trying another device on same network 3. Trying ethernet instead of Wi-Fi 4. Trying downloading to external storage rather than SSD 5. Stopping all running apps/services in background 6. Running speed tests to see if it also happens outside torrenting</pre>
+    <h4>Download speed fluctuations and near zero uploading, speed spikes</h4>
+    <h5>Possible causes</h5> 
+    <pre>1. Your external disk case, awful flash drive or internal SSD just not being able to handle the simultaneous writes and reads. 2. Your VPN limiting you bandwidth. 3. Your ISP throttling. Torrent traffic throttled even through a VPN.</pre>
+    <h5>Possible solutions</h5>
+  <p>Disk Benchmarks Test</p>
+  <pre><code><span>$ </span>sudo apt install gnome-disk-utility</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install gnome-disk-utility')">Copy</button>
+  <p>For your ISP throttle, try your VPN Obfuscated Servers or P2P Servers.</p>
+  <p>Do a Leak Test</p> <a href="https://dnsleaktest.com/">∙ DNSLeakTest.com</a> (run the "Extended test")
+    <br><a href="https://ipleak.net/">∙ IPLeak.net</a>
+    <br> <pre><code>curl ipleak.net/json/</code></pre> 
+    <pre><code>curl ipinfo.io</code></pre>
+  <p>Alternativelly, begin to VPN+Torrent on PC, wait until throttling begins. Try to play back a 1080p video on your smartphone, try to choose one where you can see the quality difference (for example one with many text elements such as computer hardware benchmarks). A 1080p video nneeds about 1-2Mbps (250KB/s) bandwidth.</p>
+  <p>Instead you can try to download something on the phone. This is to find out if it's an issue VPN server/software or with your ISP line as a whole. It's possible for your ISP to only throttle the connection to the VPN server and leave the rest alone.</p>
+    <h4>Problem 2</h4> 
+    <pre><code><span>$ </span>sudo</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo')">Copy</button>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>9.13 Disks</summary>
+    <br> https://wiki.debian.org/SSDOptimization
+    <br> https://wiki.archlinux.org/title/Solid_state_drive
+    <br>
+  <!-- ############################## -->
+    <h4>Disk managers</h4>
+    <h5>GParted</h5> 
+    <pre><code><span>$ </span>sudo apt install gparted</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install gparted')">Copy</button>
+  <!-- ########## -->
+    <h5>Gnome Disk - "Disks"</h5> 
+    <pre><code><span>$ </span>sudo apt install gnome-disk-utility</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install gnome-disk-utility')">Copy</button>
+  <!-- ########## -->
+    <h4>Disk manager with LVM support</h4>
+    <h5>KDE Partition Manager</h5> 
+    <pre><code><span>$ </span>sudo apt install partitionmanager</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install partitionmanager')">Copy</button>
+  <!-- ########## -->
+    <h4>Disk debug</h4> 
+    <pre>$ dmesg -T | grep xhci $ lsusb -tv</pre>
+    <pre>Commands for fdisk • EXT - Badblock: $ sudo fdisk -l /dev/sdb • *NTFS - Badblock: $ sudo e2fsck -p /dev/sde1 $ sudo e2fsck -c $ sudo e2fsck -l /dev/sdb1 /badblock/file</pre>
+  <!-- ########## -->
+    <h4>Disk Utilities</h4>
+    <h5>TESTDISK</h5> 
+    https://cgsecurity.org/wiki/TestDisk
+    <br>
+    <h5>SMARTMONTOOLS</h5> 
+    <pre><code><span>$ </span>sudo apt install smartmontools</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install smartmontools')">Copy</button> <pre>Commands for smartmontools • How to : $ sudo smartctl -a /dev/sda</pre>
+    <h5>HDPARM</h5> 
+    <pre><code><span>$ </span>sudo apt install hdparm</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install hdparm')">Copy</button> <pre>Commands for hdparm • How to : $ sudo hdparm -I /dev/sda</pre>
+    <h5>KDISKMARK</h5> 
+    <pre><code><span>$ </span>sudo apt install -y kdiskmark</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install -y kdiskmark')">Copy</button>
+    <h5>DEBUGFS</h5> 
+    <pre><code><span>$ </span>sudo debugfs</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo debugfs')">Copy</button>
+  <br> 
+</details>  
+<!-- ############################## -->
+<details>
+  <summary>9.14 Hardware</summary>
+    <br>
+    <h4>Hardware Utilities</h4> 
+    <pre><code><span>$ </span>sudo apt install lshw</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install lshw')">Copy</button> 
+    <pre><code><span>$ </span>sudo apt install inxi</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install inxi')">Copy</button> 
+    <pre><code><span>$ </span>sudo apt install cpu-x</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install cpu-x')">Copy</button> 
+    <pre><code><span>$ </span>sudo apt install hardinfo</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install hardinfo')">Copy</button> 
+    <pre><code><span>$ </span>sudo apt install s-tui stress</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install s-tui stress')">Copy</button>
+  <br> 
+</details>
+  <hr>
+  <!-- ############################################################-->
+  <h2>10. OTHERS</h2>
+<details>
+  <summary>10.01 Some Links</summary>
+    <br>
+    <h4>Links</h4>
+  <ul>
+    <li><a href="https://fsf.org">Free Software Foundation</a></li>
+    <li><a href="https://fsfe.org">Free Software Foundation Europe</a></li>
+    <li><a href="https://gnu.org">GNU Project</a></li>
+    <li><a href="https://micronews.debian.org">Debian Micronews</a></li>
+    <li><a href="https://bits.debian.org">https://bits.debian.org</a></li>
+    <li><a href="https://iec.ch/cyber-security">https://iec.ch/cyber-security</a></li>
+    <li><a href="https://iso.org/standards.html">https://iso.org/standards.html</a></li>
+    <li><a href="https://linuxfoundation.org">https://linuxfoundation.org</a></li>
+    <li><a href="https://training.linuxfoundation.org">https://training.linuxfoundation.org</a></li>
+    <li><a href="https://linuxfromscratch.org">https://linuxfromscratch.org</a></li>
+    <li><a href="https://man7.org">https://man7.org</a></li>
+    <li><a href="https://man7.org/training">https://man7.org/training</a></li>
+    <li><a href="https://reproducible-builds.org">https://reproducible-builds.org</a></li>
+    <li><a href="https://creativecommons.org">https://creativecommons.org</a></li>
+    <li><a href="https://nist.gov/standards">https://nist.gov/standards</a></li>
+    <li><a href="https://opengroup.org">https://opengroup.org</a></li>
+    <li><a href="https://opensource.com">https://opensource.com</a></li>
+    <li><a href="https://opensource.org">https://opensource.org</a></li>
+    <li><a href="https://todogroup.org">https://todogroup.org</a></li>
+  </ul>
+    <h4>YouTube Links</h4>
+    <h4>Digital Forensics and Incident Response:</h4>
+  <ul>
+    <li><a href="https://youtube.com/@DFRWS">DFRWS</a></li>
+    <li><a href="https://youtube.com/@SANSForensics">SANSForensics</a></li>
+    <li><a href="https://youtube.com/@SANSOffensiveOperations">SANSOffensiveOperations</a></li>
+  </ul>
+    <h4>Security Conferences:</h4>
+  <ul>
+    <li><a href="https://youtube.com/@BlackHatOfficialYT">BlackHat Official YT</a></li>
+    <li><a href="https://youtube.com/@DEFCONConference">DEFCON Conference</a></li>
+    <li><a href="https://youtube.com/@EkopartyConference">Ekoparty Conference</a></li>
+    <li><a href="https://youtube.com/@reconmtl">reconmtl</a></li>
+    <li><a href="https://youtube.com/@TROOPERScon">TROOPERScon</a></li>
+    <li><a href="https://youtube.com/@OffensiveCon">OffensiveCon</a></li>
+    <li><a href="https://youtube.com/@hitbsecconf">hitbsecconf</a></li>
+  </ul>
+    <h4>General Tech Conferences:</h4>
+  <ul>
+    <li><a href="https://youtube.com/@RSAConference">RSA Conference</a></li>
+    <li><a href="https://youtube.com/@UsenixOrg">UsenixOrg</a></li>
+    <li><a href="https://youtube.com/@USENIXEnigmaConference">USENIX Enigma Conference</a></li>
+    <li><a href="https://youtube.com/@MCH2022NL">MCH2022NL</a></li>
+  </ul>
+    <h4>Miscellaneous Tech and Cybersecurity:</h4>
+  <ul>
+    <li><a href="https://youtube.com/@mediacccde">mediacccde</a></li>
+    <li><a href="https://youtube.com/@secwestnet">secwestnet</a></li>
+    <li><a href="https://youtube.com/@DebConfVideos">DebConf Videos</a></li>
+    <li><a href="https://youtube.com/@44contv">44contv</a></li>
+    <li><a href="https://youtube.com/@mentalOutlaw">mentalOutlaw</a></li>
+    <li><a href="https://youtube.com/@Seytonic">Seytonic</a></li>
+    <li><a href="https://youtube.com/@DoingFedTime">DoingFedTime</a></li>
+    <li><a href="https://youtube.com/@Hak5">Hak5</a></li>
+    <li><a href="https://youtube.com/@The8BitGuy">The 8-Bit Guy</a></li>
+    <li><a href="https://youtube.com/@Computerphile">Computerphile</a></li>
+  </ul>
+    <h4>Linux Blogs</h4>
+  <ul>
+    <li><a href="https://0pointer.net/blog/">https://0pointer.net/blog/</a></li>
+    <li><a href="https://blog.carsoncheng.ca">https://blog.carsoncheng.ca</a></li>
+    <li><a href="https://dwarmstrong.org">https://dwarmstrong.org</a></li>
+    <li><a href="https://fabianlee.org">https://fabianlee.org</a></li>
+    <li><a href="https://itsfoss.com">https://itsfoss.com</a></li>
+    <li><a href="https://lwn.net">https://lwn.net</a></li>
+    <li><a href="https://linux-tips.us">https://linux-tips.us</a></li>
+    <li><a href="https://linuxcnf.com">https://linuxcnf.com</a></li>
+    <li><a href="https://linuxconfig.org">https://linuxconfig.org</a></li>
+    <li><a href="https://linuxhandbook.com">https://linuxhandbook.com</a></li>
+    <li><a href="https://linuxiac.com">https://linuxiac.com</a></li>
+    <li><a href="https://linuxinsider.com">https://linuxinsider.com</a></li>
+    <li><a href="https://linuxsecurity.com">https://linuxsecurity.com</a></li>
+    <li><a href="https://ostechnix.com">https://ostechnix.com</a></li>
+    <li><a href="https://programmerall.com">https://programmerall.com</a></li>
+    <li><a href="https://slant.co">https://slant.co</a></li>
+    <li><a href="https://techviewleo.com">https://techviewleo.com</a></li>
+    <li><a href="https://tqdev.com">https://tqdev.com</a></li>
+    <li><a href="https://vitux.com">https://vitux.com</a></li>
+  </ul>
+    <h4>Shell e others</h4>
+  <ul>
+    <li><a href="https://shellcheck.net">https://shellcheck.net</a></li>
+    <li><a href="https://shellscript.sh">https://shellscript.sh</a></li>
+    <li><a href="https://shellhacks.com">https://shellhacks.com</a></li>
+    <li><a href="https://explainshell.com">https://explainshell.com</a></li>
+    <li><a href="https://regular-expressions.info">https://regular-expressions.info</a></li>
+    <li><a href="https://w3.org/developers/tools/">https://w3.org/developers/tools/</a></li>
+    <li><a href="https://notrace.how">https://notrace.how</a></li>
+    <li><a href="https://0x00sec.org">https://0x00sec.org</a></li>
+    <li><a href="https://anarsec.guide">https://anarsec.guide</a></li>
+    <li><a href="https://darkreading.com">https://darkreading.com</a></li>
+    <li><a href="https://book.hacktricks.xyz">https://book.hacktricks.xyz</a></li>
+  </ul>
+    <h4>Libraries</h4>
+  <ul>
+  <li>
+    <A HREF="https://archive.org">
+      Internet Archive
+      <BR>
+  
+  <PRE>
+https://archive.org
+      </PRE>
+    </a>
+  </li>
+  <li>
+    <A HREF="https://annas-archive.org">
+      Anna's Archive
+      <BR>
+  
+  <PRE>
+https://annas-archive.org
+      </PRE>
+    </a>
+  </li>
+  <li>
+    <A HREF="https://t.me/zlibrary_official">
+      Z-Library Official (Telegram)
+      <BR>
+  
+  <PRE>
+https://t.me/zlibrary_official
+      </PRE>
+    </a>
+  </li>
+  <li>
+    <A HREF="https://go-to-zlibrary.se/#desktop_app_tab">
+      Z-Library (APP)
+      <BR>
+  
+  <PRE>
+https://go-to-zlibrary.se/#desktop_app_tab
+      </PRE>
+    </a>
+  </li>
+  <li>
+    <A HREF="https://singlelogin.se">
+      Z-Library (WEB)
+      <BR>
+  
+  <PRE>
+https://singlelogin.se
+      </PRE>
+    </a>
+  </li>
+  <li>
+    <A HREF="http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion">
+      Z-Library (ONION)
+      <BR>
+  
+  <PRE>
+http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion
+      </PRE>
+    </a>
+  </li>
+  <li>
+    <A HREF="https://libgen.rs">
+      Library Genesis (.rs alias domain)
+      <BR>
+  
+  <PRE>
+https://libgen.rs
+      </PRE>
+    </a>
+  </li>
+  <li>
+    <A HREF="https://libgen.is">
+      Library Genesis (.is alias domain)
+      <BR>
+  
+  <PRE>
+https://libgen.is
+      </PRE>
+    </a>
+  </li>
+  <li>
+    <A HREF="https://libgen.st">
+      Library Genesis (.st alias domain)
+      <BR>
+  
+  <PRE>
+https://libgen.st
+      </PRE>
+    </a>
+  </li>
+  <li>
+    <A HREF="https://wiki.mhut.org/software:libgen_desktop">
+      Library Genesis (APP)
+      <BR>
+  
+  <PRE>
+https://wiki.mhut.org/software:libgen_desktop
+      </PRE>
+    </a>
+  </li>
+  <li>
+    <A HREF="http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion">
+      Library Genesis (ONION)
+      <BR>
+  
+  <PRE>
+http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion
+      </PRE>
+    </a>
+  </li>
+  <li>
+    <A HREF="http://kx5thpx2olielkihfyo4jgjqfb7zx7wxr3sd4xzt26ochei4m6f7tayd.onion">
+      Imperial Library (ONION)
+      <BR>
+  
+  <PRE>
+http://kx5thpx2olielkihfyo4jgjqfb7zx7wxr3sd4xzt26ochei4m6f7tayd.onion
+      </PRE>
+    </a>
+  </li>
+  <li>
+    <A HREF="http://libraryfyuybp7oyidyya3ah5xvwgyx6weauoini7zyz555litmmumad.onion">
+      Just Another Library (ONION)
+      <BR>
+  
+  <PRE>
+http://libraryfyuybp7oyidyya3ah5xvwgyx6weauoini7zyz555litmmumad.onion
+      </PRE>
+    </a>
+  </li>
+  <li>
+    <A HREF="http://w27irt6ldaydjoacyovepuzlethuoypazhhbot6tljuywy52emetn7qd.onion">
+      InfoCon (ONION)
+      <BR>
+  
+  <PRE>
+http://w27irt6ldaydjoacyovepuzlethuoypazhhbot6tljuywy52emetn7qd.onion
+      </PRE>
+    </a>
+  </li>
+</ul>
+  <ul>
+    <li><a href="https://en.wikiversity.org/wiki/Open_Educational_Resources/Open_Courses">https://en.wikiversity.org/wiki/Open_Educational_Resources/Open_Courses</a></li>
+    <li><a href="https://en.wikiversity.org/wiki/Open_Educational_Resources/Open_Textbooks">https://en.wikiversity.org/wiki/Open_Educational_Resources/Open_Textbooks</a></li>
+    <li><a href="https://freecomputerbooks.com">https://freecomputerbooks.com</a></li>
+    <li><a href="https://freetechbooks.com">https://freetechbooks.com</a></li>
+    <li><a href="https://riptutorial.com/ebook">https://riptutorial.com/ebook</a></li>
+    <li><a href="https://e-booksdirectory.com">https://e-booksdirectory.com</a></li>
+    <li><a href="https://programmer-books.com">https://programmer-books.com</a></li>
+  </ul>
+    <h4>Piracy</h4>
+  <ul>
+    <li><a href="https://torrentfreak.com">https://torrentfreak.com</a></li>
+    <li><a href="https://github.com/Igglybuff/awesome-piracy">https://github.com/Igglybuff/awesome-piracy</a></li>
+    <li><a href="https://github.com/lkrjangid1/Awesome-Warez">https://github.com/lkrjangid1/Awesome-Warez</a></li>
+    <li><a href="https://github.com/Illegal-Services/Illegal_Services">https://github.com/Illegal-Services/Illegal_Services</a></li>
+    <li><a href="https://github.com/fmhy">https://github.com/fmhy</a></li>
+    <li><a href="https://fmhy.net">https://fmhy.net</a></li>
+    <li><a href="https://github.com/Lucetia/piracy">https://github.com/Lucetia/piracy</a></li>
+    <li><a href="https://github.com/the-rarbg/yaps">https://github.com/the-rarbg/yaps</a></li>
+    <li><a href="https://reddit.com/r/Piracy">https://reddit.com/r/Piracy</a></li>
+    <li><a href="https://lemmy.dbzer0.com/c/piracy">https://lemmy.dbzer0.com/c/piracy</a></li>
+    <li><a href="https://bitmagnet.io">https://bitmagnet.io</a></li>
+    <li><a href="https://rentry.co/megathread">https://rentry.co/megathread</a></li>
+    <li><a href="https://1337x.to">https://1337x.to</a></li>
+    <li><a href="https://fitgirl-repacks.site">https://fitgirl-repacks.site</a></li>
+  </ul>
+    <h4>Self-hosting</h4>
+  <ul>
+    <li><a href="https://github.com/awesome-selfhosted/awesome-selfhosted">https://github.com/awesome-selfhosted/awesome-selfhosted</a></li>
+    <li><a href="https://github.com/syncthing/syncthing">https://github.com/syncthing/syncthing</a></li>
+    <li><a href="https://github.com/anonaddy/anonaddy">https://github.com/anonaddy/anonaddy</a></li>
+    <li><a href="https://reddit.com/r/selfhosted">https://reddit.com/r/selfhosted</a></li>
+  </ul>
+    <h4>Eletronics</h4>
+  <ul>
+    <li><a href="https://ibiblio.org/kuphaldt/electricCircuits">https://ibiblio.org/kuphaldt/electricCircuits</a></li>
+    <li><a href="https://electronics-tutorials.ws">https://electronics-tutorials.ws</a></li>
+  </ul>
+ <br> 
+ </details>
+  <br>
+  <!-- ############################################################-->
+  <div>
+  <p style="text-align: right;"><a href="https://github.com/RENANZG/My-Debian-GNU-Linux?tab=readme-ov-file#">Back to Top ⬆</a></p>
+  <br>
+  <br>
+  <br>
+  <p style="text-align: left;"><a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!"></a></p>
+  <p style="text-align: center;">Made with ♥</p>
+  </div>
     <br> • Commonly Used Software Development Tools - https://ctool.dev
     <br> • Text Fixer - https://textfixer.com
     <br> • SS64 Syntax Utils - https://ss64.com
