@@ -146,7 +146,8 @@
   <div>
   <h1>1. DEBIAN GNU/LINUX</h1>
   <blockquote>
-    <h3>"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately endpoint security is so terrifically weak that NSA can frequently find ways around it." (Edward Snowden)</h3> </blockquote>
+    <h3>"Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on. Unfortunately endpoint security is so terrifically weak that NSA can frequently find ways around it." (Edward Snowden)</h3>
+  </blockquote>
   <p style="text-align: center;"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/.data/the_key_to_the_fields_1936_-_rene_magritte_830px.png" alt="The Key to the Fields (1936) - René Magritte" title="The Key to the Fields (1936) - René Magritte"></p>
   <hr>
   </div>
@@ -2032,7 +2033,8 @@ $ sbverify --cert /var/lib/shim-signed/mok/MOK.pem /boot/vmlinuz-$(uname -r)</co
 <details>
   <summary>3.11 Sign Ventoy</summary>
     <br>
-    <h4>About Secure Boot in UEFI mode</h4> https://ventoy.net/en/doc_secure.html
+    <h4>About Secure Boot in UEFI mode</h4> 
+    https://ventoy.net/en/doc_secure.html
     <br>
   <br> 
 </details>
@@ -2664,7 +2666,8 @@ $ systemctl status "service"
 <details>
   <summary>5.01 Router</summary>
     <br>
-    <h4>Router Freedom - Open-source routers - Device Neutrality</h4> https://docs.fsfe.org/en/teams/router-freedom-tech-wiki
+    <h4>Router Freedom - Open-source routers - Device Neutrality</h4> 
+    https://docs.fsfe.org/en/teams/router-freedom-tech-wiki
     <br> https://fsfe.org/contribute/spreadtheword#device-neutrality
     <br>
   <p>"There are a number of open-source options for routers that will take even a small consumer router and turn it into a powerful device with enterprise-level capabilities. My personal favorite is DD-WRT, but other popular options include pfSense, OpenWRT, and Tomato. While you can buy pre-flashed devices in some cases (FlashRouters for DD-WRT and Protectli for pfSense), I always encourage you to do it yourself if you’re comfortable to ensure maximum security (and also to be familiar with the update process). Having said all of this, if you are unsure if an open source router is right for you (the wealth of options can be overwhelming to some), I still encourage you to get a router that wasn’t provided by your ISP. Make sure it offers VLANs and VPN capabilities, as we will be using these heavily to protect your home."</p>
@@ -2705,7 +2708,8 @@ $ systemctl status "service"
     </table> https://openwrt.org
     <br> https://pfsense.org
     <br>
-    <h4>Router Guide</h4> https://avoidthehack.com/router-wireless-guide
+    <h4>Router Guide</h4> 
+    https://avoidthehack.com/router-wireless-guide
     <br>
   <ul>
     <li>Change the default router password</li>
@@ -2739,7 +2743,8 @@ $ systemctl status "service"
   <!-- ########## -->
     <h5>Connman (CLI)</h5> <code>$ sudo apt install connman</code> <pre>Commands $ $ $ $ $</pre>
   <!-- ########## -->
-    <h4>Setting up networking without a network manager</h4> https://unix.stackexchange.com/questions/253030/how-to-setup-network-without-wicd-or-networkmanager
+    <h4>Setting up networking without a network manager</h4> 
+    https://unix.stackexchange.com/questions/253030/how-to-setup-network-without-wicd-or-networkmanager
     <br>
   <p>Set up static networking. Configured only wlan0 because of wireless, you just need to skip the wireless related things in it.</p>
   <p>Show your interfaces:</p>
@@ -2771,7 +2776,8 @@ $ systemctl status "service"
   <pre><code>ip a show wlan0 | grep "inet" Presumably dhclient updated your /etc/resolv.conf, so you can also do a: ping -I 192.168.0.45 www.yahoo.com</code></pre>
   <p>You’re now running without NetworkManager!</p>
   <!-- ########## -->
-    <h4>How to reset Network Manager to default?</h4> https://askubuntu.com/questions/637637/how-to-reset-network-manager-to-default
+    <h4>How to reset Network Manager to default?</h4> 
+    https://askubuntu.com/questions/637637/how-to-reset-network-manager-to-default
     <br>
   <br> 
 </details>  
@@ -2807,7 +2813,8 @@ $ systemctl status "service"
     https://wiki.debian.org/Avahi
     <br>
   <!-- ############################## -->
-    <h4>Router DNS</h4> https://developers.cloudflare.com/1.1.1.1/ip-addresses
+    <h4>Router DNS</h4> 
+    https://developers.cloudflare.com/1.1.1.1/ip-addresses
     <br> https://opendns.com/setupguide
     <br> https://docs.fsfe.org/en/teams/router-freedom-tech-wiki
     <br>
@@ -2833,11 +2840,13 @@ $ systemctl status "service"
     <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/03_NETWORK/03_Firewall">03_NETWORK/03_Firewall</a></h4>
   <p>Note that these commands show ports that are in a listening state, but that doesn’t necessarily mean that the ports are open to the internet, because our firewall may be denying connections.</p>
   <!-- ############################## -->
-    <h4>• GUFW (GUI)</h4> https://gufw.org
+    <h4>• GUFW (GUI)</h4> 
+    https://gufw.org
     <br> https://help.ubuntu.com/community/Gufw
     <br> <pre><code><span>$ </span>sudo apt install gufw</code></pre>
   <!-- ############################## -->
-    <h4>• UFW (CLI)</h4> https://launchpad.net/ufw
+    <h4>• UFW (CLI)</h4> 
+    https://launchpad.net/ufw
     <br> https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29
     <br> https://wiki.archlinux.org/title/Uncomplicated_Firewall
     <br> http://manpages.ubuntu.com/manpages/precise/man8/ufw.8.html
@@ -2954,7 +2963,8 @@ $ systemctl status "service"
 <details>
   <summary>5.06 OpenVPN</summary>
     <br>
-    <h4>OpenVPN</h4> https://openvpn.net/community-resources/how-to/
+    <h4>OpenVPN</h4> 
+    https://openvpn.net/community-resources/how-to/
     <br> https://wiki.debian.org/OpenVPN
     <br> https://debian-handbook.info/browse/stable/sect.virtual-private-network.html
     <br> https://debian.org/doc/manuals/securing-debian-manual/vpn.en.html
@@ -3014,24 +3024,36 @@ $ sudo nano /etc/NetworkManager/NetworkManager.conf <br></pre>
   <pre>• Configuring client.conf automatically in batch $ echo 'auth-user-pass /etc/openvpn/client/auth keepalive 10 60 log-append /var/log/openvpn.log script-security 2 up /etc/openvpn/update-resolv-conf down /etc/openvpn/update-resolv-conf' | tee -a openvpn/*.conf</pre>
   <!-- ############################## -->
     <h5>Create a autologin file</h5> 
-    <pre>• Configuring auth manually $ sudo touch /etc/openvpn/client/auth $ sudo ano /etc/openvpn/client/auth user password</pre>
-    <pre>• Configuring auth automatically • If you are not going to copy the example, to create a 
-     newline (press ENTER) after you type the \
-     to tell the 
-      shell you want to enter more parameters but on a 
-      separate line. $ cd /etc/openvpn/client/auth $ sudo echo 'user password' > openvpn/auth • A little protection # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre>
-      <pre>• Alternatively $ sudo chmod 600 /etc/openvpn/client/auth $ echo "USERNAME" | sudo tee -a /etc/openvpn/client/auth $ echo "PASSWORD" | sudo tee -a /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre>
-      <pre>• Alternatively $ sudo su # echo 'myuser' | sudo tee -a /etc/openvpn/client/auth # echo 'mypassword' | sudo tee -a /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre>
-      <pre>• Alternatively $ sudo su # echo 'myuser' | tee --append /etc/openvpn/client/auth # echo 'mypassword' | tee --append /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre>
+    <pre>
+    • Configuring auth manually $ sudo touch /etc/openvpn/client/auth $ sudo ano /etc/openvpn/client/auth user password
+    </pre>
+    <pre>
+    • Configuring auth automatically • If you are not going to copy the example, to create a newline (press ENTER) after you type the \
+      to tell the shell you want to enter more parameters but on a separate line. $ cd /etc/openvpn/client/auth $ sudo echo 'user password' > openvpn/auth 
+    • A little protection # chmod 600 /etc/openvpn/client/auth 
+    • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon
+    </pre>
+    <pre>
+     • Alternatively $ sudo chmod 600 /etc/openvpn/client/auth $ echo "USERNAME" | sudo tee -a /etc/openvpn/client/auth $ echo "PASSWORD" | sudo tee -a /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon
+    </pre>
+    <pre>• Alternatively $ sudo su # echo 'myuser' | sudo tee -a /etc/openvpn/client/auth # echo 'mypassword' | sudo tee -a /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon
+    </pre>
+    <pre>
+    • Alternatively $ sudo su # echo 'myuser' | tee --append /etc/openvpn/client/auth # echo 'mypassword' | tee --append /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon
+    </pre>
   <!-- ############################## -->
     <h5>OpenVPN DNS Resolver</h5>
-  <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p> https://wiki.archlinux.org/title/OpenVPN#DNS
+    <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
+    https://wiki.archlinux.org/title/OpenVPN#DNS
     <br> https://github.com/jonathanio/update-systemd-resolved
     <br>
   <p>"By default, all configured VPNs in <code>/etc/openvpn/</code> are started during system boot. Edit <code>/etc/default/openvpn</code> to start specific VPNs or to disable this behavior. You need to run <code>systemctl daemon-reload</code> once to enable new VPNs."</p> 
-  <pre>Commands $ sudo su # cd /etc/openvpn/client # echo "script-security 2" | sudo tee -a /etc/openvpn/client/openvpn.conf # echo "up /etc/openvpn/update-resolv-conf" | sudo tee -a /etc/openvpn/client/openvpn.conf # echo "down /etc/openvpn/update-resolv-conf" | sudo tee -a /etc/openvpn/client/openvpn.conf</pre>
+  <pre>
+  Commands $ sudo su # cd /etc/openvpn/client # echo "script-security 2" | sudo tee -a /etc/openvpn/client/openvpn.conf # echo "up /etc/openvpn/update-resolv-conf" | sudo tee -a /etc/openvpn/client/openvpn.conf # echo "down /etc/openvpn/update-resolv-conf" | sudo tee -a /etc/openvpn/client/openvpn.conf
+  </pre>
   <!-- ############################## -->
-    <h4>Solving DNS problems with OpenVPN</h4> https://openvpn.net/vpn-server-resources/troubleshooting-dns-resolution-problems
+    <h4>Solving DNS problems with OpenVPN</h4> 
+    https://openvpn.net/vpn-server-resources/troubleshooting-dns-resolution-problems
     <br>
   <!-- ############################## -->
     <h5>OpenVPN DNS</h5>
@@ -3096,7 +3118,8 @@ $ sudo nano /etc/NetworkManager/NetworkManager.conf <br></pre>
 <details>
   <summary>5.07 WireGuard</summary>
     <br>
-    <h4>∙ WireGuard</h4> https://github.com/WireGuard
+    <h4>∙ WireGuard</h4> 
+    https://github.com/WireGuard
     <br> https://wiki.ubuntuusers.de/WireGuard
     <br> <pre><code><span>$ </span>sudo apt install wireguard</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install wireguard')">Copy</button> 
@@ -3108,7 +3131,8 @@ $ sudo nano /etc/NetworkManager/NetworkManager.conf <br></pre>
 <details>
   <summary>5.08 strongSwan</summary>
     <br>
-    <h4>strongSwan</h4> https://github.com/strongswan/strongswan
+    <h4>strongSwan</h4> 
+    https://github.com/strongswan/strongswan
     <br> https://docs.strongswan.org/docs/5.9/index.html
     <br> https://docs.strongswan.org/docs/5.9/config/IKEv2.html
     <br> https://docs.strongswan.org/docs/5.9/config/logging.html
@@ -3207,7 +3231,8 @@ $ sudo ls /etc/strongswan.d/charon/
 <details>
   <summary>5.12 Others</summary>
     <br>
-    <h4>• Torrenting</h4> https://portforward.com
+    <h4>• Torrenting</h4> 
+    https://portforward.com
     <br> https://wiki.wireshark.org/BitTorrent
     <br> https://github.com/LiamTheBox/Torrent-With-A-VPN
     <br> https://github.com/mdlam92/vpn_torrenting
@@ -3237,7 +3262,8 @@ $ sudo ls /etc/strongswan.d/charon/
   <details>
     <summary>Office Suites</summary>
       <br>
-      <h4>Libre Office</h4> https://libreoffice.org
+      <h4>Libre Office</h4> 
+      https://libreoffice.org
       <br> https://wiki.documentfoundation.org/Documentation/Install/Linux
       <br>
     <!-- ##### -->
@@ -3357,7 +3383,8 @@ $ sudo ls /etc/strongswan.d/charon/
   <details>
     <summary>Document Converter</summary>
       <br>
-      <h4>Libre Office (Headless)</h4> https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html
+      <h4>Libre Office (Headless)</h4> 
+      https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html
       <br> <pre><code><span>$ </span>sudo sudo apt install -y libreoffice</code></pre>
       <pre>Commands for libreoffice headless • Syntax $ soffice --convert-to OutputFileExtension[:OutputFilterName[:OutputFilterParams[,param]]] [--outdir output_dir] • To convert a DOCX file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.docx $ soffice --headless --convert-to pdf:writer_pdf_Export:ExportNotesPages=True --outdir /home/user *.docx • To convert a ODT file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.odt • To convert a ODT file to DOCX $ soffice –-headless --convert-to pdf:writer_odt_Export --outdir /home/user *.docx • To convert a PPTX file to PDF $ soffice --headless --convert-to pdf:impress_pdf_Export --outdir /home/user *.pptx $ soffice --headless --convert-to pdf:impress_pdf_Export:ExportNotesPages=True --outdir /home/user *.pptx • To convert a XLSX file to PDF $ soffice --headless --convert-to pdf:calc_pdf_Export --outdir /home/user *.xlsx • To convert a ODT file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.odt • To convert a HTML file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.html</pre>
     <p>Output as PDF</p>
@@ -3438,7 +3465,8 @@ Commands for qpdf $ qpdf --flatten-annotations=all input.pdf output.pdf
     <p>*May apply some differences.</p>
     <p>*May result in larger PDF.</p>
     <!-- ########## -->
-      <h4>PDF Bookmarks Creation</h4> https://github.com/SiddharthPant/booky
+      <h4>PDF Bookmarks Creation</h4> 
+      https://github.com/SiddharthPant/booky
       <br>
     <!-- ########## -->
       <h4>PDF Metadata</h4> 
@@ -3530,7 +3558,8 @@ $ ocrmypdf -v --pdfa-image-compression=jpeg --language=por+deu input.pdf output.
   <details>
     <summary>PDF Optimizers</summary>
       <br>
-      <h4>ImageMagick (GUI or CLI)</h4> https://imagemagick.org/Usage/crop
+      <h4>ImageMagick (GUI or CLI)</h4> 
+      https://imagemagick.org/Usage/crop
       <br> https://imagemagick.org/Usage/crop/#crop_repage
       <br> https://cvedetails.com/vendor/1749/Imagemagick.html
       <br> <pre><code><span>$ </span>sudo apt install imagemagick</code></pre>
@@ -3551,7 +3580,8 @@ $ mogrify -monitor 'ls input-*.png' -crop 3704x1852+160+20 output.png $ mogrify 
     <p>pdfCropMargins - Python</p> https://pypi.org/project/pdfCropMargins
       <br> <pre>$ pip install "pdfCropMargins" --upgrade $ pdf-crop-margins -v -p 0 -a -6 input.pdf</pre>
 
-      <h4>Ghostscript</h4> https://ghostscript.com
+      <h4>Ghostscript</h4> 
+      https://ghostscript.com
       <br> https://cvedetails.com/vendor/10846/Artifex.html
       <br> <pre><code><span>$ </span>sudo apt install -y ghostscript</code></pre>
       <h5>Commands to optimize PDF</h5>
@@ -3678,7 +3708,8 @@ Commands for ebook-convert • How to convert .epub to .pdf $ sudo apt install c
     <p>An API to programmatically generate memes based solely on requested URLs</p> https://github.com/jacebrowning/memegen
       <br> https://memegen.link
       <br>
-      <h4>imgflip (Free)</h4> https://imgflip.com/memegenerator
+      <h4>imgflip (Free)</h4> 
+      https://imgflip.com/memegenerator
       <br>
       <br> 
     </details>
@@ -3764,7 +3795,8 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
   <summary>6.02 Password Manager</summary>
     <br>
     <h3>Password Manager</h3>
-    <h4>• KeePassXC</h4> https://keepassxc.org/docs/
+    <h4>• KeePassXC</h4> 
+    https://keepassxc.org/docs/
     <br> https://cvedetails.com/vendor/12214/Keepass.html
     <br> <pre><code><span>$ </span>sudo apt install keepassxc</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install keepassxc')">Copy</button>
@@ -3774,15 +3806,19 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
 <details>
   <summary>6.03 Browsers</summary>
     <br>
-    <h4>Browsers</h4> https://avoidthehack.com/util/browser-comparison
+    <h4>Browsers</h4> 
+    https://avoidthehack.com/util/browser-comparison
     <br>
-    <h4>• LibreWolf</h4> https://librewolf.net/installation/debian/
+    <h4>• LibreWolf</h4> 
+    https://librewolf.net/installation/debian/
     <br>
-    <h4>• Firefox</h4> https://cvedetails.com/vulnerability-list/vendor_id-452/product_id-22101/Mozilla-Firefox-Esr.html
+    <h4>• Firefox</h4> 
+    https://cvedetails.com/vulnerability-list/vendor_id-452/product_id-22101/Mozilla-Firefox-Esr.html
     <br> https://cvedetails.com/vendor/452/Mozilla.html
     <br> <pre><code><span>$ </span>sudo apt install</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install')">Copy</button>
-    <h4>• Chromium</h4> https://cvedetails.com/vulnerability-list/vendor_id-1224/product_id-15031/Google-Chrome.html
+    <h4>• Chromium</h4> 
+    https://cvedetails.com/vulnerability-list/vendor_id-1224/product_id-15031/Google-Chrome.html
     <br> <pre><code><span>$ </span>sudo apt install</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install')">Copy</button>
     <h5>Extensions</h5>
@@ -3874,7 +3910,8 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <h5>AppImage</h5> 
     https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/6.SOFTWARES/6.01_Softwares_AppImage/Tor-Browser_Installer.sh
     <br>
-    <h4>URL shorteners</h4> https://kutt.it
+    <h4>URL shorteners</h4> 
+    https://kutt.it
     <br> https://shlink.io
     <br>
   <br> 
@@ -3883,7 +3920,8 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
 <details>
   <summary>6.04 Cloud Services</summary>
     <br>
-    <h4>Info</h4> https://forum.rclone.org
+    <h4>Info</h4> 
+    https://forum.rclone.org
     <br> https://reddit.com/r/cloudstorage
     <br> https://reddit.com/r/DataHoarder
     <br> https://reddit.com/r/Piracy
@@ -3897,33 +3935,41 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <li><a href="https://duplicati.com" target="_blank">Duplicati (GUI)</a> :</li>
   </ul>
     <h4>Cloud Providers</h4>
-    <h4>• Google Drive</h4> https://github.com/glotlabs/gdrive
+    <h4>• Google Drive</h4> 
+    https://github.com/glotlabs/gdrive
     <br>
-    <h4>• MEGA</h4> https://mega.io
+    <h4>• MEGA</h4> 
+    https://mega.io
     <br> https://mega.io/desktop
     <br> https://github.com/rclone/rclone
     <br>
-    <h4>• Yandex</h4> https://360.yandex.com
+    <h4>• Yandex</h4> 
+    https://360.yandex.com
     <br> https://rclone.org/yandex (*Backend supported)
     <br> *Russian
     <br>
-    <h4>• IDrive</h4> https://idrive.com
+    <h4>• IDrive</h4> 
+    https://idrive.com
     <br> https://idrive.com/online-backup-linux
     <br> https://idrive.com/linux-backup-scripts
     <br> https://rclone.org/s3/#idrive-e2
     <br>
-    <h4>• TeraBox</h4> https://1024tera.com
+    <h4>• TeraBox</h4> 
+    https://1024tera.com
     <br> https://1024tera.com/terabox-cloud-storage-for-pc-free-download
     <br> https://reddit.com/r/TeraBox/
     <br>
-    <h4>• pCloud</h4> https://pcloud.com
+    <h4>• pCloud</h4> 
+    https://pcloud.com
     <br> https://pcloud.com/how-to-install-pcloud-drive-linux.html
     <br> https://github.com/pcloudcom/console-client
     <br>
-    <h4>• SugarSync</h4> https://sugarsync.com
+    <h4>• SugarSync</h4> 
+    https://sugarsync.com
     <br> https://rclone.org/sugarsync (*Not backend supported)
     <br>
-    <h4>• Box</h4> https://box.com
+    <h4>• Box</h4> 
+    https://box.com
     <br> https://github.com/box/boxcli
     <br> https://github.com/rclone/rclone
     <br>
@@ -3934,43 +3980,62 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
   <summary>6.05 File Host</summary>
     <br>
     <h4>File Host</h4>
-    <h4>• Unsee</h4> https://unsee.cc
+    <h4>• Unsee</h4> 
+    https://unsee.cc
     <br>
-    <h4>• Rapidgator</h4> https://rapidgator.net
+    <h4>• Rapidgator</h4> 
+    https://rapidgator.net
     <br>
-    <h4>• Nitroflare</h4> https://nitroflare.net
+    <h4>• Nitroflare</h4> 
+    https://nitroflare.net
     <br>
-    <h4>• Uploadgig</h4> https://uploadgig.com
-    <h4>• Mediafire</h4> https://mediafire.com/upgrade/
+    <h4>• Uploadgig</h4> 
+    https://uploadgig.com
+    <h4>• Mediafire</h4> 
+    https://mediafire.com/upgrade/
     <br>
-    <h4>• UploadFiles</h4> https://ufile.io
+    <h4>• UploadFiles</h4> 
+    https://ufile.io
     <br>
-    <h4>• 1Fichier</h4> https://1fichier.com/hlp.html
+    <h4>• 1Fichier</h4> 
+    https://1fichier.com/hlp.html
     <br>
-    <h4>• Turbobit</h4> https://turbobit.net
+    <h4>• Turbobit</h4> 
+    https://turbobit.net
     <h4>• Filescase</h4> http://filescase.com/
     <br>
-    <h4>• Hex Upload</h4> https://hexupload.org
+    <h4>• Hex Upload</h4> 
+    https://hexupload.org
     <br>
     <h4>Anonymous File Sharing Services With Temporary Online Storage</h4>
-    <h4>• Tempsend</h4> https://tempsend.com
+    <h4>• Tempsend</h4> 
+    https://tempsend.com
     <br>
-    <h4>• WeTransfer</h4> https://wetransfer.com
-    <h4>• Send Anywhere</h4> https://send-anywhere.com
+    <h4>• WeTransfer</h4> 
+    https://wetransfer.com
+    <h4>• Send Anywhere</h4> 
+    https://send-anywhere.com
     <br>
-    <h4>• SendGB</h4> https://sendgb.com
+    <h4>• SendGB</h4> 
+    https://sendgb.com
     <br>
-    <h4>• Volafile</h4> https://volafile.org
+    <h4>• Volafile</h4> 
+    https://volafile.org
     <br>
-    <h4>• SendSpace</h4> https://sendspace.com
+    <h4>• SendSpace</h4> 
+    https://sendspace.com
     <br>
-    <h4>• MyAirBridge</h4> https://myairbridge.com/en/eng
+    <h4>• MyAirBridge</h4> 
+    https://myairbridge.com/en/eng
     <br>
-    <h4>• Gofile</h4> https://gofile.io/welcome
+    <h4>• Gofile</h4> 
+    https://gofile.io/welcome
     <br>
-    <h4>• OTF One Time File</h4> https://gofile.io/welcome
+    <h4>• OTF One Time File</h4> 
+    https://gofile.io/welcome
     <br>
-    <h4>• Bitwarden Send</h4> https://bitwarden.com/products/send
+    <h4>• Bitwarden Send</h4> 
+    https://bitwarden.com/products/send
     <br>
   <br> 
 </details>  
@@ -4152,7 +4217,8 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
 <button onclick="navigator.clipboard.writeText('sudo apt install -y thunderbird')">Copy</button> 
 <pre><code><span>$ </span>sudo apt install -y birdtray</code></pre>
 <button onclick="navigator.clipboard.writeText('sudo apt install -y birdtray')">Copy</button>
-<h4>Encrypted Emails</h4> https://emailselfdefense.fsf.org/en/
+<h4>Encrypted Emails</h4> 
+https://emailselfdefense.fsf.org/en/
 <br> https://emailselfdefense.fsf.org/en/workshops.html
 <br> https://riseup.net/en/security/message-security/openpgp/best-practices
 <br> https://riseup.net/en/security/message-security/openpgp/enigmail
@@ -4278,7 +4344,8 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
     <h4>• GZIP (.gz , .tar and .tar.gz)</h4> 
     <pre><code><span>$ </span>sudo apt install gzip</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install gzip')">Copy</button> <pre>Commands for .gz archives • How to create an .gz file $ gzip outarchive.gz indoc1.pdf • How to decompress a .gz file $ gunzip archive.gz</pre>
-    <h4>• 7Z (.7z and .zip)</h4> https://7-zip.org
+    <h4>• 7Z (.7z and .zip)</h4> 
+    https://7-zip.org
     <br> https://cvedetails.com/vendor/9220/7-zip.html
     <br> <pre><code><span>$ </span>sudo apt install p7zip-full</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install p7zip-full')">Copy</button> <pre>Commands for .7z archives • How to create an .7z file $ 7z a outarchive.7z indoc1.pdf • How to decompress a .7z file $ 7z x archive.7z</pre>
@@ -4288,7 +4355,8 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
     <h4>• RAR (.rar)</h4> 
     <pre><code><span>$ </span>sudo apt install unrar-free</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install unrar-free')">Copy</button> <pre>Commands for .rar archives (*proprietary: extract only) • How to decompress a rar file $ unrar e ~/Downloads/filename.rar ~/Downloads/ • How to decompress a rar file encrypted $ unrar-free -x ~/Downloads/filename.rar ~/Downloads/ • How to decompress a rar file encrypted parts, only unrar the first part01.rar and it goes itself for the rest. Navigate to the directory containing the file: $ cd /path/to/directory/ $ unrar-free -xp /part01.rar ~/Downloads/</pre>
-    <h4>• ZIP (.zip)</h4> https://infozip.sourceforge.net
+    <h4>• ZIP (.zip)</h4> 
+    https://infozip.sourceforge.net
     <br> <pre><code><span>$ </span>sudo apt install zip unzip</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install zip unzip')">Copy</button> <pre>Commands for .zip archives • Add file.txt to z.zip (create z if needed) $ zip z file.txt • Zip all files in current dir: $ zip z * • Zip files in current dir and subdirs also: $ zip -r z . • How to decompress a .zip file: $ unzip ~/Downloads/filename.zip • How to unzip multiple .zip files: $ unzip '*.zip' • How to decompress a .zip file to directory: $ unzip filename.zip -d /path/to/directory $ unzip -d file file.zip • Unzip Multiple Files (using single quote or backslash) $ unzip '*.zip' $ unzip \*.zip • Locale encoding name error $ unzip -I (encoding) (FILE_PATH) -d (Destination) $ unzip -I UTF-8 Desktop.zip</pre>
     <pre>Commands for encrypted .zip archives • How to create an encrypted .zip file $ zip -e filename.zip ~/Downloads/ • How to decompress a encrypted .zip file $ unzip ~/Downloads/filename.zip • How to decompress a encrypted .zip file to directory $ unzip ~/Downloads/filename.zip -d ~/Downloads/</pre>
@@ -4424,7 +4492,8 @@ gpg --list-secret-keys --verbose --with-subkey-fingerprints
     <button onclick="navigator.clipboard.writeText('sudo localepurge')">Copy</button>
   <p>In Bleachbit as Administrator, go to Options -> Preferences -> Languages Tab and mark your preferred language besides en-US.Start cleaning, this may take some time.</p>
   <!-- ##### -->
-    <h4>Full Disk Sanitation</h4> https://wiki.debian.org/SSDOptimization
+    <h4>Full Disk Sanitation</h4> 
+    https://wiki.debian.org/SSDOptimization
     <br> https://wiki.archlinux.org/title/Solid_state_drive
     <br> *Not all SSD support sanitize. To properly way to erase a SSD is using the SSDs manufacturer's software. Other methods might not work, due to wear leveling and over-provisioning.
     <br> *If you use SSDs, enable TRIM in your BIOS. Confirm you are using SSD in the BIOS options.
@@ -4938,7 +5007,8 @@ $ rsync -ravP Directory/ server@192.168.1.56:/home/server
       <h5>Changing disk name</h5> 
       <pre><code><span>$ </span>cnvt-ocs-dev -d /home/partimag 'image' 'sda3' 'sda2'</code></pre>
     <!-- ########## -->
-      <h4>Data Integrity</h4> https://debian.org/doc/manuals/securing-debian-manual/ch04s17.en.html#check-integ
+      <h4>Data Integrity</h4> 
+      https://debian.org/doc/manuals/securing-debian-manual/ch04s17.en.html#check-integ
       <br>
       <br> 
     </details>  
@@ -5310,12 +5380,14 @@ $ man find | grep -e '-size'
 <details>
   <summary>6.20 Metaverse</summary>
     <br>
-    <h4>Vircadia - Open Source Metaverse Platform</h4> https://vircadia.com
+    <h4>Vircadia - Open Source Metaverse Platform</h4> 
+    https://vircadia.com
     <br>
     <a href="https://youtube.com/watch?v=4ZPz4rvMEwk"><img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D4ZPz4rvMEwk" alt="An introduction to Vircadia - an Open Source desktop and VR metaverse" title="An introduction to Vircadia - an Open Source desktop and VR metaverse"></a>
     <br>
   <!-- ########## -->
-    <h4>Overte - Open source virtual worlds and social VR</h4> https://overte.org
+    <h4>Overte - Open source virtual worlds and social VR</h4> 
+    https://overte.org
     <br>
     <a href="https://youtube.com/watch?v=-1tU6H2A7pQ"><img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D-1tU6H2A7pQ" alt="Introduction to the Overte project" title="Introduction to the Overte project"></a>
     <br>
@@ -5363,7 +5435,8 @@ $ man find | grep -e '-size'
     <br>
     <h3>IDEs</h3>
   <!-- ########## -->
-    <h4>• NeoVim</h4> https://neovim.io
+    <h4>• NeoVim</h4> 
+    https://neovim.io
     <br> https://neovim.io/doc/user/starting.html
     <br> https://neovim.io/doc/user/usr_01.html#vimtutor
     <br> https://github.com/neovim/nvim-lspconfig#suggested-configuration
@@ -5385,13 +5458,15 @@ $ man find | grep -e '-size'
     <br> https://thevaluable.dev/vim-php-ide/
     <br>
   <!-- ########## -->
-    <h4>• VSCodium</h4> https://github.com/VSCodium/vscodium
+    <h4>• VSCodium</h4> 
+    https://github.com/VSCodium/vscodium
     <br> https://reddit.com/r/vscodium
     <br>
   <!-- ##### -->
     <h5>∙ Extensions</h5>
   <!-- ########## -->
-    <h4>• Sublime-text®</h4> https://sublimetext.com/docs/linux_repositories.html
+    <h4>• Sublime-text®</h4> 
+    https://sublimetext.com/docs/linux_repositories.html
     <br> https://reddit.com/r/sublimetext
     <br>
   <br> 
@@ -5625,7 +5700,8 @@ $ man find | grep -e '-size'
 <details>
   <summary>9.04 Display Manager and Monitors</summary>
     <br>
-    <h4>Display Manager and Monitors</h4> https://wiki.archlinux.org/title/Display_manager
+    <h4>Display Manager and Monitors</h4> 
+    https://wiki.archlinux.org/title/Display_manager
     <br> https://baeldung.com/linux/display-managers-install-uninstall
     <br> https://github.com/sddm/sddm/releases
     <br>
@@ -5649,7 +5725,8 @@ $ man find | grep -e '-size'
     <pre><code><span>$ </span>export QT_FONT_DPI=96</code></pre>
     <button onclick="navigator.clipboard.writeText('export QT_FONT_DPI=96')">Copy</button>
   <!-- ########## -->
-    <h4>Monitor and resolution</h4> https://dpi.lv
+    <h4>Monitor and resolution</h4> 
+    https://dpi.lv
     <br> <pre><code><span>$ </span>sudo apt install arandr</code></pre>
     <pre>
     <code><span>$ </span>sudo apt install xserver-xorg-input-all</code></pre>
@@ -6127,7 +6204,8 @@ $ man find | grep -e '-size'
 <details>
   <summary>9.07 Bluetooth</summary>
     <br>
-    <h4>Bluetooth</h4> https://wiki.archlinux.org/title/Bluetooth
+    <h4>Bluetooth</h4> 
+    https://wiki.archlinux.org/title/Bluetooth
     <br> https://wiki.archlinux.org/title/Bluetooth#Troubleshooting
     <br> https://wiki.debian.org/BluetoothUser
     <br> https://wiki.debian.org/Bluetooth/Alsa
@@ -6283,7 +6361,8 @@ $ man find | grep -e '-size'
   <p>Reboot</p>
   <pre><code><span>$ </span>sudo reboot</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo reboot')">Copy</button>
-    <h4>"Apollo Lake" platform</h4> https://thesofproject.github.io/latest/getting_started/intel_debug/suggestions.html#es8336-support
+    <h4>"Apollo Lake" platform</h4> 
+    https://thesofproject.github.io/latest/getting_started/intel_debug/suggestions.html#es8336-support
     <br>
   <p>Check your kernel configuration, typically available as a /boot/config-*. These options below will allow you to use Sound Open Firmware, start with:</p>
   <pre><code><span>$ </span>grep SND_SOC_INTEL_APL /boot/config-*</code></pre>
@@ -6298,7 +6377,8 @@ $ man find | grep -e '-size'
 <details>
   <summary>9.09 Printers</summary>
     <br>
-    <h4>Printers</h4> https://wiki.debian.org/SystemPrinting
+    <h4>Printers</h4> 
+    https://wiki.debian.org/SystemPrinting
     <br> https://wiki.ubuntu.com/DebuggingPrintingProblems
     <br>
   <!-- ########## -->
@@ -6344,12 +6424,14 @@ $ man find | grep -e '-size'
   <pre><code><span>$ </span></code></pre>
     <button onclick="navigator.clipboard.writeText('')">Copy</button>
   <!-- ########## -->
-    <h4>Assign Home and End to Fn + Arrows</h4> https://superuser.com/questions/428945/defining-keyboard-shortcuts-involving-the-fn-key
+    <h4>Assign Home and End to Fn + Arrows</h4> 
+    https://superuser.com/questions/428945/defining-keyboard-shortcuts-involving-the-fn-key
     <br> https://superuser.com/questions/1069211/assign-home-and-end-to-fnarrows
     <br> <pre><code><span>$ </span></code></pre>
     <button onclick="navigator.clipboard.writeText('')">Copy</button>
   <!-- ########## -->
-    <h4>Remap Apple Magic Keyboard</h4> https://github.com/dongjinleekr/hid-apple-numberless-ko
+    <h4>Remap Apple Magic Keyboard</h4> 
+    https://github.com/dongjinleekr/hid-apple-numberless-ko
     <br> https://github.com/isakhauge/nor-apple-keyboard-xmodmap
     <br>
   <br> 
