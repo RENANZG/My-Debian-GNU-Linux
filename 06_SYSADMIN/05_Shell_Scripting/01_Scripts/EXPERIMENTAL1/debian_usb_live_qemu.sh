@@ -4,16 +4,14 @@
 # File Name    : debian_live_modify.sh
 # Description  : Script to download, verify, modify Debian Live XFCE ISO,
 #                and write it to a USB stick
-# Dependencies : curl, gpg, squashfs-tools (unsquashfs and mksquashfs), 
-#                xorriso, dosfstools (mkfs.vfat), qemu-utils (qemu-img, 
-#                qemu-io and qemu-nbd)
+# Dependencies : curl gpg unsquashfs mksquashfs xorriso dosfstools qemu-utils
 # Usage        : • Make the script executable with 
 #                sudo chmod +x debian_live_modify.sh
 #                • Run the script with no arguments:   
 #                sudo bash debian_live_modify.sh
 # Author       : Me and the bois
 # License      : Free of charge, no warranty
-# Last edited  : 2024-06-16
+# Last edited  : 2024-06-23
 ########################################################################
 
 # Function to clean up the debian_data directory

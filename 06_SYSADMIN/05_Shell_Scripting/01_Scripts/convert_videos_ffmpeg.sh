@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+q#!/usr/bin/env bash
 
 ########################################################################
 # File Name   : convert_videos_ffmpeg.sh

@@ -16,6 +16,8 @@
 
   <h2>Steps</h2>
 
+<p>1.1 Download Debian Netisnt - </p>
+<p>1.1 Download Debian DVD - </p>
 <p>1.1 Download Debian Live CD - https://cdimage.debian.org/cdimage</p>
 
 <p>1.2 Verify checksums - https://www.debian.org/CD/verify</p>

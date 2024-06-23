@@ -1,23 +1,19 @@
 #!/usr/bin/env bash
 
 ########################################################################
-# File Name    : tails_install.sh
-# Description  : Script to download, verify, and install Tails on a USB
-#                
+# File Name    :
+# Description  :  Install Tails from Debian or Ubuntu.
+# Dependencies : 
 # Based on     : https://tails.net/install/expert/index.en.html
 #                https://github.com/hellais/TAILS-OSX 
-#                
-# Dependencies : curl, gpg, dd, coreutils
 # Usage        : • Make the script executable with 
-#                sudo chmod +x tails_install.sh
-#                • Run the script with no arguments:   
-#                sudo bash tails_install.sh
+#                sudo chmod +x ~/Downloads/tails_install.sh 
+#                • Run the script with:   
+#                sudo bash ~/Downloads/tails-install.sh  
 # Author       : Me and the bois
 # License      : Free of charge, no warranty
-# Last edited  : 2024-06-01 
+# Last edited  : 2024-06-01
 ########################################################################
-
-#!/bin/bash
 
 # Function to clean up the tails_data directory
 clean_up() {
@@ -105,6 +101,10 @@ verify_tails_image() {
 download_tails_image() {
   echo "[+] Downloading $TAILS_VERSION image."
   curl -o tails_data/tails-tmp.img -L $TAILS_ISO_URL
+  if [ $? -ne 0 ]; then
+    echo "ERROR! Failed to download the Tails image."
+    exit 1
+  fi
   mv tails_data/tails-tmp.img tails_data/tails.img
 }
 
@@ -146,4 +146,10 @@ write_tails_image() {
 
 # Main script execution
 main() {
+  mkdir -p tails_data
   download_tails_version
+  write_tails_image
+}
+
+# Invoke the main function
+main
