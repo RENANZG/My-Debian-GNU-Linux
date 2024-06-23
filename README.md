@@ -140,7 +140,7 @@
       font-weight: bold;
       }
     </style>
-    -->
+-->
 </head>
 <body>
   <div>
@@ -295,7 +295,7 @@
 <pre><code><span>$ </span>cd download_directory</code></pre>
   <button onclick="navigator.clipboard.writeText('cd download_directory')">Copy</button>
 <pre><code><span>$ </span>sha256sum -c SHA256SUMS 2>&1 | grep OK</code></pre>
-  <button onclick="navigator.clipboard.writeText('sha256sum -c SHA256SUMS 2>&1 | grep OK')">Copy</button>
+  <button onclick="navigator.clipboard.writeText('sha256sum -c SHA256SUMS 2&gt;&amp;1 | grep OK')">Copy</button>
 <p>The sha256sum line should output a line such as:</p>
   <pre>ame.iso: OK</pre>
 <p>If the OK for your file appears, that indicates the hash matches.</p>
@@ -923,7 +923,8 @@
   <br> https://youtube.com/watch?v=cx8GzudB6uE
   <br>
   <h5>Hypervisor</h5> 
-  <pre>KVM, Kernel-based Virtual Machine, is a hypervisor built into the Linux kernel. It is similar to Xen in purpose but much simpler to get running. Unlike native QEMU, which uses emulation, KVM is a special operating mode of QEMU that uses CPU extensions (HVM) for virtualization via a kernel module.</pre> <pre>The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a type 1 hypervisor, it is able to run on bare metal, while QEMU is a type 2 hypervisor, it runs on top of the operating system. QEMU will utilize KVM in order to utilize the machine’s physical resources for the virtual machines. In brief, QEMU uses emulation; KVM uses processor extensions (HVM) for virtualization.</pre>
+  <pre>KVM, Kernel-based Virtual Machine, is a hypervisor built into the Linux kernel. It is similar to Xen in purpose but much simpler to get running. Unlike native QEMU, which uses emulation, KVM is a special operating mode of QEMU that uses CPU extensions (HVM) for virtualization via a kernel module.</pre>
+  <pre>The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a type 1 hypervisor, it is able to run on bare metal, while QEMU is a type 2 hypervisor, it runs on top of the operating system. QEMU will utilize KVM in order to utilize the machine’s physical resources for the virtual machines. In brief, QEMU uses emulation; KVM uses processor extensions (HVM) for virtualization.</pre>
   <p style="text-align: center;"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/06_SYSADMIN/04_Virtualization_and_Containers/01_QEMU-KVM.png" alt="QEMU-KVM Chart" title="QEMU-KVM Chart"></p>
   <h5>Using QEMU/KVM - "Kernel-based Virtual Machine"</h5> 
   https://wiki.debian.org/KVM
@@ -1151,7 +1152,7 @@
   <p><small>
   *Note: to avoid having your password stored in the bash history or typed directly into the command line:</small></p>
   <pre><code><span>$ </span>read -s -p "Enter your sudo password:" password; echo "$password" | sudo -S su -c "/etc/init.d/iptables -L -vn"; unset password</code></pre>
-  <button onclick="navigator.clipboard.writeText('read -s -p &quot;Enter your sudo password:&quot; password; echo &quot;$password&quot; | sudo -S su -c &quot;/etc/init.d/iptables -L -vn&quot;; unset password')">Copy</button>
+  <button onclick="navigator.clipboard.writeText('read -s -p &amp;quot;Enter your sudo password:&amp;quot; password; echo &amp;quot;$password&amp;quot; | sudo -S su -c &amp;quot;/etc/init.d/iptables -L -vn&amp;quot;; unset password')">Copy</button>
   <br>
   <!-- ##### -->
   <h5>2. Connect to WiFi</h5> UNDER CONSTRUCTION
@@ -1216,10 +1217,14 @@ deb-src http://deb.debian.org/debian bookworm-backports main contrib non-free
   <!-- ##### -->
   <h5>4. Firewall</h5>
   <h5>Install and enable Uncomplicated Firewall - UFW (CLI)</h5>
-  <pre><code><span>$ </span>sudo apt install ufw</code></pre> <pre>
-  <code><span>$ </span>sudo ufw enable</code></pre> <pre>
-  <code><span>$ </span>sudo ufw default deny incoming</code></pre> <pre>
-  <code><span>$ </span>sudo ufw default allow outgoing</code></pre> <pre>
+  <pre><code><span>$ </span>sudo apt install ufw</code></pre>
+  <pre>
+  <code><span>$ </span>sudo ufw enable</code></pre>
+  <pre>
+  <code><span>$ </span>sudo ufw default deny incoming</code></pre>
+  <pre>
+  <code><span>$ </span>sudo ufw default allow outgoing</code></pre>
+  <pre>
   <code><span>$ </span>sudo ufw status verbose</code></pre>
   <!-- ############################## -->
   <h5>5. SSH</h5> UNDER CONSTRUCTION
@@ -1229,9 +1234,12 @@ deb-src http://deb.debian.org/debian bookworm-backports main contrib non-free
   <h5>6. Installing Java</h5>
   <p>It's necessary if you install e.g. Zotero or JDownloader2.</p> • Java Runtime Environment (JRE)
   <br> • OpenJDK - Java Development Kit (JDK)
-  <br> <pre><code><span>$ </span>java --version</code></pre> <pre>
-  <code><span>$ </span>apt-cache search openjdk | grep openjdk</code></pre> <pre>
-  <code><span>$ </span>apt search openjdk</code></pre> <pre>
+  <br> <pre><code><span>$ </span>java --version</code></pre>
+  <pre>
+  <code><span>$ </span>apt-cache search openjdk | grep openjdk</code></pre>
+  <pre>
+  <code><span>$ </span>apt search openjdk</code></pre>
+  <pre>
   <code><span>$ </span>sudo apt install default-jre</code></pre>
   <!-- ############################## -->
   <h5>7. Installing Micro$oft Fonts</h5>
@@ -1285,7 +1293,6 @@ deb-src http://deb.debian.org/debian bookworm-backports main contrib non-free
   <button onclick="navigator.clipboard.writeText('sw.swappiness=10')">Copy</button>
   <p>or simply</p>
   <pre><code><span>$ </span>echo 'vm.swappiness = 10' | sudo tee -a /etc/sysctl.conf</code></pre>
-  <button onclick="navigator.clipboard.writeText('echo \'vm.swappiness = 10\' | sudo tee -a /etc/sysctl.conf')">Copy</button>
   <p>To take effect:</p>
   <pre><code><span>$ </span>sudo sysctl -p</code></pre>
   <button onclick="navigator.clipboard.writeText('sudo sysctl -p')">Copy</button>
@@ -1295,11 +1302,11 @@ deb-src http://deb.debian.org/debian bookworm-backports main contrib non-free
   <pre><code><span>$ </span>sudo cat /proc/sys/vm/swappiness</code></pre>
   <button onclick="navigator.clipboard.writeText('sudo cat /proc/sys/vm/swappiness')">Copy</button>
   <p><small>
-  *Note: for sercurity reasons, encrypt your swap partiton.</small></p>
+  *Note: for sercurity reasons, encrypt your swap partiton.
+  </small></p>
   <h5>10. TLP</h5>
   <p>Do not install TLP (Optimize Linux Laptop Battery Life, <a href="https://github.com/linrunner/TLP">Link</a> ), avoid problems.</p>
   <br>
-
 </details>  
 <!-- ############################## -->
 <details>
@@ -1384,7 +1391,7 @@ deb-src http://deb.debian.org/debian bookworm-backports main contrib non-free
 <p>&quot;To launch a locally-compiled kernel, you must sign it with a MOK and register that MOK with the system. (In both cases, you can register a hash rather than sign the binary; but this approach results in an ever-growing database in NVRAM, which is undesirable.) The extent of such restrictions is entirely up to those who develop and sign the boot loader launched by Shim and the kernel launched by that boot loader, though. Some distributions ship kernels that are relatively unencumbered by added security restrictions.&quot;</p>
 <p>&quot;As a practical matter, if you want to use Shim, you have two choices: You can run a distribution that provides its own signed version of Shim, such as Fedora 18 or later or Ubuntu 12.10 or later; or you can run a signed version from such a distribution or from another source, add your own MOK, and sign whatever binaries you like. This first option is quite straightforward if you happen to want to use a distribution that ships with Shim, and it requires little extra elaboration.If you want to build and run your own kernel (e.g. for development or debugging), then you will obviously end up making binaries that are not signed with the Debian key. If you wish to use those binaries, you will need to either sign them yourself and enroll the key used with MOK or disable SB.&quot;</p> 
 <pre>
-      CAUTION: 
+CAUTION: 
 • Use an administrator password in the BIOS and do not use the same for disk encryption.
 • Building and signing kernel modules is independent of building and signing your own kernel.
 • In Debian, if you do not install the DKMS package, you will have more work to create the X.509keys or OpenSSL keys, import the keys with sbsigntool or mokutil, sign the kernel or the kernelmodule file with sbsigntool or sign-file, respectively.
@@ -1394,11 +1401,13 @@ deb-src http://deb.debian.org/debian bookworm-backports main contrib non-free
 • UEFI specifications use the terms key and public key (.der) to mean the public part of thekey pair, or the X.509 certificate. However, in OpenSSL, the term key is the private key (.priv)that&#39;s used for signing. Thus, all Secure Boot keys must be X.509 keys and not OpenSSL keys.
 • The instructions provided assume that you&#39;re signing a module for the currently runningkernel. If you&#39;re signing a module for a different kernel, you must provide the path to thesign-file utility within the correct kernel version source. Otherwise, the signature typefor the module for that kernel might not align correctly with the expected signature type.
 • Only a single custom certificate can be added to the kernel because the compressed sizeof the kernel&#39;s boot image can ot increase. Do not add multiple certificates to the kernelboot image.
-</pre> <pre>
+</pre>
+<pre>
       WARNING:
       https://makedebianfunagainandlearnhowtodoothercoolstufftoo.computer/doku.php?id=start:issecurebootworking
       https://discourse.ubuntu.com/t/dkms-package-support-extra-drivers-does-not-work-in-ubuntu-22-10-install-media/31655
-</pre> <pre>
+</pre>
+<pre>
       BUGS:
 • Debian Bug report logs - #1037146 Key was rejected by service - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1037146 - 
 • Debian Bug report logs - #1012741 Key was rejected by service - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1012741 - 
@@ -1490,25 +1499,30 @@ deb-src http://deb.debian.org/debian bookworm-backports main contrib non-free
 <p><b>1.First steps</b></p>
 <p>All the items below have to do with SecureBoot mode.</p>
 <pre><code>
-$ sudo mokutil --sb-state SecureBoot enabled</code></pre>
+$ sudo mokutil --sb-state SecureBoot enabled
+</code></pre>
 <p>If controlling the Secure Boot state through the EFI setup program is difficult, you can optionally use the mokutil utility to disable Secure Boot at the level of the Shim so that, although UEFI Secure Boot is enabled, o further validation takes place after the Shim is loaded.</p>
 <p>What keys are on my system?</p>
 <pre><code>user@debian:~$ sudo mokutil --list-enrolled 
 or 
-$ sudo mokutil --list-enrolled | grep Subject:</code></pre>
+$ sudo mokutil --list-enrolled | grep Subject:
+</code></pre>
 <p>Also the command <code>modinfo</code> prints the signature if available, for example:</p>
 <pre><code>
-$ sudo modinfo /lib/modules/6.1.0-11-amd64/kernel/mm/zsmalloc.ko</code></pre>
+$ sudo modinfo /lib/modules/6.1.0-11-amd64/kernel/mm/zsmalloc.ko
+</code></pre>
 <p><b>2.Place to auto-generated MOK</b></p>
 <p>MOK - Machine Owner Key</p>
   <h4>Introduction</h4>
 <p>The use of mokutil that&#39;s most relevant to this page is to import a MOK. In this context, importing refers to storing a MOK in the computer&#39;s NVRAM, along with a flag to tell Shim and MokUtil that the MOK is there and ready to be enlisted when you next reboot the computer. Keys can be added and removed in the MOK list by the user, entirely separate from the distro CA key. Unlike Debian, Ubuntu has chosen to place their auto-generated MOK at &quot;/var/lib/shim-signed/mok/&quot;, which some software--such as Oracle&#39;s virtualbox package -expect to be present. Note that using this same location may result in future conflicts. Warning: The MOK.key file is extremely sensitive! An attacker who gains access to it could generate binaries that your computer would accept as authorized. You should change permissions to prevent unauthorized access, and ideally store it on an encrypted external storage medium and unplug it when you&#39;re not signing binaries.If you see the key there (consisting of the files MOK.der, MOK.pem and MOK.priv) then you can use these, rather than creating your own.</p>  <!-- ############################## -->
 <p>First make sure the key doesn&#39;t exist yet:</p>
 <pre><code>
-$ ls /var/lib/shim-signed/mok/</code></pre>
+$ ls /var/lib/shim-signed/mok/
+</code></pre>
 <p>To create a folder to MOK key:</p>
 <pre><code>
-$ sudo mkdir -p /var/lib/shim-signed/mok/</code></pre>
+$ sudo mkdir -p /var/lib/shim-signed/mok/
+</code></pre>
 <p>You can choose another placcautione like &quot;/etc/mok_key/&quot; since there is no standard location at the moment.</p>
 <pre><code>
 $ sudo mkdir -p /etc/mok_key/</code></pre> <b>3.Generating a new key</b>
@@ -1526,13 +1540,14 @@ $ sudo chmod 600 /var/lib/shim-signed/mok/*
 <p>This commands will create both the private and public part of the certificate to sign things. You need both files to sign; and just the public part (MOK.der) to enroll the key in Shim.</p>
 <p>To read the certificate file in a human readable format, use</p>
 <pre><code>
-$ sudo openssl x509 -in /var/lib/shim-signed/mok/MOK.pem -noout -text</code></pre>
+$ sudo openssl x509 -in /var/lib/shim-signed/mok/MOK.pem -noout -text
+</code></pre>
 <p>Another example of key generation:</p>
 <pre><code>
 $ sudo openssl req -x509 -new -nodes -utf8 -sha512 -days 3650 -batch -config /etc/ssl/x509.conf -outform DER -out /etc/ssl/certs/pubkey.der -keyout /etc/ssl/certs/priv.key 
 $ sudo openssl x509 -inform DER -in /etc/ssl/certs/pubkey.der -out /etc/ssl/certs/pubkey.pem
 </code></pre>
-  <hr> <b>4.Enrolling your key im Shim</b>
+<b>4.Enrolling your key im Shim</b>
 <p>Enroll the key to your installation:</p>
 <pre><code>
 $ cd /var/lib/shim-signed/mok/ 
@@ -1541,45 +1556,53 @@ $ sudo mokutil --import MOK.der
 <p>You will be asked for a one-time <b>password (remember it and type it correctly)</b> , you will just use it to confirm your key selection in the next step (you won&#39;t need this password beyond this point, though), so choose any.</p>
 <p>Recheck your key will be prompted on next boot</p>
 <pre><code>
-$ sudo mokutil --list-new</code></pre>
+$ sudo mokutil --list-new
+</code></pre>
 <p><b>5.Restart and finsh the process</b></p>
 <p>Restart your system. Changes to the MOK keys may only be confirmed directly from the bash at boot time. You will encounter a blue screen of a tool called MOKManager. Select &quot; Enroll MOK&quot; and then &quot;View key&quot;. Make sure it is your key you created in step 3. Afterwards continue the process and you must enter the password which you provided in step 4. Continue with booting your system.</p>
 <p>Verify your key is already enrolled, if the MOK was loaded correctly, with:</p>
 <pre><code>
-$ sudo mokutil --test-key /var/lib/shim-signed/mok/MOK.der</code></pre>
+$ sudo mokutil --test-key /var/lib/shim-signed/mok/MOK.der
+</code></pre>
 <p><b>6.Sign your installed kernel or modules</b></p>
 <p><b>6.1 Modern Method:</b> Signing the Debian kernel and modules with DKMS</p>
 <p>Building Debian kernel modules with DKMS. The dkms frameworks allows building kernel modules &quot;on the fly&quot; on the local system instead of building them centrally on the Debian infrastructure, DKMS could automatically sign kernel updated modules. If you install the kernel modules through the apt repository, chances are that modules have already been signed by the DKMS signing key. In that case, the traditional method won&#39;t work. And the thing you only need to do is to enroll the DKMS signing key into your machine. On systems that use SecureBoot, you will need a Machine Owner Key (MOK) to load DKMS modules. Generate it, enroll it, sign modules with it and then you will be able to load the signed modules.</p>
 <p>In Debian, it depends on the dkms package:</p>
 <pre><code>
-$ sudo apt install dkms</code></pre>
+$ sudo apt install dkms
+</code></pre>
 <p>In order for dkms to automatically sign kernel modules, it must be told which key to sign the module with. This is done by adding two configuration values to &quot;/etc/dkms/framework.conf&quot;, adjusting paths as required:</p>
 <p>mok_signing_key=&quot;/var/lib/shim-signed/mok/MOK.priv&quot;</p>
 <p>mok_certificate=&quot;/var/lib/shim-signed/mok/MOK.der&quot;</p>  <!-- ############################## -->
 <p><b>DKMS Sign Helper Script</b></p>
 <p>If these values are provided and dkms is able to build modules but does ot attempt to sign them, then it is likely that sign_tool is missing. This is more common in older and/or custom kernels. In &quot;/etc/dkms/framework.conf&quot;, add:</p>
-<pre><code>sign_tool=&quot;/etc/dkms/sign_helper.sh&quot;</code></pre>
+<pre><code>sign_tool=&quot;/etc/dkms/sign_helper.sh&quot;
+
+</code></pre>
 <p>Create &quot;/etc/dkms/sign_helper.sh&quot; with:</p>
 <pre><code>
-      /lib/modules/&quot;$1&quot;/build/scripts/sign-file sha512 /root/.mok/client.priv /root/.mok/client.der &quot;$2&quot;
+/lib/modules/&quot;$1&quot;/build/scripts/sign-file sha512 /root/.mok/client.priv /root/.mok/client.der &quot;$2&quot;
 </code></pre>
 <p>Set Linux kernel info variables</p>
 <pre><code>
 $ VERSION=&quot;$(uname -r)&quot; $ SHORT_VERSION=&quot;$(uname -r | cut -d . -f 1-2)&quot; $ MODULES_DIR=/lib/modules/$VERSION $ KBUILD_DIR=/usr/lib/linux-kbuild-$SHORT_VERSION
-</code></pre>  <!-- ############################## -->
+</code></pre>
+  <!-- ############################## -->
   <h4>Making DKMS modules signing by DKMS signing key usable with the secure boot</h4>
 <p>If you install the kernel modules through the apt repository, chances are that modules have already been signed by the DKMS signing key. In that case, the traditional method won&#39;t work. And the thing you only need to do is to enroll the DKMS signing key into your machine. Here is how we can do that:</p>
 <p>First, use the method mentioned in Verifying if a module is signed to check if the modules are signed by DKMS signing key.</p>
 <p>Next, find the location of the mok signing key and mok certificate. You can view the location in /etc/dkms/framework.conf, and the default location is /var/lib/dkms.</p>
 <p>Then, run the following command to enroll the key into the machine:</p>
 <pre><code>
-$ sudo mokutil --import /var/lib/dkms/mok.pub # prompts for one-time password and /var/lib/mok.pub can be changed, if mok certificate isn&#39;t located there. $ sudo mokutil --list-new # recheck your key will be prompted on ext boot !rebooting machine then enters MOK manager EFI utility: enroll MOK, continue, confirm, enter password, reboot! $ sudo dmesg | grep cert # verify your key is loaded</code></pre>  <!-- ############################## -->
+$ sudo mokutil --import /var/lib/dkms/mok.pub # prompts for one-time password and /var/lib/mok.pub can be changed, if mok certificate isn&#39;t located there. $ sudo mokutil --list-new # recheck your key will be prompted on ext boot !rebooting machine then enters MOK manager EFI utility: enroll MOK, continue, confirm, enter password, reboot! $ sudo dmesg | grep cert # verify your key is loaded</code></pre>
+  <!-- ############################## -->
 <p><b>6.2 Traditional Method:</b> signing the Debian kernel with <b>sbsigntool</b></p>
 <p>Building and signing modules is independent of building and signing your own kernel (vmlinuz). To sign a custom kernel or any other EFI binary you want to have loaded by Shim, you’ll need to use a different command: sbsign (PEM). In this case, we’ll need the certificate in a different format, <code>mokutil</code> nneeds DER, <code>sbsign</code> nneeds PEM.</p>
 <p>Convert the certificate into PEM (.der to .pem), for example:</p> <code>$ sudo openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem</code>
 <p>For example, use it to sign our Kernel:</p>
 <pre><code>
 $ sudo sbsign --key MOK.priv --cert MOK.pem &quot;/boot/vmlinuz-$VERSION&quot; --output &quot;/boot/vmlinuz-$VERSION.tmp&quot; $ sudo mv &quot;/boot/vmlinuz-$VERSION.tmp&quot; &quot;/boot/vmlinuz-$VERSION&quot;
+
 </code></pre>
 <p>For example, use it to sign our EFI binary:</p>
 <pre><code>
@@ -1616,28 +1639,34 @@ $ sudo sbverify --cert /etc/mok_key/mok.crt /boot/vmlinuz-6.1.0-12-amd64
   <br> <pre><code>
     $ sudo mokuitil --sb-state SecureBoot disabled</code></pre> 
     <pre><code>
-    $ sudo mokutil --disable-validation</code></pre>
+    $ sudo mokutil --disable-validation
+  </code></pre>
 <p>Backup. Exports to list (ideally store it on an encrypted external storage medium).</p> <code>$ sudo mokutil --export</code>
 <p>To remove all (MOKs being a list and not just a single MOK, you can make the shim trust keys from several different vendors, allowing dual and multi-boot)</p>
 <pre><code>
 $ sudo mokutil --reset --mok</code></pre> 
 <pre><code>
-$ sudo mokutil --reset</code></pre>
+$ sudo mokutil --reset
+</code></pre>
 <p>To remove one key, first show all keys.</p>
 <pre><code>
-$ sudo ls -1 MOK*</code></pre>
+$ sudo ls -1 MOK*
+</code></pre>
 <p>Shows you keys enrolled.</p>
 <pre><code>
-$ sudo mokutil --list-enrolled | grep Subject:</code></pre>
+$ sudo mokutil --list-enrolled | grep Subject:
+</code></pre>
 <p>Delete those not enrolled to maintain secure boot.</p>
 <pre><code>
-$ sudo mokutil --delete MOK-0001.der</code></pre>
+$ sudo mokutil --delete MOK-0001.der
+</code></pre>
 <p>Uninstall the modules, if it was made with script &quot;make&quot;.</p>
 <pre><code>
 $ cd ~/realtekwifi 
 $ sudo make uninstall
       or
 $ sudo rmmod 8192eu sudo rmmod rtl8xxxu sudo dkms remove -m rtl8192eu -v 1.0 or sudo lshw -C network
+
 </code></pre>
 <p>Reset de modules and unload them in Kernel</p>
 <pre><code>
@@ -1712,6 +1741,7 @@ $ grep &quot;openssl.cnf&quot; /tmp/strace.log.0 openat(AT_FDCWD, &quot;/etc/pki
   <p>Solution 3:</p>
 <pre><code>
 $ openssl version -d
+
 </code></pre>
 <p>
   You can use strace (man strace) to check the configuration file being used
@@ -1722,15 +1752,22 @@ $ strace -e trace=open,openat -o /tmp/strace.log.0 openssl req \
  -newkey rsa:2048 -x509 -nodes -keyout localhost.key \
  -new -out localhost.crt 
 $ grep &quot;openssl.cnf&quot; /tmp/strace.log.0 openat(AT_FDCWD, &quot;/etc/pki/tls/openssl.cnf&quot;, O_RDONLY) = 3 sudo cat /etc/ssl/openssl.cnf openssl_conf = openssl_init from /etc/ssl/openssl.cnf
+
 </code></pre>
 <p>
   To override system default with user level environment. An empty file will do:
 </p>
-<pre><code>touch ~/.openssl.cnf</code></pre>
+<pre><code>touch ~/.openssl.cnf
+
+</code></pre>
 <p>BASH define &amp; export:</p>
-<pre><code>export OPENSSL_CONF=~/.openssl.cnf</code></pre>
+<pre><code>export OPENSSL_CONF=~/.openssl.cnf
+
+</code></pre>
 <p>Wrap application within a script:</p>
-<pre><code>export OPENSSL_CONF=/dev/null</code></pre>
+<pre><code>export OPENSSL_CONF=/dev/null
+
+</code></pre>
 <p>Solution 3:</p>
 <p>Rescue if install/build fails in previous step</p>
 <pre><code>
@@ -2693,7 +2730,9 @@ $ systemctl status "service"
     <h4>Network Managers</h4>
     <h4>NetworkManager (GUI)</h4> <code>$ sudo apt install network-manager-gnome</code>
   <!-- ########## -->
-    <h4>NetworkManager (CLI)</h4> <code>$ sudo apt install network-manager</code> <pre>Commands • Connecting WiFi manualy with nmcli $ nmcli dev status $ nmcli radio wifi on • List wifi $ nmcli dev wifi list • Connect $ sudo mcli dev wifi connect SSID(TAB) $ sudo nmcli --ask dev wifi connect SSID(TAB) • Disconnecting $ nmcli con down NAME • Saved ones $ ls /etc/NetworkManager/system-connections/</pre> <pre>Commands • Editing $ nmcli connection edit $ nmcli connection edit type wifi $ nmcli c edit type vpn $ nmcli c up wificonnectionname $ nmcli c show wificonnectionname $ nmcli connection show $ nmcli connection reload • Avtivating MAC randomization $ nmcli connection modify NAME 802-11-wireless.mac-address-randomization always</pre> <pre>&nbsp; Config files $ sudo ls /etc/NetworkManager/ $ sudo ls /etc/NetworkManager/system-connections/ $ sudo nano /etc/NetworkManager/NetworkManager.conf/mywifiname $ sudo nano /etc/NetworkManager/NetworkManager.conf</pre>
+    <h4>NetworkManager (CLI)</h4> <code>$ sudo apt install network-manager</code> <pre>Commands • Connecting WiFi manualy with nmcli $ nmcli dev status $ nmcli radio wifi on • List wifi $ nmcli dev wifi list • Connect $ sudo mcli dev wifi connect SSID(TAB) $ sudo nmcli --ask dev wifi connect SSID(TAB) • Disconnecting $ nmcli con down NAME • Saved ones $ ls /etc/NetworkManager/system-connections/</pre>
+    <pre>Commands • Editing $ nmcli connection edit $ nmcli connection edit type wifi $ nmcli c edit type vpn $ nmcli c up wificonnectionname $ nmcli c show wificonnectionname $ nmcli connection show $ nmcli connection reload • Avtivating MAC randomization $ nmcli connection modify NAME 802-11-wireless.mac-address-randomization always</pre>
+    <pre>&nbsp; Config files $ sudo ls /etc/NetworkManager/ $ sudo ls /etc/NetworkManager/system-connections/ $ sudo nano /etc/NetworkManager/NetworkManager.conf/mywifiname $ sudo nano /etc/NetworkManager/NetworkManager.conf</pre>
   <!-- ########## -->
     <h4>Connman</h4>
     <h5>Connman (GUI)</h5> <code>$ sudo apt install connman-ui</code>
@@ -2970,14 +3009,20 @@ $ sudo nano /etc/NetworkManager/NetworkManager.conf <br></pre>
   <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p> https://openvpn.net/community-resources/how-to/#auth
     <br>
   <p>You could use the client.conf example below to random access multiple opvn files and auto login with auth configuration. Make the configurations refer to auth file by appending some directives at the end of each. Also create keepalive, a log record to facilitate troubleshooting and automatically run a script called update-resolv-conf, which may be necessary for DNS resolution to work correctly when enabling VPN and turn off. On Debian, this script is included with the OpenVPN installation.</p> 
-  <pre>• Configuring client.conf manually $ sudo nano /etc/openvpn/client/client.conf client dev tun #It's TCP or UDP server? proto tcp remote my-server-1.com 1194 remote my-server-2.com 1194 remote my-server-3.com 1194 remote my-server-4.com 1194 remote my-server-5.com 1194 remote my-server-6.com 1194 remote my-server-7.com 1194 remote my-server-8.com 1194 remote my-server-9.com 1194 remote my-server-10.com 1194 remote-random #It choose a random config server resolv-retry infinite obind tun-mtu 1500 tun-mtu-extra 32 mssfix 1450 persist-key persist-tun ping 15 ping-restart 0 ping-timer-rem reneg-sec 0 comp-lzo no #Enable it if enabled in the server verify-x509-name CN=my.vpn-1.com #Protect against MITM see http://openvpn.net/howto.html#mitm remote-cert-tls server #Your autologin config auth-user-pass /etc/openvpn/client/auth #OpenVPN DNS Resolver script-security 2 up /etc/openvpn/update-resolv-conf down /etc/openvpn/update-resolv-conf #Others keepalive 10 60 log-append /var/log/openvpn.log verb 3 pull fast-io cipher AES-256-CBC auth SHA512 # Note SSL/TLS parms.See the server config # file for more description. # It's best # to use # a separate .crt/.key file pair # for each client. A single ca file can # be used for all clients. &lt;ca&gt; -----BEGIN CERTIFICATE----- -----END CERTIFICATE----- &lt;/ca&gt; key-direction 1 &lt;tls-auth&gt; # 2048 bit OpenVPN static key -----BEGIN OpenVPN Static key V1----- -----END OpenVPN Static key V1----- &lt;/tls-auth&gt;</pre> <pre>• Configuring client.conf automatically $ sudo cd /etc/openvpn/client/ $ sudo cat &lt; &lt; EOF &gt; client.conf client dev tun #It's TCP or UDP server? proto tcp remote my-server-1.com 1194 remote my-server-2.com 1194 remote my-server-3.com 1194 remote my-server-4.com 1194 remote my-server-5.com 1194 remote my-server-6.com 1194 remote my-server-7.com 1194 remote my-server-8.com 1194 remote my-server-9.com 1194 remote my-server-10.com 1194 remote-random #It choose a random config server resolv-retry infinite nobind tun-mtu 1500 tun-mtu-extra 32 mssfix 1450 persist-key persist-tun ping 15 ping-restart 0 ping-timer-rem reneg-sec 0 comp-lzo no #Enable it if enabled in the server verify-x509-name CN=my.vpn-1.com #Protect against MITM see http://openvpn.net/howto.html#mitm remote-cert-tls server #Your autologin config auth-user-pass /etc/openvpn/client/auth #OpenVPN DNS Resolver script-security 2 up /etc/openvpn/update-resolv-conf down /etc/openvpn/update-resolv-conf #Others keepalive 10 60 log-append /var/log/openvpn.log verb 3 pull fast-io cipher AES-256-CBC auth SHA512 # Note SSL/TLS parms.See the server config # file for more description. # It's best # to use # a separate .crt/.key file pair # for each client. A single ca file can # be used for all clients. &lt;ca&gt; -----BEGIN CERTIFICATE----- -----END CERTIFICATE----- &lt;/ca&gt; key-direction 1 &lt;tls-auth&gt; # 2048 bit OpenVPN static key -----BEGIN OpenVPN Static key V1----- -----END OpenVPN Static key V1----- &lt;/tls-auth&gt;</pre> <pre>• Configuring client.conf automatically in batch $ echo 'auth-user-pass /etc/openvpn/client/auth keepalive 10 60 log-append /var/log/openvpn.log script-security 2 up /etc/openvpn/update-resolv-conf down /etc/openvpn/update-resolv-conf' | tee -a openvpn/*.conf</pre>
+  <pre>• Configuring client.conf manually $ sudo nano /etc/openvpn/client/client.conf client dev tun #It's TCP or UDP server? proto tcp remote my-server-1.com 1194 remote my-server-2.com 1194 remote my-server-3.com 1194 remote my-server-4.com 1194 remote my-server-5.com 1194 remote my-server-6.com 1194 remote my-server-7.com 1194 remote my-server-8.com 1194 remote my-server-9.com 1194 remote my-server-10.com 1194 remote-random #It choose a random config server resolv-retry infinite obind tun-mtu 1500 tun-mtu-extra 32 mssfix 1450 persist-key persist-tun ping 15 ping-restart 0 ping-timer-rem reneg-sec 0 comp-lzo no #Enable it if enabled in the server verify-x509-name CN=my.vpn-1.com #Protect against MITM see http://openvpn.net/howto.html#mitm remote-cert-tls server #Your autologin config auth-user-pass /etc/openvpn/client/auth #OpenVPN DNS Resolver script-security 2 up /etc/openvpn/update-resolv-conf down /etc/openvpn/update-resolv-conf #Others keepalive 10 60 log-append /var/log/openvpn.log verb 3 pull fast-io cipher AES-256-CBC auth SHA512 # Note SSL/TLS parms.See the server config # file for more description. # It's best # to use # a separate .crt/.key file pair # for each client. A single ca file can # be used for all clients. &lt;ca&gt; -----BEGIN CERTIFICATE----- -----END CERTIFICATE----- &lt;/ca&gt; key-direction 1 &lt;tls-auth&gt; # 2048 bit OpenVPN static key -----BEGIN OpenVPN Static key V1----- -----END OpenVPN Static key V1----- &lt;/tls-auth&gt;</pre>
+  <pre>• Configuring client.conf automatically $ sudo cd /etc/openvpn/client/ $ sudo cat &lt; &lt; EOF &gt; client.conf client dev tun #It's TCP or UDP server? proto tcp remote my-server-1.com 1194 remote my-server-2.com 1194 remote my-server-3.com 1194 remote my-server-4.com 1194 remote my-server-5.com 1194 remote my-server-6.com 1194 remote my-server-7.com 1194 remote my-server-8.com 1194 remote my-server-9.com 1194 remote my-server-10.com 1194 remote-random #It choose a random config server resolv-retry infinite nobind tun-mtu 1500 tun-mtu-extra 32 mssfix 1450 persist-key persist-tun ping 15 ping-restart 0 ping-timer-rem reneg-sec 0 comp-lzo no #Enable it if enabled in the server verify-x509-name CN=my.vpn-1.com #Protect against MITM see http://openvpn.net/howto.html#mitm remote-cert-tls server #Your autologin config auth-user-pass /etc/openvpn/client/auth #OpenVPN DNS Resolver script-security 2 up /etc/openvpn/update-resolv-conf down /etc/openvpn/update-resolv-conf #Others keepalive 10 60 log-append /var/log/openvpn.log verb 3 pull fast-io cipher AES-256-CBC auth SHA512 # Note SSL/TLS parms.See the server config # file for more description. # It's best # to use # a separate .crt/.key file pair # for each client. A single ca file can # be used for all clients. &lt;ca&gt; -----BEGIN CERTIFICATE----- -----END CERTIFICATE----- &lt;/ca&gt; key-direction 1 &lt;tls-auth&gt; # 2048 bit OpenVPN static key -----BEGIN OpenVPN Static key V1----- -----END OpenVPN Static key V1----- &lt;/tls-auth&gt;</pre>
+  <pre>• Configuring client.conf automatically in batch $ echo 'auth-user-pass /etc/openvpn/client/auth keepalive 10 60 log-append /var/log/openvpn.log script-security 2 up /etc/openvpn/update-resolv-conf down /etc/openvpn/update-resolv-conf' | tee -a openvpn/*.conf</pre>
   <!-- ############################## -->
     <h5>Create a autologin file</h5> 
-    <pre>• Configuring auth manually $ sudo touch /etc/openvpn/client/auth $ sudo ano /etc/openvpn/client/auth user password</pre> <pre>• Configuring auth automatically • If you are not going to copy the example, to create a 
+    <pre>• Configuring auth manually $ sudo touch /etc/openvpn/client/auth $ sudo ano /etc/openvpn/client/auth user password</pre>
+    <pre>• Configuring auth automatically • If you are not going to copy the example, to create a 
      newline (press ENTER) after you type the \
      to tell the 
       shell you want to enter more parameters but on a 
-      separate line. $ cd /etc/openvpn/client/auth $ sudo echo 'user password' > openvpn/auth • A little protection # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre> <pre>• Alternatively $ sudo chmod 600 /etc/openvpn/client/auth $ echo "USERNAME" | sudo tee -a /etc/openvpn/client/auth $ echo "PASSWORD" | sudo tee -a /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre> <pre>• Alternatively $ sudo su # echo 'myuser' | sudo tee -a /etc/openvpn/client/auth # echo 'mypassword' | sudo tee -a /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre> <pre>• Alternatively $ sudo su # echo 'myuser' | tee --append /etc/openvpn/client/auth # echo 'mypassword' | tee --append /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre>
+      separate line. $ cd /etc/openvpn/client/auth $ sudo echo 'user password' > openvpn/auth • A little protection # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre>
+      <pre>• Alternatively $ sudo chmod 600 /etc/openvpn/client/auth $ echo "USERNAME" | sudo tee -a /etc/openvpn/client/auth $ echo "PASSWORD" | sudo tee -a /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre>
+      <pre>• Alternatively $ sudo su # echo 'myuser' | sudo tee -a /etc/openvpn/client/auth # echo 'mypassword' | sudo tee -a /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre>
+      <pre>• Alternatively $ sudo su # echo 'myuser' | tee --append /etc/openvpn/client/auth # echo 'mypassword' | tee --append /etc/openvpn/client/auth # chmod 600 /etc/openvpn/client/auth • Load daemon $ sudo openvpn --config /etc/openvpn/client.conf --daemon</pre>
   <!-- ############################## -->
     <h5>OpenVPN DNS Resolver</h5>
   <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p> https://wiki.archlinux.org/title/OpenVPN#DNS
@@ -2996,15 +3041,18 @@ $ sudo nano /etc/NetworkManager/NetworkManager.conf <br></pre>
   <p>*Consider</p>
   <pre><code><span>$ </span>sudo apt install openvpn-systemd-resolved</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install openvpn-systemd-resolved')">Copy</button> 
-    <pre><code><span>$ </span>sudo nano /etc/openvpn/update-resolv-conf</code></pre> <pre>$ sudo mv /etc/resolv.conf /etc/resolv.conf.bak • Add this lines into your openvpn client.conf: $ nano client.conf script-security 2 up /etc/openvpn/update-resolv-conf down /etc/openvpn/update-resolv-conf</pre>
+    <pre><code><span>$ </span>sudo nano /etc/openvpn/update-resolv-conf</code></pre>
+    <pre>$ sudo mv /etc/resolv.conf /etc/resolv.conf.bak • Add this lines into your openvpn client.conf: $ nano client.conf script-security 2 up /etc/openvpn/update-resolv-conf down /etc/openvpn/update-resolv-conf</pre>
   <p>Your could run openvpn with DNS resolver</p> 
   <pre>$ openvpn --script-security 2 --config cc00-myvpn.com_tcp.ovpn</pre>
   <!-- ############################## -->
     <h5>Disabling OpenVPN's client DNS</h5> 
-    <pre><code><span>$ </span>sudo nano /etc/openvpn/client/client.conf</code></pre> <pre>#Actual DNS name dhcp-option DNS 10.10.10.10</pre>
+    <pre><code><span>$ </span>sudo nano /etc/openvpn/client/client.conf</code></pre>
+    <pre>#Actual DNS name dhcp-option DNS 10.10.10.10</pre>
   <p>Take care with DNS leaks</p>
   <pre><code>curl ipleak.net/json/</code></pre> 
-  <pre><code>curl ipinfo.io</code></pre> <pre>#IPV4 pull-filter ignore "dhcp-option DNS" #IPV6 pull-filter ignore "dhcp-option DNS6"</pre>
+  <pre><code>curl ipinfo.io</code></pre>
+  <pre>#IPV4 pull-filter ignore "dhcp-option DNS" #IPV6 pull-filter ignore "dhcp-option DNS6"</pre>
   <!-- ############################## -->
     <h5>Disabling NetworkManager's own dnsmasq</h5>
   <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p> 
@@ -3026,7 +3074,8 @@ $ sudo nano /etc/NetworkManager/NetworkManager.conf <br></pre>
   <p>Set up a firewall to deny everything but the VPN handshake on the regular interfaces eth0 and wlan0 while placing no restrictions on tun0.</p> 
   <pre>$ sudo su # apt install ufw # ufw allow in on tun0 # ufw allow out on tun0 # ufw allow out on eth0 from any to any port 53 # ufw allow out on wlan0 from any to any port 53 # ufw allow out on eth0 from any to any port 1198 # ufw allow out on wlan0 from any to any port 1198 # ufw deny in on eth0 # ufw deny in on wlan0 # ufw deny out on eth0 # ufw deny out on wlan0 # ufw enable</pre>
   <p>Testing killswitch</p> 
-  <pre>$ sudo systemctl start openvpn-client@[country] $ sudo systemctl stop openvpn-client@[country] $ sudo systemctl status openvpn-client@[country] $ curl ipleak.net/json/ $ curl ipinfo.io</pre> <pre>$ systemctl stop openvpn $ curl --connect-timeout 5 ipinfo.io</pre>
+  <pre>$ sudo systemctl start openvpn-client@[country] $ sudo systemctl stop openvpn-client@[country] $ sudo systemctl status openvpn-client@[country] $ curl ipleak.net/json/ $ curl ipinfo.io</pre>
+  <pre>$ systemctl stop openvpn $ curl --connect-timeout 5 ipinfo.io</pre>
   <!-- ############################## -->
     <h4>OpenVPN DNS</h4>
   <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
@@ -3107,7 +3156,8 @@ $ sudo ls /etc/strongswan.d/charon/
     <h4>∙ Firewall (UFW) + VPN (OpenVPN)</h4> 
     <pre>Commands to setup UFW + OpenVPN • You could add specifically rules for each port separately on tun0 (VPN tunnel interface) $ sudo ufw allow in on tun0 to any port 60000 proto tcp $ sudo ufw allow in on tun0 to any port 60000 proto udp • You could test to connect in and out to anywhere on tun0 $ sudo ufw allow in on tun0 $ sudo ufw allow out on tun0 • To allow access only from a specific address you could use $ sudo ufw allow in on tun0 from 192.168.0.1 to any port 60000 proto tcp • Allow OpenVPN to connect to the regular network interface (e.g. eth0, wlan0...) 
      through the ports present in the .opvn file (e.g.DNS resolution on 
-     port 53 and VPN server on 1198...) $ sudo ufw allow out on eth0 from any to any port 53,1198 • Consider this tcp or udp rules $ sudo ufw allow out on eth0 to any port 53,1197 proto tcp $ sudo ufw allow out on eth0 to any port 53,1197 proto udp • For a hard policy, working only with tun0, you could block the rest and enable the firewall $ sudo ufw deny in on eth0 $ sudo ufw deny out on eth0 • For a hard policy, you could block the rest and enable the firewall $ sudo ufw status numbered $ sudo ufw enable $ sudo ufw reload $ sudo reboot</pre> <pre>Commands to secure the server with iptables • Allow everything from within your VPN $ sudo iptables -I INPUT -i tun0 -j ACCEPT • Explicitly allow what can be accessed within the VPN, for example, allow DNS and HTTP $ sudo iptables -A INPUT -i tun0 -p tcp --destination-port 53 -j ACCEPT $ sudo iptables -A INPUT -i tun0 -p udp --destination-port 53 -j ACCEPT $ sudo iptables -A INPUT -i tun0 -p tcp --destination-port 80 -j ACCEPT • To enable SSH and VPN access from anywhere. $ sudo iptables -A INPUT -p tcp --destination-port 22 -j ACCEPT $ sudo iptables -A INPUT -p tcp --destination-port 1194 -j ACCEPT $ sudo iptables -A INPUT -p udp --destination-port 1194 -j ACCEPT • To explicitly allow TCP/IP to do "three-way handshakes" $ sudo iptables -I INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT • To allow any loopback traffic, the server is allowed to talk to itself $ sudo iptables -I INPUT -i lo -j ACCEPT • To reject access from anywhere else $ sudo iptables -P INPUT DROP • To list rules $ sudo iptables -L --line-numbers</pre>
+     port 53 and VPN server on 1198...) $ sudo ufw allow out on eth0 from any to any port 53,1198 • Consider this tcp or udp rules $ sudo ufw allow out on eth0 to any port 53,1197 proto tcp $ sudo ufw allow out on eth0 to any port 53,1197 proto udp • For a hard policy, working only with tun0, you could block the rest and enable the firewall $ sudo ufw deny in on eth0 $ sudo ufw deny out on eth0 • For a hard policy, you could block the rest and enable the firewall $ sudo ufw status numbered $ sudo ufw enable $ sudo ufw reload $ sudo reboot</pre>
+     <pre>Commands to secure the server with iptables • Allow everything from within your VPN $ sudo iptables -I INPUT -i tun0 -j ACCEPT • Explicitly allow what can be accessed within the VPN, for example, allow DNS and HTTP $ sudo iptables -A INPUT -i tun0 -p tcp --destination-port 53 -j ACCEPT $ sudo iptables -A INPUT -i tun0 -p udp --destination-port 53 -j ACCEPT $ sudo iptables -A INPUT -i tun0 -p tcp --destination-port 80 -j ACCEPT • To enable SSH and VPN access from anywhere. $ sudo iptables -A INPUT -p tcp --destination-port 22 -j ACCEPT $ sudo iptables -A INPUT -p tcp --destination-port 1194 -j ACCEPT $ sudo iptables -A INPUT -p udp --destination-port 1194 -j ACCEPT • To explicitly allow TCP/IP to do "three-way handshakes" $ sudo iptables -I INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT • To allow any loopback traffic, the server is allowed to talk to itself $ sudo iptables -I INPUT -i lo -j ACCEPT • To reject access from anywhere else $ sudo iptables -P INPUT DROP • To list rules $ sudo iptables -L --line-numbers</pre>
   <p>(*ip6tables)</p>
   <p>Troubleshooting iptables</p> 
   <pre>$ sudo systemctl restart servicedaemon.service $ sudo systemctl restart service.service $ sudo iptables -S $ ping duckduckgo.com</pre>
@@ -3308,7 +3358,8 @@ $ sudo ls /etc/strongswan.d/charon/
     <summary>Document Converter</summary>
       <br>
       <h4>Libre Office (Headless)</h4> https://help.libreoffice.org/latest/en-US/text/shared/guide/convertfilters.html
-      <br> <pre><code><span>$ </span>sudo sudo apt install -y libreoffice</code></pre> <pre>Commands for libreoffice headless • Syntax $ soffice --convert-to OutputFileExtension[:OutputFilterName[:OutputFilterParams[,param]]] [--outdir output_dir] • To convert a DOCX file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.docx $ soffice --headless --convert-to pdf:writer_pdf_Export:ExportNotesPages=True --outdir /home/user *.docx • To convert a ODT file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.odt • To convert a ODT file to DOCX $ soffice –-headless --convert-to pdf:writer_odt_Export --outdir /home/user *.docx • To convert a PPTX file to PDF $ soffice --headless --convert-to pdf:impress_pdf_Export --outdir /home/user *.pptx $ soffice --headless --convert-to pdf:impress_pdf_Export:ExportNotesPages=True --outdir /home/user *.pptx • To convert a XLSX file to PDF $ soffice --headless --convert-to pdf:calc_pdf_Export --outdir /home/user *.xlsx • To convert a ODT file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.odt • To convert a HTML file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.html</pre>
+      <br> <pre><code><span>$ </span>sudo sudo apt install -y libreoffice</code></pre>
+      <pre>Commands for libreoffice headless • Syntax $ soffice --convert-to OutputFileExtension[:OutputFilterName[:OutputFilterParams[,param]]] [--outdir output_dir] • To convert a DOCX file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.docx $ soffice --headless --convert-to pdf:writer_pdf_Export:ExportNotesPages=True --outdir /home/user *.docx • To convert a ODT file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.odt • To convert a ODT file to DOCX $ soffice –-headless --convert-to pdf:writer_odt_Export --outdir /home/user *.docx • To convert a PPTX file to PDF $ soffice --headless --convert-to pdf:impress_pdf_Export --outdir /home/user *.pptx $ soffice --headless --convert-to pdf:impress_pdf_Export:ExportNotesPages=True --outdir /home/user *.pptx • To convert a XLSX file to PDF $ soffice --headless --convert-to pdf:calc_pdf_Export --outdir /home/user *.xlsx • To convert a ODT file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.odt • To convert a HTML file to PDF $ soffice –-headless --convert-to pdf:writer_pdf_Export --outdir /home/user *.html</pre>
     <p>Output as PDF</p>
     <p>To control, which LibreOffice component generates PDF output, you can use these variants:</p> 
     <pre>--convert-to pdf:writer_pdf_Export --convert-to pdf:calc_pdf_Export --convert-to pdf:draw_pdf_Export --convert-to pdf:impress_pdf_Export --convert-to pdf:writer_web_pdf_Export</pre>
@@ -3342,7 +3393,8 @@ $ sudo ls /etc/strongswan.d/charon/
     <p>Manually Crop or Remove Pages: This tool is more for rearranging and cropping pages, but it can also be useful for removing unwanted sections.</p>
   <!-- ############################## -->
       <h4>How to combine PDFs in CLI</h4> 
-      <pre><code><span>$ </span>sudo apt install -y ghostscript</code></pre> <pre>• Command to combine $ gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=combined.pdf file1.pdf file2.pdf • Output in low resolution $ gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=merged.pdf mine1.pdf mine2.pdf</pre>
+      <pre><code><span>$ </span>sudo apt install -y ghostscript</code></pre>
+      <pre>• Command to combine $ gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=combined.pdf file1.pdf file2.pdf • Output in low resolution $ gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=merged.pdf mine1.pdf mine2.pdf</pre>
   <!-- ############################## -->
       <h4>PDF Crop and Split</h4> 
   
@@ -3371,7 +3423,8 @@ singlepage001.pgm singlepage002.pgm _____|_____ _____|_____ | | | | v v v v +---
 </pre>
     <!-- ##### -->
       <h5>pdftk</h5> 
-      <pre><code><span>$ </span>sudo apt install -y pdftk</code></pre> <pre>• Command to remove page 4 $ pdftk input.pdf cat 1-3 5-end output output.pdf</pre>
+      <pre><code><span>$ </span>sudo apt install -y pdftk</code></pre>
+      <pre>• Command to remove page 4 $ pdftk input.pdf cat 1-3 5-end output output.pdf</pre>
     <!-- ########## -->
       <h4>Remove PDF annotations</h4>
       <h5>Removing annotations at once in Okular</h5>
@@ -3435,7 +3488,8 @@ Commands for qpdf $ qpdf --flatten-annotations=all input.pdf output.pdf
 Basic commands 
 • How to OCR a PDF 
 $ ocrmypdf -v input.pdf output.pdf $ ocrmypdf -v --language eng input.pdf output.pdf $ ocrmypdf -v --language eng+deu input.pdf output.pdf $ ocrmypdf -v --language eng+spa input.pdf output.pdf $ ocrmypdf -v --language por+deu input.pdf output.pdf • To modify a file in the same place $ ocrmypdf -v ~/input.pdf ~/input.pdf • To skip text $ ocrmypdf -v --skip-text input.pdf output.pdf • To redo OCR $ ocrmypdf -v --redo-ocr input.pdf output.pdf
-</pre> <pre>• Compression settings 
+</pre>
+<pre>• Compression settings 
 $ ocrmypdf -v --pdfa-image-compression=jpeg --language=por+deu input.pdf output.pdf $ ocrmypdf -v --pdfa-image-compression=lossless --language=por+deu input.pdf output.pdf $ ocrmypdf -v --output-type=pdf --language por+deu input.pdf output.pdf
 </pre>
       <h5>OcrmOCRmyPDF - Image processing</h5> 
@@ -3489,7 +3543,8 @@ $ ocrmypdf -v --pdfa-image-compression=jpeg --language=por+deu input.pdf output.
 $ mogrify -monitor 'ls input-*.png' -crop 3704x1852+160+20 output.png $ mogrify -monitor -crop 1000x1350+20+145 +repage -path cropped *.png</code></pre>
     <p>Monitor progress: -monitor</p>
     <p>Print detailed information about the image: -verbose</p> 
-    <pre>• Commands to reduce .pdf size $ mogrify -monitor -density 300x300 -quality 100 input.pdf output.pdf $ mogrify -monitor -density 200x200 -quality 60 -compress jpeg input.pdf output.pdf $ mogrify -monitor -density 150x150 -quality 70 -compress jpeg -resize 15% input.pdf output.pdf $ mogrify -monitor -density 150x150 -compress Zip input.pdf output.pdf $ mogrify -monitor -density 80 -page a4 input.pdf output.pdf $ mogrify -monitor input.pdf -resample 85% output.pdf $ mogrify -monitor *.png -colorspace gray -resample 100% "input.pdf"</pre> <pre>• Commands to scanned books $ mogrify -normalize -density 300 -depth 8 *.png $ mogrify -normalize -density 300 -depth 8 -crop 50%x100% +repage *.png $ mogrify -monochrome -normalize -density 300 *.png</pre>
+    <pre>• Commands to reduce .pdf size $ mogrify -monitor -density 300x300 -quality 100 input.pdf output.pdf $ mogrify -monitor -density 200x200 -quality 60 -compress jpeg input.pdf output.pdf $ mogrify -monitor -density 150x150 -quality 70 -compress jpeg -resize 15% input.pdf output.pdf $ mogrify -monitor -density 150x150 -compress Zip input.pdf output.pdf $ mogrify -monitor -density 80 -page a4 input.pdf output.pdf $ mogrify -monitor input.pdf -resample 85% output.pdf $ mogrify -monitor *.png -colorspace gray -resample 100% "input.pdf"</pre>
+    <pre>• Commands to scanned books $ mogrify -normalize -density 300 -depth 8 *.png $ mogrify -normalize -density 300 -depth 8 -crop 50%x100% +repage *.png $ mogrify -monochrome -normalize -density 300 *.png</pre>
     <p>-normalize : increase the contrast in an image by stretching the range of intensity values.</p>
     <p>-depth : the number of bits per channel for each pixel.</p>
     <p>-monochrome : transform the image to black and white.</p>
@@ -3972,8 +4027,10 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
   <summary>6.07 Video Editors</summary>
     <br>
     <h4>Video Editors</h4> 
-    <pre><code><span>$ </span>sudo apt install handbrake</code></pre> <pre>
-    <code><span>$ </span>sudo apt install handbrake-cli</code></pre> <pre>
+    <pre><code><span>$ </span>sudo apt install handbrake</code></pre>
+    <pre>
+    <code><span>$ </span>sudo apt install handbrake-cli</code></pre>
+    <pre>
     <code><span>$ </span>sudo apt install ffmpeg</code></pre>
   <p>Usefull links:</p>
   <ul>
@@ -3994,36 +4051,82 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
   <p>Download YouTube videos</p>
   <pre><code>• Commands • Download a video or playlist $ yt-dlp [URL] $ yt-dlp -F [URL] $ yt-dlp -f 247 [URL] $ yt-dlp -f "best[height &lt;=480] " [URL] $ yt-dlp -f "best[height&lt;=480] " [URL] $ yt-dlp -f worstvideo [URL] $ yt-dlp -o 'qwerty' [URL] • Download with metadata $ yt-dlp -o '%(title)s by %(uploader)s on %(upload_date)s in %(playlist)s.%(ext)s' [URL] $ yt-dlp --write-description --write-info-json --write-annotations --write-sub --write-thumbnail [URL] • Download audio-only $ yt-dlp -x --audio-format mp3 [URL]</code></pre>
   <!-- ########## -->
-    <h4>FFmpeg editor</h4> <a href="https://trac.ffmpeg.org/wiki/Encode/H.264 ">https://trac.ffmpeg.org/wiki/Encode/H.264</a>
+    <h4>FFmpeg editor</h4> <a href="https://trac.ffmpeg.org/wiki/Encode/H.264">https://trac.ffmpeg.org/wiki/Encode/H.264</a>
     <h5>• Compressing videos</h5> 
-    <pre><code><span>$ </span>ffmpeg -i input.ext output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.ext -b:v output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.ext -vf scale=1280:720 output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.ext -c:v libx265 output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.mp4 -vcodec h264 -acodec mp2 output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -y -i input.mp4 -vcodec h264 -acodec mp3 output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -y -i input.mp4 -vcodec h264 -acodec aac output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.mp4 -vcodec h264 -b:a 96k output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.mp4 -vcodec h264 -b:v 1000k -acodec mp3 output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.mp4 -vcodec libx265 -acodec aac -crf 23 output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.mp4 -c:v libx265 -preset ultrafast -crf 28 -c:a aac -b:a 250k output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.mov -c:v libx265 -preset veryfast -tag:v hvc1 -vf format=yuv420p -c:a copy output.mp4</code></pre>
+    <pre><code><span>$ </span>ffmpeg -i input.ext output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.ext -b:v output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.ext -vf scale=1280:720 output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.ext -c:v libx265 output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.mp4 -vcodec h264 -acodec mp2 output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -y -i input.mp4 -vcodec h264 -acodec mp3 output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -y -i input.mp4 -vcodec h264 -acodec aac output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.mp4 -vcodec h264 -b:a 96k output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.mp4 -vcodec h264 -b:v 1000k -acodec mp3 output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.mp4 -vcodec libx265 -acodec aac -crf 23 output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.mp4 -c:v libx265 -preset ultrafast -crf 28 -c:a aac -b:a 250k output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.mov -c:v libx265 -preset veryfast -tag:v hvc1 -vf format=yuv420p -c:a copy output.mp4</code>
+    </pre>
     <h5>• Compressing video removing sound (to disable audio you must use -an)</h5> 
-    <pre><code><span>$ </span>ffmpeg -i input.mp4 -vcodec h264 -an output.mp4</code></pre>
+    <pre><code><span>$ </span>ffmpeg -i input.mp4 -vcodec h264 -an output.mp4</code>
+    </pre>
     <h5>• Converting videos</h5> 
-    <pre><code><span>$ </span>ffmpeg -y -i input.wmv output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.mp4 -vf "scale=-2:240 " output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.wmv -c:v libx264 -crf 23 output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.wmv -c:v libx264 -crf 23 -c:a aac -q:a 100 output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.wmv -c:v libx264 -crf 23 -c:a aac -strict -2 -q:a 100 output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.wmv -c:v libx264 -crf 23 -profile:v high -r 30 -c:a aac -q:a 100 -ar 48000 output.mp4</code></pre>
+    <pre><code><span>$ </span>ffmpeg -y -i input.wmv output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.mp4 -vf "scale=-2:240 " output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.wmv -c:v libx264 -crf 23 output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.wmv -c:v libx264 -crf 23 -c:a aac -q:a 100 output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.wmv -c:v libx264 -crf 23 -c:a aac -strict -2 -q:a 100 output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.wmv -c:v libx264 -crf 23 -profile:v high -r 30 -c:a aac -q:a 100 -ar 48000 output.mp4</code>
+    </pre>
     <h5>• Scaling down the size of the MP4</h5> 
-    <pre><code><span>$ </span>ffmpeg -i input.mp4 -s 1280x720 -acodec copy -y output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.mp4 -vf "scale=-2:720 " -c:v libx264 -crf 20 -preset slow -c:a copy output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.mp4 -s 1920x1080 -c:v libx265 -preset ultrafast -crf 28 -c:a aac -b:a 250k output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.mp4 scale=1080:1920,format=yuv420p -c:v libx265 -preset veryfast -tag:v hvc1 -b:v 800k -bufsize 1200k -vf -b:a 128k output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.mp4 -c:v libx265 -preset veryfast -tag:v hvc1 -vf format=yuv420p -c:a copy output.mp4</code></pre> <pre>
-    <code><span>$ </span>ffmpeg -i input.mp4 -c:v libx265 -preset veryfast -tag:v hvc1 -b:v new_bitrate -vf scale=new_width:new_height,format=yuv420p -c:a copy output.mp4</code></pre>
+    <pre><code><span>$ </span>ffmpeg -i input.mp4 -s 1280x720 -acodec copy -y output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.mp4 -vf "scale=-2:720 " -c:v libx264 -crf 20 -preset slow -c:a copy output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.mp4 -s 1920x1080 -c:v libx265 -preset ultrafast -crf 28 -c:a aac -b:a 250k output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.mp4 scale=1080:1920,format=yuv420p -c:v libx265 -preset veryfast -tag:v hvc1 -b:v 800k -bufsize 1200k -vf -b:a 128k output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.mp4 -c:v libx265 -preset veryfast -tag:v hvc1 -vf format=yuv420p -c:a copy output.mp4</code>
+    </pre>
+    <pre>
+    <code><span>$ </span>ffmpeg -i input.mp4 -c:v libx265 -preset veryfast -tag:v hvc1 -b:v new_bitrate -vf scale=new_width:new_height,format=yuv420p -c:a copy output.mp4</code>
+    </pre>
   <!-- ########## -->
     <h5>In batch compress MP4</h5>
   <p>In batch compress MP4 with ffmpeg</p> 
@@ -4036,40 +4139,50 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <br>
     <h4>Audacity</h4> 
     <pre><code><span>$ </span>sudo apt install audacity</code></pre>
-    <a href="https://youtube.com/watch?v=fSmmaAD8XD8 "><img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DfSmmaAD8XD8 " alt="Audacity Step-by-Step Tutorial for Beginners (2024) " title="Audacity Step-by-Step Tutorial for Beginners (2024) "></a>
-    <a href="https://youtube.com/watch?v=bsZOHcDDKeQ "><img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DbsZOHcDDKeQ " alt="How to make voice sound better with Audacity (2024) " title="How to make voice sound better with Audacity (2024) "></a>
+    <a href="https://youtube.com/watch?v=fSmmaAD8XD8"><img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DfSmmaAD8XD8 " alt="Audacity Step-by-Step Tutorial for Beginners (2024) " title="Audacity Step-by-Step Tutorial for Beginners (2024)"></a>
+    <a href="https://youtube.com/watch?v=bsZOHcDDKeQ"><img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DbsZOHcDDKeQ " alt="How to make voice sound better with Audacity (2024) " title="How to make voice sound better with Audacity (2024)"></a>
   <br> 
 </details>  
 <!-- ############################## -->
 <details>
-  <summary>6.09 Email</summary>
-    <br>
-    <h4>Email</h4> 
-    <pre><code><span>$ </span>sudo apt install -y thunderbird</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'sudo apt install -y thunderbird') ">Copy</button> 
-    <pre><code><span>$ </span>sudo apt install -y birdtray</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'sudo apt install -y birdtray') ">Copy</button>
-    <h4>Encrypted Emails</h4> https://emailselfdefense.fsf.org/en/
-    <br> https://emailselfdefense.fsf.org/en/workshops.html
-    <br> https://riseup.net/en/security/message-security/openpgp/best-practices
-    <br> https://riseup.net/en/security/message-security/openpgp/enigmail
-    <br> https://linuxbabe.com/security/encrypt-emails-gpg-thunderbird
-    <br> https://wiki.archlinux.org/title/Paperkey
-    <br> https://keys.openpgp.org/about/usage
-    <br> https://efail.de
-    <br>
-  <p>Note 1: You cannot recover the secret key from the public key and the passphrase. You cannot recover your secret gpg key without a backup.</p>
-  <p>Note 2: Create an expiration date for security reasons.</p>
-  <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
-  <p>Note 3: Create an .</p> 
-  <pre>Commands for gnupg (GnuPG - GNU Privacy Guard) • How to export and import GPG key: $ gpg --export ${ID} > public.key $ gpg --export-secret-key ${ID} > private.key $ gpg --import --batch public.key $ gpg --import --batch backup_dir/.gnupg/pubring.gpg $ gpg --import --batch backup_dir/.gnupg/secring.gpg $ gpg --edit-key ${KEY} trust quit $ gpg --list-keys $ gpg --list-secret-keys</pre> <pre>Commands for gnupg (GnuPG - GNU Privacy Guard) • How to extend the expiration date of an already expired GPG key: $ gpg --list-keys $ gpg --edit-key (key id) • GPG console will open in the primary key, select a sub-key: 
-   gpg> 
-   gpg> list 
-   gpg> key 1 • Set the expiration for the selected key 
-   gpg> expire 
-   gpg> save • After update, you can send it out 
-   gpg --keyserver site.com --send-keys (key id)</pre> <pre>gpg --list-secret-keys --verbose --with-subkey-fingerprints</pre>
-  <br> 
+<summary>6.09 Email</summary>
+<br>
+<h4>Email</h4> 
+<pre><code><span>$ </span>sudo apt install -y thunderbird</code></pre>
+<button onclick="navigator.clipboard.writeText('sudo apt install -y thunderbird')">Copy</button> 
+<pre><code><span>$ </span>sudo apt install -y birdtray</code></pre>
+<button onclick="navigator.clipboard.writeText('sudo apt install -y birdtray')">Copy</button>
+<h4>Encrypted Emails</h4> https://emailselfdefense.fsf.org/en/
+<br> https://emailselfdefense.fsf.org/en/workshops.html
+<br> https://riseup.net/en/security/message-security/openpgp/best-practices
+<br> https://riseup.net/en/security/message-security/openpgp/enigmail
+<br> https://linuxbabe.com/security/encrypt-emails-gpg-thunderbird
+<br> https://wiki.archlinux.org/title/Paperkey
+<br> https://keys.openpgp.org/about/usage
+<br> https://efail.de
+<br>
+<p>Note 1: You cannot recover the secret key from the public key and the passphrase. You cannot recover your secret gpg key without a backup.</p>
+<p>Note 2: Create an expiration date for security reasons.</p>
+<p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
+<p>Note 3: Create an .</p> 
+<pre><code>
+Commands for gnupg (GnuPG - GNU Privacy Guard) • How to export and import GPG key: $ gpg --export ${ID} > public.key $ gpg --export-secret-key ${ID} > private.key $ gpg --import --batch public.key $ gpg --import --batch backup_dir/.gnupg/pubring.gpg $ gpg --import --batch backup_dir/.gnupg/secring.gpg $ gpg --edit-key ${KEY} trust quit $ gpg --list-keys $ gpg --list-secret-keys
+</code></pre>
+<pre><code>
+Commands for gnupg (GnuPG - GNU Privacy Guard) • How to extend the expiration date of an already expired GPG key: $ gpg --list-keys $ gpg --edit-key (key id) • GPG console will open in the primary key, select a sub-key:
+gpg> 
+gpg> list 
+gpg> key 1 
+• Set the expiration for the selected key 
+gpg> expire 
+gpg> save 
+• After update, you can send it out 
+gpg --keyserver site.com --send-keys (key id)
+</code></pre>
+<pre><code>
+gpg --list-secret-keys --verbose --with-subkey-fingerprints
+</code></pre>
+<br> 
 </details>  
 <!-- ############################## -->
 <details>
@@ -4077,8 +4190,8 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <br>
     <h4>Encryption</h4>
   <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
-    <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/03_Cryptography_and_Passwords ">03_Cryptography_and_Passwords</a></h4>
-    <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/01_INSTALLATION/03_Debootstrap ">01_INSTALLATION/03_Debootstrap</a></h4> Anti-Tampering Measures
+    <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/03_Cryptography_and_Passwords">03_Cryptography_and_Passwords</a></h4>
+    <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/01_INSTALLATION/03_Debootstrap">01_INSTALLATION/03_Debootstrap</a></h4> Anti-Tampering Measures
     <br> https://veracrypt.fr/en/Hidden%20Volume.html
     <br>
     <h4>• Disk Encryption</h4>
@@ -4089,7 +4202,7 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <h5>∙ SiriKali (GUI)</h5> 
     https://mhogomchungu.github.io/sirikali
     <br> <pre><code><span>$ </span>sudo apt install zulucrypt-gui</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'sudo apt install zulucrypt-gui') ">Copy</button>
+    <button onclick="navigator.clipboard.writeText('sudo apt install zulucrypt-gui')">Copy</button>
     <h5>∙ VeraCrypt (GUI)</h5> 
     https://veracrypt.fr/en/Downloads.html
     <br> https://reddit.com/r/VeraCrypt
@@ -4098,20 +4211,20 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
   <p>∙ Command to automount favorite volume at startup session:</p> <code>/usr/bin/veracrypt %f /dev/sda2</code>
   <p>∙ Password less:</p>
   <pre><code><span>$ </span>sudo groupadd veracrypt</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'sudo groupadd veracrypt') ">Copy</button> <pre>
+    <button onclick="navigator.clipboard.writeText('sudo groupadd veracrypt')">Copy</button> <pre>
       <code><span>$ </span>sudo usermod -aG veracrypt "$(whoami)"</code></pre>
       (or)<br> 
     <pre><code><span>$ </span>sudo usermod -aG veracrypt $USER</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'sudo usermod -aG veracrypt $USER') ">Copy</button> 
+    <button onclick="navigator.clipboard.writeText('sudo usermod -aG veracrypt $USER')">Copy</button> 
     <pre><code><span>$ </span>sudoedit /etc/sudoers</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'sudoedit /etc/sudoers') ">Copy</button>
+    <button onclick="navigator.clipboard.writeText('sudoedit /etc/sudoers')">Copy</button>
     <pre>%veracrypt ALL=(root) NOPASSWD:/usr/bin/veracrypt #Allow members of group sudo to execute any command %sudo ALL=(ALL:ALL) ALL %veracrypt ALL=(root) NOPASSWD:/usr/bin/veracrypt #Allow members of group sudo to execute any command %sudo ALL=(ALL:ALL) ALL %veracrypt ALL=(root) NOPASSWD:/usr/bin/veracrypt</pre>
     <p>*Reboot</p>
     <pre><code><span>$ </span>sudo reboot</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'sudo reboot') ">Copy</button>
+    <button onclick="navigator.clipboard.writeText('sudo reboot')">Copy</button>
   <p>∙ NTFS - Read only error</p>
   <pre><code><span>$ </span>sudo ntfsfix /dev/mapper/veracrypt1</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'sudo ntfsfix /dev/mapper/veracrypt1') ">Copy</button>
+    <button onclick="navigator.clipboard.writeText('sudo ntfsfix /dev/mapper/veracrypt1')">Copy</button>
   <p>In Windowns (WinPE, )</p>
   <pre><code>C://&gt; chkdsk /F</code></pre>
   <p>Close and open again</p>
@@ -4146,46 +4259,53 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
   <p>To incorporate the script into your .bashrc or .bash_profile configuration file, follow these steps:</p>
   <p>Open your .bashrc or .bash_profile file using a text editor. For example, you can use nano:</p>
   <pre><code><span>$ </span>nano ~/.bashrc</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'nano ~/.bashrc') ">Copy</button>
+    <button onclick="navigator.clipboard.writeText('nano ~/.bashrc')">Copy</button>
   <p>Add the script function extract() along with the necessary helper function is_encrypted() to the file. You can copy the entire extract() function along with the rest of the functions.</p>
   <pre><code># Function to check if a file is encrypted function is_encrypted() { file "$1 " | grep -q "encrypted " } # Function to securely prompt for password function prompt_password() { local password=" " prompt="Enter password for $1: " # Prompt for password without echoing to the terminal while IFS= read -rs -p "$prompt " char; do # Exit loop when Enter key is pressed if [[ $char == $'\0' ]]; then break fi password+="$char " prompt='*' done echo "$password " # Output the password (optional, for debugging) } # Extract common archive files by file extension function extract() { if [ -f "$1 " ] ; then case "$1 " in *.tar.gz|*.tgz) tar xzf "$1 " ;; *.tar|*.tar.xz) tar xf "$1 " ;; *.tar.bz2|*.tbz2) tar xjf "$1 " ;; *.xz) unxz "$1 " ;; *.zip) if is_encrypted "$1 "; then password=$(prompt_password "$1 ") unzip -P "$password " "$1 " else unzip "$1 " fi ;; *.Z) uncompress "$1 " ;; *.tar.zst) tar -I=unzstd -xf "$1 " ;; *.zst) unzstd "$1 " ;; *.7z) if is_encrypted "$1 "; then password=$(prompt_password "$1 ") 7z x -p"$password " "$1 " else 7z x "$1 " fi ;; *.tar.gz.gpg|*.tgz.gpg) gpg -d "$1 " | tar xzf - ;; *.tar.gpg) gpg -d "$1 " | tar xf - ;; *.tar.bz2.gpg|*.tbz2.gpg) gpg -d "$1 " | tar xjf - ;; *.zip.gpg) password=$(prompt_password "$1 ") gpg -d "$1 " | unzip -P "$password " - ;; *.xz.gpg) gpg -d "$1 " | unxz - ;; *) echo "Unsupported file format: '$1' " ;; esac else echo " '$1' is not a valid archive file. " fi }</code></pre>
   <p>Save and exit the text editor. In Nano, you can do this by pressing Ctrl + O to write the changes and Ctrl + X to exit.</p>
   <p>Source your updated configuration file to apply the changes immediately:</p>
   <pre><code><span>$ </span>source ~/.bashrc</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'source ~/.bashrc') ">Copy</button>
+    <button onclick="navigator.clipboard.writeText('source ~/.bashrc')">Copy</button>
   <p>or</p>
   <pre><code><span>$ </span>source ~/.bash_profile</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'source ~/.bash_profile') ">Copy</button>
+    <button onclick="navigator.clipboard.writeText('source ~/.bash_profile')">Copy</button>
   <p>You can use the extract function directly from your terminal to extract archive files. For example:</p>
   <pre><code><span>$ </span>extract example.tar.gz</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'extract example.tar.gz') ">Copy</button>
+    <button onclick="navigator.clipboard.writeText('extract example.tar.gz')">Copy</button>
     <h4>• TAR (.gz , .tar and .tar.gz)</h4> 
-    <pre>Commands for .tar archives • How to create an .tar file with gzip archiver: $ tar –cvf outarchive.tar ~/Documents • How to decompress a .tar file with with gzip: $ tar -xvf archive.tar</pre> <pre>Commands for .tar.gz archives • How to create an .tar.gz file $ tar –cvzf outarchive.tar.gz ~/Documents • To list the contents of a .tar.gz file: $ tar –tzf archive.tar.gz • How to decompress a .tar.gz file $ tar –xvzf archive.tar.gz $ tar –xvzf archive.tar.gz –C /home/user/Downloads</pre>
+    <pre>Commands for .tar archives • How to create an .tar file with gzip archiver: $ tar –cvf outarchive.tar ~/Documents • How to decompress a .tar file with with gzip: $ tar -xvf archive.tar</pre>
+    <pre>Commands for .tar.gz archives • How to create an .tar.gz file $ tar –cvzf outarchive.tar.gz ~/Documents • To list the contents of a .tar.gz file: $ tar –tzf archive.tar.gz • How to decompress a .tar.gz file $ tar –xvzf archive.tar.gz $ tar –xvzf archive.tar.gz –C /home/user/Downloads</pre>
     <h4>• GZIP (.gz , .tar and .tar.gz)</h4> 
     <pre><code><span>$ </span>sudo apt install gzip</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'sudo apt install gzip') ">Copy</button> <pre>Commands for .gz archives • How to create an .gz file $ gzip outarchive.gz indoc1.pdf • How to decompress a .gz file $ gunzip archive.gz</pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install gzip')">Copy</button> <pre>Commands for .gz archives • How to create an .gz file $ gzip outarchive.gz indoc1.pdf • How to decompress a .gz file $ gunzip archive.gz</pre>
     <h4>• 7Z (.7z and .zip)</h4> https://7-zip.org
     <br> https://cvedetails.com/vendor/9220/7-zip.html
     <br> <pre><code><span>$ </span>sudo apt install p7zip-full</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'sudo apt install p7zip-full') ">Copy</button> <pre>Commands for .7z archives • How to create an .7z file $ 7z a outarchive.7z indoc1.pdf • How to decompress a .7z file $ 7z x archive.7z</pre> <pre>Commands for .zip archives • How to create an zip file $ 7z a outarchive.zip indoc1.pdf • How to decompress a zip file $ 7z x archive.zip</pre> <pre>Commands for encrypted .7z and .zip archives • How to create an encrypted .zip file $ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory $ 7z a -p -tzip -scrc=AES256 outarchive.zip indoc1.pdf inpdoc2.pdf $ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory • How to create an encrypted header .7z file (only) $ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir $ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory • How to decompress a .7z and .zip file that is encrypted $ 7z x archive.zip</pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install p7zip-full')">Copy</button> <pre>Commands for .7z archives • How to create an .7z file $ 7z a outarchive.7z indoc1.pdf • How to decompress a .7z file $ 7z x archive.7z</pre>
+    <pre>Commands for .zip archives • How to create an zip file $ 7z a outarchive.zip indoc1.pdf • How to decompress a zip file $ 7z x archive.zip</pre>
+    <pre>Commands for encrypted .7z and .zip archives • How to create an encrypted .zip file $ 7z a -p -t7z -scrc=AES256 archive.7z /input/directory $ 7z a -p -tzip -scrc=AES256 outarchive.zip indoc1.pdf inpdoc2.pdf $ 7z a -p -tzip -scrc=AES256 archive.zip /input/directory • How to create an encrypted header .7z file (only) $ 7z a -p -mhe=on -scrc=AES256 archive.7z input_dir $ 7z a -p -mhe=on -scrc=AES256 /output/archive.7z /input/directory • How to decompress a .7z and .zip file that is encrypted $ 7z x archive.zip</pre>
   <p>*Encrypted header: no file list contents visible without the password</p>
     <h4>• RAR (.rar)</h4> 
     <pre><code><span>$ </span>sudo apt install unrar-free</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'sudo apt install unrar-free') ">Copy</button> <pre>Commands for .rar archives (*proprietary: extract only) • How to decompress a rar file $ unrar e ~/Downloads/filename.rar ~/Downloads/ • How to decompress a rar file encrypted $ unrar-free -x ~/Downloads/filename.rar ~/Downloads/ • How to decompress a rar file encrypted parts, only unrar the first part01.rar and it goes itself for the rest. Navigate to the directory containing the file: $ cd /path/to/directory/ $ unrar-free -xp /part01.rar ~/Downloads/</pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install unrar-free')">Copy</button> <pre>Commands for .rar archives (*proprietary: extract only) • How to decompress a rar file $ unrar e ~/Downloads/filename.rar ~/Downloads/ • How to decompress a rar file encrypted $ unrar-free -x ~/Downloads/filename.rar ~/Downloads/ • How to decompress a rar file encrypted parts, only unrar the first part01.rar and it goes itself for the rest. Navigate to the directory containing the file: $ cd /path/to/directory/ $ unrar-free -xp /part01.rar ~/Downloads/</pre>
     <h4>• ZIP (.zip)</h4> https://infozip.sourceforge.net
     <br> <pre><code><span>$ </span>sudo apt install zip unzip</code></pre>
-    <button onclick="navigator.clipboard.writeText( 'sudo apt install zip unzip') ">Copy</button> <pre>Commands for .zip archives • Add file.txt to z.zip (create z if needed) $ zip z file.txt • Zip all files in current dir: $ zip z * • Zip files in current dir and subdirs also: $ zip -r z . • How to decompress a .zip file: $ unzip ~/Downloads/filename.zip • How to unzip multiple .zip files: $ unzip '*.zip' • How to decompress a .zip file to directory: $ unzip filename.zip -d /path/to/directory $ unzip -d file file.zip • Unzip Multiple Files (using single quote or backslash) $ unzip '*.zip' $ unzip \*.zip • Locale encoding name error $ unzip -I (encoding) (FILE_PATH) -d (Destination) $ unzip -I UTF-8 Desktop.zip</pre> <pre>Commands for encrypted .zip archives • How to create an encrypted .zip file $ zip -e filename.zip ~/Downloads/ • How to decompress a encrypted .zip file $ unzip ~/Downloads/filename.zip • How to decompress a encrypted .zip file to directory $ unzip ~/Downloads/filename.zip -d ~/Downloads/</pre>
+    <button onclick="navigator.clipboard.writeText('sudo apt install zip unzip')">Copy</button> <pre>Commands for .zip archives • Add file.txt to z.zip (create z if needed) $ zip z file.txt • Zip all files in current dir: $ zip z * • Zip files in current dir and subdirs also: $ zip -r z . • How to decompress a .zip file: $ unzip ~/Downloads/filename.zip • How to unzip multiple .zip files: $ unzip '*.zip' • How to decompress a .zip file to directory: $ unzip filename.zip -d /path/to/directory $ unzip -d file file.zip • Unzip Multiple Files (using single quote or backslash) $ unzip '*.zip' $ unzip \*.zip • Locale encoding name error $ unzip -I (encoding) (FILE_PATH) -d (Destination) $ unzip -I UTF-8 Desktop.zip</pre>
+    <pre>Commands for encrypted .zip archives • How to create an encrypted .zip file $ zip -e filename.zip ~/Downloads/ • How to decompress a encrypted .zip file $ unzip ~/Downloads/filename.zip • How to decompress a encrypted .zip file to directory $ unzip ~/Downloads/filename.zip -d ~/Downloads/</pre>
   <br> 
 </details>  
 <!-- ############################## -->
 <details>
   <summary>6.12 Sanitation</summary>
     <br>
-    <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/04_Backup_and_Sanitization/02_Sanitization ">04_Backup_and_Sanitization/02_Sanitization</a></h4>
+    <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/04_Backup_and_Sanitization/02_Sanitization">04_Backup_and_Sanitization/02_Sanitization</a></h4>
     <h4>Metadata Cleaners</h4> 
-    <pre><code><span>$ </span>sudo apt install exiftool</code></pre> <pre>
-    <code><span>$ </span>sudo apt install metadata-cleaner</code></pre> <pre>
-    <code><span>$ </span>sudo apt install metacam</code></pre> <pre>
+    <pre><code><span>$ </span>sudo apt install exiftool</code></pre>
+    <pre>
+    <code><span>$ </span>sudo apt install metadata-cleaner</code></pre>
+    <pre>
+    <code><span>$ </span>sudo apt install metacam</code></pre>
+    <pre>
     <code><span>$ </span>sudo apt install poppler-utils</code></pre> • Exiftool - https://github.com/exiftool/exiftool
     <br> • Index of ExifTool Tag Names - https://exiftool.org/TagNames/index.html
     <br> • List of PDF Tags - https://exiftool.org/TagNames/PDF.html
@@ -4215,7 +4335,7 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     $ exiftool -Title=" " / -Author=" " / -Description=" " / -Subject=" " / -Date=" " / -CreationDate=" " / -Publisher=" " / -ISBN=" " / input.pdf</pre> 
     *To not create a backup in command-line the option is -overwrite_original .
     <br> 
-    *To not creat a backup in ExifToolGUI, there's menu "Options ">"Don 't backup files when modifying".
+    *To not creat a backup in ExifToolGUI, there's menu "Options">"Don 't backup files when modifying".
     <br>
   <!-- ########## -->
     <h4>PDF Metadata</h4> 
@@ -4349,7 +4469,8 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <h4>Utilities</h4>
     <h4>Set color temperature of display</h4>
     <h5>Redshift</h5> 
-    <pre><code><span>$ </span>sudo apt install redshift</code></pre> <pre>
+    <pre><code><span>$ </span>sudo apt install redshift</code></pre>
+    <pre>
     <code><span>$ </span>sudo apt install redshift-gtk</code></pre>
   <p>redshift.conf</p> https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample
     <br> <pre><code><span>$ </span>~/.config/redshift/redshift.conf</code></pre>
@@ -4380,7 +4501,8 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <h5>dupeGuru</h5> 
     <pre><code><span>$ </span>sudo apt install dupeguru</code></pre>
     <h5>fdupes (slow)</h5> 
-    <pre><code><span>$ </span>sudo apt install fdupes</code></pre> <pre>• Command $ fdupes -r dir $ fdupes -r -S .</pre>
+    <pre><code><span>$ </span>sudo apt install fdupes</code></pre>
+    <pre>• Command $ fdupes -r dir $ fdupes -r -S .</pre>
     <h5>Duplicate Files Finder with md5sum</h5> 
     https://github.com/pixelb/fslint <pre><code><span>$ </span>sudo apt install coreutils</code></pre> (CLI) (BUILT-IN)
     <br>
@@ -4511,18 +4633,24 @@ $ for x in 'find . -name "*.webp"'; do dwebp {} -o ${x%.*}.png ; done
     <pre><code><span>$ </span>sudo apt install gprename</code></pre>
   <!-- ########## -->
     <h5>Case Styles</h5> 
-    <pre>Camel case: camelCase</pre> <pre>Pascal case: PascalCase</pre> <pre>Kebab case: kebab-case</pre> <pre>Snake case: snake_case</pre> <pre>Dot case: dot.case</pre> <pre>Title case: Title Case</pre> <pre>Sentence case: Sentence case</pre>
+    <pre>Camel case: camelCase</pre>
+    <pre>Pascal case: PascalCase</pre>
+    <pre>Kebab case: kebab-case</pre>
+    <pre>Snake case: snake_case</pre>
+    <pre>Dot case: dot.case</pre>
+    <pre>Title case: Title Case</pre>
+    <pre>Sentence case: Sentence case</pre>
   <!-- ########## -->
     <h4>Bash's built-in commands to rename (Debian/GNU Linux)</h4>
     <h5>Safety check before irreversible batch processing rename</h5> 
     <pre><code>
 $ for f in *; do echo mv "$f" "$(echo "$f" | tr 'A-Z' 'a-z')"; done
 </code></pre>
-    <button onclick="navigator.clipboard.writeText('')">Copy</button> 
+    <button onclick="navigator.clipboard.writeText('for f in *; do echo mv &quot;$f&quot; &quot;$(echo &quot;$f&quot; | tr &#39;A-Z&#39; &#39;a-z&#39;)&quot;; done')">Copy</button> 
     <pre><code>
 $ for f in *; do echo mv "$f" "$(echo "$f" | sed -e 's/\([A-Z]\)/-\L\1/g' | sed -e 's/^-//')"; done
 </code></pre>
-    <button onclick="navigator.clipboard.writeText('')">Copy</button>
+    <button onclick="navigator.clipboard.writeText('for f in *; do echo mv &amp;quot;$f&amp;quot; &amp;quot;$(echo &amp;quot;$f&amp;quot; | tr &amp;#39;A-Z&amp;#39; &amp;#39;a-z&amp;#39;)&amp;quot;; done')">Copy</button>
   <!-- ########## -->
     <h5>Note about uppercase and lowercase with one-liner command in Linux</h5>
   <p>Its impossible to rename a file in the same directory from uppercase to lowercase with one-liner command due to the way Unix-like systems handle file names. File systems on Unix-like systems (such as ext4, NTFS, etc.) are typically case-sensitive. This means that FILENAME.txt and filename.txt are treated as distinct files. However, you can achieve this by using a temporary directory or by copying the file to a new name and then deleting the original.</p>
@@ -4530,14 +4658,14 @@ $ for f in *; do echo mv "$f" "$(echo "$f" | sed -e 's/\([A-Z]\)/-\L\1/g' | sed 
     <h5>Working with files instead of folders in one-liner command.</h5>
   <p>For example, if you have a file named CamelCase_Example.txt, running the command will rename it to camel-case-example.txt.</p>
   <p>Make sure to replace $1 with the actual filename if you're not passing it as an argument to a script or command, and ensure you run the command in the directory where the file is located.</p>
-  <pre><code>
+<pre><code>
 $ mv "$1" "$(echo "$1" | sed 's/\([a-z0-9]\)\([A-Z]\)/\1-\2/g' | tr '[:upper:]' '[:lower:]' | sed 's/_/-/g')"
 </code></pre>
-    <button onclick="navigator.clipboard.writeText('')">Copy</button> 
-    <pre><code>
+   <button onclick="navigator.clipboard.writeText('mv &quot;$1&quot; &quot;$(echo &quot;$1&quot; | sed &#39;s/\([a-z0-9]\)\([A-Z]\)/\1-\2/g&#39; | tr &#39;[:upper:]&#39; &#39;[:lower:]&#39; | sed &#39;s/_/-/g&#39;)&quot;')">Copy</button> 
+<pre><code>
 $ mv "/dir/CamelCase_Example.txt" "$(echo "/dir/CamelCase_Example.txt" | sed 's/\([a-z0-9]\)\([A-Z]\)/\1-\2/g' | tr '[:upper:]' '[:lower:]' | sed 's/_/-/g')"
 </code></pre>
-    <button onclick="navigator.clipboard.writeText('')">Copy</button>
+    <button onclick="navigator.clipboard.writeText('mv &quot;/dir/CamelCase_Example.txt&quot; &quot;$(echo &quot;/dir/CamelCase_Example.txt&quot; | sed &#39;s/\([a-z0-9]\)\([A-Z]\)/\1-\2/g&#39; | tr &#39;[:upper:]&#39; &#39;[:lower:]&#39; | sed &#39;s/_/-/g&#39;)&quot;')">Copy</button>
   <!-- ########## -->
     <h4>One-liner built-in commands to rename</h4>
   <p>Usage: $ command</p>
@@ -4571,7 +4699,8 @@ $ for f in *; do mv "$f" "$(echo "$f" | sed -r 's/(^|_)([a-z])/\U\2/g')"; done
 $ for f in *; do mv "$f" "$(echo "$f" | sed -E 's/(^|_)([a-z])/\U\2/g' | sed -E 's/_/ /g')"; done 
 • Batch Processing - Title Case with Spaces to snake_case 
 $ for f in *; do mv "$f" "$(echo "$f" | tr ' ' '_' | tr 'A-Z' 'a-z')"; done
-</code></pre>  <!-- ########## -->
+</code></pre>
+  <!-- ########## -->
 <h5>Others</h5>
 <p>Convert Camel case to kebab-case</p>
 <pre><code>
@@ -4678,7 +4807,8 @@ $ rename -v 'y/[a-z]/[A-Z]/' *.pdf
 $ rename 's/ /_/g' *
 </code></pre>
   <!-- ########## -->
-    <h4>Metadata Renamer</h4>• Rename files into directories according to metadata contained in.<br>
+    <h4>Metadata Renamer</h4>
+    • Rename files into directories according to metadata contained in.<br>
     • Exiftool Pseudo Tags - https://exiftool.org/filename.html<br>
     • Illegal characters in Windows file names.<br>
     <h5>• Basic of metadata</h5>
@@ -4786,8 +4916,8 @@ $ rsync -ravP Directory/ server@192.168.1.56:/home/server
       <button onclick="navigator.clipboard.writeText('sudo apt install pv')">Copy</button> 
       <ol>
       <li><code>pv</code> is a command-line tool to monitor the progress of data through a pipeline</li>
-      <li><code>pv ~/source > /backup/destination</code> copies the content of ~/source to /backup/destination but doesn't preserve file permissions and ownership.</li>
-      </ol> <pre>$ pv ~/source > /backup/destination</pre>
+      <li><code>pv ~/source &gt; /backup/destination</code> copies the content of ~/source to /backup/destination but doesn't preserve file permissions and ownership.</li>
+      </ol> <pre>$ pv ~/source &gt; /backup/destination</pre>
     <p><small>
     *This won't preserve the files permissions and ownership.</small></p>
     <!-- ##### -->
@@ -5015,8 +5145,8 @@ $ find . -name '*.txt' -exec sed -i -e 's/textp1/textp2 text.txt/g' {} \;
 $ sed s/regexp/replacement/[flags] • Replace closed with open on lines containing code 
 $ sed '/code/ s/closed/open/' text.txt • Replace all closed with open on lines containing code 
 $ sed '/code/ s/closed/open/g' text.txt • Replace all occurrences of ‘hello’ to ‘world’ in the file input.txt: 
-$ sed 's/hello/world/g' input.txt > output.txt
-    </pre>
+$ sed 's/hello/world/g' input.txt &gt; output.txt
+</pre>
     
 <pre>
 • Batch removing specific text in .txt files, the –i option tells to sed make the change in place, inside the file itself 
@@ -5369,9 +5499,12 @@ $ man find | grep -e '-size'
     <pre><code><span>$ </span>sudo journalctl -S today -u name.service</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo journalctl -S today -u name.service')">Copy</button> 
     <pre><code><span>$ </span>sudo journalctl -S "2024-01-01 00:00:00"</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo journalctl -S &quot;2024-01-01 00:00:00&quot;')">Copy</button>
     <pre><code><span>$ </span>sudo journalctl -S "2024-01-01 00:00:00" > ~/journal.txt</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo journalctl -S &quot;2024-01-01 00:00:00&quot; &gt; ~/journal.txt')">Copy</button>
     <pre><code><span>$ </span>grep " install" /var/log/dpkg.log</code></pre>
-   <pre><code><span>$ </span>sudo tail /var/log/syslog</code></pre>
+    <button onclick="navigator.clipboard.writeText('grep &quot; install&quot; /var/log/dpkg.log')">Copy</button>
+    <pre><code><span>$ </span>sudo tail /var/log/syslog</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo tail /var/log/syslog')">Copy</button> 
     <pre><code><span>$ </span>sudo tail -n20 /var/log/syslog</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo tail -n20 /var/log/syslog')">Copy</button> 
@@ -5453,7 +5586,9 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('sudo grub-install /dev/sdX -v --force-extra-removable')">Copy</button>
   <p>Cryptab</p>
   <pre><code><span>$ </span>sudo nano /boot/grub/grub.cfg</code></pre>
-    <button onclick="navigator.clipboard.writeText('sudo nano /boot/grub/grub.cfg')">Copy</button> <pre>GRUB_DISABLE_OS_PROBER=false</pre> <pre>GRUB_ENABLE_CRYPTODISK=y</pre> <pre><code><span>$ </span>sudo update-grub</code></pre>
+    <button onclick="navigator.clipboard.writeText('sudo nano /boot/grub/grub.cfg')">Copy</button> <pre>GRUB_DISABLE_OS_PROBER=false</pre>
+    <pre>GRUB_ENABLE_CRYPTODISK=y</pre>
+    <pre><code><span>$ </span>sudo update-grub</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo update-grub')">Copy</button>
   <!-- ########## -->
     <h4>Remove Old Kernels</h4>
@@ -5515,7 +5650,8 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('export QT_FONT_DPI=96')">Copy</button>
   <!-- ########## -->
     <h4>Monitor and resolution</h4> https://dpi.lv
-    <br> <pre><code><span>$ </span>sudo apt install arandr</code></pre> <pre>
+    <br> <pre><code><span>$ </span>sudo apt install arandr</code></pre>
+    <pre>
     <code><span>$ </span>sudo apt install xserver-xorg-input-all</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo apt install xserver-xorg-input-all')">Copy</button>
   <p>Debug commands</p>
@@ -5681,7 +5817,7 @@ $ man find | grep -e '-size'
         <li> <pre><code>
               [logging]
               level=DEBUG
-        </code></pre> </li>
+    </code></pre> </li>
         <li>Save the file and restart NetworkManager:</li>
         <li><code>sudo systemctl restart NetworkManager</code></li>
       </ul>
@@ -5789,7 +5925,8 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('sudo touch /etc/modprobe.d/50-rtw-core.conf')">Copy</button> 
     <pre><code><span>$ </span>sudo nano /etc/modprobe.d/50-rtw-core.conf</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo nano /etc/modprobe.d/50-rtw-core.conf')">Copy</button> 
-    <pre><code>options rtw_core</code></pre> <pre>
+    <pre><code>options rtw_core</code></pre>
+    <pre>
     <code><span>$ </span>sudo sudo modprobe -rv [WIFIMODULE] && sudo modprobe -v [WIFIMODULE]</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo sudo modprobe -rv [WIFIMODULE] && sudo modprobe -v [WIFIMODULE]')">Copy</button> 
     <h5>∙ DNS Issues</h5>
@@ -5808,7 +5945,8 @@ $ man find | grep -e '-size'
     <h5>Add a custom DNS</h5> 
     <pre><code><span>$ </span>sudo nano /etc/systemd/resolved.conf</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo nano /etc/systemd/resolved.conf')">Copy</button> 
-    <pre><code>[Resolve] DNS=8.8.8.8 1.1.1.1</code></pre> <pre>
+    <pre><code>[Resolve] DNS=8.8.8.8 1.1.1.1</code></pre>
+    <pre>
     <code><span>$ </span>sudo systemctl restart systemd-resolved.service</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo systemctl restart systemd-resolved.service')">Copy</button> 
     <pre><code><span>$ </span>sudo systemctl status systemd-resolved.service</code></pre>
@@ -5964,7 +6102,8 @@ $ man find | grep -e '-size'
   <pre><code><span>$ </span>sudo nano /boot/cmdline.txt</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo nano /boot/cmdline.txt')">Copy</button>
   <p>Add the text with your idVendor and idProduct, respectively.</p> 
-  <pre>usb-storage.quirks=1111:2222:u</pre> <pre>usb-storage.quirks=4444:5555:u,6666:7777:u.,8888:9999:u</pre>
+  <pre>usb-storage.quirks=1111:2222:u</pre>
+  <pre>usb-storage.quirks=4444:5555:u,6666:7777:u.,8888:9999:u</pre>
   <p>Reboot</p>
   <pre><code><span>$ </span>sudo reboot</code></pre>
     <button onclick="navigator.clipboard.writeText('sudo reboot')">Copy</button>
@@ -6330,7 +6469,8 @@ $ man find | grep -e '-size'
     <button onclick="navigator.clipboard.writeText('sudo apt install partitionmanager')">Copy</button>
   <!-- ########## -->
     <h4>Disk debug</h4> 
-    <pre>$ dmesg -T | grep xhci $ lsusb -tv</pre> <pre>Commands for fdisk • EXT - Badblock: $ sudo fdisk -l /dev/sdb • *NTFS - Badblock: $ sudo e2fsck -p /dev/sde1 $ sudo e2fsck -c $ sudo e2fsck -l /dev/sdb1 /badblock/file</pre>
+    <pre>$ dmesg -T | grep xhci $ lsusb -tv</pre>
+    <pre>Commands for fdisk • EXT - Badblock: $ sudo fdisk -l /dev/sdb • *NTFS - Badblock: $ sudo e2fsck -p /dev/sde1 $ sudo e2fsck -c $ sudo e2fsck -l /dev/sdb1 /badblock/file</pre>
   <!-- ########## -->
     <h4>Disk Utilities</h4>
     <h5>TESTDISK</h5> 
