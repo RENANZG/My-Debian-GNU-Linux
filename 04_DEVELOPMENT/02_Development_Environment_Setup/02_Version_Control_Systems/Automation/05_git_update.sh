@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Fetch updates from the remote repository
 git fetch --all
 

@@ -10,5 +10,5 @@ mkdir -p "$BACKUP_DIR"
 # Change to repository directory
 cd "$REPO_DIR" || exit
 
-# Create a tarball of the repository
+# Create a incremental tarball of the repository
 tar -czf "$BACKUP_DIR/repo_backup.tar.gz" .
