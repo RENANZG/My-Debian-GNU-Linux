@@ -1,0 +1,11 @@
+*.a
+*.so
+*.o
+aisap
+a.out
+*.mod
+*.sum
+zig-*
+*.bak
+test
+cmd/tablegen/tablegen
