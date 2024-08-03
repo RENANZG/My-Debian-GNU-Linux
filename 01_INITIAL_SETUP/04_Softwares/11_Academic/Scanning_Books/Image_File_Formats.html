@@ -65,7 +65,7 @@
     <td>Primarily used for document storage and presentation, supporting embedded images with various compression schemes. Can include text, vector graphics, and multimedia elements.</td>
   </tr>
   <tr>
-    <td>Size Examples</td>
+    <td>Size</td>
     <td>High (depends on content and compression)</td>
     <td>Medium to High (depends on compression settings)</td>
     <td>Medium to Low (depends on quality settings)</td>
@@ -95,16 +95,6 @@
     <td>Supports encryption, digital signatures, and access controls for secure document handling.</td>
   </tr>
   <tr>
-    <td>License</td>
-    <td>Multiple licenses depending on extensions and usage. Commonly unrestricted.</td>
-    <td>Multiple licenses, often with open-source or royalty-free options. Patented technology.</td>
-    <td>Open-source (JPEG)</td>
-    <td>Libpng license (open-source)</td>
-    <td>Multiple licenses including open-source. Patented technology.</td>
-    <td>BSD-style license (open-source)</td>
-    <td>ISO standard, no specific license as part of the ISO publication.</td>
-  </tr>
-  <tr>
     <td>Related ISO/IEC Standards</td>
     <td>ISO 12639, TIFF/EP (ISO 12234-2), TIFF/IT (ISO 12639)</td>
     <td>ISO/IEC 15444 (JPEG 2000)</td>
@@ -113,6 +103,16 @@
     <td>ISO/IEC 23008-12 (AVIF)</td>
     <td>ISO/IEC 23008-12 (WEBP)</td>
     <td>ISO 32000 (PDF)</td>
+  </tr>
+  <tr>
+    <td>License</td>
+    <td>Multiple licenses depending on extensions and usage. Commonly unrestricted.</td>
+    <td>Multiple licenses, often with open-source or royalty-free options. Patented technology.</td>
+    <td>Open-source (JPEG)</td>
+    <td>Libpng license (open-source)</td>
+    <td>Multiple licenses including open-source. Patented technology.</td>
+    <td>BSD-style license (open-source)</td>
+    <td>ISO standard, no specific license as part of the ISO publication.</td>
   </tr>
 </table>
 
