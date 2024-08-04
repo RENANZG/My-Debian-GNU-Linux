@@ -1894,13 +1894,12 @@
   
   <h5>Command</h5> 
   
-  <pre><code><span>$ </span>cnvt-ocs-dev -d /home/partimag 'image' 'sda3' 'sda2'</code>
-  </pre>
+  <pre><code><span>$ </span>cnvt-ocs-dev -d /home/partimag 'image' 'sda3' 'sda2'</code></pre>
   
   <br>
   </details>
   
-    <!-- ############################## -->
+  <!-- ############################## -->
   
   <details>
   <summary>2.07 Low Level Linux</summary>
@@ -6553,7 +6552,7 @@
   
   <!-- ############################################################ -->
 
-    <div>
+  <div>
   <h2>6. SOFTWARES</h2>
   
   <div>
