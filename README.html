@@ -139,8 +139,7 @@
   </blockquote>
   
   <p style="text-align: center;"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/.data/the_key_to_the_fields_1936_-_rene_magritte_830px.png"
-    alt="The Key to the Fields (1936) - René Magritte" title="The Key to the Fields (1936) - René Magritte"
-    /></p>
+    alt="The Key to the Fields (1936) - René Magritte" title="The Key to the Fields (1936) - René Magritte"></p>
   </div>
   
   <hr>
@@ -1278,7 +1277,7 @@
   <p>The <code>su -</code> command (short for "substitute user") is used
    to switch to the superuser account, effectively starting a new shell 
    session as the root user. It's the traditional command for switching 
-   to the superuser account.</small></p></p>
+   to the superuser account.</p>
  
   <p>The <code>sudo</code> command allows users to execute specific 
    commands with superuser privileges without switching to the root 
@@ -4437,7 +4436,7 @@
 
   <pre><code>$ cuckoo -d</code></pre>
 
-  <h6Integrating ClamAV with Heuristic and Behavioral Analysis</h6>
+  <h6>Integrating ClamAV with Heuristic and Behavioral Analysis</h6>
 
   <p>Configure ClamAV to use YARA rules for additional scanning:</p>
 
@@ -4483,6 +4482,7 @@
   <h4>ESET NOD32 Antivirus for Linux Desktop</h4>
 
   <p>For users preferring a desktop antivirus solution:</p>
+  
   <ul>
     <li><a href="https://eset.com/my/home/antivirus-linux/download">Download ESET NOD32 Antivirus for Linux Desktop</a></li>
   </ul>
@@ -4699,9 +4699,9 @@
   these steps:</p>
 
   <ol>
-  <li>Create a SHA256 hash of the encrypted volume:</li>
-  <pre><code>$ sha256sum /path/to/your_volume.tc > /path/to/your_volume.tc.sha256</code></pre>
-  <button onclick="navigator.clipboard.writeText('sha256sum /path/to/your_volume.tc > /path/to/your_volume.tc.sha256')">Copy</button>
+  <li>Create a SHA256 hash of the encrypted volume:
+  <pre><code>$ sha256sum /path/to/your_volume.tc &gt; /path/to/your_volume.tc.sha256</code></pre>
+  <button onclick="navigator.clipboard.writeText('sha256sum /path/to/your_volume.tc &gt; /path/to/your_volume.tc.sha256')">Copy</button></li>
   <li>Store the hash securely. This hash will be used to
   verify the integrity of the encrypted volume.</li>
   </ol>
@@ -8151,12 +8151,12 @@
   <h5>Reopen with Maximized Browser</h5>
   <p>To open the browser with a maximized window, use "--start-maximized" as a parameter.</p>
   <pre>
-$ nano /home/user/Desktop/browser.desktop
-[Desktop Entry]
-Exec=/usr/bin/browser --start-maximized %U
+  $ nano /home/user/Desktop/browser.desktop
+  [Desktop Entry]
+  Exec=/usr/bin/browser --start-maximized %U
   </pre>
   
-    <h5>Translate from Search Bar</h5>
+  <h5>Translate from Search Bar</h5>
   <p>It's possible to translate directly from the browser bar by setting the shortcut to DeepL.</p>
   <pre>https://deepl.com/en/translator#en/es/%s</pre>
 
@@ -8164,9 +8164,6 @@ Exec=/usr/bin/browser --start-maximized %U
   <h4>URL Shorteners</h4>
   <p><a href="https://kutt.it">Kutt.it</a></p>
   <p><a href="https://shlink.io">Shlink</a></p>
-</body>
-</html>
-
 
   <br>
   </details>
@@ -8954,15 +8951,17 @@ Exec=/usr/bin/browser --start-maximized %U
   </table>
   
   <h5>HTML Encoding and Decoding via Command Line in Linux</h5>
-
+  
   <p>HTML Encoding</p>
-  <p>This will encode the HTML tags and special characters for safe display in HTML if you need to encode special characters for HTML:</p>
-  <pre><code>echo "&lt;p&gt;This is a paragraph.&lt;/p&gt;" | sed -e 's/&/\&amp;/g' -e 's/</\&lt;/g' -e 's/>/\&gt;/g' -e 's/"/\&quot;/g' -e "s/'/\&apos;/g"</code></pre>
+   <p>This will encode the HTML tags and special characters for safe display in HTML if you need to encode special characters for HTML:</p>
+  
+  <pre><code>echo "&amp;lt;p&amp;gt;This is a paragraph.&amp;lt;/p&amp;gt;" | sed -e 's/&amp;/\&amp;/g' -e 's/&lt;/\&lt;/g' -e 's/&gt;/\&gt;/g' -e 's/&quot;/\&quot;/g' -e "s/&apos;/\&apos;/g"</code></pre>
   
   <p>HTML Decoding</p>
   <p>This will decode HTML entities back to their original characters if you need to decode HTML entities back to their original characters:</p>
-  <pre><code>echo "&amp;lt;p&amp;gt;This is a paragraph.&amp;lt;/p&amp;gt;" | sed -e 's/&amp;/\&/g' -e 's/&lt;/</g' -e 's/&gt;/>/g' -e 's/&quot;/"/g' -e "s/&apos;/'/g"</code></pre>
-
+  
+  <pre><code>echo "&amp;amp;lt;p&amp;amp;gt;This is a paragraph.&amp;amp;lt;/p&amp;amp;gt;" | sed -e 's/&amp;/\&/g' -e 's/&amp;lt;/&lt;/g' -e 's/&amp;gt;/&gt;/g' -e 's/&amp;quot;/"/g' -e "s/&amp;apos;/\'/g"</code></pre>
+  
   <!-- ########## -->
   
   <h5>KRename</h5> 
@@ -9388,7 +9387,7 @@ Exec=/usr/bin/browser --start-maximized %U
   
   <!-- ##### --> 
   
-  <<h5>SSH</h5>
+  <h5>SSH</h5>
 
   <pre><code><span>$ </span>sudo apt install openssh-client</code></pre>
 <button onclick="navigator.clipboard.writeText('sudo apt install openssh-client')">Copy</button>
@@ -9652,7 +9651,7 @@ Exec=/usr/bin/browser --start-maximized %U
 
   <br>
   </details>
-
+  </div>
   </details>
   </div>
   
@@ -10003,21 +10002,21 @@ Exec=/usr/bin/browser --start-maximized %U
   <tr>
   <td>Resource Requirements</td>
   <td>
-  - CPU: 4 cores recommended <br />
-  - RAM: 16 GB recommended <br />
-  - Disk: Varies by model size (10-50 GB) <br />
+  - CPU: 4 cores recommended <br>
+  - RAM: 16 GB recommended <br>
+  - Disk: Varies by model size (10-50 GB) <br>
   - GPU: Optional, improves performance
   </td>
   <td>
-  - CPU: 4 cores recommended <br />
-  - RAM: 16 GB recommended <br />
-  - Disk: 10-20 GB <br />
+  - CPU: 4 cores recommended <br>
+  - RAM: 16 GB recommended <br>
+  - Disk: 10-20 GB <br>
   - GPU: Optional, improves performance
   </td>
   <td>
-  - CPU: 4 cores recommended <br />
-  - RAM: 16 GB recommended <br />
-  - Disk: Varies by model size (10-50 GB) <br />
+  - CPU: 4 cores recommended <br>
+  - RAM: 16 GB recommended <br>
+  - Disk: Varies by model size (10-50 GB) <br>
   - GPU: Recommended for large models
   </td>
   </tr>
@@ -10030,18 +10029,18 @@ Exec=/usr/bin/browser --start-maximized %U
   <tr>
   <td>Supported Models and Characteristics</td>
   <td>
-  - GPT-3: 175B parameters, state-of-the-art performance, Apache 2.0 <br />
-  - GPT-J: 6B parameters, open-source alternative to GPT-3, Apache 2.0 <br />
+  - GPT-3: 175B parameters, state-of-the-art performance, Apache 2.0 <br>
+  - GPT-J: 6B parameters, open-source alternative to GPT-3, Apache 2.0 <br>
   - GPT-Neo: 2.7B, 1.3B parameters, lightweight models, MIT
   </td>
   <td>
-  - GPT-3: 175B parameters, high accuracy and versatility, Apache 2.0 <br />
+  - GPT-3: 175B parameters, high accuracy and versatility, Apache 2.0 <br>
   - LLaMA: Various sizes, efficient and scalable, custom licenses (research use
   only)
   </td>
   <td>
-  - GPT-3: 175B parameters, high accuracy and versatility, Apache 2.0 <br />
-  - GPT-Neo: 2.7B, 1.3B parameters, lightweight models, MIT <br />
+  - GPT-3: 175B parameters, high accuracy and versatility, Apache 2.0 <br>
+  - GPT-Neo: 2.7B, 1.3B parameters, lightweight models, MIT <br>
   - BERT: Various sizes, strong at understanding context, Apache 2.0
   </td>
   </tr>
@@ -10049,36 +10048,36 @@ Exec=/usr/bin/browser --start-maximized %U
   <tr>
   <td>Community Support</td>
   <td>
-  - Support: Active - Forums, GitHub issues, community forums <br />
+  - Support: Active - Forums, GitHub issues, community forums <br>
   - Documentation: Comprehensive - Detailed setup and usage instructions available
   </td>
   <td>
-  - Support: Active - GitHub discussions, community contributions <br />
+  - Support: Active - GitHub discussions, community contributions <br>
   - Documentation: Good - Includes setup guide and usage examples
   </td>
   <td>
-  - Support: Active - GitHub issues and community support <br />
+  - Support: Active - GitHub issues and community support <br>
   - Documentation: Good - Detailed README with setup and usage instructions
   </td>
   </tr>
   <tr>
   <td>License</td>
   <td>
-  Apache 2.0 <br />
-  - Allows commercial use <br />
-  - Permissive, widely used <br />
+  Apache 2.0 <br>
+  - Allows commercial use <br>
+  - Permissive, widely used <br>
   - Requires attribution and disclaimer
   </td>
   <td>
-  MIT <br />
-  - Highly permissive <br />
-  - Allows commercial use <br />
+  MIT <br>
+  - Highly permissive <br>
+  - Allows commercial use <br>
   - No warranty or liability
   </td>
   <td>
-  MIT <br />
-  - Highly permissive <br />
-  - Allows commercial use <br />
+  MIT <br>
+  - Highly permissive <br>
+  - Allows commercial use <br>
   - No warranty or liability
   </td>
   </tr>
@@ -10389,15 +10388,13 @@ Exec=/usr/bin/browser --start-maximized %U
 
   <h4>Steam OS</h4>
   
-  <a href="https://st
-  ore.steampowered.com/steamos">Steam OS</a><br>
+  <a href="https://store.steampowered.com/steamos">Steam OS</a><br>
   
   <!-- ########## -->
   
   <h4>Kodi.tv</h4>
   
-  <a href="https://ko
-  di.tv">Kodi.tv</a><br>
+  <a href="https://kodi.tv">Kodi.tv</a><br>
   
   <!-- ########## -->
   
@@ -10563,9 +10560,8 @@ Exec=/usr/bin/browser --start-maximized %U
   <h4>• PHP</h4>
   
   <pre>
-  <?php
-  echo "Hello, World!";
-  ?>
+  &lt;?
+  php echo 'Hello, World!'; ?&gt;
   </pre>
 
   <h4>• Ruby</h4>
@@ -12779,12 +12775,15 @@ $ sudo dhclient -v</pre>
 
   <!-- ############################################################-->
 
-  <div>
-  <p style="text-align: right;"><a href="https://github.com/RENANZG/My-Debian-GNU-Linux?tab=readme-ov-file#">Back to Top ⬆</a></p>
+  <div style="text-align: right;">
+  <p><a href="https://github.com/RENANZG/My-Debian-GNU-Linux?tab=readme-ov-file#">Back to Top ⬆</a></p>
   <br>
   <br>
   <br>
-  <p style="text-align: left;"><a href="https://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!"></a></p>
+  </div>
+  
+  <div style="text-align: center;">
+  <p><a href="https://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!"></a></p>
   <p style="text-align: center;">Made with ♥</p>
   </div>
 
