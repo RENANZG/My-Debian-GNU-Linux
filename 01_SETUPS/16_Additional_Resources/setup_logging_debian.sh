@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-########################################################################
+#######################################################################
 # File Name    : setup_logging_debian.sh
 # Description  : This script sets up default logging for rsyslog on a
 #                Debian system. It updates the rsyslog configuration to
@@ -9,7 +9,8 @@
 #                /var/log/messages. It also creates these log files if
 #                they do not exist and sets appropriate permissions.
 #                Finally, it restarts the rsyslog service to apply the
-#                changes.
+#                changes. Its a basic approach, consider writing logs
+#                on an external write-only device.
 # Dependencies : Requires root privileges to modify system files.
 # Usage        : • Make the script executable with:
 #                sudo chmod +x setup_logging_debian.sh
@@ -17,7 +18,7 @@
 #                sudo bash setup_logging_debian.sh
 # Author       : Me and the bois
 # License      : Free of charge, no warranty
-########################################################################
+#######################################################################
 
 # Define log file paths
 SYSLOG_PATH="/var/log/syslog"

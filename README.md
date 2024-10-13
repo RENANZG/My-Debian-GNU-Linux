@@ -8309,15 +8309,41 @@
   <h4>Tips</h4>
   
   <h5>Reopen with Maximized Browser</h5>
-  <p>To open the browser with a maximized window, use "--start-maximized" as a parameter.</p>
+  
+  
+  <p>Firefox-based browser</p>
+  
+  <p><em>Note</em>: its not possible to change the browser maximized window because of
+   “privacy.resistFingerprinting” option.</p>
+  
+  <p>To open the firefox-based browser with a maximized window, go  
+  to about:support in the address bar and press Enter, now in the  
+  Profile Directory row section look where is the Profile Folder Click
+  to Open the folder or edit in the terminal. Close the browser, and
+  open xulstore.json file ajust the windows sizes as needed (1920 x
+  1080, 1366 x 768, 1280 x 720, 1200 x 1600)</p>
   
   <pre><code>
-  $ nano /home/user/Desktop/browser.desktop
+  {"chrome://browser/content/browser.xhtml":{"main-window":{"screenX":"44","screenY":"-12","width":"1280","height":"920","sizemode":"maximized"},"sidebar-ti>
+  </code></pre>
+  
+  <p>Chrome-based browser</p>
+  
+  <p>To open the chrome-based browser with a maximized window, use
+  "--start-maximized" as a parameter in desktop entry.</p>
+  
+  <pre><code>
+  $ nano /home/user/Desktop/Chrome.desktops
   </code></pre>
   
   <pre><code>
   [Desktop Entry]
-  Exec=/usr/bin/browser --start-maximized %U
+  Exec=/usr/bin/chrome --start-maximized %u
+  </code></pre>
+
+  <pre><code>
+  [Desktop Entry]
+  Exec=/usr/bin/firefox -height 1200 -width 1600 %u
   </code></pre>
   
   <h5>Translate from Search Bar</h5>
@@ -13155,17 +13181,15 @@
   <h4>Security</h4>
   <ul>
     <li><a href="https://arstechnica.com/civis/">Arstechnica</a></li>
+    <li><a href="https://www.kaspersky.com/blog/" target="_blank">Kaspersky Securelist Blog</a></li>
     <li><a href="https://security.stackexchange.com/" target="_blank">Stack Exchange Security</a></li>
     <li><a href="https://forum.hackthebox.com/" target="_blank">Hack The Box Forum</a></li>
     <li><a href="https://www.darkreading.com/" target="_blank">Dark Reading: Security Research</a></li>
-    <li><a href="https://www.kaspersky.com/blog/" target="_blank">Kaspersky Securelist Blog</a></li>
     <li><a href="https://notrace.how">https://notrace.how</a></li>
     <li><a href="https://0x00sec.org">https://0x00sec.org</a></li>
     <li><a href="https://anarsec.guide">https://anarsec.guide</a></li>
     <li><a href="https://darkreading.com">https://darkreading.com</a></li>
     <li><a href="https://book.hacktricks.xyz">https://book.hacktricks.xyz</a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
     <li><a href=""></a></li>
     <li><a href=""></a></li>
   </ul>
@@ -13180,6 +13204,7 @@
 
   <h4>Eletronics</h4>
   <ul>
+    <li><a href="https://youtube.com/@spyhunt">James M. Atkinson</a></li>
     <li><a href="https://ibiblio.org/kuphaldt/electricCircuits">https://ibiblio.org/kuphaldt/electricCircuits</a></li>
     <li><a href="https://electronics-tutorials.ws">https://electronics-tutorials.ws</a></li>
   </ul>
@@ -13224,7 +13249,7 @@
       <li><a href="https://youtube.com/@mentalOutlaw">mentalOutlaw</a></li>
       <li><a href="https://youtube.com/@Seytonic">Seytonic</a></li>
       <li><a href="https://youtube.com/@DoingFedTime">DoingFedTime</a></li>
-      <li><a href="https://www.youtube.com/@spyhunt">James M. Atkinson</a></li>
+      <li><a href="https://youtube.com/@spyhunt">James M. Atkinson</a></li>
       <li><a href="https://youtube.com/@NullByteWHT">Null Byte</a></li>
       <li><a href="https://youtube.com/c/LinusTechTips">Linus Tech Tips</a></li>
       <li><a href="https://youtube.com/@The8BitGuy">The 8-Bit Guy</a></li>

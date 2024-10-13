@@ -50,20 +50,20 @@
 <tbody>
   <tr>
     <td>Google Drive</td>
-    <td><a href="https://github.com/glotlabs/gdrive">GitHub - gdrive</a></td>
+    <td><a href="https://github.com/glotlabs/gdrive">GitHub - gdrive (Linux)</a></td>
     <td>15 GB</td>
-    <td>No</td>
+    <td>Yes</td>
     <td>Yes</td>
     <td>No</td>
     <td>No</td>
     <td>No</td>
     <td>No</td>
-    <td>None</td>
+    <td>No</td>
     <td>No</td>
   </tr>
   <tr>
     <td>MEGA</td>
-    <td><a href="https://mega.io/">MEGA</a><br><a href="https://mega.io/desktop">MEGA Desktop</a><br><a href="https://github.com/rclone/rclone">GitHub - rclone</a></td>
+    <td><a href="https://mega.io/">MEGA</a><br><a href="https://mega.io/desktop">MEGA Desktop (Linux)</a><br><a href="https://github.com/rclone/rclone"> (GitHub - rclone)</a></td>
     <td>20 GB</td>
     <td>Yes</td>
     <td>Yes, End-to-end</td>
@@ -71,12 +71,12 @@
     <td>No</td>
     <td>No</td>
     <td>No</td>
-    <td>None</td>
+    <td>No</td>
     <td>No</td>
   </tr>
   <tr>
     <td>pCloud</td>
-    <td><a href="https://pcloud.com/">pCloud</a><br><a href="https://pcloud.com/how-to-install-pcloud-drive-linux.html">pCloud Linux</a><br><a href="https://github.com/pcloudcom/console-client">GitHub - pCloud Console Client</a></td>
+    <td><a href="https://pcloud.com/">pCloud</a><br><a href="https://pcloud.com/how-to-install-pcloud-drive-linux.html">pCloud (Linux)</a><br><a href="https://github.com/pcloudcom/console-client">GitHub - pCloud Console Client</a></td>
     <td>10 GB</td>
     <td>Yes</td>
     <td>Yes, Optional end-to-end</td>
@@ -84,12 +84,12 @@
     <td>No</td>
     <td>No</td>
     <td>No</td>
-    <td>None</td>
+    <td>No</td>
     <td>Yes</td>
   </tr>
   <tr>
     <td>Oyster Data</td>
-    <td><a href="https://www.oysterdata.com/">Oyster Data</a></td>
+    <td><a href="https://cozy.io/en/download/">Oyster Data</a></td>
     <td>5 GB</td>
     <td>No</td>
     <td>Yes</td>
@@ -99,6 +99,19 @@
     <td>Limited</td>
     <td>Yes</td>
     <td>Yes</td>
+  </tr>
+  <tr>
+    <td>Cozy Cloud</td>
+    <td><a href="https://cozy.io>Cozy Cloud</a></td>
+    <td>5 GB</td>
+    <td>No</td>
+    <td>No</td>
+    <td>No</td>
+    <td>No</td>
+    <td>No</td>
+    <td>No</td>
+    <td>No</td>
+    <td>No</td>
   </tr>
   <tr>
     <td>Casper</td>

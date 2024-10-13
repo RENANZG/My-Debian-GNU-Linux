@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #######################################################################
-# File Name    : install_chatgpt_appimage.sh
+# File Name    : install_deeplx_appimage.sh
 # Description  : This script automates the installation and setup of
 #                an application. It downloads the latest version from a
 #                specified source using curl, installs it to the user's
@@ -12,13 +12,13 @@
 #                WARNING: --cap-add CAP_SYS_ADMIN activated.
 # Dependencies : curl, bubblewrap, tar
 # Usage        : • Make the script executable with
-#                  chmod +x install_chatgpt_appimage.sh
+#                  chmod +x install_deeplx_appimage.sh
 #                • Run the script with:
-#                  bash install_chatgpt_appimage.sh
+#                  bash install_deeplx_appimage.sh
 #                • To update the application, run:
-#                  bash $HOME/.local/share/AppImages/chatgpt/update.sh
+#                  bash $HOME/.local/share/AppImages/deeplx/update.sh
 #                • To remove the application, run:
-#                  bash $HOME/.local/share/AppImages/chatgpt/remove.sh
+#                  bash $HOME/.local/share/AppImages/deeplx/remove.sh
 # Author       : Me and the bois
 # License      : Free of charge, no warranty
 # Inspired by  : https://portable-linux-apps.github.io
@@ -28,8 +28,8 @@
 set -eu
 
 # Define variables
-APP_NAME="chatgpt"
-APP_DOWNLOAD_URL="https://api.github.com/repos/lencx/ChatGPT/releases"
+APP_NAME="deeplx"
+APP_DOWNLOAD_URL="https://api.github.com/repos/OwO-Network/deeplx/releases"
 HOME_DIR="$HOME/.local/share/AppImages/$APP_NAME"
 TAR_GZ_FILE="$HOME_DIR/$APP_NAME.tar.gz"
 APPIMAGE_FILE="$HOME_DIR/$APP_NAME.AppImage"

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# BWRAP Rule not passed correctly, to do: best editing of the desktop entry
+
 #######################################################################
 # File Name    : install_crow_translate_appimage.sh
 # Description  : This script automates the installation and setup of
@@ -92,21 +94,40 @@ create_directories() {
   "$HOME/.config/$APP_NAME"
 }
 
+# Function to fetch the latest version dynamically
+fetch_latest_version() {
+  echo "Fetching the latest version..."
+
+  # Get the directory list from the base URL and extract the latest version using regex
+  LATEST_VERSION=$(curl -s "$BASE_URL/" | grep -oP '(?<=href=")[0-9]+\.[0-9]+\.[0-9]+(?=/)' | sort -V | tail -n 1)
+
+  # Check if we found a version
+  if [ -z "$LATEST_VERSION" ]; then
+    echo "Error: Could not fetch the latest version."
+    exit 1
+  fi
+
+  echo "Latest version found: $LATEST_VERSION"
+}
+
 # Function to download the latest AppImage
 download_appimage() {
-  echo "Fetching the latest AppImage from $BASE_URL..."
+  echo "Fetching the latest AppImage..."
 
-  # Fetch the HTML directory listing and find the AppImage file
-  APP_DOWNLOAD_URL=$(curl -s "$BASE_URL/3.0.0/" | grep -oP 'href="\K([^"]*crow-translate-release_[^"]*\.AppImage)' | head -n 1)
+  # Fetch the latest version
+  fetch_latest_version
+
+  # Fetch the HTML directory listing for the latest version and find the AppImage file
+  APP_DOWNLOAD_URL=$(curl -s "$BASE_URL/$LATEST_VERSION/" | grep -oP 'href="\K([^"]*crow-translate-release_[^"]*\.AppImage)' | head -n 1)
 
   # Check if we found an AppImage file
   if [ -z "$APP_DOWNLOAD_URL" ]; then
-    echo "Error: No AppImage found at $BASE_URL/3.0.0/"
+    echo "Error: No AppImage found at $BASE_URL/$LATEST_VERSION/"
     exit 1
   fi
 
   # Construct the full URL for downloading
-  APP_DOWNLOAD_URL="$BASE_URL/3.0.0/$APP_DOWNLOAD_URL"
+  APP_DOWNLOAD_URL="$BASE_URL/$LATEST_VERSION/$APP_DOWNLOAD_URL"
 
   # Print the constructed URL before the download
   echo "DEBUG: Full URL constructed: $APP_DOWNLOAD_URL"  # Debug output
@@ -144,12 +165,9 @@ extract_appimage() {
 # Function to configure extracted files (desktop entry, icon)
 configure_files() {
   local EXTRACTED_DIR="$HOME/squashfs-root"
+  DESKTOP_ENTRY_SRC=$(find "$EXTRACTED_DIR" -name "*.desktop" | head -n 1)
+  ICON_FILE=$(find "$EXTRACTED_DIR" -name "*.png" -o -name "*.svg" | head -n 1)
 
-  # Search for the desktop entry and icon files specifically in expected directories
-  DESKTOP_ENTRY_SRC=$(find "$EXTRACTED_DIR/usr/share/applications" -name "*.desktop" | head -n 1)
-  ICON_FILE=$(find "$EXTRACTED_DIR/usr/share/icons/hicolor" -name "*.png" -o -name "*.svg" | head -n 1)
-
-  # Check if the found files are valid
   if [ ! -f "$DESKTOP_ENTRY_SRC" ] || [ -z "$ICON_FILE" ]; then
     echo "Error: Required files (desktop entry or icon) not found in the extracted AppImage."
     exit 1
@@ -163,28 +181,15 @@ configure_files() {
     cp "$ICON_FILE" "$HOME_DIR/icon/$APP_NAME.png"
     ICON_PATH="$HOME_DIR/icon/$APP_NAME.png"
   elif [[ "$ICON_FILE" == *.svg ]]; then
-    if command -v rsvg-convert > /dev/null 2>&1; then
-      echo "Converting SVG icon to PNG..."
-      rsvg-convert -o "$HOME_DIR/icon/$APP_NAME.png" "$ICON_FILE"
-      ICON_PATH="$HOME_DIR/icon/$APP_NAME.png"
-    else
-      echo "Warning: rsvg-convert not found, keeping the original SVG icon."
-      cp "$ICON_FILE" "$HOME_DIR/icon/$APP_NAME.svg"
-      ICON_PATH="$HOME_DIR/icon/$APP_NAME.svg"
-    fi
-  else
-    echo "Error: No valid icon found."
-    exit 1
+    cp "$ICON_FILE" "$HOME_DIR/icon/$APP_NAME.svg"
+    ICON_PATH="$HOME_DIR/icon/$APP_NAME.svg"
   fi
 
-  # Modify desktop entry to use bubblewrap with alternative delimiters
-  BWRAP_CMD=$(get_bwrap_cmd)
+  # Escape slashes in icon path
+  ICON_PATH_ESCAPED=$(echo "$ICON_PATH" | sed 's/\//\\\//g')
 
-  # Escape special characters in BWRAP_CMD and ICON_PATH
-  BWRAP_CMD_ESCAPED=$(printf '%s\n' "$BWRAP_CMD" | sed 's/[\/&]/\\&/g')
-  ICON_PATH_ESCAPED=$(printf '%s\n' "$ICON_PATH" | sed 's/[\/&]/\\&/g')
-
-  sed -i "s@^Exec=.*@Exec=$BWRAP_CMD_ESCAPED@g" "$DESKTOP_ENTRY_SRC"
+  # Modify the desktop entry
+  sed -i "s@^Exec=.*@Exec=$HOME_DIR/$APP_NAME.AppImage@g" "$DESKTOP_ENTRY_SRC"
   sed -i "s@^Icon=.*@Icon=$ICON_PATH_ESCAPED@g" "$DESKTOP_ENTRY_SRC"
 
   # Copy the desktop entry to the appropriate directories
@@ -218,9 +223,28 @@ create_updater_script() {
 set -eu
 APP_NAME="$APP_NAME"
 BASE_URL="$BASE_URL"
-HOME_DIR="$HOME_DIR"
-APP_DOWNLOAD_URL=\$(curl -sL "\$BASE_URL/" | grep -oP 'href="\K([^"]*crow-translate-release_[^"]*\.AppImage)')
-VERSION_URL="\$BASE_URL/\$APP_DOWNLOAD_URL"
+
+# Function to fetch the latest version dynamically
+fetch_latest_version() {
+  echo "Fetching the latest version..."
+
+  # Get the directory list from the base URL and extract the latest version using regex
+  LATEST_VERSION=\$(curl -s "\$BASE_URL/" | grep -oP '(?<=href=")[0-9]+\.[0-9]+\.[0-9]+(?=/)' | sort -V | tail -n 1)
+
+  # Check if we found a version
+  if [ -z "\$LATEST_VERSION" ]; then
+    echo "Error: Could not fetch the latest version."
+    exit 1
+  fi
+
+  echo "Latest version found: \$LATEST_VERSION"
+}
+
+# Fetch the latest version
+fetch_latest_version
+
+APP_DOWNLOAD_URL=\$(curl -sL "\$BASE_URL/\$LATEST_VERSION/" | grep -oP 'href="\K([^"]*crow-translate-release_[^"]*\.AppImage)' | head -n 1)
+VERSION_URL="\$BASE_URL/\$LATEST_VERSION/\$APP_DOWNLOAD_URL"
 echo "Downloading AppImage from \$VERSION_URL..."
 curl -L -o "\$HOME_DIR/\$APP_NAME.AppImage" "\$VERSION_URL" || exit 1
 chmod a+x "\$HOME_DIR/\$APP_NAME.AppImage" || exit 1

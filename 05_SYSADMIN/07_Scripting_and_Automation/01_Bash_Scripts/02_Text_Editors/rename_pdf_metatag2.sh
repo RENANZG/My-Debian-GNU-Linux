@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
-########################################################################
+#######################################################################
 # File Name    : rename_pdf_metatag2.sh
-# Description  : Batch rename PDF files based on title, author, and date                 
-#                metadata tags
-# Dependencies : exiftool
-# Usage        : • Make the script executable with 
+# Description  : Batch rename PDF files based on title, author, and
+#                date metadata tags.
+# Dependencies : libimage-exiftool-perl
+# Usage        : • Make the script executable with
 #                chmod +x rename_pdf_metatag2.sh
 #                • Run the script with path or a single file:
 #                bash rename_pdf_metatag2.sh <path_or_file>
 # Author       : Me and the bois
 # License      : Free of charge, no warranty
-########################################################################
+#######################################################################
 
 # Exit immediately if a command exits with a non-zero status or if an unset variable is used
 set -euo pipefail
