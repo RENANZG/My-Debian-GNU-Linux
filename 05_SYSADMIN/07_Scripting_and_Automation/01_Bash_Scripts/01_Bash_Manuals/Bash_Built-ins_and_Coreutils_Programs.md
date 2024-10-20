@@ -142,7 +142,7 @@
   <table>
     <thead>
       <tr>
-        <th>Coreutils Programs</th>
+        <th>GNU Coreutils Programs</th>
         <th></th>
         <th></th>
         <th></th>

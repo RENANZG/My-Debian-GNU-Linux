@@ -9,7 +9,6 @@
   <h2>VPS Comparison Sites</h2>
   <p>Sites that offer VPS performance comparisons and reviews:</p>
   <ul>
-    <li><a href="https://hostingadvice.com">HostingAdvice</a> - Offers comprehensive reviews and comparisons of various hosting services, including VPS hosting.</li>
     <li><a href="https://hostadvice.com">HostAdvice</a> - Provides expert reviews, user reviews, and detailed comparisons of VPS and other hosting services.</li>
     <li><a href="https://vpsbenchmarks.com">VPS Benchmarks</a> - Cloud servers performance, features and prices, discover your ideal VPS solution.</li>
     <li><a href="https://whoishostingthis.com">WhoIsHostingThis</a> - Features user reviews, expert analysis, and comparison tools for various hosting services, including VPS.</li>

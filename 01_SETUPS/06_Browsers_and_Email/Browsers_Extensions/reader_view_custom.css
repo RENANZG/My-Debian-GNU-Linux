@@ -21,9 +21,9 @@ pre code {
 }
 /* Style for tables */
 table {
-  border-collapse: collapse; /* Collapse table borders */
-  width: 100%; /* Optional: Ensure table width spans full container */
   border: 1px solid #000; /* Add borders to all tables */
+  width: 100%; /* Optional: Ensure table width spans full container */
+  border-collapse: collapse; /* Collapse table borders */
 }
 /* Optional: Style for table headers */
 table th {
