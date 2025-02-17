@@ -1,0 +1,15 @@
+Debug
+
+Run the salt state with --show-output
+
+All the qubes based configuration files are located in
+
+/srv/*
+
+The salt minion configuration files are located in
+
+/etc/salt
+
+All the states that will execute when running a highstate are located in
+
+/srv/salt/_tops/**

@@ -1,0 +1,5 @@
+{% set debianver = salt['pillar.get']('debianver', 'debian-12') %}
+
+user:
+  dom0 or {{ debianver }}-builder or qubes-builder-dvm or qubes-work:
+    - deb-min-qubes-dev

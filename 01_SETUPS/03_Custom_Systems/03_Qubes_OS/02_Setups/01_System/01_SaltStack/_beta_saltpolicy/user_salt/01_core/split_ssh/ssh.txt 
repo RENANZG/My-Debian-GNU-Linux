@@ -1,0 +1,93 @@
+{% set debianver = salt['pillar.get']('debianver', 'debian-12') %}
+
+{% if grains['id'] == 'dom0' %}
+
+# Ensure Vault AppVM is created
+create-vault-appvm:
+  qvm.vm:
+    - name: vault
+    - present:
+      - template: {{ debianver }}-ssh-vault
+      - netvm: none
+    - prefs:
+      - virt_mode: pvh
+      - label: green
+    - require:
+      - qvm: create-ssh-vault-template
+
+# Ensure SSH Client AppVM is created
+create-ssh-client-appvm:
+  qvm.vm:
+    - name: ssh-client
+    - present:
+      - template: {{ debianver }}-ssh-client
+      - netvm: sys-firewall
+    - prefs:
+      - virt_mode: pvh
+      - label: yellow
+    - require:
+      - qvm: create-ssh-client-template
+
+{% elif grains['id'] == 'vault' %}
+
+# Generate SSH key in Vault AppVM
+generate-ssh-key:
+  cmd.run:
+    - name: |
+        ssh-keygen -t rsa -b 4096 -C "vault@qubes" -N "" -f /home/user/.ssh/id_rsa
+    - user: user
+    - require_in:
+      - file: ssh-key-setup
+
+# Set up automatic SSH key adding prompt
+ssh-key-setup:
+  file.managed:
+    - name: /home/user/.bash_profile
+    - source: salt://01_core/vault/ssh-add-config.j2
+    - user: user
+    - group: user
+    - mode: 0644
+    - require:
+      - cmd: generate-ssh-key
+
+{% elif grains['id'] == 'ssh-client' %}
+
+# Set up interconnection with Vault for SSH key access
+ssh-agent-setup:
+  cmd.run:
+    - name: |
+        echo "export SSH_AUTH_SOCK=/var/run/qubes-ssh-agent.socket" >> /home/user/.bash_profile
+    - user: user
+    - require_in:
+      - cmd: interconnect-setup
+
+interconnect-setup:
+  cmd.run:
+    - name: |
+        ssh-add -L || echo "Ensure vault VM is running and SSH key is shared."
+    - user: user
+
+{% elif grains['id'] == [debianver, '-ssh-vault']|join %}
+
+# Install KeePassXC and dependencies
+install-keepassxc:
+  pkg.installed:
+    - pkgs:
+      - keepassxc
+
+# Create KeePassXC Database
+create-keepass-database:
+  cmd.run:
+    - name: |
+        keepassxc-cli create /home/user/Documents/MyKeePass.kdbx \
+          --key-file /home/user/Documents/keyfile.key --no-password
+    - user: user
+
+# Configure SSH Agent Integration in KeePassXC
+configure-ssh-agent:
+  cmd.run:
+    - name: |
+        echo "ssh-agent integration setup completed."
+    - user: user
+
+{% endif %}
