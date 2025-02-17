@@ -204,7 +204,9 @@
     <tr>
       <td><a href="https://bleachbit.org/">BleachBit - Clean Your System and Free Disk Space</a></td>
       <td><a href="https://virustotal.com/gui/home/upload">Virus Total - Free virus, malware and URL online scanning</a></td>
+    <tr>
       <td><a href="https://opentip.kaspersky.com/">Kaspersky - Online scanning</a></td>
+    </tr>
     <!-- Category: Security Enhancements and Hardening -->
     <tr>
       <td colspan="2"><strong>Security Enhancements and Hardening</strong></td>
@@ -8976,8 +8978,8 @@
     <li><a href="https://markdowntoolbox.com">Markdown Toolbox</a></li>
     <li><a href="https://latexeditor.lagrida.com">Online LaTeX Equation Editor</a></li>
     <li><a href="https://mermaid.live">Mermaid</a></li>
-    <li><a href="https://tableconvert.com">Table Convert</a></li>
     <li><a href="https://truben.no/table/">Table Editor 2</a></li>
+    <li><a href="https://tableconvert.com">Table Convert</a></li>
     <li><a href="https://divtable.com">Div Table</a></li>
     <li><a href="https://evanhahn.github.io/ffmpeg-buddy/">ffmpeg buddy</a></li>
     <li><a href="https://kutt.it">Kutt your links shorter</a></li>
