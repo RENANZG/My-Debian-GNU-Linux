@@ -31,6 +31,8 @@ set -eu
 APP_NAME="simplex"
 APP_DOWNLOAD_URL="https://api.github.com/repos/simplex-chat/simplex-chat/releases"
 HOME_DIR="$HOME/.local/share/AppImages/$APP_NAME"
+APPIMAGE_FILE="$HOME_DIR/$APP_NAME.AppImage"
+DESKTOP_ENTRY="$HOME/.local/share/applications/$APP_NAME.desktop"
 
 # Bubblewrap options (change as needed)
 get_bwrap_cmd() {

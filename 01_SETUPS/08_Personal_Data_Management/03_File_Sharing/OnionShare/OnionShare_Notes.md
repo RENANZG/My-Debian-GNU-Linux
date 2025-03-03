@@ -1,0 +1,1 @@
+https://docs.onionshare.org/2.6/en/

@@ -188,6 +188,10 @@
           <a href="https://github.com/nsacyber">(GitHub)</a></td>
     </tr>
     <tr>
+    <td><a href="https://dataswamp.org/~solene/index.html" target="_blank">Solene</a></td>
+    <td><a href="https://wiki.gentoo.org/wiki/Project:Hardened" target="_blank">Gentoo - Project Hardened</a></td>
+    </tr>
+    <tr>
     <td><a href="https://wiki.archlinux.org/title/Security" target="_blank">Arch Linux Security</a></td>
     <td><a href="https://blog.nowhere.moe/" target="_blank">The Nihilism Blog</a></td>
     </tr>
@@ -202,7 +206,10 @@
     <tr>
       <td><a href="https://bleachbit.org/">BleachBit - Clean Your System and Free Disk Space</a></td>
       <td><a href="https://virustotal.com/gui/home/upload">Virus Total - Free virus, malware and URL online scanning</a></td>
+    <tr>
+      <td><a href="https://www.virustotal.com/old-browsers/">Virus Total - Old Browsers</a></td>
       <td><a href="https://opentip.kaspersky.com/">Kaspersky - Online scanning</a></td>
+    </tr>
     <!-- Category: Security Enhancements and Hardening -->
     <tr>
       <td colspan="2"><strong>Security Enhancements and Hardening</strong></td>
@@ -256,12 +263,16 @@
       <td><a href="https://github.com/Whonix/anon-apps-config">Whonix - Anon apps config</a></td>
     </tr>
     <tr>
-      <td><a href="https://github.com/vmonaco/kloak">Kloak - Keystroke anonymization tool</a></td>
-      <td><a href="https://wayland.freedesktop.org/">Wayland - Modern display server protocol</a></td>
+      <td><a href="https://www.buskill.in">BusKill - A dead man switch</a></td>
+      <td><a href="https://usbguard.github.io/">USBGuard - Whitelisting capabilities based on device attributes.</a></td>
     </tr>
     <tr>
-      <td><a href="https://usbguard.github.io/">USBGuard - Tool for protecting against USB threats</a></td>
+      <td><a href="https://usbkill.com">USBKill - USB high voltage attack</a></td>
       <td><a href="https://github.com/GrapheneOS/hardened_malloc/">Hardened Malloc - Memory allocator with security enhancements</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/vmonaco/kloak">Kloak - Keystroke anonymization tool</a></td>
+      <td><a href="https://wayland.freedesktop.org/">Wayland - Modern display server protocol</a></td>
     </tr>
     <tr>
       <td><a href="https://github.com/alobbs/macchanger">Macchanger - MAC address randomization tool</a></td>
@@ -733,23 +744,77 @@
     </li>
   </ul>
 
-  <p>Not all SSDs support sanitize, but enabling TRIM in your BIOS boosts performance, longevity, and anti-forensics. TRIM lets the OS inform the SSD of unused blocks, allowing internal wiping and reducing wear. Over-provisioning increases available space for better data management, enhancing both performance and durability. However, care is needed to avoid SSD flaws and ensure optimal over-provisioning.</p>
+  <h3>TRIM Considerations</h3>
 
-  <p><b>The crypttab man page warns that enabling the discard option on encrypted devices can potentially leak information about the encrypted data.</b> This happens because SSD firmware may zero out unused blocks, making them identifiable and revealing patterns such as the filesystem type and used space. An attacker could use this minimal information to target smaller portions of encrypted data and potentially assist in breaking the encryption. However, the actual risk is unclear, as the leak may only offer limited help to an attacker. The warning advises disabling discard (or TRIM) to avoid such risks, especially if there's a need to prevent the exposure of unused sectors or hidden data. Once TRIM is executed, the discarded sectors remain detectable, and encrypted devices should avoid relying on functions that return zeroed-out sectors. To minimize risks, sensitive directories like /tmp /var and other directories used by encryption should be kept in memory and cleared at shutdown.</p>
+  <p>Not all SSDs support sanitize, but enabling TRIM (discard) in your BIOS boosts
+  performance and longevity. TRIM lets the OS inform the SSD of unused blocks,
+  allowing internal wiping and reducing wear. Over-provisioning increases
+  available space for better data management, enhancing both performance and
+  durability. However, care is needed to avoid SSD flaws and ensure optimal
+  over-provisioning.</p>
+
+  <h3>TRIM Security Risk</h3>
+
+  <a href="https://manpages.debian.org/bookworm/cryptsetup/crypttab.5.en.html">Crypttab Man Page</a>
+
+  <p><b>The crypttab man page warns that enabling the discard option on
+  encrypted devices can potentially leak information about the encrypted
+  data.</b> This happens because SSD firmware may zero out unused blocks,
+  making them identifiable and revealing patterns such as the filesystem
+  type and used space. An attacker could use this minimal information to
+  target smaller portions of encrypted data and potentially assist in
+  breaking the encryption. However, the actual risk is unclear, as the
+  leak may only offer limited help to an attacker. The warning advises
+  disabling discard (or TRIM) to avoid such risks, especially if there's
+  a need to prevent the exposure of unused sectors or hidden data. Once
+  TRIM is executed, the discarded sectors remain detectable, and encrypted
+  devices should avoid relying on functions that return zeroed-out sectors.
+  To minimize risks, sensitive directories like /tmp /var and other
+  directories used by encryption should be kept in memory and cleared
+  at shutdown.</p>
+
+  <a href="https://veracrypt.fr/en/Trim%20Operation.html">Trim Operation</a>
+
+  </p>"Under Linux, VeraCrypt does not block the trim operation on volumes using
+  the native Linux kernel cryptographic services, which is the default setting.
+  To block TRIM on Linux, users should either enable the "do not use kernel
+  cryptographic services" option in VeraCrypt's Preferences (applicable only
+  to volumes mounted afterward) or use the --mount-
+  options=nokernelcrypto switch in the command line when mounting.
+  Under macOS, VeraCrypt does not support the trim operation. Therefore,
+  trim is always blocked on all volumes.
+  In cases where trim operations occur, the adversary will be able to tell
+  which sectors contain free space (and may be able to use this information
+  for further analysis and attacks) and plausible deniability may be negatively
+  affected. In order to avoid these issues, users should either disable trim in
+  VeraCrypt settings as previously described or make sure VeraCrypt volumes
+  are not located on drives that use the trim operation.</p>
+
+  <h5>Verifying TRIM Support</h5>
+
+  <p>To ensure TRIM is enabled, you can use the following command:</p>
+
+  <pre><code>$ sudo fstrim -v /</code></pre>
+  <button onclick="navigator.clipboard.writeText('sudo fstrim -v /')">Copy</button>
+
+  <p>This command will trim the filesystem mounted on the root directory. For other filesystems, replace <code>/</code> with the appropriate mount point.</p>
 
 <p>Law-based attacks:</p>
 
 <ul>
-  <li><a href="https://en.wikipedia.org/wiki/Deniable_encryption">Deniable encryption - Wikipedia</a></li>
   <li><a href="https://en.wikipedia.org/wiki/Key_disclosure_law">Key disclosure law - Wikipedia</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Civil_forfeiture_in_the_United_States">Civil forfeiture in the United States - Wikipedia</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Deniable_encryption">Deniable encryption - Wikipedia</a></li>
   <li><a href="https://en.wikipedia.org/wiki/Product_liability">Product Liability - Wikipedia</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Civil_forfeiture_in_the_United_States">Civil forfeiture in the United States - Wikipedia</a></li>
 </ul>
 
 <p>Veracrypt Security Requirements and Precautions:</p>
 
 <ul>
-<li><a href="https://veracrypt.fr/en/Plausible%20Deniability.html">Plausible Deniability</a>.</li>
+<li><a href="https://veracrypt.eu/en/How%20to%20Back%20Up%20Securely.html">How to Back Up Securely</a></li>
+<li><a href="https://veracrypt.fr/en/Plausible%20Deniability.html">Plausible Deniability</a></li>
+<li><a href="https://veracrypt.eu/en/Hidden%20Operating%20System.html">Hidden Operating System</a></li>
+<li><a href="https://veracrypt.eu/en/Security%20Requirements%20for%20Hidden%20Volumes.html">Security Requirements and Precautions Pertaining to Hidden Volumes</a></li>
 <li><a href="https://veracrypt.fr/en/Data%20Leaks.html">Data Leaks</a>
 <ul>
 <li><a href="https://veracrypt.fr/en/Paging%20File.html">Paging File</a></li>
@@ -762,12 +827,11 @@
 <li><a href="https://veracrypt.fr/en/Malware.html">Malware</a></li>
 <li><a href="https://veracrypt.fr/en/Multi-User%20Environment.html">Multi-User Environment</a></li>
 <li><a href="https://veracrypt.fr/en/Authenticity%20and%20Integrity.html">Authenticity and Integrity</a></li>
-<li><a href="https://veracrypt.fr/en/Choosing%20Passwords%20and%20Keyfiles.html">Choosing Passwords and Keyfiles</a></li>
 <li><a href="https://veracrypt.fr/en/Changing%20Passwords%20and%20Keyfiles.html">Changing Passwords and Keyfiles</a></li>
 <li><a href="https://veracrypt.fr/en/Trim%20Operation.html">Trim Operation</a></li>
 <li><a href="https://veracrypt.fr/en/Wear-Leveling.html">Wear-Leveling</a></li>
-<li><a href=https://veracrypt.fr/en/Reallocated%20Sectors.html">Reallocated Sectors</a></li>
-<li><a href=https://veracrypt.fr/en/Defragmenting.html">Defragmenting</a></li>
+<li><a href="https://veracrypt.fr/en/Reallocated%20Sectors.html">Reallocated Sectors</a></li>
+<li><a href="https://veracrypt.fr/en/Defragmenting.html">Defragmenting</a></li>
 <li><a href="https://veracrypt.fr/en/Journaling%20File%20Systems.html">Journaling File Systems</a></li>
 <li><a href="https://veracrypt.fr/en/Volume%20Clones.html">Volume Clones</a></li>
 <li><a href="https://veracrypt.fr/en/Additional%20Security%20Requirements%20and%20Precautions.html">Additional Security Requirements and Precautions</a></li>
@@ -1175,9 +1239,10 @@
 
   <h5>Hypervisor</h5>
 
-  <pre>KVM, Kernel-based Virtual Machine, is a hypervisor built into the Linux kernel. It is similar to Xen in purpose but much simpler to get running. Unlike native QEMU, which uses emulation, KVM is a special operating mode of QEMU that uses CPU extensions (HVM) for virtualization via a kernel module.</pre>
+  <p>KVM, Kernel-based Virtual Machine, is a hypervisor built into the Linux kernel. It is similar to Xen in purpose but much simpler to get running. Unlike native QEMU, which uses emulation, KVM is a special operating mode of QEMU that uses CPU extensions (HVM) for virtualization via a kernel module.</p>
 
-  <pre>The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a type 1 hypervisor, it is able to run on bare metal, while QEMU is a type 2 hypervisor, it runs on top of the operating system. QEMU will utilize KVM in order to utilize the machine’s physical resources for the virtual machines. In brief, QEMU uses emulation; KVM uses processor extensions (HVM) for virtualization.</pre>
+  <p>The difference between a type 1 hypervisor and a type 2 hypervisor. KVM is a type 1 hypervisor, it is able to run on bare metal, while QEMU is a type 2 hypervisor, it runs on top of the operating system. QEMU will utilize KVM in order to utilize the machine’s physical resources for the virtual machines. In brief, QEMU uses emulation; KVM uses processor extensions (HVM) for virtualization.</p>
+
   <p style="text-align: center;"><img src="https://github.com/RENANZG/My-Debian-GNU-Linux/blob/main/05_SYSADMIN/04_Virtualization_and_Containers/01_QEMU-KVM.png" alt="QEMU-KVM Chart" title="QEMU-KVM Chart"></p>
 
   <h5>Using QEMU/KVM - "Kernel-based Virtual Machine"</h5>
@@ -1855,8 +1920,8 @@
   <li><strong>3. Accessing Teletype or Shell:</strong> Once you select
   the appropriate option, the system will boot into a teletype (TTY) or
   shell environment. This environment gives you direct access to a
-  command line interface where you can execute commands like <code>dd
-  </code> for disk cloning.</li>
+  command line interface where you can execute commands like <code>dd</code>
+  for disk cloning.</li>
   </ul>
 
   <h4>2. Using <code>dd</code> Command for Disk Cloning</h4>
@@ -2933,35 +2998,6 @@
   <pre><code>
   $ openssl version -d
   </code></pre>
-
-  <p>
-  You can use strace (man strace) to check the configuration file being
-  used
-  while generating the self-signed certificate.
-  </p>
-
-  <pre><code>
-  $ strace -e trace=open,openat -o /tmp/strace.log.0 openssl req \
-  -newkey rsa:2048 -x509 -nodes -keyout localhost.key \
-  -new -out localhost.crt
-  $ grep &quot;openssl.cnf&quot; /tmp/strace.log.0 openat(AT_FDCWD,
-  &quot;/etc/pki/tls/openssl.cnf&quot;, O_RDONLY) = 3 sudo cat
-  /etc/ssl/openssl.cnf openssl_conf = openssl_init from
-  /etc/ssl/openssl.cnf
-  </code></pre>
-
-  <p>To override system default with user level environment. An empty
-  file will do:</p>
-
-  <pre><code>touch ~/.openssl.cnf</code></pre>
-
-  <p>BASH define &amp; export:</p>
-
-  <pre><code>export OPENSSL_CONF=~/.openssl.cnf</code></pre>
-
-  <p>Wrap application within a script:</p>
-
-  <pre><code>export OPENSSL_CONF=/dev/null</code></pre>
 
   <p>Solution 3:</p>
 
@@ -4822,11 +4858,47 @@
 
   <h4>Visit our repo tree: <a href="https://github.com/RENANZG/My-Debian-GNU-Linux/tree/main/01_SETUPS/03_Custom_Systems/01_Debootstrap">01_SETUPS/03_Custom_Systems/01_Debootstrap</a></h4>
 
-  <a href="https://veracrypt.fr/en/Hidden%20Volume.html">VeraCrypt Anti-Tampering Measures</a>
+
+  <h3>Backup the volume header! It's necessary to rebuild the volume encryption keys that are used to encrypt/decrypt the data, you cannot recover the data without an intact header.<h3>
+
+<p>Veracrypt Security Requirements and Precautions:</p>
+
+<ul>
+<li><a href="https://veracrypt.eu/en/How%20to%20Back%20Up%20Securely.html">How to Back Up Securely</a></li>
+<li><a href="https://veracrypt.fr/en/Plausible%20Deniability.html">Plausible Deniability</a></li>
+<li><a href="https://veracrypt.eu/en/Hidden%20Operating%20System.html">Hidden Operating System</a></li>
+<li><a href="https://veracrypt.eu/en/Security%20Requirements%20for%20Hidden%20Volumes.html">Security Requirements and Precautions Pertaining to Hidden Volumes</a></li>
+<li><a href="https://veracrypt.fr/en/Data%20Leaks.html">Data Leaks</a>
+<ul>
+<li><a href="https://veracrypt.fr/en/Paging%20File.html">Paging File</a></li>
+<li><a href="https://veracrypt.fr/en/Hibernation%20File.html">Hibernation File</a></li>
+<li><a href="https://veracrypt.fr/en/Memory%20Dump%20Files.html">Memory Dump Files</a></li>
+</ul>
+<li><a href="https://veracrypt.fr/en/Unencrypted%20Data%20in%20RAM.html">Unencrypted Data in RAM</a></li>
+<li><a href="https://veracrypt.fr/en/VeraCrypt%20Memory%20Protection.html">VeraCrypt Memory Protection</a></li>
+<li><a href="https://veracrypt.fr/en/Physical%20Security.html">Physical Security</a></li>
+<li><a href="https://veracrypt.fr/en/Malware.html">Malware</a></li>
+<li><a href="https://veracrypt.fr/en/Multi-User%20Environment.html">Multi-User Environment</a></li>
+<li><a href="https://veracrypt.fr/en/Authenticity%20and%20Integrity.html">Authenticity and Integrity</a></li>
+<li><a href="https://veracrypt.fr/en/Changing%20Passwords%20and%20Keyfiles.html">Changing Passwords and Keyfiles</a></li>
+<li><a href="https://veracrypt.fr/en/Trim%20Operation.html">Trim Operation</a></li>
+<li><a href="https://veracrypt.fr/en/Wear-Leveling.html">Wear-Leveling</a></li>
+<li><a href="https://veracrypt.fr/en/Reallocated%20Sectors.html">Reallocated Sectors</a></li>
+<li><a href="https://veracrypt.fr/en/Defragmenting.html">Defragmenting</a></li>
+<li><a href="https://veracrypt.fr/en/Journaling%20File%20Systems.html">Journaling File Systems</a></li>
+<li><a href="https://veracrypt.fr/en/Volume%20Clones.html">Volume Clones</a></li>
+<li><a href="https://veracrypt.fr/en/Additional%20Security%20Requirements%20and%20Precautions.html">Additional Security Requirements and Precautions</a></li>
+</ul>
 
   <!-- ########## -->
 
   <h4>• Disk Encryption</h4>
+
+  <h5>∙ SiriKali (GUI)</h5>
+
+  <a href="https://mhogomchungu.github.io/sirikali">https://mhogomchungu.github.io/sirikali</a>
+
+  <!-- ##### -->
 
   <h5>∙ ZuluCrypt (GUI)</h5>
 
@@ -4846,15 +4918,13 @@
 
   <p>Command to automount favorite volume at startup session:</p> <code>/usr/bin/veracrypt %f /dev/sda2</code>
 
-  <!-- ##### -->
-
-  <h5>∙ SiriKali (GUI)</h5>
-
-  <a href="https://mhogomchungu.github.io/sirikali">https://mhogomchungu.github.io/sirikali</a>
-
   <!-- ########## -->
 
   <h4>Tamper-Proof Encryption with VeraCrypt</h4>
+
+  <p>To make the encryption tamper-proof, you can utilize hash
+  functions to detect any unauthorized modifications. Follow
+  these steps:</p>
 
   <h5>Step 1: Create a VeraCrypt Volume</h5>
 
@@ -4900,10 +4970,6 @@
   <button onclick="navigator.clipboard.writeText('sudo veracrypt -d /mnt/veracrypt1')">Copy</button>
 
   <h5>Step 5: Set Up Tamper-Proof Mechanisms</h5>
-
-  <p>To make the encryption tamper-proof, you can utilize hash
-  functions to detect any unauthorized modifications. Follow
-  these steps:</p>
 
   <ol>
   <li>Create a SHA256 hash of the encrypted volume:
@@ -4968,6 +5034,12 @@
   <!-- ########## -->
 
   <h4>Passwordless VeraCrypt Setup</h4>
+
+  OUTDATED !!!
+
+  user ALL=(root) NOPASSWD: /usr/bin/veracrypt, /usr/bin/uptime, /usr/bin/true
+
+  sudo -n -l
 
   <p>To set up VeraCrypt to run without requiring a password for each operation, follow these steps:</p>
 
@@ -5072,6 +5144,7 @@
   <ul>
     <li>Not all SSDs support sanitize. To properly erase an SSD, use the manufacturer's software. Other methods might not work due to wear leveling and over-provisioning.</li>
     <li>If you use SSDs, enable TRIM in your BIOS. Confirm you are using an SSD in the BIOS options.</li>
+    <li></li>
     <li>Consider potential hardware flaws and always back up your data before performing any erase operation.</li>
     <li>Sanitizing an SSD can help in maintaining its performance and security but improper methods can lead to data being recoverable.</li>
     <li>Ensure that the SSD firmware is up-to-date before performing any sanitation procedure to avoid issues.</li>
@@ -5389,13 +5462,16 @@
   <br>
 
   <h4>Router Freedom - Open-source routers - Device Neutrality</h4>
-
   <ul>
     <li><a href="https://docs.fsfe.org/en/teams/router-freedom-tech-wiki">https://docs.fsfe.org/en/teams/router-freedom-tech-wiki</a></li>
+    <li><a href="https://librerouter.org">https://librerouter.org</a></li>
     <li><a href="https://fsfe.org/contribute/spreadtheword#device-neutrality">https://fsfe.org/contribute/spreadtheword#device-neutrality</a></li>
     <li><a href="https://openwrt.org">https://openwrt.org</a></li>
     <li><a href="https://pfsense.org">https://pfsense.org</a></li>
-    <li><a href="https://librerouter.org">https://librerouter.org</a></li>
+  </ul>
+
+  <h4>Lora/Mesh Network</h4>
+  <ul>
     <li><a href="https://libremesh.org">https://libremesh.org</a></li>
   </ul>
 
@@ -5406,38 +5482,96 @@
   <h5>Examples of VPN routers and firmwares</h5>
 
   <table>
-  <thead>
-    <tr>
-      <th>Router</th>
-      <th>Firmware</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="vertical-align: top; width: 50%">
-        EdgeRouter and Ubiquiti<br>
-        GL.iNet<br>
-        Netduma<br>
-        Netgear<br>
-        MikroTik<br>
-        Peplink/Pepwave<br>
-      </td>
-      <td style="vertical-align: top; width: 50%">
-        OpenWRT<br>
-        AsusWRT Merlin<br>
-        DD-WRT<br>
-        DrayTek Vigor<br>
-        OPNsense 19.1<br>
-        Padavan<br>
-        pfSense 2.4.4<br>
-        pfSense 2.4.5<br>
-        pfSense 2.5<br>
-        Sabai<br>
-        Tomato<br>
-      </td>
-    </tr>
-  </tbody>
+    <thead>
+      <tr>
+        <th>Router</th>
+        <th>Firmware</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="vertical-align: top; width: 50%">
+          EdgeRouter and Ubiquiti<br>
+          GL.iNet<br>
+          Netduma<br>
+          Netgear<br>
+          MikroTik<br>
+          Peplink/Pepwave<br>
+        </td>
+        <td style="vertical-align: top; width: 50%">
+          OpenWRT<br>
+          AsusWRT Merlin<br>
+          DD-WRT<br>
+          DrayTek Vigor<br>
+          OPNsense 19.1<br>
+          Padavan<br>
+          pfSense 2.4.4<br>
+          pfSense 2.4.5<br>
+          pfSense 2.5<br>
+          Sabai<br>
+          Tomato<br>
+        </td>
+      </tr>
+    </tbody>
   </table>
+
+  <h4>Routers with open source firmware</h4>
+  <ul>
+    <li>Openwrt One:
+      <ul>
+        <li><a href="https://openwrt.org/toh/openwrt/one">https://openwrt.org/toh/openwrt/one</a></li>
+        <li><a href="https://docs.banana-pi.org/en/OpenWRT-One/BananaPi_OpenWRT-One">https://docs.banana-pi.org/en/OpenWRT-One/BananaPi_OpenWRT-One</a></li>
+      </ul>
+    </li>
+    <li>Turris:
+      <ul>
+        <li><a href="https://www.turris.com">https://www.turris.com</a></li>
+        <li><a href="https://openwrt.org/toh/turris/turris_omnia">https://openwrt.org/toh/turris/turris_omnia</a></li>
+      </ul>
+    </li>
+    <li>GL-inet:
+      <ul>
+        <li><a href="https://www.gl-inet.com">https://www.gl-inet.com</a></li>
+        <li><a href="https://openwrt.org/toh/gl.inet/start">https://openwrt.org/toh/gl.inet/start</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4>eSIM travel router setup:</h4>
+  <ul>
+    <li>LibreCMC - The libre Embedded GNU/Linux Distro:
+      <ul>
+        <li><a href="https://librecmc.org/">https://librecmc.org/</a></li>
+        <li><a href="https://gogs.librecmc.org/libreCMC/libreCMC/wiki/Supported_Hardware">https://gogs.librecmc.org/libreCMC/libreCMC/wiki/Supported_Hardware</a></li>
+      </ul>
+    </li>
+    <li>GLiNet Mudi v2 - eSIM travel router:
+      <ul>
+        <li><a href="https://docs.gl-inet.com">https://docs.gl-inet.com</a></li>
+        <li><a href="https://store.gl-inet.com">https://store.gl-inet.com</a></li>
+      </ul>
+    </li>
+    <li>EIOT - Physical eSIM:
+      <ul>
+        <li><a href="https://store.gl-inet.com">https://store.gl-inet.com</a></li>
+      </ul>
+    </li>
+    <li>Airalo - Global eSIM:
+      <ul>
+        <li><a href="https://www.airalo.com">https://www.airalo.com</a></li>
+      </ul>
+    </li>
+    <li>Tailscale - Secure remote access:
+      <ul>
+        <li><a href="https://tailscale.com">https://tailscale.com</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4>Building your own router:</h4>
+  <ul>
+    <li>Snapdragon x95</li>
+  </ul>
 
   <h4>Router Guide</h4>
 
@@ -6629,7 +6763,10 @@
   <li><a href="https://ipx.ac/run">IPX.AC DNS Leak Test</a></li>
   </ul>
 
+  <h4>Tor Leak Test</h4>
+
   <ul>
+    <li><a href="https://check.torproject.org/">Tor Test</a></li>
     <li><a href="https://coveryourtracks.eff.org/learn">EFF Test</a></li>
     <li><a href="https://blog.torproject.org/browser-fingerprinting-introduction-and-challenges-ahead">TOR Fingerprinting</a></li>
   </ul>
@@ -6754,14 +6891,16 @@
 
   <h4>• Torrenting</h4>
 
-  <a href="https://portforward.com">https://portforward.com</a>
-  <a href="https://wiki.wireshark.org/BitTorrent">https://wiki.wireshark.org/BitTorrent</a>
-  <a href="https://github.com/LiamTheBox/Torrent-With-A-VPN">https://github.com/LiamTheBox/Torrent-With-A-VPN</a>
-  <a href="https://github.com/mdlam92/vpn_torrenting">https://github.com/mdlam92/vpn_torrenting</a>
-  <a href="https://github.com/tool-maker/VPN_just_for_torrents/wiki">https://github.com/tool-maker/VPN_just_for_torrents/wiki</a>
-  <a href="https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge">https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge</a>
-  <a href="https://transmissionbt.com">https://transmissionbt.com</a>
-  <a href="https://comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-linux-with-ufw">https://comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-linux-with-ufw</a>
+  <ul>
+  <li><a href="https://portforward.com">https://portforward.com</a></li>
+  <li><a href="https://wiki.wireshark.org/BitTorrent">https://wiki.wireshark.org/BitTorrent</a></li>
+  <li><a href="https://github.com/LiamTheBox/Torrent-With-A-VPN">https://github.com/LiamTheBox/Torrent-With-A-VPN</a></li>
+  <li><a href="https://github.com/mdlam92/vpn_torrenting">https://github.com/mdlam92/vpn_torrenting</a></li>
+  <li><a href="https://github.com/tool-maker/VPN_just_for_torrents/wiki">https://github.com/tool-maker/VPN_just_for_torrents/wiki</a></li>
+  <li><a href="https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge">https://askubuntu.com/questions/559016/ufw-rules-dont-block-deluge</a></li>
+  <li><a href="https://transmissionbt.com">https://transmissionbt.com</a></li>
+  <li><a href="https://comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-linux-with-ufw">https://comparitech.com/blog/vpn-privacy/how-to-make-a-vpn-kill-switch-in-linux-with-ufw</a></li>
+  </ul>
 
   <p>👷🛠️UNDER CONSTRUCTION🚧🏗</p>
 
@@ -6796,6 +6935,7 @@
   <details>
   <summary>6.01 Office Productivity</summary>
   <div>
+  <br>
   <details>
   <summary>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01 Office Softwares</summary>
   <br>
@@ -7129,8 +7269,10 @@
 
   <h4>• KeePassXC</h4>
 
-  <a href="https://keepassxc.org/docs/">https://keepassxc.org/docs/</a>
-  <a href="https://cvedetails.com/vendor/12214/Keepass.html">https://cvedetails.com/vendor/12214/Keepass.html</a>
+  <ul>
+  <li><a href="https://keepassxc.org/docs/">https://keepassxc.org/docs/</a></li>
+  <li><a href="https://cvedetails.com/vendor/12214/Keepass.html">https://cvedetails.com/vendor/12214/Keepass.html</a></li>
+  </ul>
 
   <pre><code><span>$ </span>sudo apt install keepassxc</code></pre>
   <button onclick="navigator.clipboard.writeText('sudo apt install keepassxc')">Copy</button>
@@ -7279,6 +7421,7 @@
   <details>
   <summary>6.02 Document Management</summary>
   <div>
+  <br>
   <details>
   <summary>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01 PDF Suites</summary>
   <br>
@@ -8969,14 +9112,20 @@
 
   <h5>Translation and Others Tools</h5>
 
+  <p><em>TAKE CARE OF WATERING HOLE ATTACKS!</em></p>
+
   <ul>
     <li><a href="https://deepl.com/translator">DeepL</a></li>
+    <li><a href="https://deepl.com/en/translator#de/en/">DeepL DE/EN</a></li>
     <li><a href="https://markdowntoolbox.com">Markdown Toolbox</a></li>
     <li><a href="https://latexeditor.lagrida.com">Online LaTeX Equation Editor</a></li>
     <li><a href="https://mermaid.live">Mermaid</a></li>
-    <li><a href="https://tableconvert.com">Table Convert</a></li>
     <li><a href="https://truben.no/table/">Table Editor 2</a></li>
+    <li><a href="https://tableconvert.com">Table Convert</a></li>
     <li><a href="https://divtable.com">Div Table</a></li>
+    <li><a href="https://markdowntohtml.com">Convert Markdown to HTML</a></li>
+    <li><a href="https://html-cleaner.com">HTML Cleaner</a></li>
+    <li><a href="https://beautifytools.com/html-beautifier.php">HTML Beautifier</a></li>
     <li><a href="https://evanhahn.github.io/ffmpeg-buddy/">ffmpeg buddy</a></li>
     <li><a href="https://kutt.it">Kutt your links shorter</a></li>
     <li><a href="https://grammarly.com">Grammarly</a></li>
@@ -8992,6 +9141,7 @@
   <details>
   <summary>6.04 File Management</summary>
   <div>
+  <br>
   <details>
   <summary>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01 Files and Folders</summary>
   <br>
@@ -10937,7 +11087,7 @@
   <p>By default, Linux systems use the <code>$VISUAL</code> or <code>$EDITOR</code> environment variables (usually defined in your <code>~/.bashrc</code> file or <code>/etc/profile</code> ) as the default editor the <a href="https://linux.die.net/man/8/visudo">visudo</a> command. If you&#39;d prefer to use a different editor, such as <a href="https://nano-editor.org/">ano</a> , you can use either of these methods.</p>
 
   <ol>
-    <li> To temporarily use a different editor, run: <pre><code><span>$ </span>sudo EDITOR=/path/to/editor visudo</code></pre> For example, to use <code>ano</code> , you would run: <pre><code><span>$ </span>sudo EDITOR=nano visudo</code></pre></li>
+    <li> To temporarily use a different editor, run: <pre><code><span>$ </span>sudo EDITOR=/path/to/editor visudo</code></pre> For example, to use <code>nano</code> , you would run: <pre><code><span>$ </span>sudo EDITOR=nano visudo</code></pre></li>
     <li> To permanently change the default editor, edit the <code>/etc/sudoers</code> file (you can use the temporary method above!) and add the following line to the file near the top, but after <code>Defaults env_reset</code> : <pre><code>Defaults editor=/path/to/editor </code></pre></li>
   </ol>
 
@@ -13339,12 +13489,12 @@
       <pre><code>$ sudo apt install smartmontools</code></pre>
       <button onclick="navigator.clipboard.writeText('sudo apt install smartmontools')">Copy</button>
       <h6>Commands for smartmontools:</h6>
-      <pre><code>$ sudo smartctl -a /dev/sda</code></pre>
       <p>Displays all SMART information for the specified disk.</p>
-      <pre><code>$ sudo smartctl -t short /dev/sda</code></pre>
+      <pre><code>$ sudo smartctl -a /dev/sda</code></pre>
       <p>Performs a short self-test on the specified disk.</p>
-      <pre><code>$ sudo smartctl -t long /dev/sda</code></pre>
+      <pre><code>$ sudo smartctl -t short /dev/sda</code></pre>
       <p>Performs a long self-test on the specified disk.</p>
+      <pre><code>$ sudo smartctl -t long /dev/sda</code></pre>
     </li>
     <li>
       <strong>HDPARM:</strong>
@@ -13447,6 +13597,7 @@
     <li><a href="https://debian.org/doc/">Debian Documentation</a></li>
     <li><a href="https://micronews.debian.org">Debian Micronews</a></li>
     <li><a href="https://bits.debian.org">Debian Bits</a></li>
+    <li><a href="https://lwn.net/">LWN.net</a></li>
     <li><a href="https://ubuntu.com/tutorials">Ubuntu Tutorials</a></li>
     <li><a href="https://linuxtopia.org/">Linuxtopia</a></li>
     <li><a href="https://centos.org/docs/">CentOS Documentation</a></li>
@@ -13578,6 +13729,8 @@
     <li><a href="https://vitux.com">https://vitux.com</a></li>
     <li><a href="https://linux-blog.anracom.com">https://linux-blog.anracom.com</a></li>
     <li><a href="https://neilzone.co.uk">https://neilzone.co.uk</a></li>
+    <li><a href="https://blog.jklug.work">https://blog.jklug.work</a></li>
+    <li><a href="https://gabrielstaples.com">https://gabrielstaples.com</a></li>
   </ul>
 
   <h4>Security</h4>
@@ -13619,12 +13772,6 @@
   <summary>10.03 YouTube Links</summary>
 
   <h4>YouTube Links</h4>
-
-  <h4>Open Source and Linux:</h4>
-  <ul>
-      <li><a href="https://youtube.com/@DebConfVideos">DebConf Videos</a></li>
-      <li><a href="https://www.youtube.com/@AwesomeOpenSource">Awesome Open Source</a></li>
-  </ul>
 
   <h4>Digital Forensics and Incident Response:</h4>
   <ul>
@@ -13676,13 +13823,15 @@
       <li><a href="https://youtube.com/@EuropeanDigitalRights">European Digital Rights</a></li>
   </ul>
 
-  <h4>Additional Conferences and Miscellaneous Tech:</h4>
+  <h4>Miscellaneous Tech:</h4>
   <ul>
+      <li><a href="https://youtube.com/@DebConfVideos">DebConf Videos</a></li>
+      <li><a href="https://youtube.com/@spyhunt">James M. Atkinson</a></li>
+      <li><a href="https://www.youtube.com/@AllSystemsGo">@AllSystemsGo</a></li>
+      <li><a href="https://www.youtube.com/@AwesomeOpenSource">Awesome Open Source</a></li>
       <li><a href="https://youtube.com/@RSAConference">RSA Conference</a></li>
       <li><a href="https://youtube.com/@UsenixOrg">USENIX Organization</a></li>
       <li><a href="https://youtube.com/@USENIXEnigmaConference">USENIX Enigma Conference</a></li>
-      <li><a href="https://youtube.com/@MCH2022NL">MCH 2022 NL</a></li>
-      <li><a href="https://youtube.com/@MCh3022NL">May Contain Hackers</a></li>
       <li><a href="https://youtube.com/c/spacehuhn">spacehuhn</a></li>
       <li><a href="https://youtube.com/c/ThioJoe">ThioJoe</a></li>
   </ul>
@@ -13796,6 +13945,11 @@
     <li><a href="https://rentry.co/megathread">https://rentry.co/megathread</a></li>
     <li><a href="https://1337x.to">https://1337x.to</a></li>
     <li><a href="https://fitgirl-repacks.site">https://fitgirl-repacks.site</a></li>
+    <li><a href="https://firetvsticks.com/simple-downloads/">Firetvsticks</a></li>
+    <li><a href="https://firestickhacks.com/downloads/">Firestick Hacks</a></li>
+    <li><a href="https://ottnav.github.io">OTT Navigator</a></li>
+    <li><a href="https://www.tivmate.com/">TiviMate</a></li>
+    <li><a href="https://dashboard.implayer.tv">IMPlayer</a></li>
   </ul>
 
   </details>

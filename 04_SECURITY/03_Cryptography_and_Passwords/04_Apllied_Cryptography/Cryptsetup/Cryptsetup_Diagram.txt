@@ -1,0 +1,29 @@
+flowchart TD
+    A[cryptsetup] -->|Sets up| B[dm-crypt]
+    B -->|Encrypts/Decrypts| C[Block Device]
+    C -->|Can be used with| D[Filesystem]
+    C -->|Can be stacked with| E[LVM/RAID]
+
+    A -->|Supports| F[LUKS]
+    A -->|Supports| G[Plain Volumes]
+    A -->|Supports| H[Other Formats: Loop-AES, TrueCrypt, BitLocker, FileVault2]
+
+    F -->|Uses| I[Metadata Header]
+    I -->|Stores| J[Encryption Keys, Cipher Info, etc.]
+    I -->|Vulnerable to| K[Header Damage]
+
+    A -->|Includes Utilities| L[veritysetup]
+    A -->|Includes Utilities| M[integritysetup]
+
+    L -->|Sets up| N[dm-verity]
+    M -->|Sets up| O[dm-integrity]
+
+    N -->|Provides| P[Block Integrity Checking]
+    O -->|Provides| Q[Block Integrity]
+
+    style A fill:#f9f,stroke:#333,stroke-width:4px
+    style F fill:#bbf,stroke:#333,stroke-width:2px
+    style G fill:#bbf,stroke:#333,stroke-width:2px
+    style H fill:#bbf,stroke:#333,stroke-width:2px
+    style L fill:#f96,stroke:#333,stroke-width:2px
+    style M fill:#f96,stroke:#333,stroke-width:2px

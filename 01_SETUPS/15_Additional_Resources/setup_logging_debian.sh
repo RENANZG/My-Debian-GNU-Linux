@@ -31,6 +31,14 @@ RSYSLOG_CONF="/etc/rsyslog.conf"
 RSYSLOG_D_CONF_DIR="/etc/rsyslog.d"
 RSYSLOG_D_CONF_FILE="$RSYSLOG_D_CONF_DIR/50-default.conf"
 
+set -e
+
+# Check for root privileges
+if [ "$EUID" -ne 0 ]; then
+    echo "Please run as root"
+    exit 1
+fi
+
 # Function to create or update the rsyslog configuration
 update_rsyslog_conf() {
     echo "Updating rsyslog configuration..."
@@ -64,7 +72,7 @@ create_log_files() {
     # Create log files if they do not exist
     for log_file in "$SYSLOG_PATH" "$AUTHLOG_PATH" "$MESSAGES_PATH" "$PORTMONITOR_PATH"; do
         if [ ! -f "$log_file" ]; then
-            touch "$log_file"
+            touch "$log_file" || { echo "Failed to create $log_file"; exit 1; }
             echo "Created $log_file"
         fi
         # Set permissions and ownership

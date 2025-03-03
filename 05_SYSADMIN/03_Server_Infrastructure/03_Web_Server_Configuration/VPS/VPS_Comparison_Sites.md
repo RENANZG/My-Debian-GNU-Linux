@@ -35,6 +35,7 @@
     <li><a href="https://techradar.com/best/anonymous-web-hosting">TechRadar Anonymous Hosting</a> - Features a list of anonymous and secure hosting services.</li>
     <li><a href="https://thatoneprivacysite.net">That One Privacy Site</a> - Compares various privacy services, including anonymous hosting providers.</li>
     <li><a href="https://vpnmentor.com">VPN Mentor</a> - Primarily focused on VPNs but also includes reviews of secure and private hosting services.</li>
+    <li><a href="http://kyun.host/">Kyun</a> - Next-generation hosting.</li>
   </ul>
 </body>
 </html>
